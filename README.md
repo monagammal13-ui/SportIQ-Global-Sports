@@ -1,4 +1,5 @@
-# 🚀 SPORTIQ - Design System Layer 0
+# 🚀 SPORTIQ – Design System (Pre-Runtime Layer)
+
 
 ## 📖 نظرة عامة | Overview
 
@@ -392,3 +393,4 @@ This system was built using modern web development best practices:
 **صُمّم بـ ❤️ بواسطة AntiGravity**
 
 **Designed with ❤️ by AntiGravity**
+
