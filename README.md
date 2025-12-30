@@ -3,9 +3,10 @@
 
 ## 📖 نظرة عامة | Overview
 
-**SPORTIQ** هو نظام تصميم شامل ومتطور يوفر البنية الأساسية لبناء منصة رياضية عالمية عصرية وجذابة باستخدام أحدث معايير التصميم والتطوير.
-
-A comprehensive, modern design system providing the foundational architecture for building a stunning, contemporary global sports platform using the latest design and development standards.
+This Design System represents the visual and UX foundation of SPORTIQ.
+It operates as a pre-runtime layer and feeds into the SPORTIQ Runtime Architecture (Layers 1–200).
+It does not execute business logic but provides design tokens, UI patterns, and layout standards
+consumed by runtime UI and personalization engines.
 
 ---
 
@@ -393,4 +394,5 @@ This system was built using modern web development best practices:
 **صُمّم بـ ❤️ بواسطة AntiGravity**
 
 **Designed with ❤️ by AntiGravity**
+
 
