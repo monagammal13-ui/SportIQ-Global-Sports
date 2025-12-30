@@ -1,0 +1,86 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2025-12-27",
+  "description": "Ad display priorities and rotation rules",
+  "globalSettings": {
+    "enableAds": true,
+    "respectDoNotTrack": false,
+    "maxAdsPerPage": 6,
+    "minTimeBetweenAds": 1000,
+    "enableAntiAdblock": true,
+    "lazyLoadAds": true,
+    "lazyLoadThreshold": "200px"
+  },
+  "slotPriorities": {
+    "header": {
+      "priority": 10,
+      "preferredTypes": ["banner", "native"],
+      "maxHeight": "90px",
+      "refreshInterval": 30000,
+      "enableRefresh": true
+    },
+    "sidebar": {
+      "priority": 8,
+      "preferredTypes": ["banner", "native"],
+      "sticky": true,
+      "refreshInterval": 45000,
+      "enableRefresh": true
+    },
+    "in-article": {
+      "priority": 9,
+      "preferredTypes": ["native", "banner"],
+      "insertAfterParagraph": 3,
+      "maxPerArticle": 3
+    },
+    "footer": {
+      "priority": 6,
+      "preferredTypes": ["banner"],
+      "sticky": false
+    },
+    "mobile-sticky": {
+      "priority": 9,
+      "preferredTypes": ["social-bar", "banner"],
+      "devices": ["mobile"],
+      "position": "bottom"
+    },
+    "video-preroll": {
+      "priority": 10,
+      "preferredTypes": ["video"],
+      "skipAfter": 5000
+    },
+    "popup": {
+      "priority": 7,
+      "preferredTypes": ["popunder"],
+      "frequency": "once-per-session",
+      "delay": 10000
+    },
+    "feed-native": {
+      "priority": 8,
+      "preferredTypes": ["native"],
+      "insertEvery": 5,
+      "blend": true
+    }
+  },
+  "rotationRules": {
+    "algorithm": "weighted-random",
+    "respectWeights": true,
+    "preventRepeatInSession": true,
+    "fallbackChain": ["scripts", "direct-links", "fallback"],
+    "cacheResults": true,
+    "cacheDuration": 300000
+  },
+  "performanceRules": {
+    "maxLoadTime": 3000,
+    "timeoutAction": "show-fallback",
+    "trackImpressions": true,
+    "trackClicks": true,
+    "trackRevenue": true
+  },
+  "notes": [
+    "Priority: 1-10 (10 = highest priority)",
+    "Refresh intervals in milliseconds",
+    "Frequency: unlimited, once-per-session, once-per-day, once-per-hour",
+    "Algorithm: weighted-random (respects weights) or round-robin",
+    "LazyLoad saves bandwidth and improves page speed"
+  ]
+}

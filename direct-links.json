@@ -1,0 +1,134 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2025-12-27",
+  "description": "Direct link ad sources with smart rotation",
+  "links": [
+    {
+      "id": "direct_001",
+      "url": "https://example-ad-network.com/click?id=campaign1",
+      "weight": 10,
+      "countries": ["US", "CA", "GB", "AU"],
+      "devices": ["mobile", "desktop"],
+      "name": "Premium Sports Betting - Tier 1",
+      "category": "sports-betting",
+      "active": true,
+      "cpc": 2.50,
+      "notes": "High-value markets only"
+    },
+    {
+      "id": "direct_002",
+      "url": "https://example-ad-network.com/click?id=campaign2",
+      "weight": 8,
+      "countries": ["US", "CA"],
+      "devices": ["mobile"],
+      "name": "Mobile Sports App Download",
+      "category": "app-install",
+      "active": true,
+      "cpc": 1.80,
+      "notes": "Mobile only, high conversion"
+    },
+    {
+      "id": "direct_003",
+      "url": "https://example-ad-network.com/click?id=campaign3",
+      "weight": 7,
+      "countries": ["ALL"],
+      "devices": ["desktop"],
+      "name": "Sports Merchandise Store",
+      "category": "e-commerce",
+      "active": true,
+      "cpc": 0.80,
+      "notes": "Global reach, moderate CPC"
+    },
+    {
+      "id": "direct_004",
+      "url": "https://example-ad-network.com/click?id=campaign4",
+      "weight": 9,
+      "countries": ["DE", "FR", "ES", "IT"],
+      "devices": ["mobile", "desktop"],
+      "name": "European Football Betting",
+      "category": "sports-betting",
+      "active": true,
+      "cpc": 2.20,
+      "notes": "EU markets, football focus"
+    },
+    {
+      "id": "direct_005",
+      "url": "https://example-ad-network.com/click?id=campaign5",
+      "weight": 6,
+      "countries": ["AR", "BR", "MX"],
+      "devices": ["mobile"],
+      "name": "Latin America Sports News",
+      "category": "content",
+      "active": true,
+      "cpc": 0.50,
+      "notes": "LATAM markets"
+    },
+    {
+      "id": "direct_006",
+      "url": "https://example-ad-network.com/click?id=campaign6",
+      "weight": 5,
+      "countries": ["IN", "PK", "BD"],
+      "devices": ["mobile", "desktop"],
+      "name": "Cricket Streaming Service",
+      "category": "streaming",
+      "active": true,
+      "cpc": 0.40,
+      "notes": "Cricket-focused, South Asia"
+    },
+    {
+      "id": "direct_007",
+      "url": "https://example-ad-network.com/click?id=campaign7",
+      "weight": 8,
+      "countries": ["US", "CA", "GB"],
+      "devices": ["desktop"],
+      "name": "Premium Fantasy Sports",
+      "category": "fantasy-sports",
+      "active": true,
+      "cpc": 3.00,
+      "notes": "High payout, desktop optimized"
+    },
+    {
+      "id": "direct_008",
+      "url": "https://example-ad-network.com/click?id=campaign8",
+      "weight": 4,
+      "countries": ["ALL"],
+      "devices": ["mobile", "desktop"],
+      "name": "Generic Sports Equipment",
+      "category": "e-commerce",
+      "active": true,
+      "cpc": 0.30,
+      "notes": "Fallback option, universal"
+    },
+    {
+      "id": "direct_009",
+      "url": "https://example-ad-network.com/click?id=campaign9",
+      "weight": 7,
+      "countries": ["JP", "KR", "CN"],
+      "devices": ["mobile"],
+      "name": "Asian Sports App",
+      "category": "app-install",
+      "active": true,
+      "cpc": 1.20,
+      "notes": "East Asian markets"
+    },
+    {
+      "id": "direct_010",
+      "url": "https://example-ad-network.com/click?id=campaign10",
+      "weight": 6,
+      "countries": ["AE", "SA", "QA"],
+      "devices": ["mobile", "desktop"],
+      "name": "Middle East Sports Platform",
+      "category": "content",
+      "active": true,
+      "cpc": 1.50,
+      "notes": "Gulf region, high value"
+    }
+  ],
+  "notes": [
+    "Add more links as needed - system supports unlimited entries",
+    "Weight: Higher = More frequent display (1-10 scale)",
+    "Countries: Use ISO 2-letter codes or 'ALL' for global",
+    "Set active: false to temporarily disable without deleting",
+    "CPC is for tracking only, not used in rotation logic"
+  ]
+}

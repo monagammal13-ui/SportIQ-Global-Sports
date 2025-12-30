@@ -1,0 +1,165 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Geo-targeting rules for ad optimization",
+    "tiers": {
+        "tier1": {
+            "name": "Premium Countries",
+            "countries": [
+                "US",
+                "CA",
+                "GB",
+                "AU",
+                "DE",
+                "FR",
+                "NL",
+                "SE",
+                "NO",
+                "DK",
+                "CH"
+            ],
+            "cpmMultiplier": 3.0,
+            "preferredAdTypes": [
+                "banner",
+                "native",
+                "video"
+            ],
+            "notes": "Highest CPM markets"
+        },
+        "tier2": {
+            "name": "High-Value Countries",
+            "countries": [
+                "ES",
+                "IT",
+                "JP",
+                "KR",
+                "SG",
+                "AE",
+                "SA",
+                "QA",
+                "NZ",
+                "IE"
+            ],
+            "cpmMultiplier": 2.0,
+            "preferredAdTypes": [
+                "banner",
+                "native",
+                "popunder"
+            ],
+            "notes": "Good CPM markets"
+        },
+        "tier3": {
+            "name": "Moderate Countries",
+            "countries": [
+                "BR",
+                "AR",
+                "MX",
+                "CL",
+                "CO",
+                "PL",
+                "CZ",
+                "GR",
+                "PT",
+                "MY",
+                "TH"
+            ],
+            "cpmMultiplier": 1.0,
+            "preferredAdTypes": [
+                "banner",
+                "popunder",
+                "social-bar"
+            ],
+            "notes": "Moderate CPM markets"
+        },
+        "tier4": {
+            "name": "Emerging Markets",
+            "countries": [
+                "IN",
+                "PK",
+                "BD",
+                "PH",
+                "ID",
+                "VN",
+                "EG",
+                "NG",
+                "KE",
+                "ZA"
+            ],
+            "cpmMultiplier": 0.5,
+            "preferredAdTypes": [
+                "social-bar",
+                "popunder",
+                "smart-link"
+            ],
+            "notes": "Volume markets, lower CPM"
+        }
+    },
+    "countrySpecificRules": {
+        "US": {
+            "enableGDPR": false,
+            "enableCCPA": true,
+            "restrictedCategories": [],
+            "preferredLanguage": "en",
+            "timezone": "America/New_York"
+        },
+        "GB": {
+            "enableGDPR": true,
+            "enableCCPA": false,
+            "restrictedCategories": [
+                "gambling"
+            ],
+            "preferredLanguage": "en",
+            "timezone": "Europe/London"
+        },
+        "DE": {
+            "enableGDPR": true,
+            "enableCCPA": false,
+            "restrictedCategories": [
+                "gambling",
+                "crypto"
+            ],
+            "preferredLanguage": "de",
+            "timezone": "Europe/Berlin"
+        },
+        "SA": {
+            "enableGDPR": false,
+            "enableCCPA": false,
+            "restrictedCategories": [
+                "gambling",
+                "alcohol",
+                "dating"
+            ],
+            "preferredLanguage": "ar",
+            "timezone": "Asia/Riyadh"
+        },
+        "CN": {
+            "enableGDPR": false,
+            "enableCCPA": false,
+            "restrictedCategories": [
+                "gambling",
+                "political"
+            ],
+            "preferredLanguage": "zh",
+            "timezone": "Asia/Shanghai",
+            "notes": "Special restrictions apply"
+        }
+    },
+    "fallbackRules": {
+        "unknownCountry": "tier4",
+        "vpnDetected": "tier3",
+        "geoServiceFailed": "show-all-regions"
+    },
+    "geoDetection": {
+        "method": "client-ip",
+        "apiEndpoint": "https://ipapi.co/json/",
+        "fallbackEndpoint": "https://ip-api.com/json/",
+        "cacheLocation": true,
+        "cacheDuration": 3600000
+    },
+    "notes": [
+        "CPM Multiplier affects ad selection priority",
+        "GDPR/CCPA compliance automatically enabled for relevant regions",
+        "Restricted categories won't show in those countries",
+        "Geo detection is automatic and cached for performance"
+    ]
+}

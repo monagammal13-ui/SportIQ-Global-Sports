@@ -1,0 +1,153 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Device-specific ad targeting and optimization",
+    "devices": {
+        "mobile": {
+            "name": "Mobile Devices",
+            "preferredAdTypes": [
+                "social-bar",
+                "native",
+                "banner"
+            ],
+            "maxAdsPerPage": 4,
+            "preferredPositions": [
+                "mobile-sticky",
+                "in-article",
+                "feed-native"
+            ],
+            "bannerSizes": [
+                "320x50",
+                "320x100",
+                "300x250"
+            ],
+            "enableStickyAds": true,
+            "enablePopunder": false,
+            "loadPriority": "high",
+            "lazyLoadThreshold": "100px",
+            "notes": "Optimize for small screens and touch interaction"
+        },
+        "tablet": {
+            "name": "Tablet Devices",
+            "preferredAdTypes": [
+                "banner",
+                "native",
+                "video"
+            ],
+            "maxAdsPerPage": 5,
+            "preferredPositions": [
+                "header",
+                "sidebar",
+                "in-article"
+            ],
+            "bannerSizes": [
+                "728x90",
+                "300x250",
+                "160x600"
+            ],
+            "enableStickyAds": true,
+            "enablePopunder": true,
+            "loadPriority": "medium",
+            "lazyLoadThreshold": "150px",
+            "notes": "Balance between mobile and desktop"
+        },
+        "desktop": {
+            "name": "Desktop Computers",
+            "preferredAdTypes": [
+                "banner",
+                "native",
+                "video",
+                "popunder"
+            ],
+            "maxAdsPerPage": 6,
+            "preferredPositions": [
+                "header",
+                "sidebar",
+                "footer",
+                "in-article"
+            ],
+            "bannerSizes": [
+                "728x90",
+                "300x250",
+                "160x600",
+                "970x250"
+            ],
+            "enableStickyAds": true,
+            "enablePopunder": true,
+            "loadPriority": "medium",
+            "lazyLoadThreshold": "200px",
+            "notes": "Full ad experience with all formats"
+        }
+    },
+    "deviceDetection": {
+        "method": "user-agent",
+        "mobileMaxWidth": 768,
+        "tabletMaxWidth": 1024,
+        "detectOrientation": true,
+        "cacheResult": true
+    },
+    "orientationRules": {
+        "portrait": {
+            "preferredSizes": [
+                "300x250",
+                "320x50",
+                "320x100"
+            ],
+            "stickyPosition": "bottom"
+        },
+        "landscape": {
+            "preferredSizes": [
+                "728x90",
+                "320x50"
+            ],
+            "stickyPosition": "top"
+        }
+    },
+    "connectionRules": {
+        "4g-5g": {
+            "loadAllAds": true,
+            "enableVideo": true,
+            "enableAutoplay": true
+        },
+        "3g": {
+            "loadAllAds": true,
+            "enableVideo": false,
+            "enableAutoplay": false
+        },
+        "2g-slow": {
+            "loadAllAds": false,
+            "onlyDirectLinks": true,
+            "enableVideo": false
+        }
+    },
+    "browserRules": {
+        "chrome": {
+            "enableAllFormats": true,
+            "notes": "Full support"
+        },
+        "safari": {
+            "enableAllFormats": true,
+            "popunderDelay": 2000,
+            "notes": "Delay popunders to avoid Safari blocks"
+        },
+        "firefox": {
+            "enableAllFormats": true,
+            "notes": "Full support"
+        },
+        "edge": {
+            "enableAllFormats": true,
+            "notes": "Full support"
+        },
+        "opera": {
+            "enableAllFormats": true,
+            "disablePopunder": true,
+            "notes": "Opera has aggressive ad blocking"
+        }
+    },
+    "notes": [
+        "Device and connection detection is automatic",
+        "Ad formats adapt based on screen size and network speed",
+        "Sticky ads positioned based on device orientation",
+        "Browser-specific optimizations prevent blocking"
+    ]
+}
