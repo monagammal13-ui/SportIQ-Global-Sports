@@ -1,0 +1,12 @@
+            {
+                "id": "layer-180",
+                "name": "Enterprise Global Advertising Engine",
+                "file": "js/layer180-ad-engine.js",
+                "type": "layer",
+                "status": "active",
+                "loadedIn": "html/index.html",
+                "description": "Enterprise-grade Adsterra yield optimizer, format orchestrator, and rotation controller.",
+                "globalAccess": "window.Layer180_AdEngine",
+                "config": "api-json/layer180-ad-inventory.json",
+                "dependencies": ["layer-004", "layer-009"]
+            },

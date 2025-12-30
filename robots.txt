@@ -1,0 +1,47 @@
+# SPORTIQ Robots.txt Configuration
+# Updated: 2025-12-27
+
+# Allow all major search engines
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /*.json$
+
+# Specific rules for Googlebot
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Crawl-delay: 0
+
+# Specific rules for Bingbot
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+Crawl-delay: 0
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+# Allow media crawlers
+User-agent: Googlebot-Image
+Allow: /assets/images/
+Allow: /assets/videos/thumbs/
+
+User-agent: Googlebot-Video
+Allow: /assets/videos/
+Allow: /videos/
+
+# Sitemap location
+Sitemap: https://sportiq.com/sitemap.xml
+
+# Additional sitemaps (if you have multiple)
+# Sitemap: https://sportiq.com/sitemap-articles.xml
+# Sitemap: https://sportiq.com/sitemap-videos.xml
+# Sitemap: https://sportiq.com/sitemap-teams.xml

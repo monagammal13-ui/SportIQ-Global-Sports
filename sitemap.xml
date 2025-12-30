@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://sportiq.com/</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Category Pages -->
+  <url>
+    <loc>https://sportiq.com/football</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://sportiq.com/basketball</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://sportiq.com/tennis</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://sportiq.com/cricket</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Video Hub -->
+  <url>
+    <loc>https://sportiq.com/videos</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Live Scores -->
+  <url>
+    <loc>https://sportiq.com/live-scores</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Sample Article (News) -->
+  <url>
+    <loc>https://sportiq.com/article/manchester-united-liverpool-highlights</loc>
+    <lastmod>2025-12-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <news:news>
+      <news:publication>
+        <news:name>SPORTIQ</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2025-12-26T17:30:00Z</news:publication_date>
+      <news:title>Manchester United vs Liverpool 3-2 - All Goals &amp; Highlights</news:title>
+      <news:keywords>football, premier league, highlights, manchester united, liverpool</news:keywords>
+    </news:news>
+    <image:image>
+      <image:loc>https://sportiq.com/images/man-utd-liverpool.jpg</image:loc>
+      <image:caption>Manchester United vs Liverpool match highlights</image:caption>
+      <image:title>Man Utd 3-2 Liverpool</image:title>
+    </image:image>
+  </url>
+
+  <!-- Sample Video -->
+  <url>
+    <loc>https://sportiq.com/video/man-utd-liverpool-highlights</loc>
+    <lastmod>2025-12-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <video:video>
+      <video:thumbnail_loc>https://sportiq.com/videos/thumbs/vid_001.jpg</video:thumbnail_loc>
+      <video:title>Manchester United vs Liverpool 3-2 - All Goals &amp; Highlights</video:title>
+      <video:description>Watch all the goals and key moments from this thrilling Premier League clash</video:description>
+      <video:content_loc>https://cdn.sportiq.com/videos/vid_001_1080p.mp4</video:content_loc>
+      <video:player_loc>https://sportiq.com/player/vid_001</video:player_loc>
+      <video:duration>480</video:duration>
+      <video:publication_date>2025-12-26T17:30:00Z</video:publication_date>
+      <video:view_count>125000</video:view_count>
+      <video:rating>4.8</video:rating>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:uploader info="https://sportiq.com/about">SPORTIQ</video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+
+  <!-- Static Pages -->
+  <url>
+    <loc>https://sportiq.com/about</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://sportiq.com/contact</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://sportiq.com/privacy</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://sportiq.com/terms</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- League Pages -->
+  <url>
+    <loc>https://sportiq.com/league/premier-league</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://sportiq.com/league/nba</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://sportiq.com/league/champions-league</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Team Pages -->
+  <url>
+    <loc>https://sportiq.com/team/manchester-united</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sportiq.com/team/lakers</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Additional content pages would be dynamically added here -->
+  <!-- This is a sample sitemap - production version would be auto-generated -->
+
+</urlset>

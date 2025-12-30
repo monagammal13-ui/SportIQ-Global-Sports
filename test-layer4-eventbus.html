@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layer 4: Event Bus Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #10b981;
+            color: white;
+            border-radius: 6px;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin: 0.25rem;
+        }
+
+        button:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .log {
+            background: #1e293b;
+            color: #10b981;
+            font-family: 'Courier New', monospace;
+            padding: 1rem;
+            border-radius: 6px;
+            max-height: 400px;
+            overflow-y: auto;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .log-entry {
+            margin-bottom: 0.5rem;
+            padding: 0.25rem 0;
+            border-bottom: 1px solid #334155;
+        }
+
+        .log-entry:last-child {
+            border-bottom: none;
+        }
+
+        .timestamp {
+            color: #64748b;
+            margin-right: 0.5rem;
+        }
+
+        .event-name {
+            color: #f59e0b;
+            font-weight: bold;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .metric {
+            background: #f3f4f6;
+            padding: 1rem;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .metric-label {
+            color: #64748b;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+
+        .clear-btn {
+            background: #ef4444;
+        }
+
+        .clear-btn:hover {
+            background: #dc2626;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Layer 4: Runtime Event Bus Test</h1>
+            <p>Testing the global event communication system</p>
+            <div class="status" id="status">⏳ Loading...</div>
+        </div>
+
+        <div class="grid">
+            <!-- Event Publishing -->
+            <div class="card">
+                <h2>📢 Publish Events</h2>
+                <button onclick="publishSimple()">Simple Event</button>
+                <button onclick="publishWithData()">Event with Data</button>
+                <button onclick="publishAsync()">Async Event</button>
+                <button onclick="publishWildcard()">Layered Events</button>
+            </div>
+
+            <!-- Subscription Management -->
+            <div class="card">
+                <h2>🔔 Subscriptions</h2>
+                <button onclick="subscribeToEvent()">Subscribe</button>
+                <button onclick="subscribeOnce()">Subscribe Once</button>
+                <button onclick="subscribeWildcard()">Wildcard Subscribe</button>
+                <button onclick="unsubscribeAll()">Unsubscribe All</button>
+            </div>
+
+            <!-- Debugging -->
+            <div class="card">
+                <h2>🐛 Debug Tools</h2>
+                <button onclick="toggleDebug()">Toggle Debug Mode</button>
+                <button onclick="showMetrics()">Show Metrics</button>
+                <button onclick="showHistory()">Show History</button>
+                <button onclick="showSubscribers()">Show Subscribers</button>
+            </div>
+        </div>
+
+        <!-- Metrics Display -->
+        <div class="card">
+            <h2>📊 Performance Metrics</h2>
+            <div class="metrics" id="metrics">
+                <div class="metric">
+                    <div class="metric-value" id="eventsPublished">0</div>
+                    <div class="metric-label">Events Published</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value" id="eventsHandled">0</div>
+                    <div class="metric-label">Events Handled</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value" id="totalSubscribers">0</div>
+                    <div class="metric-label">Total Subscribers</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value" id="avgProcessingTime">0</div>
+                    <div class="metric-label">Avg Time (ms)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Event Log -->
+        <div class="card">
+            <h2>📝 Event Log</h2>
+            <button class="clear-btn" onclick="clearLog()">Clear Log</button>
+            <div class="log" id="eventLog"></div>
+        </div>
+    </div>
+
+    <!-- Load Core Layers -->
+    <script type="module" src="../js/layer1-core-runtime.js"></script>
+    <script type="module" src="../js/layer4-event-bus.js"></script>
+
+    <script type="module">
+        // Wait for event bus to load
+        setTimeout(() => {
+            const eventBus = window.__ANTIGRAVITY_EVENT_BUS__;
+
+            if (!eventBus) {
+                document.getElementById('status').textContent = '❌ Event Bus Not Loaded';
+                document.getElementById('status').style.background = '#ef4444';
+                return;
+            }
+
+            document.getElementById('status').textContent = '✅ Event Bus Ready';
+            logToConsole('Event Bus initialized successfully', 'system');
+
+            // Set up a listener to log all events
+            eventBus.on('*', (data, eventName) => {
+                logToConsole(`Event: ${eventName}`, 'event', data);
+            });
+
+            // Update metrics periodically
+            setInterval(updateMetrics, 1000);
+            updateMetrics();
+
+            // Make functions globally available
+            window.publishSimple = () => {
+                eventBus.emit('test:simple', null);
+            };
+
+            window.publishWithData = () => {
+                eventBus.emit('test:data', {
+                    message: 'Hello from Event Bus!',
+                    timestamp: new Date().toISOString()
+                });
+            };
+
+            window.publishAsync = async () => {
+                await eventBus.emitAsync('test:async', { async: true });
+                logToConsole('Async event completed', 'system');
+            };
+
+            window.publishWildcard = () => {
+                eventBus.emit('layer:loading', { id: 'layer-005' });
+                eventBus.emit('layer:loaded', { id: 'layer-005' });
+                eventBus.emit('layer:ready', { id: 'layer-005' });
+            };
+
+            window.subscribeToEvent = () => {
+                const id = eventBus.on('custom:event', (data) => {
+                    logToConsole('Custom event received!', 'handler', data);
+                });
+                logToConsole(`Subscribed with ID: ${id}`, 'system');
+            };
+
+            window.subscribeOnce = () => {
+                eventBus.once('once:event', (data) => {
+                    logToConsole('Once event fired (will auto-unsubscribe)', 'handler', data);
+                });
+                logToConsole('Subscribed to once event', 'system');
+                // Trigger it
+                setTimeout(() => eventBus.emit('once:event', { test: true }), 500);
+            };
+
+            window.subscribeWildcard = () => {
+                const id = eventBus.on('user:*', (data, eventName) => {
+                    logToConsole(`Wildcard caught: ${eventName}`, 'handler', data);
+                });
+                logToConsole('Subscribed to user:* wildcard', 'system');
+                // Test it
+                setTimeout(() => {
+                    eventBus.emit('user:login', { userId: 123 });
+                    eventBus.emit('user:logout', { userId: 123 });
+                }, 500);
+            };
+
+            window.unsubscribeAll = () => {
+                const events = eventBus.getEventNames();
+                events.forEach(event => {
+                    if (event !== '*') {
+                        eventBus.clear(event);
+                    }
+                });
+                logToConsole('Cleared all subscriptions', 'system');
+            };
+
+            window.toggleDebug = () => {
+                const current = eventBus.debug;
+                eventBus.setDebug(!current);
+                logToConsole(`Debug mode ${!current ? 'enabled' : 'disabled'}`, 'system');
+            };
+
+            window.showMetrics = () => {
+                const metrics = eventBus.getMetrics();
+                logToConsole('Metrics:', 'system', metrics);
+            };
+
+            window.showHistory = () => {
+                const history = eventBus.getHistory(10);
+                logToConsole('Recent history (last 10 events):', 'system', history);
+            };
+
+            window.showSubscribers = () => {
+                const events = eventBus.getEventNames();
+                logToConsole(`Registered events: ${events.join(', ')}`, 'system');
+                events.forEach(event => {
+                    const subs = eventBus.getSubscribers(event);
+                    logToConsole(`${event}: ${subs.length} subscribers`, 'system');
+                });
+            };
+
+            window.updateMetrics = () => {
+                const metrics = eventBus.getMetrics();
+                document.getElementById('eventsPublished').textContent = metrics.eventsPublished;
+                document.getElementById('eventsHandled').textContent = metrics.eventsHandled;
+                document.getElementById('totalSubscribers').textContent = metrics.totalSubscribers;
+                document.getElementById('avgProcessingTime').textContent =
+                    metrics.avgProcessingTime.toFixed(2);
+            };
+
+            window.clearLog = () => {
+                document.getElementById('eventLog').innerHTML = '';
+            };
+
+        }, 500);
+
+        function logToConsole(message, type = 'info', data = null) {
+            const logDiv = document.getElementById('eventLog');
+            const timestamp = new Date().toLocaleTimeString();
+            const entry = document.createElement('div');
+            entry.className = 'log-entry';
+
+            let content = `<span class="timestamp">[${timestamp}]</span>`;
+            content += `<span class="event-name">[${type.toUpperCase()}]</span> `;
+            content += message;
+
+            if (data) {
+                content += ` → ${JSON.stringify(data)}`;
+            }
+
+            entry.innerHTML = content;
+            logDiv.appendChild(entry);
+            logDiv.scrollTop = logDiv.scrollHeight;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform Activation Test - SPORTIQ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .status-panel {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .status-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border-left: 4px solid #4ade80;
+        }
+
+        .status-item.warning {
+            border-left-color: #fbbf24;
+        }
+
+        .status-item.error {
+            border-left-color: #ef4444;
+        }
+
+        .console-output {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            max-height: 400px;
+            overflow-y: auto;
+            margin-top: 1rem;
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .console-line {
+            margin: 0.25rem 0;
+            padding: 0.25rem;
+        }
+
+        .console-line.success {
+            color: #4ade80;
+        }
+
+        .console-line.error {
+            color: #ef4444;
+        }
+
+        .console-line.warning {
+            color: #fbbf24;
+        }
+
+        .console-line.info {
+            color: #60a5fa;
+        }
+
+        .button {
+            background: white;
+            color: #667eea;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+            margin: 0.5rem;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .slider-preview {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-top: 2rem;
+            min-height: 200px;
+        }
+
+        #cinematic-slider {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            padding: 1rem;
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loading-indicator {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .metric {
+            font-weight: bold;
+            color: #4ade80;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🚀 Platform Activation Test</h1>
+
+        <div class="status-panel">
+            <h2>📊 Real-Time Status</h2>
+            <div id="status-container">
+                <div class="status-item">
+                    <span>Platform Status:</span>
+                    <span class="metric" id="platform-status">Initializing...</span>
+                </div>
+                <div class="status-item">
+                    <span>Scripts Loaded:</span>
+                    <span class="metric" id="scripts-loaded">0 / 0</span>
+                </div>
+                <div class="status-item">
+                    <span>Success Rate:</span>
+                    <span class="metric" id="success-rate">0%</span>
+                </div>
+                <div class="status-item">
+                    <span>Load Time:</span>
+                    <span class="metric" id="load-time">0s</span>
+                </div>
+                <div class="status-item">
+                    <span>Errors:</span>
+                    <span class="metric" id="error-count">0</span>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 1rem;">
+                <button class="button" onclick="refreshStatus()">🔄 Refresh Status</button>
+                <button class="button" onclick="clearConsole()">🗑️ Clear Console</button>
+                <button class="button" onclick="reloadPlatform()">♻️ Reload Platform</button>
+            </div>
+        </div>
+
+        <div class="status-panel">
+            <h2>🎬 Cinematic Slider Preview</h2>
+            <div class="slider-preview">
+                <div id="cinematic-slider">
+                    <div class="loading-indicator">
+                        <div class="spinner"></div>
+                        <div>Waiting for platform activation...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="status-panel">
+            <h2>💻 Console Output</h2>
+            <div class="console-output" id="console-output">
+                <div class="console-line info">Waiting for platform activation script to load...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Intercept console logs
+        const consoleOutput = document.getElementById('console-output');
+        const originalLog = console.log;
+        const originalError = console.error;
+        const originalWarn = console.warn;
+
+        function addConsoleMessage(message, type = 'info') {
+            const line = document.createElement('div');
+            line.className = `console-line ${type}`;
+            line.textContent = new Date().toLocaleTimeString() + ' - ' + message;
+            consoleOutput.appendChild(line);
+            consoleOutput.scrollTop = consoleOutput.scrollHeight;
+        }
+
+        console.log = function (...args) {
+            originalLog.apply(console, args);
+            const message = args.join(' ');
+            let type = 'info';
+            if (message.includes('✅') || message.includes('success')) type = 'success';
+            if (message.includes('❌') || message.includes('error')) type = 'error';
+            if (message.includes('⚠️') || message.includes('warn')) type = 'warning';
+            addConsoleMessage(message, type);
+        };
+
+        console.error = function (...args) {
+            originalError.apply(console, args);
+            addConsoleMessage(args.join(' '), 'error');
+        };
+
+        console.warn = function (...args) {
+            originalWarn.apply(console, args);
+            addConsoleMessage(args.join(' '), 'warning');
+        };
+
+        // Update status display
+        function updateStatus() {
+            const status = window.PLATFORM_STATUS;
+            if (status) {
+                document.getElementById('platform-status').textContent = 'Active ✅';
+                document.getElementById('scripts-loaded').textContent = `${status.loaded} / ${status.total}`;
+                document.getElementById('success-rate').textContent = `${status.successRate.toFixed(2)}%`;
+                document.getElementById('load-time').textContent = `${status.totalTime}s`;
+                document.getElementById('error-count').textContent = status.failed;
+
+                // Update status item colors
+                const statusItems = document.querySelectorAll('.status-item');
+                if (status.failed > 0) {
+                    statusItems[4].classList.add('warning');
+                }
+                if (status.successRate === 100) {
+                    statusItems[0].classList.add('success');
+                }
+            }
+        }
+
+        function refreshStatus() {
+            updateStatus();
+            addConsoleMessage('Status refreshed', 'info');
+        }
+
+        function clearConsole() {
+            consoleOutput.innerHTML = '<div class="console-line info">Console cleared</div>';
+        }
+
+        function reloadPlatform() {
+            if (window.PlatformActivation && window.PlatformActivation.reload) {
+                window.PlatformActivation.reload();
+                addConsoleMessage('Platform reload initiated', 'info');
+            } else {
+                addConsoleMessage('Platform activation not loaded yet', 'warning');
+            }
+        }
+
+        // Listen for platform activated event
+        document.addEventListener('platformActivated', (event) => {
+            console.log('🎉 Platform Activated Event Received!', event.detail);
+            updateStatus();
+        });
+
+        // Auto-update status every 2 seconds
+        setInterval(() => {
+            if (window.PLATFORM_STATUS) {
+                updateStatus();
+            }
+        }, 2000);
+
+        console.log('🎯 Test page initialized - waiting for platform activation...');
+    </script>
+
+    <!-- Load the platform activation script -->
+    <script src="js/platform-activation.js"></script>
+</body>
+
+</html>
