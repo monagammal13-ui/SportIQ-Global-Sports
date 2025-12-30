@@ -1,3 +1,8 @@
+![Status](https://img.shields.io/badge/status-production--ready-brightgreen)
+![Platform](https://img.shields.io/badge/platform-SportIQ-blue)
+![Architecture](https://img.shields.io/badge/architecture-layered--runtime-purple)
+![License](https://img.shields.io/badge/license-MIT-green)
+
 # 🚀 SPORTIQ – Design System (Pre-Runtime Layer)
 
 
@@ -404,6 +409,7 @@ This system was built using modern web development best practices:
 **صُمّم بـ ❤️ بواسطة AntiGravity**
 
 **Designed with ❤️ by AntiGravity**
+
 
 
 
