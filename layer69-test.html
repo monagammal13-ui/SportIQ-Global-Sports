@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layer 69 SEO Optimization - Verification Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            color: #1a202c;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .header .status {
+            display: inline-block;
+            padding: 8px 20px;
+            background: #10b981;
+            color: white;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .section {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            color: #1a202c;
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .test-item {
+            padding: 15px;
+            margin-bottom: 10px;
+            background: #f9fafb;
+            border-radius: 8px;
+            border-left: 4px solid #6b7280;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .test-item.success {
+            background: #d1fae5;
+            border-color: #10b981;
+        }
+
+        .test-item.fail {
+            background: #fee2e2;
+            border-color: #ef4444;
+        }
+
+        .test-item .icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .test-item .label {
+            flex: 1;
+            font-weight: 500;
+            color: #1f2937;
+        }
+
+        .test-item .value {
+            font-family: 'Courier New', monospace;
+            background: rgba(0, 0, 0, 0.05);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+
+        .code-block {
+            background: #1f2937;
+            color: #f9fafb;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+            margin: 15px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            background: #0d47a1;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3);
+        }
+
+        .btn.success {
+            background: #10b981;
+        }
+
+        .btn.success:hover {
+            background: #059669;
+        }
+
+        .meta-preview {
+            background: #f3f4f6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .meta-preview h3 {
+            color: #1f2937;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .meta-preview .meta-item {
+            margin-bottom: 10px;
+            padding: 8px;
+            background: white;
+            border-radius: 4px;
+        }
+
+        .meta-preview .meta-label {
+            font-weight: 600;
+            color: #6b7280;
+            display: inline-block;
+            min-width: 150px;
+        }
+
+        .meta-preview .meta-value {
+            color: #1f2937;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔍 Layer 69: SEO Optimization Core</h1>
+            <div class="status" id="layerStatus">TESTING...</div>
+        </div>
+
+        <div class="section">
+            <h2>📊 Layer Status</h2>
+            <div id="statusTests"></div>
+        </div>
+
+        <div class="section">
+            <h2>🏷️ Meta Tags Verification</h2>
+            <div id="metaPreview"></div>
+        </div>
+
+        <div class="section">
+            <h2>📋 Schema Markup</h2>
+            <div id="schemaTests"></div>
+        </div>
+
+        <div class="section">
+            <h2>🗺️ Sitemap Generation</h2>
+            <div id="sitemapTests"></div>
+            <button class="btn success" onclick="exportSitemap()">📥 Export Sitemap</button>
+        </div>
+
+        <div class="section">
+            <h2>🔧 Actions</h2>
+            <button class="btn" onclick="runAllTests()">🔄 Run All Tests</button>
+            <button class="btn" onclick="viewLayerStatus()">📈 View Layer Status</button>
+            <button class="btn success" onclick="window.open('index.html', '_blank')">🌐 Open Main Site</button>
+        </div>
+    </div>
+
+    <script>
+        // Test runner
+        function runAllTests() {
+            console.log('🧪 Running Layer 69 SEO Optimization verification tests...');
+
+            // Test 1: Check if layer exists
+            testLayerExists();
+
+            // Test 2: Verify meta tags
+            testMetaTags();
+
+            // Test 3: Verify schema markup
+            testSchemaMarkup();
+
+            // Test 4: Verify sitemap
+            testSitemap();
+
+            // Update overall status
+            updateOverallStatus();
+        }
+
+        function testLayerExists() {
+            const container = document.getElementById('statusTests');
+            let html = '';
+
+            // Check if layer is loaded
+            const layerExists = typeof window.Layer69_SEOOptimization !== 'undefined';
+            html += createTestItem(
+                layerExists,
+                'Layer 69 Runtime Loaded',
+                layerExists ? 'window.Layer69_SEOOptimization exists' : 'NOT FOUND'
+            );
+
+            // Check if layer is active
+            if (layerExists) {
+                const status = window.Layer69_SEOOptimization.getStatus();
+                html += createTestItem(
+                    status.active,
+                    'Layer Active Status',
+                    status.active ? 'ACTIVE' : 'INACTIVE'
+                );
+
+                html += createTestItem(
+                    true,
+                    'Layer Name',
+                    status.name
+                );
+
+                html += createTestItem(
+                    true,
+                    'Current Page Type',
+                    status.currentPage?.type || 'unknown'
+                );
+
+                html += createTestItem(
+                    Object.keys(status.metaTags || {}).length > 0,
+                    'Meta Tags Count',
+                    Object.keys(status.metaTags || {}).length
+                );
+            }
+
+            container.innerHTML = html;
+        }
+
+        function testMetaTags() {
+            const container = document.getElementById('metaPreview');
+            let html = '<h3>📝 Current Meta Tags</h3>';
+
+            // Get all meta tags
+            const metaTags = {
+                'Title': document.title,
+                'Description': document.querySelector('meta[name="description"]')?.content || 'N/A',
+                'Keywords': document.querySelector('meta[name="keywords"]')?.content || 'N/A',
+                'Robots': document.querySelector('meta[name="robots"]')?.content || 'N/A',
+                'Author': document.querySelector('meta[name="author"]')?.content || 'N/A',
+                'OG:Title': document.querySelector('meta[property="og:title"]')?.content || 'N/A',
+                'OG:Description': document.querySelector('meta[property="og:description"]')?.content || 'N/A',
+                'OG:Type': document.querySelector('meta[property="og:type"]')?.content || 'N/A',
+                'Twitter:Card': document.querySelector('meta[name="twitter:card"]')?.content || 'N/A',
+                'Canonical': document.querySelector('link[rel="canonical"]')?.href || 'N/A'
+            };
+
+            Object.entries(metaTags).forEach(([label, value]) => {
+                html += `
+                    <div class="meta-item">
+                        <span class="meta-label">${label}:</span>
+                        <span class="meta-value">${value}</span>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        function testSchemaMarkup() {
+            const container = document.getElementById('schemaTests');
+            let html = '';
+
+            // Check for JSON-LD scripts
+            const schemas = document.querySelectorAll('script[type="application/ld+json"]');
+            html += createTestItem(
+                schemas.length > 0,
+                'Schema.org Markup Found',
+                `${schemas.length} schemas`
+            );
+
+            if (schemas.length > 0) {
+                schemas.forEach((schema, index) => {
+                    try {
+                        const data = JSON.parse(schema.textContent);
+                        html += createTestItem(
+                            true,
+                            `Schema ${index + 1}: ${data['@type']}`,
+                            schema.id || 'embedded'
+                        );
+                    } catch (e) {
+                        html += createTestItem(
+                            false,
+                            `Schema ${index + 1}`,
+                            'Parse error'
+                        );
+                    }
+                });
+            }
+
+            container.innerHTML = html || '<p>No schema markup found</p>';
+        }
+
+        function testSitemap() {
+            const container = document.getElementById('sitemapTests');
+            let html = '';
+
+            if (typeof window.SPORTIQ_SITEMAP !== 'undefined') {
+                html += createTestItem(
+                    true,
+                    'Sitemap Generated',
+                    `${window.SPORTIQ_SITEMAP.length} URLs`
+                );
+
+                html += '<div class="code-block">';
+                html += 'window.SPORTIQ_SITEMAP = [\n';
+                window.SPORTIQ_SITEMAP.slice(0, 3).forEach(page => {
+                    html += `  { loc: "${page.loc}", priority: ${page.priority} },\n`;
+                });
+                if (window.SPORTIQ_SITEMAP.length > 3) {
+                    html += `  ... ${window.SPORTIQ_SITEMAP.length - 3} more URLs\n`;
+                }
+                html += ']';
+                html += '</div>';
+            } else {
+                html += createTestItem(
+                    false,
+                    'Sitemap',
+                    'Not generated yet'
+                );
+            }
+
+            container.innerHTML = html;
+        }
+
+        function createTestItem(success, label, value) {
+            const icon = success ? '✅' : '❌';
+            const className = success ? 'success' : 'fail';
+            return `
+                <div class="test-item ${className}">
+                    <span class="icon">${icon}</span>
+                    <span class="label">${label}</span>
+                    <span class="value">${value}</span>
+                </div>
+            `;
+        }
+
+        function updateOverallStatus() {
+            const layerExists = typeof window.Layer69_SEOOptimization !== 'undefined';
+            const statusEl = document.getElementById('layerStatus');
+
+            if (layerExists && window.Layer69_SEOOptimization.getStatus().active) {
+                statusEl.textContent = '✅ LAYER 69 ACTIVE';
+                statusEl.style.background = '#10b981';
+            } else {
+                statusEl.textContent = '❌ LAYER NOT ACTIVE';
+                statusEl.style.background = '#ef4444';
+            }
+        }
+
+        function viewLayerStatus() {
+            if (typeof window.Layer69_SEOOptimization !== 'undefined') {
+                const status = window.Layer69_SEOOptimization.getStatus();
+                console.log('📊 Layer 69 Status:', status);
+                alert(JSON.stringify(status, null, 2));
+            } else {
+                alert('❌ Layer 69 not loaded');
+            }
+        }
+
+        function exportSitemap() {
+            if (typeof window.Layer69_SEOOptimization !== 'undefined') {
+                window.Layer69_SEOOptimization.exportSitemap();
+                alert('✅ Sitemap exported successfully!');
+            } else {
+                alert('❌ Layer 69 not loaded');
+            }
+        }
+
+        // Auto-run tests on load
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(runAllTests, 1000);
+        });
+
+        // Re-run tests every 5 seconds
+        setInterval(runAllTests, 5000);
+    </script>
+</body>
+
+</html>

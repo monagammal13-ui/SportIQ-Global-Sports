@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="CDN Dashboard - Monitor global content delivery network for SPORTIQ">
+    <meta name="keywords" content="SPORTIQ, CDN, Content Delivery Network, Monitoring">
+
+    <title>CDN Dashboard - SPORTIQ</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/layer73-cdn.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/icons/favicon.ico">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="nav-brand">SPORTIQ</a>
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <a href="index.html" class="btn btn-outline btn-sm">← Back to Home</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container cdn-dashboard">
+        <!-- Page Header -->
+        <div class="cdn-header">
+            <h1 class="cdn-title">🌍 CDN Dashboard</h1>
+            <p class="cdn-subtitle">Global Content Delivery Network Monitoring</p>
+        </div>
+
+        <!-- Global Stats -->
+        <div class="cdn-stats-grid">
+            <div class="cdn-stat-card">
+                <div class="cdn-stat-icon">🌐</div>
+                <div class="cdn-stat-value" id="statTotalNodes">0</div>
+                <div class="cdn-stat-label">Total Nodes</div>
+            </div>
+            <div class="cdn-stat-card">
+                <div class="cdn-stat-icon">✅</div>
+                <div class="cdn-stat-value" id="statHealthyNodes">0</div>
+                <div class="cdn-stat-label">Healthy Nodes</div>
+            </div>
+            <div class="cdn-stat-card">
+                <div class="cdn-stat-icon">📊</div>
+                <div class="cdn-stat-value" id="statCacheHitRate">0%</div>
+                <div class="cdn-stat-label">Cache Hit Rate</div>
+            </div>
+            <div class="cdn-stat-card">
+                <div class="cdn-stat-icon">🚀</div>
+                <div class="cdn-stat-value" id="statTotalRequests">0</div>
+                <div class="cdn-stat-label">Total Requests</div>
+            </div>
+        </div>
+
+        <!-- Alert Banner -->
+        <div id="alertContainer"></div>
+
+        <!-- Control Panel -->
+        <div class="cdn-control-panel">
+            <div class="cdn-control-header">
+                <h2 class="cdn-control-title">🎛️ Control Panel</h2>
+                <div class="cdn-control-actions">
+                    <button class="btn btn-primary btn-sm" onclick="purgeCache()">🗑️ Purge Cache</button>
+                    <button class="btn btn-secondary btn-sm" onclick="replicateContent()">🔄 Replicate Content</button>
+                    <button class="btn btn-outline btn-sm" onclick="refreshDashboard()">↻ Refresh</button>
+                </div>
+            </div>
+
+            <div class="cdn-control-grid">
+                <div class="cdn-control-section">
+                    <h3 class="cdn-control-section-title">Cache Operations</h3>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <label style="font-size: 0.875rem; font-weight: 500;">Path to Purge:</label>
+                        <input type="text" id="purgePath" placeholder="/api/*" class="form-input"
+                            style="margin-bottom: 0.5rem;">
+                        <button class="btn btn-danger btn-sm" onclick="executePurge()">Purge Now</button>
+                    </div>
+                </div>
+
+                <div class="cdn-control-section">
+                    <h3 class="cdn-control-section-title">Replication</h3>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <label style="font-size: 0.875rem; font-weight: 500;">Target Region:</label>
+                        <select id="replicationRegion" class="form-input" style="margin-bottom: 0.5rem;">
+                            <option value="all">All Regions</option>
+                            <option value="us-east">US East</option>
+                            <option value="us-west">US West</option>
+                            <option value="eu-west">EU West</option>
+                            <option value="asia-east">Asia East</option>
+                        </select>
+                        <button class="btn btn-success btn-sm" onclick="executeReplication()">Replicate Now</button>
+                    </div>
+                </div>
+
+                <div class="cdn-control-section">
+                    <h3 class="cdn-control-section-title">Health Checks</h3>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <div style="margin-bottom: 0.5rem;">
+                            <strong>Status:</strong>
+                            <span class="cdn-health-indicator healthy">
+                                <span class="cdn-health-dot"></span>
+                                Running
+                            </span>
+                        </div>
+                        <button class="btn btn-outline btn-sm" onclick="checkAllNodes()">Check All Nodes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nodes Map -->
+        <div class="cdn-nodes-map">
+            <div class="cdn-map-header">
+                <h2 class="cdn-map-title">🗺️ Global Node Distribution</h2>
+                <div class="cdn-map-legend">
+                    <div class="cdn-legend-item">
+                        <span class="cdn-legend-dot healthy"></span>
+                        <span>Healthy</span>
+                    </div>
+                    <div class="cdn-legend-item">
+                        <span class="cdn-legend-dot degraded"></span>
+                        <span>Degraded</span>
+                    </div>
+                    <div class="cdn-legend-item">
+                        <span class="cdn-legend-dot offline"></span>
+                        <span>Offline</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nodes Grid -->
+            <div class="cdn-nodes-grid" id="nodesContainer">
+                <div class="cdn-loading">
+                    <div class="cdn-spinner"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Performance Chart -->
+        <div class="cdn-chart">
+            <div class="cdn-chart-header">
+                <h2 class="cdn-chart-title">📈 Performance Metrics</h2>
+                <p class="cdn-chart-subtitle">Last 60 seconds</p>
+            </div>
+            <div class="cdn-chart-canvas">
+                Chart visualization would be displayed here (integrate Chart.js or similar)
+            </div>
+        </div>
+
+        <!-- Activity Timeline -->
+        <div class="cdn-timeline">
+            <div class="cdn-timeline-header">
+                <h2 class="cdn-timeline-title">📋 Activity Log</h2>
+            </div>
+            <div class="cdn-timeline-list" id="timelineContainer">
+                <div class="cdn-timeline-item">
+                    <div class="cdn-timeline-time">Just now</div>
+                    <div class="cdn-timeline-content">
+                        <strong>CDN Engine Initialized</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/layer73-cdn-integration.js"></script>
+
+    <script>
+        // Wait for CDN engine to initialize
+        setTimeout(() => {
+            if (window.CDNIntegration) {
+                initializeDashboard();
+            } else {
+                console.error('CDN Integration Engine not loaded');
+            }
+        }, 1000);
+
+        function initializeDashboard() {
+            console.log('🌍 Initializing CDN Dashboard');
+
+            // Update stats
+            updateStats();
+
+            // Render nodes
+            renderNodes();
+
+            // Setup event listeners
+            setupEventListeners();
+
+            // Auto-refresh every 10 seconds
+            setInterval(updateStats, 10000);
+            setInterval(renderNodes, 30000);
+        }
+
+        function updateStats() {
+            const state = window.CDNIntegration.state();
+            const cacheStats = window.CDNIntegration.getCacheStats();
+
+            document.getElementById('statTotalNodes').textContent = state.nodes;
+            document.getElementById('statHealthyNodes').textContent = state.healthyNodes;
+            document.getElementById('statCacheHitRate').textContent = cacheStats.hitRate;
+            document.getElementById('statTotalRequests').textContent = state.metrics.totalRequests;
+        }
+
+        function renderNodes() {
+            const nodes = window.CDNIntegration.getNodes();
+            const container = document.getElementById('nodesContainer');
+
+            if (nodes.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: var(--color-gray-500);">No nodes configured</p>';
+                return;
+            }
+
+            container.innerHTML = nodes.map(node => {
+                const statusClass = node.health.isHealthy ? 'healthy' : 'offline';
+                const statusText = node.health.isHealthy ? 'Online' : 'Offline';
+
+                return `
+                    <div class="cdn-node-card ${statusClass}">
+                        <div class="cdn-node-header">
+                            <div>
+                                <h3 class="cdn-node-name">${node.name}</h3>
+                                <div class="cdn-node-region">${node.region.toUpperCase()} • ${node.type}</div>
+                            </div>
+                            <span class="cdn-node-status ${statusClass}">${statusText}</span>
+                        </div>
+                        <div class="cdn-node-metrics">
+                            <div class="cdn-node-metric">
+                                <div class="cdn-node-metric-value">${node.metrics.requests}</div>
+                                <div class="cdn-node-metric-label">Requests</div>
+                            </div>
+                            <div class="cdn-node-metric">
+                                <div class="cdn-node-metric-value">${node.health.responseTime || '-'}</div>
+                                <div class="cdn-node-metric-label">Response (ms)</div>
+                            </div>
+                            <div class="cdn-node-metric">
+                                <div class="cdn-node-metric-value">${node.health.uptime.toFixed(0)}%</div>
+                                <div class="cdn-node-metric-label">Uptime</div>
+                            </div>
+                            <div class="cdn-node-metric">
+                                <div class="cdn-node-metric-value">${node.priority}</div>
+                                <div class="cdn-node-metric-label">Priority</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function setupEventListeners() {
+            document.addEventListener('cdn:node-health-change', (e) => {
+                addToTimeline(`Node ${e.detail.nodeId} is now ${e.detail.healthy ? 'healthy' : 'unhealthy'}`,
+                    e.detail.healthy ? 'success' : 'warning');
+                renderNodes();
+                updateStats();
+            });
+
+            document.addEventListener('cdn:cache-purged', (e) => {
+                addToTimeline(`Cache purged: ${e.detail.path} (${e.detail.nodes}/${e.detail.total} nodes)`, 'info');
+                showAlert(`Cache purged successfully on ${e.detail.nodes} nodes`, 'success');
+            });
+
+            document.addEventListener('cdn:content-replicated', (e) => {
+                addToTimeline(`Content replicated to ${e.detail.nodes}/${e.detail.total} nodes`, 'success');
+                showAlert(`Content replicated successfully`, 'success');
+            });
+        }
+
+        function addToTimeline(message, type = 'info') {
+            const timeline = document.getElementById('timelineContainer');
+            const now = new Date().toLocaleTimeString();
+
+            const item = document.createElement('div');
+            item.className = 'cdn-timeline-item';
+            item.innerHTML = `
+                <div class="cdn-timeline-time">${now}</div>
+                <div class="cdn-timeline-content">
+                    <strong>${message}</strong>
+                </div>
+            `;
+
+            timeline.insertBefore(item, timeline.firstChild);
+
+            // Keep only last 20 items
+            while (timeline.children.length > 20) {
+                timeline.removeChild(timeline.lastChild);
+            }
+        }
+
+        function showAlert(message, type = 'info') {
+            const container = document.getElementById('alertContainer');
+            const icons = { info: 'ℹ️', success: '✅', warning: '⚠️', error: '❌' };
+
+            const alert = document.createElement('div');
+            alert.className = `cdn-alert ${type}`;
+            alert.innerHTML = `
+                <div class="cdn-alert-icon">${icons[type]}</div>
+                <div class="cdn-alert-content">${message}</div>
+            `;
+
+            container.innerHTML = '';
+            container.appendChild(alert);
+
+            setTimeout(() => alert.remove(), 5000);
+        }
+
+        async function purgeCache() {
+            const path = prompt('Enter path to purge (e.g., /api/* or /*):');
+            if (!path) return;
+
+            const result = await window.CDNIntegration.purgeCache(path);
+            if (result.success) {
+                showAlert(`Cache purged for ${path}`, 'success');
+            } else {
+                showAlert('Cache purge failed', 'error');
+            }
+        }
+
+        async function executePurge() {
+            const path = document.getElementById('purgePath').value || '/*';
+            const result = await window.CDNIntegration.purgeCache(path);
+
+            if (result.success) {
+                showAlert(`Cache purged: ${path} (${result.purged}/${result.total} nodes)`, 'success');
+                document.getElementById('purgePath').value = '';
+            } else {
+                showAlert('Cache purge failed', 'error');
+            }
+        }
+
+        async function replicateContent() {
+            const result = await window.CDNIntegration.replicateContent({ test: 'data' });
+            if (result.success) {
+                showAlert('Content replication initiated', 'success');
+            }
+        }
+
+        async function executeReplication() {
+            const region = document.getElementById('replicationRegion').value;
+            const result = await window.CDNIntegration.replicateContent(
+                { test: 'content' },
+                { regions: region }
+            );
+
+            if (result.success) {
+                showAlert(`Content replicated to ${result.replicated} nodes in ${region}`, 'success');
+            } else {
+                showAlert('Content replication failed', 'error');
+            }
+        }
+
+        function checkAllNodes() {
+            const nodes = window.CDNIntegration.getNodes();
+            nodes.forEach(node => {
+                window.CDNIntegration.checkNodeHealth(node.id);
+            });
+            showAlert('Health check initiated for all nodes', 'info');
+        }
+
+        function refreshDashboard() {
+            updateStats();
+            renderNodes();
+            showAlert('Dashboard refreshed', 'info');
+        }
+    </script>
+</body>
+
+</html>

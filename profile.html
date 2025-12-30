@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Manage your SPORTIQ profile and account settings">
+    <meta name="keywords" content="SPORTIQ, Profile, Account Settings">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Profile - SPORTIQ</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/layer71-auth.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/icons/favicon.ico">
+</head>
+
+<body>
+    <!-- Header (Simple version for profile page) -->
+    <header class="header" style="position: relative;">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="nav-brand">SPORTIQ</a>
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <a href="index.html" class="btn btn-outline btn-sm">← Back to Home</a>
+                    <button id="logoutBtn" class="btn btn-secondary btn-sm">Logout</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="profile-container">
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <div class="profile-avatar" id="profileAvatar">?</div>
+            <h1 class="profile-name" id="profileName">Loading...</h1>
+            <p class="profile-role" id="profileRole">User</p>
+        </div>
+
+        <div class="profile-content">
+            <!-- Sidebar Navigation -->
+            <aside class="profile-sidebar">
+                <ul class="profile-nav">
+                    <li><a href="#profile" class="active" data-section="profile">👤 Profile</a></li>
+                    <li><a href="#security" data-section="security">🔒 Security</a></li>
+                    <li><a href="#preferences" data-section="preferences">⚙️ Preferences</a></li>
+                    <li><a href="#activity" data-section="activity">📊 Activity</a></li>
+                </ul>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="profile-main">
+                <!-- Alert Container -->
+                <div id="alertContainer"></div>
+
+                <!-- Profile Section -->
+                <div id="profile-section" class="profile-section">
+                    <h2 class="profile-section-title">Profile Information</h2>
+
+                    <form id="profileForm">
+                        <div class="form-group">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" id="username" class="form-input" readonly
+                                style="background: #f3f4f6; cursor: not-allowed;" title="Username cannot be changed">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" id="firstName" class="form-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" id="lastName" class="form-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bio" class="form-label">Bio</label>
+                            <textarea id="bio" class="form-input" rows="4"
+                                placeholder="Tell us about yourself..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            <span class="btn-text">Update Profile</span>
+                            <span class="auth-loading" style="display: none;"></span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Security Section -->
+                <div id="security-section" class="profile-section" style="display: none;">
+                    <h2 class="profile-section-title">Security Settings</h2>
+
+                    <h3 style="margin-bottom: 1rem; font-size: 1.2rem;">Change Password</h3>
+                    <form id="passwordForm">
+                        <div class="form-group">
+                            <label for="oldPassword" class="form-label">Current Password</label>
+                            <input type="password" id="oldPassword" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="newPassword" class="form-label">New Password</label>
+                            <input type="password" id="newPassword" class="form-input" required minlength="8">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmNewPassword" class="form-label">Confirm New Password</label>
+                            <input type="password" id="confirmNewPassword" class="form-input" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            <span class="btn-text">Change Password</span>
+                            <span class="auth-loading" style="display: none;"></span>
+                        </button>
+                    </form>
+
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: #f9fafb; border-radius: 12px;">
+                        <h3 style="margin-bottom: 1rem; font-size: 1.1rem;">Security Tips</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.5rem;">✅ Use a strong, unique password</li>
+                            <li style="margin-bottom: 0.5rem;">✅ Enable two-factor authentication (coming soon)</li>
+                            <li style="margin-bottom: 0.5rem;">✅ Review your active sessions regularly</li>
+                            <li style="margin-bottom: 0.5rem;">✅ Never share your password with anyone</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Preferences Section -->
+                <div id="preferences-section" class="profile-section" style="display: none;">
+                    <h2 class="profile-section-title">Preferences</h2>
+
+                    <div class="form-group">
+                        <label class="form-label">Email Notifications</label>
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="emailNewsletter" checked>
+                            <label for="emailNewsletter">Receive newsletter updates</label>
+                        </div>
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="emailMatches" checked>
+                            <label for="emailMatches">Match notifications</label>
+                        </div>
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="emailPromos">
+                            <label for="emailPromos">Promotional emails</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Language</label>
+                        <select class="form-input">
+                            <option value="en" selected>English</option>
+                            <option value="ar">العربية</option>
+                            <option value="es">Español</option>
+                            <option value="fr">Français</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Time Zone</label>
+                        <select class="form-input">
+                            <option value="UTC">UTC (GMT+0)</option>
+                            <option value="America/New_York">Eastern Time (GMT-5)</option>
+                            <option value="Europe/London">London (GMT+0)</option>
+                            <option value="Asia/Dubai">Dubai (GMT+4)</option>
+                        </select>
+                    </div>
+
+                    <button class="btn btn-primary">Save Preferences</button>
+                </div>
+
+                <!-- Activity Section -->
+                <div id="activity-section" class="profile-section" style="display: none;">
+                    <h2 class="profile-section-title">Recent Activity</h2>
+
+                    <div style="background: #f9fafb; border-radius: 12px; padding: 2rem; text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">📊</div>
+                        <h3 style="margin-bottom: 0.5rem;">Activity tracking coming soon!</h3>
+                        <p style="color: #6b7280;">View your login history, content interactions, and more.</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/layer71-auth-engine.js"></script>
+
+    <script>
+        // Check authentication
+        if (!window.AuthEngine || !window.AuthEngine.isAuthenticated()) {
+            window.location.href = 'login.html?returnUrl=' + encodeURIComponent(window.location.href);
+        }
+
+        // Load user data
+        const currentUser = window.AuthEngine.getCurrentUser();
+        if (currentUser) {
+            // Update header
+            document.getElementById('profileAvatar').textContent = currentUser.username.charAt(0).toUpperCase();
+            document.getElementById('profileName').textContent = currentUser.firstName && currentUser.lastName
+                ? `${currentUser.firstName} ${currentUser.lastName}`
+                : currentUser.username;
+            document.getElementById('profileRole').textContent = currentUser.role.toUpperCase();
+
+            // Fill form
+            document.getElementById('username').value = currentUser.username;
+            document.getElementById('email').value = currentUser.email;
+            document.getElementById('firstName').value = currentUser.firstName || '';
+            document.getElementById('lastName').value = currentUser.lastName || '';
+            document.getElementById('bio').value = currentUser.profile?.bio || '';
+        }
+
+        // Section navigation
+        document.querySelectorAll('.profile-nav a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // Update active state
+                document.querySelectorAll('.profile-nav a').forEach(a => a.classList.remove('active'));
+                this.classList.add('active');
+
+                // Show section
+                const section = this.dataset.section;
+                document.querySelectorAll('.profile-section').forEach(s => s.style.display = 'none');
+                document.getElementById(section + '-section').style.display = 'block';
+            });
+        });
+
+        // Profile form
+        document.getElementById('profileForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const updates = {
+                email: document.getElementById('email').value,
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                profile: {
+                    bio: document.getElementById('bio').value
+                }
+            };
+
+            const result = await window.AuthEngine.updateProfile(updates);
+
+            if (result.success) {
+                showAlert('Profile updated successfully!', 'success');
+
+                // Update header
+                const user = result.user;
+                document.getElementById('profileName').textContent = user.firstName && user.lastName
+                    ? `${user.firstName} ${user.lastName}`
+                    : user.username;
+            } else {
+                showAlert(result.error, 'error');
+            }
+        });
+
+        // Password form
+        document.getElementById('passwordForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmNewPassword').value;
+
+            if (newPassword !== confirmPassword) {
+                showAlert('New passwords do not match', 'error');
+                return;
+            }
+
+            const oldPassword = document.getElementById('oldPassword').value;
+
+            const result = await window.AuthEngine.changePassword(oldPassword, newPassword);
+
+            if (result.success) {
+                showAlert('Password changed successfully!', 'success');
+                this.reset();
+            } else {
+                showAlert(result.error, 'error');
+            }
+        });
+
+        // Logout
+        document.getElementById('logoutBtn').addEventListener('click', function () {
+            if (confirm('Are you sure you want to logout?')) {
+                window.AuthEngine.logout();
+            }
+        });
+
+        function showAlert(message, type = 'info') {
+            const container = document.getElementById('alertContainer');
+            const alert = document.createElement('div');
+            alert.className = `auth-alert ${type}`;
+
+            const icon = {
+                success: '✅',
+                error: '❌',
+                warning: '⚠️',
+                info: 'ℹ️'
+            }[type] || 'ℹ️';
+
+            alert.innerHTML = `<span>${icon}</span><div>${message}</div>`;
+            container.innerHTML = '';
+            container.appendChild(alert);
+
+            // Auto-remove after 5 seconds
+            setTimeout(() => {
+                alert.remove();
+            }, 5000);
+        }
+    </script>
+</body>
+
+</html>

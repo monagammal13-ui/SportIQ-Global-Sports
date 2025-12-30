@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Login to SPORTIQ - Your ultimate global sports platform">
+    <meta name="keywords" content="SPORTIQ, Login, Sports Platform">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Login - SPORTIQ</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/layer71-auth.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/icons/favicon.ico">
+</head>
+
+<body>
+    <div class="auth-container">
+        <div class="auth-box">
+            <div class="auth-header">
+                <div class="auth-logo">⚽</div>
+                <h1 class="auth-title">Welcome Back</h1>
+                <p class="auth-subtitle">Login to your SPORTIQ account</p>
+            </div>
+
+            <!-- Alert Container -->
+            <div id="alertContainer"></div>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="username" class="form-label">Username or Email</label>
+                    <input type="text" id="username" name="username" class="form-input"
+                        placeholder="Enter your username or email" required autocomplete="username">
+                    <span class="form-error">Please enter a valid username</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" name="password" class="form-input"
+                        placeholder="Enter your password" required autocomplete="current-password">
+                    <span class="form-error">Please enter your password</span>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="rememberMe" name="rememberMe">
+                        <label for="rememberMe">Remember me for 30 days</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="auth-submit" id="loginBtn">
+                    <span class="btn-text">Login</span>
+                    <span class="auth-loading" style="display: none;"></span>
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="auth-divider">
+                <span>OR</span>
+            </div>
+
+            <!-- Social Auth (Optional) -->
+            <div class="social-auth">
+                <button type="button" class="social-btn" disabled title="Coming Soon">
+                    <span>🔵</span>
+                    <span>Google</span>
+                </button>
+                <button type="button" class="social-btn" disabled title="Coming Soon">
+                    <span>⚫</span>
+                    <span>GitHub</span>
+                </button>
+            </div>
+
+            <!-- Links -->
+            <div class="auth-links">
+                <p>
+                    Don't have an account?
+                    <a href="signup.html" class="auth-link">Sign Up</a>
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <a href="#" class="auth-link"
+                        onclick="alert('Password reset feature coming soon!'); return false;">Forgot Password?</a>
+                </p>
+                <p style="margin-top: 1rem;">
+                    <a href="index.html" class="auth-link">← Back to Home</a>
+                </p>
+            </div>
+
+            <!-- Demo Credentials -->
+            <div class="auth-alert info" style="margin-top: 1.5rem;">
+                <span>ℹ️</span>
+                <div>
+                    <strong>Demo Account:</strong><br>
+                    Username: <code>demo</code><br>
+                    Password: <code>password123</code>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/layer71-auth-engine.js"></script>
+
+    <script>
+        // Custom login form handling with better UX
+        document.getElementById('loginForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const rememberMe = document.getElementById('rememberMe').checked;
+
+            const loginBtn = document.getElementById('loginBtn');
+            const btnText = loginBtn.querySelector('.btn-text');
+            const loading = loginBtn.querySelector('.auth-loading');
+
+            // Show loading
+            loginBtn.disabled = true;
+            btnText.style.display = 'none';
+            loading.style.display = 'inline-block';
+
+            try {
+                const result = await window.AuthEngine.login(username, password, rememberMe);
+
+                if (result.success) {
+                    showAlert('Login successful! Redirecting...', 'success');
+
+                    // Redirect after short delay
+                    setTimeout(() => {
+                        const params = new URLSearchParams(window.location.search);
+                        const returnUrl = params.get('returnUrl') || 'index.html';
+                        window.location.href = returnUrl;
+                    }, 1000);
+                } else {
+                    showAlert(result.error, 'error');
+
+                    // Reset button
+                    loginBtn.disabled = false;
+                    btnText.style.display = 'inline';
+                    loading.style.display = 'none';
+                }
+            } catch (error) {
+                showAlert('An error occurred. Please try again.', 'error');
+
+                // Reset button
+                loginBtn.disabled = false;
+                btnText.style.display = 'inline';
+                loading.style.display = 'none';
+            }
+        });
+
+        function showAlert(message, type = 'info') {
+            const container = document.getElementById('alertContainer');
+            const alert = document.createElement('div');
+            alert.className = `auth-alert ${type}`;
+
+            const icon = {
+                success: '✅',
+                error: '❌',
+                warning: '⚠️',
+                info: 'ℹ️'
+            }[type] || 'ℹ️';
+
+            alert.innerHTML = `<span>${icon}</span><div>${message}</div>`;
+            container.innerHTML = '';
+            container.appendChild(alert);
+
+            // Auto-remove after 5 seconds
+            setTimeout(() => {
+                alert.remove();
+            }, 5000);
+        }
+
+        // Check if already logged in
+        if (window.AuthEngine && window.AuthEngine.isAuthenticated()) {
+            const params = new URLSearchParams(window.location.search);
+            const returnUrl = params.get('returnUrl') || 'index.html';
+            window.location.href = returnUrl;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Browse articles by category on SPORTIQ - Your ultimate global sports platform">
+    <meta name="keywords" content="SPORTIQ, Sports Categories, Football, Basketball, Tennis, Cricket">
+    <meta name="author" content="SPORTIQ">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Sports Categories - SPORTIQ">
+    <meta property="og:description" content="Browse sports articles by category">
+    <meta property="og:type" content="website">
+
+    <title id="pageTitle">Category - SPORTIQ</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Scripts -->
+    <script src="../js/ad-engine.js" async></script>
+    <script src="../js/content-engine.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="nav-brand">SPORTIQ</a>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="category.html" class="nav-link active">Sports</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+
+                <!-- Language Selector -->
+                <div class="language-selector" id="languageSelector">
+                    <button class="language-btn" id="languageBtn">
+                        <span class="flag-icon">🌐</span>
+                        <span id="currentLanguage">EN</span>
+                        <span class="arrow-icon">▼</span>
+                    </button>
+                    <ul class="language-dropdown" id="languageDropdown">
+                        <li><a href="#" data-lang="en" class="lang-option active">🇬🇧 English</a></li>
+                        <li><a href="#" data-lang="ar" class="lang-option">🇸🇦 العربية</a></li>
+                        <li><a href="#" data-lang="es" class="lang-option">🇪🇸 Español</a></li>
+                        <li><a href="#" data-lang="fr" class="lang-option">🇫🇷 Français</a></li>
+                    </ul>
+                </div>
+
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- AD SLOT: HEADER -->
+    <div class="ad-slot" data-slot="header" style="max-width: 970px; margin: 20px auto; min-height: 90px;"></div>
+
+    <!-- CATEGORY HERO -->
+    <section class="category-hero" id="categoryHero">
+        <div class="container">
+            <div class="category-header">
+                <div class="category-icon" id="categoryIcon">⚽</div>
+                <h1 class="category-title" id="categoryTitle">Football</h1>
+                <p class="category-description" id="categoryDescription">
+                    Latest football news, scores, and analysis from leagues worldwide
+                </p>
+                <div class="category-meta">
+                    <span class="article-count" id="articleCount">Loading...</span> articles
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <section class="section">
+        <div class="container">
+            <div class="content-layout">
+
+                <!-- SIDEBAR -->
+                <aside class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">All Categories</h3>
+                        <div id="categoriesList" class="categories-list">
+                            <!-- Loaded dynamically -->
+                            <div class="skeleton skeleton-text" style="height: 40px; margin-bottom: 10px;"></div>
+                            <div class="skeleton skeleton-text" style="height: 40px; margin-bottom: 10px;"></div>
+                            <div class="skeleton skeleton-text" style="height: 40px; margin-bottom: 10px;"></div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Trending Tags</h3>
+                        <div id="trendingTags" class="tags-cloud">
+                            <!-- Loaded dynamically -->
+                            <div class="skeleton skeleton-text"
+                                style="height: 32px; width: 80px; display: inline-block; margin: 5px;"></div>
+                            <div class="skeleton skeleton-text"
+                                style="height: 32px; width: 100px; display: inline-block; margin: 5px;"></div>
+                        </div>
+                    </div>
+
+                    <!-- AD SLOT: SIDEBAR -->
+                    <div class="ad-slot" data-slot="sidebar" style="min-height: 600px; margin-top: 30px;"></div>
+                </aside>
+
+                <!-- MAIN CONTENT AREA -->
+                <main class="main-content">
+
+                    <!-- Subcategories (if available) -->
+                    <div id="subcategoriesContainer" class="subcategories-container" style="display: none;">
+                        <h3>Subcategories</h3>
+                        <div id="subcategoriesList" class="subcategories-list">
+                            <!-- Loaded dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Articles Grid -->
+                    <div class="articles-header">
+                        <h2>Latest Articles</h2>
+                        <div class="sort-options">
+                            <select id="sortSelect" class="sort-select">
+                                <option value="newest">Newest First</option>
+                                <option value="oldest">Oldest First</option>
+                                <option value="popular">Most Popular</option>
+                                <option value="trending">Trending</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="articlesGrid" class="articles-grid">
+                        <!-- Loading skeletons -->
+                        <div class="article-card skeleton-card">
+                            <div class="skeleton skeleton-card" style="height: 200px;"></div>
+                            <div style="padding: 20px;">
+                                <div class="skeleton skeleton-title"
+                                    style="height: 24px; width: 80%; margin-bottom: 10px;"></div>
+                                <div class="skeleton skeleton-text" style="height: 16px; margin-bottom: 5px;"></div>
+                                <div class="skeleton skeleton-text" style="height: 16px; width: 60%;"></div>
+                            </div>
+                        </div>
+                        <div class="article-card skeleton-card">
+                            <div class="skeleton skeleton-card" style="height: 200px;"></div>
+                            <div style="padding: 20px;">
+                                <div class="skeleton skeleton-title"
+                                    style="height: 24px; width: 80%; margin-bottom: 10px;"></div>
+                                <div class="skeleton skeleton-text" style="height: 16px; margin-bottom: 5px;"></div>
+                                <div class="skeleton skeleton-text" style="height: 16px; width: 60%;"></div>
+                            </div>
+                        </div>
+                        <div class="article-card skeleton-card">
+                            <div class="skeleton skeleton-card" style="height: 200px;"></div>
+                            <div style="padding: 20px;">
+                                <div class="skeleton skeleton-title"
+                                    style="height: 24px; width: 80%; margin-bottom: 10px;"></div>
+                                <div class="skeleton skeleton-text" style="height: 16px; margin-bottom: 5px;"></div>
+                                <div class="skeleton skeleton-text" style="height: 16px; width: 60%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Load More Button -->
+                    <div class="load-more-container" style="text-align: center; margin-top: 40px;">
+                        <button id="loadMoreBtn" class="btn btn-primary btn-lg" style="display: none;">
+                            Load More Articles
+                        </button>
+                    </div>
+
+                    <!-- AD SLOT: IN-CONTENT -->
+                    <div class="ad-slot" data-slot="in-article"
+                        style="max-width: 728px; margin: 40px auto; min-height: 90px;"></div>
+                </main>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- AD SLOT: FOOTER -->
+    <div class="ad-slot" data-slot="footer" style="max-width: 970px; margin: 40px auto; min-height: 90px;"></div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>SPORTIQ</h4>
+                    <p>Your ultimate global sports platform for live scores, breaking news, and comprehensive sports
+                        coverage.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="category.html">Sports</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Popular Sports</h4>
+                    <ul class="footer-links">
+                        <li><a href="category.html?cat=football">Football</a></li>
+                        <li><a href="category.html?cat=basketball">Basketball</a></li>
+                        <li><a href="category.html?cat=tennis">Tennis</a></li>
+                        <li><a href="category.html?cat=cricket">Cricket</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li>Email: info@sportiq.com</li>
+                        <li>Phone: +1 XXX XXX XXXX</li>
+                        <li>Location: Global Coverage</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 SPORTIQ. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+
+    <style>
+        /* Category-specific styles */
+        .category-hero {
+            background: var(--gradient-hero);
+            padding: var(--spacing-8) 0 var(--spacing-6);
+            color: var(--color-light);
+            text-align: center;
+        }
+
+        .category-icon {
+            font-size: 4rem;
+            margin-bottom: var(--spacing-3);
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .category-title {
+            font-size: var(--font-size-5xl);
+            margin-bottom: var(--spacing-2);
+            animation: fadeInUp 0.6s ease-out 0.1s backwards;
+        }
+
+        .category-description {
+            font-size: var(--font-size-lg);
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto var(--spacing-3);
+            animation: fadeInUp 0.6s ease-out 0.2s backwards;
+        }
+
+        .category-meta {
+            animation: fadeInUp 0.6s ease-out 0.3s backwards;
+        }
+
+        .content-layout {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: var(--spacing-6);
+            margin-top: var(--spacing-6);
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            align-self: start;
+        }
+
+        .sidebar-widget {
+            background: var(--color-light);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-4);
+            margin-bottom: var(--spacing-4);
+            box-shadow: var(--shadow-md);
+        }
+
+        .widget-title {
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--spacing-3);
+            padding-bottom: var(--spacing-2);
+            border-bottom: 2px solid var(--color-light-secondary);
+        }
+
+        .categories-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-2);
+        }
+
+        .category-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-2);
+            padding: var(--spacing-2);
+            border-radius: var(--radius-md);
+            transition: all var(--transition-fast);
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--color-dark);
+        }
+
+        .category-item:hover {
+            background: var(--color-light-secondary);
+            transform: translateX(5px);
+        }
+
+        .category-item.active {
+            background: var(--gradient-primary);
+            color: var(--color-light);
+        }
+
+        .category-item-icon {
+            font-size: 1.5rem;
+        }
+
+        .category-item-info {
+            flex: 1;
+        }
+
+        .category-item-name {
+            font-weight: var(--font-weight-semibold);
+        }
+
+        .category-item-count {
+            font-size: var(--font-size-sm);
+            opacity: 0.7;
+        }
+
+        .tags-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-1);
+        }
+
+        .tag-item {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--color-light-secondary);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-medium);
+            transition: all var(--transition-fast);
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--color-dark);
+        }
+
+        .tag-item:hover {
+            background: var(--gradient-primary);
+            color: var(--color-light);
+            transform: translateY(-2px);
+        }
+
+        .articles-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-4);
+        }
+
+        .sort-select {
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--color-gray-200);
+            border-radius: var(--radius-md);
+            font-family: inherit;
+            font-size: var(--font-size-base);
+            cursor: pointer;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--spacing-4);
+        }
+
+        .article-card {
+            background: var(--color-light);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-base);
+            cursor: pointer;
+        }
+
+        .article-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: var(--gradient-primary);
+        }
+
+        .article-content {
+            padding: var(--spacing-4);
+        }
+
+        .article-category {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--gradient-primary);
+            color: var(--color-light);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-xs);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--spacing-2);
+        }
+
+        .article-title {
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--spacing-2);
+            color: var(--color-dark);
+        }
+
+        .article-excerpt {
+            color: var(--color-gray-500);
+            margin-bottom: var(--spacing-3);
+            line-height: var(--line-height-relaxed);
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-400);
+        }
+
+        .article-author {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-1);
+        }
+
+        .article-stats {
+            display: flex;
+            gap: var(--spacing-3);
+        }
+
+        .subcategories-container {
+            margin-bottom: var(--spacing-6);
+        }
+
+        .subcategories-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-2);
+            margin-top: var(--spacing-3);
+        }
+
+        .subcategory-item {
+            padding: 0.75rem 1.5rem;
+            background: var(--color-light-secondary);
+            border-radius: var(--radius-lg);
+            font-weight: var(--font-weight-medium);
+            transition: all var(--transition-fast);
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--color-dark);
+        }
+
+        .subcategory-item:hover {
+            background: var(--gradient-primary);
+            color: var(--color-light);
+        }
+
+        @media (max-width: 1024px) {
+            .content-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+                order: 2;
+            }
+
+            .main-content {
+                order: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .category-title {
+                font-size: var(--font-size-3xl);
+            }
+        }
+    </style>
+
+</body>
+
+</html>

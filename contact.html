@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Contact SPORTIQ - Get in touch with our team for inquiries, partnerships, or support">
+    <meta name="keywords" content="SPORTIQ, Contact, Support, Partnership, Inquiry">
+    <title>Contact Us - SPORTIQ</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/ad-engine.js" async></script>
+</head>
+
+<body>
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="nav-brand">SPORTIQ</a>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="category.html" class="nav-link">Sports</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                </ul>
+                <div class="language-selector" id="languageSelector">
+                    <button class="language-btn" id="languageBtn">
+                        <span class="flag-icon">🌐</span>
+                        <span id="currentLanguage">EN</span>
+                        <span class="arrow-icon">▼</span>
+                    </button>
+                    <ul class="language-dropdown" id="languageDropdown">
+                        <li><a href="#" data-lang="en" class="lang-option active">🇬🇧 English</a></li>
+                        <li><a href="#" data-lang="ar" class="lang-option">🇸🇦 العربية</a></li>
+                        <li><a href="#" data-lang="es" class="lang-option">🇪🇸 Español</a></li>
+                        <li><a href="#" data-lang="fr" class="lang-option">🇫🇷 Français</a></li>
+                    </ul>
+                </div>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="ad-slot" data-slot="header" style="max-width: 970px; margin: 20px auto; min-height: 90px;"></div>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="hero-title">Get in Touch</h1>
+            <p class="hero-subtitle">We'd love to hear from you</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="contact-layout">
+
+                <div class="contact-info reveal">
+                    <h2>Contact Information</h2>
+
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <div class="info-icon">📧</div>
+                            <h3>Email</h3>
+                            <p><a href="mailto:info@sportiq.com">info@sportiq.com</a></p>
+                            <p class="info-sub">For general inquiries</p>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">💼</div>
+                            <h3>Business & Partnerships</h3>
+                            <p><a href="mailto:business@sportiq.com">business@sportiq.com</a></p>
+                            <p class="info-sub">For collaboration opportunities</p>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">🛠️</div>
+                            <h3>Technical Support</h3>
+                            <p><a href="mailto:support@sportiq.com">support@sportiq.com</a></p>
+                            <p class="info-sub">For technical issues</p>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">📰</div>
+                            <h3>Press & Media</h3>
+                            <p><a href="mailto:press@sportiq.com">press@sportiq.com</a></p>
+                            <p class="info-sub">For media inquiries</p>
+                        </div>
+                    </div>
+
+                    <div class="social-section">
+                        <h3>Follow Us</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link">📘 Facebook</a>
+                            <a href="#" class="social-link">🐦 Twitter</a>
+                            <a href="#" class="social-link">📸 Instagram</a>
+                            <a href="#" class="social-link">💼 LinkedIn</a>
+                            <a href="#" class="social-link">📺 YouTube</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-section reveal">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2>Send Us a Message</h2>
+                            <form id="contactForm" class="contact-form">
+                                <div class="form-group">
+                                    <label for="name">Full Name *</label>
+                                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required placeholder="john@example.com">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="subject">Subject *</label>
+                                    <select id="subject" name="subject" required>
+                                        <option value="">Select a subject</option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="partnership">Partnership Opportunity</option>
+                                        <option value="support">Technical Support</option>
+                                        <option value="press">Press & Media</option>
+                                        <option value="feedback">Feedback</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="message">Message *</label>
+                                    <textarea id="message" name="message" rows="6" required
+                                        placeholder="Tell us how we can help..."></textarea>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                                    Send Message
+                                </button>
+                            </form>
+
+                            <div id="formSuccess" class="form-message success" style="display: none;">
+                                ✅ Thank you! Your message has been sent successfully.
+                            </div>
+
+                            <div id="formError" class="form-message error" style="display: none;">
+                                ❌ Something went wrong. Please try again.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="ad-slot" data-slot="footer" style="max-width: 970px; margin: 40px auto; min-height: 90px;"></div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>SPORTIQ</h4>
+                    <p>Your ultimate global sports platform.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="category.html">Sports</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SPORTIQ. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+
+    <style>
+        .page-hero {
+            background: var(--gradient-hero);
+            padding: var(--spacing-8) 0;
+            color: var(--color-light);
+            text-align: center;
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: var(--spacing-6);
+            margin-top: var(--spacing-6);
+        }
+
+        .contact-info h2 {
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--spacing-4);
+        }
+
+        .info-cards {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-3);
+            margin-bottom: var(--spacing-6);
+        }
+
+        .info-card {
+            padding: var(--spacing-4);
+            background: var(--color-light);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-md);
+        }
+
+        .info-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-2);
+        }
+
+        .info-card h3 {
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--spacing-1);
+        }
+
+        .info-card a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: var(--font-weight-semibold);
+        }
+
+        .info-sub {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-500);
+            margin-top: var(--spacing-1);
+        }
+
+        .social-section {
+            padding: var(--spacing-4);
+            background: var(--color-light);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-md);
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-2);
+            margin-top: var(--spacing-3);
+        }
+
+        .social-link {
+            padding: var(--spacing-2);
+            background: var(--color-light-secondary);
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            color: var(--color-dark);
+            transition: all var(--transition-fast);
+        }
+
+        .social-link:hover {
+            background: var(--gradient-primary);
+            color: var(--color-light);
+            transform: translateX(5px);
+        }
+
+        .contact-form-section h2 {
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--spacing-4);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-4);
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-1);
+        }
+
+        .form-group label {
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 0.75rem;
+            border: 2px solid var(--color-gray-200);
+            border-radius: var(--radius-md);
+            font-family: inherit;
+            font-size: var(--font-size-base);
+            transition: border-color var(--transition-fast);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+
+        .form-message {
+            padding: var(--spacing-3);
+            border-radius: var(--radius-md);
+            margin-top: var(--spacing-3);
+            text-align: center;
+            font-weight: var(--font-weight-semibold);
+        }
+
+        .form-message.success {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .form-message.error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        @media (max-width: 1024px) {
+            .contact-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+
+</html>

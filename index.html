@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="SPORTIQ - Your ultimate global sports platform with live scores, breaking news, and comprehensive coverage of all major sports worldwide.">
+    <meta name="keywords"
+        content="SPORTIQ, Sports Platform, Global Sports, Live Scores, Sports News, Football, Basketball, Tennis">
+    <meta name="author" content="SPORTIQ">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="SPORTIQ - Global Sports Platform">
+    <meta property="og:description" content="Live scores, breaking news, and comprehensive sports coverage">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sportiq.com">
+
+    <!-- Title -->
+    <title>SPORTIQ - Global Sports Platform | Live Scores & News</title>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/layer71-auth.css">
+    <link rel="stylesheet" href="../css/layer11-i18n.css">
+    <link rel="stylesheet" href="../css/layer14-ui-animations.css">
+    <link rel="stylesheet" href="../css/layers31-40-styles.css">
+
+    <!-- Favicon (placeholder) -->
+    <link rel="icon" type="image/x-icon" href="../assets/icons/favicon.ico">
+
+    <!-- Ad Engine - Load early but async -->
+    <script src="../js/ad-engine.js" async></script>
+</head>
+
+<body>
+
+    <!-- ========== HEADER & NAVIGATION ========== -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <!-- Brand Logo -->
+                <a href="#" class="nav-brand">SPORTIQ</a>
+
+                <!-- Navigation Menu -->
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#features" class="nav-link">Features</a></li>
+                    <li><a href="#services" class="nav-link">Sports</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+
+                <!-- Language Selector -->
+                <div class="language-selector" id="languageSelector">
+                    <button class="language-btn" id="languageBtn">
+                        <span class="flag-icon">🌐</span>
+                        <span id="currentLanguage">EN</span>
+                        <span class="arrow-icon">▼</span>
+                    </button>
+                    <ul class="language-dropdown" id="languageDropdown">
+                        <li><a href="#" data-lang="en" class="lang-option active">🇬🇧 English</a></li>
+                        <li><a href="#" data-lang="ar" class="lang-option">🇸🇦 العربية</a></li>
+                        <li><a href="#" data-lang="es" class="lang-option">🇪🇸 Español</a></li>
+                        <li><a href="#" data-lang="fr" class="lang-option">🇫🇷 Français</a></li>
+                    </ul>
+                </div>
+
+                <!-- User Menu (Authenticated) -->
+                <div class="user-menu" id="userMenu" style="display: none; margin-left: 1rem;">
+                    <button class="user-menu-trigger" id="userMenuTrigger">
+                        <div class="user-avatar-small" id="userAvatarSmall">U</div>
+                        <span id="currentUsername">User</span>
+                        <span class="arrow-icon">▼</span>
+                    </button>
+                    <div class="user-menu-dropdown" id="userMenuDropdown">
+                        <a href="profile.html">👤 Profile</a>
+                        <a href="profile.html#security">🔒 Security</a>
+                        <a href="profile.html#preferences">⚙️ Settings</a>
+                        <div class="divider"></div>
+                        <button id="logoutBtn">🚪 Logout</button>
+                    </div>
+                </div>
+
+                <!-- Login Link (Guest) -->
+                <div id="loginLink" style="margin-left: 1rem;">
+                    <a href="login.html" class="btn btn-primary btn-sm">Login</a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ========== AD SLOT: HEADER ========== -->
+    <div class="ad-slot" data-slot="header"
+        style="max-width: 970px; margin: 20px auto; min-height: 90px; display: flex; align-items: center; justify-content: center; background: var(--color-light-secondary); border-radius: var(--radius-lg); font-size: 14px; color: var(--color-gray-400);">
+    </div>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Welcome to SPORTIQ</h1>
+                <p class="hero-subtitle">
+                    Your ultimate global sports platform delivering live scores, breaking news, and comprehensive
+                    coverage of all major sports worldwide
+                </p>
+                <div class="hero-cta">
+                    <a href="#features" class="btn btn-primary btn-lg">Explore Features</a>
+                    <a href="#contact" class="btn btn-outline btn-lg">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CINEMATIC SLIDER SECTION ========== -->
+    <section class="section cinematic-slider-section" id="slider-section"
+        style="background: var(--color-dark); padding: 60px 0;">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 3rem;">
+                <h2 class="section-title" style="color: var(--color-light);">🎬 Cinematic Sports Gallery</h2>
+                <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.8);">
+                    Experience the most spectacular moments in sports with our 4K cinematic slider
+                </p>
+            </div>
+
+            <!-- Cinematic Slider Container - Platform Activation Script will populate this -->
+            <div id="cinematic-slider" class="cinematic-slider"
+                style="position: relative; min-height: 400px; border-radius: var(--radius-xl); overflow: hidden; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <div
+                    style="display: flex; align-items: center; justify-content: center; min-height: 400px; color: white; font-size: 1.5rem;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">⏳</div>
+                        <div>Loading Cinematic Content...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FEATURES SECTION ========== -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Key Features</h2>
+                <p class="section-subtitle">
+                    Discover what makes SPORTIQ the ultimate sports platform
+                </p>
+            </div>
+
+            <div class="row">
+                <!-- Feature Card 1 -->
+                <div class="col col-md-4 col-sm-12 reveal">
+                    <div class="card">
+                        <div class="card-image" id="featureImage1"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">⚡ Live Scores</h3>
+                            <p class="card-text">
+                                Real-time updates for all major sports leagues and tournaments worldwide, updated every
+                                second
+                            </p>
+                            <a href="#" class="btn btn-primary">View Scores</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature Card 2 -->
+                <div class="col col-md-4 col-sm-12 reveal">
+                    <div class="card">
+                        <div class="card-image" id="featureImage2"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">📰 Breaking News</h3>
+                            <p class="card-text">
+                                Stay updated with the latest sports news, transfer rumors, and exclusive interviews from
+                                around the globe
+                            </p>
+                            <a href="#" class="btn btn-primary">Read News</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature Card 3 -->
+                <div class="col col-md-4 col-sm-12 reveal">
+                    <div class="card">
+                        <div class="card-image" id="featureImage3"></div>
+                        <div class="card-body">
+                            <h3 class="card-title">📊 Statistics</h3>
+                            <p class="card-text">
+                                Comprehensive stats, analytics, and insights for teams, players, and matches across all
+                                sports
+                            </p>
+                            <a href="#" class="btn btn-primary">View Stats</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== AD SLOT: IN-CONTENT (Between Features & Services) ========== -->
+    <div class="ad-slot" data-slot="in-article"
+        style="max-width: 728px; margin: 40px auto; min-height: 90px; display: flex; align-items: center; justify-content: center; background: var(--color-light-secondary); border-radius: var(--radius-lg); font-size: 14px; color: var(--color-gray-400);">
+    </div>
+
+    <!-- ========== SERVICES SECTION ========== -->
+    <section class="section" id="services" style="background: var(--color-light-secondary);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Sports Coverage</h2>
+                <p class="section-subtitle">
+                    Comprehensive coverage of all major sports worldwide
+                </p>
+            </div>
+
+            <div class="row">
+                <!-- Service 1 -->
+                <div class="col col-md-6 col-sm-12 reveal">
+                    <div class="card card-glass">
+                        <div class="card-body">
+                            <h4 class="card-title">⚽ Football</h4>
+                            <p class="card-text">
+                                Premier League, La Liga, Champions League, and all major football leagues with live
+                                scores and updates
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="col col-md-6 col-sm-12 reveal">
+                    <div class="card card-glass">
+                        <div class="card-body">
+                            <h4 class="card-title">🏀 Basketball</h4>
+                            <p class="card-text">
+                                NBA, EuroLeague, and international basketball with real-time scores, stats, and game
+                                highlights
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="col col-md-6 col-sm-12 reveal">
+                    <div class="card card-glass">
+                        <div class="card-body">
+                            <h4 class="card-title">🎾 Tennis</h4>
+                            <p class="card-text">
+                                Grand Slams, ATP, WTA tours with live match tracking, rankings, and player statistics
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="col col-md-6 col-sm-12 reveal">
+                    <div class="card card-glass">
+                        <div class="card-body">
+                            <h4 class="card-title">🏈 More Sports</h4>
+                            <p class="card-text">
+                                Cricket, Baseball, Hockey, Rugby, and 50+ other sports with comprehensive coverage
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== AD SLOT: SIDEBAR (Desktop) / MOBILE-STICKY (Mobile) ========== -->
+    <div class="ad-slot" data-slot="sidebar"
+        style="max-width: 300px; margin: 40px auto; min-height: 600px; display: flex; align-items: center; justify-content: center; background: var(--color-light-secondary); border-radius: var(--radius-lg); font-size: 14px; color: var(--color-gray-400); writing-mode: vertical-rl; text-orientation: mixed;">
+    </div>
+
+    <!-- ========== ABOUT SECTION ========== -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="row" style="align-items: center;">
+                <div class="col col-md-6 col-sm-12 reveal">
+                    <h2>About SPORTIQ</h2>
+                    <p>
+                        SPORTIQ is a cutting-edge global sports platform dedicated to delivering the most comprehensive
+                        sports coverage.
+                        We combine innovation with modern design to provide an exceptional experience for sports fans
+                        worldwide.
+                    </p>
+                    <p>
+                        We believe that sports unite the world. That's why we work tirelessly to bring you the latest
+                        sports news,
+                        live scores, and in-depth analysis for all major sports in one unified platform.
+                    </p>
+                    <a href="#contact" class="btn btn-primary mt-4">Join SPORTIQ</a>
+                </div>
+                <div class="col col-md-6 col-sm-12 reveal">
+                    <div id="aboutImage"
+                        style="width: 100%; height: 400px; background: var(--gradient-primary); border-radius: var(--radius-xl);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== AD SLOT: NATIVE (Feed Style) ========== -->
+    <div class="ad-slot" data-slot="feed-native"
+        style="max-width: 728px; margin: 40px auto; min-height: 120px; display: flex; align-items: center; justify-content: center; background: var(--color-light-secondary); border-radius: var(--radius-lg); font-size: 14px; color: var(--color-gray-400);">
+    </div>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section class="section" id="contact" style="background: var(--gradient-hero); color: var(--color-light);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" style="color: var(--color-light);">Get in Touch</h2>
+                <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.9);">
+                    Have questions or feedback? We'd love to hear from you
+                </p>
+            </div>
+
+            <div class="row reveal">
+                <div class="col col-md-8 col-sm-12" style="margin: 0 auto;">
+                    <div class="card">
+                        <div class="card-body">
+                            <form id="contactForm">
+                                <div class="mb-4">
+                                    <label for="name"
+                                        style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Name</label>
+                                    <input type="text" id="name" name="name" required
+                                        style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-gray-200); border-radius: var(--radius-md); font-family: inherit; font-size: var(--font-size-base); transition: border-color var(--transition-fast);">
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="email"
+                                        style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email</label>
+                                    <input type="email" id="email" name="email" required
+                                        style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-gray-200); border-radius: var(--radius-md); font-family: inherit; font-size: var(--font-size-base); transition: border-color var(--transition-fast);">
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="message"
+                                        style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Message</label>
+                                    <textarea id="message" name="message" rows="5" required
+                                        style="width: 100%; padding: 0.75rem; border: 2px solid var(--color-gray-200); border-radius: var(--radius-md); font-family: inherit; font-size: var(--font-size-base); resize: vertical; transition: border-color var(--transition-fast);"></textarea>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== AD SLOT: FOOTER ========== -->
+    <div class="ad-slot" data-slot="footer"
+        style="max-width: 970px; margin: 40px auto; min-height: 90px; display: flex; align-items: center; justify-content: center; background: var(--color-light-secondary); border-radius: var(--radius-lg); font-size: 14px; color: var(--color-gray-400);">
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- About Column -->
+                <div class="footer-section">
+                    <h4>SPORTIQ</h4>
+                    <p>
+                        Your ultimate global sports platform for live scores, breaking news, and comprehensive sports
+                        coverage.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="category.html">Sports</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-section">
+                    <h4>Sports</h4>
+                    <ul class="footer-links">
+                        <li><a href="category.html?sport=football">Football</a></li>
+                        <li><a href="category.html?sport=basketball">Basketball</a></li>
+                        <li><a href="category.html?sport=tennis">Tennis</a></li>
+                        <li><a href="category.html">All Sports</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links">
+                        <li>Email: info@sportiq.com</li>
+                        <li>Phone: +1 XXX XXX XXXX</li>
+                        <li>Location: Global Coverage</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 SPORTIQ. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <!-- Layer 1: Core Runtime Bootstrap -->
+    <script type="module" src="../js/layer1-core-runtime.js"></script>
+    <!-- Layer 3: Layer Manifest & Dependency Graph -->
+    <script type="module" src="../js/layer3-manifest.js"></script>
+    <!-- Layer 4: Runtime Event Bus & Communication Layer -->
+    <script type="module" src="../js/layer4-event-bus.js"></script>
+    <!-- Layer 5: Pages & Navigation Runtime -->
+    <script type="module" src="../js/layer5-pages-navigation.js"></script>
+    <!-- Layer 6: Media & Assets Runtime -->
+    <script type="module" src="../js/layer6-media-assets.js"></script>
+    <!--Layer 7: SEO & Metadata Runtime -->
+    <script type="module" src="../js/layer7-seo-metadata.js"></script>
+    <!-- Layer 8: Data Fetching & API Integration Runtime -->
+    <script type="module" src="../js/layer8-api-client.js"></script>
+    <!-- Layer 9: State Management & Data Store Runtime -->
+    <script type="module" src="../js/layer9-state-store.js"></script>
+    <!-- Layer 10: Security & Performance Runtime -->
+    <script type="module" src="../js/layer10-security-performance.js"></script>
+    <!-- Layer 11: Multi-Language & Localization Runtime -->
+    <script type="module" src="../js/layer11-i18n-localization.js"></script>
+    <!-- Layer 12: CMS & Content Management Runtime -->
+    <script type="module" src="../js/layer12-cms-content.js"></script>
+    <!-- Layer 13: RSS Aggregation & Auto Content Runtime -->
+    <script type="module" src="../js/layer13-rss-aggregator.js"></script>
+    <!-- Layer 14: Advanced UI/UX & Animations Runtime -->
+    <script type="module" src="../js/layer14-ui-animations.js"></script>
+    <!-- Layer 15: Caching & CDN Optimization Runtime -->
+    <script type="module" src="../js/layer15-cache-optimization.js"></script>
+    <!-- Layer 16: Monetization & Ad Intelligence Runtime -->
+    <script type="module" src="../js/layer16-monetization.js"></script>
+    <!-- Layer 17: Live Sports Data & Scores Runtime -->
+    <script type="module" src="../js/layer17-live-sports.js"></script>
+    <!-- Layer 18: AI Recommendations & Smart Content Runtime -->
+    <script type="module" src="../js/layer18-recommendations.js"></script>
+    <!-- Layer 19: Trending & Breaking News Runtime -->
+    <script type="module" src="../js/layer19-trending.js"></script>
+    <!-- Layer 20: User Profiles & Personalization Runtime -->
+    <script type="module" src="../js/layer20-user-personalization.js"></script>
+
+    <!-- Batch Layers 21-25: Content Publishing & Media -->
+    <script type="module" src="../js/layer21-scheduler.js"></script>
+    <script type="module" src="../js/layer22-image-processing.js"></script>
+    <script type="module" src="../js/layer23-video-management.js"></script>
+    <script type="module" src="../js/layer24-comments.js"></script>
+    <script type="module" src="../js/layer25-social-sharing.js"></script>
+
+    <!-- Batch Layers 26-40: Analytics & Advanced Features -->
+    <script type="module" src="../js/layers26-40-batch.js"></script>
+
+    <!-- Batch Layers 41-60: Forms, Offline, Performance -->
+    <script type="module" src="../js/layers41-60-batch.js"></script>
+
+    <!-- Layers 51-60: Standalone Implementation -->
+    <script type="module" src="../js/layer51.js"></script>
+    <script type="module" src="../js/layer52.js"></script>
+    <script type="module" src="../js/layer53.js"></script>
+    <script type="module" src="../js/layer54.js"></script>
+    <script type="module" src="../js/layer55.js"></script>
+    <script type="module" src="../js/layer56.js"></script>
+    <script type="module" src="../js/layer57.js"></script>
+    <script type="module" src="../js/layer58.js"></script>
+    <script type="module" src="../js/layer59.js"></script>
+    <script type="module" src="../js/layer60.js"></script>
+
+
+    <!-- Batch Layers 61-91: SEO & Optimization -->
+    <script type="module" src="../js/layers61-91-batch.js"></script>
+
+    <!-- Existing Layers 92-113 (already in project) -->
+    <!-- Layer 92: Languages -->
+    <!-- Layer 94: Betting -->
+    <!-- Layer 95: Archive -->
+    <!-- Layer 97: Ads -->
+    <!-- Layer 98: Aggregator -->
+    <!-- Layer 99: Widgets -->
+    <!-- Layer 102: News Generator -->
+    <!-- Layer 103: Distributor -->
+    <!-- Layer 104: Scheduler -->
+    <!-- Layer 105: Mapper -->
+    <!-- Layer 106: Highlights -->
+    <!-- Layer 107: SEO -->
+    <!-- Layer 109: Media -->
+    <!-- Layer 113: Summarizer -->
+
+    <!-- Missing Layers 93, 96, 100-101, 108, 110-112 -->
+    <script type="module" src="../js/layers-missing-90s.js"></script>
+
+    <!-- Batch Layers 114-150: Gamification & Enterprise -->
+    <script type="module" src="../js/layers114-150-batch.js"></script>
+    <!-- Standalone Overrides for 140-149 (Fan Engagement) -->
+    <script type="module" src="../js/layer140.js"></script>
+    <script type="module" src="../js/layer141.js"></script>
+    <script type="module" src="../js/layer142.js"></script>
+    <script type="module" src="../js/layer143.js"></script>
+    <script type="module" src="../js/layer144.js"></script>
+    <script type="module" src="../js/layer145.js"></script>
+    <script type="module" src="../js/layer146.js"></script>
+    <script type="module" src="../js/layer147.js"></script>
+    <script type="module" src="../js/layer148.js"></script>
+    <script type="module" src="../js/layer149.js"></script>
+
+
+    <!-- Batch Layers 151-200: Testing, Deployment, Monitoring -->
+    <script type="module" src="../js/layers151-200-batch.js"></script>
+
+    <!-- Layer 2: Runtime Orchestrator (MUST BE LAST) -->
+    <script type="module" src="../js/layer2-runtime-orchestrator.js"></script>
+
+    <script src="../js/main.js"></script>
+
+    <!-- Runtime Media Engine - Validates & repairs ALL media -->
+    <script src="../js/runtime-media-engine.js"></script>
+
+    <!-- Runtime Data Engine - Loads ALL JSON & RSS feeds -->
+    <script src="../js/runtime-data-engine.js"></script>
+
+    <!-- Runtime Ads & Scripts - Safe ad execution & link rotation -->
+    <script src="../js/runtime-ads-scripts.js"></script>
+
+    <!-- Runtime JS Execution Engine - Executes ALL JS with failsafe -->
+    <script src="../js/runtime-js-execution.js"></script>
+
+    <!-- Runtime UI Rendering - Auto-loads ALL CSS -->
+    <script src="../js/runtime-ui-rendering.js"></script>
+
+    <!-- Runtime Core Orchestrator - Auto-executes ALL layers -->
+    <script src="../js/runtime-core-orchestrator.js"></script>
+
+    <!-- Runtime Error Autofix - Self-healing error detection & repair -->
+    <script src="../js/runtime-error-autofix.js"></script>
+
+    <!-- Runtime Future Layers - ULTIMATE: Auto-activates ALL future layers ∞ -->
+    <script src="../js/runtime-future-layers.js"></script>
+
+    <!-- ========== SUPPORT MODULES ========== -->
+    <!-- Analytics & Engagement -->
+    <script src="../js/analytics-tracker.js"></script>
+    <script src="../js/engagement.js"></script>
+
+    <!-- UI Enhancement Modules -->
+    <script src="../js/image-assurance.js"></script>
+    <script src="../js/theme-manager.js"></script>
+    <script src="../js/ui-controller.js"></script>
+
+    <!-- ========== ADVANCED LAYERS (61-64) ========== -->
+    <!-- Layer 61: Advanced UI/UX -->
+    <script src="../js/layer61-uiux-advanced.js"></script>
+
+    <!-- Layer 62: Cinematic Slider 4K -->
+    <script src="../js/layer62-cinematic-slider-4k.js"></script>
+
+    <!-- Layer 63: Dynamic Ads Rotation -->
+    <script src="../js/layer63-dynamic-ads-rotation.js"></script>
+
+    <!-- Layer 64: Advanced Performance -->
+    <script src="../js/layer64-advanced-performance.js"></script>
+
+    <!-- Layer 65: Global Trending Hashtags & Social Feed -->
+    <link rel="stylesheet" href="../css/layer65-trending.css">
+    <script src="../js/layer65-trending-hashtags.js"></script>
+
+    <!-- Layer 66: Event Highlights & Replay Engine -->
+    <link rel="stylesheet" href="../css/layer66-highlights.css">
+    <script src="../js/layer66-event-highlights.js"></script>
+
+    <!-- Layer 67: Global Polls & Community Voting -->
+    <link rel="stylesheet" href="../css/layer67-polls.css">
+    <script src="../js/layer67-polls-voting.js"></script>
+
+    <!-- Layer 68: Automated News Summarizer -->
+    <link rel="stylesheet" href="../css/layer68-summaries.css">
+    <script src="../js/layer68-news-summarizer.js"></script>
+
+    <!-- Layer 69: SEO Optimization Core -->
+    <link rel="stylesheet" href="../css/layer69-seo.css">
+    <script src="../js/layer69-seo-optimization.js"></script>
+
+    <!-- Layer 70: Core Analytics & Metrics Engine -->
+    <link rel="stylesheet" href="../css/layer70-analytics.css">
+    <script src="../js/layer70-analytics-engine.js"></script>
+
+    <!-- Layer 71: Core User Authentication & Roles Engine -->
+    <script src="../js/layer71-auth-engine.js"></script>
+
+    <!-- Layer 72: API Integration Engine -->
+    <link rel="stylesheet" href="../css/layer72-api.css">
+    <script src="../js/layer72-api-integration.js"></script>
+
+    <!-- Layer 73: CDN Integration Engine -->
+    <link rel="stylesheet" href="../css/layer73-cdn.css">
+    <script src="../js/layer73-cdn-integration.js"></script>
+
+    <!-- Layer 74: Backup & Recovery Engine -->
+    <link rel="stylesheet" href="../css/layer74-backup.css">
+    <script src="../js/layer74-backup-recovery.js"></script>
+
+    <!-- Layer 75: Mobile Responsiveness Engine -->
+    <link rel="stylesheet" href="../css/layer75-responsive.css">
+    <script src="../js/layer75-responsive.js"></script>
+
+    <!-- Layer 76: Layer Management Engine -->
+    <link rel="stylesheet" href="../css/layer76-manager.css">
+    <script src="../js/layer76-layer-manager.js"></script>
+
+    <!-- Layer 77: Content Scheduler Engine -->
+    <link rel="stylesheet" href="../css/layer77-scheduler.css">
+    <script src="../js/layer77-content-scheduler.js"></script>
+
+    <!-- Layer 78: User Engagement Engine -->
+    <link rel="stylesheet" href="../css/layer78-engagement.css">
+    <script src="../js/layer78-engagement.js"></script>
+
+    <!-- Layer 79: Video Streaming Engine -->
+    <link rel="stylesheet" href="../css/layer79-video.css">
+    <script src="../js/layer79-video-streaming.js"></script>
+
+    <!-- Layer 80: News Aggregator Engine -->
+    <link rel="stylesheet" href="../css/layer80-news.css">
+    <script src="../js/layer80-news-aggregator.js"></script>
+
+    <!-- Layer 81: Social Media Feed Engine -->
+    <link rel="stylesheet" href="../css/layer81-social.css">
+    <script src="../js/layer81-social-feed.js"></script>
+
+    <!-- Layer 82: Dynamic Menus Engine -->
+    <link rel="stylesheet" href="../css/layer82-menus.css">
+    <script src="../js/layer82-dynamic-menus.js"></script>
+
+    <!-- Layer 83: Recommendations Engine -->
+    <link rel="stylesheet" href="../css/layer83-recommendations.css">
+    <script src="../js/layer83-recommendations.js"></script>
+
+    <!-- Layer 84: Event Calendar Engine -->
+    <link rel="stylesheet" href="../css/layer84-calendar.css">
+    <script src="../js/layer84-event-calendar.js"></script>
+
+    <!-- Layer 85: Polls & Voting Engine -->
+    <link rel="stylesheet" href="../css/layer85-polls.css">
+    <script src="../js/layer85-polls.js"></script>
+
+    <!-- Layer 86: Notification & Alerts Engine -->
+    <link rel="stylesheet" href="../css/layer86-notifications.css">
+    <script src="../js/layer86-notifications.js"></script>
+
+    <!-- Layer 87: Sports Stats Engine -->
+    <link rel="stylesheet" href="../css/layer87-stats.css">
+    <script src="../js/layer87-sports-stats.js"></script>
+
+    <!-- Layer 88: Advanced Analytics Engine -->
+    <link rel="stylesheet" href="../css/layer88-analytics.css">
+    <script src="../js/layer88-analytics.js"></script>
+
+    <!-- Layer 89: AI Content Suggestions Engine -->
+    <link rel="stylesheet" href="../css/layer89-ai.css">
+    <script src="../js/layer89-ai-suggestions.js"></script>
+
+    <!-- Layer 90: Global Live Sports API -->
+    <link rel="stylesheet" href="../css/layer90-live-api.css">
+    <script src="../js/layer90-live-api.js"></script>
+
+    <!-- Layer 91: Interactive Leaderboards -->
+    <link rel="stylesheet" href="../css/layer91-leaderboards.css">
+    <script src="../js/layer91-leaderboards.js"></script>
+
+    <!-- Layer 92: Multi-Language Content Engine -->
+    <link rel="stylesheet" href="../css/layer92-languages.css">
+    <script src="../js/layer92-languages.js"></script>
+
+    <!-- Layer 93: Advanced Search & Filter Engine -->
+    <link rel="stylesheet" href="../css/layer93-search.css">
+    <script src="../js/layer93-search.js"></script>
+
+    <!-- Layer 94: Betting & Odds Integration Engine -->
+    <link rel="stylesheet" href="../css/layer94-betting.css">
+    <script src="../js/layer94-betting.js"></script>
+
+    <!-- Layer 95: Historical Data Archive Engine -->
+    <link rel="stylesheet" href="../css/layer95-archive.css">
+    <script src="../js/layer95-archive.js"></script>
+
+    <!-- Layer 96: Alerts & Push Notifications Pro -->
+    <link rel="stylesheet" href="../css/layer96-alerts-pro.css">
+    <script src="../js/layer96-alerts-pro.js"></script>
+
+    <!-- Layer 97: Sponsorship & Ads Engine -->
+    <link rel="stylesheet" href="../css/layer97-ads.css">
+    <script src="../js/layer97-ads.js"></script>
+
+    <!-- Layer 98: Global API Aggregator & Proxy -->
+    <link rel="stylesheet" href="../css/layer98-aggregator.css">
+    <script src="../js/layer98-aggregator.js"></script>
+
+    <!-- Layer 99: Live Score Widgets Engine -->
+    <link rel="stylesheet" href="../css/layer99-widgets.css">
+    <script src="../js/layer99-widgets.js"></script>
+
+    <!-- Layer 100: Global Content Syndication Engine -->
+    <link rel="stylesheet" href="../css/layer100-syndication.css">
+    <script src="../js/layer100-syndication.js"></script>
+
+    <!-- Layer 102: News Feed Generator Engine -->
+    <link rel="stylesheet" href="../css/layer102-news-generator.css">
+    <script src="../js/layer102-news-generator.js"></script>
+
+    <!-- Layer 103: Article Distribution Engine -->
+    <link rel="stylesheet" href="../css/layer103-distributor.css">
+    <script src="../js/layer103-distributor.js"></script>
+
+    <!-- Layer 104: Content Scheduling Engine -->
+    <link rel="stylesheet" href="../css/layer104-scheduler.css">
+    <script src="../js/layer104-scheduler.js"></script>
+
+    <!-- Layer 105: Section Mapping Intelligence -->
+    <link rel="stylesheet" href="../css/layer105-mapper.css">
+    <script src="../js/layer105-mapper.js"></script>
+
+    <!-- Layer 106: Dynamic Highlight & Key Phrase Engine -->
+    <link rel="stylesheet" href="../css/layer106-highlights.css">
+    <script src="../js/layer106-highlights.js"></script>
+
+    <!-- Layer 107: SEO Optimization Auto-Generator -->
+    <link rel="stylesheet" href="../css/layer107-seo.css">
+    <script src="../js/layer107-seo.js"></script>
+
+    <!-- Layer 108: Content Integrity & Quality Checker -->
+    <link rel="stylesheet" href="../css/layer108-integrity.css">
+    <script src="../js/layer108-integrity.js"></script>
+
+    <!-- Layer 109: Visual Media Integration Engine -->
+    <link rel="stylesheet" href="../css/layer109-media.css">
+    <script src="../js/layer109-media.js"></script>
+
+    <!-- Layer 110: Live Update & Topic Monitoring Engine -->
+    <link rel="stylesheet" href="../css/layer110-live-updates.css">
+    <script src="../js/layer110-live-updates.js"></script>
+
+    <!-- Layer 111: Advanced Topic Categorization Engine -->
+    <link rel="stylesheet" href="../css/layer111-topics.css">
+    <script src="../js/layer111-topics.js"></script>
+
+    <!-- Layer 112: AI Headline Generator Engine -->
+    <link rel="stylesheet" href="../css/layer112-ai-headlines.css">
+    <script src="../js/layer112-ai-headlines.js"></script>
+
+    <!-- Layer 113: Automated Summary Generation Engine -->
+    <link rel="stylesheet" href="../css/layer113-summarizer.css">
+    <script src="../js/layer113-summarizer.js"></script>
+
+    <!-- Layer 114: Interactive Infographics Engine -->
+    <link rel="stylesheet" href="../css/layer114-infographics.css">
+    <script src="../js/layer114-infographics.js"></script>
+
+    <!-- Layer 115: Cross-Section Linking Intelligence -->
+    <link rel="stylesheet" href="../css/layer115-cross-linking.css">
+    <script src="../js/layer115-cross-linking.js"></script>
+
+    <!-- Layer 116: Trending Topic Detection Engine -->
+    <link rel="stylesheet" href="../css/layer116-trending.css">
+    <script src="../js/layer116-trending.js"></script>
+
+    <!-- Layer 117: Social Sentiment Analysis Engine -->
+    <link rel="stylesheet" href="../css/layer117-sentiment.css">
+    <script src="../js/layer117-sentiment.js"></script>
+
+    <!-- Layer 118: Real-Time Comment Moderation Engine -->
+    <link rel="stylesheet" href="../css/layer118-moderation.css">
+    <script src="../js/layer118-moderation.js"></script>
+
+    <!-- Layer 119: Live Fact-Checking Engine -->
+    <link rel="stylesheet" href="../css/layer119-factcheck.css">
+    <script src="../js/layer119-factcheck.js"></script>
+
+    <!-- Layer 120: AI-Powered Related Content Engine -->
+    <link rel="stylesheet" href="../css/layer120-related-content.css">
+    <script src="../js/layer120-related-content.js"></script>
+
+    <!-- Layer 121: AI-Powered Trending Insights Engine -->
+    <link rel="stylesheet" href="../css/layer121-trending-insights.css">
+    <script src="../js/layer121-trending-insights.js"></script>
+
+    <!-- Layer 122: Content Engagement Heatmap Engine -->
+    <link rel="stylesheet" href="../css/layer122-heatmap.css">
+    <script src="../js/layer122-heatmap.js"></script>
+
+    <!-- Layer 123: Automated Video Summary Engine -->
+    <link rel="stylesheet" href="../css/layer123-video-summary.css">
+    <script src="../js/layer123-video-summary.js"></script>
+
+    <!-- Layer 124: Real-Time Notification Scheduler -->
+    <link rel="stylesheet" href="../css/layer124-notify-scheduler.css">
+    <script src="../js/layer124-notify-scheduler.js"></script>
+
+    <!-- Layer 125: Smart Tagging & Keyword Extraction -->
+    <link rel="stylesheet" href="../css/layer125-smart-tags.css">
+    <script src="../js/layer125-smart-tags.js"></script>
+
+    <!-- Layer 126: Interactive Data Visualization Engine -->
+    <link rel="stylesheet" href="../css/layer126-data-viz.css">
+    <script src="../js/layer126-data-viz.js"></script>
+
+    <!-- Layer 127: Reader Personalization Engine -->
+    <link rel="stylesheet" href="../css/layer127-personalization.css">
+    <script src="../js/layer127-personalization.js"></script>
+
+    <!-- Layer 128: Multi-Source Content Aggregation Engine -->
+    <link rel="stylesheet" href="../css/layer128-content-aggregator.css">
+    <script src="../js/layer128-content-aggregator.js"></script>
+
+    <!-- Layer 129: Dynamic Related Media Engine -->
+    <link rel="stylesheet" href="../css/layer129-related-media.css">
+    <script src="../js/layer129-related-media.js"></script>
+
+    <!-- Layer 130: AI-Powered Fact Verification Engine -->
+    <link rel="stylesheet" href="../css/layer130-ai-factcheck.css">
+    <script src="../js/layer130-ai-factcheck.js"></script>
+
+    <!-- Layer 131: Real-Time Breaking News Engine -->
+    <link rel="stylesheet" href="../css/layer131-breaking-news.css">
+    <script src="../js/layer131-breaking-news.js"></script>
+
+    <!-- Layer 132: Multimedia Storytelling Engine -->
+    <link rel="stylesheet" href="../css/layer132-multimedia-story.css">
+    <script src="../js/layer132-multimedia-story.js"></script>
+
+    <!-- Layer 133: Automated Press Release Engine -->
+    <link rel="stylesheet" href="../css/layer133-press-release.css">
+    <script src="../js/layer133-press-release.js"></script>
+
+    <!-- Layer 134: Cross-Platform Sync Engine -->
+    <link rel="stylesheet" href="../css/layer134-sync-engine.css">
+    <script src="../js/layer134-sync-engine.js"></script>
+
+    <!-- Layer 150: Global News Core Distributor -->
+    <link rel="stylesheet" href="../css/layer150-news-distributor.css">
+    <script src="../js/layer150-news-distributor.js"></script>
+
+    <!-- ========== NEW PUBLISHING PIPELINE LAYERS (151-155) ========== -->
+    <!-- Unified CSS for Layers 151-155 -->
+    <link rel="stylesheet" href="../css/layers151-155-unified.css">
+
+    <!-- Layer 151: Universal Article Syndication Engine -->
+    <script src="../js/layer151-syndication-engine.js"></script>
+
+    <!-- Layer 152: Intelligent Section Mapping System -->
+    <script src="../js/layer152-section-mapping.js"></script>
+
+    <!-- Layer 153: Editorial Quality & Completeness Validator -->
+    <script src="../js/layer153-quality-validator.js"></script>
+
+    <!-- Layer 154: Multilingual Semantic Publishing Engine -->
+    <script src="../js/layer154-multilingual-engine.js"></script>
+
+    <!-- Layer 155: Geo-Adaptive News Presentation -->
+    <script src="../js/layer155-geo-adaptive.js"></script>
+
+    <!-- ========== ENHANCED PUBLISHING LAYERS (156-160) ========== -->
+    <!-- Unified CSS for Layers 156-160 -->
+    <link rel="stylesheet" href="../css/layers156-160-unified.css">
+
+    <!-- Layer 156: Regional Context Enhancement Layer -->
+    <script src="../js/layer156-regional-context.js"></script>
+
+    <!-- Layer 157: Global Headline Variants Generator -->
+    <script src="../js/layer157-headline-variants.js"></script>
+
+    <!-- Layer 158: High-Impact Topic Amplification Engine -->
+    <script src="../js/layer158-topic-amplification.js"></script>
+
+    <!-- Layer 159: Trust, Credibility & Source Signals -->
+    <script src="../js/layer159-trust-signals.js"></script>
+
+    <!-- Layer 160: Global News Priority Index -->
+    <script src="../js/layer160-priority-index.js"></script>
+
+    <!-- ========== EDITORIAL INTEGRITY LAYERS (161-165) ========== -->
+    <!-- Unified CSS for Layers 161-165 -->
+    <link rel="stylesheet" href="../css/layers161-165-unified.css">
+
+    <!-- Layer 161: Evidence Weight Scoring Engine -->
+    <script src="../js/layer161-evidence-scoring.js"></script>
+
+    <!-- Layer 162: Bias Detection & Balance Analyzer -->
+    <script src="../js/layer162-bias-detection.js"></script>
+
+    <!-- Layer 163: Anti-Disinformation Shield -->
+    <script src="../js/layer163-anti-disinfo.js"></script>
+
+    <!-- Layer 164: Viral Propagation Control -->
+    <script src="../js/layer164-viral-control.js"></script>
+
+    <!-- Layer 165: Autonomous Editorial Governance -->
+    <script src="../js/layer165-editorial-governance.js"></script>
+
+    <!-- ========== EDITORIAL INVESTIGATION & TRUST SUITE (166-170) ========== -->
+    <!-- Unified CSS for Layers 166-170 -->
+    <link rel="stylesheet" href="../css/layers166-170-unified.css">
+
+    <!-- Layer 166: Long-Form Investigative Structuring Engine -->
+    <script src="../js/layer166-investigative-structuring.js"></script>
+
+    <!-- Layer 167: Multimedia Narrative Composer -->
+    <script src="../js/layer167-multimedia-composer.js"></script>
+
+    <!-- Layer 168: Real-Time Story Evolution Tracker -->
+    <script src="../js/layer168-story-evolution.js"></script>
+
+    <!-- Layer 169: Historical Context & Archive Linker -->
+    <script src="../js/layer169-historical-context.js"></script>
+
+    <!-- Layer 170: Reader Trust Feedback Loop -->
+    <script src="../js/layer170-trust-feedback.js"></script>
+
+    <!-- ========== PLATFORM GOVERNANCE & EVOLUTION SUITE (171-175) ========== -->
+    <!-- Unified CSS for Layers 171-175 -->
+    <link rel="stylesheet" href="../css/layers171-175-unified.css">
+
+    <!-- Layer 171: Global Editorial Compliance Monitor -->
+    <script src="../js/layer171-compliance-monitor.js"></script>
+
+    <!-- Layer 172: Platform Resilience & Failover Controller -->
+    <script src="../js/layer172-resilience-controller.js"></script>
+
+    <!-- Layer 173: Algorithmic Reach Optimization -->
+    <script src="../js/layer173-reach-optimization.js"></script>
+
+    <!-- Layer 174: Sovereign Data Control Layer -->
+    <script src="../js/layer174-data-sovereignty.js"></script>
+
+    <!-- Layer 175: Autonomous Platform Evolution Engine -->
+    <script src="../js/layer175-evolution-engine.js"></script>
+
+    <!-- ========== SOVEREIGN MEDIA CONTROL SUITE (176-180) ========== -->
+    <!-- Unified CSS for Layers 176-180 -->
+    <link rel="stylesheet" href="../css/layers176-180-unified.css">
+
+    <!-- Layer 176: Long-Term Media Independence Core -->
+    <script src="../js/layer176-media-independence.js"></script>
+
+    <!-- Layer 177: Global Crisis Coverage Mode -->
+    <script src="../js/layer177-crisis-coverage.js"></script>
+
+    <!-- Layer 178: Audience Intelligence Engine -->
+    <script src="../js/layer178-audience-intelligence.js"></script>
+
+    <!-- Layer 179: Ethical AI Oversight Layer -->
+    <script src="../js/layer179-ethical-ai.js"></script>
+
+    <!-- Layer 180: Sovereign Media Control Core -->
+    <script src="../js/layer180-sovereign-control.js"></script>
+
+    <!-- ========== ADVANCED JOURNALISM & EDITORIAL INTEGRITY SUITE (181-190) ========== -->
+    <!-- Unified CSS for Layers 181-190 -->
+    <link rel="stylesheet" href="../css/layers181-190-unified.css">
+
+    <!-- Layer 181: Global Breaking News Alert System -->
+    <script src="../js/layer181-breaking-alerts.js"></script>
+
+    <!-- Layer 182: Live Story Stream Engine -->
+    <script src="../js/layer182-live-stream.js"></script>
+
+    <!-- Layer 183: Source Verification & Provenance Tracker -->
+    <script src="../js/layer183-source-provenance.js"></script>
+
+    <!-- Layer 184: Investigative Collaboration Workspace -->
+    <script src="../js/layer184-collaboration.js"></script>
+
+    <!-- Layer 185: Long-Read Immersive Experience Engine -->
+    <script src="../js/layer185-immersive.js"></script>
+
+    <!-- Layer 186: Global Timeline & Event Correlation Engine -->
+    <script src="../js/layer186-timeline.js"></script>
+
+    <!-- Layer 187: Reader Personalization Without Filter Bubbles -->
+    <script src="../js/layer187-personalization.js"></script>
+
+    <!-- Layer 188: Global Opinion & Analysis Segregation Layer -->
+    <script src="../js/layer188-segregation.js"></script>
+
+    <!-- Layer 189: Editorial Accountability Ledger -->
+    <script src="../js/layer189-ledger.js"></script>
+
+    <!-- Layer 190: Global Corrections & Retractions Engine -->
+    <script src="../js/layer190-corrections.js"></script>
+
+    <!-- ========== ULTIMATE GOVERNANCE & COMMAND SUITE (191-200) 👑 ========== -->
+    <!-- Unified CSS for Layers 191-200 -->
+    <link rel="stylesheet" href="../css/layers191-200-unified.css">
+
+    <!-- Layer 191: Journalist Reputation & Attribution System -->
+    <script src="../js/layer191-journalist-reputation.js"></script>
+
+    <!-- Layer 192: AI-Assisted Research & Background Engine -->
+    <script src="../js/layer192-ai-research.js"></script>
+
+    <!-- Layer 193: Global Legal Risk & Compliance Analyzer -->
+    <script src="../js/layer193-legal-risk.js"></script>
+
+    <!-- Layer 194: Platform Integrity & Tamper Detection -->
+    <script src="../js/layer194-integrity.js"></script>
+
+    <!-- Layer 195: Global Archive Preservation Engine -->
+    <script src="../js/layer195-archive.js"></script>
+
+    <!-- Layer 196: Crisis Load Surge Management -->
+    <script src="../js/layer196-surge.js"></script>
+
+    <!-- Layer 197: International Newsroom Coordination Hub -->
+    <script src="../js/layer197-newsroom.js"></script>
+
+    <!-- Layer 198: Public Transparency & Ethics Dashboard -->
+    <script src="../js/layer198-transparency.js"></script>
+
+    <!-- Layer 199: Autonomous Quality Self-Audit Engine -->
+    <script src="../js/layer199-self-audit.js"></script>
+
+    <!-- 👑 Layer 200: SOVEREIGN GLOBAL MEDIA COMMAND CORE 👑 -->
+    <script src="../js/layer200-sovereign-command.js"></script>
+
+    <!-- Layer 71: Authentication UI Handler -->
+    <script>
+        // Wait for auth engine to be ready
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.AuthEngine) {
+                // Update UI based on auth status
+                updateAuthUI();
+
+                // User menu dropdown toggle
+                const userMenuTrigger = document.getElementById('userMenuTrigger');
+                const userMenu = document.getElementById('userMenu');
+
+                if (userMenuTrigger && userMenu) {
+                    userMenuTrigger.addEventListener('click', function () {
+                        userMenu.classList.toggle('active');
+                    });
+
+                    // Close dropdown when clicking outside
+                    document.addEventListener('click', function (e) {
+                        if (!userMenu.contains(e.target)) {
+                            userMenu.classList.remove('active');
+                        }
+                    });
+                }
+
+                // Logout handler
+                const logoutBtn = document.getElementById('logoutBtn');
+                if (logoutBtn) {
+                    logoutBtn.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        if (confirm('Are you sure you want to logout?')) {
+                            window.AuthEngine.logout();
+                        }
+                    });
+                }
+            }
+        });
+
+        function updateAuthUI() {
+            if (!window.AuthEngine) return;
+
+            const isAuth = window.AuthEngine.isAuthenticated();
+            const user = window.AuthEngine.getCurrentUser();
+
+            const userMenu = document.getElementById('userMenu');
+            const loginLink = document.getElementById('loginLink');
+
+            if (userMenu && loginLink) {
+                if (isAuth && user) {
+                    // Show user menu
+                    userMenu.style.display = 'inline-block';
+                    loginLink.style.display = 'none';
+
+                    // Update user info
+                    const username = document.getElementById('currentUsername');
+                    const avatar = document.getElementById('userAvatarSmall');
+
+                    if (username) username.textContent = user.username;
+                    if (avatar) avatar.textContent = user.username.charAt(0).toUpperCase();
+                } else {
+                    // Show login link
+                    userMenu.style.display = 'none';
+                    loginLink.style.display = 'inline-block';
+                }
+            }
+        }
+    </script>
+
+    <!-- ========== PLATFORM ACTIVATION ORCHESTRATOR ========== -->
+    <!-- Full Platform Activation: Loads all engines, layers, and initializes cinematic slider -->
+    <script src="../js/platform-activation.js"></script>
+
+</body>

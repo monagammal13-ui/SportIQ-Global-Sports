@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Layer Management Dashboard - SPORTIQ Platform Control">
+    <title>Layer Manager - SPORTIQ</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/layer76-manager.css">
+    <link rel="icon" type="image/x-icon" href="../assets/icons/favicon.ico">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="nav-brand">SPORTIQ</a>
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <a href="index.html" class="btn btn-outline btn-sm">← Back to Home</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container layer-dashboard">
+        <div class="layer-header">
+            <h1 class="layer-title">🎛️ Layer Management</h1>
+            <p class="layer-subtitle">Platform Layer Registry & Control Center</p>
+        </div>
+
+        <div class="layer-stats">
+            <div class="layer-stat-card">
+                <div class="layer-stat-value" id="statTotal">0</div>
+                <div class="layer-stat-label">Total Layers</div>
+            </div>
+            <div class="layer-stat-card">
+                <div class="layer-stat-value" id="statActive">0</div>
+                <div class="layer-stat-label">Active</div>
+            </div>
+            <div class="layer-stat-card">
+                <div class="layer-stat-value" id="statInactive">0</div>
+                <div class="layer-stat-label">Inactive</div>
+            </div>
+            <div class="layer-stat-card">
+                <div class="layer-stat-value" id="statCategories">0</div>
+                <div class="layer-stat-label">Categories</div>
+            </div>
+        </div>
+
+        <div class="layer-list">
+            <div class="layer-list-header">
+                <h2 class="layer-list-title">📋 Registered Layers</h2>
+                <button class="btn btn-primary btn-sm" onclick="refreshLayers()">↻ Refresh</button>
+            </div>
+            <div class="layer-items" id="layerList"></div>
+        </div>
+    </div>
+
+    <script src="../js/layer76-layer-manager.js"></script>
+    <script>
+        setTimeout(() => {
+            if (window.LayerManager) {
+                initDashboard();
+            } else {
+                console.error('Layer Manager not loaded');
+            }
+        }, 1000);
+
+        function initDashboard() {
+            updateStats();
+            renderLayers();
+
+            document.addEventListener('layer:status-change', () => {
+                updateStats();
+                renderLayers();
+            });
+
+            document.addEventListener('layer:enabled', () => {
+                updateStats();
+                renderLayers();
+            });
+
+            document.addEventListener('layer:disabled', () => {
+                updateStats();
+                renderLayers();
+            });
+
+            setInterval(updateStats, 5000);
+        }
+
+        function updateStats() {
+            const stats = window.LayerManager.getStats();
+            const state = window.LayerManager.state();
+
+            document.getElementById('statTotal').textContent = stats.total;
+            document.getElementById('statActive').textContent = stats.active;
+            document.getElementById('statInactive').textContent = stats.inactive;
+            document.getElementById('statCategories').textContent = state.categories;
+        }
+
+        function renderLayers() {
+            const layers = window.LayerManager.getLayers();
+            const container = document.getElementById('layerList');
+
+            if (layers.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #6b7280;">No layers registered</p>';
+                return;
+            }
+
+            container.innerHTML = layers.map(layer => {
+                const statusClass = layer.status || 'unknown';
+                const enabledText = layer.enabled ? 'Enabled' : 'Disabled';
+                const actionBtn = layer.enabled
+                    ? `<button class="btn btn-danger btn-sm" onclick="disableLayer('${layer.id}')">Disable</button>`
+                    : `<button class="btn btn-success btn-sm" onclick="enableLayer('${layer.id}')">Enable</button>`;
+
+                return `
+                    <div class="layer-item">
+                        <div class="layer-item-header">
+                            <div class="layer-item-info">
+                                <h3 class="layer-item-name">${layer.name}</h3>
+                                <p class="layer-item-desc">${layer.description}</p>
+                                <div class="layer-item-meta">
+                                    <span class="layer-category">${layer.category}</span>
+                                    <span>v${layer.version}</span>
+                                    <span>${layer.globals.length} globals</span>
+                                    <span>${layer.files.length} files</span>
+                                </div>
+                            </div>
+                            <div class="layer-item-actions">
+                                <span class="layer-status ${statusClass}">
+                                    <span class="layer-status-dot"></span>
+                                    ${layer.status}
+                                </span>
+                                ${actionBtn}
+                            </div>
+                        </div>
+                        ${layer.dependencies.length > 0 ? `
+                            <div class="layer-deps">
+                                <div class="layer-deps-label">Dependencies:</div>
+                                <div class="layer-deps-list">
+                                    ${layer.dependencies.map(dep => `<span class="layer-dep-badge">${dep}</span>`).join('')}
+                                </div>
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function enableLayer(layerId) {
+            const result = window.LayerManager.enable(layerId);
+            if (result) {
+                alert(`Layer ${layerId} enabled successfully!`);
+            } else {
+                alert(`Failed to enable layer ${layerId}. Check dependencies.`);
+            }
+        }
+
+        function disableLayer(layerId) {
+            if (confirm(`Are you sure you want to disable layer ${layerId}?`)) {
+                window.LayerManager.disable(layerId);
+            }
+        }
+
+        function refreshLayers() {
+            updateStats();
+            renderLayers();
+        }
+    </script>
+</body>
+
+</html>

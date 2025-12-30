@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard - SPORTIQ</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/layer70-analytics.css">
+</head>
+
+<body class="analytics-dashboard-page">
+
+    <!-- Dashboard Header -->
+    <header class="dashboard-header">
+        <div class="container">
+            <h1>📊 Analytics & Metrics Dashboard</h1>
+            <div class="dashboard-actions">
+                <button id="refreshBtn" class="btn btn-primary">🔄 Refresh</button>
+                <button id="exportBtn" class="btn btn-outline">📥 Export Data</button>
+                <button id="clearBtn" class="btn btn-outline">🗑️ Clear Data</button>
+                <a href="index.html" class="btn btn-outline">← Back to Site</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-main">
+        <div class="container">
+
+            <!-- Real-Time Metrics Panel -->
+            <section class="metrics-panel">
+                <h2>⚡ Real-Time Metrics</h2>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-icon">👁️</div>
+                        <div class="metric-value" id="totalVisits">0</div>
+                        <div class="metric-label">Total Visits</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">🖱️</div>
+                        <div class="metric-value" id="totalClicks">0</div>
+                        <div class="metric-label">Total Clicks</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">⏱️</div>
+                        <div class="metric-value" id="avgTime">0s</div>
+                        <div class="metric-label">Avg Time on Page</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">📜</div>
+                        <div class="metric-value" id="scrollDepth">0%</div>
+                        <div class="metric-label">Scroll Depth</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">⚡</div>
+                        <div class="metric-value" id="loadTime">0ms</div>
+                        <div class="metric-label">Page Load Time</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">📊</div>
+                        <div class="metric-value" id="totalEvents">0</div>
+                        <div class="metric-label">Events Tracked</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Current Session Info -->
+            <section class="session-info">
+                <h2>🔐 Current Session</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">Session ID:</span>
+                        <span class="info-value" id="sessionId">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Start Time:</span>
+                        <span class="info-value" id="startTime">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Current Page:</span>
+                        <span class="info-value" id="currentPage">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Source:</span>
+                        <span class="info-value" id="source">-</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Click Heatmap -->
+            <section class="heatmap-section">
+                <h2>🗺️ Click Heatmap Data</h2>
+                <div class="heatmap-container">
+                    <div id="clickTable" class="data-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Element</th>
+                                    <th>Position (X, Y)</th>
+                                    <th>Text</th>
+                                </tr>
+                            </thead>
+                            <tbody id="clickTableBody">
+                                <tr>
+                                    <td colspan="4" class="no-data">No click data available</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Event Timeline -->
+            <section class="timeline-section">
+                <h2>📅 Event Timeline</h2>
+                <div class="timeline-container">
+                    <div id="eventTimeline" class="timeline">
+                        <div class="timeline-item no-data">
+                            <p>No events tracked yet</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Performance Metrics -->
+            <section class="performance-section">
+                <h2>⚡ Performance Breakdown</h2>
+                <div class="performance-grid">
+                    <div class="perf-card">
+                        <div class="perf-label">DNS Lookup</div>
+                        <div class="perf-value" id="dnsTime">-</div>
+                        <div class="perf-bar">
+                            <div class="perf-fill" id="dnsBar"></div>
+                        </div>
+                    </div>
+                    <div class="perf-card">
+                        <div class="perf-label">TCP Connection</div>
+                        <div class="perf-value" id="tcpTime">-</div>
+                        <div class="perf-bar">
+                            <div class="perf-fill" id="tcpBar"></div>
+                        </div>
+                    </div>
+                    <div class="perf-card">
+                        <div class="perf-label">Request</div>
+                        <div class="perf-value" id="requestTime">-</div>
+                        <div class="perf-bar">
+                            <div class="perf-fill" id="requestBar"></div>
+                        </div>
+                    </div>
+                    <div class="perf-card">
+                        <div class="perf-label">Response</div>
+                        <div class="perf-value" id="responseTime">-</div>
+                        <div class="perf-bar">
+                            <div class="perf-fill" id="responseBar"></div>
+                        </div>
+                    </div>
+                    <div class="perf-card">
+                        <div class="perf-label">DOM Content Loaded</div>
+                        <div class="perf-value" id="domTime">-</div>
+                        <div class="perf-bar">
+                            <div class="perf-fill" id="domBar"></div>
+                        </div>
+                    </div>
+                    <div class="perf-card">
+                        <div class="perf-label">Total Load Time</div>
+                        <div class="perf-value" id="totalLoadTime">-</div>
+                        <div class="perf-bar">
+                            <div class="perf-fill" id="totalBar"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Historical Sessions -->
+            <section class="history-section">
+                <h2>📜 Session History</h2>
+                <div id="sessionHistory" class="history-container">
+                    <p class="no-data">No historical sessions found</p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../js/layer70-analytics-engine.js"></script>
+    <script>
+        // Dashboard UI Controller
+        function updateDashboard() {
+            if (!window.Layer70_Analytics) {
+                console.warn('Analytics engine not loaded');
+                return;
+            }
+
+            const metrics = window.Layer70_Analytics.getMetrics();
+            const liveMetrics = window.Layer70_Analytics.getLiveMetrics();
+            const status = window.Layer70_Analytics.getStatus();
+
+            // Update real-time metrics
+            document.getElementById('totalVisits').textContent = metrics.visits || 0;
+            document.getElementById('totalClicks').textContent = metrics.clicks.length || 0;
+            document.getElementById('avgTime').textContent = `${metrics.timeOnPage || 0}s`;
+            document.getElementById('scrollDepth').textContent = `${metrics.scrollDepth || 0}%`;
+            document.getElementById('totalEvents').textContent = metrics.events.length || 0;
+
+            if (metrics.performance.loadTime) {
+                document.getElementById('loadTime').textContent = `${metrics.performance.loadTime}ms`;
+            }
+
+            // Update session info
+            document.getElementById('sessionId').textContent = metrics.sessionId;
+            document.getElementById('startTime').textContent = new Date(status.stats.timeOnPage * 1000).toLocaleTimeString();
+            document.getElementById('currentPage').textContent = window.location.pathname;
+
+            // Update click table
+            updateClickTable(metrics.clicks);
+
+            // Update event timeline
+            updateEventTimeline(metrics.events);
+
+            // Update performance breakdown
+            if (metrics.performance && Object.keys(metrics.performance).length > 0) {
+                updatePerformanceBreakdown(metrics.performance);
+            }
+
+            // Update session history
+            updateSessionHistory();
+        }
+
+        function updateClickTable(clicks) {
+            const tbody = document.getElementById('clickTableBody');
+            if (!clicks || clicks.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4" class="no-data">No click data available</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = clicks.slice(-20).reverse().map(click => `
+                <tr>
+                    <td>${new Date(click.timestamp).toLocaleTimeString()}</td>
+                    <td>${click.element.selector}</td>
+                    <td>(${click.coordinates.x}, ${click.coordinates.y})</td>
+                    <td>${click.target.text || '-'}</td>
+                </tr>
+            `).join('');
+        }
+
+        function updateEventTimeline(events) {
+            const timeline = document.getElementById('eventTimeline');
+            if (!events || events.length === 0) {
+                timeline.innerHTML = '<div class="timeline-item no-data"><p>No events tracked yet</p></div>';
+                return;
+            }
+
+            timeline.innerHTML = events.slice(-15).reverse().map(event => `
+                <div class="timeline-item">
+                    <div class="timeline-time">${new Date(event.timestamp).toLocaleTimeString()}</div>
+                    <div class="timeline-type">${event.type}</div>
+                    <div class="timeline-details">${JSON.stringify(event.data || {}).substring(0, 100)}</div>
+                </div>
+            `).join('');
+        }
+
+        function updatePerformanceBreakdown(perf) {
+            const maxTime = Math.max(perf.dns, perf.tcp, perf.request, perf.response, perf.domContentLoaded, perf.loadTime);
+
+            if (perf.dns) {
+                document.getElementById('dnsTime').textContent = `${perf.dns}ms`;
+                document.getElementById('dnsBar').style.width = `${(perf.dns / maxTime) * 100}%`;
+            }
+            if (perf.tcp) {
+                document.getElementById('tcpTime').textContent = `${perf.tcp}ms`;
+                document.getElementById('tcpBar').style.width = `${(perf.tcp / maxTime) * 100}%`;
+            }
+            if (perf.request) {
+                document.getElementById('requestTime').textContent = `${perf.request}ms`;
+                document.getElementById('requestBar').style.width = `${(perf.request / maxTime) * 100}%`;
+            }
+            if (perf.response) {
+                document.getElementById('responseTime').textContent = `${perf.response}ms`;
+                document.getElementById('responseBar').style.width = `${(perf.response / maxTime) * 100}%`;
+            }
+            if (perf.domContentLoaded) {
+                document.getElementById('domTime').textContent = `${perf.domContentLoaded}ms`;
+                document.getElementById('domBar').style.width = `${(perf.domContentLoaded / maxTime) * 100}%`;
+            }
+            if (perf.loadTime) {
+                document.getElementById('totalLoadTime').textContent = `${perf.loadTime}ms`;
+                document.getElementById('totalBar').style.width = `100%`;
+            }
+        }
+
+        function updateSessionHistory() {
+            const sessions = window.Layer70_Analytics.getAllSessions();
+            const container = document.getElementById('sessionHistory');
+
+            if (!sessions || sessions.length === 0) {
+                container.innerHTML = '<p class="no-data">No historical sessions found</p>';
+                return;
+            }
+
+            container.innerHTML = sessions.slice(-10).reverse().map(session => `
+                <div class="session-card">
+                    <div class="session-header">
+                        <strong>Session: ${session.sessionId}</strong>
+                        <span>${new Date(session.startTime).toLocaleString()}</span>
+                    </div>
+                    <div class="session-stats">
+                        <span>👁️ ${session.metrics.visits} visits</span>
+                        <span>🖱️ ${session.metrics.clicks.length} clicks</span>
+                        <span>⏱️ ${Math.floor((session.endTime - session.startTime) / 1000)}s duration</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Event Listeners
+        document.getElementById('refreshBtn').addEventListener('click', () => {
+            updateDashboard();
+            console.log('Dashboard refreshed');
+        });
+
+        document.getElementById('exportBtn').addEventListener('click', () => {
+            if (window.Layer70_Analytics) {
+                window.Layer70_Analytics.exportData();
+            }
+        });
+
+        document.getElementById('clearBtn').addEventListener('click', () => {
+            if (confirm('Are you sure you want to clear all analytics data?')) {
+                if (window.Layer70_Analytics) {
+                    window.Layer70_Analytics.clearData();
+                    updateDashboard();
+                }
+            }
+        });
+
+        // Auto-refresh every 10 seconds
+        setInterval(updateDashboard, 10000);
+
+        // Initial load
+        setTimeout(updateDashboard, 1000);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPORTIQ - Runtime Test</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        .status {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .status-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .status-item:last-child {
+            border-bottom: none;
+        }
+
+        .badge {
+            background: #10b981;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        #console {
+            background: #000;
+            color: #0f0;
+            padding: 15px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            max-height: 400px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+
+        .log-entry {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🚀 SPORTIQ Runtime Core Orchestrator</h1>
+        <p>Auto-detecting and executing all project layers...</p>
+
+        <div class="status">
+            <div class="status-item">
+                <span>Runtime Status:</span>
+                <span class="badge" id="runtime-status">INITIALIZING...</span>
+            </div>
+            <div class="status-item">
+                <span>Total Layers:</span>
+                <span id="total-layers">60</span>
+            </div>
+            <div class="status-item">
+                <span>Configs Loaded:</span>
+                <span id="configs-loaded">0</span>
+            </div>
+            <div class="status-item">
+                <span>CSS Files:</span>
+                <span id="css-files">0</span>
+            </div>
+            <div class="status-item">
+                <span>JS Modules:</span>
+                <span id="js-modules">0</span>
+            </div>
+            <div class="status-item">
+                <span>UI Rendering:</span>
+                <span class="badge" id="ui-rendering" style="background: #f59e0b;">LOADING...</span>
+            </div>
+            <div class="status-item">
+                <span>CSS Loaded:</span>
+                <span id="css-count">0</span>
+            </div>
+            <div class="status-item">
+                <span>Animations:</span>
+                <span id="animations">DISABLED</span>
+            </div>
+            <div class="status-item">
+                <span>JS Execution:</span>
+                <span class="badge" id="js-execution" style="background: #f59e0b;">LOADING...</span>
+            </div>
+            <div class="status-item">
+                <span>JS Executed:</span>
+                <span id="js-count">0</span>
+            </div>
+            <div class="status-item">
+                <span>JS Errors:</span>
+                <span id="js-errors">0</span>
+            </div>
+        </div>
+
+        <h3>📋 Runtime Console</h3>
+        <div id="console"></div>
+    </div>
+
+    <!-- Runtime JS Execution Engine -->
+    <script src="../js/runtime-js-execution.js"></script>
+
+    <!-- Runtime UI Rendering -->
+    <script src="../js/runtime-ui-rendering.js"></script>
+
+    <!-- Runtime Core Orchestrator -->
+    <script src="../js/runtime-core-orchestrator.js"></script>
+
+    <script>
+        // Intercept console.log to display in page
+        const consoleDiv = document.getElementById('console');
+        const originalLog = console.log;
+
+        console.log = function (...args) {
+            originalLog.apply(console, args);
+            const entry = document.createElement('div');
+            entry.className = 'log-entry';
+            entry.textContent = args.join(' ');
+            consoleDiv.appendChild(entry);
+            consoleDiv.scrollTop = consoleDiv.scrollHeight;
+        };
+
+        // Update status every second
+        setInterval(() => {
+            if (window.RuntimeOrchestrator && window.RuntimeOrchestrator.isRunning) {
+                document.getElementById('runtime-status').textContent = '✅ ACTIVE';
+                document.getElementById('runtime-status').style.background = '#10b981';
+
+                const status = window.SPORTIQ?.getStatus();
+                if (status) {
+                    document.getElementById('configs-loaded').textContent = status.configs;
+                    document.getElementById('css-files').textContent = status.styles;
+                    document.getElementById('js-modules').textContent = status.modules;
+                }
+            }
+
+            // UI Rendering status
+            if (window.RuntimeUI && window.RuntimeUI.isActive) {
+                document.getElementById('ui-rendering').textContent = '✅ ACTIVE';
+                document.getElementById('ui-rendering').style.background = '#10b981';
+
+                const uiStatus = window.RuntimeUI.getStatus();
+                if (uiStatus) {
+                    document.getElementById('css-count').textContent = uiStatus.loadedStyles;
+                    document.getElementById('animations').textContent = '✅ ENABLED';
+                }
+            }
+
+            // JS Execution status
+            if (window.RuntimeJS && window.RuntimeJS.isActive) {
+                document.getElementById('js-execution').textContent = '✅ ACTIVE';
+                document.getElementById('js-execution').style.background = '#10b981';
+
+                const jsStatus = window.RuntimeJS.getStatus();
+                if (jsStatus) {
+                    document.getElementById('js-count').textContent = jsStatus.executedScripts;
+                    document.getElementById('js-errors').textContent = jsStatus.errors;
+                }
+            }
+        }, 1000);
+
+        // Test API
+        setTimeout(() => {
+            console.log('');
+            console.log('========================');
+            console.log('🧪 TESTING GLOBAL API');
+            console.log('========================');
+
+            if (window.SPORTIQ) {
+                console.log('✅ window.SPORTIQ available');
+                console.log('✅ Configs:', Object.keys(window.SPORTIQ_CONFIGS || {}).length);
+
+                const status = window.SPORTIQ.getStatus();
+                console.log('✅ Status:', JSON.stringify(status, null, 2));
+            } else {
+                console.log('⚠️ SPORTIQ API not yet ready');
+            }
+        }, 3000);
+    </script>
+</body>
+
+</html>

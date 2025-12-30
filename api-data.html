@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Live Sports Data - Real-time scores, news, and statistics from SPORTIQ API">
+    <meta name="keywords" content="SPORTIQ, Live Data, API, Sports Scores, Real-time">
+
+    <title>Live Data - SPORTIQ</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/layer72-api.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/icons/favicon.ico">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="nav-brand">SPORTIQ</a>
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <a href="index.html" class="btn btn-outline btn-sm">← Back to Home</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container" style="margin-top: 2rem; margin-bottom: 4rem;">
+        <!-- Page Header -->
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">🌐 Live Sports Data</h1>
+            <p style="color: var(--color-gray-600); font-size: 1.125rem;">
+                Real-time data integration powered by Layer 72 API Engine
+            </p>
+        </div>
+
+        <!-- API Stats -->
+        <div class="api-stats">
+            <div class="api-stat-card">
+                <div class="api-stat-value" id="statEndpoints">0</div>
+                <div class="api-stat-label">Active Endpoints</div>
+            </div>
+            <div class="api-stat-card">
+                <div class="api-stat-value" id="statSyncs">0</div>
+                <div class="api-stat-label">Auto-Syncs</div>
+            </div>
+            <div class="api-stat-card">
+                <div class="api-stat-value" id="statCache">0</div>
+                <div class="api-stat-label">Cached Items</div>
+            </div>
+            <div class="api-stat-card">
+                <div class="api-stat-value" id="statHitRate">0%</div>
+                <div class="api-stat-label">Cache Hit Rate</div>
+            </div>
+        </div>
+
+        <!-- Control Panel -->
+        <div class="api-container">
+            <div class="api-container-header">
+                <h2 class="api-container-title">📡 API Control Panel</h2>
+                <div class="api-container-actions">
+                    <button class="btn btn-primary btn-sm" onclick="refreshAllData()">🔄 Refresh All</button>
+                    <button class="btn btn-secondary btn-sm" onclick="clearAllCache()">🗑️ Clear Cache</button>
+                </div>
+            </div>
+
+            <!-- Sync Status -->
+            <div style="margin-bottom: 1.5rem;">
+                <h3 style="margin-bottom: 1rem;">Active Syncs:</h3>
+                <div id="syncStatus" style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                    <span class="api-sync-indicator">
+                        <span class="api-sync-dot"></span>
+                        <span>No active syncs</span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                <button class="btn btn-outline btn-sm" onclick="fetchLiveScores()">⚽ Live Scores</button>
+                <button class="btn btn-outline btn-sm" onclick="fetchNews()">📰 News Feed</button>
+                <button class="btn btn-outline btn-sm" onclick="fetchStats()">📊 Statistics</button>
+                <button class="btn btn-outline btn-sm" onclick="fetchHighlights()">🎬 Highlights</button>
+            </div>
+        </div>
+
+        <!-- Live Scores Section -->
+        <div class="api-container">
+            <div class="api-container-header">
+                <h2 class="api-container-title">⚽ Live Scores</h2>
+                <span class="api-badge info">Auto-Sync: 30s</span>
+            </div>
+            <div id="liveScoresContainer">
+                <div class="api-loading">
+                    <div class="spinner"></div>
+                    <p>Waiting for data...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- News Feed Section -->
+        <div class="api-container">
+            <div class="api-container-header">
+                <h2 class="api-container-title">📰 Latest News</h2>
+                <span class="api-badge success">Auto-Sync: 5m</span>
+            </div>
+            <div id="newsContainer">
+                <div class="api-loading">
+                    <div class="spinner"></div>
+                    <p>Waiting for data...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics Section -->
+        <div class="api-container">
+            <div class="api-container-header">
+                <h2 class="api-container-title">📊 Top Statistics</h2>
+                <span class="api-badge warning">Auto-Sync: 1h</span>
+            </div>
+            <div id="statsContainer">
+                <div class="api-loading">
+                    <div class="spinner"></div>
+                    <p>Waiting for data...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- API Timeline -->
+        <div class="api-container">
+            <h2 class="api-container-title" style="margin-bottom: 1.5rem;">📋 API Activity Log</h2>
+            <div class="api-timeline" id="apiTimeline">
+                <div class="api-timeline-item">
+                    <div class="api-timeline-time">Just now</div>
+                    <div class="api-timeline-content">
+                        <strong>API Engine Initialized</strong>
+                        <p style="margin: 0.5rem 0 0 0; color: var(--color-gray-600);">
+                            Layer 72 API Integration Engine is ready
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/layer72-api-integration.js"></script>
+
+    <script>
+        // Wait for API engine to initialize
+        setTimeout(() => {
+            if (window.APIIntegration) {
+                initializePage();
+            } else {
+                console.error('API Integration Engine not loaded');
+            }
+        }, 1000);
+
+        function initializePage() {
+            console.log('🌐 Initializing Live Data Page');
+
+            // Update stats
+            updateStats();
+
+            // Update sync status
+            updateSyncStatus();
+
+            // Listen for API events
+            setupEventListeners();
+
+            // Fetch initial data
+            setTimeout(() => {
+                fetchLiveScores();
+                fetchNews();
+                fetchStats();
+            }, 500);
+        }
+
+        function updateStats() {
+            const state = window.APIIntegration.state();
+            const cacheStats = window.APIIntegration.getCacheStats();
+
+            document.getElementById('statEndpoints').textContent = state.endpoints;
+            document.getElementById('statSyncs').textContent = state.activeSyncs;
+            document.getElementById('statCache').textContent = state.cache;
+            document.getElementById('statHitRate').textContent = cacheStats.hitRate;
+        }
+
+        function updateSyncStatus() {
+            const activeSyncs = window.APIIntegration.getActiveSyncs();
+            const container = document.getElementById('syncStatus');
+
+            if (activeSyncs.length === 0) {
+                container.innerHTML = `
+                    <span class="api-sync-indicator">
+                        <span class="api-sync-dot"></span>
+                        <span>No active syncs</span>
+                    </span>
+                `;
+            } else {
+                container.innerHTML = activeSyncs.map(sync => `
+                    <span class="api-sync-indicator syncing">
+                        <span class="api-sync-dot"></span>
+                        <span>${sync.endpointId} (${(sync.interval / 1000).toFixed(0)}s)</span>
+                    </span>
+                `).join('');
+            }
+        }
+
+        function setupEventListeners() {
+            document.addEventListener('api:data-fetched', (e) => {
+                addToTimeline(`Data fetched from ${e.detail.endpointId}`, 'success');
+                updateStats();
+            });
+
+            document.addEventListener('api:data-error', (e) => {
+                addToTimeline(`Error fetching ${e.detail.endpointId}: ${e.detail.error}`, 'error');
+            });
+
+            document.addEventListener('api:sync-started', (e) => {
+                addToTimeline(`Sync started: ${e.detail.endpointId}`, 'info');
+            });
+        }
+
+        function addToTimeline(message, type = 'info') {
+            const timeline = document.getElementById('apiTimeline');
+            const now = new Date().toLocaleTimeString();
+
+            const icon = {
+                success: '✅',
+                error: '❌',
+                info: 'ℹ️',
+                warning: '⚠️'
+            }[type] || 'ℹ️';
+
+            const item = document.createElement('div');
+            item.className = 'api-timeline-item';
+            item.innerHTML = `
+                <div class="api-timeline-time">${now}</div>
+                <div class="api-timeline-content">
+                    <strong>${icon} ${message}</strong>
+                </div>
+            `;
+
+            timeline.insertBefore(item, timeline.firstChild);
+
+            // Keep only last 10 items
+            while (timeline.children.length > 10) {
+                timeline.removeChild(timeline.lastChild);
+            }
+        }
+
+        async function fetchLiveScores() {
+            const result = await window.APIIntegration.fetch('live-scores');
+
+            if (result.success) {
+                // Render as cards
+                const container = document.getElementById('liveScoresContainer');
+                container.innerHTML = `
+                    <div class="api-cards">
+                        <div class="api-card">
+                            <div class="api-card-header">
+                                <h3 class="api-card-title">⚽ Live Match 1</h3>
+                            </div>
+                            <div class="api-card-body">
+                                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 1.5rem; font-weight: bold;">
+                                    <span>Team A</span>
+                                    <span style="color: var(--color-primary);">2 - 1</span>
+                                    <span>Team B</span>
+                                </div>
+                                <div style="margin-top: 1rem; color: var(--color-gray-600); text-align: center;">
+                                    ⏱️ 67' - 2nd Half
+                                </div>
+                            </div>
+                            <div class="api-card-footer">
+                                <span class="api-badge success">Live</span>
+                            </div>
+                        </div>
+                        <div class="api-card">
+                            <div class="api-card-header">
+                                <h3 class="api-card-title">🏀 Live Match 2</h3>
+                            </div>
+                            <div class="api-card-body">
+                                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 1.5rem; font-weight: bold;">
+                                    <span>Team C</span>
+                                    <span style="color: var(--color-primary);">89 - 92</span>
+                                    <span>Team D</span>
+                                </div>
+                                <div style="margin-top: 1rem; color: var(--color-gray-600); text-align: center;">
+                                    ⏱️ Q4 - 3:24
+                                </div>
+                            </div>
+                            <div class="api-card-footer">
+                                <span class="api-badge success">Live</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else {
+                document.getElementById('liveScoresContainer').innerHTML =
+                    `<div class="api-error"><span class="error-icon">⚠️</span><p>Failed to load live scores</p></div>`;
+            }
+        }
+
+        async function fetchNews() {
+            const result = await window.APIIntegration.fetch('football-news');
+
+            if (result.success) {
+                const container = document.getElementById('newsContainer');
+                container.innerHTML = `
+                    <div class="api-list">
+                        ${[1, 2, 3].map(i => `
+                            <div class="api-list-item">
+                                <h4 style="margin-bottom: 0.5rem;">📰 Breaking: Sample News Headline ${i}</h4>
+                                <p style="color: var(--color-gray-600); margin: 0;">
+                                    This is a sample news article description that would normally come from the API...
+                                </p>
+                                <div style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--color-gray-500);">
+                                    🕐 ${i} hours ago
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            }
+        }
+
+        async function fetchStats() {
+            const result = await window.APIIntegration.fetch('player-stats');
+
+            if (result.success) {
+                const container = document.getElementById('statsContainer');
+                container.innerHTML = `
+                    <table class="api-table">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Player</th>
+                                <th>Team</th>
+                                <th>Goals</th>
+                                <th>Assists</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${[1, 2, 3, 4, 5].map(i => `
+                                <tr>
+                                    <td>#${i}</td>
+                                    <td>Player ${i}</td>
+                                    <td>Team ${String.fromCharCode(64 + i)}</td>
+                                    <td>${25 - i}</td>
+                                    <td>${15 - i}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                `;
+            }
+        }
+
+        async function fetchHighlights() {
+            const result = await window.APIIntegration.fetch('match-highlights');
+            addToTimeline('Fetching highlights...', 'info');
+        }
+
+        function refreshAllData() {
+            addToTimeline('Refreshing all data...', 'info');
+            fetchLiveScores();
+            fetchNews();
+            fetchStats();
+        }
+
+        function clearAllCache() {
+            window.APIIntegration.clearCache();
+            addToTimeline('Cache cleared', 'success');
+            updateStats();
+        }
+
+        // Auto-update stats every 5 seconds
+        setInterval(updateStats, 5000);
+    </script>
+</body>
+
+</html>
