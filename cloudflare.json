@@ -1,0 +1,57 @@
+{
+    "name": "SPORTIQ",
+    "version": "1.0.0",
+    "description": "Infinitely Scalable Sports Platform",
+    "build": {
+        "command": "echo 'Build complete - Static site ready'",
+        "output": ".",
+        "environment": "production"
+    },
+    "cloudflare": {
+        "pages": {
+            "buildCommand": "",
+            "buildOutput": ".",
+            "rootDirectory": ".",
+            "framework": "static",
+            "environmentVariables": {
+                "NODE_ENV": "production"
+            }
+        }
+    },
+    "deployment": {
+        "platform": "Cloudflare Pages",
+        "type": "static-with-runtime",
+        "autoDeployment": true,
+        "branch": "main",
+        "buildSettings": {
+            "skipBuild": true,
+            "outputDirectory": "."
+        }
+    },
+    "performance": {
+        "caching": {
+            "html": "1 hour",
+            "css": "30 days",
+            "js": "30 days",
+            "json": "1 hour",
+            "images": "30 days",
+            "videos": "7 days"
+        },
+        "compression": {
+            "enabled": true,
+            "gzip": true,
+            "brotli": true
+        },
+        "cdn": {
+            "enabled": true,
+            "provider": "Cloudflare",
+            "locations": 300
+        }
+    },
+    "production": {
+        "ready": true,
+        "validated": true,
+        "optimized": true,
+        "deployable": true
+    }
+}

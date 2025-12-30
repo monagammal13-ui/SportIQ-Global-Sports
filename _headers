@@ -1,0 +1,60 @@
+# Cache-Control Headers for different file types
+
+# CSS Files - 1 year cache, immutable
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+# JavaScript Files - 1 year cache, immutable
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+# Font Files - 1 year cache, immutable
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+/*.ttf
+  Cache-Control: public, max-age=31536000, immutable
+
+# Images - 30 days cache with stale-while-revalidate
+/*.jpg
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+/*.jpeg
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+/*.png
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+/*.webp
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+/*.gif
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+/*.svg
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
+# Videos - 30 days cache, immutable
+/*.mp4
+  Cache-Control: public, max-age=2592000, immutable
+/*.webm
+  Cache-Control: public, max-age=2592000, immutable
+
+# JSON/API Files - 5 minutes cache with stale-while-revalidate
+/*.json
+  Cache-Control: public, max-age=300, stale-while-revalidate=60
+
+# HTML Files - No cache, always revalidate
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Manifest and Service Worker - No cache
+/manifest.json
+  Cache-Control: public, max-age=0, must-revalidate
+/service-worker.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Security Headers (All Pages)
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
