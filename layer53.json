@@ -1,0 +1,18 @@
+{
+    "id": "layer-053",
+    "name": "Global Video Highlights Feed",
+    "version": "1.0.0",
+    "sources": [
+        "youtube-api",
+        "vimeo",
+        "internal-cdn"
+    ],
+    "categories": [
+        "goals",
+        "highlights",
+        "interviews",
+        "analysis"
+    ],
+    "autoPlay": false,
+    "lazyLoad": true
+}

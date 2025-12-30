@@ -1,0 +1,54 @@
+{
+    "layerId": 157,
+    "name": "Global Headline Variants Generator",
+    "version": "1.0.0",
+    "enabled": true,
+    "variantTypes": {
+        "standard": {
+            "maxLength": 100,
+            "style": "neutral"
+        },
+        "short": {
+            "maxLength": 60,
+            "style": "concise"
+        },
+        "long": {
+            "maxLength": 150,
+            "style": "detailed"
+        },
+        "seo": {
+            "maxLength": 70,
+            "style": "keyword-rich"
+        },
+        "social": {
+            "maxLength": 80,
+            "style": "engaging"
+        },
+        "mobile": {
+            "maxLength": 50,
+            "style": "brief"
+        },
+        "breaking": {
+            "maxLength": 90,
+            "style": "urgent"
+        }
+    },
+    "toneVariants": [
+        "neutral",
+        "exciting",
+        "analytical",
+        "conversational",
+        "urgent"
+    ],
+    "features": {
+        "multiVariantGeneration": true,
+        "platformOptimization": true,
+        "abTesting": true,
+        "performanceTracking": true
+    },
+    "intervals": {
+        "generationCheck": 5000,
+        "performanceUpdate": 30000,
+        "analyticsUpdate": 30000
+    }
+}

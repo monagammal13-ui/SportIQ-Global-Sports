@@ -1,0 +1,88 @@
+{
+    "layerId": 154,
+    "name": "Multilingual Semantic Publishing Engine",
+    "version": "1.0.0",
+    "enabled": true,
+    "supportedLanguages": {
+        "en": {
+            "name": "English",
+            "nativeName": "English",
+            "rtl": false,
+            "priority": 1
+        },
+        "es": {
+            "name": "Spanish",
+            "nativeName": "Español",
+            "rtl": false,
+            "priority": 2
+        },
+        "fr": {
+            "name": "French",
+            "nativeName": "Français",
+            "rtl": false,
+            "priority": 3
+        },
+        "de": {
+            "name": "German",
+            "nativeName": "Deutsch",
+            "rtl": false,
+            "priority": 4
+        },
+        "it": {
+            "name": "Italian",
+            "nativeName": "Italiano",
+            "rtl": false,
+            "priority": 5
+        },
+        "pt": {
+            "name": "Portuguese",
+            "nativeName": "Português",
+            "rtl": false,
+            "priority": 6
+        },
+        "ar": {
+            "name": "Arabic",
+            "nativeName": "العربية",
+            "rtl": true,
+            "priority": 7
+        },
+        "zh": {
+            "name": "Chinese",
+            "nativeName": "中文",
+            "rtl": false,
+            "priority": 8
+        },
+        "ja": {
+            "name": "Japanese",
+            "nativeName": "日本語",
+            "rtl": false,
+            "priority": 9
+        },
+        "ko": {
+            "name": "Korean",
+            "nativeName": "한국어",
+            "rtl": false,
+            "priority": 10
+        }
+    },
+    "translationQuality": {
+        "minQualityScore": 0.7,
+        "requireHumanReview": false,
+        "preserveFormatting": true,
+        "adaptCulturalReferences": true,
+        "preserveProperNouns": true,
+        "adaptUnits": true
+    },
+    "translationProvider": "auto",
+    "fallbackLanguage": "en",
+    "autoPublish": true,
+    "intervals": {
+        "translationCheck": 5000,
+        "analyticsUpdate": 30000
+    },
+    "seoOptimization": {
+        "generateHreflangTags": true,
+        "createLanguageSpecificUrls": true,
+        "optimizeMetaTags": true
+    }
+}

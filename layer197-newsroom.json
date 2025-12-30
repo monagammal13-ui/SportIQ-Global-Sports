@@ -1,0 +1,13 @@
+{
+    "layerId": 197,
+    "name": "International Newsroom Coordination Hub",
+    "version": "1.0.0",
+    "status": "active",
+    "enabled": true,
+    "newsrooms": [
+        "global",
+        "americas",
+        "europe",
+        "asia"
+    ]
+}

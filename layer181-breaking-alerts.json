@@ -1,0 +1,55 @@
+{
+    "layerId": 181,
+    "name": "Global Breaking News Alert System",
+    "version": "1.0.0",
+    "status": "active",
+    "enabled": true,
+    "urgencyLevels": {
+        "critical": {
+            "threshold": 0.85,
+            "autoDismiss": false,
+            "escalate": true
+        },
+        "high": {
+            "threshold": 0.65,
+            "autoDismiss": true,
+            "escalate": false
+        },
+        "medium": {
+            "threshold": 0.45,
+            "autoDismiss": true,
+            "escalate": false
+        }
+    },
+    "detection": {
+        "breakingKeywords": [
+            "breaking",
+            "urgent",
+            "just in",
+            "developing",
+            "update:",
+            "alert:"
+        ],
+        "highImpactKeywords": [
+            "explosion",
+            "attack",
+            "disaster",
+            "emergency",
+            "death of",
+            "resignation"
+        ],
+        "recencyThreshold": 15,
+        "minCredibleSources": 2
+    },
+    "display": {
+        "position": "top",
+        "animation": true,
+        "sound": false,
+        "persistence": 30000
+    },
+    "intervals": {
+        "monitoringCheck": 5000,
+        "alertPersistence": 30000,
+        "analyticsUpdate": 60000
+    }
+}

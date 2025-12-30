@@ -1,0 +1,11 @@
+{
+    "layerId": 195,
+    "name": "Global Archive Preservation Engine",
+    "version": "1.0.0",
+    "status": "active",
+    "enabled": true,
+    "archive": {
+        "immutable": true,
+        "longTerm": true
+    }
+}

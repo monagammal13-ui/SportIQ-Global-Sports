@@ -1,0 +1,6 @@
+{
+    "version": "1.0.0",
+    "description": "Layer 37 Config",
+    "refreshInterval": 600000,
+    "displayCount": 10
+}

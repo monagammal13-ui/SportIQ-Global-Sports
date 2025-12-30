@@ -1,0 +1,17 @@
+{
+    "id": "layer-143",
+    "name": "Recommendation Intelligence Engine",
+    "weights": {
+        "interest_match": 6.5,
+        "recency": 3.0,
+        "popularity": 1.5,
+        "editorial_boost": 4.0,
+        "random_discovery": 1.0
+    },
+    "decay_hours": 72,
+    "feed_mix": {
+        "personalized": 0.7,
+        "trending": 0.2,
+        "random": 0.1
+    }
+}

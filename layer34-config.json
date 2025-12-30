@@ -1,0 +1,6 @@
+{
+    "version": "1.0.0",
+    "description": "Layer 34 Config",
+    "minQueryLength": 2,
+    "maxResults": 10
+}

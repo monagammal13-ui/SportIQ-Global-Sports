@@ -1,0 +1,67 @@
+{
+    "layerId": 170,
+    "name": "Reader Trust Feedback Loop",
+    "version": "1.0.0",
+    "status": "active",
+    "enabled": true,
+    "feedback": {
+        "collectAnonymous": true,
+        "requireVerification": false,
+        "verifiedFeedbackWeight": 2,
+        "anonymousFeedbackWeight": 1
+    },
+    "scoring": {
+        "minFeedbackForDisplay": 3,
+        "minFeedbackForInsights": 5,
+        "categories": [
+            "trust",
+            "accuracy",
+            "bias",
+            "completeness",
+            "clarity"
+        ],
+        "scale": {
+            "min": 1,
+            "max": 5,
+            "default": 3
+        }
+    },
+    "thresholds": {
+        "lowTrust": 2.5,
+        "lowAccuracy": 2.5,
+        "highBias": 3.5,
+        "lowCompleteness": 2.5,
+        "lowClarity": 2.5
+    },
+    "insights": {
+        "enabled": true,
+        "autoNotify": true,
+        "notifyEditorialGovernance": true,
+        "severityLevels": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+        ]
+    },
+    "display": {
+        "showTrustIndicator": true,
+        "showFeedbackButton": true,
+        "showMetrics": true,
+        "showVerifiedBadge": true
+    },
+    "widgets": {
+        "modalForm": true,
+        "inlineForm": false,
+        "quickRating": false
+    },
+    "aggregation": {
+        "period": 3600000,
+        "recalculateOnNewFeedback": true
+    },
+    "intervals": {
+        "aggregation": 60000,
+        "analyticsUpdate": 30000,
+        "insightGeneration": 300000
+    }
+}

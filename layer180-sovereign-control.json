@@ -1,0 +1,80 @@
+{
+    "layerId": 180,
+    "name": "Sovereign Media Control Core",
+    "version": "1.0.0",
+    "status": "active",
+    "enabled": true,
+    "priority": "critical",
+    "sovereignty": {
+        "editorial": {
+            "authority": "absolute",
+            "canOverride": true,
+            "immutable": false
+        },
+        "technical": {
+            "authority": "absolute",
+            "canOverride": true,
+            "immutable": false
+        },
+        "ethical": {
+            "authority": "absolute",
+            "canOverride": false,
+            "immutable": true
+        },
+        "strategic": {
+            "authority": "absolute",
+            "canOverride": true,
+            "immutable": false
+        },
+        "operational": {
+            "authority": "absolute",
+            "canOverride": true,
+            "immutable": false
+        }
+    },
+    "decisionMaking": {
+        "autoDecisions": true,
+        "escalationThreshold": "medium",
+        "emergencyProtocol": true,
+        "humanApprovalRequired": false
+    },
+    "monitoring": {
+        "platformHealth": true,
+        "integrityScore": true,
+        "layerPerformance": true,
+        "escalationTracking": true
+    },
+    "interventions": {
+        "autoIntervention": true,
+        "criticalOnly": false,
+        "notifyStakeholders": true,
+        "logAllActions": true
+    },
+    "healthThresholds": {
+        "platformHealth": {
+            "critical": 60,
+            "warning": 75,
+            "optimal": 90
+        },
+        "integrityScore": {
+            "critical": 70,
+            "warning": 80,
+            "optimal": 95
+        }
+    },
+    "escalationHandling": {
+        "autoResolve": true,
+        "maxEscalations": 20,
+        "priorityLevels": [
+            "critical",
+            "high",
+            "medium",
+            "low"
+        ]
+    },
+    "intervals": {
+        "platformMonitoring": 10000,
+        "governanceCheck": 30000,
+        "analyticsUpdate": 60000
+    }
+}

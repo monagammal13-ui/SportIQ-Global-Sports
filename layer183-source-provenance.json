@@ -1,0 +1,50 @@
+{
+    "layerId": 183,
+    "name": "Source Verification & Provenance Tracker",
+    "version": "1.0.0",
+    "status": "active",
+    "enabled": true,
+    "credibilityLevels": {
+        "verified": {
+            "minScore": 0.8,
+            "requiresVerification": true,
+            "badge": "✓ Verified"
+        },
+        "credible": {
+            "minScore": 0.5,
+            "requiresVerification": false,
+            "badge": "Credible"
+        },
+        "unverified": {
+            "minScore": 0.3,
+            "requiresVerification": true,
+            "badge": "Unverified"
+        },
+        "questionable": {
+            "minScore": 0,
+            "requiresVerification": true,
+            "badge": "⚠ Questionable"
+        }
+    },
+    "provenanceTracking": {
+        "enabled": true,
+        "displayWidget": true,
+        "showTimeline": true,
+        "trackFirstSeen": true
+    },
+    "verification": {
+        "autoVerify": false,
+        "requireManualReview": true,
+        "verificationExpiry": "365days"
+    },
+    "display": {
+        "showCredibilityBadges": true,
+        "provenanceWidgetPosition": "end",
+        "detailedView": true
+    },
+    "intervals": {
+        "verificationCheck": 30000,
+        "provenanceTracking": 60000,
+        "analyticsUpdate": 60000
+    }
+}

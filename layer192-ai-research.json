@@ -1,0 +1,11 @@
+{
+    "layerId": 192,
+    "name": "AI-Assisted Research & Background Engine",
+    "version": "1.0.0",
+    "status": "active",
+    "enabled": true,
+    "aiResearch": {
+        "enabled": true,
+        "sourceDiscovery": true
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "layerId": 196,
+    "name": "Crisis Load Surge Management",
+    "version": "1.0.0",
+    "status": "active",
+    "enabled": true,
+    "surge": {
+        "autoActivate": true,
+        "threshold": 80
+    }
+}

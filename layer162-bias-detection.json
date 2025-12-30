@@ -1,0 +1,43 @@
+{
+    "layerId": 162,
+    "name": "Bias Detection & Balance Analyzer",
+    "version": "1.0.0",
+    "enabled": true,
+    "biasKeywords": {
+        "positive": [
+            "amazing",
+            "incredible",
+            "phenomenal",
+            "brilliant",
+            "outstanding",
+            "perfect",
+            "flawless"
+        ],
+        "negative": [
+            "terrible",
+            "awful",
+            "horrible",
+            "disaster",
+            "catastrophic",
+            "pathetic",
+            "abysmal"
+        ],
+        "emotional": [
+            "shocking",
+            "unbelievable",
+            "stunning",
+            "devastating",
+            "heartbreaking"
+        ]
+    },
+    "balanceThresholds": {
+        "balanced": 0.8,
+        "slightBias": 0.6,
+        "moderate": 0.4,
+        "heavy": 0.2
+    },
+    "intervals": {
+        "analysisCheck": 5000,
+        "analyticsUpdate": 30000
+    }
+}

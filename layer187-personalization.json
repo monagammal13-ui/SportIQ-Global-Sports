@@ -1,0 +1,38 @@
+{
+    "layerId": 187,
+    "name": "Reader Personalization Without Filter Bubbles",
+    "version": "1.0.0",
+    "status": "active",
+    "enabled": true,
+    "diversityThresholds": {
+        "minPerspectives": 3,
+        "maxSameCategory": 0.4,
+        "requiredOpposingViews": 0.2,
+        "minDiversityScore": 70
+    },
+    "personalization": {
+        "enabled": true,
+        "respectPreferences": true,
+        "enforceDiversity": true
+    },
+    "bubblePrevention": {
+        "active": true,
+        "boostUnderrepresented": true,
+        "requireMultiplePerspectives": true
+    },
+    "categories": {
+        "all": [
+            "sports",
+            "politics",
+            "tech",
+            "business",
+            "health",
+            "culture"
+        ],
+        "minRepresentation": 2
+    },
+    "intervals": {
+        "personalizationUpdate": 30000,
+        "analyticsUpdate": 60000
+    }
+}

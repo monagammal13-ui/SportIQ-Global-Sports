@@ -1,0 +1,46 @@
+{
+    "layerId": 168,
+    "name": "Real-Time Story Evolution Tracker",
+    "version": "1.0.0",
+    "status": "active",
+    "enabled": true,
+    "tracking": {
+        "updateCheckInterval": 30000,
+        "evolutionThreshold": 24,
+        "autoTrackNewArticles": true,
+        "trackingDepth": "all"
+    },
+    "changeDetection": {
+        "titleChanges": true,
+        "contentExpansion": true,
+        "newInformation": true,
+        "corrections": true,
+        "sourceUpdates": true
+    },
+    "notifications": {
+        "enabled": true,
+        "significantUpdatesOnly": true,
+        "pushNotifications": false,
+        "emailDigest": false
+    },
+    "versioning": {
+        "storeAllVersions": true,
+        "maxVersionsPerStory": 50,
+        "diffGeneration": true
+    },
+    "analysis": {
+        "velocityTracking": true,
+        "updateFrequency": true,
+        "changeImpact": true
+    },
+    "visualization": {
+        "timelineView": true,
+        "versionComparison": true,
+        "changeHighlighting": true
+    },
+    "intervals": {
+        "updateCheck": 30000,
+        "analyticsUpdate": 60000,
+        "cleanupOldStories": 86400000
+    }
+}

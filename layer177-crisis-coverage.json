@@ -1,0 +1,61 @@
+{
+    "layerId": 177,
+    "name": "Global Crisis Coverage Mode",
+    "version": "1.0.0",
+    "status": "active",
+    "enabled": true,
+    "crisisTypes": {
+        "natural_disaster": {
+            "enabled": true,
+            "autoActivate": true,
+            "severityThreshold": 7
+        },
+        "pandemic": {
+            "enabled": true,
+            "autoActivate": true,
+            "severityThreshold": 8
+        },
+        "conflict": {
+            "enabled": true,
+            "autoActivate": true,
+            "severityThreshold": 8
+        },
+        "terrorism": {
+            "enabled": true,
+            "autoActivate": true,
+            "severityThreshold": 9
+        },
+        "economic": {
+            "enabled": true,
+            "autoActivate": false,
+            "severityThreshold": 7
+        },
+        "political": {
+            "enabled": true,
+            "autoActivate": false,
+            "severityThreshold": 7
+        }
+    },
+    "activationThresholds": {
+        "severity": 7,
+        "globalImpact": 0.6,
+        "urgency": "high"
+    },
+    "crisisMode": {
+        "liveUpdates": true,
+        "increasedFrequency": true,
+        "updateInterval": 5000,
+        "factCheckingStrict": true,
+        "multipleSourcesRequired": true
+    },
+    "workflows": {
+        "autoApply": true,
+        "humanReviewRequired": true,
+        "escalateToGovernance": true
+    },
+    "intervals": {
+        "crisisDetection": 10000,
+        "updateFrequency": 5000,
+        "analyticsUpdate": 30000
+    }
+}

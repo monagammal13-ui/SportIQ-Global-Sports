@@ -1,0 +1,7 @@
+{
+    "version": "1.0.0",
+    "description": "Layer 36 Config",
+    "sampleRate": 100,
+    "trackClicks": true,
+    "trackScroll": true
+}

@@ -1,0 +1,53 @@
+{
+    "layerId": 163,
+    "name": "Anti-Disinformation Shield",
+    "version": "1.0.0",
+    "enabled": true,
+    "redFlags": [
+        "exclusive leak",
+        "unnamed sources say",
+        "you won't believe",
+        "shocking truth",
+        "they don't want you to know",
+        "mainstream media won't tell you"
+    ],
+    "trustedSources": [
+        "reuters.com",
+        "ap.org",
+        "afp.com",
+        "espn.com",
+        "bbc.com/sport"
+    ],
+    "riskLevels": {
+        "verified": {
+            "score": 0,
+            "label": "Verified",
+            "color": "#10b981"
+        },
+        "low": {
+            "score": 0.2,
+            "label": "Low Risk",
+            "color": "#3b82f6"
+        },
+        "medium": {
+            "score": 0.5,
+            "label": "Medium Risk",
+            "color": "#f59e0b"
+        },
+        "high": {
+            "score": 0.8,
+            "label": "High Risk",
+            "color": "#ef4444"
+        },
+        "critical": {
+            "score": 1.0,
+            "label": "Critical Risk",
+            "color": "#991b1b"
+        }
+    },
+    "quarantineThreshold": 0.8,
+    "intervals": {
+        "checkInterval": 5000,
+        "analyticsUpdate": 30000
+    }
+}

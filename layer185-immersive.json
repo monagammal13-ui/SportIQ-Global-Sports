@@ -1,0 +1,40 @@
+{
+    "layerId": 185,
+    "name": "Long-Read Immersive Experience Engine",
+    "version": "1.0.0",
+    "status": "active",
+    "enabled": true,
+    "detection": {
+        "longReadThreshold": 2000,
+        "autoActivate": true,
+        "requireWordCount": true
+    },
+    "immersive": {
+        "enabled": true,
+        "scrollEffects": true,
+        "progressIndicator": true,
+        "contextualMedia": true
+    },
+    "scrollBased": {
+        "parallax": false,
+        "fadeIn": true,
+        "stickyHeaders": true,
+        "smoothScrolling": true
+    },
+    "reading": {
+        "trackProgress": true,
+        "trackReadTime": true,
+        "completionThreshold": 95,
+        "saveProgress": true
+    },
+    "layout": {
+        "wideLayout": true,
+        "fullBleed": false,
+        "customTypography": true,
+        "responsiveImages": true
+    },
+    "intervals": {
+        "scrollTracking": 100,
+        "analyticsUpdate": 60000
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "version": "1.0.0",
+    "description": "Layer 45 Config",
+    "algorithm": "hybrid",
+    "limit": 5
+}

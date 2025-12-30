@@ -1,0 +1,51 @@
+{
+    "layerId": 160,
+    "name": "Global News Priority Index",
+    "version": "1.0.0",
+    "enabled": true,
+    "priorityWeights": {
+        "urgency": 0.35,
+        "impact": 0.30,
+        "trust": 0.20,
+        "recency": 0.10,
+        "engagement": 0.05
+    },
+    "priorityLevels": {
+        "critical": {
+            "min": 0.9,
+            "label": "Critical",
+            "color": "#dc2626"
+        },
+        "high": {
+            "min": 0.7,
+            "label": "High Priority",
+            "color": "#ea580c"
+        },
+        "medium": {
+            "min": 0.5,
+            "label": "Medium Priority",
+            "color": "#f59e0b"
+        },
+        "normal": {
+            "min": 0.3,
+            "label": "Normal",
+            "color": "#3b82f6"
+        },
+        "low": {
+            "min": 0,
+            "label": "Low Priority",
+            "color": "#6b7280"
+        }
+    },
+    "features": {
+        "multiFactor Scoring": true,
+        "globalRanking": true,
+        "automaticReordering": true,
+        "visualIndicators": true
+    },
+    "intervals": {
+        "rankingUpdate": 10000,
+        "reorderCheck": 5000,
+        "analyticsUpdate": 30000
+    }
+}

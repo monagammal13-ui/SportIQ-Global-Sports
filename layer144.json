@@ -1,0 +1,24 @@
+{
+    "id": "layer-144",
+    "name": "Fan Leaderboards System",
+    "max_size": 50,
+    "boards": [
+        {
+            "id": "all_time",
+            "name": "Legends Hall of Fame"
+        },
+        {
+            "id": "weekly",
+            "name": "Weekly Sprint"
+        },
+        {
+            "id": "trending",
+            "name": "High Velocity Fans"
+        }
+    ],
+    "refresh_rate_ms": 30000,
+    "display": {
+        "show_avatars": true,
+        "show_badges": true
+    }
+}

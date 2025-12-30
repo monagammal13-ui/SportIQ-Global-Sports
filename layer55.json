@@ -1,0 +1,17 @@
+{
+    "id": "layer-055",
+    "name": "Global RSS & Aggregated Feeds",
+    "version": "1.0.0",
+    "refreshRate": 3600,
+    "sources": [
+        {
+            "name": "FIFA",
+            "url": "https://www.fifa.com/rss/index.xml"
+        },
+        {
+            "name": "NBA",
+            "url": "https://www.nba.com/rss/news.rss"
+        }
+    ],
+    "maxItems": 5
+}

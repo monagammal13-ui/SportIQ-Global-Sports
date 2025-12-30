@@ -1,0 +1,54 @@
+{
+    "layerId": 176,
+    "name": "Long-Term Media Independence Core",
+    "version": "1.0.0",
+    "status": "active",
+    "enabled": true,
+    "independenceThresholds": {
+        "externalInfluenceScore": 0.2,
+        "editorialAutonomy": 0.8,
+        "financialIndependence": 0.7
+    },
+    "safeguards": {
+        "editorial_autonomy": {
+            "enabled": true,
+            "strict": true,
+            "autoBlock": false
+        },
+        "advertising_separation": {
+            "enabled": true,
+            "requireDisclosure": true,
+            "blockUndisclosed": true
+        },
+        "source_diversity": {
+            "enabled": true,
+            "minSources": 2,
+            "warningThreshold": 1
+        },
+        "political_neutrality": {
+            "enabled": true,
+            "biasDetection": true,
+            "balanceRequired": true
+        }
+    },
+    "violations": {
+        "critical": {
+            "flagForReview": true,
+            "blockPublication": true,
+            "notifyGovernance": true
+        },
+        "high": {
+            "flagForReview": true,
+            "blockPublication": false,
+            "requireApproval": true
+        },
+        "medium": {
+            "flagForReview": true,
+            "blockPublication": false
+        }
+    },
+    "intervals": {
+        "independenceCheck": 30000,
+        "analyticsUpdate": 60000
+    }
+}

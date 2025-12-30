@@ -1,0 +1,14 @@
+{
+    "id": "layer-059",
+    "name": "Global Live Commentary Feed",
+    "version": "1.0.0",
+    "pollingInterval": 10000,
+    "sources": [
+        "internal-live-scorer"
+    ],
+    "languages": [
+        "en",
+        "es",
+        "ar"
+    ]
+}

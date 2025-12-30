@@ -1,0 +1,14 @@
+{
+    "id": "layer-146",
+    "name": "AI Insight & Prediction Engine",
+    "models": {
+        "trend_detection": "moving_average_v2",
+        "churn_prediction": "activity_decay_v1"
+    },
+    "velocity_threshold": 3.0,
+    "scan_interval_ms": 15000,
+    "alert_channels": [
+        "seo-layer",
+        "editorial-dashboard"
+    ]
+}

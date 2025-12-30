@@ -1,0 +1,139 @@
+{
+    "layerId": 62,
+    "name": "Cinematic Slider 4K",
+    "version": "1.0.0",
+    "type": "media-presentation",
+    "priority": "high",
+    "description": "Premium 4K cinematic slider with 50 media slides, smooth animations, and auto-refresh",
+    "autoExecution": {
+        "enabled": true,
+        "autoStart": true,
+        "dependencies": [
+            "runtime-media-engine",
+            "image-assurance"
+        ]
+    },
+    "mediaConfiguration": {
+        "totalSlides": 50,
+        "resolution": "4K",
+        "format": "cinematic",
+        "aspectRatio": "16:9",
+        "quality": "ultra-high"
+    },
+    "slides": [
+        {
+            "id": 1,
+            "type": "image",
+            "url": "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=3840&h=2160&q=95",
+            "title": "Champions League Final",
+            "sport": "Football",
+            "fallback": "/assets/images/slider-fallback.jpg"
+        },
+        {
+            "id": 2,
+            "type": "image",
+            "url": "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=3840&h=2160&q=95",
+            "title": "NBA Playoffs",
+            "sport": "Basketball",
+            "fallback": "/assets/images/slider-fallback.jpg"
+        },
+        {
+            "id": 3,
+            "type": "image",
+            "url": "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=3840&h=2160&q=95",
+            "title": "Wimbledon Championship",
+            "sport": "Tennis",
+            "fallback": "/assets/images/slider-fallback.jpg"
+        },
+        {
+            "id": 4,
+            "type": "image",
+            "url": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=3840&h=2160&q=95",
+            "title": "World Cup Cricket",
+            "sport": "Cricket",
+            "fallback": "/assets/images/slider-fallback.jpg"
+        },
+        {
+            "id": 5,
+            "type": "image",
+            "url": "https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=3840&h=2160&q=95",
+            "title": "Premier League Action",
+            "sport": "Football",
+            "fallback": "/assets/images/slider-fallback.jpg"
+        }
+    ],
+    "animations": {
+        "enabled": true,
+        "type": "cinematic",
+        "transitions": [
+            "fade",
+            "slide",
+            "zoom",
+            "crossfade"
+        ],
+        "duration": {
+            "transition": "1200ms",
+            "display": "5000ms"
+        },
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+        "effects": {
+            "kenBurns": true,
+            "parallax": true,
+            "blur": false
+        }
+    },
+    "autoRefresh": {
+        "enabled": true,
+        "interval": 3600000,
+        "checkBrokenImages": true,
+        "replaceFailedMedia": true,
+        "retryAttempts": 3
+    },
+    "imageAssurance": {
+        "enabled": true,
+        "validation": "strict",
+        "fallbackStrategy": "immediate",
+        "brokenImageDetection": {
+            "enabled": true,
+            "method": "preload",
+            "timeout": 5000
+        },
+        "quality": {
+            "webp": true,
+            "progressive": true,
+            "lazy": false
+        }
+    },
+    "controls": {
+        "navigation": {
+            "arrows": true,
+            "dots": true,
+            "keyboard": true
+        },
+        "autoplay": {
+            "enabled": true,
+            "pauseOnHover": true,
+            "pauseOnFocus": true
+        },
+        "touch": {
+            "swipe": true,
+            "drag": true
+        }
+    },
+    "performance": {
+        "preload": 3,
+        "lazyLoadAfter": 5,
+        "imageOptimization": true,
+        "gpuAcceleration": true
+    },
+    "responsive": {
+        "enabled": true,
+        "breakpoints": {
+            "mobile": "100vw",
+            "tablet": "100vw",
+            "desktop": "100vw"
+        }
+    },
+    "activationTime": "2025-12-27T13:00:33Z",
+    "status": "active"
+}

@@ -1,0 +1,52 @@
+{
+    "layerId": 167,
+    "name": "Multimedia Narrative Composer",
+    "version": "1.0.0",
+    "status": "active",
+    "enabled": true,
+    "mediaTypes": {
+        "images": true,
+        "videos": true,
+        "infographics": true,
+        "dataVisualizations": true,
+        "interactiveGraphics": true
+    },
+    "integration": {
+        "contextualPlacement": true,
+        "autoSizing": true,
+        "responsiveLayout": true,
+        "lazyLoading": true
+    },
+    "composition": {
+        "gridLayout": true,
+        "fullWidthSupport": true,
+        "sidebarMedia": true,
+        "inlineMedia": true
+    },
+    "dataSources": {
+        "unsplash": {
+            "enabled": true,
+            "apiKey": "placeholder"
+        },
+        "youtube": {
+            "enabled": true,
+            "embedSupport": true
+        },
+        "local": {
+            "enabled": true,
+            "paths": [
+                "/assets/media/"
+            ]
+        }
+    },
+    "optimization": {
+        "imageCompression": true,
+        "formatConversion": true,
+        "cdn": true,
+        "caching": true
+    },
+    "intervals": {
+        "compositionCheck": 5000,
+        "analyticsUpdate": 60000
+    }
+}

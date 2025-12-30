@@ -1,0 +1,14 @@
+{
+    "id": "layer-060",
+    "name": "Multi-Language Content Engine",
+    "version": "1.0.0",
+    "supported": [
+        "en",
+        "es",
+        "fr",
+        "ar",
+        "de"
+    ],
+    "autoTranslate": false,
+    "fallback": "en"
+}

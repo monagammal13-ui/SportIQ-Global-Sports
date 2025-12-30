@@ -1,0 +1,22 @@
+{
+    "layerId": 164,
+    "name": "Viral Propagation Control",
+    "version": "1.0.0",
+    "enabled": true,
+    "velocityLimits": {
+        "verified": 1000,
+        "trusted": 500,
+        "unverified": 100,
+        "suspicious": 20
+    },
+    "qualityGates": {
+        "evidenceScore": 60,
+        "trustScore": 0.6,
+        "biasBalance": 0.5
+    },
+    "intervals": {
+        "trackingUpdate": 3000,
+        "throttleCheck": 5000,
+        "analyticsUpdate": 30000
+    }
+}

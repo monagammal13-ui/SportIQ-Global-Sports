@@ -1,0 +1,48 @@
+{
+    "layerId": 184,
+    "name": "Investigative Collaboration Workspace",
+    "version": "1.0.0",
+    "status": "active",
+    "enabled": true,
+    "workspace": {
+        "enabled": true,
+        "maxCollaborators": 10,
+        "versioningEnabled": true,
+        "evidenceLinking": true
+    },
+    "collaboration": {
+        "realTimeSync": true,
+        "conflictResolution": "latest_wins",
+        "notificationsEnabled": true
+    },
+    "evidence": {
+        "maxSize": "50MB",
+        "allowedTypes": [
+            "document",
+            "image",
+            "video",
+            "audio",
+            "link"
+        ],
+        "requireMetadata": true
+    },
+    "versioning": {
+        "enabled": true,
+        "autoSave": true,
+        "maxVersions": 100,
+        "showDiff": true
+    },
+    "permissions": {
+        "defaultRole": "contributor",
+        "roles": [
+            "viewer",
+            "contributor",
+            "editor",
+            "admin"
+        ]
+    },
+    "intervals": {
+        "syncCheck": 10000,
+        "analyticsUpdate": 60000
+    }
+}

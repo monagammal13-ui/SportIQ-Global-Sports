@@ -1,0 +1,58 @@
+{
+    "layerId": 166,
+    "name": "Long-Form Investigative Structuring Engine",
+    "version": "1.0.0",
+    "status": "active",
+    "enabled": true,
+    "structuring": {
+        "minArticleLength": 1500,
+        "autoSectionize": true,
+        "createTimeline": true,
+        "extractEvidence": true,
+        "generateTOC": true,
+        "enableNavigation": true
+    },
+    "sections": {
+        "summary": true,
+        "background": true,
+        "keyFindings": true,
+        "evidence": true,
+        "timeline": true,
+        "implications": true,
+        "sources": true
+    },
+    "timeline": {
+        "autoDetect": true,
+        "visualStyle": "vertical",
+        "highlightKey": true,
+        "maxEvents": 20
+    },
+    "evidence": {
+        "categorize": true,
+        "confidence": true,
+        "crossReference": true,
+        "visualize": true,
+        "types": [
+            "documentary",
+            "testimonial",
+            "statistical",
+            "visual",
+            "general"
+        ]
+    },
+    "navigation": {
+        "stickyTOC": true,
+        "progressIndicator": true,
+        "jumpLinks": true,
+        "smoothScroll": true
+    },
+    "intervals": {
+        "structuringCheck": 5000,
+        "analyticsUpdate": 30000
+    },
+    "features": {
+        "dashboardEnabled": true,
+        "autoStructure": true,
+        "realTimeProcessing": true
+    }
+}

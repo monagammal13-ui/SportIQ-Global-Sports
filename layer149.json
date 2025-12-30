@@ -1,0 +1,16 @@
+{
+    "id": "layer-149",
+    "name": "Future Expansion & Plugin Gateway",
+    "allow_3rd_party": false,
+    "max_active_plugins": 20,
+    "allowed_permissions": [
+        "ui_render",
+        "read_public_profile",
+        "emit_analytics"
+    ],
+    "blocked_apis": [
+        "localStorage",
+        "fetch",
+        "eval"
+    ]
+}

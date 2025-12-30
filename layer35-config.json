@@ -1,0 +1,18 @@
+{
+    "version": "1.0.0",
+    "description": "Layer 35 Config",
+    "supportedLangs": [
+        "en",
+        "es",
+        "fr",
+        "de",
+        "it",
+        "pt",
+        "ru",
+        "zh",
+        "ja",
+        "ko",
+        "ar"
+    ],
+    "autoDetect": true
+}

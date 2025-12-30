@@ -1,0 +1,12 @@
+{
+    "id": "layer-101",
+    "name": "Content Paywall & Subscription Core",
+    "version": "1.0.0",
+    "freeArticleLimit": 5,
+    "subscribeUrl": "/subscribe.html",
+    "bypassRoles": [
+        "admin",
+        "editor",
+        "subscriber"
+    ]
+}

@@ -1,0 +1,129 @@
+{
+    "layerId": 152,
+    "name": "Intelligent Section Mapping System",
+    "version": "1.0.0",
+    "enabled": true,
+    "sections": {
+        "sports": [
+            "football",
+            "basketball",
+            "tennis",
+            "cricket",
+            "rugby",
+            "baseball",
+            "hockey",
+            "golf",
+            "athletics",
+            "swimming"
+        ],
+        "content": [
+            "news",
+            "analysis",
+            "opinion",
+            "interviews",
+            "features",
+            "highlights",
+            "results",
+            "previews",
+            "reviews"
+        ],
+        "special": [
+            "breaking",
+            "trending",
+            "featured",
+            "exclusive",
+            "sponsored",
+            "editorial"
+        ]
+    },
+    "keywords": {
+        "football": [
+            "football",
+            "soccer",
+            "goal",
+            "penalty",
+            "striker",
+            "midfielder",
+            "defender",
+            "match",
+            "league",
+            "tournament",
+            "champions league"
+        ],
+        "basketball": [
+            "basketball",
+            "nba",
+            "dunk",
+            "three-pointer",
+            "rebounds",
+            "assists",
+            "playoffs",
+            "championship",
+            "slam dunk"
+        ],
+        "tennis": [
+            "tennis",
+            "serve",
+            "forehand",
+            "backhand",
+            "grand slam",
+            "wimbledon",
+            "us open",
+            "australian open",
+            "french open"
+        ],
+        "cricket": [
+            "cricket",
+            "wicket",
+            "batting",
+            "bowling",
+            "century",
+            "test match",
+            "odi",
+            "t20",
+            "ipl"
+        ],
+        "breaking": [
+            "breaking",
+            "urgent",
+            "just in",
+            "developing",
+            "alert",
+            "live update",
+            "flash"
+        ],
+        "analysis": [
+            "analysis",
+            "tactical",
+            "strategy",
+            "breakdown",
+            "in-depth",
+            "review",
+            "evaluation"
+        ],
+        "trending": [
+            "viral",
+            "trending",
+            "popular",
+            "hot topic",
+            "buzz",
+            "sensation",
+            "explosive"
+        ]
+    },
+    "thresholds": {
+        "minimumConfidence": 0.3,
+        "recommendationConfidence": 0.6,
+        "autoAssignConfidence": 0.8
+    },
+    "mappingRules": {
+        "autoAssign": true,
+        "requireConfirmation": false,
+        "enableMultiLabel": true,
+        "maxSectionsPerArticle": 5
+    },
+    "intervals": {
+        "processingCheck": 5000,
+        "analyticsUpdate": 30000
+    }
+}

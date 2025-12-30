@@ -1,0 +1,54 @@
+{
+    "layerId": 159,
+    "name": "Trust, Credibility & Source Signals",
+    "version": "1.0.0",
+    "enabled": true,
+    "trustLevels": {
+        "verified": {
+            "score": 1.0,
+            "label": "Verified",
+            "icon": "✓",
+            "color": "#10b981"
+        },
+        "trusted": {
+            "score": 0.8,
+            "label": "Trusted Source",
+            "icon": "🔒",
+            "color": "#3b82f6"
+        },
+        "credible": {
+            "score": 0.6,
+            "label": "Credible",
+            "icon": "📰",
+            "color": "#6366f1"
+        },
+        "unverified": {
+            "score": 0.4,
+            "label": "Unverified",
+            "icon": "❓",
+            "color": "#f59e0b"
+        },
+        "caution": {
+            "score": 0.2,
+            "label": "Use Caution",
+            "icon": "⚠️",
+            "color": "#ef4444"
+        }
+    },
+    "credibilityFactors": {
+        "hasAuthor": 0.2,
+        "hasSources": 0.3,
+        "hasVerification": 0.3,
+        "editorialQuality": 0.2
+    },
+    "features": {
+        "trustScoring": true,
+        "sourceVerification": true,
+        "credibilityIndicators": true,
+        "visualBadges": true
+    },
+    "intervals": {
+        "verificationCheck": 5000,
+        "analyticsUpdate": 30000
+    }
+}

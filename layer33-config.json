@@ -1,0 +1,12 @@
+{
+    "version": "1.0.0",
+    "description": "Layer 33 Config",
+    "allowedTypes": [
+        "image/jpeg",
+        "image/png",
+        "image/gif",
+        "image/webp",
+        "video/mp4"
+    ],
+    "maxSize": 10485760
+}

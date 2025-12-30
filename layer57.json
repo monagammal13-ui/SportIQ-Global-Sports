@@ -1,0 +1,16 @@
+{
+    "id": "layer-057",
+    "name": "Global Sports Stats Engine",
+    "version": "1.0.0",
+    "leagues": [
+        "Premier League",
+        "La Liga",
+        "NBA",
+        "NFL"
+    ],
+    "metrics": [
+        "active",
+        "archived"
+    ],
+    "refreshRate": 60000
+}

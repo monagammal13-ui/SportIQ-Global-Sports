@@ -1,0 +1,14 @@
+{
+    "id": "layer-054",
+    "name": "User Interaction Analytics",
+    "version": "1.0.0",
+    "trackingEnabled": true,
+    "heartbeatInterval": 15000,
+    "events": [
+        "click",
+        "scroll",
+        "form_submit",
+        "video_play"
+    ],
+    "privacyCompliant": true
+}

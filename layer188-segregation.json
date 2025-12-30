@@ -1,0 +1,69 @@
+{
+    "layerId": 188,
+    "name": "Global Opinion & Analysis Segregation Layer",
+    "version": "1.0.0",
+    "status": "active",
+    "enabled": true,
+    "contentTypes": {
+        "news": {
+            "indicators": [
+                "breaking",
+                "reported",
+                "according to"
+            ],
+            "prohibited": [
+                "i believe",
+                "in my opinion"
+            ]
+        },
+        "opinion": {
+            "indicators": [
+                "i believe",
+                "in my opinion",
+                "commentary"
+            ],
+            "required": [
+                "opinion:",
+                "commentary:"
+            ]
+        },
+        "analysis": {
+            "indicators": [
+                "analysis:",
+                "examining",
+                "deeper look"
+            ],
+            "required": [
+                "analysis:"
+            ]
+        },
+        "editorial": {
+            "indicators": [
+                "editorial:",
+                "editorial board"
+            ],
+            "required": [
+                "editorial:"
+            ]
+        }
+    },
+    "segregation": {
+        "enforceLabeling": true,
+        "visualDifferentiation": true,
+        "separateSections": true
+    },
+    "violations": {
+        "detectAutomatically": true,
+        "flagForReview": true,
+        "blockOnCritical": false
+    },
+    "labels": {
+        "prominent": true,
+        "colorCoded": true,
+        "alwaysVisible": true
+    },
+    "intervals": {
+        "classificationCheck": 15000,
+        "analyticsUpdate": 60000
+    }
+}

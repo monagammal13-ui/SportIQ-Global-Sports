@@ -1,0 +1,32 @@
+{
+    "id": "layer-148",
+    "name": "Monetization Intelligence Engine",
+    "config": {
+        "provider": "google_adsense",
+        "slots": {
+            "header": {
+                "size": [
+                    728,
+                    90
+                ],
+                "refresh": false
+            },
+            "sidebar": {
+                "size": [
+                    300,
+                    250
+                ],
+                "refresh": true
+            },
+            "content_inline": {
+                "size": "fluid",
+                "refresh": false
+            }
+        },
+        "rules": {
+            "max_ads_per_view": 4,
+            "min_pixel_distance": 600,
+            "suppress_for_vip": true
+        }
+    }
+}

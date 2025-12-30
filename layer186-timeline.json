@@ -1,0 +1,36 @@
+{
+    "layerId": 186,
+    "name": "Global Timeline & Event Correlation Engine",
+    "version": "1.0.0",
+    "status": "active",
+    "enabled": true,
+    "correlation": {
+        "enabled": true,
+        "minScore": 0.5,
+        "types": [
+            "category",
+            "regional",
+            "thematic",
+            "temporal"
+        ]
+    },
+    "timeline": {
+        "autoGenerate": true,
+        "interactive": true,
+        "showCorrelations": true
+    },
+    "events": {
+        "trackRegional": true,
+        "trackTemporal": true,
+        "maxEventsPerTimeline": 100
+    },
+    "visualization": {
+        "type": "interactive",
+        "showMarkers": true,
+        "zoomable": true
+    },
+    "intervals": {
+        "correlationCheck": 30000,
+        "analyticsUpdate": 60000
+    }
+}

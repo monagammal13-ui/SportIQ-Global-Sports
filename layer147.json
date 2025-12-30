@@ -1,0 +1,14 @@
+{
+    "id": "layer-147",
+    "name": "Retention & Re-Engagement Engine",
+    "idleThreshold": 120000,
+    "cooldowns": {
+        "exit_popup": 43200000,
+        "idle_nudge": 600000
+    },
+    "strategies": {
+        "exit_intent": "offer_newsletter",
+        "idle_nudge": "show_trending_ticker",
+        "long_absence": "highlight_missed_news"
+    }
+}

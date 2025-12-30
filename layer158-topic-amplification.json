@@ -1,0 +1,31 @@
+{
+    "layerId": 158,
+    "name": "High-Impact Topic Amplification Engine",
+    "version": "1.0.0",
+    "enabled": true,
+    "impactThresholds": {
+        "breaking": 0.9,
+        "high": 0.7,
+        "medium": 0.5,
+        "low": 0.3
+    },
+    "amplificationChannels": [
+        "homepage",
+        "category",
+        "sidebar",
+        "push",
+        "social",
+        "newsletter"
+    ],
+    "features": {
+        "impactDetection": true,
+        "multiChannelAmplification": true,
+        "priorityBoosting": true,
+        "trendingDetection": true
+    },
+    "intervals": {
+        "detectionCheck": 3000,
+        "amplificationUpdate": 10000,
+        "analyticsUpdate": 30000
+    }
+}

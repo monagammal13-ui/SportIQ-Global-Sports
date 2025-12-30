@@ -1,0 +1,29 @@
+{
+    "id": "layer-056",
+    "name": "Multi-Region Content Distribution",
+    "version": "1.0.0",
+    "regions": [
+        "US",
+        "EU",
+        "ASIA",
+        "SA",
+        "AF",
+        "OC"
+    ],
+    "defaultRegion": "US",
+    "mappings": {
+        "football": [
+            "EU",
+            "SA",
+            "AF"
+        ],
+        "american-football": [
+            "US"
+        ],
+        "cricket": [
+            "ASIA",
+            "OC",
+            "EU"
+        ]
+    }
+}

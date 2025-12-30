@@ -1,0 +1,11 @@
+{
+    "layerId": 198,
+    "name": "Public Transparency & Ethics Dashboard",
+    "version": "1.0.0",
+    "status": "active",
+    "enabled": true,
+    "transparency": {
+        "publicDashboard": true,
+        "ethicsScoring": true
+    }
+}

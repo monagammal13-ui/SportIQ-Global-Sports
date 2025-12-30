@@ -1,0 +1,7 @@
+{
+    "version": "1.0.0",
+    "description": "Layer 32 Config",
+    "moderationEnabled": true,
+    "maxCommentLength": 1000,
+    "allowAnonymous": false
+}

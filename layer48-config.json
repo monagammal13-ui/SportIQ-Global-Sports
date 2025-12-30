@@ -1,0 +1,6 @@
+{
+    "version": "1.0.0",
+    "description": "Layer 48 Config",
+    "view": "list",
+    "maxItems": 10
+}

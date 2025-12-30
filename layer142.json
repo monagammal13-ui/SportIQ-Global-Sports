@@ -1,0 +1,74 @@
+{
+    "id": "layer-142",
+    "name": "Gamification & Rewards System",
+    "levelCurve": {
+        "base": 200,
+        "multiplier": 1.4
+    },
+    "badges": {
+        "like": [
+            {
+                "id": "liker_novice",
+                "name": "Novice Liker",
+                "threshold": 10,
+                "icon": "👍",
+                "xpReward": 50
+            },
+            {
+                "id": "liker_enthusiast",
+                "name": "Enthusiast",
+                "threshold": 100,
+                "icon": "💖",
+                "xpReward": 200
+            },
+            {
+                "id": "liker_fanatic",
+                "name": "Fanatic",
+                "threshold": 1000,
+                "icon": "🔥",
+                "xpReward": 1000
+            }
+        ],
+        "share": [
+            {
+                "id": "influencer_seed",
+                "name": "Seed",
+                "threshold": 5,
+                "icon": "🌱",
+                "xpReward": 100
+            },
+            {
+                "id": "influencer_viral",
+                "name": "Viral Agent",
+                "threshold": 50,
+                "icon": "🦠",
+                "xpReward": 500
+            }
+        ],
+        "comment": [
+            {
+                "id": "voice_starter",
+                "name": "Conversation Starter",
+                "threshold": 1,
+                "icon": "🗣️",
+                "xpReward": 20
+            },
+            {
+                "id": "voice_analyst",
+                "name": "Analyst",
+                "threshold": 20,
+                "icon": "📈",
+                "xpReward": 250
+            }
+        ],
+        "read_article": [
+            {
+                "id": "reader_daily",
+                "name": "Daily Reader",
+                "threshold": 7,
+                "icon": "👓",
+                "xpReward": 100
+            }
+        ]
+    }
+}

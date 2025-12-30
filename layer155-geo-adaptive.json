@@ -1,0 +1,148 @@
+{
+    "layerId": 155,
+    "name": "Geo-Adaptive News Presentation",
+    "version": "1.0.0",
+    "enabled": true,
+    "regions": {
+        "north-america": {
+            "priority": [
+                "usa",
+                "canada",
+                "mexico"
+            ],
+            "timezone": "America/New_York",
+            "preferredSports": [
+                "basketball",
+                "baseball",
+                "american-football",
+                "hockey"
+            ],
+            "dateFormat": "MM/DD/YYYY",
+            "timeFormat": "12h"
+        },
+        "south-america": {
+            "priority": [
+                "brazil",
+                "argentina",
+                "colombia",
+                "chile"
+            ],
+            "timezone": "America/Sao_Paulo",
+            "preferredSports": [
+                "football",
+                "volleyball",
+                "futsal"
+            ],
+            "dateFormat": "DD/MM/YYYY",
+            "timeFormat": "24h"
+        },
+        "europe": {
+            "priority": [
+                "uk",
+                "germany",
+                "france",
+                "spain",
+                "italy"
+            ],
+            "timezone": "Europe/London",
+            "preferredSports": [
+                "football",
+                "rugby",
+                "cricket",
+                "tennis"
+            ],
+            "dateFormat": "DD/MM/YYYY",
+            "timeFormat": "24h"
+        },
+        "africa": {
+            "priority": [
+                "south-africa",
+                "nigeria",
+                "egypt",
+                "kenya"
+            ],
+            "timezone": "Africa/Cairo",
+            "preferredSports": [
+                "football",
+                "rugby",
+                "cricket"
+            ],
+            "dateFormat": "DD/MM/YYYY",
+            "timeFormat": "24h"
+        },
+        "asia": {
+            "priority": [
+                "china",
+                "japan",
+                "india",
+                "korea",
+                "thailand"
+            ],
+            "timezone": "Asia/Tokyo",
+            "preferredSports": [
+                "cricket",
+                "badminton",
+                "table-tennis",
+                "martial-arts"
+            ],
+            "dateFormat": "YYYY/MM/DD",
+            "timeFormat": "24h"
+        },
+        "oceania": {
+            "priority": [
+                "australia",
+                "new-zealand"
+            ],
+            "timezone": "Australia/Sydney",
+            "preferredSports": [
+                "rugby",
+                "cricket",
+                "australian-football"
+            ],
+            "dateFormat": "DD/MM/YYYY",
+            "timeFormat": "24h"
+        },
+        "middle-east": {
+            "priority": [
+                "saudi-arabia",
+                "uae",
+                "qatar",
+                "kuwait"
+            ],
+            "timezone": "Asia/Dubai",
+            "preferredSports": [
+                "football",
+                "cricket",
+                "camel-racing"
+            ],
+            "dateFormat": "DD/MM/YYYY",
+            "timeFormat": "12h"
+        }
+    },
+    "adaptationRules": {
+        "enableGeoAdaptation": true,
+        "preserveFactualContent": true,
+        "adaptHeadlines": true,
+        "adaptSummaries": true,
+        "reorderByRelevance": true,
+        "useLocalTerminology": true,
+        "integrateLocalTrending": true,
+        "adaptTimeDisplay": true
+    },
+    "relevanceWeights": {
+        "geographicDistance": 0.4,
+        "localMentions": 0.3,
+        "userPreferences": 0.2,
+        "recency": 0.1
+    },
+    "locationDetection": {
+        "useGeolocation": true,
+        "fallbackToIP": true,
+        "updateInterval": 60000
+    },
+    "intervals": {
+        "adaptationCheck": 5000,
+        "locationUpdate": 60000,
+        "analyticsUpdate": 30000
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "layerId": 190,
+    "name": "Global Corrections & Retractions Engine",
+    "version": "1.0.0",
+    "status": "active",
+    "enabled": true,
+    "correctionTypes": {
+        "factual": {
+            "severity": "high",
+            "requiresApproval": true,
+            "visible": true
+        },
+        "clarification": {
+            "severity": "medium",
+            "requiresApproval": false,
+            "visible": true
+        },
+        "update": {
+            "severity": "low",
+            "requiresApproval": false,
+            "visible": true
+        },
+        "retraction": {
+            "severity": "critical",
+            "requiresApproval": true,
+            "visible": true,
+            "permanent": true
+        }
+    },
+    "workflow": {
+        "autoApply": false,
+        "requireEditorReview": true,
+        "notifyReaders": true,
+        "updateLedger": true
+    },
+    "display": {
+        "prominentNotice": true,
+        "showOriginalText": true,
+        "showCorrection": true,
+        "showReason": true,
+        "showTimestamp": true
+    },
+    "retractions": {
+        "overlayArticle": true,
+        "markPermanent": true,
+        "notifySovereignControl": true,
+        "requireReason": true
+    },
+    "intervals": {
+        "correctionMonitoring": 30000,
+        "analyticsUpdate": 60000
+    }
+}

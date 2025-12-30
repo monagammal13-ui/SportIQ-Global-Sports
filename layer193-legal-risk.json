@@ -1,0 +1,13 @@
+{
+    "layerId": 193,
+    "name": "Global Legal Risk & Compliance Analyzer",
+    "version": "1.0.0",
+    "status": "active",
+    "enabled": true,
+    "riskLevels": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+    ]
+}

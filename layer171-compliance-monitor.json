@@ -1,0 +1,73 @@
+{
+    "layerId": 171,
+    "name": "Global Editorial Compliance Monitor",
+    "version": "1.0.0",
+    "status": "active",
+    "enabled": true,
+    "regulations": {
+        "GDPR": {
+            "enabled": true,
+            "strictMode": true,
+            "autoFix": false
+        },
+        "CCPA": {
+            "enabled": true,
+            "strictMode": true,
+            "autoFix": false
+        },
+        "COPPA": {
+            "enabled": true,
+            "strictMode": true,
+            "autoFix": false
+        },
+        "FTC": {
+            "enabled": true,
+            "disclosure": true,
+            "autoFix": false
+        },
+        "ASA": {
+            "enabled": true,
+            "adLabeling": true
+        },
+        "PressCouncil": {
+            "enabled": true,
+            "editorialStandards": true
+        }
+    },
+    "checks": {
+        "privacy": true,
+        "dataProtection": true,
+        "minorProtection": true,
+        "advertising": true,
+        "editorialIntegrity": true,
+        "accessibility": true,
+        "copyright": true
+    },
+    "enforcement": {
+        "autoFix": {
+            "enabled": true,
+            "scope": [
+                "accessibility",
+                "metadata"
+            ]
+        },
+        "flagging": {
+            "enabled": true,
+            "criticalOnly": false
+        },
+        "blocking": {
+            "enabled": false,
+            "criticalOnly": true
+        }
+    },
+    "thresholds": {
+        "minComplianceScore": 70,
+        "criticalViolationLimit": 0,
+        "warningLimit": 3
+    },
+    "intervals": {
+        "complianceCheck": 10000,
+        "analyticsUpdate": 60000,
+        "recheckInterval": 3600000
+    }
+}

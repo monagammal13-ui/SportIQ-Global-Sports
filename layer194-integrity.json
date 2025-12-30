@@ -1,0 +1,11 @@
+{
+    "layerId": 194,
+    "name": "Platform Integrity & Tamper Detection",
+    "version": "1.0.0",
+    "status": "active",
+    "enabled": true,
+    "integrity": {
+        "hashingEnabled": true,
+        "tamperPrevention": true
+    }
+}

@@ -1,0 +1,73 @@
+{
+    "layerId": 151,
+    "name": "Universal Article Syndication Engine",
+    "version": "1.0.0",
+    "enabled": true,
+    "regions": [
+        "north-america",
+        "europe",
+        "asia",
+        "africa",
+        "south-america",
+        "oceania",
+        "middle-east"
+    ],
+    "categories": [
+        "football",
+        "basketball",
+        "tennis",
+        "cricket",
+        "rugby",
+        "baseball",
+        "hockey",
+        "golf",
+        "athletics",
+        "swimming",
+        "boxing",
+        "mma"
+    ],
+    "topicalHubs": [
+        "breaking-news",
+        "transfers",
+        "results",
+        "analysis",
+        "opinions",
+        "interviews",
+        "features",
+        "highlights",
+        "live-coverage"
+    ],
+    "syndicationRules": {
+        "autoApprove": true,
+        "requireManualReview": false,
+        "respectRegionalRestrictions": true,
+        "enableCrossRegional": true,
+        "maxSyndicationTargets": 20,
+        "deduplicationEnabled": true,
+        "priorityLevels": [
+            "high",
+            "medium",
+            "low"
+        ]
+    },
+    "distributionTargets": {
+        "homepage": true,
+        "categoryPages": true,
+        "regionalPages": true,
+        "topicalHubs": true,
+        "widgets": true,
+        "feeds": true,
+        "newsletters": true,
+        "socialMedia": false
+    },
+    "intervals": {
+        "syndicationCheck": 3000,
+        "analyticsUpdate": 30000,
+        "queueProcessing": 1000
+    },
+    "analytics": {
+        "trackSyndication": true,
+        "logDistribution": true,
+        "reportMetrics": true
+    }
+}

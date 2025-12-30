@@ -1,0 +1,22 @@
+{
+    "layerId": 191,
+    "name": "Journalist Reputation & Attribution System",
+    "version": "1.0.0",
+    "status": "active",
+    "enabled": true,
+    "reputation": {
+        "baseScore": 50,
+        "maxScore": 100,
+        "articleCountBonus": 2,
+        "impactWeight": 0.2
+    },
+    "tracking": {
+        "trackContributions": true,
+        "trackExpertise": true,
+        "maxExpertiseDomains": 3
+    },
+    "intervals": {
+        "reputationUpdate": 60000,
+        "analyticsUpdate": 120000
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "layerId": 156,
+    "name": "Regional Context Enhancement Layer",
+    "version": "1.0.0",
+    "enabled": true,
+    "contextTypes": {
+        "local": "Local Perspective",
+        "historical": "Historical Context",
+        "statistical": "Regional Statistics",
+        "cultural": "Cultural Context",
+        "economic": "Economic Impact",
+        "social": "Social Implications"
+    },
+    "relevanceIndicators": {
+        "immediate": {
+            "label": "Immediate Impact",
+            "priority": 5,
+            "color": "#ef4444"
+        },
+        "regional": {
+            "label": "Regional Relevance",
+            "priority": 4,
+            "color": "#f59e0b"
+        },
+        "national": {
+            "label": "National Interest",
+            "priority": 3,
+            "color": "#3b82f6"
+        },
+        "international": {
+            "label": "Global Context",
+            "priority": 2,
+            "color": "#8b5cf6"
+        },
+        "background": {
+            "label": "Background Info",
+            "priority": 1,
+            "color": "#6b7280"
+        }
+    },
+    "features": {
+        "contextBlocks": true,
+        "timelines": true,
+        "localConnections": true,
+        "culturalAdaptation": true
+    },
+    "intervals": {
+        "enhancementCheck": 5000,
+        "contextUpdate": 30000,
+        "analyticsUpdate": 30000
+    }
+}

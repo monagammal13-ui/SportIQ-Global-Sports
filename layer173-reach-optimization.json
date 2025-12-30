@@ -1,0 +1,55 @@
+{
+    "layerId": 173,
+    "name": "Algorithmic Reach Optimization",
+    "version": "1.0.0",
+    "status": "active",
+    "enabled": true,
+    "optimizationFactors": {
+        "engagement": {
+            "weight": 0.25,
+            "enabled": true
+        },
+        "relevance": {
+            "weight": 0.25,
+            "enabled": true
+        },
+        "freshness": {
+            "weight": 0.20,
+            "enabled": true
+        },
+        "quality": {
+            "weight": 0.20,
+            "enabled": true
+        },
+        "diversity": {
+            "weight": 0.10,
+            "enabled": true
+        }
+    },
+    "ethical": {
+        "noBias": true,
+        "transparentAlgorithm": true,
+        "userControl": true,
+        "diversityEnforcement": true
+    },
+    "seo": {
+        "enabled": true,
+        "metaOptimization": true,
+        "keywordDensity": true,
+        "structuredData": true
+    },
+    "socialOptimization": {
+        "openGraph": true,
+        "twitterCard": true,
+        "linkedIn": true
+    },
+    "discoveryPriority": {
+        "highThreshold": 75,
+        "mediumThreshold": 50,
+        "autoBoost": true
+    },
+    "intervals": {
+        "optimizationCheck": 15000,
+        "analyticsUpdate": 60000
+    }
+}

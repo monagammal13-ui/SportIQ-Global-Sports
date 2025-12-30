@@ -1,0 +1,32 @@
+{
+    "layerId": 182,
+    "name": "Live Story Stream Engine",
+    "version": "1.0.0",
+    "status": "active",
+    "enabled": true,
+    "streaming": {
+        "enabled": true,
+        "autoStart": true,
+        "maxLiveStories": 10
+    },
+    "verification": {
+        "requireVerification": true,
+        "minSourcesForUpdate": 1,
+        "factCheckUpdates": true
+    },
+    "updates": {
+        "realTime": true,
+        "updateMethod": "append",
+        "maxUpdatesPerStory": 50
+    },
+    "display": {
+        "showTimestamps": true,
+        "highlightNewUpdates": true,
+        "collapsible": true
+    },
+    "intervals": {
+        "streamUpdate": 3000,
+        "verificationCheck": 10000,
+        "analyticsUpdate": 60000
+    }
+}

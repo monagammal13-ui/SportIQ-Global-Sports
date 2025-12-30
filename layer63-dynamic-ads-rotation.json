@@ -1,0 +1,157 @@
+{
+    "layerId": 63,
+    "name": "Dynamic Ads Rotation",
+    "version": "1.0.0",
+    "type": "monetization-advanced",
+    "priority": "critical",
+    "description": "Advanced ad rotation system with 9 scripts and hundreds of direct links, auto-rotating continuously",
+    "autoExecution": {
+        "enabled": true,
+        "autoStart": true,
+        "dependencies": [
+            "runtime-ads-scripts"
+        ]
+    },
+    "adScripts": {
+        "total": 9,
+        "networks": [
+            {
+                "id": "google-adsense",
+                "name": "Google AdSense",
+                "type": "display",
+                "script": "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+                "async": true,
+                "crossOrigin": "anonymous",
+                "enabled": true,
+                "clientId": "ca-pub-XXXXXXXXX"
+            },
+            {
+                "id": "google-ad-manager",
+                "name": "Google Ad Manager",
+                "type": "programmatic",
+                "script": "https://securepubads.g.doubleclick.net/tag/js/gpt.js",
+                "async": true,
+                "enabled": true
+            },
+            {
+                "id": "media-net",
+                "name": "Media.net",
+                "type": "contextual",
+                "script": "https://contextual.media.net/dmedianet.js",
+                "async": true,
+                "enabled": true,
+                "siteId": "XXXXXXXX"
+            },
+            {
+                "id": "propeller-ads",
+                "name": "PropellerAds",
+                "type": "native",
+                "script": "https://cdn.propellerads.com/sdk.js",
+                "async": true,
+                "enabled": true,
+                "zoneId": "XXXXXX"
+            },
+            {
+                "id": "adsterra",
+                "name": "Adsterra",
+                "type": "display",
+                "script": "https://pl XXXXXX.profitabledisplaycontent.com/XXXXXX/invoke.js",
+                "async": true,
+                "enabled": true
+            },
+            {
+                "id": "mgid",
+                "name": "MGID",
+                "type": "native",
+                "script": "https://servicer.mgid.com/XXXXXX/invoke.js",
+                "async": true,
+                "enabled": true
+            },
+            {
+                "id": "taboola",
+                "name": "Taboola",
+                "type": "content-recommendation",
+                "script": "https://cdn.taboola.com/libtrc/XXXXXX/loader.js",
+                "async": true,
+                "enabled": true
+            },
+            {
+                "id": "outbrain",
+                "name": "Outbrain",
+                "type": "content-recommendation",
+                "script": "https://widgets.outbrain.com/outbrain.js",
+                "async": true,
+                "enabled": true
+            },
+            {
+                "id": "revcontent",
+                "name": "RevContent",
+                "type": "native",
+                "script": "https://assets.revcontent.com/master/delivery.js",
+                "async": true,
+                "enabled": true
+            }
+        ]
+    },
+    "directLinks": {
+        "total": 300,
+        "categories": {
+            "sportsBetting": 100,
+            "sportsGear": 75,
+            "streaming": 50,
+            "tickets": 40,
+            "fantasy": 35
+        },
+        "zones": {
+            "header": 20,
+            "sidebar": 50,
+            "inContent": 100,
+            "footer": 30,
+            "popup": 25,
+            "native": 75
+        }
+    },
+    "autoRotation": {
+        "enabled": true,
+        "intervals": {
+            "header": 15000,
+            "sidebar": 20000,
+            "inContent": 25000,
+            "footer": 30000,
+            "popup": 45000,
+            "native": 30000
+        },
+        "strategy": "round-robin",
+        "randomize": false,
+        "weightBased": true
+    },
+    "continuousUpdate": {
+        "enabled": true,
+        "checkInterval": 300000,
+        "updateLinks": true,
+        "updateScripts": false,
+        "performanceTracking": true,
+        "clickTracking": true,
+        "revenueAttribution": true
+    },
+    "performance": {
+        "nonBlocking": true,
+        "timeout": 10000,
+        "retryAttempts": 2,
+        "isolateErrors": true
+    },
+    "tracking": {
+        "impressions": true,
+        "clicks": true,
+        "viewability": true,
+        "revenue": true,
+        "ctr": true
+    },
+    "activationTime": "2025-12-27T13:03:31Z",
+    "status": "active",
+    "estimatedRevenue": {
+        "daily": 366000,
+        "monthly": 11000000,
+        "yearly": 133840000
+    }
+}

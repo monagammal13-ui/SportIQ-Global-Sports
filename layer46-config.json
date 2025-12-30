@@ -1,0 +1,6 @@
+{
+    "version": "1.0.0",
+    "description": "Layer 46 Config",
+    "mode": "polling",
+    "defaultInterval": 30000
+}

@@ -1,0 +1,11 @@
+{
+    "version": "1.0.0",
+    "description": "Layer 42 Config",
+    "platforms": [
+        "twitter",
+        "facebook",
+        "linkedin",
+        "whatsapp"
+    ],
+    "trackEngagement": true
+}

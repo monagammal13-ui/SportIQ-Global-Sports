@@ -1,0 +1,52 @@
+{
+    "layerId": 189,
+    "name": "Editorial Accountability Ledger",
+    "version": "1.0.0",
+    "status": "active",
+    "enabled": true,
+    "tracking": {
+        "enabled": true,
+        "trackAllChanges": true,
+        "visibleToPublic": true,
+        "immutable": true
+    },
+    "changeTypes": {
+        "update": {
+            "severity": "low",
+            "notify": false
+        },
+        "correction": {
+            "severity": "medium",
+            "notify": true
+        },
+        "retraction": {
+            "severity": "critical",
+            "notify": true
+        },
+        "clarification": {
+            "severity": "low",
+            "notify": false
+        }
+    },
+    "ledger": {
+        "persistent": true,
+        "encrypted": false,
+        "exportable": true,
+        "publicAccess": true
+    },
+    "display": {
+        "showNotices": true,
+        "showTimestamps": true,
+        "showEditor": true,
+        "showReason": true
+    },
+    "history": {
+        "enabled": true,
+        "maxVersions": 100,
+        "showDiff": true
+    },
+    "intervals": {
+        "ledgerSync": 30000,
+        "analyticsUpdate": 60000
+    }
+}

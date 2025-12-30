@@ -1,0 +1,45 @@
+{
+    "id": "layer-140",
+    "name": "Advanced User Profiling Engine",
+    "version": "2.0.0",
+    "config": {
+        "weights": {
+            "view": 1.0,
+            "read_short": 2.0,
+            "read_long": 5.0,
+            "click_ad": 3.0,
+            "click_related": 3.0,
+            "share": 10.0,
+            "search": 4.0,
+            "save_bookmark": 8.0
+        },
+        "decay_rate_daily": 0.90,
+        "prune_threshold": 0.5,
+        "max_history_depth": 200
+    },
+    "segments": {
+        "casual": {
+            "min_score": 0,
+            "max_score": 50
+        },
+        "engaged": {
+            "min_score": 51,
+            "max_score": 200
+        },
+        "superfan": {
+            "min_score": 201,
+            "max_score": 9999
+        }
+    },
+    "interest_taxonomies": [
+        "football",
+        "basketball",
+        "tennis",
+        "cricket",
+        "esports",
+        "transfers",
+        "tactics",
+        "lifestyle",
+        "betting"
+    ]
+}

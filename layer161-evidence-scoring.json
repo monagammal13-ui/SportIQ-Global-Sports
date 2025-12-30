@@ -1,0 +1,44 @@
+{
+    "layerId": 161,
+    "name": "Evidence Weight Scoring Engine",
+    "version": "1.0.0",
+    "enabled": true,
+    "evidenceWeights": {
+        "primarySources": 0.35,
+        "secondarySources": 0.20,
+        "expertQuotes": 0.20,
+        "dataStatistics": 0.15,
+        "citations": 0.10
+    },
+    "scoreTiers": {
+        "gold": {
+            "min": 80,
+            "label": "Strong Evidence",
+            "icon": "🥇",
+            "color": "#fbbf24"
+        },
+        "silver": {
+            "min": 60,
+            "label": "Good Evidence",
+            "icon": "🥈",
+            "color": "#94a3b8"
+        },
+        "bronze": {
+            "min": 40,
+            "label": "Fair Evidence",
+            "icon": "🥉",
+            "color": "#cd7f32"
+        },
+        "weak": {
+            "min": 0,
+            "label": "Weak Evidence",
+            "icon": "⚠️",
+            "color": "#ef4444"
+        }
+    },
+    "minimumSources": 2,
+    "intervals": {
+        "scoringCheck": 5000,
+        "analyticsUpdate": 30000
+    }
+}

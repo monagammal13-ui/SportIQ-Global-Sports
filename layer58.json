@@ -1,0 +1,11 @@
+{
+    "id": "layer-058",
+    "name": "International Rankings & Leaderboards",
+    "version": "1.0.0",
+    "types": [
+        "fifa-ranking",
+        "atp-ranking",
+        "wta-ranking"
+    ],
+    "topCount": 20
+}

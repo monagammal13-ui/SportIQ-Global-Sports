@@ -1,0 +1,10 @@
+{
+    "version": "1.0.0",
+    "description": "Layer 38 Config",
+    "refreshInterval": 30000,
+    "leagues": [
+        "Premier League",
+        "NBA",
+        "NFL"
+    ]
+}

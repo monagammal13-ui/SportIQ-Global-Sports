@@ -1,0 +1,9 @@
+{
+    "version": "1.0.0",
+    "description": "Layer 47 Config",
+    "markets": [
+        "Moneyline",
+        "Spread"
+    ],
+    "currency": "USD"
+}

@@ -1,0 +1,16 @@
+{
+    "id": "layer-052",
+    "name": "Real-Time Notifications Engine",
+    "version": "1.0.0",
+    "position": "top-right",
+    "duration": 5000,
+    "maxStack": 5,
+    "enableSound": true,
+    "types": [
+        "info",
+        "success",
+        "warning",
+        "error",
+        "breaking-news"
+    ]
+}

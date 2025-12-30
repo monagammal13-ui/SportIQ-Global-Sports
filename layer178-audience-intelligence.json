@@ -1,0 +1,59 @@
+{
+    "layerId": 178,
+    "name": "Audience Intelligence Engine",
+    "version": "1.0.0",
+    "status": "active",
+    "enabled": true,
+    "tracking": {
+        "behavioral": true,
+        "preferences": true,
+        "engagement": true,
+        "demographics": true
+    },
+    "metrics": {
+        "engagement": {
+            "enabled": true,
+            "trackClicks": true,
+            "trackShares": true,
+            "trackComments": true,
+            "trackDuration": true
+        },
+        "retention": {
+            "enabled": true,
+            "sessionTracking": true,
+            "returnVisitor": true
+        },
+        "preferences": {
+            "enabled": true,
+            "categoryTracking": true,
+            "contentTypeTracking": true,
+            "timeOfDayTracking": true
+        }
+    },
+    "privacy": {
+        "anonymousTracking": true,
+        "consentRequired": false,
+        "dataRetention": "90days",
+        "noPersonalData": true
+    },
+    "insights": {
+        "autoGenerate": true,
+        "generationInterval": 60000,
+        "actionableOnly": true,
+        "minConfidence": 0.7
+    },
+    "segmentation": {
+        "enabled": true,
+        "segments": [
+            "highly_engaged",
+            "casual_readers",
+            "new_users",
+            "at_risk"
+        ]
+    },
+    "intervals": {
+        "behaviorTracking": 5000,
+        "insightGeneration": 60000,
+        "analyticsUpdate": 30000
+    }
+}

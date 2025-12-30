@@ -1,0 +1,31 @@
+{
+    "id": "layer-145",
+    "name": "Personalization Runtime Engine",
+    "segmentRules": {
+        "Football Fanatic": {
+            "ui_priority": [
+                "football",
+                "transfers"
+            ],
+            "theme_accent": "#2ecc71"
+        },
+        "Better": {
+            "show_odds": true,
+            "hide_spoilers": false
+        },
+        "Analyst": {
+            "density": "compact",
+            "show_stats_overlay": true
+        },
+        "Casual Viewer": {
+            "media_autoplay": true,
+            "layout": "magazine"
+        }
+    },
+    "ab_tests": {
+        "hero_layout": [
+            "variant_a",
+            "variant_b"
+        ]
+    }
+}

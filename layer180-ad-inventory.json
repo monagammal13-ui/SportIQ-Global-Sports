@@ -1,0 +1,80 @@
+{
+    "id": "layer-180",
+    "name": "Enterprise Global Advertising Engine",
+    "version": "3.5.0",
+    "high_impact": [
+        {
+            "id": "ast_pop_001",
+            "url": "https://beta.publishers.adsterra.com/tag/example",
+            "weight": 100,
+            "leagues": [
+                "all"
+            ]
+        },
+        {
+            "id": "ast_pop_002",
+            "url": "https://beta.publishers.adsterra.com/tag/example",
+            "weight": 90,
+            "leagues": [
+                "epl"
+            ]
+        }
+    ],
+    "native": [
+        {
+            "id": "ast_nat_001",
+            "url": "https://beta.publishers.adsterra.com/tag/example",
+            "weight": 80
+        },
+        {
+            "id": "ast_nat_002",
+            "url": "https://beta.publishers.adsterra.com/tag/example",
+            "weight": 80
+        },
+        {
+            "id": "ast_nat_003",
+            "url": "https://beta.publishers.adsterra.com/tag/example",
+            "weight": 80
+        }
+    ],
+    "social_bar": [
+        {
+            "id": "ast_sb_001",
+            "url": "https://beta.publishers.adsterra.com/tag/example",
+            "weight": 95
+        }
+    ],
+    "vast_video": [
+        {
+            "id": "ast_vid_001",
+            "url": "https://beta.publishers.adsterra.com/tag/example",
+            "weight": 100
+        }
+    ],
+    "smart_link": [
+        {
+            "id": "ast_smart_global",
+            "url": "https://beta.publishers.adsterra.com/tag/example",
+            "weight": 100,
+            "fallback": true
+        }
+    ],
+    "formats": {
+        "popunder": {
+            "cap": 1,
+            "capping_duration": 3600
+        },
+        "social_bar": {
+            "cap": 3,
+            "capping_duration": 600
+        },
+        "native_grid": {
+            "cap": 999
+        }
+    },
+    "yield_rules": {
+        "mobile_multiplier": 1.5,
+        "desktop_multiplier": 1.0,
+        "high_value_geo_multiplier": 2.0
+    }
+}

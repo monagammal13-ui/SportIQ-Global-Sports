@@ -1,0 +1,60 @@
+{
+    "layerId": 174,
+    "name": "Sovereign Data Control Layer",
+    "version": "1.0.0",
+    "status": "active",
+    "enabled": true,
+    "dataClasses": {
+        "content": {
+            "retention": "indefinite",
+            "ownership": "platform",
+            "exportable": true
+        },
+        "user": {
+            "retention": "730days",
+            "ownership": "platform",
+            "exportable": true,
+            "deletable": true
+        },
+        "analytics": {
+            "retention": "365days",
+            "ownership": "platform",
+            "exportable": true
+        },
+        "system": {
+            "retention": "90days",
+            "ownership": "platform",
+            "exportable": false
+        }
+    },
+    "dataGovernance": {
+        "ownershipTracking": true,
+        "accessControl": true,
+        "auditTrail": true,
+        "retentionEnforcement": true
+    },
+    "export": {
+        "enabled": true,
+        "formats": [
+            "json",
+            "csv",
+            "xml"
+        ],
+        "scheduling": false
+    },
+    "privacy": {
+        "anonymization": true,
+        "encryption": true,
+        "minimumDataCollection": true
+    },
+    "thirdParty": {
+        "strictControl": true,
+        "dataSharing": false,
+        "vendorAudit": true
+    },
+    "intervals": {
+        "governanceCheck": 30000,
+        "analyticsUpdate": 60000,
+        "retentionEnforcement": 86400000
+    }
+}

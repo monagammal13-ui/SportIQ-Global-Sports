@@ -1,0 +1,54 @@
+{
+    "layerId": 169,
+    "name": "Historical Context & Archive Linker",
+    "version": "1.0.0",
+    "status": "active",
+    "enabled": true,
+    "archive": {
+        "searchDepth": 365,
+        "minRelevanceScore": 0.6,
+        "maxResultsPerArticle": 10,
+        "autoArchiveNewArticles": true
+    },
+    "linking": {
+        "keywordMatching": true,
+        "semanticAnalysis": true,
+        "categoryMatching": true,
+        "timelineGeneration": true
+    },
+    "relevanceCalculation": {
+        "keywordWeight": 0.5,
+        "titleSimilarityWeight": 0.3,
+        "categoryWeight": 0.2
+    },
+    "relationships": {
+        "recentDevelopment": {
+            "maxDays": 7,
+            "priority": "high"
+        },
+        "ongoingStory": {
+            "maxDays": 30,
+            "priority": "medium"
+        },
+        "relatedCoverage": {
+            "maxDays": 90,
+            "priority": "low"
+        },
+        "backgroundContext": {
+            "maxDays": 365,
+            "priority": "low"
+        }
+    },
+    "display": {
+        "showTimeline": true,
+        "showBackground": true,
+        "showPriorCoverage": true,
+        "maxBackgroundArticles": 5,
+        "maxPriorCoverageArticles": 10
+    },
+    "intervals": {
+        "linkingCheck": 10000,
+        "analyticsUpdate": 60000,
+        "archiveUpdate": 3600000
+    }
+}

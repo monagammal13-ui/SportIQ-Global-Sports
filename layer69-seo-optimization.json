@@ -1,0 +1,258 @@
+{
+    "layerInfo": {
+        "id": "layer-069",
+        "name": "SEO Optimization Core",
+        "version": "1.0.0",
+        "description": "Complete SEO management with meta tags, schema markup, sitemap generation, and canonical links",
+        "status": "active",
+        "category": "seo",
+        "priority": "high",
+        "dependencies": []
+    },
+    "seoConfig": {
+        "siteName": "SPORTIQ Global Platform",
+        "defaultTitle": "SPORTIQ - Global Sports Platform | Live Scores & News",
+        "defaultDescription": "Your ultimate global sports platform with live scores, breaking news, and comprehensive coverage of all major sports worldwide.",
+        "defaultKeywords": [
+            "sports",
+            "live scores",
+            "sports news",
+            "global sports",
+            "football",
+            "basketball",
+            "tennis",
+            "cricket",
+            "baseball",
+            "hockey",
+            "rugby",
+            "sports platform",
+            "SPORTIQ",
+            "real-time scores",
+            "sports coverage"
+        ],
+        "baseUrl": "https://sportiq.com",
+        "language": "en",
+        "locale": "en_US",
+        "alternateLocales": [
+            "ar_SA",
+            "es_ES",
+            "fr_FR",
+            "de_DE",
+            "pt_BR",
+            "it_IT"
+        ],
+        "twitterHandle": "@sportiq",
+        "facebookAppId": "your-facebook-app-id",
+        "ogType": "website",
+        "robotsRules": "index, follow",
+        "autoUpdateInterval": 300000
+    },
+    "features": {
+        "enableSchemaMarkup": true,
+        "enableOpenGraph": true,
+        "enableTwitterCards": true,
+        "enableDynamicSitemap": true,
+        "enableCanonicalLinks": true,
+        "enableBreadcrumbs": true,
+        "enableRichSnippets": true,
+        "enableAMPSupport": false,
+        "enableJSONLD": true
+    },
+    "sitemapConfig": {
+        "enabled": true,
+        "changeFreq": "daily",
+        "priority": 0.8,
+        "autoGenerate": true,
+        "includeImages": true,
+        "includeVideos": true,
+        "maxUrls": 50000
+    },
+    "metaTags": {
+        "homepage": {
+            "title": "SPORTIQ - Global Sports Platform | Live Scores & Breaking News",
+            "description": "Stay updated with SPORTIQ - your ultimate source for live sports scores, breaking news, in-depth analysis, and comprehensive coverage of all major sports worldwide.",
+            "keywords": [
+                "SPORTIQ",
+                "sports",
+                "live scores",
+                "sports news",
+                "global sports platform"
+            ]
+        },
+        "category": {
+            "titleTemplate": "{sport} - Live Scores, News & Updates | SPORTIQ",
+            "descriptionTemplate": "Comprehensive {sport} coverage on SPORTIQ with live scores, breaking news, match analysis, and exclusive content from around the world.",
+            "keywords": [
+                "{sport}",
+                "live scores",
+                "sports news",
+                "{sport} updates"
+            ]
+        },
+        "article": {
+            "titleTemplate": "{title} | SPORTIQ",
+            "descriptionTemplate": "{excerpt}",
+            "keywords": [
+                "sports article",
+                "sports news",
+                "{sport}",
+                "{category}"
+            ]
+        }
+    },
+    "schemaMarkup": {
+        "website": {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "SPORTIQ",
+            "alternateName": "SPORTIQ Global Platform",
+            "url": "https://sportiq.com",
+            "description": "Global sports platform for live scores and news",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://sportiq.com/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        },
+        "organization": {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "SPORTIQ",
+            "url": "https://sportiq.com",
+            "logo": "https://sportiq.com/assets/logo.png",
+            "description": "Leading global sports platform",
+            "sameAs": [
+                "https://twitter.com/sportiq",
+                "https://facebook.com/sportiq",
+                "https://instagram.com/sportiq",
+                "https://linkedin.com/company/sportiq",
+                "https://youtube.com/sportiq"
+            ],
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "Customer Service",
+                "email": "info@sportiq.com",
+                "availableLanguage": [
+                    "en",
+                    "ar",
+                    "es",
+                    "fr",
+                    "de",
+                    "pt",
+                    "it"
+                ]
+            }
+        },
+        "breadcrumb": {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": []
+        }
+    },
+    "openGraph": {
+        "defaultImage": "https://sportiq.com/assets/og-image.jpg",
+        "imageWidth": 1200,
+        "imageHeight": 630,
+        "imageType": "image/jpeg",
+        "siteName": "SPORTIQ",
+        "fbAppId": "your-facebook-app-id"
+    },
+    "twitterCards": {
+        "defaultCard": "summary_large_image",
+        "defaultImage": "https://sportiq.com/assets/twitter-card.jpg",
+        "site": "@sportiq",
+        "creator": "@sportiq"
+    },
+    "canonicalRules": {
+        "enabled": true,
+        "removeQueryParams": true,
+        "removeFragments": true,
+        "lowercaseUrls": true,
+        "removeTrailingSlash": false,
+        "preferredProtocol": "https",
+        "preferredDomain": "sportiq.com",
+        "excludeParams": [
+            "utm_source",
+            "utm_medium",
+            "utm_campaign",
+            "fbclid",
+            "gclid"
+        ]
+    },
+    "dynamicKeywords": {
+        "sports": [
+            "football",
+            "soccer",
+            "basketball",
+            "tennis",
+            "cricket",
+            "baseball",
+            "hockey",
+            "rugby",
+            "golf",
+            "F1",
+            "racing",
+            "MMA",
+            "UFC",
+            "boxing",
+            "volleyball",
+            "badminton"
+        ],
+        "leagues": [
+            "Premier League",
+            "La Liga",
+            "Serie A",
+            "Bundesliga",
+            "Champions League",
+            "NBA",
+            "NFL",
+            "NHL",
+            "MLB",
+            "IPL",
+            "Wimbledon",
+            "US Open",
+            "French Open"
+        ],
+        "actions": [
+            "live scores",
+            "breaking news",
+            "highlights",
+            "analysis",
+            "results",
+            "fixtures",
+            "standings",
+            "statistics",
+            "transfers",
+            "updates"
+        ]
+    },
+    "richSnippets": {
+        "enableSportsEvent": true,
+        "enableArticle": true,
+        "enableBreadcrumb": true,
+        "enableFAQ": false,
+        "enableVideo": true,
+        "enableRating": false
+    },
+    "performance": {
+        "lazyLoadImages": true,
+        "optimizeMetaTags": true,
+        "minifyHTML": false,
+        "cacheMetaTags": true,
+        "cacheDuration": 3600000
+    },
+    "monitoring": {
+        "trackPageViews": true,
+        "trackPerformance": true,
+        "trackMetaChanges": true,
+        "sendAnalytics": true,
+        "logErrors": true
+    },
+    "autoGeneration": {
+        "generateSitemap": true,
+        "generateRobotsTxt": false,
+        "generateRSSFeed": false,
+        "updateOnRouteChange": true,
+        "updateOnContentChange": true
+    }
+}

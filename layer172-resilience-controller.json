@@ -1,0 +1,52 @@
+{
+    "layerId": 172,
+    "name": "Platform Resilience & Failover Controller",
+    "version": "1.0.0",
+    "status": "active",
+    "enabled": true,
+    "thresholds": {
+        "errorRate": 0.05,
+        "responseTime": 3000,
+        "memoryUsage": 0.85,
+        "cpuUsage": 0.90
+    },
+    "circuitBreaker": {
+        "enabled": true,
+        "failureThreshold": 5,
+        "timeout": 60000,
+        "halfOpenAttempts": 3
+    },
+    "degradedMode": {
+        "enabled": true,
+        "triggers": [
+            "high_error_rate",
+            "high_memory",
+            "circuit_breaker"
+        ],
+        "disableFeatures": [
+            "animations",
+            "real_time_updates",
+            "heavy_widgets"
+        ]
+    },
+    "failover": {
+        "cdnFallback": true,
+        "resourceRetry": true,
+        "maxRetries": 3
+    },
+    "recovery": {
+        "autoRecovery": true,
+        "recoveryInterval": 30000,
+        "gradualRestore": true
+    },
+    "monitoring": {
+        "healthCheck": true,
+        "performanceMonitoring": true,
+        "longTaskDetection": true
+    },
+    "intervals": {
+        "healthCheck": 5000,
+        "performanceMonitor": 10000,
+        "analyticsUpdate": 30000
+    }
+}

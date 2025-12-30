@@ -1,0 +1,25 @@
+{
+    "id": "layer-141",
+    "name": "Fan Engagement Engine",
+    "version": "2.0.0",
+    "points": {
+        "like": 10,
+        "love": 20,
+        "share_twitter": 50,
+        "share_whatsapp": 50,
+        "comment": 30,
+        "reply": 15,
+        "bookmark": 25,
+        "poll_vote": 10,
+        "quiz_complete": 100
+    },
+    "thresholds": {
+        "micro_interaction": 10,
+        "session_milestone": 250,
+        "daily_limit": 5000
+    },
+    "reactions": {
+        "like": "heart_animation",
+        "share": "confetti_burst"
+    }
+}

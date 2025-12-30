@@ -1,0 +1,286 @@
+{
+    "version": "1.0.0",
+    "layerId": 150,
+    "name": "Global News Core Distributor",
+    "description": "Central distribution core that ensures every published article is automatically propagated across all site sections, feeds, and global entry points without duplication",
+    "status": "active",
+    "sections": [
+        "homepage",
+        "football",
+        "basketball",
+        "tennis",
+        "cricket",
+        "baseball",
+        "hockey",
+        "rugby",
+        "golf",
+        "motorsports",
+        "boxing",
+        "mma",
+        "athletics",
+        "swimming",
+        "cycling",
+        "all-sports",
+        "breaking-news",
+        "trending",
+        "featured"
+    ],
+    "feedFormats": [
+        "rss",
+        "json",
+        "xml",
+        "atom"
+    ],
+    "distributionTargets": [
+        "main-feed",
+        "sidebar",
+        "footer",
+        "related",
+        "trending",
+        "latest",
+        "popular",
+        "recommended",
+        "category-specific",
+        "sport-specific"
+    ],
+    "distributionRules": {
+        "autoPublish": true,
+        "deduplication": true,
+        "realTimeSync": true,
+        "maxArticlesPerSection": 50,
+        "maxArticlesHomepage": 20,
+        "maxArticlesFeed": 100,
+        "maxArticlesWidget": 10,
+        "maxArticlesTrending": 5,
+        "distributionDelay": 0,
+        "retryOnFailure": true,
+        "maxRetries": 3
+    },
+    "categoryMapping": {
+        "football": [
+            "soccer",
+            "premier-league",
+            "la-liga",
+            "champions-league",
+            "world-cup"
+        ],
+        "basketball": [
+            "nba",
+            "euroleague",
+            "ncaa-basketball"
+        ],
+        "tennis": [
+            "atp",
+            "wta",
+            "grand-slam",
+            "wimbledon",
+            "us-open"
+        ],
+        "cricket": [
+            "ipl",
+            "test-cricket",
+            "t20",
+            "odi"
+        ],
+        "baseball": [
+            "mlb",
+            "world-series"
+        ],
+        "hockey": [
+            "nhl",
+            "ice-hockey"
+        ],
+        "rugby": [
+            "rugby-union",
+            "rugby-league",
+            "six-nations"
+        ],
+        "golf": [
+            "pga",
+            "masters",
+            "open-championship"
+        ],
+        "motorsports": [
+            "f1",
+            "nascar",
+            "motogp"
+        ],
+        "boxing": [
+            "heavyweight",
+            "welterweight",
+            "championship-boxing"
+        ],
+        "mma": [
+            "ufc",
+            "bellator",
+            "mixed-martial-arts"
+        ],
+        "athletics": [
+            "track-and-field",
+            "marathon",
+            "olympics"
+        ],
+        "swimming": [
+            "competitive-swimming",
+            "olympics-swimming"
+        ],
+        "cycling": [
+            "tour-de-france",
+            "cycling-championships"
+        ]
+    },
+    "priorityLevels": {
+        "breaking": 1,
+        "trending": 2,
+        "featured": 3,
+        "standard": 4,
+        "archive": 5
+    },
+    "distributionChannels": {
+        "homepage": {
+            "enabled": true,
+            "maxArticles": 20,
+            "refreshInterval": 30000,
+            "priority": [
+                "breaking",
+                "trending",
+                "featured"
+            ]
+        },
+        "categoryPages": {
+            "enabled": true,
+            "maxArticles": 50,
+            "refreshInterval": 60000,
+            "autoCreate": true
+        },
+        "sportPages": {
+            "enabled": true,
+            "maxArticles": 50,
+            "refreshInterval": 60000,
+            "autoCreate": true
+        },
+        "rssFeeds": {
+            "enabled": true,
+            "maxArticles": 100,
+            "refreshInterval": 300000,
+            "includeFullContent": false
+        },
+        "jsonFeeds": {
+            "enabled": true,
+            "maxArticles": 100,
+            "refreshInterval": 300000,
+            "includeFullContent": true
+        },
+        "widgets": {
+            "enabled": true,
+            "maxArticles": 10,
+            "refreshInterval": 30000,
+            "types": [
+                "trending",
+                "latest",
+                "popular",
+                "related"
+            ]
+        },
+        "sliders": {
+            "enabled": true,
+            "maxArticles": 5,
+            "refreshInterval": 60000,
+            "imageRequired": true
+        },
+        "socialMedia": {
+            "enabled": true,
+            "platforms": [
+                "twitter",
+                "facebook",
+                "instagram"
+            ],
+            "autoPost": false
+        }
+    },
+    "contentFilters": {
+        "minTitleLength": 10,
+        "maxTitleLength": 200,
+        "minExcerptLength": 50,
+        "maxExcerptLength": 500,
+        "requireImage": false,
+        "requireCategory": true,
+        "requirePublishDate": true,
+        "blockDuplicateTitles": true,
+        "blockDuplicateContent": true
+    },
+    "seoSettings": {
+        "generateMetaTags": true,
+        "generateOpenGraph": true,
+        "generateTwitterCards": true,
+        "generateStructuredData": true,
+        "autoGenerateSitemap": true,
+        "updateRobotsTxt": false
+    },
+    "analyticsTracking": {
+        "trackDistribution": true,
+        "trackClicks": true,
+        "trackViews": true,
+        "trackShares": true,
+        "trackEngagement": true,
+        "reportingInterval": 3600000
+    },
+    "notifications": {
+        "onDistribution": false,
+        "onError": true,
+        "onDuplicateDetected": true,
+        "onHighTraffic": true,
+        "channels": [
+            "console",
+            "dashboard"
+        ]
+    },
+    "performance": {
+        "enableCaching": true,
+        "cacheExpiration": 300000,
+        "enableCompression": true,
+        "lazyLoadImages": true,
+        "deferNonCritical": true,
+        "maxConcurrentDistributions": 10
+    },
+    "integrations": {
+        "runtimeDataEngine": true,
+        "runtimeMediaEngine": true,
+        "analyticsEngine": true,
+        "seoEngine": true,
+        "contentAggregator": true,
+        "newsGenerator": true
+    },
+    "fallbackBehavior": {
+        "onDistributionFailure": "retry",
+        "onDuplicateDetection": "skip",
+        "onInvalidArticle": "log",
+        "onMissingCategory": "default-to-all-sports",
+        "onMissingImage": "use-placeholder"
+    },
+    "advancedFeatures": {
+        "aiCategorization": false,
+        "autoTagging": true,
+        "relatedContentSuggestions": true,
+        "trendingDetection": true,
+        "sentimentAnalysis": false,
+        "duplicateContentDetection": true,
+        "contentQualityScoring": false
+    },
+    "apiEndpoints": {
+        "distributeArticle": "/api/distribute",
+        "bulkDistribute": "/api/distribute/bulk",
+        "getDistributedArticles": "/api/distributed",
+        "getSectionArticles": "/api/section/:section",
+        "getFeed": "/api/feed/:format",
+        "getStats": "/api/distributor/stats"
+    },
+    "debugging": {
+        "enableLogging": true,
+        "logLevel": "info",
+        "logToConsole": true,
+        "logToDashboard": true,
+        "maxLogEntries": 100,
+        "verboseMode": false
+    }
+}
