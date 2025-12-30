@@ -380,8 +380,22 @@ We welcome contributions! Please:
 
 ## 📄 الترخيص | License
 
-هذا المشروع مفتوح المصدر ومتاح للاستخدام الحر.
-This project is open source and available for free use.
+📄 License | الترخيص
+
+This project is licensed under the MIT License.
+
+You are free to:
+- Use
+- Modify
+- Distribute
+- Use commercially
+
+As long as the original copyright
+and license notice are included.
+
+هذا المشروع مرخّص تحت رخصة MIT، ويُسمح باستخدامه وتعديله وتوزيعه
+بما في ذلك الاستخدام التجاري.
+
 
 ---
 
@@ -409,6 +423,7 @@ This system was built using modern web development best practices:
 **صُمّم بـ ❤️ بواسطة AntiGravity**
 
 **Designed with ❤️ by AntiGravity**
+
 
 
 
