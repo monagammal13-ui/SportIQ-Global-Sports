@@ -1,0 +1,72 @@
+/**Layer 134: Sync Engine*/
+
+#sync-status-indicator {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 9999;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s;
+}
+
+/* Status States */
+.status-online {
+    color: #10b981;
+    border-color: #d1fae5;
+}
+
+.status-offline {
+    color: #64748b;
+    border-color: #e2e8f0;
+    opacity: 0.7;
+}
+
+.status-syncing {
+    color: #3b82f6;
+    border-color: #dbeafe;
+}
+
+.status-syncing .sync-icon {
+    display: inline-block;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Toast Notification */
+.sync-toast {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px);
+    background: #1e293b;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-family: 'Inter', sans-serif;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 10001;
+    pointer-events: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.sync-toast.visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}

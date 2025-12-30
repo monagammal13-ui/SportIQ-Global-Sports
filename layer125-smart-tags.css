@@ -1,0 +1,60 @@
+/**Layer 125: Smart Tags*/
+
+.smart-tags-panel {
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    max-width: 600px;
+    font-family: 'Inter', sans-serif;
+}
+
+.st-header {
+    font-size: 0.8rem;
+    color: #64748b;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.st-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.st-chip {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    color: #334155;
+    font-size: 0.85rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    transition: all 0.2s;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.st-chip:hover {
+    background: #e0f2fe;
+    border-color: #7dd3fc;
+    color: #0284c7;
+}
+
+.st-chip.high-relevance {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.st-chip.high-relevance::after {
+    content: '★';
+    font-size: 0.7rem;
+    margin-left: 4px;
+    color: #3b82f6;
+}

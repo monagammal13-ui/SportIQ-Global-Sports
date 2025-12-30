@@ -1,0 +1,142 @@
+/**Layer 90: Live API*/
+.live-api-status {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 1000;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: opacity 0.3s;
+}
+
+.live-api-status.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.api-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ef4444;
+    /* Default offline */
+}
+
+.api-indicator.online {
+    background: #10b981;
+    box-shadow: 0 0 8px #10b981;
+}
+
+.api-indicator.fetching {
+    background: #f59e0b;
+    animation: api-pulse 1s infinite;
+}
+
+@keyframes api-pulse {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* API Data Containers */
+.api-fixture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.api-match-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+    transition: transform 0.2s;
+}
+
+.api-match-card:hover {
+    transform: translateY(-2px);
+    border-color: #3b82f6;
+}
+
+.match-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.match-status-live {
+    color: #ef4444;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.match-status-live::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ef4444;
+    animation: api-pulse 2s infinite;
+}
+
+.match-teams {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.match-team {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+
+.match-score {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    background: #f3f4f6;
+    padding: 2px 8px;
+    border-radius: 4px;
+    color: #111827;
+}
+
+.match-score.winner {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.match-meta {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #f3f4f6;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #9ca3af;
+}

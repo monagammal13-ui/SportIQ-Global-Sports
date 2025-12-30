@@ -1,0 +1,131 @@
+/**Layer 82: Dynamic Menus*/
+.dynamic-menu {
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .1)
+}
+
+.menu-header {
+    display: none;
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer
+}
+
+.menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: .5rem
+}
+
+.menu-item {
+    position: relative
+}
+
+.menu-link {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .75rem 1rem;
+    color: #374151;
+    text-decoration: none;
+    transition: all .3s;
+    white-space: nowrap
+}
+
+.menu-link:hover {
+    background: #f3f4f6;
+    color: #1e40af
+}
+
+.menu-icon {
+    font-size: 1.25rem
+}
+
+.menu-text {
+    font-weight: 500;
+    font-size: .875rem
+}
+
+.menu-arrow {
+    font-size: .625rem;
+    margin-left: auto;
+    transition: transform .3s
+}
+
+.menu-badge {
+    padding: .125rem .5rem;
+    background: #ef4444;
+    color: #fff;
+    border-radius: 12px;
+    font-size: .625rem;
+    font-weight: 700
+}
+
+.has-submenu.active>.menu-link .menu-arrow {
+    transform: rotate(180deg)
+}
+
+.submenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    min-width: 200px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+    border-radius: 8px;
+    display: none;
+    z-index: 1000
+}
+
+.has-submenu.active>.submenu {
+    display: block
+}
+
+.submenu .menu-link {
+    padding: .75rem 1rem
+}
+
+.submenu .submenu {
+    top: 0;
+    left: 100%;
+    margin-left: .5rem
+}
+
+@media (max-width:768px) {
+    .menu-header {
+        display: block
+    }
+
+    .menu-list {
+        display: none;
+        flex-direction: column;
+        padding: 1rem
+    }
+
+    .dynamic-menu.mobile-open .menu-list {
+        display: flex
+    }
+
+    .submenu {
+        position: static;
+        box-shadow: none;
+        padding-left: 1rem;
+        border-left: 2px solid #e5e7eb;
+        margin-top: .5rem
+    }
+
+    .has-submenu.active>.submenu {
+        display: block
+    }
+}

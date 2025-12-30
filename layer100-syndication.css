@@ -1,0 +1,155 @@
+/**Layer 100: Syndication*/
+.syndication-dashboard {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .1);
+    border: 1px solid #e5e7eb
+}
+
+.syndication-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f3f4f6
+}
+
+.syndication-header h3 {
+    font-size: 1.1rem;
+    color: #111827;
+    margin: 0
+}
+
+.syndication-header button {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background .2s
+}
+
+.syndication-header button:hover {
+    background: #1d4ed8
+}
+
+.platforms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem
+}
+
+.platform-card {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: #f9fafb;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    transition: all .2s
+}
+
+.platform-card:hover {
+    background: #eff6ff;
+    border-color: #bfdbfe
+}
+
+.platform-icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .05)
+}
+
+.platform-details {
+    display: flex;
+    flex-direction: column
+}
+
+.platform-name {
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 0.9rem
+}
+
+.platform-status {
+    font-size: 0.75rem;
+    color: #10b981;
+    text-transform: uppercase;
+    font-weight: 700
+}
+
+.activity-log h4 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #6b7280;
+    margin-bottom: 1rem
+}
+
+.log-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 0.75rem;
+    border-bottom: 1px solid #f3f4f6;
+    animation: slideIn 0.3s ease
+}
+
+.log-item:last-child {
+    border-bottom: none
+}
+
+.log-status {
+    margin-right: 0.75rem;
+    font-size: 1rem
+}
+
+.log-item.completed .log-status {
+    color: #10b981
+}
+
+.log-item.failed .log-status {
+    color: #ef4444
+}
+
+.log-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #374151
+}
+
+.log-meta {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    margin-top: 2px
+}
+
+.no-activity {
+    text-align: center;
+    padding: 2rem;
+    color: #9ca3af;
+    font-style: italic
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}

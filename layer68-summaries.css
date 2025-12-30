@@ -1,0 +1,337 @@
+/**
+ * Layer 68 - Automated News Summarizer Styles
+ * Sport IQ Platform
+ */
+
+/* ========== SUMMARIES SECTION ========== */
+.summaries-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.summaries-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid var(--color-primary, #0066cc);
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.summaries-header h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-dark, #1a1a1a);
+    margin: 0;
+}
+
+.summaries-controls {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.summaries-category-filter {
+    padding: 10px 16px;
+    border: 2px solid var(--color-gray-300, #d1d5db);
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.summaries-category-filter:hover {
+    border-color: var(--color-primary, #0066cc);
+}
+
+.summaries-refresh-btn {
+    background: var(--color-primary, #0066cc);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.summaries-refresh-btn:hover {
+    background: var(--color-primary-dark, #0052a3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+}
+
+/* ========== SUMMARIES TIMELINE ========== */
+.summaries-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* ========== SUMMARY CARD ========== */
+.summary-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    display: flex;
+    flex-direction: row;
+}
+
+.summary-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.summary-image {
+    position: relative;
+    width: 300px;
+    min-width: 300px;
+    background: #000;
+}
+
+.summary-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.summary-category-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.summary-content {
+    flex: 1;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.summary-meta {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    color: var(--color-gray-600, #6b7280);
+}
+
+.summary-source {
+    font-weight: 600;
+}
+
+.summary-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-dark, #1a1a1a);
+    margin: 0 0 16px 0;
+    line-height: 1.3;
+}
+
+.summary-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--color-gray-700, #374151);
+    margin: 0 0 16px 0;
+}
+
+.summary-key-points {
+    background: var(--color-light-secondary, #f9fafb);
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.summary-key-points strong {
+    color: var(--color-dark, #1a1a1a);
+    font-size: 14px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.summary-key-points ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.summary-key-points li {
+    font-size: 14px;
+    color: var(--color-gray-700, #374151);
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+
+.summary-key-points li:last-child {
+    margin-bottom: 0;
+}
+
+.summary-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    border-top: 1px solid var(--color-gray-200, #e5e7eb);
+    margin-top: auto;
+}
+
+.summary-compression {
+    font-size: 12px;
+    color: var(--color-gray-500, #9ca3af);
+    font-weight: 500;
+}
+
+.summary-read-more {
+    color: var(--color-primary, #0066cc);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.summary-read-more:hover {
+    color: var(--color-primary-dark, #0052a3);
+    text-decoration: underline;
+}
+
+/* ========== ANIMATIONS ========== */
+.summary-card {
+    animation: slideInUp 0.4s ease backwards;
+}
+
+.summary-card:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.summary-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.summary-card:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+.summary-card:nth-child(4) {
+    animation-delay: 0.2s;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== DARK MODE ========== */
+@media (prefers-color-scheme: dark) {
+    .summaries-header h2 {
+        color: white;
+    }
+
+    .summary-card {
+        background: #1f2937;
+    }
+
+    .summary-title {
+        color: white;
+    }
+
+    .summary-text {
+        color: #d1d5db;
+    }
+
+    .summary-key-points {
+        background: #111827;
+    }
+
+    .summary-key-points strong {
+        color: white;
+    }
+
+    .summary-key-points li {
+        color: #d1d5db;
+    }
+
+    .summary-footer {
+        border-top-color: #374151;
+    }
+
+    .summaries-category-filter {
+        background: #1f2937;
+        border-color: #374151;
+        color: #e5e7eb;
+    }
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+    .summary-image {
+        width: 250px;
+        min-width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .summaries-section {
+        margin: 40px auto;
+    }
+
+    .summaries-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .summaries-header h2 {
+        font-size: 24px;
+    }
+
+    .summaries-controls {
+        width: 100%;
+    }
+
+    .summaries-category-filter {
+        flex: 1;
+    }
+
+    .summary-card {
+        flex-direction: column;
+    }
+
+    .summary-image {
+        width: 100%;
+        height: 180px;
+    }
+
+    .summary-content {
+        padding: 20px;
+    }
+
+    .summary-title {
+        font-size: 18px;
+    }
+
+    .summary-footer {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+}

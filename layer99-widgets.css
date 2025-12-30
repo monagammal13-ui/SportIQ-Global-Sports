@@ -1,0 +1,157 @@
+/**Layer 99: Live Widgets*/
+.score-widget {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, .05);
+    border: 1px solid #e5e7eb;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    transition: transform .2s
+}
+
+.score-widget:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, .1)
+}
+
+.widget-header {
+    padding: 0.75rem 1rem;
+    background: #f9fafb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f3f4f6;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase
+}
+
+.match-time.live {
+    color: #ef4444;
+    display: flex;
+    align-items: center;
+    gap: 4px
+}
+
+.match-time.live::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ef4444;
+    animation: pulse-red 1.5s infinite
+}
+
+.teams-container {
+    padding: 1rem
+}
+
+/* Team Row */
+.team {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem
+}
+
+.team:last-child {
+    margin-bottom: 0
+}
+
+.team-logo {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 0.75rem;
+    object-fit: cover
+}
+
+.team-name {
+    flex: 1;
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 0.9rem
+}
+
+.score {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #111827;
+    background: #f3f4f6;
+    padding: 2px 8px;
+    border-radius: 4px;
+    min-width: 32px;
+    text-align: center
+}
+
+.score.score-update {
+    background: #dcfce7;
+    color: #166534;
+    animation: flash-green 1s
+}
+
+/* Variations */
+.widget-compact {
+    max-width: 300px
+}
+
+.widget-expanded .widget-footer {
+    padding: 0.5rem 1rem;
+    background: #f3f4f6;
+    font-size: 0.7rem;
+    color: #6b7280;
+    border-top: 1px solid #e5e7eb;
+    text-align: center
+}
+
+.widget-ticker {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    gap: 1rem;
+    background: #111827;
+    color: #fff;
+    border-radius: 20px;
+    border: none;
+    width: fit-content
+}
+
+.widget-ticker .ticker-teams {
+    font-weight: 600
+}
+
+.widget-ticker .ticker-score {
+    color: #fbbf24;
+    font-family: 'JetBrains Mono'
+}
+
+.widget-ticker .match-time {
+    font-size: 0.75rem;
+    color: #9ca3af
+}
+
+@keyframes pulse-red {
+    0% {
+        opacity: 1
+    }
+
+    50% {
+        opacity: .4
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+@keyframes flash-green {
+    0% {
+        background: #dcfce7
+    }
+
+    100% {
+        background: #f3f4f6
+    }
+}

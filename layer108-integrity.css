@@ -1,0 +1,123 @@
+/**Layer 108: Integrity Checker*/
+
+.integrity-panel {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    font-family: 'Inter', sans-serif;
+}
+
+.integrity-panel h3 {
+    margin: 0 0 1rem 0;
+    color: #1e293b;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.integrity-result {
+    padding: 1rem;
+    border-radius: 6px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s;
+}
+
+/* Status Colors */
+.integrity-result.waiting {
+    color: #64748b;
+    font-style: italic;
+}
+
+.integrity-result.passed {
+    background: #f0fdf4;
+    border-color: #86efac;
+}
+
+.integrity-result.warning {
+    background: #fffbeb;
+    border-color: #fcd34d;
+}
+
+.integrity-result.failed {
+    background: #fef2f2;
+    border-color: #fecaca;
+}
+
+.result-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.score-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.result-header .status-text {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #1e293b;
+}
+
+.readability-stats {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #64748b;
+    font-weight: 700;
+}
+
+.stat span {
+    font-weight: 600;
+    color: #334155;
+}
+
+.issues-list h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.85rem;
+    color: #ef4444;
+}
+
+.issues-list ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    color: #475569;
+    font-size: 0.9rem;
+}
+
+.no-issues {
+    color: #166534;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.no-issues::before {
+    content: '✓';
+    font-weight: 800;
+}

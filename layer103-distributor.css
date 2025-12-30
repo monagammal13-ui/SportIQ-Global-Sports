@@ -1,0 +1,123 @@
+/**Layer 103: Content Distributor*/
+
+/* Featured Section */
+.featured-article {
+    background: linear-gradient(to right, #1e3a8a, #2563eb);
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.featured-content h1 {
+    font-size: 2rem;
+    margin: 1rem 0;
+    line-height: 1.2;
+}
+
+.featured-content p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 800px;
+}
+
+.category-badge {
+    background: #fbbf24;
+    color: #1e3a8a;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.meta {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Latest News List */
+.news-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+    transition: background 0.2s;
+}
+
+.news-list-item:hover {
+    background: #f8fafc;
+}
+
+.news-list-item h4 {
+    margin: 0 0 0.5rem 0;
+    color: #1e293b;
+    font-size: 1rem;
+}
+
+.news-list-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.item-time {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    white-space: nowrap;
+    margin-left: 1rem;
+}
+
+/* Ticker */
+#breaking-news-ticker {
+    background: #ef4444;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    transition: opacity 0.3s ease;
+}
+
+.ticker-label {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    animation: pulse 2s infinite;
+}
+
+/* Sidebar Widget */
+.sidebar-news-item {
+    padding: 0.75rem 0;
+    border-bottom: 1px dashed #e2e8f0;
+}
+
+.sidebar-news-item h5 {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #334155;
+    line-height: 1.4;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,242 @@
+/**
+ * Layer 76: Layer Management - Styling
+ */
+
+.layer-dashboard {
+    padding: 2rem 0;
+}
+
+.layer-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.layer-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+}
+
+.layer-subtitle {
+    color: #6b7280;
+    font-size: 1.125rem;
+}
+
+/* Stats */
+.layer-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.layer-stat-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.layer-stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #8b5cf6 0%, #6366f1 100%);
+}
+
+.layer-stat-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #8b5cf6;
+    margin-bottom: 0.25rem;
+}
+
+.layer-stat-label {
+    font-size: 0.875rem;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Layer List */
+.layer-list {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.layer-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.layer-list-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.layer-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Layer Item */
+.layer-item {
+    background: #f9fafb;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.layer-item:hover {
+    border-color: #8b5cf6;
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.1);
+}
+
+.layer-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.layer-item-info {
+    flex: 1;
+}
+
+.layer-item-name {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin: 0 0 0.25rem 0;
+}
+
+.layer-item-desc {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin: 0 0 0.5rem 0;
+}
+
+.layer-item-meta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+.layer-item-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Status Badge */
+.layer-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.layer-status.active {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.layer-status.inactive {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.layer-status.unknown {
+    background: #e5e7eb;
+    color: #6b7280;
+}
+
+.layer-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Category Badge */
+.layer-category {
+    padding: 0.25rem 0.75rem;
+    background: rgba(139, 92, 246, 0.1);
+    color: #6b21a8;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* Dependencies */
+.layer-deps {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.layer-deps-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+
+.layer-deps-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.layer-dep-badge {
+    padding: 0.25rem 0.5rem;
+    background: #dbeafe;
+    color: #1e40af;
+    border-radius: 8px;
+    font-size: 0.75rem;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@media (max-width: 768px) {
+    .layer-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .layer-item-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}

@@ -1,0 +1,138 @@
+/**Layer 80: News Aggregator*/
+.news-feed {
+    padding: 2rem 0
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem
+}
+
+.news-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+    transition: all .3s;
+    cursor: pointer
+}
+
+.news-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, .15)
+}
+
+.news-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    background: #e5e7eb
+}
+
+.news-content {
+    padding: 1.5rem
+}
+
+.news-source {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: .75rem;
+    color: #6b7280;
+    margin-bottom: .5rem
+}
+
+.news-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0 0 .75rem 0;
+    color: #111827
+}
+
+.news-description {
+    font-size: .875rem;
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: .75rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden
+}
+
+.news-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .75rem;
+    color: #9ca3af
+}
+
+.news-category {
+    padding: .25rem .75rem;
+    background: rgba(239, 68, 68, .1);
+    color: #dc2626;
+    border-radius: 12px;
+    font-weight: 600
+}
+
+.news-ticker {
+    background: linear-gradient(90deg, #111827 0%, #374151 100%);
+    color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    overflow: hidden
+}
+
+.news-ticker-content {
+    display: flex;
+    gap: 2rem;
+    animation: ticker 30s linear infinite
+}
+
+@keyframes ticker {
+    0% {
+        transform: translateX(100%)
+    }
+
+    100% {
+        transform: translateX(-100%)
+    }
+}
+
+.news-filters {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem
+}
+
+.news-filter-btn {
+    padding: .5rem 1rem;
+    background: #f9fafb;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: .875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .3s
+}
+
+.news-filter-btn:hover {
+    background: #f3f4f6
+}
+
+.news-filter-btn.active {
+    background: #dbeafe;
+    border-color: #3b82f6;
+    color: #1e40af
+}
+
+@media (max-width:768px) {
+    .news-grid {
+        grid-template-columns: 1fr
+    }
+}

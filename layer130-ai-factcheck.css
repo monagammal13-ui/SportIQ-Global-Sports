@@ -1,0 +1,80 @@
+/**Layer 130: AI Fact Check*/
+
+.ai-fact-check {
+    border-bottom: 2px solid #22c55e;
+    /* Green underline */
+    background: rgba(34, 197, 94, 0.1);
+    cursor: help;
+    border-radius: 2px;
+    padding: 0 2px;
+    transition: background 0.2s;
+}
+
+.ai-fact-check:hover {
+    background: rgba(34, 197, 94, 0.2);
+}
+
+.ai-fact-check.disputed {
+    border-bottom-color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+}
+
+#ai-fact-tooltip {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    z-index: 10000;
+    width: 280px;
+    font-family: 'Inter', sans-serif;
+    animation: fadeIn 0.2s ease;
+    border-left: 4px solid #22c55e;
+}
+
+.aft-header {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #16a34a;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.aft-body strong {
+    display: block;
+    color: #1e293b;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+}
+
+.aft-body p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #64748b;
+    line-height: 1.4;
+}
+
+.aft-footer {
+    margin-top: 0.75rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #f1f5f9;
+    font-size: 0.7rem;
+    color: #94a3b8;
+    text-align: right;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

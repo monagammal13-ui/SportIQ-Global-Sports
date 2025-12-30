@@ -1,0 +1,344 @@
+/**
+ * Layer 69 - SEO Optimization Core
+ * Styling for SEO monitoring widgets and debug panels
+ */
+
+/* SEO Debug Panel (optional - for monitoring) */
+.seo-debug-panel {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    padding: 16px;
+    border-radius: 12px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    max-width: 400px;
+    max-height: 500px;
+    overflow-y: auto;
+    z-index: 999999;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    display: none;
+}
+
+.seo-debug-panel.active {
+    display: block;
+}
+
+.seo-debug-panel h4 {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    color: #10b981;
+    border-bottom: 1px solid #374151;
+    padding-bottom: 8px;
+}
+
+.seo-debug-panel .debug-item {
+    margin-bottom: 8px;
+    padding: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+.seo-debug-panel .debug-label {
+    color: #9ca3af;
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+.seo-debug-panel .debug-value {
+    color: #ffffff;
+}
+
+.seo-debug-panel .close-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: none;
+    border: none;
+    color: #ef4444;
+    font-size: 20px;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.seo-debug-panel .close-btn:hover {
+    transform: scale(1.2);
+    color: #dc2626;
+}
+
+/* SEO Floating Toggle Button */
+.seo-toggle-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    z-index: 999998;
+    box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.seo-toggle-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(26, 115, 232, 0.4);
+}
+
+.seo-toggle-btn:active {
+    transform: translateY(0);
+}
+
+.seo-toggle-btn::before {
+    content: '🔍';
+    font-size: 16px;
+}
+
+/* SEO Status Indicator */
+.seo-status-indicator {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    background: rgba(16, 185, 129, 0.9);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    z-index: 999997;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    animation: slideInRight 0.5s ease-out;
+}
+
+.seo-status-indicator::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #ffffff;
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Meta Tags Preview Widget */
+.seo-meta-preview {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.seo-meta-preview h3 {
+    margin: 0 0 12px 0;
+    font-size: 16px;
+    color: #1f2937;
+    font-weight: 600;
+}
+
+.seo-meta-preview .preview-title {
+    color: #1a0dab;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 4px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.seo-meta-preview .preview-title:hover {
+    text-decoration: underline;
+}
+
+.seo-meta-preview .preview-url {
+    color: #006621;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.seo-meta-preview .preview-description {
+    color: #545454;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Sitemap Export Button */
+.seo-export-sitemap-btn {
+    background: #10b981;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.seo-export-sitemap-btn:hover {
+    background: #059669;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+/* Schema Badge */
+.seo-schema-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #f3f4f6;
+    color: #374151;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    margin: 4px;
+}
+
+.seo-schema-badge.active {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.seo-schema-badge::before {
+    content: '✓';
+    font-size: 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .seo-debug-panel {
+        bottom: 10px;
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+
+    .seo-toggle-btn {
+        bottom: 80px;
+        left: 10px;
+    }
+
+    .seo-status-indicator {
+        top: auto;
+        bottom: 130px;
+        right: 10px;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .seo-meta-preview {
+        background: #1f2937;
+        border-color: #374151;
+    }
+
+    .seo-meta-preview h3 {
+        color: #f9fafb;
+    }
+
+    .seo-meta-preview .preview-title {
+        color: #8ab4f8;
+    }
+
+    .seo-meta-preview .preview-url {
+        color: #5bb974;
+    }
+
+    .seo-meta-preview .preview-description {
+        color: #bdc1c6;
+    }
+}
+
+/* Loading animation for SEO updates */
+.seo-loading {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #f3f4f6;
+    border-top-color: #1a73e8;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* SEO Health Score Indicator */
+.seo-health-score {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.seo-health-score .score {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.seo-health-score.excellent .score {
+    color: #10b981;
+}
+
+.seo-health-score.good .score {
+    color: #3b82f6;
+}
+
+.seo-health-score.fair .score {
+    color: #f59e0b;
+}
+
+.seo-health-score.poor .score {
+    color: #ef4444;
+}

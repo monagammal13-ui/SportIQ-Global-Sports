@@ -1,0 +1,464 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * LAYER 150 – GLOBAL NEWS CORE DISTRIBUTOR - STYLES
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DASHBOARD STYLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.layer150-dashboard {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 350px;
+    max-height: 500px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    z-index: 10000;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    backdrop-filter: blur(10px);
+}
+
+.layer150-dashboard.hidden {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    pointer-events: none;
+}
+
+.layer150-dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.layer150-dashboard-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+}
+
+.layer150-close-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 24px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.layer150-close-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+.layer150-dashboard-content {
+    padding: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   STATISTICS STYLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.layer150-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    backdrop-filter: blur(5px);
+}
+
+.layer150-stat-label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+.layer150-stat-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 4px 12px;
+    border-radius: 6px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LOG STYLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.layer150-log {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.layer150-log-entry {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    margin-bottom: 8px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.layer150-log-type {
+    display: inline-block;
+    padding: 2px 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    width: fit-content;
+}
+
+.layer150-log-message {
+    color: white;
+    font-weight: 500;
+}
+
+.layer150-log-time {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 11px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TOGGLE BUTTON STYLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.layer150-toggle-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.layer150-toggle-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(102, 126, 234, 0.6);
+}
+
+.layer150-toggle-btn:active {
+    transform: scale(0.95);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DISTRIBUTED ARTICLE STYLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.distributed-article {
+    position: relative;
+    animation: distributeIn 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.distributed-article::before {
+    content: '🌐';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    opacity: 0;
+    animation: pulseDistribute 2s ease-in-out;
+}
+
+@keyframes distributeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulseDistribute {
+
+    0%,
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ARTICLE CARD STYLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.article-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    margin-bottom: 20px;
+}
+
+.article-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.article-card-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.article-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.article-card:hover .article-card-image img {
+    transform: scale(1.05);
+}
+
+.trending-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    box-shadow: 0 2px 10px rgba(255, 107, 107, 0.3);
+}
+
+.article-card-content {
+    padding: 20px;
+}
+
+.article-card-meta {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 12px;
+}
+
+.article-category {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.article-time {
+    color: #666;
+    display: flex;
+    align-items: center;
+}
+
+.article-card-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+    color: #1a1a1a;
+    line-height: 1.4;
+}
+
+.article-card-excerpt {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0 0 16px 0;
+}
+
+.article-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #667eea;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.article-card-link:hover {
+    color: #764ba2;
+    gap: 10px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   NEWS ITEM STYLES (Widget)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.news-item {
+    padding: 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.news-item:hover {
+    background: rgba(102, 126, 234, 0.05);
+}
+
+.news-item:last-child {
+    border-bottom: none;
+}
+
+.news-item-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 6px 0;
+    color: #1a1a1a;
+    line-height: 1.4;
+}
+
+.news-item-meta {
+    display: flex;
+    gap: 10px;
+    font-size: 11px;
+    color: #666;
+}
+
+.news-item-category {
+    background: #f0f0f0;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SCROLLBAR STYLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.layer150-dashboard-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.layer150-dashboard-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.layer150-dashboard-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+.layer150-dashboard-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE STYLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+    .layer150-dashboard {
+        width: calc(100% - 40px);
+        right: 20px;
+        left: 20px;
+        bottom: 80px;
+    }
+
+    .layer150-toggle-btn {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+    }
+
+    .article-card-title {
+        font-size: 18px;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DARK MODE SUPPORT
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (prefers-color-scheme: dark) {
+    .article-card {
+        background: #2a2a2a;
+    }
+
+    .article-card-title {
+        color: #f0f0f0;
+    }
+
+    .article-card-excerpt {
+        color: #b0b0b0;
+    }
+
+    .news-item-title {
+        color: #f0f0f0;
+    }
+
+    .news-item:hover {
+        background: rgba(102, 126, 234, 0.15);
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ACCESSIBILITY
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.layer150-toggle-btn:focus,
+.layer150-close-btn:focus,
+.article-card-link:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .layer150-dashboard,
+    .layer150-toggle-btn,
+    .article-card,
+    .distributed-article {
+        animation: none;
+        transition: none;
+    }
+}

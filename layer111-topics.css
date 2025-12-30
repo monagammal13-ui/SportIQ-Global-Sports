@@ -1,0 +1,97 @@
+/**Layer 111: Advanced Topics*/
+
+/* UI for Tags */
+#article-tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.topic-tag {
+    background: #f1f5f9;
+    color: #475569;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid #e2e8f0;
+}
+
+.topic-tag:hover {
+    background: #e2e8f0;
+    color: #1e293b;
+}
+
+/* Depth Coloring */
+.topic-tag.depth-0 {
+    border-color: #cbd5e1;
+}
+
+/* Top Level */
+.topic-tag.depth-1 {
+    border-color: #93c5fd;
+    background: #eff6ff;
+    color: #1d4ed8;
+}
+
+/* Category */
+.topic-tag.depth-2 {
+    border-color: #fcd34d;
+    background: #fffbeb;
+    color: #b45309;
+}
+
+/* Specific Context */
+
+
+/* Taxonomy Tree Browser */
+.taxonomy-browser {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.taxonomy-browser h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1rem;
+    color: #334155;
+}
+
+.topic-tree,
+.topic-tree ul {
+    list-style: none;
+    padding-left: 1.2rem;
+    margin: 0;
+    border-left: 1px solid #e2e8f0;
+}
+
+.topic-tree li {
+    margin: 0.5rem 0;
+    position: relative;
+}
+
+.topic-tree li::before {
+    content: '';
+    position: absolute;
+    left: -1.2rem;
+    top: 0.7em;
+    width: 1rem;
+    height: 1px;
+    background: #e2e8f0;
+}
+
+.topic-node {
+    font-size: 0.9rem;
+    color: #64748b;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.topic-node:hover {
+    background: #f1f5f9;
+    color: #0f172a;
+}

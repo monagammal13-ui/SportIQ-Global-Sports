@@ -1,0 +1,143 @@
+/**Layer 79: Video Streaming*/
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .2)
+}
+
+.video-player {
+    width: 100%;
+    height: auto;
+    display: block
+}
+
+.video-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, .8));
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center
+}
+
+.video-btn {
+    background: rgba(255, 255, 255, .2);
+    border: none;
+    border-radius: 8px;
+    padding: .5rem 1rem;
+    color: #fff;
+    cursor: pointer;
+    transition: all .3s
+}
+
+.video-btn:hover {
+    background: rgba(255, 255, 255, .3)
+}
+
+.quality-selector {
+    position: relative
+}
+
+.quality-menu {
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    background: #1f2937;
+    border-radius: 8px;
+    padding: .5rem;
+    display: none
+}
+
+.quality-menu.active {
+    display: block
+}
+
+.quality-option {
+    padding: .5rem 1rem;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background .2s
+}
+
+.quality-option:hover {
+    background: #374151
+}
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 0
+}
+
+.highlight-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+    transition: transform .3s, box-shadow .3s;
+    cursor: pointer
+}
+
+.highlight-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, .15)
+}
+
+.highlight-thumb {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    background: #e5e7eb
+}
+
+.highlight-info {
+    padding: 1rem
+}
+
+.highlight-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 .5rem 0
+}
+
+.highlight-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: .75rem;
+    color: #6b7280
+}
+
+.highlight-duration {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem
+}
+
+.video-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 1.5rem
+}
+
+@media (max-width:768px) {
+    .highlights-grid {
+        grid-template-columns: 1fr
+    }
+
+    .video-controls {
+        flex-wrap: wrap
+    }
+}

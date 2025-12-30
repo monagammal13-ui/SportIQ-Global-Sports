@@ -1,0 +1,63 @@
+/**Layer 107: SEO Auto-Generator*/
+
+.seo-panel {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    font-family: 'Inter', sans-serif;
+}
+
+.seo-panel h3 {
+    margin: 0 0 1.5rem 0;
+    font-size: 1rem;
+    color: #1e293b;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 0.5rem;
+}
+
+.seo-field {
+    margin-bottom: 1.5rem;
+}
+
+.seo-field label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.seo-field .val {
+    font-size: 0.95rem;
+    color: #334155;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.bar-wrap {
+    height: 4px;
+    background: #f1f5f9;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.bar {
+    height: 100%;
+    background: #10b981;
+    /* Green for good length */
+    transition: width 0.3s ease;
+}
+
+/* Logic for bar colors (simulated via JS usually, but here fixed good state) */
+.json-preview {
+    background: #1e293b;
+    color: #a5b4fc;
+    padding: 1rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    overflow-x: auto;
+    max-height: 150px;
+    font-family: monospace;
+}

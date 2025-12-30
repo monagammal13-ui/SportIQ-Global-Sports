@@ -1,0 +1,46 @@
+/**
+ * Layer 105: Breaking News Priority Styles
+ */
+
+.breaking-badge {
+    display: inline-block;
+    background: #ef4444;
+    color: white;
+    font-size: 0.6em;
+    /* Relative to H1 */
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 4px;
+    vertical-align: middle;
+    margin-right: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transform: translateY(-4px);
+    box-shadow: 0 4px 10px rgba(239, 68, 68, 0.4);
+}
+
+.pulse-animation {
+    animation: breaking-pulse 2s infinite;
+}
+
+@keyframes breaking-pulse {
+    0% {
+        transform: translateY(-4px) scale(1);
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+    }
+
+    70% {
+        transform: translateY(-4px) scale(1.05);
+        box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+    }
+
+    100% {
+        transform: translateY(-4px) scale(1);
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+    }
+}
+
+/* Enhancements for breaking news layouts */
+.breaking-layout {
+    border-top: 5px solid #ef4444;
+}

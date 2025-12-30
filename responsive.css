@@ -1,0 +1,262 @@
+/* Mobile First - Base styles for mobile */
+/* These styles apply to all screen sizes by default */
+
+/* Small devices (landscape phones, 640px and up) */
+@media (min-width: 640px) {
+    .container {
+        max-width: 640px;
+    }
+
+    .sm\\:grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sm\\:grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .sm\\:flex {
+        display: flex;
+    }
+
+    .sm\\:hidden {
+        display: none;
+    }
+
+    .sm\\:block {
+        display: block;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+
+    .md\\:grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .md\\:grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .md\\:grid-cols-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .md\\:flex {
+        display: flex;
+    }
+
+    .md\\:hidden {
+        display: none;
+    }
+
+    .md\\:block {
+        display: block;
+    }
+
+    .md\\:text-left {
+        text-align: left;
+    }
+
+    .md\\:text-2xl {
+        font-size: var(--text-2xl);
+    }
+
+    .md\\:text-3xl {
+        font-size: var(--text-3xl);
+    }
+
+    /* Navbar responsive */
+    .navbar-nav {
+        flex-direction: row;
+    }
+}
+
+/* Large devices (desktops, 1024px and up) */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
+    }
+
+    .lg\\:grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .lg\\:grid-cols-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .lg\\:grid-cols-5 {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .lg\\:flex {
+        display: flex;
+    }
+
+    .lg\\:hidden {
+        display: none;
+    }
+
+    .lg\\:block {
+        display: block;
+    }
+
+    .lg\\:text-3xl {
+        font-size: var(--text-3xl);
+    }
+
+    .lg\\:text-4xl {
+        font-size: var(--text-4xl);
+    }
+}
+
+/* Extra large devices (large desktops, 1280px and up) */
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+    }
+
+    .xl\\:grid-cols-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .xl\\:grid-cols-5 {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .xl\\:grid-cols-6 {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .xl\\:text-4xl {
+        font-size: var(--text-4xl);
+    }
+
+    .xl\\:text-5xl {
+        font-size: var(--text-5xl);
+    }
+}
+
+/* Mobile Menu */
+@media (max-width: 767px) {
+    .navbar-nav {
+        position: fixed;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background-color: var(--bg-primary);
+        border-top: 1px solid var(--border-color);
+        flex-direction: column;
+        padding: var(--space-4);
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: all var(--transition-base);
+        z-index: var(--z-fixed);
+    }
+
+    .navbar-nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .navbar-item {
+        width: 100%;
+        padding: var(--space-3);
+        text-align: center;
+    }
+
+    /* Mobile modal adjustments */
+    .modal {
+        width: 95%;
+        max-height: 95vh;
+    }
+
+    .modal-body {
+        max-height: calc(95vh - 140px);
+    }
+
+    /* Mobile card adjustments */
+    .card {
+        margin-bottom: var(--space-4);
+    }
+
+    /* Mobile form adjustments */
+    .form-group {
+        margin-bottom: var(--space-3);
+    }
+
+    /* Mobile grid adjustments */
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Hide on mobile */
+    .mobile-hide {
+        display: none !important;
+    }
+}
+
+/* Tablet specific */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .tablet-hide {
+        display: none !important;
+    }
+}
+
+/* Desktop specific */
+@media (min-width: 1024px) {
+    .desktop-hide {
+        display: none !important;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    .form-input,
+    .form-select {
+        min-height: 44px;
+    }
+
+    .navbar-item {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+/* Portrait orientation */
+@media (orientation: portrait) {
+    .portrait-hidden {
+        display: none;
+    }
+}
+
+/* Landscape orientation */
+@media (orientation: landscape) {
+    .landscape-hidden {
+        display: none;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+
+    /* Optimize for retina displays */
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}

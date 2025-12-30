@@ -1,0 +1,114 @@
+/**Layer 102: News Generator*/
+.news-gen-panel {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+.news-gen-panel h3 {
+    margin-top: 0;
+    color: #1e293b;
+}
+
+.input-section textarea {
+    width: 100%;
+    height: 150px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 1rem;
+    font-family: inherit;
+    resize: vertical;
+    margin-bottom: 1rem;
+}
+
+.input-section button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.input-section button:hover {
+    background: #1d4ed8;
+}
+
+/* Preview Styles */
+.feed-preview {
+    margin-top: 2rem;
+    border-top: 2px solid #f1f5f9;
+    padding-top: 1.5rem;
+}
+
+.feed-preview.hidden {
+    display: none;
+}
+
+.preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.preview-card {
+    background: #f8fafc;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.main-preview {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+}
+
+.main-preview h1 {
+    font-size: 1.25rem;
+    color: #1e3a8a;
+    margin: 0.5rem 0;
+}
+
+.preview-pill {
+    background: #3b82f6;
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.ticker-mock {
+    background: #000;
+    color: #0f0;
+    font-family: 'Courier New', monospace;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.social-mock.twitter {
+    background: #f0f9ff;
+    border-left: 4px solid #0ea5e9;
+    padding: 0.75rem;
+    color: #0c4a6e;
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+}
+
+.seo-mock {
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+.seo-mock div {
+    margin-bottom: 0.25rem;
+}

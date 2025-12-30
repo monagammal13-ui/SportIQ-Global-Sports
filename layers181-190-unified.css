@@ -1,0 +1,713 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * UNIFIED CSS: LAYERS 181-190 (Advanced Journalism & Editorial Integrity Suite)
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
+
+/* ===========================================================================
+   LAYER 181: BREAKING NEWS ALERTS
+   =========================================================================== */
+
+.breaking-alert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+    color: white;
+    padding: 1rem 2rem;
+    z-index: 10000;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+.breaking-alert.breaking-alert-visible {
+    transform: translateY(0);
+}
+
+.breaking-alert-critical {
+    background: linear-gradient(135deg, #dc2626 0%, #7f1d1d 100%);
+    animation: pulse 2s infinite;
+}
+
+.breaking-alert-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.breaking-alert-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+}
+
+.breaking-icon {
+    font-size: 1.5rem;
+    animation: blink 1s infinite;
+}
+
+.breaking-alert-title {
+    flex: 1;
+    font-weight: 600;
+}
+
+.breaking-alert-dismiss {
+    background: white;
+    color: #dc2626;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* ===========================================================================
+   LAYER 182: LIVE STREAM
+   =========================================================================== */
+
+.live-stream-container {
+    position: fixed;
+    right: 20px;
+    top: 100px;
+    width: 350px;
+    max-height: 500px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    overflow-y: auto;
+    z-index: 9999;
+}
+
+.live-stream-item {
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.stream-item-badge {
+    display: inline-block;
+    background: #dc2626;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.stream-update {
+    padding: 0.5rem;
+    background: #f9fafb;
+    border-left: 3px solid #3b82f6;
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+}
+
+/* ===========================================================================
+   LAYER 183: SOURCE PROVENANCE
+   =========================================================================== */
+
+.provenance-widget {
+    background: #f9fafb;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border: 1px solid #e5e7eb;
+}
+
+.provenance-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.provenance-status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.provenance-verified {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.provenance-credible {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.provenance-needs_verification {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.provenance-source {
+    padding: 0.75rem;
+    background: white;
+    border-radius: 6px;
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.credibility-verified {
+    border-left: 4px solid #10b981;
+}
+
+.credibility-credible {
+    border-left: 4px solid #3b82f6;
+}
+
+.credibility-questionable {
+    border-left: 4px solid #ef4444;
+}
+
+.provenance-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10010;
+}
+
+.provenance-modal-content {
+    background: white;
+    border-radius: 12px;
+    max-width: 700px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+/* ===========================================================================
+   LAYER 185: IMMERSIVE EXPERIENCE
+   =========================================================================== */
+
+.immersive-article {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.reading-progress-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #f3f4f6;
+    z-index: 9998;
+}
+
+.progress-bar {
+    height: 100%;
+    background: #e5e7eb;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6 0%, #1d4ed8 100%);
+    transition: width 0.1s ease;
+}
+
+/* ===========================================================================
+   LAYER 186: TIMELINE
+   =========================================================================== */
+
+.interactive-timeline {
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.timeline-events {
+    position: relative;
+    padding-left: 60px;
+}
+
+.timeline-event {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.event-marker {
+    position: absolute;
+    left: -60px;
+    width: 16px;
+    height: 16px;
+    background: #3b82f6;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 0 0 2px #3b82f6;
+}
+
+.timeline-events::before {
+    content: '';
+    position: absolute;
+    left: -52px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #e5e7eb;
+}
+
+/* ===========================================================================
+   LAYER 188: CONTENT SEGREGATION
+   =========================================================================== */
+
+.content-type-label {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.content-type-news {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.content-type-opinion {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.content-type-analysis {
+    background: #e0e7ff;
+    color: #3730a3;
+}
+
+.content-type-editorial {
+    background: #f3e8ff;
+    color: #5b21b6;
+}
+
+/* ===========================================================================
+   LAYER 189: ACCOUNTABILITY LEDGER
+   =========================================================================== */
+
+.change-notice {
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.change-type-correction {
+    border-color: #f59e0b;
+    background: #fffbeb;
+}
+
+.change-type-update {
+    border-color: #3b82f6;
+    background: #eff6ff;
+}
+
+.notice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.view-history-btn {
+    padding: 0.5rem 1rem;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.ledger-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10010;
+}
+
+/* ===========================================================================
+   LAYER 190: CORRECTIONS ENGINE
+   =========================================================================== */
+
+.correction-notice {
+    background: #fffbeb;
+    border: 2px solid #f59e0b;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+}
+
+.correction-severity-high {
+    border-color: #dc2626;
+    background: #fef2f2;
+}
+
+.correction-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: #92400e;
+}
+
+.correction-icon {
+    font-size: 1.5rem;
+}
+
+.correction-original {
+    padding: 0.75rem;
+    background: #fee2e2;
+    border-radius: 6px;
+    margin: 0.5rem 0;
+    text-decoration: line-through;
+}
+
+.correction-updated {
+    padding: 0.75rem;
+    background: #d1fae5;
+    border-radius: 6px;
+    margin: 0.5rem 0;
+}
+
+.retraction-notice {
+    background: #fef2f2;
+    border: 3px solid #dc2626;
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.retraction-header {
+    color: #991b1b;
+    margin-bottom: 1rem;
+}
+
+.retraction-icon {
+    font-size: 3rem;
+}
+
+.retraction-warning {
+    font-weight: 700;
+    color: #dc2626;
+    margin-top: 1rem;
+}
+
+/* ===========================================================================
+   COMMON DASHBOARD STYLES (Layers 181-190)
+   =========================================================================== */
+
+.layer181-dashboard,
+.layer182-dashboard,
+.layer183-dashboard,
+.layer184-dashboard,
+.layer185-dashboard,
+.layer186-dashboard,
+.layer187-dashboard,
+.layer188-dashboard,
+.layer189-dashboard,
+.layer190-dashboard {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 350px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    transition: transform 0.3s, opacity 0.3s;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.layer181-dashboard.hidden,
+.layer182-dashboard.hidden,
+.layer183-dashboard.hidden,
+.layer184-dashboard.hidden,
+.layer185-dashboard.hidden,
+.layer186-dashboard.hidden,
+.layer187-dashboard.hidden,
+.layer188-dashboard.hidden,
+.layer189-dashboard.hidden,
+.layer190-dashboard.hidden {
+    transform: translateY(20px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.layer181-toggle-btn,
+.layer182-toggle-btn,
+.layer183-toggle-btn,
+.layer184-toggle-btn,
+.layer185-toggle-btn,
+.layer186-toggle-btn,
+.layer187-toggle-btn,
+.layer188-toggle-btn,
+.layer189-toggle-btn,
+.layer190-toggle-btn {
+    position: fixed;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 9998;
+    transition: transform 0.2s;
+}
+
+.layer181-toggle-btn {
+    right: 20px;
+    background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+}
+
+.layer182-toggle-btn {
+    right: 80px;
+    background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+}
+
+.layer183-toggle-btn {
+    right: 140px;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+}
+
+.layer184-toggle-btn {
+    right: 200px;
+    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+}
+
+.layer185-toggle-btn {
+    right: 260px;
+    background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+}
+
+.layer186-toggle-btn {
+    right: 320px;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+.layer187-toggle-btn {
+    right: 380px;
+    background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+}
+
+.layer188-toggle-btn {
+    right: 440px;
+    background: linear-gradient(135deg, #06b6d4 0%, #0e7490 100%);
+}
+
+.layer189-toggle-btn {
+    right: 500px;
+    background: linear-gradient(135deg, #84cc16 0%, #65a30d 100%);
+}
+
+.layer190-toggle-btn {
+    right: 560px;
+    background: linear-gradient(135deg, #f97316 0%, #c2410c 100%);
+}
+
+.layer181-toggle-btn:hover,
+.layer182-toggle-btn:hover,
+.layer183-toggle-btn:hover,
+.layer184-toggle-btn:hover,
+.layer185-toggle-btn:hover,
+.layer186-toggle-btn:hover,
+.layer187-toggle-btn:hover,
+.layer188-toggle-btn:hover,
+.layer189-toggle-btn:hover,
+.layer190-toggle-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Dashboard headers and content styles */
+.layer181-dashboard-header,
+.layer182-dashboard-header,
+.layer183-dashboard-header,
+.layer184-dashboard-header,
+.layer185-dashboard-header,
+.layer186-dashboard-header,
+.layer187-dashboard-header,
+.layer188-dashboard-header,
+.layer189-dashboard-header,
+.layer190-dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.layer181-dashboard-header h3,
+.layer182-dashboard-header h3,
+.layer183-dashboard-header h3,
+.layer184-dashboard-header h3,
+.layer185-dashboard-header h3,
+.layer186-dashboard-header h3,
+.layer187-dashboard-header h3,
+.layer188-dashboard-header h3,
+.layer189-dashboard-header h3,
+.layer190-dashboard-header h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.layer181-close-btn,
+.layer182-close-btn,
+.layer183-close-btn,
+.layer184-close-btn,
+.layer185-close-btn,
+.layer186-close-btn,
+.layer187-close-btn,
+.layer188-close-btn,
+.layer189-close-btn,
+.layer190-close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #999;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.layer181-dashboard-content,
+.layer182-dashboard-content,
+.layer183-dashboard-content,
+.layer184-dashboard-content,
+.layer185-dashboard-content,
+.layer186-dashboard-content,
+.layer187-dashboard-content,
+.layer188-dashboard-content,
+.layer189-dashboard-content,
+.layer190-dashboard-content {
+    padding: 1.5rem;
+}
+
+.layer181-stat,
+.layer182-stat,
+.layer183-stat,
+.layer184-stat,
+.layer185-stat,
+.layer186-stat,
+.layer187-stat,
+.layer188-stat,
+.layer189-stat,
+.layer190-stat {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.layer181-stat-label,
+.layer182-stat-label,
+.layer183-stat-label,
+.layer184-stat-label,
+.layer185-stat-label,
+.layer186-stat-label,
+.layer187-stat-label,
+.layer188-stat-label,
+.layer189-stat-label,
+.layer190-stat-label {
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.layer181-stat-value,
+.layer182-stat-value,
+.layer183-stat-value,
+.layer184-stat-value,
+.layer185-stat-value,
+.layer186-stat-value,
+.layer187-stat-value,
+.layer188-stat-value,
+.layer189-stat-value,
+.layer190-stat-value {
+    color: #111827;
+    font-weight: 700;
+}
+
+/* Animations */
+@keyframes blink {
+
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+
+    25%,
+    75% {
+        opacity: 0.3;
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    .layer181-dashboard,
+    .layer182-dashboard,
+    .layer183-dashboard,
+    .layer184-dashboard,
+    .layer185-dashboard,
+    .layer186-dashboard,
+    .layer187-dashboard,
+    .layer188-dashboard,
+    .layer189-dashboard,
+    .layer190-dashboard {
+        width: calc(100% - 40px);
+        bottom: 70px;
+    }
+
+    .layer181-toggle-btn,
+    .layer182-toggle-btn,
+    .layer183-toggle-btn,
+    .layer184-toggle-btn,
+    .layer185-toggle-btn,
+    .layer186-toggle-btn,
+    .layer187-toggle-btn,
+    .layer188-toggle-btn,
+    .layer189-toggle-btn,
+    .layer190-toggle-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+}

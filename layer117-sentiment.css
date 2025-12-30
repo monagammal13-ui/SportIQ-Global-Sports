@@ -1,0 +1,121 @@
+/**Layer 117: Social Sentiment*/
+
+.sentiment-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    font-family: 'Inter', sans-serif;
+    max-width: 400px;
+    margin: 2rem 0;
+}
+
+.sentiment-card h3 {
+    margin: 0 0 1rem 0;
+    font-size: 0.95rem;
+    color: #475569;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sentiment-bar-multi {
+    height: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    background: #f1f5f9;
+    width: 100%;
+}
+
+.sent-seg {
+    transition: flex 0.5s ease;
+}
+
+.sent-seg.pos {
+    background: #22c55e;
+}
+
+/* Green */
+.sent-seg.neu {
+    background: #94a3b8;
+}
+
+/* Grey */
+.sent-seg.neg {
+    background: #ef4444;
+}
+
+/* Red */
+
+.sentiment-legend {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.l-item.pos {
+    color: #16a34a;
+}
+
+.l-item.neu {
+    color: #64748b;
+}
+
+.l-item.neg {
+    color: #dc2626;
+}
+
+.reaction-stream {
+    margin-top: 1.5rem;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 1rem;
+    min-height: 150px;
+}
+
+.reaction-item {
+    padding: 0.75rem;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    background: #f8fafc;
+    font-size: 0.85rem;
+    animation: fadeIn 0.3s ease;
+}
+
+.reaction-item.positive {
+    border-left: 3px solid #22c55e;
+}
+
+.reaction-item.negative {
+    border-left: 3px solid #ef4444;
+}
+
+.reaction-item.neutral {
+    border-left: 3px solid #94a3b8;
+}
+
+.r-user {
+    font-weight: 700;
+    color: #334155;
+    margin-bottom: 2px;
+    font-size: 0.75rem;
+}
+
+.r-text {
+    color: #475569;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

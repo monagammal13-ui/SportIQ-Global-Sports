@@ -1,0 +1,110 @@
+/**
+ * Layer 127: Reader Analytics HUD Styles
+ */
+
+#analytics-hud {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 12px;
+    color: white;
+    font-family: 'Inter', monospace;
+    z-index: 10000;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 200px;
+    transition: all 0.3s;
+}
+
+#analytics-hud:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.hud-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #94a3b8;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 8px;
+}
+
+.hud-pulse {
+    width: 8px;
+    height: 8px;
+    background: #64748b;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.hud-pulse.active {
+    background: #10b981;
+    box-shadow: 0 0 10px #10b981;
+    animation: hud-pulse-anim 1s infinite;
+}
+
+@keyframes hud-pulse-anim {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(1.1);
+    }
+
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.hud-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.hud-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.hud-item label {
+    color: #94a3b8;
+    font-size: 0.75rem;
+}
+
+.hud-item span {
+    font-weight: 600;
+    color: white;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Status colors */
+.status-active {
+    color: #10b981 !important;
+}
+
+.status-idle {
+    color: #f59e0b !important;
+}
+
+/* Keep original controls hidden by default or restyled if needed, 
+   but this file primarily serves the new HUD */
+#personalization-controls {
+    display: none;
+    /* Hide old control panel for now to focus on analytics HUD */
+}

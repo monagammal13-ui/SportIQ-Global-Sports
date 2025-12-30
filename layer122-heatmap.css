@@ -1,0 +1,107 @@
+/**Layer 122: Engagement Heatmap*/
+
+/* Toggle Controls */
+#heatmap-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+#heatmap-toggle-btn {
+    background: #1e293b;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background 0.2s;
+}
+
+#heatmap-toggle-btn:hover {
+    background: #334155;
+}
+
+#heatmap-toggle-btn.active {
+    background: #ef4444;
+    /* Stop Red */
+}
+
+.heatmap-legend {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #64748b;
+    padding-top: 5px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.heat-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.heat-dot.low {
+    background: #3b82f6;
+    opacity: 0.5;
+}
+
+.heat-dot.med {
+    background: #10b981;
+    opacity: 0.5;
+}
+
+.heat-dot.high {
+    background: #ef4444;
+    opacity: 0.5;
+}
+
+/* The Heatmap effect on elements */
+.heatmap-mode p,
+.heatmap-mode h2,
+.heatmap-mode h3,
+.heatmap-mode img,
+.heatmap-mode blockquote {
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.heatmap-mode p::before,
+.heatmap-mode img::before {
+    content: attr(data-heat);
+    position: absolute;
+    top: -10px;
+    right: 0;
+    background: #000;
+    color: #fff;
+    font-size: 0.6rem;
+    padding: 2px 4px;
+    border-radius: 4px;
+    opacity: 0;
+    /* Hidden by default unless hovered or very high heat */
+    pointer-events: none;
+}
+
+.heatmap-mode p:hover::before {
+    opacity: 1;
+}
+
+/* Apply the var color overlay */
+.heatmap-mode [data-heat] {
+    background-color: var(--heat-color, transparent);
+    box-shadow: 0 0 10px var(--heat-color, transparent);
+    border-radius: 4px;
+}

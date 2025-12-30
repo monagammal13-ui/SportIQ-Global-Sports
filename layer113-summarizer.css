@@ -1,0 +1,76 @@
+/**Layer 113: AI Summarizer*/
+
+.summary-card {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid #cbd5e1;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.summary-header {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ai-badge {
+    background: #0f172a;
+    color: #38bdf8;
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ai-badge::before {
+    content: '⚡';
+}
+
+.summary-bullets {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+.summary-bullets li {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+    color: #334155;
+    font-size: 1rem;
+}
+
+.summary-bullets li:last-child {
+    margin-bottom: 0;
+}
+
+.summary-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 0.75rem;
+    border-top: 1px solid #cbd5e1;
+    padding-top: 1rem;
+}
+
+.summary-actions button {
+    background: #fff;
+    border: 1px solid #cbd5e1;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: #475569;
+    transition: all 0.2s;
+}
+
+.summary-actions button:hover {
+    background: #f1f5f9;
+    color: #1e293b;
+    border-color: #94a3b8;
+}

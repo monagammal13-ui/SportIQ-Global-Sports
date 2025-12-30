@@ -1,0 +1,188 @@
+/**
+ * Layer 136: Feedback Widget Styles
+ */
+
+.feedback-widget {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 40px 0;
+    border: 1px solid #e2e8f0;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+.feedback-header h4 {
+    margin: 0 0 5px 0;
+    color: #1e293b;
+    font-size: 1.2rem;
+}
+
+.fb-subtitle {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* Star Rating */
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    /* For CSS hover magic */
+    justify-content: center;
+    gap: 5px;
+    margin: 20px 0;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    font-size: 2rem;
+    color: #cbd5e1;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.star-rating label:hover,
+.star-rating label:hover~label,
+.star-rating input:checked~label {
+    color: #f59e0b;
+    /* Gold */
+}
+
+/* Helpful Toggle */
+.helpful-toggle {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.helpful-toggle span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #475569;
+}
+
+.toggle-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.fb-btn-outline {
+    background: white;
+    border: 1px solid #cbd5e1;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #475569;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.fb-btn-outline:hover {
+    border-color: #3b82f6;
+    color: #3b82f6;
+}
+
+.fb-btn-outline.active {
+    background: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+}
+
+/* Comment Box */
+.comment-box {
+    margin-top: 20px;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.comment-box.slide-down {
+    opacity: 1;
+    height: auto;
+}
+
+.comment-box.hidden {
+    display: none;
+}
+
+.comment-box textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 80px;
+}
+
+.fb-btn-primary {
+    background: #10b981;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+}
+
+.fb-btn-primary:hover {
+    background: #059669;
+}
+
+/* Results State */
+.feedback-results {
+    animation: fadeIn 0.5s ease;
+}
+
+.res-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.res-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-val {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #1e293b;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: #64748b;
+    text-transform: uppercase;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

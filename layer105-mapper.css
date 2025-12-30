@@ -1,0 +1,75 @@
+/**Layer 105: Section Mapper*/
+
+.mapper-panel {
+    background: #1e293b;
+    color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.mapper-panel h3 {
+    margin: 0 0 1rem 0;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.mapping-results {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.map-item {
+    display: flex;
+    align-items: center;
+    background: #334155;
+    padding: 0.75rem;
+    border-radius: 6px;
+    border: 1px solid transparent;
+}
+
+.map-item.primary {
+    background: #1e3a8a;
+    border-color: #3b82f6;
+}
+
+.map-score {
+    background: #0f172a;
+    color: #38bdf8;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 700;
+    margin-right: 1rem;
+    font-size: 0.9rem;
+}
+
+.map-details {
+    flex: 1;
+}
+
+.map-name {
+    display: block;
+    font-weight: 700;
+    color: #f8fafc;
+}
+
+.map-path {
+    display: block;
+    font-size: 0.75rem;
+    color: #94a3b8;
+}
+
+.primary-badge {
+    background: #f59e0b;
+    color: #000;
+    font-size: 0.6rem;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 4px;
+}

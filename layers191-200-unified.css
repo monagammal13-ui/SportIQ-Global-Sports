@@ -1,0 +1,515 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * UNIFIED CSS: LAYERS 191-200 (Ultimate Governance & Command Suite)
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
+
+/* ===========================================================================
+   LAYER 198: PUBLIC TRANSPARENCY DASHBOARD
+   =========================================================================== */
+
+.public-transparency-dashboard {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.transparency-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.transparency-header h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #111827;
+}
+
+.transparency-subtitle {
+    color: #6b7280;
+    font-size: 1.125rem;
+}
+
+.transparency-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.metric-card {
+    background: #f9fafb;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    border: 2px solid #e5e7eb;
+}
+
+.metric-card .metric-value {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #3b82f6;
+    margin-bottom: 0.5rem;
+}
+
+.metric-card .metric-label {
+    color: #6b7280;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.transparency-footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.view-ethics-policy-btn {
+    padding: 0.75rem 2rem;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+/* ===========================================================================
+   LAYER 200: SOVEREIGN COMMAND CENTER
+   =========================================================================== */
+
+.sovereign-command-center {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+    color: white;
+    padding: 1.5rem;
+    z-index: 11000;
+    box-shadow: 0 4px 20px rgba(30, 58, 138, 0.5);
+}
+
+.command-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.command-header h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.command-status {
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.command-status span {
+    color: #10b981;
+    font-weight: 700;
+}
+
+.command-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.command-metrics .metric-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.command-metrics .metric-card.critical {
+    border-color: #f59e0b;
+}
+
+.command-metrics .metric-card.supreme {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    border-color: #fbbf24;
+}
+
+.command-metrics .metric-label {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.command-metrics .metric-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.command-metrics .metric-value.supreme {
+    font-size: 2.5rem;
+    text-shadow: 0 2px 10px rgba(251, 191, 36, 0.5);
+}
+
+.command-stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fbbf24;
+}
+
+/* ===========================================================================
+   COMMON DASHBOARD STYLES (Layers 191-200)
+   =========================================================================== */
+
+.layer191-dashboard,
+.layer192-dashboard,
+.layer193-dashboard,
+.layer194-dashboard,
+.layer195-dashboard,
+.layer196-dashboard,
+.layer197-dashboard,
+.layer198-dashboard,
+.layer199-dashboard,
+.layer200-dashboard {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 350px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    transition: transform 0.3s, opacity 0.3s;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.layer200-dashboard {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+    color: white;
+}
+
+.layer191-dashboard.hidden,
+.layer192-dashboard.hidden,
+.layer193-dashboard.hidden,
+.layer194-dashboard.hidden,
+.layer195-dashboard.hidden,
+.layer196-dashboard.hidden,
+.layer197-dashboard.hidden,
+.layer198-dashboard.hidden,
+.layer199-dashboard.hidden,
+.layer200-dashboard.hidden {
+    transform: translateY(20px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.layer191-toggle-btn,
+.layer192-toggle-btn,
+.layer193-toggle-btn,
+.layer194-toggle-btn,
+.layer195-toggle-btn,
+.layer196-toggle-btn,
+.layer197-toggle-btn,
+.layer198-toggle-btn,
+.layer199-toggle-btn,
+.layer200-toggle-btn {
+    position: fixed;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 9998;
+    transition: transform 0.2s;
+}
+
+.layer191-toggle-btn {
+    right: 620px;
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+}
+
+.layer192-toggle-btn {
+    right: 680px;
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+}
+
+.layer193-toggle-btn {
+    right: 740px;
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+}
+
+.layer194-toggle-btn {
+    right: 800px;
+    background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+}
+
+.layer195-toggle-btn {
+    right: 860px;
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+}
+
+.layer196-toggle-btn {
+    right: 920px;
+    background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+}
+
+.layer197-toggle-btn {
+    right: 980px;
+    background: linear-gradient(135deg, #14b8a6 0%, #0f766e 100%);
+}
+
+.layer198-toggle-btn {
+    right: 1040px;
+    background: linear-gradient(135deg, #06b6d4 0%, #0e7490 100%);
+}
+
+.layer199-toggle-btn {
+    right: 1100px;
+    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+}
+
+.layer200-toggle-btn {
+    right: 1160px;
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    box-shadow: 0 4px 20px rgba(251, 191, 36, 0.6);
+    animation: sovereignPulse 2s infinite;
+}
+
+.layer200-toggle-btn.supreme {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+}
+
+@keyframes sovereignPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 20px rgba(251, 191, 36, 0.6);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 30px rgba(251, 191, 36, 0.8);
+    }
+}
+
+.layer191-toggle-btn:hover,
+.layer192-toggle-btn:hover,
+.layer193-toggle-btn:hover,
+.layer194-toggle-btn:hover,
+.layer195-toggle-btn:hover,
+.layer196-toggle-btn:hover,
+.layer197-toggle-btn:hover,
+.layer198-toggle-btn:hover,
+.layer199-toggle-btn:hover,
+.layer200-toggle-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Dashboard headers */
+.layer191-dashboard-header,
+.layer192-dashboard-header,
+.layer193-dashboard-header,
+.layer194-dashboard-header,
+.layer195-dashboard-header,
+.layer196-dashboard-header,
+.layer197-dashboard-header,
+.layer198-dashboard-header,
+.layer199-dashboard-header,
+.layer200-dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.layer200-dashboard-header.supreme {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+.layer191-dashboard-header h3,
+.layer192-dashboard-header h3,
+.layer193-dashboard-header h3,
+.layer194-dashboard-header h3,
+.layer195-dashboard-header h3,
+.layer196-dashboard-header h3,
+.layer197-dashboard-header h3,
+.layer198-dashboard-header h3,
+.layer199-dashboard-header h3,
+.layer200-dashboard-header h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.layer191-close-btn,
+.layer192-close-btn,
+.layer193-close-btn,
+.layer194-close-btn,
+.layer195-close-btn,
+.layer196-close-btn,
+.layer197-close-btn,
+.layer198-close-btn,
+.layer199-close-btn,
+.layer200-close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #999;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.layer200-close-btn {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.layer191-dashboard-content,
+.layer192-dashboard-content,
+.layer193-dashboard-content,
+.layer194-dashboard-content,
+.layer195-dashboard-content,
+.layer196-dashboard-content,
+.layer197-dashboard-content,
+.layer198-dashboard-content,
+.layer199-dashboard-content,
+.layer200-dashboard-content {
+    padding: 1.5rem;
+}
+
+.layer191-stat,
+.layer192-stat,
+.layer193-stat,
+.layer194-stat,
+.layer195-stat,
+.layer196-stat,
+.layer197-stat,
+.layer198-stat,
+.layer199-stat,
+.layer200-stat {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.layer200-stat {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.layer191-stat-label,
+.layer192-stat-label,
+.layer193-stat-label,
+.layer194-stat-label,
+.layer195-stat-label,
+.layer196-stat-label,
+.layer197-stat-label,
+.layer198-stat-label,
+.layer199-stat-label,
+.layer200-stat-label {
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.layer200-stat-label {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.layer191-stat-value,
+.layer192-stat-value,
+.layer193-stat-value,
+.layer194-stat-value,
+.layer195-stat-value,
+.layer196-stat-value,
+.layer197-stat-value,
+.layer198-stat-value,
+.layer199-stat-value,
+.layer200-stat-value {
+    color: #111827;
+    font-weight: 700;
+}
+
+.layer200-stat-value {
+    color: #fbbf24;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    .layer191-dashboard,
+    .layer192-dashboard,
+    .layer193-dashboard,
+    .layer194-dashboard,
+    .layer195-dashboard,
+    .layer196-dashboard,
+    .layer197-dashboard,
+    .layer198-dashboard,
+    .layer199-dashboard,
+    .layer200-dashboard {
+        width: calc(100% - 40px);
+        bottom: 70px;
+    }
+
+    .layer191-toggle-btn,
+    .layer192-toggle-btn,
+    .layer193-toggle-btn,
+    .layer194-toggle-btn,
+    .layer195-toggle-btn,
+    .layer196-toggle-btn,
+    .layer197-toggle-btn,
+    .layer198-toggle-btn,
+    .layer199-toggle-btn,
+    .layer200-toggle-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+
+    .sovereign-command-center {
+        padding: 1rem;
+    }
+
+    .command-header h2 {
+        font-size: 1.125rem;
+    }
+
+    .command-metrics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

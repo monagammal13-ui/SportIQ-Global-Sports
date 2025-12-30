@@ -1,0 +1,57 @@
+/**Layer 115: Cross-Section Linking*/
+
+.cross-link-panel {
+    background: #f8fafc;
+    border-top: 4px solid #3b82f6;
+    padding: 2rem;
+    margin: 3rem 0;
+    border-radius: 0 0 8px 8px;
+    font-family: 'Inter', sans-serif;
+}
+
+.cross-link-panel h3 {
+    margin: 0 0 1.5rem 0;
+    font-size: 1.1rem;
+    color: #1e293b;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.link-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.cross-link-card {
+    display: block;
+    background: #fff;
+    padding: 1.25rem;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+    border: 1px solid #e2e8f0;
+}
+
+.cross-link-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-color: #93c5fd;
+}
+
+.link-cat {
+    font-size: 0.7rem;
+    color: #3b82f6;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.link-title {
+    font-size: 1rem;
+    color: #1e293b;
+    font-weight: 600;
+    line-height: 1.4;
+}

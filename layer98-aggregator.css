@@ -1,0 +1,128 @@
+/**Layer 98: API Aggregator*/
+.api-dashboard {
+    background: #111827;
+    color: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    font-family: 'JetBrains Mono', monospace
+}
+
+.api-dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #374151;
+    padding-bottom: 1rem
+}
+
+.api-dashboard-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #f3f4f6
+}
+
+.api-status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: #10b981
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #10b981
+}
+
+.status-dot.offline {
+    background: #ef4444
+}
+
+.api-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem
+}
+
+.api-metric-card {
+    background: #1f2937;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #374151
+}
+
+.metric-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #60a5fa;
+    margin-bottom: 0.25rem
+}
+
+.metric-label {
+    font-size: 0.7rem;
+    color: #9ca3af;
+    text-transform: uppercase
+}
+
+.api-sources-list h4 {
+    color: #9ca3af;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem
+}
+
+.api-source-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    background: #1f2937;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    border: 1px solid #374151
+}
+
+.source-status {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #10b981;
+    margin-right: 0.75rem
+}
+
+.source-status.inactive {
+    background: #6b7280
+}
+
+.source-info {
+    flex: 1
+}
+
+.source-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #e5e7eb
+}
+
+.source-endpoint {
+    font-size: 0.75rem;
+    color: #6b7280
+}
+
+.source-meta {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    background: #374151;
+    padding: 2px 6px;
+    border-radius: 4px
+}
+
+@media (max-width:768px) {
+    .api-metrics-grid {
+        grid-template-columns: 1fr 1fr
+    }
+}

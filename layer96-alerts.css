@@ -1,0 +1,116 @@
+/**
+ * Layer 96: Push Notification UI Overlay
+ */
+
+/* Permission Prompt Modal */
+.push-permission-modal {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    z-index: 99999;
+    width: 320px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    animation: slideDownFade 0.5s ease-out;
+}
+
+@keyframes slideDownFade {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+.push-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.push-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #1e293b;
+}
+
+.push-desc {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.push-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.push-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.push-btn-allow {
+    background: #3b82f6;
+    color: white;
+}
+
+.push-btn-allow:hover {
+    background: #2563eb;
+}
+
+.push-btn-deny {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+.push-btn-deny:hover {
+    background: #e2e8f0;
+}
+
+/* In-App Toast Fallback (reusing styles or defining specific ones) */
+.local-toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #334155;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+    max-width: 300px;
+    animation: toastSlideIn 0.3s ease-out;
+}
+
+@keyframes toastSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

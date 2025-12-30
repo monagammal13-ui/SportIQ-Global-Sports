@@ -1,0 +1,71 @@
+/**
+ * Layer 139: Trending Booster Styles
+ */
+
+.boost-fire-effect {
+    position: relative;
+    border: 2px solid #f59e0b !important;
+    background: linear-gradient(to bottom, #fffbeb, white) !important;
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.2);
+    transition: all 0.3s ease;
+    z-index: 5;
+}
+
+.boost-fire-effect:hover {
+    transform: scale(1.03) translateY(-2px);
+    box-shadow: 0 15px 35px rgba(245, 158, 11, 0.3);
+}
+
+.trend-fire-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #ef4444 0%, #f59e0b 100%);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-right: 8px;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 10px rgba(239, 68, 68, 0.4);
+}
+
+.animated-ignite {
+    animation: ignite 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes ignite {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Optional: Add a subtle glow animation */
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(245, 158, 11, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+    }
+}
+
+.boost-fire-effect {
+    animation: pulse-glow 3s infinite;
+}

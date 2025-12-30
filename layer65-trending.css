@@ -1,0 +1,339 @@
+/**
+ * Layer 65 - Trending Hashtags & Social Feed Styles
+ * Sport IQ Platform
+ */
+
+/* ========== TRENDING SECTION ========== */
+.trending-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.trending-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid var(--color-primary, #0066cc);
+}
+
+.trending-header h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-dark, #1a1a1a);
+    margin: 0;
+}
+
+.trending-refresh-btn {
+    background: var(--color-primary, #0066cc);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.trending-refresh-btn:hover {
+    background: var(--color-primary-dark, #0052a3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+}
+
+.trending-refresh-btn:active {
+    transform: translateY(0);
+}
+
+/* ========== TRENDING FEED ========== */
+.trending-hashtags-feed {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .trending-hashtags-feed {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========== TRENDING ITEM ========== */
+.trending-item {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 2px solid transparent;
+}
+
+.trending-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    border-color: var(--color-primary, #0066cc);
+}
+
+.trend-rank {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-primary, #0066cc);
+    min-width: 40px;
+    text-align: center;
+}
+
+.trend-content {
+    flex: 1;
+}
+
+.trend-hashtag {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-dark, #1a1a1a);
+    margin-bottom: 8px;
+}
+
+.trend-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--color-gray-600, #6b7280);
+}
+
+.trend-count {
+    font-weight: 500;
+}
+
+.trend-sport {
+    padding: 2px 8px;
+    background: var(--color-light-secondary, #f3f4f6);
+    border-radius: 4px;
+    text-transform: capitalize;
+}
+
+.trend-indicator {
+    font-size: 24px;
+    min-width: 30px;
+    text-align: center;
+}
+
+/* ========== TRENDING MODAL ========== */
+.trending-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.trending-modal-content {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.trending-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--color-light-secondary, #f3f4f6);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trending-modal-close:hover {
+    background: var(--color-gray-300, #d1d5db);
+    transform: rotate(90deg);
+}
+
+.trending-modal-content h2 {
+    font-size: 32px;
+    margin: 0 0 30px 0;
+    color: var(--color-primary, #0066cc);
+}
+
+.trending-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat {
+    background: var(--color-light-secondary, #f3f4f6);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.stat-label {
+    display: block;
+    font-size: 14px;
+    color: var(--color-gray-600, #6b7280);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-dark, #1a1a1a);
+}
+
+/* ========== DARK MODE SUPPORT ========== */
+@media (prefers-color-scheme: dark) {
+    .trending-header h2 {
+        color: white;
+    }
+
+    .trending-item {
+        background: #1f2937;
+    }
+
+    .trend-hashtag {
+        color: white;
+    }
+
+    .trend-meta {
+        color: #9ca3af;
+    }
+
+    .trend-sport {
+        background: #374151;
+    }
+
+    .trending-modal-content {
+        background: #1f2937;
+        color: white;
+    }
+
+    .stat {
+        background: #374151;
+    }
+
+    .stat-value {
+        color: white;
+    }
+}
+
+/* ========== ANIMATIONS ========== */
+.trending-item {
+    animation: slideInUp 0.4s ease backwards;
+}
+
+.trending-item:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.trending-item:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.trending-item:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+.trending-item:nth-child(4) {
+    animation-delay: 0.2s;
+}
+
+.trending-item:nth-child(5) {
+    animation-delay: 0.25s;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .trending-section {
+        margin: 40px auto;
+    }
+
+    .trending-header {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    .trending-header h2 {
+        font-size: 24px;
+    }
+
+    .trending-refresh-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .trending-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .trending-modal-content {
+        padding: 30px 20px;
+    }
+}

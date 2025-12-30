@@ -1,0 +1,165 @@
+/**Layer 87: Sports Stats*/
+.stats-dashboard {
+    padding: 2rem 0
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem
+}
+
+.stats-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .1)
+}
+
+.stats-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e5e7eb
+}
+
+.stats-title {
+    font-size: 1.125rem;
+    font-weight: 700
+}
+
+.stats-badge {
+    padding: .25rem .75rem;
+    background: #10b981;
+    color: #fff;
+    border-radius: 12px;
+    font-size: .75rem;
+    font-weight: 700
+}
+
+.live-score {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    border-radius: 8px;
+    color: #fff;
+    margin-bottom: 1rem
+}
+
+.live-score .team {
+    font-weight: 700;
+    font-size: 1rem
+}
+
+.live-score .score {
+    font-size: 2rem;
+    font-weight: 700
+}
+
+.live-score .minute {
+    font-size: .75rem;
+    opacity: .9
+}
+
+.standings-table {
+    width: 100%;
+    border-collapse: collapse
+}
+
+.standings-table th {
+    text-align: left;
+    padding: .75rem;
+    background: #f9fafb;
+    font-size: .75rem;
+    font-weight: 600;
+    color: #6b7280;
+    border-bottom: 2px solid #e5e7eb
+}
+
+.standings-table td {
+    padding: .75rem;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: .875rem
+}
+
+.standings-table .position {
+    font-weight: 700;
+    color: #3b82f6;
+    width: 40px
+}
+
+.standings-table .team-name {
+    font-weight: 600
+}
+
+.standings-table .stat {
+    text-align: center;
+    width: 50px
+}
+
+.player-card {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb
+}
+
+.player-card:last-child {
+    border-bottom: none
+}
+
+.player-rank {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: .875rem
+}
+
+.player-info .name {
+    font-weight: 700;
+    font-size: .875rem
+}
+
+.player-info .team {
+    font-size: .75rem;
+    color: #6b7280
+}
+
+.player-stat {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #3b82f6
+}
+
+.stat-label {
+    font-size: .75rem;
+    color: #6b7280;
+    margin-top: .25rem
+}
+
+@media (max-width:768px) {
+    .stats-grid {
+        grid-template-columns: 1fr
+    }
+
+    .standings-table {
+        font-size: .75rem
+    }
+
+    .standings-table td,
+    .standings-table th {
+        padding: .5rem
+    }
+}

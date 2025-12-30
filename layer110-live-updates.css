@@ -1,0 +1,246 @@
+/**
+ * Layer 110: Live Commentary Widget Styles
+ */
+
+.live-commentary-widget {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    max-height: 600px;
+}
+
+.floating-mode {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    z-index: 1000;
+}
+
+/* Header */
+.lc-header {
+    background: #0f172a;
+    color: white;
+    padding: 15px;
+}
+
+.lc-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.lc-title h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.lc-pulse {
+    width: 10px;
+    height: 10px;
+    background: #ef4444;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+    animation: lc-pulse-anim 1.5s infinite;
+}
+
+@keyframes lc-pulse-anim {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+    }
+}
+
+/* Tabs */
+.lc-tabs {
+    display: flex;
+    gap: 8px;
+}
+
+.lc-tab {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #94a3b8;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.lc-tab:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.lc-tab.active {
+    background: #3b82f6;
+    color: white;
+}
+
+/* Crowd Meter */
+.lc-crowd-meter {
+    background: #f8fafc;
+    padding: 10px 15px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.lc-meter-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.lc-meter-track {
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.lc-meter-fill {
+    height: 100%;
+    background: #3b82f6;
+    /* Dynamic */
+    width: 50%;
+    transition: width 0.5s, background-color 0.5s;
+}
+
+/* Feed Container */
+.lc-feed-container {
+    padding: 15px;
+    overflow-y: auto;
+    height: 400px;
+    background: #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Feed Items */
+.lc-feed-item {
+    background: white;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border-left: 3px solid transparent;
+}
+
+.lc-feed-item.expert {
+    border-left-color: #3b82f6;
+}
+
+.lc-feed-item.social {
+    border-left-color: #10b981;
+}
+
+.lc-feed-item.crowd {
+    border-left-color: #f59e0b;
+    background: #fffbeb;
+}
+
+.lc-item-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    font-size: 0.85rem;
+}
+
+.lc-avatar {
+    font-size: 1.1rem;
+}
+
+.lc-author {
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.lc-time {
+    margin-left: auto;
+    color: #94a3b8;
+    font-size: 0.75rem;
+}
+
+.lc-item-body {
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.4;
+}
+
+/* Animation */
+.animate-entry {
+    animation: contentSlideIn 0.3s ease-out backwards;
+}
+
+@keyframes contentSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Filtering */
+.filter-expert .social,
+.filter-expert .crowd {
+    display: none;
+}
+
+.filter-social .expert,
+.filter-social .crowd {
+    display: none;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+.lc-footer {
+    padding: 8px;
+    text-align: center;
+    font-size: 0.7rem;
+    color: #94a3b8;
+    background: white;
+    border-top: 1px solid #e2e8f0;
+}
