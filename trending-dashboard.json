@@ -1,0 +1,237 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Global trending topics dashboard configuration for SPORTIQ platform",
+    "trendSources": {
+        "socialMedia": {
+            "enabled": true,
+            "platforms": [
+                "twitter",
+                "facebook",
+                "instagram",
+                "tiktok"
+            ],
+            "weight": 0.4,
+            "updateInterval": 60000
+        },
+        "searchEngines": {
+            "enabled": true,
+            "sources": [
+                "google",
+                "bing"
+            ],
+            "weight": 0.3,
+            "updateInterval": 300000
+        },
+        "newsAggregators": {
+            "enabled": true,
+            "sources": [
+                "reuters",
+                "ap",
+                "bbc"
+            ],
+            "weight": 0.2,
+            "updateInterval": 600000
+        },
+        "internal": {
+            "enabled": true,
+            "metrics": [
+                "views",
+                "shares",
+                "comments"
+            ],
+            "weight": 0.1,
+            "updateInterval": 180000
+        }
+    },
+    "trendingTopics": [
+        {
+            "id": "trend001",
+            "topic": "Messi World Record",
+            "category": "football",
+            "score": 9875,
+            "velocity": 234,
+            "rank": 1,
+            "change": 0,
+            "sources": [
+                "twitter",
+                "google",
+                "internal"
+            ],
+            "relatedArticles": 45,
+            "socialMentions": 125600,
+            "searchVolume": 98700,
+            "timeframe": "1h"
+        },
+        {
+            "id": "trend002",
+            "topic": "NBA Trade Deadline",
+            "category": "basketball",
+            "score": 8654,
+            "velocity": 156,
+            "rank": 2,
+            "change": 1,
+            "sources": [
+                "twitter",
+                "espn",
+                "internal"
+            ],
+            "relatedArticles": 38,
+            "socialMentions": 89400,
+            "searchVolume": 76500,
+            "timeframe": "1h"
+        },
+        {
+            "id": "trend003",
+            "topic": "Wimbledon Finals",
+            "category": "tennis",
+            "score": 7543,
+            "velocity": 89,
+            "rank": 3,
+            "change": -1,
+            "sources": [
+                "twitter",
+                "google",
+                "bbc"
+            ],
+            "relatedArticles": 29,
+            "socialMentions": 67800,
+            "searchVolume": 54300,
+            "timeframe": "1h"
+        },
+        {
+            "id": "trend004",
+            "topic": "Champions League Draw",
+            "category": "football",
+            "score": 6789,
+            "velocity": 123,
+            "rank": 4,
+            "change": 2,
+            "sources": [
+                "twitter",
+                "google",
+                "internal"
+            ],
+            "relatedArticles": 34,
+            "socialMentions": 78900,
+            "searchVolume": 45600,
+            "timeframe": "1h"
+        },
+        {
+            "id": "trend005",
+            "topic": "IPL Auction Results",
+            "category": "cricket",
+            "score": 5678,
+            "velocity": 67,
+            "rank": 5,
+            "change": 0,
+            "sources": [
+                "twitter",
+                "internal"
+            ],
+            "relatedArticles": 25,
+            "socialMentions": 56700,
+            "searchVolume": 34500,
+            "timeframe": "1h"
+        }
+    ],
+    "timeframes": {
+        "realTime": {
+            "enabled": true,
+            "window": 3600000,
+            "label": "Last Hour"
+        },
+        "daily": {
+            "enabled": true,
+            "window": 86400000,
+            "label": "Today"
+        },
+        "weekly": {
+            "enabled": true,
+            "window": 604800000,
+            "label": "This Week"
+        },
+        "monthly": {
+            "enabled": true,
+            "window": 2592000000,
+            "label": "This Month"
+        }
+    },
+    "dashboardConfig": {
+        "layout": "grid",
+        "sections": [
+            "topTrending",
+            "breakoutTopics",
+            "risingStars",
+            "trendingByCategory",
+            "globalHeatmap",
+            "timelineChart"
+        ],
+        "itemsPerSection": 10,
+        "autoRefresh": true,
+        "refreshInterval": 300000
+    },
+    "scoringAlgorithm": {
+        "formula": "weighted_sum",
+        "factors": {
+            "socialMentions": {
+                "weight": 0.4,
+                "decay": 0.5
+            },
+            "searchVolume": {
+                "weight": 0.3,
+                "decay": 0.3
+            },
+            "newsArticles": {
+                "weight": 0.2,
+                "decay": 0.2
+            },
+            "internalEngagement": {
+                "weight": 0.1,
+                "decay": 0.1
+            }
+        },
+        "velocityBoost": {
+            "enabled": true,
+            "multiplier": 1.5,
+            "threshold": 100
+        }
+    },
+    "breakoutDetection": {
+        "enabled": true,
+        "threshold": 200,
+        "minScore": 1000,
+        "alertOnBreakout": true
+    },
+    "categoryFilters": [
+        "all",
+        "football",
+        "basketball",
+        "tennis",
+        "cricket",
+        "motorsport",
+        "other"
+    ],
+    "visualization": {
+        "charts": {
+            "trending": "line",
+            "distribution": "pie",
+            "comparison": "bar"
+        },
+        "heatmap": {
+            "enabled": true,
+            "regions": [
+                "north-america",
+                "europe",
+                "asia",
+                "south-america",
+                "africa"
+            ]
+        }
+    },
+    "notifications": {
+        "breakoutAlert": true,
+        "categoryTrending": true,
+        "personalizedTrends": true
+    }
+}

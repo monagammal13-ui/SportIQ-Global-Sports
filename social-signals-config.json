@@ -1,0 +1,361 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Complete social signals and engagement system for SPORTIQ",
+    "socialSignals": {
+        "enabled": true,
+        "requireAuth": false,
+        "anonymousInteraction": true,
+        "realTimeUpdates": true
+    },
+    "reactions": {
+        "enabled": true,
+        "types": [
+            {
+                "id": "like",
+                "label": "Like",
+                "icon": "❤️",
+                "emoji": "❤️",
+                "color": "#ef4444",
+                "requireAuth": false,
+                "weight": 1.0
+            },
+            {
+                "id": "love",
+                "label": "Love",
+                "icon": "😍",
+                "emoji": "😍",
+                "color": "#ec4899",
+                "requireAuth": false,
+                "weight": 1.2
+            },
+            {
+                "id": "wow",
+                "label": "Wow",
+                "icon": "😮",
+                "emoji": "😮",
+                "color": "#f59e0b",
+                "requireAuth": false,
+                "weight": 1.1
+            },
+            {
+                "id": "laugh",
+                "label": "Haha",
+                "icon": "😂",
+                "emoji": "😂",
+                "color": "#fbbf24",
+                "requireAuth": false,
+                "weight": 0.9
+            },
+            {
+                "id": "sad",
+                "label": "Sad",
+                "icon": "😢",
+                "emoji": "😢",
+                "color": "#3b82f6",
+                "requireAuth": false,
+                "weight": 0.8
+            },
+            {
+                "id": "angry",
+                "label": "Angry",
+                "icon": "😠",
+                "emoji": "😠",
+                "color": "#dc2626",
+                "requireAuth": false,
+                "weight": 0.7
+            }
+        ],
+        "allowMultiple": false,
+        "allowChange": true,
+        "showCounts": true,
+        "showBreakdown": true,
+        "animation": {
+            "enabled": true,
+            "type": "bounce",
+            "duration": 300
+        }
+    },
+    "sharing": {
+        "enabled": true,
+        "platforms": {
+            "facebook": {
+                "enabled": true,
+                "icon": "facebook",
+                "color": "#1877f2",
+                "shareUrl": "https://www.facebook.com/sharer/sharer.php?u={url}",
+                "trackShares": true
+            },
+            "twitter": {
+                "enabled": true,
+                "icon": "twitter",
+                "color": "#1da1f2",
+                "shareUrl": "https://twitter.com/intent/tweet?url={url}&text={text}",
+                "includeHashtags": true,
+                "defaultHashtags": [
+                    "SportIQ",
+                    "Sports"
+                ],
+                "trackShares": true
+            },
+            "whatsapp": {
+                "enabled": true,
+                "icon": "whatsapp",
+                "color": "#25d366",
+                "shareUrl": "https://wa.me/?text={text}%20{url}",
+                "trackShares": true
+            },
+            "reddit": {
+                "enabled": true,
+                "icon": "reddit",
+                "color": "#ff4500",
+                "shareUrl": "https://www.reddit.com/submit?url={url}&title={text}",
+                "trackShares": true
+            },
+            "linkedin": {
+                "enabled": true,
+                "icon": "linkedin",
+                "color": "#0a66c2",
+                "shareUrl": "https://www.linkedin.com/sharing/share-offsite/?url={url}",
+                "trackShares": true
+            },
+            "pinterest": {
+                "enabled": true,
+                "icon": "pinterest",
+                "color": "#e60023",
+                "shareUrl": "https://pinterest.com/pin/create/button/?url={url}&media={image}&description={text}",
+                "trackShares": true
+            },
+            "email": {
+                "enabled": true,
+                "icon": "email",
+                "color": "#6b7280",
+                "subject": "Check out this article from SportIQ",
+                "trackShares": true
+            },
+            "copyLink": {
+                "enabled": true,
+                "icon": "link",
+                "color": "#6b7280",
+                "successMessage": "Link copied to clipboard!",
+                "trackShares": true
+            }
+        },
+        "embedCode": {
+            "enabled": true,
+            "allowCustomization": true,
+            "responsive": true
+        },
+        "nativeShare": {
+            "enabled": true,
+            "fallback": true,
+            "description": "Use native share API when available"
+        }
+    },
+    "socialProof": {
+        "enabled": true,
+        "indicators": {
+            "viewCount": {
+                "enabled": true,
+                "icon": "👁️",
+                "format": "compact",
+                "realTime": true,
+                "thresholds": {
+                    "low": 100,
+                    "medium": 1000,
+                    "high": 10000,
+                    "viral": 100000
+                }
+            },
+            "shareCount": {
+                "enabled": true,
+                "icon": "🔗",
+                "format": "compact",
+                "aggregatePlatforms": true
+            },
+            "commentCount": {
+                "enabled": true,
+                "icon": "💬",
+                "format": "number",
+                "linkToComments": true
+            },
+            "trendingBadge": {
+                "enabled": true,
+                "icon": "🔥",
+                "label": "Trending",
+                "color": "#ef4444",
+                "minScore": 70
+            },
+            "popularBadge": {
+                "enabled": true,
+                "icon": "⭐",
+                "label": "Popular",
+                "color": "#f59e0b",
+                "minViews": 5000
+            },
+            "newBadge": {
+                "enabled": true,
+                "icon": "✨",
+                "label": "New",
+                "color": "#3b82f6",
+                "ageThreshold": 3600000
+            }
+        }
+    },
+    "bookmarks": {
+        "enabled": true,
+        "requireAuth": true,
+        "collections": {
+            "enabled": true,
+            "maxCollections": 20,
+            "defaultCollections": [
+                "Read Later",
+                "Favorites"
+            ]
+        },
+        "sync": {
+            "enabled": true,
+            "acrossDevices": true
+        }
+    },
+    "follow": {
+        "enabled": true,
+        "requireAuth": true,
+        "targets": {
+            "teams": true,
+            "players": true,
+            "topics": true,
+            "authors": true
+        },
+        "notifications": {
+            "enabled": true,
+            "types": [
+                "newContent",
+                "liveMatch",
+                "breakingNews"
+            ]
+        }
+    },
+    "activityFeed": {
+        "enabled": true,
+        "requireAuth": true,
+        "types": {
+            "likes": true,
+            "shares": true,
+            "comments": true,
+            "bookmarks": true,
+            "follows": true
+        },
+        "privacy": {
+            "public": true,
+            "followers": true,
+            "private": true
+        },
+        "realTime": true,
+        "maxItems": 50
+    },
+    "gamification": {
+        "enabled": true,
+        "points": {
+            "like": 1,
+            "share": 3,
+            "comment": 5,
+            "article": 10,
+            "dailyVisit": 5,
+            "streak": 10
+        },
+        "badges": {
+            "enabled": true,
+            "types": [
+                {
+                    "id": "newbie",
+                    "name": "Newbie",
+                    "requirement": 0,
+                    "icon": "🌱"
+                },
+                {
+                    "id": "fan",
+                    "name": "Super Fan",
+                    "requirement": 100,
+                    "icon": "⚽"
+                },
+                {
+                    "id": "expert",
+                    "name": "Expert",
+                    "requirement": 500,
+                    "icon": "🏆"
+                },
+                {
+                    "id": "legend",
+                    "name": "Legend",
+                    "requirement": 2000,
+                    "icon": "👑"
+                }
+            ]
+        },
+        "leaderboard": {
+            "enabled": true,
+            "timeframes": [
+                "daily",
+                "weekly",
+                "monthly",
+                "allTime"
+            ],
+            "categories": [
+                "overall",
+                "team",
+                "sport"
+            ]
+        }
+    },
+    "viralMechanics": {
+        "enabled": true,
+        "referralSystem": {
+            "enabled": true,
+            "requireAuth": true,
+            "rewards": {
+                "referrer": 50,
+                "referee": 25
+            },
+            "trackConversions": true
+        },
+        "viralCoefficient": {
+            "enabled": true,
+            "target": 1.2,
+            "track": true
+        },
+        "socialChallenges": {
+            "enabled": false,
+            "types": [
+                "shareStreak",
+                "commentChallenge",
+                "friendInvite"
+            ]
+        }
+    },
+    "analytics": {
+        "enabled": true,
+        "track": {
+            "reactions": true,
+            "shares": true,
+            "bookmarks": true,
+            "follows": true,
+            "clicks": true,
+            "timeOnPage": true
+        },
+        "goals": {
+            "engagement": {
+                "metric": "avgEngagementRate",
+                "target": 0.15
+            },
+            "viral": {
+                "metric": "viralCoefficient",
+                "target": 1.2
+            },
+            "retention": {
+                "metric": "7dayRetention",
+                "target": 0.4
+            }
+        }
+    }
+}

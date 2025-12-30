@@ -1,0 +1,406 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Global news sources database for SPORTIQ aggregator",
+    "sources": [
+        {
+            "id": "espn",
+            "name": "ESPN",
+            "type": "rss",
+            "url": "https://www.espn.com/espn/rss/news",
+            "priority": "hot",
+            "credibility": 95,
+            "language": "en",
+            "categories": [
+                "general"
+            ],
+            "updateInterval": 900000,
+            "enabled": true
+        },
+        {
+            "id": "bbc_sport",
+            "name": "BBC Sport",
+            "type": "rss",
+            "url": "https://feeds.bbci.co.uk/sport/rss.xml",
+            "priority": "priority",
+            "credibility": 98,
+            "language": "en",
+            "categories": [
+                "general"
+            ],
+            "updateInterval": 900000,
+            "enabled": true
+        },
+        {
+            "id": "sky_sports",
+            "name": "Sky Sports",
+            "type": "rss",
+            "url": "https://www.skysports.com/rss/12040",
+            "priority": "hot",
+            "credibility": 92,
+            "language": "en",
+            "categories": [
+                "general"
+            ],
+            "updateInterval": 900000,
+            "enabled": true
+        },
+        {
+            "id": "reuters_sports",
+            "name": "Reuters Sports",
+            "type": "rss",
+            "url": "https://www.reuters.com/rssFeed/sportsNews",
+            "priority": "priority",
+            "credibility": 97,
+            "language": "en",
+            "categories": [
+                "general"
+            ],
+            "updateInterval": 600000,
+            "enabled": true
+        },
+        {
+            "id": "ap_sports",
+            "name": "Associated Press Sports",
+            "type": "rss",
+            "url": "https://apnews.com/apf-sports",
+            "priority": "priority",
+            "credibility": 96,
+            "language": "en",
+            "categories": [
+                "general"
+            ],
+            "updateInterval": 900000,
+            "enabled": true
+        },
+        {
+            "id": "espn_football",
+            "name": "ESPN Football",
+            "type": "rss",
+            "url": "https://www.espn.com/espn/rss/soccer/news",
+            "priority": "hot",
+            "credibility": 94,
+            "language": "en",
+            "categories": [
+                "football"
+            ],
+            "updateInterval": 900000,
+            "enabled": true
+        },
+        {
+            "id": "goal_com",
+            "name": "Goal.com",
+            "type": "rss",
+            "url": "https://www.goal.com/feeds/en/news",
+            "priority": "standard",
+            "credibility": 85,
+            "language": "en",
+            "categories": [
+                "football"
+            ],
+            "updateInterval": 1800000,
+            "enabled": true
+        },
+        {
+            "id": "espn_nba",
+            "name": "ESPN NBA",
+            "type": "rss",
+            "url": "https://www.espn.com/espn/rss/nba/news",
+            "priority": "hot",
+            "credibility": 93,
+            "language": "en",
+            "categories": [
+                "basketball"
+            ],
+            "updateInterval": 900000,
+            "enabled": true
+        },
+        {
+            "id": "bleacher_report",
+            "name": "Bleacher Report",
+            "type": "rss",
+            "url": "https://bleacherreport.com/articles/feed",
+            "priority": "standard",
+            "credibility": 80,
+            "language": "en",
+            "categories": [
+                "general"
+            ],
+            "updateInterval": 1800000,
+            "enabled": true
+        },
+        {
+            "id": "the_athletic",
+            "name": "The Athletic",
+            "type": "rss",
+            "url": "https://theathletic.com/feed/",
+            "priority": "hot",
+            "credibility": 90,
+            "language": "en",
+            "categories": [
+                "general"
+            ],
+            "updateInterval": 1800000,
+            "enabled": true
+        },
+        {
+            "id": "sports_illustrated",
+            "name": "Sports Illustrated",
+            "type": "rss",
+            "url": "https://www.si.com/rss/si_topstories.rss",
+            "priority": "standard",
+            "credibility": 88,
+            "language": "en",
+            "categories": [
+                "general"
+            ],
+            "updateInterval": 1800000,
+            "enabled": true
+        },
+        {
+            "id": "marca",
+            "name": "Marca",
+            "type": "rss",
+            "url": "https://www.marca.com/rss/portada.xml",
+            "priority": "hot",
+            "credibility": 87,
+            "language": "es",
+            "categories": [
+                "football"
+            ],
+            "updateInterval": 1800000,
+            "enabled": true
+        },
+        {
+            "id": "as_com",
+            "name": "AS (Spain)",
+            "type": "rss",
+            "url": "https://as.com/rss/tags/ultimas_noticias.xml",
+            "priority": "standard",
+            "credibility": 85,
+            "language": "es",
+            "categories": [
+                "football"
+            ],
+            "updateInterval": 1800000,
+            "enabled": true
+        },
+        {
+            "id": "lequipe",
+            "name": "L'Équipe",
+            "type": "rss",
+            "url": "https://www.lequipe.fr/rss/actu_rss.xml",
+            "priority": "hot",
+            "credibility": 91,
+            "language": "fr",
+            "categories": [
+                "general"
+            ],
+            "updateInterval": 1800000,
+            "enabled": true
+        },
+        {
+            "id": "gazzetta",
+            "name": "La Gazzetta dello Sport",
+            "type": "rss",
+            "url": "https://www.gazzetta.it/rss/home.xml",
+            "priority": "standard",
+            "credibility": 86,
+            "language": "it",
+            "categories": [
+                "football"
+            ],
+            "updateInterval": 1800000,
+            "enabled": true
+        },
+        {
+            "id": "kicker",
+            "name": "Kicker (Germany)",
+            "type": "rss",
+            "url": "https://www.kicker.de/news/fussball/bundesliga/rss.xml",
+            "priority": "standard",
+            "credibility": 89,
+            "language": "de",
+            "categories": [
+                "football"
+            ],
+            "updateInterval": 1800000,
+            "enabled": true
+        },
+        {
+            "id": "espnfc",
+            "name": "ESPN FC",
+            "type": "rss",
+            "url": "https://www.espn.com/espn/rss/soccer/news",
+            "priority": "hot",
+            "credibility": 92,
+            "language": "en",
+            "categories": [
+                "football"
+            ],
+            "updateInterval": 900000,
+            "enabled": true
+        },
+        {
+            "id": "fourfourtwo",
+            "name": "FourFourTwo",
+            "type": "rss",
+            "url": "https://www.fourfourtwo.com/news/feed",
+            "priority": "standard",
+            "credibility": 83,
+            "language": "en",
+            "categories": [
+                "football"
+            ],
+            "updateInterval": 1800000,
+            "enabled": true
+        },
+        {
+            "id": "tennis_com",
+            "name": "Tennis.com",
+            "type": "rss",
+            "url": "https://www.tennis.com/news/feed",
+            "priority": "standard",
+            "credibility": 82,
+            "language": "en",
+            "categories": [
+                "tennis"
+            ],
+            "updateInterval": 3600000,
+            "enabled": true
+        },
+        {
+            "id": "cricinfo",
+            "name": "ESPN Cricinfo",
+            "type": "rss",
+            "url": "https://www.espncricinfo.com/rss/content/story/feeds/0.xml",
+            "priority": "hot",
+            "credibility": 94,
+            "language": "en",
+            "categories": [
+                "cricket"
+            ],
+            "updateInterval": 1800000,
+            "enabled": true
+        },
+        {
+            "id": "f1_com",
+            "name": "Formula 1",
+            "type": "rss",
+            "url": "https://www.formula1.com/en/latest/all.xml",
+            "priority": "hot",
+            "credibility": 95,
+            "language": "en",
+            "categories": [
+                "formula1"
+            ],
+            "updateInterval": 1800000,
+            "enabled": true
+        },
+        {
+            "id": "transfermarkt",
+            "name": "Transfermarkt",
+            "type": "rss",
+            "url": "https://www.transfermarkt.com/intern/rss/news/0",
+            "priority": "standard",
+            "credibility": 88,
+            "language": "en",
+            "categories": [
+                "football",
+                "transfers"
+            ],
+            "updateInterval": 1800000,
+            "enabled": true
+        },
+        {
+            "id": "nba_official",
+            "name": "NBA Official",
+            "type": "rss",
+            "url": "https://www.nba.com/news/rss.xml",
+            "priority": "priority",
+            "credibility": 96,
+            "language": "en",
+            "categories": [
+                "basketball"
+            ],
+            "updateInterval": 900000,
+            "enabled": true
+        },
+        {
+            "id": "uefa_com",
+            "name": "UEFA.com",
+            "type": "rss",
+            "url": "https://www.uefa.com/rssfeed/uefachampionsleague/rss.xml",
+            "priority": "hot",
+            "credibility": 95,
+            "language": "en",
+            "categories": [
+                "football"
+            ],
+            "updateInterval": 900000,
+            "enabled": true
+        },
+        {
+            "id": "fifa_com",
+            "name": "FIFA.com",
+            "type": "rss",
+            "url": "https://www.fifa.com/news/rss.xml",
+            "priority": "hot",
+            "credibility": 94,
+            "language": "en",
+            "categories": [
+                "football"
+            ],
+            "updateInterval": 1800000,
+            "enabled": true
+        }
+    ],
+    "sourceGroups": {
+        "priority": {
+            "description": "Highest priority sources with breaking news",
+            "sources": [
+                "bbc_sport",
+                "reuters_sports",
+                "ap_sports",
+                "nba_official",
+                "uefa_com"
+            ],
+            "updateInterval": 300000
+        },
+        "hot": {
+            "description": "High-quality sources with frequent updates",
+            "sources": [
+                "espn",
+                "sky_sports",
+                "espn_football",
+                "espn_nba",
+                "the_athletic",
+                "marca",
+                "lequipe",
+                "f1_com",
+                "cricinfo"
+            ],
+            "updateInterval": 900000
+        },
+        "standard": {
+            "description": "Reliable sources with regular updates",
+            "sources": [
+                "goal_com",
+                "bleacher_report",
+                "sports_illustrated",
+                "as_com",
+                "gazzetta",
+                "kicker",
+                "fourfourtwo",
+                "tennis_com",
+                "transfermarkt"
+            ],
+            "updateInterval": 1800000
+        },
+        "archive": {
+            "description": "Historical and less frequent sources",
+            "sources": [],
+            "updateInterval": 21600000
+        }
+    }
+}

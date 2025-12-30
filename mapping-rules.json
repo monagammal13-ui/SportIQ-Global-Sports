@@ -1,0 +1,92 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-29T09:29:10Z",
+    "description": "Section Mapping Rules",
+    "categories": [
+        {
+            "id": "football",
+            "name": "Football",
+            "path": "/sports/football",
+            "keywords": {
+                "primary": [
+                    "football",
+                    "soccer",
+                    "goal",
+                    "fifa",
+                    "uefa",
+                    "match"
+                ],
+                "secondary": [
+                    "score",
+                    "pitch",
+                    "var",
+                    "offside",
+                    "manager"
+                ]
+            }
+        },
+        {
+            "id": "basketball",
+            "name": "Basketball",
+            "path": "/sports/basketball",
+            "keywords": {
+                "primary": [
+                    "basketball",
+                    "nba",
+                    "fiba",
+                    "dunk",
+                    "hoop"
+                ],
+                "secondary": [
+                    "point",
+                    "rebound",
+                    "assist",
+                    "block",
+                    "quarter"
+                ]
+            }
+        },
+        {
+            "id": "tennis",
+            "name": "Tennis",
+            "path": "/sports/tennis",
+            "keywords": {
+                "primary": [
+                    "tennis",
+                    "atp",
+                    "wta",
+                    "grand slam",
+                    "wimbledon"
+                ],
+                "secondary": [
+                    "set",
+                    "match",
+                    "ace",
+                    "deuce",
+                    "court"
+                ]
+            }
+        },
+        {
+            "id": "tech",
+            "name": "Technology",
+            "path": "/tech",
+            "keywords": {
+                "primary": [
+                    "tech",
+                    "ai",
+                    "software",
+                    "hardware",
+                    "app"
+                ],
+                "secondary": [
+                    "update",
+                    "version",
+                    "release",
+                    "beta",
+                    "user"
+                ]
+            }
+        }
+    ]
+}

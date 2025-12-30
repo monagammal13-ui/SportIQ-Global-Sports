@@ -1,0 +1,65 @@
+{
+    "layerInfo": {
+        "id": "layer-067",
+        "name": "Global Polls & Community Voting",
+        "version": "1.0.0",
+        "type": "community-engagement",
+        "status": "active"
+    },
+    "refreshRate": 30000,
+    "maxPolls": 6,
+    "displayMode": "grid",
+    "allowMultipleVotes": false,
+    "showResults": "after-vote",
+    "animateResults": true,
+    "pollTypes": [
+        "prediction",
+        "opinion",
+        "best-of",
+        "vs",
+        "ranking"
+    ],
+    "categories": [
+        "football",
+        "basketball",
+        "tennis",
+        "cricket",
+        "baseball",
+        "hockey",
+        "racing",
+        "mma",
+        "general"
+    ],
+    "voteStorage": {
+        "type": "localStorage",
+        "key": "sportiq_votes",
+        "enableSync": false
+    },
+    "resultsDisplay": {
+        "showPercentage": true,
+        "showVoteCount": true,
+        "showProgressBar": true,
+        "highlightLeader": true,
+        "animateChanges": true
+    },
+    "pollCreation": {
+        "enabled": false,
+        "requireAuth": true,
+        "minOptions": 2,
+        "maxOptions": 6,
+        "moderationRequired": true
+    },
+    "notifications": {
+        "onNewPoll": false,
+        "onPollEnding": true,
+        "onResultsChange": false
+    },
+    "ui": {
+        "position": "after-highlights",
+        "theme": "modern",
+        "layout": "grid",
+        "cardsPerRow": 2,
+        "showTimeRemaining": true,
+        "showTotalVotes": true
+    }
+}

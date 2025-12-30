@@ -1,0 +1,203 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Interactive polls and surveys configuration for SPORTIQ platform",
+    "pollTypes": {
+        "quickPoll": {
+            "enabled": true,
+            "maxOptions": 4,
+            "allowMultiple": false,
+            "showResults": "afterVote",
+            "duration": 86400000
+        },
+        "survey": {
+            "enabled": true,
+            "maxQuestions": 10,
+            "allowSkip": true,
+            "showResults": "afterComplete",
+            "duration": 604800000
+        },
+        "prediction": {
+            "enabled": true,
+            "maxOptions": 2,
+            "allowChange": false,
+            "showResults": "afterEvent",
+            "rewards": true
+        }
+    },
+    "activePoll": [
+        {
+            "id": "poll001",
+            "type": "quickPoll",
+            "question": "Who will win the Premier League this season?",
+            "options": [
+                {
+                    "id": "opt1",
+                    "text": "Manchester City",
+                    "votes": 1245
+                },
+                {
+                    "id": "opt2",
+                    "text": "Arsenal",
+                    "votes": 892
+                },
+                {
+                    "id": "opt3",
+                    "text": "Liverpool",
+                    "votes": 756
+                },
+                {
+                    "id": "opt4",
+                    "text": "Chelsea",
+                    "votes": 423
+                }
+            ],
+            "totalVotes": 3316,
+            "createdAt": "2025-12-27T00:00:00Z",
+            "expiresAt": "2026-05-31T23:59:59Z",
+            "category": "football",
+            "status": "active"
+        },
+        {
+            "id": "poll002",
+            "type": "quickPoll",
+            "question": "Best player of 2025?",
+            "options": [
+                {
+                    "id": "opt1",
+                    "text": "Cristiano Ronaldo",
+                    "votes": 2156
+                },
+                {
+                    "id": "opt2",
+                    "text": "Lionel Messi",
+                    "votes": 2034
+                },
+                {
+                    "id": "opt3",
+                    "text": "Kylian Mbappé",
+                    "votes": 1876
+                },
+                {
+                    "id": "opt4",
+                    "text": "Erling Haaland",
+                    "votes": 1456
+                }
+            ],
+            "totalVotes": 7522,
+            "createdAt": "2025-12-20T00:00:00Z",
+            "expiresAt": "2025-12-31T23:59:59Z",
+            "category": "football",
+            "status": "active"
+        },
+        {
+            "id": "poll003",
+            "type": "prediction",
+            "question": "Lakers vs Warriors - Who will win?",
+            "options": [
+                {
+                    "id": "opt1",
+                    "text": "Los Angeles Lakers",
+                    "votes": 3421
+                },
+                {
+                    "id": "opt2",
+                    "text": "Golden State Warriors",
+                    "votes": 2987
+                }
+            ],
+            "totalVotes": 6408,
+            "createdAt": "2025-12-27T10:00:00Z",
+            "expiresAt": "2025-12-28T20:00:00Z",
+            "category": "basketball",
+            "status": "active",
+            "linkedEvent": "evt002"
+        }
+    ],
+    "surveyTemplates": [
+        {
+            "id": "survey001",
+            "title": "Fan Satisfaction Survey",
+            "description": "Help us improve your experience",
+            "questions": [
+                {
+                    "id": "q1",
+                    "type": "rating",
+                    "question": "How satisfied are you with our content?",
+                    "scale": 5,
+                    "required": true
+                },
+                {
+                    "id": "q2",
+                    "type": "multipleChoice",
+                    "question": "What sports do you follow?",
+                    "options": [
+                        "Football",
+                        "Basketball",
+                        "Tennis",
+                        "Cricket",
+                        "Other"
+                    ],
+                    "allowMultiple": true,
+                    "required": false
+                },
+                {
+                    "id": "q3",
+                    "type": "text",
+                    "question": "What improvements would you like to see?",
+                    "maxLength": 500,
+                    "required": false
+                }
+            ],
+            "status": "active"
+        }
+    ],
+    "votingRules": {
+        "authentication": {
+            "required": false,
+            "limitPerUser": 1,
+            "trackByIP": true,
+            "trackByCookie": true
+        },
+        "validation": {
+            "preventBots": true,
+            "captcha": false,
+            "rateLimit": {
+                "votes": 10,
+                "window": 3600000
+            }
+        }
+    },
+    "resultsDisplay": {
+        "showPercentages": true,
+        "showVoteCounts": true,
+        "showGraphs": true,
+        "graphType": "bar",
+        "realTimeUpdates": true,
+        "updateInterval": 5000
+    },
+    "analytics": {
+        "trackVotes": true,
+        "trackDemographics": true,
+        "trackEngagement": true,
+        "exportResults": true
+    },
+    "notifications": {
+        "newPoll": true,
+        "pollEnding": true,
+        "resultsReady": true
+    },
+    "gamification": {
+        "enabled": true,
+        "points": {
+            "vote": 5,
+            "correctPrediction": 50,
+            "surveyCo mplete": 25
+        },
+        "badges": [
+            "Poll Master",
+            "Prediction King",
+            "Survey Champion"
+        ]
+    }
+}

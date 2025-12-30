@@ -1,0 +1,113 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Complete media optimization configuration for SPORTIQ platform",
+    "imageOptimization": {
+        "formats": {
+            "primary": "webp",
+            "fallback": "jpg",
+            "supported": [
+                "webp",
+                "jpg",
+                "png",
+                "avif"
+            ]
+        },
+        "quality": {
+            "4k": 90,
+            "high": 85,
+            "medium": 75,
+            "low": 60
+        },
+        "responsiveImages": {
+            "enabled": true,
+            "breakpoints": {
+                "mobile": {
+                    "width": 768,
+                    "quality": "medium"
+                },
+                "tablet": {
+                    "width": 1024,
+                    "quality": "high"
+                },
+                "desktop": {
+                    "width": 1920,
+                    "quality": "4k"
+                },
+                "4k": {
+                    "width": 3840,
+                    "quality": "4k"
+                }
+            }
+        },
+        "lazyLoading": {
+            "enabled": true,
+            "threshold": "50px",
+            "placeholder": "blur",
+            "fadeIn": true
+        }
+    },
+    "videoOptimization": {
+        "formats": [
+            "mp4",
+            "webm"
+        ],
+        "quality": {
+            "4k": {
+                "bitrate": "8000k",
+                "resolution": "3840x2160"
+            },
+            "1080p": {
+                "bitrate": "4000k",
+                "resolution": "1920x1080"
+            },
+            "720p": {
+                "bitrate": "2000k",
+                "resolution": "1280x720"
+            },
+            "480p": {
+                "bitrate": "1000k",
+                "resolution": "854x480"
+            }
+        },
+        "lazyLoading": true,
+        "autoplay": false,
+        "preload": "metadata"
+    },
+    "cdn": {
+        "enabled": true,
+        "baseUrl": "https://cdn.sportiq.com",
+        "fallbacks": [
+            "https://cdn1.sportiq.com",
+            "https://cdn2.sportiq.com",
+            "https://images.sportiq.com"
+        ]
+    },
+    "caching": {
+        "browser": {
+            "images": 2592000,
+            "videos": 2592000,
+            "icons": 31536000
+        },
+        "serviceWorker": {
+            "enabled": true,
+            "strategy": "cache-first",
+            "maxAge": 2592000
+        }
+    },
+    "performance": {
+        "preload": {
+            "criticalImages": 3,
+            "sliderImages": 5
+        },
+        "compression": {
+            "enabled": true,
+            "gzip": true,
+            "brotli": true
+        },
+        "budgets": {
+            "maxImageSize": "500KB",
+            "maxVideoSize": "5MB"
+        }
+    }
+}

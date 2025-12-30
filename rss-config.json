@@ -1,0 +1,149 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-29",
+    "description": "RSS feed aggregation configuration for SPORTIQ platform",
+    "autoUpdate": true,
+    "updateFrequency": 300000,
+    "maxArticlesPerFeed": 20,
+    "maxTotalArticles": 500,
+    "proxyUrl": "https://api.rss2json.com/v1/api.json",
+    "apiKey": "",
+    "feeds": [
+        {
+            "name": "ESPN Football",
+            "url": "https://www.espn.com/espn/rss/football/news",
+            "category": "football",
+            "enabled": true,
+            "priority": 1
+        },
+        {
+            "name": "BBC Sport Football",
+            "url": "http://feeds.bbci.co.uk/sport/football/rss.xml",
+            "category": "football",
+            "enabled": true,
+            "priority": 1
+        },
+        {
+            "name": "ESPN Basketball",
+            "url": "https://www.espn.com/espn/rss/nba/news",
+            "category": "basketball",
+            "enabled": true,
+            "priority": 1
+        },
+        {
+            "name": "NBA News",
+            "url": "https://www.nba.com/news/rss.xml",
+            "category": "basketball",
+            "enabled": true,
+            "priority": 1
+        },
+        {
+            "name": "ESPN Tennis",
+            "url": "https://www.espn.com/espn/rss/tennis/news",
+            "category": "tennis",
+            "enabled": true,
+            "priority": 2
+        },
+        {
+            "name": "Sky Sports News",
+            "url": "https://www.skysports.com/rss/12040",
+            "category": "news",
+            "enabled": true,
+            "priority": 1
+        },
+        {
+            "name": "Goal.com",
+            "url": "https://www.goal.com/feeds/en/news",
+            "category": "football",
+            "enabled": true,
+            "priority": 2
+        },
+        {
+            "name": "The Guardian Sports",
+            "url": "https://www.theguardian.com/sport/rss",
+            "category": "news",
+            "enabled": true,
+            "priority": 1
+        }
+    ],
+    "categoryMapping": {
+        "football": [
+            "football",
+            "soccer",
+            "fifa",
+            "uefa",
+            "premier league",
+            "champions league",
+            "la liga",
+            "serie a",
+            "bundesliga"
+        ],
+        "basketball": [
+            "basketball",
+            "nba",
+            "ncaa",
+            "euroleague",
+            "fiba"
+        ],
+        "tennis": [
+            "tennis",
+            "atp",
+            "wta",
+            "grand slam",
+            "wimbledon",
+            "us open",
+            "french open"
+        ],
+        "cricket": [
+            "cricket",
+            "icc",
+            "test match",
+            "odi",
+            "t20"
+        ],
+        "baseball": [
+            "baseball",
+            "mlb",
+            "world series"
+        ],
+        "rugby": [
+            "rugby",
+            "six nations",
+            "world cup rugby"
+        ],
+        "golf": [
+            "golf",
+            "pga",
+            "masters",
+            "open championship"
+        ],
+        "boxing": [
+            "boxing",
+            "heavyweight",
+            "welterweight",
+            "title fight"
+        ],
+        "mma": [
+            "mma",
+            "ufc",
+            "mixed martial arts"
+        ],
+        "formula1": [
+            "formula 1",
+            "f1",
+            "grand prix",
+            "motorsport"
+        ]
+    },
+    "autoPublish": {
+        "enabled": false,
+        "criteria": {
+            "minPriority": 1,
+            "limit": 10,
+            "categories": [
+                "football",
+                "basketball"
+            ]
+        }
+    }
+}

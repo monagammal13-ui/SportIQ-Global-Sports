@@ -1,0 +1,63 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "users": [
+        {
+            "id": "user_001",
+            "username": "admin",
+            "email": "admin@sportiq.com",
+            "password": "$2a$10$placeholder_hash_admin123",
+            "firstName": "Admin",
+            "lastName": "User",
+            "role": "admin",
+            "status": "active",
+            "createdAt": "2025-12-27T00:00:00Z",
+            "lastLogin": null,
+            "avatar": "/assets/images/placeholders/avatar.svg",
+            "permissions": [
+                "all"
+            ],
+            "settings": {
+                "theme": "light",
+                "language": "en",
+                "notifications": true
+            }
+        },
+        {
+            "id": "user_002",
+            "username": "editor",
+            "email": "editor@sportiq.com",
+            "password": "$2a$10$placeholder_hash_editor123",
+            "firstName": "Editor",
+            "lastName": "User",
+            "role": "editor",
+            "status": "active",
+            "createdAt": "2025-12-27T00:00:00Z",
+            "lastLogin": null,
+            "avatar": "/assets/images/placeholders/avatar.svg",
+            "permissions": [
+                "create_article",
+                "edit_article",
+                "delete_own_article",
+                "manage_media",
+                "manage_categories",
+                "manage_tags"
+            ],
+            "settings": {
+                "theme": "light",
+                "language": "en",
+                "notifications": true
+            }
+        }
+    ],
+    "passwordNote": "IMPORTANT: These are placeholder passwords. In production: 1) Change all default passwords immediately, 2) Use proper password hashing (bcrypt), 3) Implement secure authentication",
+    "defaultPasswords": {
+        "admin": "admin123",
+        "editor": "editor123"
+    },
+    "sessionConfig": {
+        "tokenExpiry": 86400,
+        "refreshTokenExpiry": 604800,
+        "maxConcurrentSessions": 3
+    }
+}

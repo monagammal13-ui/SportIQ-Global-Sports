@@ -1,0 +1,252 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Schema.org structured data templates for SPORTIQ",
+    "organization": {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "SPORTIQ",
+        "url": "https://sportiq.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://sportiq.com/logo.png",
+            "width": 600,
+            "height": 60
+        },
+        "sameAs": [
+            "https://twitter.com/sportiq",
+            "https://facebook.com/sportiq",
+            "https://instagram.com/sportiq",
+            "https://youtube.com/@sportiq"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Service",
+            "email": "contact@sportiq.com"
+        }
+    },
+    "website": {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "SPORTIQ",
+        "url": "https://sportiq.com",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://sportiq.com/search?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        }
+    },
+    "newsArticle": {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        "headline": "{articleTitle}",
+        "image": [
+            "{imageUrl1}",
+            "{imageUrl2}",
+            "{imageUrl3}"
+        ],
+        "datePublished": "{publishDate}",
+        "dateModified": "{modifiedDate}",
+        "author": {
+            "@type": "Person",
+            "name": "{authorName}",
+            "url": "{authorUrl}"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "SPORTIQ",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://sportiq.com/logo.png"
+            }
+        },
+        "description": "{articleDescription}",
+        "articleBody": "{articleBody}",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{articleUrl}"
+        },
+        "wordCount": "{wordCount}",
+        "articleSection": "{categoryName}",
+        "keywords": "{keywords}"
+    },
+    "videoObject": {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "{videoTitle}",
+        "description": "{videoDescription}",
+        "thumbnailUrl": "{thumbnailUrl}",
+        "uploadDate": "{uploadDate}",
+        "duration": "{duration}",
+        "contentUrl": "{videoUrl}",
+        "embedUrl": "{embedUrl}",
+        "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": "http://schema.org/WatchAction",
+            "userInteractionCount": "{viewCount}"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "SPORTIQ",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://sportiq.com/logo.png"
+            }
+        }
+    },
+    "sportsEvent": {
+        "@context": "https://schema.org",
+        "@type": "SportsEvent",
+        "name": "{eventName}",
+        "sport": "{sportType}",
+        "startDate": "{startDate}",
+        "endDate": "{endDate}",
+        "location": {
+            "@type": "Place",
+            "name": "{venueName}",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "{city}",
+                "addressRegion": "{region}",
+                "addressCountry": "{country}"
+            }
+        },
+        "homeTeam": {
+            "@type": "SportsTeam",
+            "name": "{homeTeamName}",
+            "logo": "{homeTeamLogo}"
+        },
+        "awayTeam": {
+            "@type": "SportsTeam",
+            "name": "{awayTeamName}",
+            "logo": "{awayTeamLogo}"
+        },
+        "competitor": [
+            {
+                "@type": "SportsTeam",
+                "name": "{homeTeamName}"
+            },
+            {
+                "@type": "SportsTeam",
+                "name": "{awayTeamName}"
+            }
+        ],
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
+    },
+    "breadcrumbList": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://sportiq.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "{categoryName}",
+                "item": "{categoryUrl}"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "{pageName}",
+                "item": "{pageUrl}"
+            }
+        ]
+    },
+    "person": {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "{playerName}",
+        "givenName": "{firstName}",
+        "familyName": "{lastName}",
+        "nationality": "{nationality}",
+        "birthDate": "{birthDate}",
+        "gender": "{gender}",
+        "height": {
+            "@type": "QuantitativeValue",
+            "value": "{heightCm}",
+            "unitCode": "CMT"
+        },
+        "weight": {
+            "@type": "QuantitativeValue",
+            "value": "{weightKg}",
+            "unitCode": "KGM"
+        },
+        "affiliation": {
+            "@type": "SportsTeam",
+            "name": "{currentTeam}"
+        },
+        "image": "{playerPhoto}",
+        "url": "{playerProfileUrl}"
+    },
+    "faqPage": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "{question1}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{answer1}"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "{question2}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{answer2}"
+                }
+            }
+        ]
+    },
+    "sportsTeam": {
+        "@context": "https://schema.org",
+        "@type": "SportsTeam",
+        "name": "{teamName}",
+        "sport": "{sportType}",
+        "logo": "{teamLogo}",
+        "url": "{teamUrl}",
+        "location": {
+            "@type": "Place",
+            "name": "{stadiumName}",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "{city}",
+                "addressCountry": "{country}"
+            }
+        },
+        "foundingDate": "{foundedYear}",
+        "memberOf": {
+            "@type": "SportsOrganization",
+            "name": "{leagueName}"
+        }
+    },
+    "itemList": {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "url": "{article1Url}",
+                "name": "{article1Title}"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "url": "{article2Url}",
+                "name": "{article2Title}"
+            }
+        ]
+    }
+}

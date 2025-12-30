@@ -1,0 +1,81 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-29T09:33:52Z",
+    "description": "Media Asset Library",
+    "assets": [
+        {
+            "id": "img_haaland",
+            "type": "image",
+            "url": "https://via.placeholder.com/800x450/3b82f6/ffffff?text=Haaland+Goal",
+            "alt": "Erling Haaland celebrating",
+            "tags": [
+                "football",
+                "haaland",
+                "city",
+                "goal"
+            ],
+            "category": "Football",
+            "credit": "Getty Images",
+            "quality": 10
+        },
+        {
+            "id": "img_nba_dunk",
+            "type": "image",
+            "url": "https://via.placeholder.com/800x450/ef4444/ffffff?text=NBA+Dunk",
+            "alt": "Slam Dunk Action",
+            "tags": [
+                "basketball",
+                "nba",
+                "dunk",
+                "lakers"
+            ],
+            "category": "Basketball",
+            "credit": "AP Photo",
+            "quality": 9
+        },
+        {
+            "id": "vid_highlights",
+            "type": "video",
+            "url": "#",
+            "title": "Match Highlights: MCI vs LIV",
+            "tags": [
+                "football",
+                "match",
+                "highlights",
+                "premier league"
+            ],
+            "category": "Football",
+            "credit": "Sky Sports",
+            "quality": 10
+        },
+        {
+            "id": "img_f1_car",
+            "type": "image",
+            "url": "https://via.placeholder.com/800x450/10b981/ffffff?text=F1+Car",
+            "alt": "Formula 1 Car",
+            "tags": [
+                "f1",
+                "racing",
+                "car",
+                "hamilton"
+            ],
+            "category": "Motorsport",
+            "credit": "F1 Media",
+            "quality": 8
+        },
+        {
+            "id": "img_stadium",
+            "type": "image",
+            "url": "https://via.placeholder.com/800x450/6b7280/ffffff?text=Stadium+Crowd",
+            "alt": "Packed Stadium",
+            "tags": [
+                "stadium",
+                "fans",
+                "crowd"
+            ],
+            "category": "General",
+            "credit": "Reuters",
+            "quality": 5
+        }
+    ]
+}

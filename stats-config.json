@@ -1,0 +1,125 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-29T08:52:07Z",
+    "description": "Advanced Sports Stats Configuration",
+    "leagues": [
+        {
+            "id": "premier-league",
+            "name": "Premier League",
+            "country": "England"
+        },
+        {
+            "id": "la-liga",
+            "name": "La Liga",
+            "country": "Spain"
+        }
+    ],
+    "teams": [
+        {
+            "id": "t1",
+            "name": "Manchester City",
+            "league": "premier-league",
+            "played": 15,
+            "won": 12,
+            "drawn": 2,
+            "lost": 1,
+            "goalsFor": 38,
+            "goalsAgainst": 10
+        },
+        {
+            "id": "t2",
+            "name": "Arsenal",
+            "league": "premier-league",
+            "played": 15,
+            "won": 10,
+            "drawn": 3,
+            "lost": 2,
+            "goalsFor": 32,
+            "goalsAgainst": 14
+        },
+        {
+            "id": "t3",
+            "name": "Liverpool",
+            "league": "premier-league",
+            "played": 15,
+            "won": 9,
+            "drawn": 4,
+            "lost": 2,
+            "goalsFor": 30,
+            "goalsAgainst": 16
+        },
+        {
+            "id": "t4",
+            "name": "Real Madrid",
+            "league": "la-liga",
+            "played": 15,
+            "won": 11,
+            "drawn": 3,
+            "lost": 1,
+            "goalsFor": 35,
+            "goalsAgainst": 12
+        }
+    ],
+    "players": [
+        {
+            "id": "p1",
+            "name": "Erling Haaland",
+            "team": "t1",
+            "position": "Forward",
+            "goals": 22,
+            "assists": 5,
+            "appearances": 15
+        },
+        {
+            "id": "p2",
+            "name": "Bukayo Saka",
+            "team": "t2",
+            "position": "Winger",
+            "goals": 8,
+            "assists": 10,
+            "appearances": 15
+        },
+        {
+            "id": "p3",
+            "name": "Mohamed Salah",
+            "team": "t3",
+            "position": "Forward",
+            "goals": 15,
+            "assists": 8,
+            "appearances": 14
+        },
+        {
+            "id": "p4",
+            "name": "Jude Bellingham",
+            "team": "t4",
+            "position": "Midfielder",
+            "goals": 12,
+            "assists": 6,
+            "appearances": 15
+        }
+    ],
+    "matches": [
+        {
+            "id": "m1",
+            "league": "premier-league",
+            "homeTeam": "t1",
+            "awayTeam": "t2",
+            "homeScore": 2,
+            "awayScore": 1,
+            "status": "live",
+            "minute": 67
+        },
+        {
+            "id": "m2",
+            "league": "la-liga",
+            "homeTeam": "t4",
+            "awayTeam": "t4",
+            "homeScore": 1,
+            "awayScore": 1,
+            "status": "live",
+            "minute": 82
+        }
+    ],
+    "updateInterval": 10000,
+    "enableLiveScores": true
+}

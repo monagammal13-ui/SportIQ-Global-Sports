@@ -1,0 +1,451 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Complete live scores and real-time data system for SPORTIQ",
+    "updateIntervals": {
+        "live": 30000,
+        "prematch": 300000,
+        "postmatch": 0,
+        "standings": 900000,
+        "fixtures": 3600000
+    },
+    "sports": {
+        "football": {
+            "enabled": true,
+            "name": "Football",
+            "icon": "⚽",
+            "leagues": [
+                {
+                    "id": "premier-league",
+                    "name": "Premier League",
+                    "country": "England",
+                    "priority": 1,
+                    "liveUpdates": true
+                },
+                {
+                    "id": "champions-league",
+                    "name": "UEFA Champions League",
+                    "country": "Europe",
+                    "priority": 2,
+                    "liveUpdates": true
+                },
+                {
+                    "id": "la-liga",
+                    "name": "La Liga",
+                    "country": "Spain",
+                    "priority": 3,
+                    "liveUpdates": true
+                },
+                {
+                    "id": "serie-a",
+                    "name": "Serie A",
+                    "country": "Italy",
+                    "priority": 4,
+                    "liveUpdates": true
+                },
+                {
+                    "id": "bundesliga",
+                    "name": "Bundesliga",
+                    "country": "Germany",
+                    "priority": 5,
+                    "liveUpdates": true
+                }
+            ],
+            "dataPoints": {
+                "score": true,
+                "time": true,
+                "period": true,
+                "goalScorers": true,
+                "cards": true,
+                "possession": true,
+                "shots": true,
+                "corners": true,
+                "fouls": true,
+                "lineups": true,
+                "commentary": true
+            }
+        },
+        "basketball": {
+            "enabled": true,
+            "name": "Basketball",
+            "icon": "🏀",
+            "leagues": [
+                {
+                    "id": "nba",
+                    "name": "NBA",
+                    "country": "USA",
+                    "priority": 1,
+                    "liveUpdates": true
+                },
+                {
+                    "id": "euroleague",
+                    "name": "EuroLeague",
+                    "country": "Europe",
+                    "priority": 2,
+                    "liveUpdates": true
+                }
+            ],
+            "dataPoints": {
+                "score": true,
+                "quarter": true,
+                "topScorers": true,
+                "rebounds": true,
+                "assists": true,
+                "steals": true,
+                "blocks": true,
+                "fieldGoalPct": true,
+                "threePointPct": true
+            }
+        },
+        "tennis": {
+            "enabled": true,
+            "name": "Tennis",
+            "icon": "🎾",
+            "tournaments": [
+                {
+                    "id": "australian-open",
+                    "name": "Australian Open",
+                    "type": "grand-slam",
+                    "priority": 1,
+                    "liveUpdates": true
+                },
+                {
+                    "id": "french-open",
+                    "name": "French Open",
+                    "type": "grand-slam",
+                    "priority": 1,
+                    "liveUpdates": true
+                },
+                {
+                    "id": "wimbledon",
+                    "name": "Wimbledon",
+                    "type": "grand-slam",
+                    "priority": 1,
+                    "liveUpdates": true
+                },
+                {
+                    "id": "us-open",
+                    "name": "US Open",
+                    "type": "grand-slam",
+                    "priority": 1,
+                    "liveUpdates": true
+                }
+            ],
+            "dataPoints": {
+                "sets": true,
+                "games": true,
+                "points": true,
+                "aces": true,
+                "doubleFaults": true,
+                "firstServe": true,
+                "breakPoints": true
+            }
+        },
+        "cricket": {
+            "enabled": true,
+            "name": "Cricket",
+            "icon": "🏏",
+            "formats": [
+                {
+                    "id": "ipl",
+                    "name": "IPL",
+                    "format": "t20",
+                    "priority": 1,
+                    "liveUpdates": true
+                },
+                {
+                    "id": "test",
+                    "name": "Test Cricket",
+                    "format": "test",
+                    "priority": 2,
+                    "liveUpdates": true
+                },
+                {
+                    "id": "t20",
+                    "name": "T20 International",
+                    "format": "t20",
+                    "priority": 3,
+                    "liveUpdates": true
+                }
+            ],
+            "dataPoints": {
+                "runs": true,
+                "wickets": true,
+                "overs": true,
+                "runRate": true,
+                "batsmen": true,
+                "bowlers": true,
+                "partnerships": true,
+                "fallOfWickets": true
+            }
+        }
+    },
+    "matchStates": {
+        "scheduled": {
+            "label": "Upcoming",
+            "color": "#6c757d",
+            "badge": "SCHEDULED",
+            "updates": false
+        },
+        "prematch": {
+            "label": "Pre-Match",
+            "color": "#17a2b8",
+            "badge": "PREVIEW",
+            "updates": true,
+            "interval": 300000
+        },
+        "live": {
+            "label": "Live",
+            "color": "#dc3545",
+            "badge": "LIVE",
+            "updates": true,
+            "interval": 30000,
+            "animation": "pulse"
+        },
+        "halftime": {
+            "label": "Half Time",
+            "color": "#ffc107",
+            "badge": "HT",
+            "updates": true,
+            "interval": 60000
+        },
+        "finished": {
+            "label": "Finished",
+            "color": "#28a745",
+            "badge": "FT",
+            "updates": false
+        },
+        "postponed": {
+            "label": "Postponed",
+            "color": "#fd7e14",
+            "badge": "POSTPONED",
+            "updates": false
+        },
+        "cancelled": {
+            "label": "Cancelled",
+            "color": "#6c757d",
+            "badge": "CANCELLED",
+            "updates": false
+        }
+    },
+    "scoreboardLayouts": {
+        "compact": {
+            "name": "Compact",
+            "description": "Minimal scoreboard for widgets",
+            "elements": [
+                "teamNames",
+                "score",
+                "time",
+                "status"
+            ],
+            "height": 60,
+            "showLogos": false,
+            "showEvents": false,
+            "showStats": false
+        },
+        "standard": {
+            "name": "Standard",
+            "description": "Standard scoreboard with logos",
+            "elements": [
+                "teamLogos",
+                "teamNames",
+                "score",
+                "time",
+                "status",
+                "keyEvents"
+            ],
+            "height": 100,
+            "showLogos": true,
+            "showEvents": true,
+            "showStats": false
+        },
+        "detailed": {
+            "name": "Detailed",
+            "description": "Detailed scoreboard with stats",
+            "elements": [
+                "teamLogos",
+                "teamNames",
+                "score",
+                "time",
+                "status",
+                "events",
+                "stats",
+                "link"
+            ],
+            "height": 150,
+            "showLogos": true,
+            "showEvents": true,
+            "showStats": true
+        },
+        "full": {
+            "name": "Full",
+            "description": "Complete match center view",
+            "elements": [
+                "header",
+                "score",
+                "commentary",
+                "statistics",
+                "lineups",
+                "events"
+            ],
+            "height": "dynamic",
+            "showLogos": true,
+            "showEvents": true,
+            "showStats": true,
+            "showCommentary": true,
+            "showLineups": true
+        }
+    },
+    "events": {
+        "football": {
+            "goal": {
+                "icon": "⚽",
+                "color": "#28a745",
+                "notify": true,
+                "priority": 1
+            },
+            "yellowCard": {
+                "icon": "🟨",
+                "color": "#ffc107",
+                "notify": false,
+                "priority": 3
+            },
+            "redCard": {
+                "icon": "🟥",
+                "color": "#dc3545",
+                "notify": true,
+                "priority": 2
+            },
+            "substitution": {
+                "icon": "🔄",
+                "color": "#17a2b8",
+                "notify": false,
+                "priority": 4
+            },
+            "penalty": {
+                "icon": "🎯",
+                "color": "#dc3545",
+                "notify": true,
+                "priority": 1
+            },
+            "var": {
+                "icon": "📺",
+                "color": "#6f42c1",
+                "notify": false,
+                "priority": 3
+            }
+        },
+        "basketball": {
+            "basket": {
+                "icon": "🏀",
+                "color": "#ff6b00",
+                "notify": false,
+                "priority": 3
+            },
+            "threePointer": {
+                "icon": "3️⃣",
+                "color": "#17a2b8",
+                "notify": false,
+                "priority": 2
+            },
+            "foul": {
+                "icon": "🚫",
+                "color": "#ffc107",
+                "notify": false,
+                "priority": 4
+            }
+        }
+    },
+    "notifications": {
+        "enabled": true,
+        "triggers": {
+            "matchStart": {
+                "enabled": true,
+                "title": "⏰ Match Starting",
+                "template": "{homeTeam} vs {awayTeam} is about to begin"
+            },
+            "goal": {
+                "enabled": true,
+                "title": "⚽ GOAL!",
+                "template": "{team} {score} - {scorer} ({minute}')"
+            },
+            "halftime": {
+                "enabled": false,
+                "title": "Half Time",
+                "template": "{homeTeam} {homeScore} - {awayScore} {awayTeam}"
+            },
+            "fulltime": {
+                "enabled": true,
+                "title": "🏁 Full Time",
+                "template": "{homeTeam} {homeScore} - {awayScore} {awayTeam}"
+            },
+            "redCard": {
+                "enabled": true,
+                "title": "🟥 Red Card!",
+                "template": "{player} sent off - {team}"
+            }
+        },
+        "userPreferences": {
+            "favoriteTeamsOnly": true,
+            "allMatches": false,
+            "liveMatchesOnly": true
+        }
+    },
+    "caching": {
+        "enabled": true,
+        "strategies": {
+            "liveMatches": {
+                "ttl": 30,
+                "storage": "memory"
+            },
+            "scheduledMatches": {
+                "ttl": 300,
+                "storage": "localstorage"
+            },
+            "finishedMatches": {
+                "ttl": 86400,
+                "storage": "localstorage"
+            },
+            "standings": {
+                "ttl": 900,
+                "storage": "localstorage"
+            }
+        }
+    },
+    "widgets": {
+        "liveScoresWidget": {
+            "enabled": true,
+            "position": "homepage",
+            "layout": "compact",
+            "maxMatches": 10,
+            "filter": "live",
+            "autoRefresh": true
+        },
+        "upcomingMatches": {
+            "enabled": true,
+            "position": "sidebar",
+            "layout": "compact",
+            "maxMatches": 5,
+            "filter": "upcoming",
+            "timeRange": 24
+        },
+        "recentResults": {
+            "enabled": true,
+            "position": "sidebar",
+            "layout": "compact",
+            "maxMatches": 5,
+            "filter": "finished",
+            "timeRange": 24
+        }
+    },
+    "display": {
+        "timeFormat": "HH:mm",
+        "dateFormat": "MMM DD, YYYY",
+        "showTeamCodes": false,
+        "showTeamLogos": true,
+        "animateScoreChanges": true,
+        "highlightFavorites": true,
+        "groupByLeague": true,
+        "sortBy": "time"
+    }
+}

@@ -1,0 +1,323 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Sports fixtures, leagues, and teams mapping for SPORTIQ",
+    "football": {
+        "leagues": [
+            {
+                "id": "premier-league",
+                "name": "Premier League",
+                "country": "England",
+                "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+                "season": "2024-2025",
+                "teams": 20,
+                "apiId": {
+                    "sportsdata": "4328",
+                    "apifootball": "39"
+                },
+                "priority": "high"
+            },
+            {
+                "id": "la-liga",
+                "name": "La Liga",
+                "country": "Spain",
+                "flag": "🇪🇸",
+                "season": "2024-2025",
+                "teams": 20,
+                "apiId": {
+                    "sportsdata": "8",
+                    "apifootball": "140"
+                },
+                "priority": "high"
+            },
+            {
+                "id": "bundesliga",
+                "name": "Bundesliga",
+                "country": "Germany",
+                "flag": "🇩🇪",
+                "season": "2024-2025",
+                "teams": 18,
+                "apiId": {
+                    "sportsdata": "35",
+                    "apifootball": "78"
+                },
+                "priority": "high"
+            },
+            {
+                "id": "serie-a",
+                "name": "Serie A",
+                "country": "Italy",
+                "flag": "🇮🇹",
+                "season": "2024-2025",
+                "teams": 20,
+                "apiId": {
+                    "sportsdata": "23",
+                    "apifootball": "135"
+                },
+                "priority": "high"
+            },
+            {
+                "id": "ligue-1",
+                "name": "Ligue 1",
+                "country": "France",
+                "flag": "🇫🇷",
+                "season": "2024-2025",
+                "teams": 18,
+                "apiId": {
+                    "sportsdata": "16",
+                    "apifootball": "61"
+                },
+                "priority": "medium"
+            },
+            {
+                "id": "champions-league",
+                "name": "UEFA Champions League",
+                "country": "Europe",
+                "flag": "🏆",
+                "season": "2024-2025",
+                "teams": 32,
+                "apiId": {
+                    "sportsdata": "3",
+                    "apifootball": "2"
+                },
+                "priority": "high"
+            },
+            {
+                "id": "europa-league",
+                "name": "UEFA Europa League",
+                "country": "Europe",
+                "flag": "🏆",
+                "season": "2024-2025",
+                "apiId": {
+                    "sportsdata": "4",
+                    "apifootball": "3"
+                },
+                "priority": "medium"
+            },
+            {
+                "id": "world-cup",
+                "name": "FIFA World Cup",
+                "country": "International",
+                "flag": "🌍",
+                "season": "2026",
+                "apiId": {
+                    "sportsdata": "1",
+                    "apifootball": "1"
+                },
+                "priority": "high"
+            }
+        ]
+    },
+    "basketball": {
+        "leagues": [
+            {
+                "id": "nba",
+                "name": "NBA",
+                "country": "USA",
+                "flag": "🇺🇸",
+                "season": "2024-2025",
+                "teams": 30,
+                "apiId": {
+                    "sportsdata": "1",
+                    "rapid": "12"
+                },
+                "priority": "high"
+            },
+            {
+                "id": "euroleague",
+                "name": "EuroLeague",
+                "country": "Europe",
+                "flag": "🏆",
+                "season": "2024-2025",
+                "teams": 18,
+                "apiId": {
+                    "sportsdata": "117",
+                    "rapid": "120"
+                },
+                "priority": "medium"
+            },
+            {
+                "id": "ncaa",
+                "name": "NCAA Basketball",
+                "country": "USA",
+                "flag": "🇺🇸",
+                "season": "2024-2025",
+                "apiId": {
+                    "sportsdata": "2"
+                },
+                "priority": "medium"
+            }
+        ]
+    },
+    "tennis": {
+        "tournaments": [
+            {
+                "id": "wimbledon",
+                "name": "Wimbledon",
+                "category": "Grand Slam",
+                "surface": "grass",
+                "country": "England",
+                "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+                "apiId": {
+                    "atp": "540",
+                    "wta": "700"
+                },
+                "priority": "high"
+            },
+            {
+                "id": "us-open",
+                "name": "US Open",
+                "category": "Grand Slam",
+                "surface": "hard",
+                "country": "USA",
+                "flag": "🇺🇸",
+                "apiId": {
+                    "atp": "560",
+                    "wta": "720"
+                },
+                "priority": "high"
+            },
+            {
+                "id": "french-open",
+                "name": "French Open",
+                "category": "Grand Slam",
+                "surface": "clay",
+                "country": "France",
+                "flag": "🇫🇷",
+                "apiId": {
+                    "atp": "520",
+                    "wta": "710"
+                },
+                "priority": "high"
+            },
+            {
+                "id": "australian-open",
+                "name": "Australian Open",
+                "category": "Grand Slam",
+                "surface": "hard",
+                "country": "Australia",
+                "flag": "🇦🇺",
+                "apiId": {
+                    "atp": "580",
+                    "wta": "730"
+                },
+                "priority": "high"
+            }
+        ]
+    },
+    "cricket": {
+        "competitions": [
+            {
+                "id": "ipl",
+                "name": "Indian Premier League",
+                "format": "t20",
+                "country": "India",
+                "flag": "🇮🇳",
+                "season": "2025",
+                "teams": 10,
+                "apiId": {
+                    "cricinfo": "ipl"
+                },
+                "priority": "high"
+            },
+            {
+                "id": "world-cup-cricket",
+                "name": "ICC Cricket World Cup",
+                "format": "odi",
+                "country": "International",
+                "flag": "🌍",
+                "apiId": {
+                    "cricinfo": "world-cup"
+                },
+                "priority": "high"
+            },
+            {
+                "id": "test-cricket",
+                "name": "Test Cricket",
+                "format": "test",
+                "country": "International",
+                "flag": "🏏",
+                "apiId": {
+                    "cricinfo": "test"
+                },
+                "priority": "medium"
+            }
+        ]
+    },
+    "endpoints": {
+        "sportsdata": {
+            "baseUrl": "https://api.sportsdata.io/v3",
+            "football": {
+                "fixtures": "/soccer/scores/json/GamesByDate/{date}",
+                "liveScores": "/soccer/scores/json/ScoresLive",
+                "standings": "/soccer/scores/json/Standings/{season}"
+            },
+            "basketball": {
+                "fixtures": "/nba/scores/json/GamesByDate/{date}",
+                "liveScores": "/nba/scores/json/ScoresLive",
+                "standings": "/nba/scores/json/Standings/{season}"
+            }
+        },
+        "apifootball": {
+            "baseUrl": "https://api-football-v1.p.rapidapi.com/v3",
+            "fixtures": "/fixtures",
+            "liveScores": "/fixtures?live=all",
+            "standings": "/standings",
+            "events": "/fixtures/events"
+        }
+    },
+    "timezones": {
+        "utc": "UTC",
+        "local": "auto-detect",
+        "display": "user-preference",
+        "conversion": true
+    },
+    "matchStatuses": {
+        "scheduled": {
+            "code": "SCH",
+            "label": "Scheduled",
+            "color": "#6b7280",
+            "updateInterval": 300000
+        },
+        "preMatch": {
+            "code": "PRE",
+            "label": "Pre-Match",
+            "color": "#f59e0b",
+            "updateInterval": 60000
+        },
+        "live": {
+            "code": "LIVE",
+            "label": "Live",
+            "color": "#ef4444",
+            "pulse": true,
+            "updateInterval": 30000
+        },
+        "halfTime": {
+            "code": "HT",
+            "label": "Half Time",
+            "color": "#f59e0b",
+            "updateInterval": 60000
+        },
+        "finished": {
+            "code": "FT",
+            "label": "Full Time",
+            "color": "#10b981",
+            "updateInterval": 3600000
+        },
+        "postponed": {
+            "code": "PST",
+            "label": "Postponed",
+            "color": "#ef4444"
+        },
+        "cancelled": {
+            "code": "CAN",
+            "label": "Cancelled",
+            "color": "#ef4444"
+        },
+        "abandoned": {
+            "code": "ABN",
+            "label": "Abandoned",
+            "color": "#ef4444"
+        }
+    }
+}

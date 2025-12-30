@@ -1,0 +1,73 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-29T08:35:24Z",
+    "description": "Video Streaming & Highlights Configuration",
+    "highlights": [
+        {
+            "id": "h1",
+            "title": "Amazing Goal Compilation",
+            "description": "Top 10 goals of the week",
+            "duration": 180,
+            "url": "/videos/goals-week.mp4",
+            "thumbnail": "/images/goals-thumb.jpg",
+            "category": "goals",
+            "sport": "football",
+            "quality": "1080p"
+        },
+        {
+            "id": "h2",
+            "title": "Match Highlights: Team A vs Team B",
+            "description": "Full match highlights",
+            "duration": 300,
+            "url": "/videos/match-highlights.mp4",
+            "thumbnail": "/images/match-thumb.jpg",
+            "category": "match",
+            "sport": "football",
+            "quality": "720p"
+        },
+        {
+            "id": "h3",
+            "title": "Player Interview: Star Player",
+            "description": "Post-match interview",
+            "duration": 120,
+            "url": "/videos/interview.mp4",
+            "thumbnail": "/images/interview-thumb.jpg",
+            "category": "interview",
+            "sport": "football",
+            "quality": "480p"
+        }
+    ],
+    "categories": [
+        "goals",
+        "assists",
+        "saves",
+        "match",
+        "interview",
+        "training",
+        "analysis"
+    ],
+    "sports": [
+        "football",
+        "basketball",
+        "tennis",
+        "cricket"
+    ],
+    "qualities": [
+        "360p",
+        "480p",
+        "720p",
+        "1080p"
+    ],
+    "player": {
+        "autoPlay": false,
+        "controls": true,
+        "preload": "metadata",
+        "defaultQuality": "auto",
+        "volume": 0.8
+    },
+    "streaming": {
+        "adaptiveBitrate": true,
+        "bufferSize": 30,
+        "maxRetries": 3
+    }
+}

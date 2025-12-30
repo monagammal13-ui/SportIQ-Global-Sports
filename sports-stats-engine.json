@@ -1,0 +1,311 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Global sports statistics engine configuration for SPORTIQ platform",
+    "sportsSupported": {
+        "football": {
+            "enabled": true,
+            "leagues": [
+                "Premier League",
+                "La Liga",
+                "Serie A",
+                "Bundesliga",
+                "Ligue 1",
+                "Champions League"
+            ],
+            "statsTypes": [
+                "goals",
+                "assists",
+                "cleanSheets",
+                "saves",
+                "passes",
+                "tackles"
+            ],
+            "updateInterval": 60000
+        },
+        "basketball": {
+            "enabled": true,
+            "leagues": [
+                "NBA",
+                "EuroLeague",
+                "FIBA"
+            ],
+            "statsTypes": [
+                "points",
+                "rebounds",
+                "assists",
+                "steals",
+                "blocks",
+                "fieldGoalPercentage"
+            ],
+            "updateInterval": 60000
+        },
+        "tennis": {
+            "enabled": true,
+            "tournaments": [
+                "Grand Slam",
+                "ATP Masters",
+                "WTA Premier"
+            ],
+            "statsTypes": [
+                "aces",
+                "doubleFaults",
+                "winners",
+                "unforced Errors",
+                "breakPoints"
+            ],
+            "updateInterval": 300000
+        },
+        "cricket": {
+            "enabled": true,
+            "formats": [
+                "Test",
+                "ODI",
+                "T20"
+            ],
+            "statsTypes": [
+                "runs",
+                "wickets",
+                "average",
+                "strikeRate",
+                "economy"
+            ],
+            "updateInterval": 120000
+        }
+    },
+    "playerStats": {
+        "topScorers": [
+            {
+                "rank": 1,
+                "player": "Erling Haaland",
+                "team": "Manchester City",
+                "league": "Premier League",
+                "goals": 28,
+                "assists": 5,
+                "matches": 25
+            },
+            {
+                "rank": 2,
+                "player": "Harry Kane",
+                "team": "Bayern Munich",
+                "league": "Bundesliga",
+                "goals": 26,
+                "assists": 8,
+                "matches": 23
+            },
+            {
+                "rank": 3,
+                "player": "Kylian Mbappé",
+                "team": "Paris SG",
+                "league": "Ligue 1",
+                "goals": 24,
+                "assists": 6,
+                "matches": 22
+            },
+            {
+                "rank": 4,
+                "player": "Luka Dončić",
+                "team": "Dallas Mavericks",
+                "league": "NBA",
+                "points": 847,
+                "rebounds": 209,
+                "assists": 248
+            },
+            {
+                "rank": 5,
+                "player": "Joel Embiid",
+                "team": "Philadelphia 76ers",
+                "league": "NBA",
+                "points": 812,
+                "rebounds": 298,
+                "assists": 156
+            }
+        ],
+        "topAssists": [
+            {
+                "rank": 1,
+                "player": "Kevin De Bruyne",
+                "team": "Manchester City",
+                "league": "Premier League",
+                "assists": 15,
+                "goals": 4,
+                "matches": 24
+            },
+            {
+                "rank": 2,
+                "player": "Bruno Fernandes",
+                "team": "Manchester United",
+                "league": "Premier League",
+                "assists": 12,
+                "goals": 8,
+                "matches": 25
+            },
+            {
+                "rank": 3,
+                "player": "Trent Alexander-Arnold",
+                "team": "Liverpool",
+                "league": "Premier League",
+                "assists": 11,
+                "goals": 2,
+                "matches": 23
+            }
+        ]
+    },
+    "teamStats": {
+        "premierLeague": [
+            {
+                "rank": 1,
+                "team": "Manchester City",
+                "played": 25,
+                "won": 19,
+                "drawn": 4,
+                "lost": 2,
+                "gf": 61,
+                "ga": 22,
+                "gd": 39,
+                "points": 61
+            },
+            {
+                "rank": 2,
+                "team": "Arsenal",
+                "played": 25,
+                "won": 17,
+                "drawn": 5,
+                "lost": 3,
+                "gf": 56,
+                "ga": 28,
+                "gd": 28,
+                "points": 56
+            },
+            {
+                "rank": 3,
+                "team": "Liverpool",
+                "played": 25,
+                "won": 16,
+                "drawn": 6,
+                "lost": 3,
+                "gf": 54,
+                "ga": 29,
+                "gd": 25,
+                "points": 54
+            }
+        ],
+        "nba": {
+            "eastern": [
+                {
+                    "rank": 1,
+                    "team": "Boston Celtics",
+                    "won": 24,
+                    "lost": 6,
+                    "pct": 0.800,
+                    "gb": "0.0"
+                },
+                {
+                    "rank": 2,
+                    "team": "Milwaukee Bucks",
+                    "won": 22,
+                    "lost": 8,
+                    "pct": 0.733,
+                    "gb": "2.0"
+                },
+                {
+                    "rank": 3,
+                    "team": "Philadelphia 76ers",
+                    "won": 20,
+                    "lost": 10,
+                    "pct": 0.667,
+                    "gb": "4.0"
+                }
+            ],
+            "western": [
+                {
+                    "rank": 1,
+                    "team": "Denver Nuggets",
+                    "won": 25,
+                    "lost": 5,
+                    "pct": 0.833,
+                    "gb": "0.0"
+                },
+                {
+                    "rank": 2,
+                    "team": "Los Angeles Lakers",
+                    "won": 21,
+                    "lost": 9,
+                    "pct": 0.700,
+                    "gb": "4.0"
+                },
+                {
+                    "rank": 3,
+                    "team": "Phoenix Suns",
+                    "won": 19,
+                    "lost": 11,
+                    "pct": 0.633,
+                    "gb": "6.0"
+                }
+            ]
+        }
+    },
+    "liveStats": {
+        "enabled": true,
+        "websocket": {
+            "url": "wss://stats.sportiq.com",
+            "reconnect": true,
+            "heartbeat": 30000
+        },
+        "polling": {
+            "enabled": true,
+            "interval": 60000,
+            "fallback": true
+        }
+    },
+    "statsDisplay": {
+        "tables": {
+            "sortable": true,
+            "filterable": true,
+            "pagination": 20,
+            "responsive": true
+        },
+        "charts": {
+            "enabled": true,
+            "types": [
+                "bar",
+                "line",
+                "radar",
+                "pie"
+            ],
+            "interactive": true
+        },
+        "comparison": {
+            "enabled": true,
+            "maxPlayers": 4,
+            "maxTeams": 4
+        }
+    },
+    "historicalData": {
+        "enabled": true,
+        "retentionPeriod": 3650,
+        "seasons": [
+            "2024-25",
+            "2023-24",
+            "2022-23"
+        ],
+        "archived": true
+    },
+    "analytics": {
+        "advanced": {
+            "enabled": true,
+            "metrics": [
+                "xG",
+                "xA",
+                "heatmaps",
+                "passNetwork",
+                "playerRatings"
+            ]
+        },
+        "predictions": {
+            "enabled": true,
+            "mlPowered": true,
+            "confidence": 0.75
+        }
+    }
+}

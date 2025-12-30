@@ -1,0 +1,355 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "User data model and profile schema for SPORTIQ",
+    "userSchema": {
+        "id": {
+            "type": "string",
+            "format": "uuid",
+            "unique": true,
+            "generated": true
+        },
+        "username": {
+            "type": "string",
+            "required": true,
+            "unique": true,
+            "minLength": 3,
+            "maxLength": 30,
+            "index": true
+        },
+        "email": {
+            "type": "string",
+            "required": true,
+            "unique": true,
+            "index": true
+        },
+        "emailVerified": {
+            "type": "boolean",
+            "default": false
+        },
+        "password": {
+            "type": "string",
+            "required": true,
+            "hashed": true,
+            "select": false
+        },
+        "role": {
+            "type": "string",
+            "enum": [
+                "guest",
+                "user",
+                "premium",
+                "editor",
+                "moderator",
+                "admin"
+            ],
+            "default": "user"
+        },
+        "status": {
+            "type": "string",
+            "enum": [
+                "active",
+                "inactive",
+                "suspended",
+                "deleted"
+            ],
+            "default": "active"
+        },
+        "createdAt": {
+            "type": "datetime",
+            "default": "now"
+        },
+        "updatedAt": {
+            "type": "datetime",
+            "default": "now",
+            "onUpdate": "now"
+        },
+        "lastLoginAt": {
+            "type": "datetime"
+        }
+    },
+    "profileSchema": {
+        "fullName": {
+            "type": "string",
+            "maxLength": 100
+        },
+        "displayName": {
+            "type": "string",
+            "maxLength": 50
+        },
+        "avatar": {
+            "type": "string",
+            "format": "url",
+            "default": "/assets/images/default-avatar.png"
+        },
+        "bio": {
+            "type": "text",
+            "maxLength": 500
+        },
+        "location": {
+            "country": "string",
+            "city": "string"
+        },
+        "birthdate": {
+            "type": "date"
+        },
+        "gender": {
+            "type": "string",
+            "enum": [
+                "male",
+                "female",
+                "other",
+                "prefer_not_to_say"
+            ]
+        },
+        "language": {
+            "type": "string",
+            "default": "en",
+            "enum": [
+                "en",
+                "es",
+                "ar",
+                "fr"
+            ]
+        },
+        "timezone": {
+            "type": "string",
+            "default": "UTC"
+        }
+    },
+    "preferences": {
+        "favoriteTeams": {
+            "type": "array",
+            "items": "string",
+            "maxItems": 10,
+            "default": []
+        },
+        "favoritePlayers": {
+            "type": "array",
+            "items": "string",
+            "maxItems": 20,
+            "default": []
+        },
+        "favoriteLeagues": {
+            "type": "array",
+            "items": "string",
+            "maxItems": 10,
+            "default": []
+        },
+        "favoriteSports": {
+            "type": "array",
+            "items": "string",
+            "enum": [
+                "football",
+                "basketball",
+                "tennis",
+                "cricket"
+            ],
+            "default": [
+                "football"
+            ]
+        },
+        "notificationPreferences": {
+            "email": {
+                "enabled": true,
+                "matchUpdates": true,
+                "teamNews": true,
+                "newsletter": false,
+                "promotions": false
+            },
+            "push": {
+                "enabled": false,
+                "matchUpdates": true,
+                "goals": true,
+                "breakingNews": true
+            },
+            "inApp": {
+                "enabled": true,
+                "all": true
+            }
+        },
+        "contentPreferences": {
+            "defaultView": "grid",
+            "articlesPerPage": 24,
+            "autoplayVideos": false,
+            "showSpoilers": true
+        },
+        "privacySettings": {
+            "profileVisibility": "public",
+            "showActivity": true,
+            "allowMessages": true,
+            "showEmail": false
+        }
+    },
+    "socialConnections": {
+        "google": {
+            "connected": false,
+            "googleId": null,
+            "email": null,
+            "connectedAt": null
+        },
+        "facebook": {
+            "connected": false,
+            "facebookId": null,
+            "email": null,
+            "connectedAt": null
+        },
+        "twitter": {
+            "connected": false,
+            "twitterId": null,
+            "handle": null,
+            "connectedAt": null
+        }
+    },
+    "activityTracking": {
+        "articlesRead": {
+            "type": "array",
+            "items": {
+                "articleId": "string",
+                "readAt": "datetime",
+                "readTime": "number"
+            },
+            "maxItems": 1000
+        },
+        "savedArticles": {
+            "type": "array",
+            "items": {
+                "articleId": "string",
+                "savedAt": "datetime"
+            }
+        },
+        "likedArticles": {
+            "type": "array",
+            "items": "string"
+        },
+        "comments": {
+            "count": 0,
+            "lastCommentAt": null
+        },
+        "searchHistory": {
+            "type": "array",
+            "items": {
+                "query": "string",
+                "searchedAt": "datetime"
+            },
+            "maxItems": 50
+        }
+    },
+    "statistics": {
+        "totalArticlesRead": {
+            "type": "number",
+            "default": 0
+        },
+        "totalTimeSpent": {
+            "type": "number",
+            "default": 0,
+            "unit": "seconds"
+        },
+        "visitCount": {
+            "type": "number",
+            "default": 0
+        },
+        "streakDays": {
+            "type": "number",
+            "default": 0
+        },
+        "engagementScore": {
+            "type": "number",
+            "default": 0,
+            "min": 0,
+            "max": 100
+        }
+    },
+    "security": {
+        "twoFactorEnabled": {
+            "type": "boolean",
+            "default": false
+        },
+        "twoFactorMethod": {
+            "type": "string",
+            "enum": [
+                "totp",
+                "sms",
+                "email"
+            ]
+        },
+        "backupCodes": {
+            "type": "array",
+            "encrypted": true,
+            "select": false
+        },
+        "trustedDevices": {
+            "type": "array",
+            "items": {
+                "deviceId": "string",
+                "deviceName": "string",
+                "addedAt": "datetime",
+                "lastUsedAt": "datetime"
+            }
+        },
+        "loginHistory": {
+            "type": "array",
+            "items": {
+                "ip": "string",
+                "device": "string",
+                "browser": "string",
+                "location": "string",
+                "loginAt": "datetime",
+                "success": "boolean"
+            },
+            "maxItems": 50
+        }
+    },
+    "subscription": {
+        "plan": {
+            "type": "string",
+            "enum": [
+                "free",
+                "premium",
+                "premium_plus"
+            ],
+            "default": "free"
+        },
+        "status": {
+            "type": "string",
+            "enum": [
+                "trial",
+                "active",
+                "cancelled",
+                "expired"
+            ],
+            "default": "active"
+        },
+        "startDate": {
+            "type": "datetime"
+        },
+        "endDate": {
+            "type": "datetime"
+        },
+        "autoRenew": {
+            "type": "boolean",
+            "default": false
+        },
+        "paymentMethod": {
+            "type": "string",
+            "encrypted": true
+        }
+    },
+    "reputation": {
+        "points": {
+            "type": "number",
+            "default": 0
+        },
+        "level": {
+            "type": "number",
+            "default": 1
+        },
+        "badges": {
+            "type": "array",
+            "items": {
+                "badgeId": "string",
+                "earnedAt": "datetime"
+            }
+        }
+    }
+}

@@ -1,0 +1,152 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-29T08:41:59Z",
+    "description": "Dynamic Menu Configuration",
+    "categories": [
+        {
+            "id": "sports",
+            "name": "Sports",
+            "icon": "⚽",
+            "priority": 1,
+            "parent": null,
+            "enabled": true
+        },
+        {
+            "id": "football",
+            "name": "Football",
+            "icon": "⚽",
+            "priority": 1,
+            "parent": "sports",
+            "enabled": true
+        },
+        {
+            "id": "basketball",
+            "name": "Basketball",
+            "icon": "🏀",
+            "priority": 2,
+            "parent": "sports",
+            "enabled": true
+        },
+        {
+            "id": "tennis",
+            "name": "Tennis",
+            "icon": "🎾",
+            "priority": 3,
+            "parent": "sports",
+            "enabled": true
+        },
+        {
+            "id": "news",
+            "name": "News",
+            "icon": "📰",
+            "priority": 2,
+            "parent": null,
+            "enabled": true
+        },
+        {
+            "id": "breaking",
+            "name": "Breaking News",
+            "icon": "🚨",
+            "priority": 1,
+            "parent": "news",
+            "enabled": true
+        },
+        {
+            "id": "transfer",
+            "name": "Transfer News",
+            "icon": "🔄",
+            "priority": 2,
+            "parent": "news",
+            "enabled": true
+        },
+        {
+            "id": "videos",
+            "name": "Videos",
+            "icon": "🎥",
+            "priority": 3,
+            "parent": null,
+            "enabled": true
+        },
+        {
+            "id": "highlights",
+            "name": "Highlights",
+            "icon": "✨",
+            "priority": 1,
+            "parent": "videos",
+            "enabled": true
+        },
+        {
+            "id": "interviews",
+            "name": "Interviews",
+            "icon": "🎤",
+            "priority": 2,
+            "parent": "videos",
+            "enabled": true
+        },
+        {
+            "id": "analysis",
+            "name": "Analysis",
+            "icon": "📊",
+            "priority": 4,
+            "parent": null,
+            "enabled": true
+        }
+    ],
+    "menuItems": [
+        {
+            "id": "item1",
+            "title": "Premier League",
+            "url": "/league/premier-league",
+            "category": "football",
+            "icon": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+            "priority": 1,
+            "enabled": true
+        },
+        {
+            "id": "item2",
+            "title": "Champions League",
+            "url": "/league/champions-league",
+            "category": "football",
+            "icon": "🏆",
+            "priority": 2,
+            "enabled": true
+        },
+        {
+            "id": "item3",
+            "title": "Live Scores",
+            "url": "/scores",
+            "category": "sports",
+            "icon": "📊",
+            "badge": "LIVE",
+            "priority": 1,
+            "enabled": true
+        },
+        {
+            "id": "item4",
+            "title": "Match Schedule",
+            "url": "/schedule",
+            "category": "sports",
+            "icon": "📅",
+            "priority": 2,
+            "enabled": true
+        },
+        {
+            "id": "item5",
+            "title": "Top Goals",
+            "url": "/highlights/goals",
+            "category": "highlights",
+            "icon": "⚽",
+            "priority": 1,
+            "enabled": true
+        },
+        {
+            "id": "item6",
+            "title": "Best Saves",
+            "url": "/highlights/saves",
+            "category": "highlights",
+            "icon": "🥅",
+            "priority": 2,
+            "enabled": true
+        }
+    ]
+}

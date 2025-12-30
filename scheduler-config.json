@@ -1,0 +1,76 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-29T08:29:01Z",
+    "description": "Content Scheduler Configuration",
+    "categories": [
+        {
+            "id": "breaking-news",
+            "name": "Breaking News",
+            "description": "Urgent news updates",
+            "color": "#ef4444",
+            "icon": "🚨"
+        },
+        {
+            "id": "match-reports",
+            "name": "Match Reports",
+            "description": "Post-match analysis",
+            "color": "#10b981",
+            "icon": "⚽"
+        },
+        {
+            "id": "player-news",
+            "name": "Player News",
+            "description": "Player transfers and updates",
+            "color": "#3b82f6",
+            "icon": "👤"
+        },
+        {
+            "id": "highlights",
+            "name": "Highlights",
+            "description": "Match highlights",
+            "color": "#f59e0b",
+            "icon": "🎥"
+        },
+        {
+            "id": "analysis",
+            "name": "Analysis",
+            "description": "In-depth analysis",
+            "color": "#8b5cf6",
+            "icon": "📊"
+        }
+    ],
+    "contentTypes": [
+        "article",
+        "video",
+        "highlight",
+        "analysis",
+        "breaking",
+        "interview"
+    ],
+    "priorities": {
+        "critical": 10,
+        "high": 8,
+        "normal": 5,
+        "low": 3
+    },
+    "publishTimes": {
+        "immediate": 0,
+        "5min": 300000,
+        "15min": 900000,
+        "30min": 1800000,
+        "1hour": 3600000,
+        "2hours": 7200000,
+        "custom": null
+    },
+    "autoPublish": {
+        "enabled": true,
+        "checkInterval": 10000,
+        "retryAttempts": 3,
+        "retryDelay": 5000
+    },
+    "queue": {
+        "maxSize": 100,
+        "defaultPriority": 5,
+        "sortBy": "publishAt"
+    }
+}

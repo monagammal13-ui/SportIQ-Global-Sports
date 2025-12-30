@@ -1,0 +1,51 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-29T09:14:07Z",
+    "description": "Live Score Widgets Configuration",
+    "initialMatches": [
+        {
+            "id": "m_live_1",
+            "league": "Premier League",
+            "homeTeam": "Man City",
+            "awayTeam": "Liverpool",
+            "homeScore": 1,
+            "awayScore": 1,
+            "minute": 35,
+            "status": "LIVE",
+            "homeLogo": "https://via.placeholder.com/24?text=MCI",
+            "awayLogo": "https://via.placeholder.com/24?text=LIV",
+            "odds": {
+                "home": 2.10,
+                "away": 3.40
+            }
+        },
+        {
+            "id": "m_live_2",
+            "league": "La Liga",
+            "homeTeam": "Real Madrid",
+            "awayTeam": "Barcelona",
+            "homeScore": 0,
+            "awayScore": 0,
+            "minute": 12,
+            "status": "LIVE",
+            "homeLogo": "https://via.placeholder.com/24?text=RMA",
+            "awayLogo": "https://via.placeholder.com/24?text=FCB",
+            "odds": {
+                "home": 2.30,
+                "away": 2.80
+            }
+        },
+        {
+            "id": "m_finished_1",
+            "league": "Bundesliga",
+            "homeTeam": "Bayern",
+            "awayTeam": "Dortmund",
+            "homeScore": 3,
+            "awayScore": 1,
+            "minute": 90,
+            "status": "FT",
+            "homeLogo": "https://via.placeholder.com/24?text=BAY",
+            "awayLogo": "https://via.placeholder.com/24?text=BVB"
+        }
+    ]
+}

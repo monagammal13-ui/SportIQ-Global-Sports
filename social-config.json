@@ -1,0 +1,78 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-29T08:39:38Z",
+    "description": "Social Media Feed Configuration",
+    "platforms": [
+        {
+            "id": "twitter",
+            "name": "Twitter/X",
+            "icon": "𝕏",
+            "color": "#1da1f2",
+            "enabled": true
+        },
+        {
+            "id": "instagram",
+            "name": "Instagram",
+            "icon": "📷",
+            "color": "#e4405f",
+            "enabled": true
+        },
+        {
+            "id": "facebook",
+            "name": "Facebook",
+            "icon": "📘",
+            "color": "#1877f2",
+            "enabled": true
+        }
+    ],
+    "accounts": [
+        {
+            "id": "acc1",
+            "username": "BBCSport",
+            "platform": "twitter",
+            "displayName": "BBC Sport",
+            "verified": true,
+            "followers": 45000000,
+            "enabled": true
+        },
+        {
+            "id": "acc2",
+            "username": "ESPN",
+            "platform": "twitter",
+            "displayName": "ESPN",
+            "verified": true,
+            "followers": 48000000,
+            "enabled": true
+        },
+        {
+            "id": "acc3",
+            "username": "SkySports",
+            "platform": "twitter",
+            "displayName": "Sky Sports",
+            "verified": true,
+            "followers": 12000000,
+            "enabled": true
+        },
+        {
+            "id": "acc4",
+            "username": "FIFAcom",
+            "platform": "twitter",
+            "displayName": "FIFA",
+            "verified": true,
+            "followers": 16000000,
+            "enabled": true
+        }
+    ],
+    "trackedHashtags": [
+        "#football",
+        "#soccer",
+        "#transfernews",
+        "#matchday",
+        "#championsleague",
+        "#premierleague",
+        "#sports"
+    ],
+    "updateInterval": 60000,
+    "maxPosts": 100,
+    "simulateMode": true
+}

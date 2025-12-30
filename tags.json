@@ -1,0 +1,181 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Content tags for SPORTIQ platform",
+    "tags": [
+        {
+            "id": "breaking-news",
+            "name": "Breaking News",
+            "slug": "breaking-news",
+            "count": 234,
+            "trending": true,
+            "color": "#ef4444"
+        },
+        {
+            "id": "live-scores",
+            "name": "Live Scores",
+            "slug": "live-scores",
+            "count": 567,
+            "trending": true,
+            "color": "#10b981"
+        },
+        {
+            "id": "highlights",
+            "name": "Highlights",
+            "slug": "highlights",
+            "count": 423,
+            "trending": true,
+            "color": "#f59e0b"
+        },
+        {
+            "id": "transfer-news",
+            "name": "Transfer News",
+            "slug": "transfer-news",
+            "count": 189,
+            "trending": true,
+            "color": "#8b5cf6"
+        },
+        {
+            "id": "player-stats",
+            "name": "Player Statistics",
+            "slug": "player-stats",
+            "count": 312,
+            "trending": false,
+            "color": "#06b6d4"
+        },
+        {
+            "id": "team-rankings",
+            "name": "Team Rankings",
+            "slug": "team-rankings",
+            "count": 145,
+            "trending": false,
+            "color": "#3b82f6"
+        },
+        {
+            "id": "match-preview",
+            "name": "Match Preview",
+            "slug": "match-preview",
+            "count": 278,
+            "trending": false,
+            "color": "#14b8a6"
+        },
+        {
+            "id": "match-review",
+            "name": "Match Review",
+            "slug": "match-review",
+            "count": 256,
+            "trending": false,
+            "color": "#6366f1"
+        },
+        {
+            "id": "injuries",
+            "name": "Injuries",
+            "slug": "injuries",
+            "count": 87,
+            "trending": false,
+            "color": "#dc2626"
+        },
+        {
+            "id": "interviews",
+            "name": "Interviews",
+            "slug": "interviews",
+            "count": 156,
+            "trending": false,
+            "color": "#ec4899"
+        },
+        {
+            "id": "analysis",
+            "name": "Expert Analysis",
+            "slug": "analysis",
+            "count": 213,
+            "trending": true,
+            "color": "#7c3aed"
+        },
+        {
+            "id": "predictions",
+            "name": "Predictions",
+            "slug": "predictions",
+            "count": 198,
+            "trending": false,
+            "color": "#f97316"
+        },
+        {
+            "id": "rumors",
+            "name": "Rumors",
+            "slug": "rumors",
+            "count": 167,
+            "trending": true,
+            "color": "#a855f7"
+        },
+        {
+            "id": "news",
+            "name": "General News",
+            "slug": "news",
+            "count": 445,
+            "trending": false,
+            "color": "#64748b"
+        },
+        {
+            "id": "records",
+            "name": "Records",
+            "slug": "records",
+            "count": 92,
+            "trending": false,
+            "color": "#fbbf24"
+        },
+        {
+            "id": "fixtures",
+            "name": "Fixtures",
+            "slug": "fixtures",
+            "count": 389,
+            "trending": false,
+            "color": "#10b981"
+        },
+        {
+            "id": "results",
+            "name": "Results",
+            "slug": "results",
+            "count": 512,
+            "trending": false,
+            "color": "#3b82f6"
+        },
+        {
+            "id": "standings",
+            "name": "Standings",
+            "slug": "standings",
+            "count": 178,
+            "trending": false,
+            "color": "#8b5cf6"
+        },
+        {
+            "id": "awards",
+            "name": "Awards",
+            "slug": "awards",
+            "count": 74,
+            "trending": false,
+            "color": "#fbbf24"
+        },
+        {
+            "id": "trending",
+            "name": "Trending",
+            "slug": "trending",
+            "count": 156,
+            "trending": true,
+            "color": "#ef4444"
+        }
+    ],
+    "trending": [
+        "breaking-news",
+        "live-scores",
+        "highlights",
+        "transfer-news",
+        "analysis",
+        "rumors",
+        "trending"
+    ],
+    "meta": {
+        "totalTags": 20,
+        "totalArticles": 4671,
+        "lastSync": "2025-12-27T12:00:00Z"
+    }
+}

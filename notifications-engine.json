@@ -1,0 +1,256 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Real-time notifications engine configuration for SPORTIQ platform",
+    "notificationTypes": {
+        "push": {
+            "enabled": true,
+            "permission": "required",
+            "vapidPublicKey": "YOUR_VAPID_PUBLIC_KEY"
+        },
+        "inApp": {
+            "enabled": true,
+            "position": "top-right",
+            "duration": 5000,
+            "sound": true
+        },
+        "email": {
+            "enabled": true,
+            "digest": true,
+            "frequency": "daily"
+        },
+        "sms": {
+            "enabled": false,
+            "premium": true
+        }
+    },
+    "notificationCategories": {
+        "liveScores": {
+            "enabled": true,
+            "priority": "high",
+            "icon": "⚽",
+            "sound": "goal.mp3",
+            "triggers": [
+                "goal",
+                "match_start",
+                "match_end",
+                "halftime"
+            ]
+        },
+        "breakingNews": {
+            "enabled": true,
+            "priority": "critical",
+            "icon": "🚨",
+            "sound": "alert.mp3",
+            "triggers": [
+                "major_transfer",
+                "injury",
+                "suspension"
+            ]
+        },
+        "matchReminders": {
+            "enabled": true,
+            "priority": "medium",
+            "icon": "⏰",
+            "sound": "reminder.mp3",
+            "triggers": [
+                "1hour_before",
+                "15min_before"
+            ]
+        },
+        "trendingTopics": {
+            "enabled": true,
+            "priority": "low",
+            "icon": "🔥",
+            "sound": "notification.mp3",
+            "triggers": [
+                "viral_content",
+                "breakout_topic"
+            ]
+        },
+        "personalUpdates": {
+            "enabled": true,
+            "priority": "medium",
+            "icon": "👤",
+            "sound": "notification.mp3",
+            "triggers": [
+                "favorite_team",
+                "favorite_player",
+                "followed_league"
+            ]
+        }
+    },
+    "userPreferences": {
+        "defaultEnabled": [
+            "liveScores",
+            "breakingNews",
+            "matchReminders"
+        ],
+        "allowCustomize": true,
+        "quietHours": {
+            "enabled": true,
+            "start": "22:00",
+            "end": "08:00",
+            "timezone": "auto"
+        },
+        "frequency": {
+            "maxPerHour": 10,
+            "maxPerDay": 50,
+            "respectLimits": true
+        }
+    },
+    "pushNotifications": [
+        {
+            "id": "notif001",
+            "type": "liveScores",
+            "title": "⚽ GOAL! Manchester United 1-0 Liverpool",
+            "body": "Marcus Rashford scores in the 23rd minute!",
+            "icon": "/images/icons/football.png",
+            "badge": "/images/icons/badge.png",
+            "data": {
+                "matchId": "match123",
+                "teamHome": "Manchester United",
+                "teamAway": "Liverpool",
+                "score": "1-0",
+                "time": "23'"
+            },
+            "actions": [
+                {
+                    "action": "view",
+                    "title": "Watch Live",
+                    "icon": "/images/icons/play.png"
+                },
+                {
+                    "action": "dismiss",
+                    "title": "Dismiss"
+                }
+            ],
+            "priority": "high",
+            "timestamp": "2025-12-27T15:23:00Z"
+        },
+        {
+            "id": "notif002",
+            "type": "breakingNews",
+            "title": "🚨 BREAKING: Ronaldo Transfer Confirmed",
+            "body": "Al-Nassr signs Cristiano Ronaldo on record deal",
+            "icon": "/images/icons/news.png",
+            "badge": "/images/icons/badge.png",
+            "data": {
+                "articleId": "art456",
+                "category": "transfers"
+            },
+            "actions": [
+                {
+                    "action": "read",
+                    "title": "Read More"
+                }
+            ],
+            "priority": "critical",
+            "timestamp": "2025-12-27T14:30:00Z"
+        },
+        {
+            "id": "notif003",
+            "type": "matchReminders",
+            "title": "⏰ Match Starting Soon",
+            "body": "Lakers vs Warriors starts in 15 minutes",
+            "icon": "/images/icons/basketball.png",
+            "data": {
+                "matchId": "match789",
+                "eventId": "evt002"
+            },
+            "actions": [
+                {
+                    "action": "remind",
+                    "title": "Remind Me Again"
+                }
+            ],
+            "priority": "medium",
+            "timestamp": "2025-12-27T19:45:00Z"
+        }
+    ],
+    "inAppAlerts": {
+        "styles": {
+            "success": {
+                "background": "#10b981",
+                "color": "#ffffff",
+                "icon": "✓"
+            },
+            "info": {
+                "background": "#3b82f6",
+                "color": "#ffffff",
+                "icon": "ℹ"
+            },
+            "warning": {
+                "background": "#f59e0b",
+                "color": "#ffffff",
+                "icon": "⚠"
+            },
+            "error": {
+                "background": "#ef4444",
+                "color": "#ffffff",
+                "icon": "✕"
+            }
+        },
+        "positions": [
+            "top-right",
+            "top-center",
+            "bottom-right",
+            "bottom-center"
+        ],
+        "animations": {
+            "enter": "slideInRight",
+            "exit": "slideOutRight"
+        }
+    },
+    "realTimeEngine": {
+        "websocket": {
+            "enabled": true,
+            "url": "wss://notifications.sportiq.com",
+            "reconnect": true,
+            "heartbeat": 30000
+        },
+        "polling": {
+            "enabled": true,
+            "interval": 60000,
+            "fallback": true
+        },
+        "serviceWorker": {
+            "enabled": true,
+            "file": "/sw-notifications.js",
+            "scope": "/"
+        }
+    },
+    "deliveryRules": {
+        "deduplication": {
+            "enabled": true,
+            "window": 300000
+        },
+        "batching": {
+            "enabled": true,
+            "maxBatch": 5,
+            "window": 10000
+        },
+        "priorityQueue": {
+            "enabled": true,
+            "levels": [
+                "critical",
+                "high",
+                "medium",
+                "low"
+            ]
+        }
+    },
+    "analytics": {
+        "track": {
+            "sent": true,
+            "delivered": true,
+            "clicked": true,
+            "dismissed": true
+        },
+        "metrics": {
+            "deliveryRate": true,
+            "clickRate": true,
+            "engagementRate": true
+        }
+    }
+}

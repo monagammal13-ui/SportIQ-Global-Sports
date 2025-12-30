@@ -1,0 +1,364 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Complete global video feed integration system for SPORTIQ",
+    "videoFeed": {
+        "enabled": true,
+        "autoUpdate": true,
+        "aggregation": true,
+        "targetVideosPerDay": 200
+    },
+    "sources": {
+        "youtube": {
+            "enabled": true,
+            "apiKey": "YOUR_YOUTUBE_API_KEY",
+            "quota": 10000,
+            "quotaManagement": "optimize",
+            "channels": 50,
+            "updateInterval": 900000
+        },
+        "vimeo": {
+            "enabled": false,
+            "apiKey": "YOUR_VIMEO_API_KEY",
+            "channels": 10,
+            "updateInterval": 3600000
+        },
+        "dailymotion": {
+            "enabled": false,
+            "channels": 5,
+            "updateInterval": 3600000
+        },
+        "twitter": {
+            "enabled": true,
+            "apiKey": "YOUR_TWITTER_API_KEY",
+            "embedVideos": true,
+            "updateInterval": 1800000
+        }
+    },
+    "updateSchedule": {
+        "hot": {
+            "interval": 900000,
+            "channels": "priority",
+            "description": "Major sports channels, every 15 minutes"
+        },
+        "standard": {
+            "interval": 3600000,
+            "channels": "standard",
+            "description": "Regular channels, every hour"
+        },
+        "archive": {
+            "interval": 21600000,
+            "channels": "archive",
+            "description": "Historical content, every 6 hours"
+        }
+    },
+    "videoPlayer": {
+        "provider": "custom",
+        "features": {
+            "controls": true,
+            "autoplay": false,
+            "loop": false,
+            "muted": false,
+            "playbackRate": true,
+            "pip": true,
+            "fullscreen": true,
+            "keyboard": true
+        },
+        "quality": {
+            "options": [
+                "360p",
+                "480p",
+                "720p",
+                "1080p",
+                "4K"
+            ],
+            "default": "720p",
+            "adaptive": true,
+            "userPreference": true
+        },
+        "autoplay": {
+            "enabled": false,
+            "onHover": false,
+            "nextVideo": true,
+            "countdown": 5
+        },
+        "captions": {
+            "enabled": true,
+            "autoGenerate": false,
+            "languages": [
+                "en",
+                "es",
+                "ar",
+                "fr"
+            ]
+        }
+    },
+    "thumbnails": {
+        "generate": true,
+        "sizes": {
+            "small": {
+                "width": 320,
+                "height": 180
+            },
+            "medium": {
+                "width": 640,
+                "height": 360
+            },
+            "large": {
+                "width": 1280,
+                "height": 720
+            }
+        },
+        "format": "webp",
+        "quality": 85,
+        "fallback": "/assets/images/video-placeholder.jpg"
+    },
+    "categorization": {
+        "auto": true,
+        "categories": {
+            "highlights": {
+                "keywords": [
+                    "highlights",
+                    "goals",
+                    "best moments",
+                    "recap"
+                ],
+                "weight": 1.0
+            },
+            "interviews": {
+                "keywords": [
+                    "interview",
+                    "press conference",
+                    "exclusive"
+                ],
+                "weight": 0.9
+            },
+            "analysis": {
+                "keywords": [
+                    "analysis",
+                    "tactical",
+                    "breakdown",
+                    "review"
+                ],
+                "weight": 0.8
+            },
+            "training": {
+                "keywords": [
+                    "training",
+                    "practice",
+                    "behind the scenes"
+                ],
+                "weight": 0.7
+            },
+            "fullMatch": {
+                "keywords": [
+                    "full match",
+                    "extended highlights",
+                    "full game"
+                ],
+                "weight": 1.2
+            }
+        }
+    },
+    "playlists": {
+        "enabled": true,
+        "autoGenerate": true,
+        "types": {
+            "latest": {
+                "maxVideos": 20,
+                "sortBy": "publishedAt",
+                "order": "desc"
+            },
+            "trending": {
+                "maxVideos": 15,
+                "sortBy": "views",
+                "timeWindow": 604800000
+            },
+            "team": {
+                "enabled": true,
+                "maxVideos": 10,
+                "perTeam": true
+            },
+            "league": {
+                "enabled": true,
+                "maxVideos": 15,
+                "perLeague": true
+            }
+        }
+    },
+    "filtering": {
+        "enabled": true,
+        "filters": {
+            "duration": {
+                "enabled": true,
+                "options": [
+                    "short",
+                    "medium",
+                    "long",
+                    "full"
+                ],
+                "ranges": {
+                    "short": [
+                        0,
+                        300
+                    ],
+                    "medium": [
+                        300,
+                        900
+                    ],
+                    "long": [
+                        900,
+                        3600
+                    ],
+                    "full": [
+                        3600,
+                        999999
+                    ]
+                }
+            },
+            "quality": {
+                "enabled": true,
+                "minResolution": "480p",
+                "preferHD": true
+            },
+            "recency": {
+                "enabled": true,
+                "options": [
+                    "today",
+                    "week",
+                    "month",
+                    "all"
+                ]
+            },
+            "sport": {
+                "enabled": true,
+                "options": [
+                    "football",
+                    "basketball",
+                    "tennis",
+                    "cricket",
+                    "all"
+                ]
+            }
+        }
+    },
+    "contentProcessing": {
+        "extraction": {
+            "title": true,
+            "description": true,
+            "duration": true,
+            "publishedAt": true,
+            "viewCount": true,
+            "likeCount": true,
+            "commentCount": true
+        },
+        "enrichment": {
+            "autoTags": true,
+            "relatedVideos": true,
+            "transcription": false,
+            "seoOptimization": true
+        },
+        "quality": {
+            "minDuration": 30,
+            "maxDuration": 7200,
+            "minViews": 100,
+            "excludeLowQuality": true
+        }
+    },
+    "display": {
+        "layouts": {
+            "grid": {
+                "columns": {
+                    "desktop": 4,
+                    "tablet": 3,
+                    "mobile": 2
+                },
+                "gap": 16
+            },
+            "list": {
+                "itemHeight": 120,
+                "showDescription": true
+            },
+            "carousel": {
+                "itemsToShow": 5,
+                "autoplay": false,
+                "loop": true
+            }
+        },
+        "videoCard": {
+            "showThumbnail": true,
+            "showDuration": true,
+            "showViews": true,
+            "showDate": true,
+            "showChannel": true,
+            "hoverPreview": false
+        }
+    },
+    "analytics": {
+        "enabled": true,
+        "track": {
+            "play": true,
+            "pause": true,
+            "complete": true,
+            "progress": [
+                25,
+                50,
+                75,
+                100
+            ],
+            "qualityChange": true,
+            "fullscreen": true
+        },
+        "engagement": {
+            "watchTime": true,
+            "completionRate": true,
+            "averageViewDuration": true,
+            "clickThroughRate": true
+        }
+    },
+    "monetization": {
+        "ads": {
+            "enabled": true,
+            "types": {
+                "preRoll": {
+                    "enabled": true,
+                    "duration": 15,
+                    "skippable": true,
+                    "skipAfter": 5
+                },
+                "midRoll": {
+                    "enabled": true,
+                    "frequency": 600,
+                    "duration": 15
+                },
+                "postRoll": {
+                    "enabled": false
+                }
+            },
+            "targeting": true,
+            "customAds": true
+        },
+        "sponsoredVideos": {
+            "enabled": true,
+            "label": "Sponsored",
+            "disclosure": true
+        }
+    },
+    "caching": {
+        "enabled": true,
+        "metadata": {
+            "ttl": 3600000,
+            "storage": "redis"
+        },
+        "thumbnails": {
+            "ttl": 86400000,
+            "storage": "cdn"
+        }
+    },
+    "performance": {
+        "lazyLoading": true,
+        "preloading": "metadata",
+        "bufferSize": 10,
+        "adaptiveStreaming": true
+    }
+}

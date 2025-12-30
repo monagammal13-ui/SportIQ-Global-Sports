@@ -1,0 +1,257 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Video library metadata and content structure for SPORTIQ",
+    "videoSchema": {
+        "videoId": "string (unique)",
+        "title": "string (required)",
+        "description": "string",
+        "duration": "number (seconds)",
+        "thumbnail": "string (url)",
+        "poster": "string (url)",
+        "sources": "array (quality variants)",
+        "category": "string (highlights|interviews|analysis|live|features)",
+        "sport": "string",
+        "teams": "array (team ids)",
+        "players": "array (player ids)",
+        "league": "string (league id)",
+        "competition": "string",
+        "matchDate": "timestamp",
+        "views": "number",
+        "uniqueViews": "number",
+        "likes": "number",
+        "dislikes": "number",
+        "shares": "number",
+        "comments": "number",
+        "uploadDate": "timestamp",
+        "publishDate": "timestamp",
+        "tags": "array (strings)",
+        "language": "string",
+        "subtitles": "array (subtitle tracks)",
+        "quality": "string (min available quality)",
+        "featured": "boolean",
+        "trending": "boolean",
+        "status": "string (published|draft|scheduled|archived)"
+    },
+    "sampleVideos": [
+        {
+            "videoId": "vid_001",
+            "title": "Manchester United vs Liverpool 3-2 - All Goals & Highlights",
+            "description": "Watch all the goals and key moments from this thrilling Premier League clash at Old Trafford",
+            "duration": 480,
+            "thumbnail": "/assets/videos/thumbs/vid_001.jpg",
+            "poster": "/assets/videos/posters/vid_001.jpg",
+            "sources": [
+                {
+                    "quality": "1080p",
+                    "url": "https://cdn.sportiq.com/videos/vid_001_1080p.mp4",
+                    "type": "video/mp4",
+                    "size": 180000000
+                },
+                {
+                    "quality": "720p",
+                    "url": "https://cdn.sportiq.com/videos/vid_001_720p.mp4",
+                    "type": "video/mp4",
+                    "size": 95000000
+                },
+                {
+                    "quality": "480p",
+                    "url": "https://cdn.sportiq.com/videos/vid_001_480p.mp4",
+                    "type": "video/mp4",
+                    "size": 45000000
+                }
+            ],
+            "category": "highlights",
+            "sport": "football",
+            "teams": [
+                "manchester_united",
+                "liverpool"
+            ],
+            "league": "premier_league",
+            "competition": "Premier League",
+            "matchDate": "2025-12-26T15:00:00Z",
+            "views": 125000,
+            "uniqueViews": 95000,
+            "likes": 8500,
+            "dislikes": 320,
+            "shares": 1250,
+            "comments": 450,
+            "uploadDate": "2025-12-26T17:30:00Z",
+            "publishDate": "2025-12-26T17:30:00Z",
+            "tags": [
+                "goals",
+                "highlights",
+                "premier-league",
+                "manchester-united",
+                "liverpool"
+            ],
+            "language": "en",
+            "subtitles": [
+                {
+                    "language": "en",
+                    "label": "English",
+                    "url": "/assets/videos/subs/vid_001_en.vtt",
+                    "default": true
+                },
+                {
+                    "language": "es",
+                    "label": "Spanish",
+                    "url": "/assets/videos/subs/vid_001_es.vtt",
+                    "default": false
+                }
+            ],
+            "quality": "1080p",
+            "featured": true,
+            "trending": true,
+            "status": "published"
+        },
+        {
+            "videoId": "vid_002",
+            "title": "Kylian Mbappé Post-Match Interview - 'We Showed Great Character'",
+            "description": "Exclusive post-match interview with Mbappé following PSG's Champions League victory",
+            "duration": 245,
+            "thumbnail": "/assets/videos/thumbs/vid_002.jpg",
+            "poster": "/assets/videos/posters/vid_002.jpg",
+            "sources": [
+                {
+                    "quality": "1080p",
+                    "url": "https://cdn.sportiq.com/videos/vid_002_1080p.mp4",
+                    "type": "video/mp4"
+                },
+                {
+                    "quality": "720p",
+                    "url": "https://cdn.sportiq.com/videos/vid_002_720p.mp4",
+                    "type": "video/mp4"
+                }
+            ],
+            "category": "interviews",
+            "sport": "football",
+            "teams": [
+                "psg"
+            ],
+            "players": [
+                "kylian_mbappe"
+            ],
+            "league": "champions_league",
+            "views": 45000,
+            "uniqueViews": 38000,
+            "likes": 3200,
+            "uploadDate": "2025-12-26T22:00:00Z",
+            "tags": [
+                "interview",
+                "mbappe",
+                "psg",
+                "champions-league"
+            ],
+            "featured": false,
+            "trending": true,
+            "status": "published"
+        },
+        {
+            "videoId": "vid_003",
+            "title": "Tactical Breakdown: How Guardiola's System Dominated the Match",
+            "description": "In-depth tactical analysis of Manchester City's 4-0 victory",
+            "duration": 720,
+            "thumbnail": "/assets/videos/thumbs/vid_003.jpg",
+            "poster": "/assets/videos/posters/vid_003.jpg",
+            "sources": [
+                {
+                    "quality": "1080p",
+                    "url": "https://cdn.sportiq.com/videos/vid_003_1080p.mp4",
+                    "type": "video/mp4"
+                }
+            ],
+            "category": "analysis",
+            "sport": "football",
+            "teams": [
+                "manchester_city"
+            ],
+            "league": "premier_league",
+            "views": 28000,
+            "likes": 2100,
+            "uploadDate": "2025-12-25T18:00:00Z",
+            "tags": [
+                "tactics",
+                "analysis",
+                "guardiola",
+                "man-city"
+            ],
+            "featured": false,
+            "trending": false,
+            "status": "published"
+        }
+    ],
+    "playlists": {
+        "latest_highlights": {
+            "playlistId": "pl_001",
+            "name": "Latest Highlights",
+            "description": "Most recent match highlights",
+            "category": "highlights",
+            "autoGenerated": true,
+            "videoCount": 20,
+            "views": 500000,
+            "lastUpdated": "2025-12-27T08:00:00Z"
+        },
+        "top_goals_week": {
+            "playlistId": "pl_002",
+            "name": "Top Goals This Week",
+            "description": "Best goals from the past 7 days",
+            "category": "highlights",
+            "autoGenerated": true,
+            "videoCount": 15,
+            "views": 320000,
+            "lastUpdated": "2025-12-27T06:00:00Z"
+        },
+        "player_interviews": {
+            "playlistId": "pl_003",
+            "name": "Exclusive Player Interviews",
+            "description": "In-depth conversations with top players",
+            "category": "interviews",
+            "autoGenerated": false,
+            "videoCount": 25,
+            "views": 180000,
+            "lastUpdated": "2025-12-26T20:00:00Z"
+        }
+    },
+    "channels": {
+        "official": {
+            "channelId": "ch_sportiq",
+            "name": "SPORTIQ Official",
+            "description": "Official SPORTIQ video channel",
+            "logo": "/assets/icons/sportiq-channel.png",
+            "subscribers": 125000,
+            "totalViews": 15000000,
+            "videoCount": 450,
+            "verified": true
+        },
+        "premier_league": {
+            "channelId": "ch_pl",
+            "name": "Premier League Zone",
+            "description": "All things Premier League",
+            "logo": "/assets/icons/pl-channel.png",
+            "subscribers": 85000,
+            "totalViews": 8500000,
+            "videoCount": 280,
+            "verified": true
+        }
+    },
+    "metadata": {
+        "totalVideos": 450,
+        "totalDuration": 216000,
+        "totalViews": 15000000,
+        "averageViewDuration": 180,
+        "categories": {
+            "highlights": 200,
+            "interviews": 120,
+            "analysis": 80,
+            "live": 30,
+            "features": 20
+        },
+        "sports": {
+            "football": 300,
+            "basketball": 80,
+            "tennis": 40,
+            "cricket": 30
+        }
+    }
+}

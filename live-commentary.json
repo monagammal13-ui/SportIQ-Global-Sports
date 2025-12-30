@@ -1,0 +1,228 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Global live commentary feed configuration for SPORTIQ platform",
+    "commentarySources": {
+        "official": [
+            {
+                "id": "premierleague",
+                "name": "Premier League Official",
+                "sport": "football",
+                "league": "Premier League",
+                "url": "https://api.premierleague.com/commentary",
+                "priority": 1,
+                "enabled": true
+            },
+            {
+                "id": "nba",
+                "name": "NBA Official",
+                "sport": "basketball",
+                "league": "NBA",
+                "url": "https://api.nba.com/commentary",
+                "priority": 1,
+                "enabled": true
+            },
+            {
+                "id": "atp",
+                "name": "ATP Tour",
+                "sport": "tennis",
+                "tournament": "ATP",
+                "url": "https://api.atptour.com/commentary",
+                "priority": 1,
+                "enabled": true
+            }
+        ],
+        "aggregated": [
+            {
+                "id": "espn-commentary",
+                "name": "ESPN Commentary",
+                "sports": [
+                    "football",
+                    "basketball",
+                    "tennis",
+                    "cricket"
+                ],
+                "url": "https://api.espn.com/commentary",
+                "priority": 2,
+                "enabled": true
+            },
+            {
+                "id": "bbc-commentary",
+                "name": "BBC Sport Commentary",
+                "sports": [
+                    "football",
+                    "cricket",
+                    "tennis",
+                    "rugby"
+                ],
+                "url": "https://api.bbc.co.uk/sport/commentary",
+                "priority": 2,
+                "enabled": true
+            }
+        ]
+    },
+    "liveMatches": [
+        {
+            "matchId": "match001",
+            "sport": "football",
+            "homeTeam": "Manchester United",
+            "awayTeam": "Liverpool",
+            "league": "Premier League",
+            "status": "live",
+            "minute": 67,
+            "score": {
+                "home": 2,
+                "away": 1
+            },
+            "commentary": [
+                {
+                    "time": "67'",
+                    "type": "event",
+                    "icon": "⚽",
+                    "text": "GOAL! Marcus Rashford scores for Manchester United!",
+                    "importance": "high",
+                    "timestamp": "2025-12-27T15:07:00Z"
+                },
+                {
+                    "time": "65'",
+                    "type": "substitution",
+                    "icon": "🔄",
+                    "text": "Substitution: Antony OFF, Jadon Sancho ON",
+                    "importance": "medium",
+                    "timestamp": "2025-12-27T15:05:00Z"
+                },
+                {
+                    "time": "62'",
+                    "type": "card",
+                    "icon": "🟨",
+                    "text": "Yellow Card for Casemiro (Manchester United)",
+                    "importance": "medium",
+                    "timestamp": "2025-12-27T15:02:00Z"
+                },
+                {
+                    "time": "58'",
+                    "type": "commentary",
+                    "icon": "💬",
+                    "text": "Liverpool pushing hard for an equalizer. They're dominating possession now.",
+                    "importance": "low",
+                    "timestamp": "2025-12-27T14:58:00Z"
+                },
+                {
+                    "time": "45'",
+                    "type": "event",
+                    "icon": "⚽",
+                    "text": "GOAL! Mohamed Salah scores for Liverpool!",
+                    "importance": "high",
+                    "timestamp": "2025-12-27T14:45:00Z"
+                }
+            ]
+        },
+        {
+            "matchId": "match002",
+            "sport": "basketball",
+            "homeTeam": "Los Angeles Lakers",
+            "awayTeam": "Golden State Warriors",
+            "league": "NBA",
+            "status": "live",
+            "quarter": 3,
+            "time": "8:23",
+            "score": {
+                "home": 78,
+                "away": 72
+            },
+            "commentary": [
+                {
+                    "time": "Q3 8:23",
+                    "type": "event",
+                    "icon": "🏀",
+                    "text": "LeBron James with a massive dunk!",
+                    "importance": "high",
+                    "timestamp": "2025-12-27T20:15:00Z"
+                },
+                {
+                    "time": "Q3 9:45",
+                    "type": "commentary",
+                    "icon": "💬",
+                    "text": "Lakers extending their lead. Warriors need to respond.",
+                    "importance": "low",
+                    "timestamp": "2025-12-27T20:13:00Z"
+                }
+            ]
+        }
+    ],
+    "commentaryTypes": {
+        "event": {
+            "priority": 1,
+            "color": "#ef4444",
+            "icons": [
+                "⚽",
+                "🏀",
+                "🎾",
+                "🏏"
+            ]
+        },
+        "substitution": {
+            "priority": 2,
+            "color": "#3b82f6",
+            "icons": [
+                "🔄"
+            ]
+        },
+        "card": {
+            "priority": 2,
+            "color": "#f59e0b",
+            "icons": [
+                "🟨",
+                "🟥"
+            ]
+        },
+        "commentary": {
+            "priority": 3,
+            "color": "#6b7280",
+            "icons": [
+                "💬"
+            ]
+        },
+        "info": {
+            "priority": 4,
+            "color": "#8b5cf6",
+            "icons": [
+                "ℹ️"
+            ]
+        }
+    },
+    "updateConfig": {
+        "realTime": {
+            "enabled": true,
+            "websocket": {
+                "url": "wss://commentary.sportiq.com",
+                "reconnect": true,
+                "heartbeat": 15000
+            }
+        },
+        "polling": {
+            "enabled": true,
+            "interval": 30000,
+            "fallback": true
+        }
+    },
+    "displayConfig": {
+        "maxItems": 100,
+        "autoScroll": true,
+        "soundNotifications": true,
+        "highlightEvents": true,
+        "showTimestamps": true,
+        "reverseOrder": false
+    },
+    "languages": {
+        "supported": [
+            "en",
+            "es",
+            "fr",
+            "de",
+            "ar"
+        ],
+        "autoTranslate": true,
+        "preferredLanguage": "auto"
+    }
+}

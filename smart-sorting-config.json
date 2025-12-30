@@ -1,0 +1,420 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Smart sorting and ranking engine for SPORTIQ with context-aware optimization",
+    "smartSorting": {
+        "enabled": true,
+        "realTime": true,
+        "contextAware": true,
+        "personalized": true
+    },
+    "relevanceScoring": {
+        "enabled": true,
+        "factors": {
+            "textRelevance": {
+                "weight": 0.25,
+                "algorithm": "bm25",
+                "boostFields": {
+                    "title": 3.0,
+                    "excerpt": 2.0,
+                    "content": 1.0,
+                    "tags": 2.5
+                }
+            },
+            "semanticRelevance": {
+                "weight": 0.15,
+                "algorithm": "word2vec",
+                "contextWindow": 5
+            },
+            "entityMatch": {
+                "weight": 0.20,
+                "entities": [
+                    "teams",
+                    "players",
+                    "leagues",
+                    "competitions"
+                ],
+                "exactMatch": 2.0,
+                "partialMatch": 1.0
+            },
+            "categoryRelevance": {
+                "weight": 0.15,
+                "hierarchical": true,
+                "parentBoost": 0.5
+            },
+            "userIntent": {
+                "weight": 0.15,
+                "queryType": "auto-detect",
+                "intentTypes": [
+                    "informational",
+                    "navigational",
+                    "transactional",
+                    "live"
+                ]
+            },
+            "freshness": {
+                "weight": 0.10,
+                "decayFunction": "exponential",
+                "halfLife": 604800000
+            }
+        }
+    },
+    "engagementSignals": {
+        "enabled": true,
+        "signals": {
+            "clickThroughRate": {
+                "weight": 0.30,
+                "minImpressions": 100,
+                "bayesianSmoothing": true
+            },
+            "timeOnPage": {
+                "weight": 0.25,
+                "idealTime": 180,
+                "normalize": true
+            },
+            "scrollDepth": {
+                "weight": 0.15,
+                "thresholds": [
+                    25,
+                    50,
+                    75,
+                    100
+                ],
+                "weighted": true
+            },
+            "socialSignals": {
+                "weight": 0.15,
+                "metrics": [
+                    "likes",
+                    "shares",
+                    "comments"
+                ],
+                "normalize": true
+            },
+            "returnRate": {
+                "weight": 0.10,
+                "timeWindow": 2592000000
+            },
+            "completionRate": {
+                "weight": 0.05,
+                "minReadTime": 30
+            }
+        },
+        "realTimeAdjustment": true,
+        "smoothing": {
+            "enabled": true,
+            "bayesianPrior": 50
+        }
+    },
+    "recencyBoost": {
+        "enabled": true,
+        "boostFunction": {
+            "type": "exponential",
+            "parameters": {
+                "maxBoost": 2.0,
+                "decayRate": 0.1,
+                "halfLife": 86400000
+            }
+        },
+        "exceptions": {
+            "evergreen": {
+                "enabled": true,
+                "categories": [
+                    "guides",
+                    "tutorials",
+                    "history"
+                ],
+                "boostFactor": 0.3
+            },
+            "seasonal": {
+                "enabled": true,
+                "events": [
+                    "world-cup",
+                    "olympics",
+                    "championships"
+                ],
+                "extendedRelevance": true
+            }
+        }
+    },
+    "personalizedRanking": {
+        "enabled": true,
+        "requireAuth": false,
+        "cookieBased": true,
+        "factors": {
+            "userInterests": {
+                "weight": 0.35,
+                "teams": 0.40,
+                "players": 0.30,
+                "leagues": 0.20,
+                "topics": 0.10
+            },
+            "readingHistory": {
+                "weight": 0.25,
+                "recentWeight": 0.7,
+                "historicalWeight": 0.3,
+                "maxHistory": 100
+            },
+            "engagementPattern": {
+                "weight": 0.20,
+                "preferredContentTypes": true,
+                "preferredLength": true,
+                "preferredTime": true
+            },
+            "socialGraph": {
+                "weight": 0.15,
+                "followedTeams": true,
+                "followedPlayers": true,
+                "followedTopics": true
+            },
+            "locationContext": {
+                "weight": 0.05,
+                "localTeams": true,
+                "regionalLeagues": true,
+                "timezoneAware": true
+            }
+        }
+    },
+    "qualityFactors": {
+        "enabled": true,
+        "metrics": {
+            "contentQuality": {
+                "weight": 0.30,
+                "readability": 0.25,
+                "depth": 0.25,
+                "accuracy": 0.25,
+                "freshness": 0.25
+            },
+            "authorReputation": {
+                "weight": 0.20,
+                "avgEngagement": true,
+                "expertise": true,
+                "consistency": true
+            },
+            "sourceCredibility": {
+                "weight": 0.20,
+                "officialSources": 1.5,
+                "verifiedSources": 1.3,
+                "userGenerated": 0.8
+            },
+            "completeness": {
+                "weight": 0.15,
+                "hasImage": 0.3,
+                "hasVideo": 0.3,
+                "hasStats": 0.2,
+                "hasQuotes": 0.2
+            },
+            "engagement": {
+                "weight": 0.15,
+                "likes": 0.3,
+                "shares": 0.3,
+                "comments": 0.2,
+                "saves": 0.2
+            }
+        }
+    },
+    "diversityOptimization": {
+        "enabled": true,
+        "objectives": {
+            "categoryDiversity": {
+                "enabled": true,
+                "targetDistribution": "proportional",
+                "minCategories": 3,
+                "maxSameCategory": 3
+            },
+            "sportDiversity": {
+                "enabled": true,
+                "ensureVariety": true,
+                "maxSameSport": 5
+            },
+            "contentTypeDiversity": {
+                "enabled": true,
+                "types": [
+                    "article",
+                    "video",
+                    "gallery",
+                    "live"
+                ],
+                "balanceRatio": true
+            },
+            "recencyDiversity": {
+                "enabled": true,
+                "mixOldAndNew": true,
+                "oldThreshold": 604800000
+            },
+            "perspectiveDiversity": {
+                "enabled": true,
+                "multipleAuthors": true,
+                "multipleSources": true
+            }
+        },
+        "algorithm": "maximal-marginal-relevance",
+        "diversityWeight": 0.3
+    },
+    "contextAwareSorting": {
+        "enabled": true,
+        "contexts": {
+            "searchResults": {
+                "primaryFactor": "relevance",
+                "secondaryFactor": "engagement",
+                "personalizedBoost": 0.15
+            },
+            "categoryPage": {
+                "primaryFactor": "recency",
+                "secondaryFactor": "engagement",
+                "trendingBoost": 0.20
+            },
+            "homepage": {
+                "primaryFactor": "personalized",
+                "secondaryFactor": "trending",
+                "diversityWeight": 0.30
+            },
+            "relatedArticles": {
+                "primaryFactor": "similarity",
+                "secondaryFactor": "quality",
+                "excludeRead": true
+            },
+            "liveEvents": {
+                "primaryFactor": "recency",
+                "secondaryFactor": "importance",
+                "realTimeBoost": 2.0
+            }
+        }
+    },
+    "liveEventPrioritization": {
+        "enabled": true,
+        "boosts": {
+            "liveMatch": 3.0,
+            "breakingNews": 2.5,
+            "goalScored": 2.0,
+            "majorUpdate": 1.5
+        },
+        "duration": {
+            "liveMatch": 7200000,
+            "breakingNews": 3600000,
+            "goalScored": 1800000
+        }
+    },
+    "abTesting": {
+        "enabled": true,
+        "tests": {
+            "rankingAlgorithm": {
+                "enabled": false,
+                "variants": [
+                    "relevance-first",
+                    "engagement-first",
+                    "balanced"
+                ],
+                "split": [
+                    0.33,
+                    0.33,
+                    0.34
+                ],
+                "duration": 14
+            },
+            "personalizedWeight": {
+                "enabled": false,
+                "variants": [
+                    0.1,
+                    0.2,
+                    0.3
+                ],
+                "split": [
+                    0.33,
+                    0.33,
+                    0.34
+                ],
+                "duration": 7
+            }
+        },
+        "metrics": [
+            "ctr",
+            "engagement",
+            "timeOnSite",
+            "returnRate"
+        ]
+    },
+    "realTimeAdjustments": {
+        "enabled": true,
+        "triggers": {
+            "userFeedback": {
+                "enabled": true,
+                "signals": [
+                    "click",
+                    "skip",
+                    "hide",
+                    "save"
+                ],
+                "updateWeight": 0.1
+            },
+            "trendingChange": {
+                "enabled": true,
+                "threshold": 0.3,
+                "reRank": true
+            },
+            "newContent": {
+                "enabled": true,
+                "checkInterval": 300000,
+                "insertPosition": "smart"
+            },
+            "performanceDrop": {
+                "enabled": true,
+                "threshold": 0.2,
+                "fallbackStrategy": "default"
+            }
+        }
+    },
+    "performance": {
+        "caching": {
+            "enabled": true,
+            "ttl": {
+                "searchResults": 300000,
+                "categoryPage": 600000,
+                "homepage": 180000,
+                "personalizedFeed": 300000
+            },
+            "invalidateOnUpdate": true
+        },
+        "precompute": {
+            "enabled": true,
+            "items": [
+                "trending",
+                "popular",
+                "recommended"
+            ],
+            "schedule": "*/10 * * * *"
+        },
+        "maxResults": {
+            "search": 100,
+            "category": 50,
+            "recommendations": 20
+        },
+        "timeout": {
+            "ranking": 500,
+            "personalization": 200,
+            "fallback": "default"
+        }
+    },
+    "fallbackStrategies": {
+        "noResults": "trending",
+        "lowQuality": "popular",
+        "timeout": "cached",
+        "error": "default"
+    },
+    "analytics": {
+        "enabled": true,
+        "track": {
+            "rankingQuality": true,
+            "userSatisfaction": true,
+            "diversityScore": true,
+            "personalizedAccuracy": true,
+            "algorithmPerformance": true
+        },
+        "goals": {
+            "avgRelevanceScore": 0.75,
+            "avgEngagementRate": 0.20,
+            "avgDiversityScore": 0.65,
+            "avgUserSatisfaction": 0.80
+        }
+    }
+}

@@ -1,0 +1,85 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-29T09:02:00Z",
+    "description": "Leaderboards and Ranking Configuration",
+    "leagues": [
+        {
+            "id": "global-ranking",
+            "name": "Global Power Rankings",
+            "type": "team",
+            "algorithm": "elo-weighted"
+        },
+        {
+            "id": "fantasy-league",
+            "name": "Global Fantasy League",
+            "type": "user",
+            "algorithm": "points-accumulated"
+        },
+        {
+            "id": "predictor-king",
+            "name": "Predictor of the Month",
+            "type": "user",
+            "algorithm": "accuracy-percentage"
+        }
+    ],
+    "scoring": {
+        "match_win": 3,
+        "match_draw": 1,
+        "prediction_exact": 50,
+        "prediction_outcome": 20
+    },
+    "mockData": {
+        "global-ranking": [
+            {
+                "rank": 1,
+                "name": "Manchester City",
+                "score": 2045,
+                "trend": "stable"
+            },
+            {
+                "rank": 2,
+                "name": "Real Madrid",
+                "score": 2010,
+                "trend": "up"
+            },
+            {
+                "rank": 3,
+                "name": "Bayern Munich",
+                "score": 1985,
+                "trend": "down"
+            },
+            {
+                "rank": 4,
+                "name": "Liverpool",
+                "score": 1950,
+                "trend": "up"
+            },
+            {
+                "rank": 5,
+                "name": "Arsenal",
+                "score": 1920,
+                "trend": "stable"
+            }
+        ],
+        "predictor-king": [
+            {
+                "rank": 1,
+                "name": "SoccerWizard99",
+                "score": 450,
+                "trend": "up"
+            },
+            {
+                "rank": 2,
+                "name": "TacticalMaster",
+                "score": 435,
+                "trend": "stable"
+            },
+            {
+                "rank": 3,
+                "name": "GoalMachine",
+                "score": 410,
+                "trend": "down"
+            }
+        ]
+    }
+}

@@ -1,0 +1,311 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Complete search queries tracking and trending searches system for SPORTIQ",
+    "searchTracking": {
+        "enabled": true,
+        "trackAll": true,
+        "anonymousTracking": true,
+        "storage": "database"
+    },
+    "trendingSearches": {
+        "enabled": true,
+        "timeWindows": {
+            "realTime": {
+                "duration": 3600000,
+                "label": "Trending Now",
+                "minQueries": 10,
+                "maxResults": 10,
+                "updateInterval": 300000
+            },
+            "today": {
+                "duration": 86400000,
+                "label": "Top Searches Today",
+                "minQueries": 20,
+                "maxResults": 20,
+                "updateInterval": 900000
+            },
+            "week": {
+                "duration": 604800000,
+                "label": "This Week's Trending",
+                "minQueries": 50,
+                "maxResults": 30,
+                "updateInterval": 3600000
+            },
+            "month": {
+                "duration": 2592000000,
+                "label": "Popular This Month",
+                "minQueries": 100,
+                "maxResults": 50,
+                "updateInterval": 86400000
+            }
+        },
+        "scoring": {
+            "velocity": 0.40,
+            "volume": 0.30,
+            "uniqueUsers": 0.20,
+            "recency": 0.10
+        },
+        "filters": {
+            "minLength": 3,
+            "maxLength": 100,
+            "excludeProfanity": true,
+            "excludeSpam": true
+        }
+    },
+    "autoComplete": {
+        "enabled": true,
+        "sources": {
+            "trending": {
+                "enabled": true,
+                "weight": 0.40,
+                "maxSuggestions": 5
+            },
+            "popular": {
+                "enabled": true,
+                "weight": 0.30,
+                "maxSuggestions": 5
+            },
+            "userHistory": {
+                "enabled": true,
+                "weight": 0.20,
+                "maxSuggestions": 3,
+                "requireAuth": false
+            },
+            "related": {
+                "enabled": true,
+                "weight": 0.10,
+                "maxSuggestions": 2
+            }
+        },
+        "settings": {
+            "minCharacters": 2,
+            "maxSuggestions": 10,
+            "debounceDelay": 200,
+            "highlightMatch": true,
+            "showCategories": true
+        },
+        "categorization": {
+            "enabled": true,
+            "categories": [
+                "teams",
+                "players",
+                "leagues",
+                "topics",
+                "articles"
+            ]
+        }
+    },
+    "searchSuggestions": {
+        "enabled": true,
+        "types": {
+            "didYouMean": {
+                "enabled": true,
+                "algorithm": "levenshtein",
+                "threshold": 0.7
+            },
+            "relatedQueries": {
+                "enabled": true,
+                "maxSuggestions": 8,
+                "algorithm": "collaborative-filtering"
+            },
+            "popularQueries": {
+                "enabled": true,
+                "maxSuggestions": 5,
+                "timeWindow": "week"
+            },
+            "nextQuery": {
+                "enabled": true,
+                "description": "Users who searched this also searched...",
+                "maxSuggestions": 5
+            }
+        }
+    },
+    "queryAnalytics": {
+        "enabled": true,
+        "metrics": {
+            "queryVolume": {
+                "enabled": true,
+                "aggregation": "hourly"
+            },
+            "clickThroughRate": {
+                "enabled": true,
+                "trackPosition": true
+            },
+            "zeroResults": {
+                "enabled": true,
+                "alert": true,
+                "threshold": 0.05
+            },
+            "averagePosition": {
+                "enabled": true,
+                "trackByQuery": true
+            },
+            "userEngagement": {
+                "enabled": true,
+                "metrics": [
+                    "clicks",
+                    "timeOnPage",
+                    "bounceRate"
+                ]
+            }
+        },
+        "reporting": {
+            "enabled": true,
+            "frequency": "weekly",
+            "recipients": [
+                "seo@sportiq.com"
+            ]
+        }
+    },
+    "risingSearches": {
+        "enabled": true,
+        "calculation": {
+            "method": "growth-rate",
+            "compareWindow": 86400000,
+            "minGrowth": 2.0,
+            "minVolume": 50
+        },
+        "maxResults": 20,
+        "updateInterval": 300000,
+        "badge": {
+            "icon": "🔥",
+            "label": "Rising",
+            "color": "#ef4444"
+        }
+    },
+    "breakoutQueries": {
+        "enabled": true,
+        "criteria": {
+            "minGrowth": 10.0,
+            "minVolume": 100,
+            "timeWindow": 86400000
+        },
+        "maxResults": 10,
+        "notification": {
+            "enabled": true,
+            "recipients": [
+                "content@sportiq.com",
+                "seo@sportiq.com"
+            ],
+            "includeContext": true
+        }
+    },
+    "searchWidgets": {
+        "trendingSearches": {
+            "enabled": true,
+            "title": "Trending Searches",
+            "maxQueries": 10,
+            "timeWindow": "realTime",
+            "showIcons": true,
+            "showCount": false,
+            "updateInterval": 300000,
+            "positions": [
+                "sidebar",
+                "homepage"
+            ]
+        },
+        "risingSearches": {
+            "enabled": true,
+            "title": "Rising Searches",
+            "maxQueries": 5,
+            "showPercentage": true,
+            "updateInterval": 300000,
+            "positions": [
+                "sidebar"
+            ]
+        },
+        "popularSearches": {
+            "enabled": true,
+            "title": "Popular Searches",
+            "maxQueries": 8,
+            "timeWindow": "week",
+            "positions": [
+                "footer"
+            ]
+        }
+    },
+    "relatedSearches": {
+        "enabled": true,
+        "maxSuggestions": 8,
+        "algorithm": "word2vec",
+        "similarityThreshold": 0.6,
+        "display": {
+            "position": "below-results",
+            "layout": "chips",
+            "clickable": true
+        }
+    },
+    "searchFilters": {
+        "enabled": true,
+        "preFilters": {
+            "enabled": true,
+            "options": [
+                "teams",
+                "players",
+                "news",
+                "videos",
+                "photos"
+            ]
+        },
+        "quickFilters": {
+            "enabled": true,
+            "timeRange": [
+                "today",
+                "week",
+                "month",
+                "year"
+            ],
+            "contentType": [
+                "article",
+                "video",
+                "photo",
+                "gallery"
+            ]
+        }
+    },
+    "voiceSearch": {
+        "enabled": false,
+        "provider": "browser-api",
+        "languages": [
+            "en",
+            "es",
+            "ar",
+            "fr"
+        ]
+    },
+    "searchHistory": {
+        "enabled": true,
+        "storage": "localStorage",
+        "maxItems": 50,
+        "retention": 2592000000,
+        "clearable": true,
+        "requireAuth": false
+    },
+    "seoOptimization": {
+        "enabled": true,
+        "features": {
+            "contentGaps": {
+                "enabled": true,
+                "description": "Identify trending queries with no matching content",
+                "generateAlerts": true
+            },
+            "keywordOpportunities": {
+                "enabled": true,
+                "minVolume": 100,
+                "maxCompetition": 0.7
+            },
+            "trendingTopics": {
+                "enabled": true,
+                "useForContentPlanning": true,
+                "exportable": true
+            }
+        }
+    },
+    "privacySettings": {
+        "anonymizeQueries": false,
+        "gdprCompliant": true,
+        "dataRetention": 90,
+        "userDeletion": true
+    }
+}

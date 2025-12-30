@@ -1,0 +1,313 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Global video sources database for SPORTIQ",
+    "youtubeChannels": [
+        {
+            "id": "espn",
+            "channelId": "UCiWLfSweyRNmLpgEHekhoAg",
+            "name": "ESPN",
+            "priority": "hot",
+            "sports": [
+                "all"
+            ],
+            "updateInterval": 900000,
+            "enabled": true
+        },
+        {
+            "id": "skysports",
+            "channelId": "UCNAf1k0yIjyGu3k9BwAg3lg",
+            "name": "Sky Sports",
+            "priority": "hot",
+            "sports": [
+                "football",
+                "cricket"
+            ],
+            "updateInterval": 900000,
+            "enabled": true
+        },
+        {
+            "id": "nba",
+            "channelId": "UCWJ2lWNubArHWmf3FIHbfcQ",
+            "name": "NBA",
+            "priority": "hot",
+            "sports": [
+                "basketball"
+            ],
+            "updateInterval": 900000,
+            "enabled": true
+        },
+        {
+            "id": "uefa",
+            "channelId": "UCSqJB7B_Cr2HrNRs-7EbLjA",
+            "name": "UEFA",
+            "priority": "hot",
+            "sports": [
+                "football"
+            ],
+            "updateInterval": 900000,
+            "enabled": true
+        },
+        {
+            "id": "fifa",
+            "channelId": "UCpcTrCXblq78GZrTUTLWeBw",
+            "name": "FIFA",
+            "priority": "hot",
+            "sports": [
+                "football"
+            ],
+            "updateInterval": 1800000,
+            "enabled": true
+        },
+        {
+            "id": "premierleague",
+            "channelId": "UCG5qGWdu8nIRZqJ_GgDwQ-w",
+            "name": "Premier League",
+            "priority": "hot",
+            "sports": [
+                "football"
+            ],
+            "updateInterval": 900000,
+            "enabled": true
+        },
+        {
+            "id": "laliga",
+            "channelId": "UCGjGp8T0xEUA40CAJk_EmPA",
+            "name": "LaLiga",
+            "priority": "hot",
+            "sports": [
+                "football"
+            ],
+            "updateInterval": 900000,
+            "enabled": true
+        },
+        {
+            "id": "seriea",
+            "channelId": "UCH7Xy-Me4QfhXHOMVKTLiFw",
+            "name": "Serie A",
+            "priority": "hot",
+            "sports": [
+                "football"
+            ],
+            "updateInterval": 1800000,
+            "enabled": true
+        },
+        {
+            "id": "bundesliga",
+            "channelId": "UCGrb4I3KFpL2vu13kETXBDA",
+            "name": "Bundesliga",
+            "priority": "hot",
+            "sports": [
+                "football"
+            ],
+            "updateInterval": 1800000,
+            "enabled": true
+        },
+        {
+            "id": "atp_tour",
+            "channelId": "UCbcxFkd6B9xQ5M24ByvM3nA",
+            "name": "ATP Tour",
+            "priority": "standard",
+            "sports": [
+                "tennis"
+            ],
+            "updateInterval": 3600000,
+            "enabled": true
+        },
+        {
+            "id": "wta",
+            "channelId": "UCcPQMsmBjAA6gJpaTMhVCaw",
+            "name": "WTA",
+            "priority": "standard",
+            "sports": [
+                "tennis"
+            ],
+            "updateInterval": 3600000,
+            "enabled": true
+        },
+        {
+            "id": "formula1",
+            "channelId": "UCB0alB_lINf-l6AWkO_Lc5Q",
+            "name": "Formula 1",
+            "priority": "hot",
+            "sports": [
+                "formula1"
+            ],
+            "updateInterval": 1800000,
+            "enabled": true
+        },
+        {
+            "id": "icc_cricket",
+            "channelId": "UCFhMQyfC3eOZUPj6gXb48Jw",
+            "name": "ICC Cricket",
+            "priority": "hot",
+            "sports": [
+                "cricket"
+            ],
+            "updateInterval": 1800000,
+            "enabled": true
+        },
+        {
+            "id": "bleacher_report",
+            "channelId": "UCxHPbXdp_WPU3M1lA3ijjNA",
+            "name": "Bleacher Report",
+            "priority": "standard",
+            "sports": [
+                "all"
+            ],
+            "updateInterval": 1800000,
+            "enabled": true
+        },
+        {
+            "id": "bt_sport",
+            "channelId": "UC_5dYN8i_T8bWFabJoGgNjg",
+            "name": "BT Sport",
+            "priority": "standard",
+            "sports": [
+                "football"
+            ],
+            "updateInterval": 1800000,
+            "enabled": true
+        }
+    ],
+    "sourceGroups": {
+        "hot": {
+            "description": "High-priority channels with frequent updates",
+            "updateInterval": 900000,
+            "channels": 15
+        },
+        "standard": {
+            "description": "Regular channels with hourly updates",
+            "updateInterval": 3600000,
+            "channels": 20
+        },
+        "archive": {
+            "description": "Historical content channels",
+            "updateInterval": 21600000,
+            "channels": 15
+        }
+    },
+    "contentTypes": {
+        "highlights": {
+            "keywords": [
+                "highlights",
+                "goals",
+                "best moments",
+                "top plays"
+            ],
+            "priority": 1.0,
+            "typical Duration": [
+                60,
+                600
+            ]
+        },
+        "fullMatch": {
+            "keywords": [
+                "full match",
+                "full game",
+                "extended highlights"
+            ],
+            "priority": 1.2,
+            "typicalDuration": [
+                3600,
+                7200
+            ]
+        },
+        "interviews": {
+            "keywords": [
+                "interview",
+                "press conference",
+                "post-match"
+            ],
+            "priority": 0.8,
+            "typicalDuration": [
+                120,
+                900
+            ]
+        },
+        "analysis": {
+            "keywords": [
+                "analysis",
+                "tactical",
+                "breakdown",
+                "review"
+            ],
+            "priority": 0.9,
+            "typicalDuration": [
+                300,
+                1200
+            ]
+        },
+        "skills": {
+            "keywords": [
+                "skills",
+                "tricks",
+                "dribbling",
+                "best"
+            ],
+            "priority": 0.7,
+            "typicalDuration": [
+                60,
+                300
+            ]
+        }
+    },
+    "sports": {
+        "football": {
+            "channelCount": 25,
+            "priority": 1.0,
+            "categories": [
+                "highlights",
+                "fullMatch",
+                "interviews",
+                "analysis"
+            ]
+        },
+        "basketball": {
+            "channelCount": 8,
+            "priority": 0.9,
+            "categories": [
+                "highlights",
+                "fullMatch",
+                "interviews"
+            ]
+        },
+        "tennis": {
+            "channelCount": 5,
+            "priority": 0.7,
+            "categories": [
+                "highlights",
+                "interviews"
+            ]
+        },
+        "cricket": {
+            "channelCount": 5,
+            "priority": 0.8,
+            "categories": [
+                "highlights",
+                "fullMatch"
+            ]
+        },
+        "formula1": {
+            "channelCount": 3,
+            "priority": 0.8,
+            "categories": [
+                "highlights",
+                "analysis"
+            ]
+        }
+    },
+    "apiEndpoints": {
+        "youtube": {
+            "baseUrl": "https://www.googleapis.com/youtube/v3",
+            "search": "/search",
+            "videos": "/videos",
+            "channels": "/channels",
+            "playlists": "/playlists"
+        },
+        "vimeo": {
+            "baseUrl": "https://api.vimeo.com",
+            "videos": "/me/videos"
+        }
+    }
+}

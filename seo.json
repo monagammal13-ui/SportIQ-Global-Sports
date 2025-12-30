@@ -1,0 +1,321 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "SEO metadata configuration for SPORTIQ platform",
+    "global": {
+        "siteName": "SPORTIQ",
+        "siteUrl": "https://sportiq.com",
+        "defaultLocale": "en_US",
+        "twitterHandle": "@sportiq",
+        "facebookAppId": "123456789",
+        "defaultImage": "/assets/images/heroes/hero-sportiq.jpg",
+        "organizationType": "Organization",
+        "keywords": [
+            "sports news",
+            "live scores",
+            "sports platform",
+            "global sports",
+            "football news",
+            "basketball news",
+            "sports updates",
+            "sports coverage",
+            "sports highlights",
+            "sports statistics"
+        ]
+    },
+    "pages": {
+        "index": {
+            "title": "SPORTIQ - Global Sports Platform | Live Scores & Breaking News",
+            "description": "Your ultimate global sports platform delivering live scores, breaking news, and comprehensive coverage of all major sports worldwide. Stay updated with real-time updates.",
+            "keywords": [
+                "sports platform",
+                "live scores",
+                "sports news",
+                "global sports",
+                "football",
+                "basketball",
+                "tennis",
+                "real-time updates",
+                "sports coverage",
+                "breaking news"
+            ],
+            "canonical": "https://sportiq.com/",
+            "openGraph": {
+                "type": "website",
+                "title": "SPORTIQ - Global Sports Platform",
+                "description": "Live scores, breaking news, and comprehensive sports coverage from around the world",
+                "image": "/assets/images/heroes/hero-sportiq.jpg",
+                "imageAlt": "SPORTIQ - Your Global Sports Platform",
+                "imageWidth": 1920,
+                "imageHeight": 1080
+            },
+            "twitter": {
+                "card": "summary_large_image",
+                "title": "SPORTIQ - Global Sports Platform",
+                "description": "Live scores, breaking news, and comprehensive sports coverage",
+                "image": "/assets/images/heroes/hero-sportiq.jpg",
+                "imageAlt": "SPORTIQ Platform"
+            },
+            "structuredData": {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "SPORTIQ",
+                "url": "https://sportiq.com",
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "https://sportiq.com/search?q={search_term_string}",
+                    "query-input": "required name=search_term_string"
+                }
+            }
+        },
+        "category": {
+            "title": "Sports Categories - SPORTIQ | Browse by Sport",
+            "description": "Browse sports news and updates by category. Football, Basketball, Tennis, Cricket, and more. Comprehensive coverage of all major sports worldwide.",
+            "keywords": [
+                "sports categories",
+                "football news",
+                "basketball news",
+                "tennis updates",
+                "cricket scores",
+                "sports by category",
+                "sports coverage",
+                "league news"
+            ],
+            "canonical": "https://sportiq.com/category",
+            "openGraph": {
+                "type": "website",
+                "title": "Sports Categories - SPORTIQ",
+                "description": "Browse comprehensive sports coverage by category",
+                "image": "/assets/images/heroes/hero-sportiq.jpg"
+            },
+            "twitter": {
+                "card": "summary",
+                "title": "Sports Categories - SPORTIQ",
+                "description": "Browse sports by category"
+            }
+        },
+        "about": {
+            "title": "About Us - SPORTIQ | Your Ultimate Sports Platform",
+            "description": "Learn about SPORTIQ - the ultimate global sports platform. Our mission is to deliver the most comprehensive, accurate, and engaging sports coverage to fans worldwide.",
+            "keywords": [
+                "about sportiq",
+                "sports platform",
+                "our mission",
+                "sports coverage",
+                "global sports",
+                "company information"
+            ],
+            "canonical": "https://sportiq.com/about",
+            "openGraph": {
+                "type": "website",
+                "title": "About SPORTIQ - Global Sports Platform",
+                "description": "Learn about our mission to unite sports fans worldwide",
+                "image": "/assets/images/heroes/hero-sportiq.jpg"
+            },
+            "twitter": {
+                "card": "summary",
+                "title": "About SPORTIQ",
+                "description": "Your ultimate global sports platform"
+            },
+            "structuredData": {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "SPORTIQ",
+                "url": "https://sportiq.com",
+                "logo": "https://sportiq.com/assets/images/logo.png",
+                "description": "Global sports platform delivering comprehensive sports coverage",
+                "sameAs": [
+                    "https://facebook.com/sportiq",
+                    "https://twitter.com/sportiq",
+                    "https://instagram.com/sportiq",
+                    "https://linkedin.com/company/sportiq"
+                ]
+            }
+        },
+        "contact": {
+            "title": "Contact Us - SPORTIQ | Get in Touch",
+            "description": "Contact SPORTIQ for inquiries, partnerships, technical support, or press. Multiple contact options including email, phone, and social media.",
+            "keywords": [
+                "contact sportiq",
+                "support",
+                "partnership inquiries",
+                "press contact",
+                "technical support",
+                "get in touch"
+            ],
+            "canonical": "https://sportiq.com/contact",
+            "openGraph": {
+                "type": "website",
+                "title": "Contact SPORTIQ",
+                "description": "Get in touch with our team",
+                "image": "/assets/images/heroes/hero-sportiq.jpg"
+            },
+            "twitter": {
+                "card": "summary",
+                "title": "Contact SPORTIQ",
+                "description": "Get in touch with our team"
+            },
+            "structuredData": {
+                "@context": "https://schema.org",
+                "@type": "ContactPage",
+                "url": "https://sportiq.com/contact"
+            }
+        },
+        "privacy": {
+            "title": "Privacy Policy - SPORTIQ | Data Protection & Privacy",
+            "description": "SPORTIQ Privacy Policy. Learn how we collect, use, and protect your personal information. GDPR and CCPA compliant. Updated December 2025.",
+            "keywords": [
+                "privacy policy",
+                "data protection",
+                "GDPR",
+                "CCPA",
+                "personal information",
+                "cookies policy",
+                "user privacy"
+            ],
+            "canonical": "https://sportiq.com/privacy",
+            "openGraph": {
+                "type": "website",
+                "title": "Privacy Policy - SPORTIQ",
+                "description": "Our commitment to protecting your privacy",
+                "image": "/assets/images/heroes/hero-sportiq.jpg"
+            },
+            "twitter": {
+                "card": "summary",
+                "title": "Privacy Policy - SPORTIQ",
+                "description": "Data protection and privacy information"
+            }
+        },
+        "terms": {
+            "title": "Terms of Service - SPORTIQ | Terms & Conditions",
+            "description": "SPORTIQ Terms of Service. Read our terms and conditions for using our sports platform. User agreements, licenses, and legal information.",
+            "keywords": [
+                "terms of service",
+                "terms and conditions",
+                "user agreement",
+                "legal information",
+                "service terms",
+                "usage policy"
+            ],
+            "canonical": "https://sportiq.com/terms",
+            "openGraph": {
+                "type": "website",
+                "title": "Terms of Service - SPORTIQ",
+                "description": "Terms and conditions for using SPORTIQ",
+                "image": "/assets/images/heroes/hero-sportiq.jpg"
+            },
+            "twitter": {
+                "card": "summary",
+                "title": "Terms of Service - SPORTIQ",
+                "description": "Terms and conditions"
+            }
+        }
+    },
+    "categories": {
+        "football": {
+            "title": "Football News & Scores - SPORTIQ | Latest Updates",
+            "description": "Latest football news, live scores, transfer updates, and match analysis from Premier League, La Liga, Champions League, and leagues worldwide.",
+            "keywords": [
+                "football news",
+                "football scores",
+                "premier league",
+                "la liga",
+                "champions league",
+                "transfer news",
+                "football updates"
+            ],
+            "image": "/assets/images/heroes/hero-football.jpg"
+        },
+        "basketball": {
+            "title": "Basketball News & NBA Scores - SPORTIQ",
+            "description": "NBA news, live scores, player stats, and game highlights. Coverage of EuroLeague, NCAA, and international basketball.",
+            "keywords": [
+                "basketball news",
+                "NBA scores",
+                "basketball updates",
+                "euroleague",
+                "NCAA basketball"
+            ],
+            "image": "/assets/images/articles/lakers-finals.jpg"
+        },
+        "tennis": {
+            "title": "Tennis News & Grand Slam Updates - SPORTIQ",
+            "description": "Tennis news from Grand Slams, ATP, and WTA tours. Live scores, player rankings, and match analysis.",
+            "keywords": [
+                "tennis news",
+                "grand slam",
+                "ATP tour",
+                "WTA tour",
+                "tennis rankings"
+            ],
+            "image": "/assets/images/articles/djokovic-wimbledon.jpg"
+        }
+    },
+    "tags": {
+        "breaking-news": {
+            "title": "Breaking Sports News - SPORTIQ | Latest Updates",
+            "description": "Breaking sports news from around the world. Latest updates, transfer rumors, and exclusive stories."
+        },
+        "live-scores": {
+            "title": "Live Sports Scores - SPORTIQ | Real-Time Updates",
+            "description": "Real-time live scores from all major sports leagues and tournaments worldwide."
+        },
+        "highlights": {
+            "title": "Sports Highlights - SPORTIQ | Video & Match Highlights",
+            "description": "Watch the best highlights from every game. Top plays, goals, and memorable moments."
+        }
+    },
+    "article": {
+        "template": {
+            "titleSuffix": " - SPORTIQ",
+            "descriptionLength": 160,
+            "keywordsFromTags": true,
+            "openGraph": {
+                "type": "article",
+                "siteName": "SPORTIQ"
+            },
+            "twitter": {
+                "card": "summary_large_image",
+                "site": "@sportiq"
+            },
+            "structuredData": {
+                "@context": "https://schema.org",
+                "@type": "NewsArticle",
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "SPORTIQ",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://sportiq.com/assets/images/logo.png"
+                    }
+                }
+            }
+        }
+    },
+    "robots": {
+        "index": true,
+        "follow": true,
+        "noarchive": false,
+        "nosnippet": false,
+        "maxSnippet": -1,
+        "maxImagePreview": "large",
+        "maxVideoPreview": -1
+    },
+    "alternateLanguages": [
+        {
+            "lang": "ar",
+            "hreflang": "ar",
+            "name": "العربية"
+        },
+        {
+            "lang": "es",
+            "hreflang": "es",
+            "name": "Español"
+        },
+        {
+            "lang": "fr",
+            "hreflang": "fr",
+            "name": "Français"
+        }
+    ]
+}

@@ -1,0 +1,117 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-29T08:44:16Z",
+    "description": "Personalized Recommendations Configuration",
+    "sampleContent": [
+        {
+            "id": "c1",
+            "title": "Champions League Highlights",
+            "category": "highlights",
+            "tags": [
+                "football",
+                "champions-league",
+                "goals"
+            ],
+            "type": "video"
+        },
+        {
+            "id": "c2",
+            "title": "Transfer Rumors Roundup",
+            "category": "transfer",
+            "tags": [
+                "football",
+                "transfer",
+                "news"
+            ],
+            "type": "article"
+        },
+        {
+            "id": "c3",
+            "title": "Premier League Top Scorers",
+            "category": "analysis",
+            "tags": [
+                "football",
+                "premier-league",
+                "stats"
+            ],
+            "type": "article"
+        },
+        {
+            "id": "c4",
+            "title": "Best Saves of the Week",
+            "category": "highlights",
+            "tags": [
+                "football",
+                "goalkeepers",
+                "saves"
+            ],
+            "type": "video"
+        },
+        {
+            "id": "c5",
+            "title": "Tactical Analysis: 4-3-3 Formation",
+            "category": "analysis",
+            "tags": [
+                "football",
+                "tactics",
+                "coaching"
+            ],
+            "type": "article"
+        },
+        {
+            "id": "c6",
+            "title": "Player Interview: Rising Star",
+            "category": "interview",
+            "tags": [
+                "football",
+                "interview",
+                "players"
+            ],
+            "type": "video"
+        },
+        {
+            "id": "c7",
+            "title": "Match Preview: Derby Day",
+            "category": "preview",
+            "tags": [
+                "football",
+                "match-preview",
+                "derby"
+            ],
+            "type": "article"
+        },
+        {
+            "id": "c8",
+            "title": "Top 10 Goals This Season",
+            "category": "highlights",
+            "tags": [
+                "football",
+                "goals",
+                "compilation"
+            ],
+            "type": "video"
+        }
+    ],
+    "algorithms": {
+        "contentBased": {
+            "enabled": true,
+            "weight": 3
+        },
+        "collaborative": {
+            "enabled": true,
+            "weight": 2
+        },
+        "trending": {
+            "enabled": true,
+            "weight": 1
+        }
+    },
+    "weights": {
+        "view": 1,
+        "like": 2,
+        "share": 3,
+        "comment": 2
+    },
+    "updateInterval": 30000,
+    "maxRecommendations": 10
+}

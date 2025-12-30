@@ -1,0 +1,55 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-29T08:47:50Z",
+    "description": "Polls & Voting Configuration",
+    "polls": [
+        {
+            "id": "p1",
+            "question": "Who will win the Champions League?",
+            "category": "prediction",
+            "options": [
+                "Manchester City",
+                "Real Madrid",
+                "Bayern Munich",
+                "PSG"
+            ],
+            "featured": true,
+            "status": "active"
+        },
+        {
+            "id": "p2",
+            "question": "Player of the Season?",
+            "category": "awards",
+            "options": [
+                "Erling Haaland",
+                "Kylian Mbappé",
+                "Lionel Messi",
+                "Kevin De Bruyne"
+            ],
+            "featured": true,
+            "status": "active"
+        },
+        {
+            "id": "p3",
+            "question": "Best Goal of the Week?",
+            "category": "highlights",
+            "options": [
+                "Long-range strike",
+                "Bicycle kick",
+                "Solo run",
+                "Team play"
+            ],
+            "status": "active",
+            "endTime": "2025-12-30T23:59:59Z"
+        }
+    ],
+    "categories": [
+        "prediction",
+        "awards",
+        "highlights",
+        "transfer",
+        "tactical"
+    ],
+    "updateInterval": 5000,
+    "antiDuplicateVoting": true
+}

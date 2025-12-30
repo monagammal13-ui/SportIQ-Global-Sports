@@ -1,0 +1,353 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "RSS feed sources for automatic content aggregation in SPORTIQ",
+    "corsProxy": "https://api.allorigins.win/get?url=",
+    "defaultUpdateInterval": 1800000,
+    "duplicateCheckWindow": 86400000,
+    "feeds": [
+        {
+            "id": "espn_all",
+            "name": "ESPN - All Sports",
+            "url": "https://www.espn.com/espn/rss/news",
+            "category": "general",
+            "priority": "high",
+            "updateInterval": 900000,
+            "active": true,
+            "language": "en",
+            "reliability": 95
+        },
+        {
+            "id": "bbc_sport",
+            "name": "BBC Sport",
+            "url": "https://feeds.bbci.co.uk/sport/rss.xml",
+            "category": "general",
+            "priority": "high",
+            "updateInterval": 900000,
+            "active": true,
+            "language": "en",
+            "reliability": 98
+        },
+        {
+            "id": "skysports_top",
+            "name": "Sky Sports - Top Stories",
+            "url": "https://www.skysports.com/rss/12040",
+            "category": "general",
+            "priority": "high",
+            "updateInterval": 900000,
+            "active": true,
+            "language": "en",
+            "reliability": 95
+        },
+        {
+            "id": "espn_football",
+            "name": "ESPN Football/Soccer",
+            "url": "https://www.espn.com/espn/rss/soccer/news",
+            "category": "football",
+            "priority": "high",
+            "updateInterval": 600000,
+            "active": true,
+            "language": "en",
+            "reliability": 95,
+            "tags": [
+                "football",
+                "soccer"
+            ]
+        },
+        {
+            "id": "goal_football",
+            "name": "Goal.com",
+            "url": "https://www.goal.com/feeds/en/news",
+            "category": "football",
+            "priority": "high",
+            "updateInterval": 900000,
+            "active": true,
+            "language": "en",
+            "reliability": 90,
+            "tags": [
+                "football",
+                "soccer",
+                "transfers"
+            ]
+        },
+        {
+            "id": "skysports_football",
+            "name": "Sky Sports Football",
+            "url": "https://www.skysports.com/rss/12016",
+            "category": "football",
+            "priority": "high",
+            "updateInterval": 900000,
+            "active": true,
+            "language": "en",
+            "reliability": 95,
+            "tags": [
+                "football",
+                "premier-league"
+            ]
+        },
+        {
+            "id": "uefa",
+            "name": "UEFA.com",
+            "url": "https://www.uefa.com/rssfeed/news/rss.xml",
+            "category": "football",
+            "priority": "medium",
+            "updateInterval": 1800000,
+            "active": true,
+            "language": "en",
+            "reliability": 92,
+            "tags": [
+                "football",
+                "champions-league",
+                "europa-league"
+            ]
+        },
+        {
+            "id": "espn_nba",
+            "name": "ESPN NBA",
+            "url": "https://www.espn.com/espn/rss/nba/news",
+            "category": "basketball",
+            "priority": "high",
+            "updateInterval": 900000,
+            "active": true,
+            "language": "en",
+            "reliability": 95,
+            "tags": [
+                "basketball",
+                "nba"
+            ]
+        },
+        {
+            "id": "nba_official",
+            "name": "NBA.com",
+            "url": "https://www.nba.com/rss/nba_rss.xml",
+            "category": "basketball",
+            "priority": "high",
+            "updateInterval": 900000,
+            "active": true,
+            "language": "en",
+            "reliability": 98,
+            "tags": [
+                "basketball",
+                "nba",
+                "official"
+            ]
+        },
+        {
+            "id": "bleacher_nba",
+            "name": "Bleacher Report NBA",
+            "url": "https://bleacherreport.com/articles/feed?tag_id=20",
+            "category": "basketball",
+            "priority": "medium",
+            "updateInterval": 1800000,
+            "active": true,
+            "language": "en",
+            "reliability": 85,
+            "tags": [
+                "basketball",
+                "nba"
+            ]
+        },
+        {
+            "id": "espn_tennis",
+            "name": "ESPN Tennis",
+            "url": "https://www.espn.com/espn/rss/tennis/news",
+            "category": "tennis",
+            "priority": "medium",
+            "updateInterval": 1800000,
+            "active": true,
+            "language": "en",
+            "reliability": 90,
+            "tags": [
+                "tennis"
+            ]
+        },
+        {
+            "id": "atp_tour",
+            "name": "ATP Tour",
+            "url": "https://www.atptour.com/en/rss/news",
+            "category": "tennis",
+            "priority": "high",
+            "updateInterval": 1800000,
+            "active": true,
+            "language": "en",
+            "reliability": 95,
+            "tags": [
+                "tennis",
+                "atp",
+                "official"
+            ]
+        },
+        {
+            "id": "espncricinfo",
+            "name": "ESPNcricinfo",
+            "url": "https://www.espncricinfo.com/rss/content/story/feeds/0.xml",
+            "category": "cricket",
+            "priority": "high",
+            "updateInterval": 1800000,
+            "active": true,
+            "language": "en",
+            "reliability": 98,
+            "tags": [
+                "cricket"
+            ]
+        },
+        {
+            "id": "espn_nfl",
+            "name": "ESPN NFL",
+            "url": "https://www.espn.com/espn/rss/nfl/news",
+            "category": "american-football",
+            "priority": "high",
+            "updateInterval": 900000,
+            "active": true,
+            "language": "en",
+            "reliability": 95,
+            "tags": [
+                "nfl",
+                "american-football"
+            ]
+        },
+        {
+            "id": "espn_mlb",
+            "name": "ESPN MLB",
+            "url": "https://www.espn.com/espn/rss/mlb/news",
+            "category": "baseball",
+            "priority": "medium",
+            "updateInterval": 1800000,
+            "active": true,
+            "language": "en",
+            "reliability": 90,
+            "tags": [
+                "baseball",
+                "mlb"
+            ]
+        },
+        {
+            "id": "espn_nhl",
+            "name": "ESPN NHL",
+            "url": "https://www.espn.com/espn/rss/nhl/news",
+            "category": "hockey",
+            "priority": "medium",
+            "updateInterval": 1800000,
+            "active": true,
+            "language": "en",
+            "reliability": 90,
+            "tags": [
+                "hockey",
+                "nhl"
+            ]
+        },
+        {
+            "id": "formula1",
+            "name": "Formula 1 Official",
+            "url": "https://www.formula1.com/content/fom-website/en/latest/all.xml",
+            "category": "motorsport",
+            "priority": "high",
+            "updateInterval": 1800000,
+            "active": true,
+            "language": "en",
+            "reliability": 98,
+            "tags": [
+                "f1",
+                "formula1",
+                "racing"
+            ]
+        },
+        {
+            "id": "pga_tour",
+            "name": "PGA Tour",
+            "url": "https://www.pgatour.com/rss/news.rss",
+            "category": "golf",
+            "priority": "low",
+            "updateInterval": 3600000,
+            "active": true,
+            "language": "en",
+            "reliability": 92,
+            "tags": [
+                "golf",
+                "pga"
+            ]
+        },
+        {
+            "id": "olympic_news",
+            "name": "Olympic.org",
+            "url": "https://olympics.com/en/news/rss",
+            "category": "olympics",
+            "priority": "medium",
+            "updateInterval": 3600000,
+            "active": true,
+            "language": "en",
+            "reliability": 95,
+            "tags": [
+                "olympics",
+                "international"
+            ]
+        },
+        {
+            "id": "foxsports",
+            "name": "Fox Sports",
+            "url": "https://www.foxsports.com/rss/sports",
+            "category": "general",
+            "priority": "medium",
+            "updateInterval": 1800000,
+            "active": true,
+            "language": "en",
+            "reliability": 85
+        }
+    ],
+    "updateSchedule": {
+        "breaking": {
+            "interval": 300000,
+            "priority": [
+                "espn_all",
+                "bbc_sport",
+                "skysports_top"
+            ]
+        },
+        "frequent": {
+            "interval": 900000,
+            "priority": [
+                "espn_football",
+                "espn_nba",
+                "goal_football"
+            ]
+        },
+        "regular": {
+            "interval": 1800000,
+            "priority": [
+                "espn_tennis",
+                "espncricinfo",
+                "uefa"
+            ]
+        },
+        "hourly": {
+            "interval": 3600000,
+            "priority": [
+                "pga_tour",
+                "olympic_news"
+            ]
+        }
+    },
+    "contentFilters": {
+        "minTitleLength": 10,
+        "maxTitleLength": 200,
+        "minContentLength": 100,
+        "excludeKeywords": [
+            "advertisement",
+            "sponsored",
+            "subscribe now"
+        ],
+        "requireImage": false,
+        "languages": [
+            "en"
+        ]
+    },
+    "qualityScoring": {
+        "hasImage": 20,
+        "longContent": 15,
+        "premiumSource": 25,
+        "recentPublish": 10,
+        "popularTopic": 15,
+        "breakingNews": 30,
+        "minScore": 40
+    }
+}

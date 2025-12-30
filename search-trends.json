@@ -1,0 +1,366 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Search trends database and patterns for SPORTIQ",
+    "currentTrends": {
+        "realTime": [
+            {
+                "query": "Ronaldo transfer news",
+                "volume": 1250,
+                "growth": 5.2,
+                "category": "transfers",
+                "trending": true
+            },
+            {
+                "query": "Champions League final tickets",
+                "volume": 980,
+                "growth": 3.8,
+                "category": "events",
+                "trending": true
+            },
+            {
+                "query": "NBA playoffs schedule",
+                "volume": 850,
+                "growth": 4.1,
+                "category": "basketball",
+                "trending": true
+            },
+            {
+                "query": "Wimbledon live scores",
+                "volume": 720,
+                "growth": 6.5,
+                "category": "tennis",
+                "trending": true
+            },
+            {
+                "query": "World Cup 2026 qualifying",
+                "volume": 680,
+                "growth": 2.9,
+                "category": "football",
+                "trending": true
+            }
+        ],
+        "rising": [
+            {
+                "query": "Premier League top scorers",
+                "previousVolume": 120,
+                "currentVolume": 1200,
+                "growthRate": 10.0,
+                "status": "breakout"
+            },
+            {
+                "query": "IPL auction results",
+                "previousVolume": 80,
+                "currentVolume": 640,
+                "growthRate": 8.0,
+                "status": "rising"
+            },
+            {
+                "query": "Olympics 2024 medals table",
+                "previousVolume": 200,
+                "currentVolume": 1000,
+                "growthRate": 5.0,
+                "status": "rising"
+            }
+        ]
+    },
+    "categoryTrends": {
+        "football": {
+            "topQueries": [
+                "Premier League standings",
+                "Champions League fixtures",
+                "La Liga results",
+                "Messi news",
+                "Ronaldo stats"
+            ],
+            "trending": [
+                "transfer window",
+                "World Cup qualifiers",
+                "El Clasico"
+            ],
+            "seasonalPeaks": [
+                "August",
+                "January",
+                "May"
+            ]
+        },
+        "basketball": {
+            "topQueries": [
+                "NBA scores",
+                "LeBron James stats",
+                "NBA playoffs",
+                "Lakers news",
+                "NBA standings"
+            ],
+            "trending": [
+                "NBA Finals",
+                "draft lottery",
+                "trade deadline"
+            ],
+            "seasonalPeaks": [
+                "October",
+                "February",
+                "June"
+            ]
+        },
+        "tennis": {
+            "topQueries": [
+                "Wimbledon results",
+                "US Open schedule",
+                "ATP rankings",
+                "Djokovic news",
+                "Grand Slam winners"
+            ],
+            "trending": [
+                "Australian Open",
+                "French Open",
+                "Wimbledon"
+            ],
+            "seasonalPeaks": [
+                "January",
+                "May",
+                "June",
+                "September"
+            ]
+        },
+        "cricket": {
+            "topQueries": [
+                "IPL live scores",
+                "Test cricket results",
+                "ICC rankings",
+                "World Cup cricket",
+                "T20 cricket"
+            ],
+            "trending": [
+                "IPL auction",
+                "World Cup",
+                "Ashes series"
+            ],
+            "seasonalPeaks": [
+                "March",
+                "April",
+                "May"
+            ]
+        }
+    },
+    "geographicTrends": {
+        "northAmerica": {
+            "topQueries": [
+                "NFL scores",
+                "NBA games",
+                "MLB standings",
+                "NHL playoffs",
+                "Super Bowl"
+            ],
+            "uniqueTrends": [
+                "March Madness",
+                "World Series",
+                "Stanley Cup"
+            ]
+        },
+        "europe": {
+            "topQueries": [
+                "Premier League",
+                "Champions League",
+                "La Liga",
+                "Serie A",
+                "Bundesliga"
+            ],
+            "uniqueTrends": [
+                "Euro Cup",
+                "El Clasico",
+                "Derby matches"
+            ]
+        },
+        "asia": {
+            "topQueries": [
+                "IPL cricket",
+                "Badminton",
+                "Table tennis",
+                "Asian Games",
+                "Cricket World Cup"
+            ],
+            "uniqueTrends": [
+                "IPL",
+                "Asia Cup",
+                "Kabaddi"
+            ]
+        },
+        "middleEast": {
+            "topQueries": [
+                "Saudi Pro League",
+                "Qatar World Cup",
+                "AFC Champions League",
+                "Cricket",
+                "Football transfers"
+            ],
+            "uniqueTrends": [
+                "Arab Cup",
+                "Gulf Cup",
+                "Ramadan tournaments"
+            ]
+        }
+    },
+    "temporalPatterns": {
+        "hourly": {
+            "peakHours": [
+                12,
+                13,
+                18,
+                19,
+                20,
+                21
+            ],
+            "lowHours": [
+                2,
+                3,
+                4,
+                5,
+                6
+            ],
+            "description": "Search activity peaks during lunch and evening"
+        },
+        "daily": {
+            "peakDays": [
+                "Saturday",
+                "Sunday",
+                "Monday"
+            ],
+            "lowDays": [
+                "Tuesday",
+                "Wednesday"
+            ],
+            "description": "Weekend and Monday have highest search volume"
+        },
+        "monthly": {
+            "peakMonths": [
+                "August",
+                "January",
+                "May",
+                "June"
+            ],
+            "lowMonths": [
+                "July",
+                "December"
+            ],
+            "description": "Season starts and major events drive searches"
+        },
+        "seasonal": {
+            "summer": {
+                "sports": [
+                    "cricket",
+                    "tennis",
+                    "baseball"
+                ],
+                "events": [
+                    "Wimbledon",
+                    "Olympics",
+                    "World Cup"
+                ]
+            },
+            "winter": {
+                "sports": [
+                    "football",
+                    "basketball",
+                    "hockey"
+                ],
+                "events": [
+                    "Champions League",
+                    "NBA",
+                    "Super Bowl"
+                ]
+            }
+        }
+    },
+    "queryTypes": {
+        "informational": {
+            "percentage": 0.45,
+            "examples": [
+                "how to play football",
+                "tennis rules",
+                "offside rule"
+            ],
+            "intent": "learning"
+        },
+        "navigational": {
+            "percentage": 0.25,
+            "examples": [
+                "Premier League website",
+                "ESPN",
+                "BBC Sport"
+            ],
+            "intent": "finding"
+        },
+        "transactional": {
+            "percentage": 0.20,
+            "examples": [
+                "buy tickets",
+                "watch live",
+                "subscribe"
+            ],
+            "intent": "purchasing"
+        },
+        "live": {
+            "percentage": 0.10,
+            "examples": [
+                "live scores",
+                "match updates",
+                "real-time"
+            ],
+            "intent": "immediate"
+        }
+    },
+    "contentOpportunities": {
+        "highVolumeLowContent": [
+            {
+                "query": "Champions League anthems",
+                "monthlyVolume": 12000,
+                "currentRank": null,
+                "opportunity": "high"
+            },
+            {
+                "query": "football training drills",
+                "monthlyVolume": 8500,
+                "currentRank": null,
+                "opportunity": "high"
+            },
+            {
+                "query": "sports nutrition guide",
+                "monthlyVolume": 6500,
+                "currentRank": null,
+                "opportunity": "medium"
+            }
+        ],
+        "trendingTopics": [
+            {
+                "topic": "Women's football",
+                "growth": 8.5,
+                "volume": 15000,
+                "contentGap": true
+            },
+            {
+                "topic": "Sports betting tips",
+                "growth": 6.2,
+                "volume": 22000,
+                "contentGap": true
+            },
+            {
+                "topic": "Esports tournaments",
+                "growth": 12.1,
+                "volume": 18000,
+                "contentGap": true
+            }
+        ]
+    },
+    "zeroResultQueries": {
+        "topMissing": [
+            "upcoming friendly matches",
+            "youth academy transfers",
+            "referee statistics",
+            "stadium capacity comparisons"
+        ],
+        "totalCount": 450,
+        "percentage": 0.03,
+        "actionable": true
+    }
+}

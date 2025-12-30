@@ -1,0 +1,237 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Trending detection and scoring configuration for SPORTIQ",
+    "trendingAlgorithm": {
+        "scoringWeights": {
+            "velocityScore": 0.3,
+            "engagementRate": 0.25,
+            "socialVelocity": 0.25,
+            "commentVelocity": 0.15,
+            "recencyBoost": 0.05
+        },
+        "minimumThresholds": {
+            "minViews": 100,
+            "minEngagementRate": 0.03,
+            "minVelocity": 0.5,
+            "maxAge": 604800000
+        }
+    },
+    "timeWindows": {
+        "immediate": {
+            "duration": 3600000,
+            "label": "Last Hour",
+            "weight": 1.0
+        },
+        "shortTerm": {
+            "duration": 21600000,
+            "label": "Last 6 Hours",
+            "weight": 0.8
+        },
+        "daily": {
+            "duration": 86400000,
+            "label": "Last 24 Hours",
+            "weight": 0.6
+        },
+        "weekly": {
+            "duration": 604800000,
+            "label": "Last 7 Days",
+            "weight": 0.3
+        }
+    },
+    "velocityCalculation": {
+        "formula": "(current_period - baseline) / baseline",
+        "baseline": "average_hourly_engagement",
+        "thresholds": {
+            "viral": 5.0,
+            "trending": 3.0,
+            "rising": 1.5,
+            "normal": 0.5,
+            "declining": 0
+        },
+        "labels": {
+            "viral": "🔥 Viral",
+            "trending": "📈 Trending",
+            "rising": "⬆️ Rising",
+            "normal": "📊 Normal",
+            "declining": "⬇️ Declining"
+        }
+    },
+    "engagementMetrics": {
+        "views": {
+            "weight": 0.3,
+            "threshold": 500
+        },
+        "likes": {
+            "weight": 0.2,
+            "threshold": 20
+        },
+        "shares": {
+            "weight": 0.25,
+            "threshold": 10
+        },
+        "comments": {
+            "weight": 0.15,
+            "threshold": 5
+        },
+        "timeOnPage": {
+            "weight": 0.1,
+            "minSeconds": 30
+        }
+    },
+    "socialSignals": {
+        "twitter": {
+            "enabled": true,
+            "weight": 1.0,
+            "apiEndpoint": "https://api.twitter.com/2/tweets/search/recent"
+        },
+        "facebook": {
+            "enabled": true,
+            "weight": 0.8,
+            "apiEndpoint": null
+        },
+        "reddit": {
+            "enabled": true,
+            "weight": 1.2,
+            "apiEndpoint": "https://www.reddit.com/search.json"
+        },
+        "whatsapp": {
+            "enabled": false,
+            "weight": 0.5
+        },
+        "linkedin": {
+            "enabled": false,
+            "weight": 0.7
+        }
+    },
+    "timeDecay": {
+        "enabled": true,
+        "function": "exponential",
+        "halfLife": 86400000,
+        "formula": "e^(-age_in_hours / 24)",
+        "minDecayFactor": 0.1
+    },
+    "trendingLevels": {
+        "viral": {
+            "minScore": 80,
+            "badge": "🔥 Viral",
+            "color": "#ff0000",
+            "priority": 1
+        },
+        "trending": {
+            "minScore": 60,
+            "badge": "📈 Trending",
+            "color": "#ff6b00",
+            "priority": 2
+        },
+        "hot": {
+            "minScore": 40,
+            "badge": "⚡ Hot",
+            "color": "#ffa500",
+            "priority": 3
+        },
+        "rising": {
+            "minScore": 25,
+            "badge": "⬆️ Rising",
+            "color": "#00c853",
+            "priority": 4
+        },
+        "normal": {
+            "minScore": 0,
+            "badge": null,
+            "color": null,
+            "priority": 5
+        }
+    },
+    "trendingCategories": {
+        "global": {
+            "enabled": true,
+            "count": 20,
+            "refreshInterval": 300000
+        },
+        "sport": {
+            "enabled": true,
+            "count": 10,
+            "sports": [
+                "football",
+                "basketball",
+                "tennis",
+                "cricket"
+            ]
+        },
+        "league": {
+            "enabled": true,
+            "count": 5,
+            "topLeagues": [
+                "premier_league",
+                "nba",
+                "champions_league"
+            ]
+        },
+        "team": {
+            "enabled": true,
+            "count": 5,
+            "perTeam": true
+        },
+        "geographic": {
+            "enabled": true,
+            "regions": [
+                "US",
+                "UK",
+                "Global"
+            ],
+            "count": 10
+        }
+    },
+    "trendingDuration": {
+        "entry": {
+            "minVelocity": 2.0,
+            "minEngagement": 0.1,
+            "minViews": 500
+        },
+        "maintain": {
+            "minVelocity": 0.5,
+            "percentOfPeak": 0.5,
+            "maxAge": 172800000
+        },
+        "exit": {
+            "velocityBelow": 0.3,
+            "ageAbove": 172800000,
+            "outOfTop": 50
+        }
+    },
+    "qualityFilters": {
+        "enabled": true,
+        "filters": {
+            "minEngagementRate": 0.03,
+            "minTimeOnPage": 30,
+            "minCompletionRate": 0.3,
+            "excludeLowQuality": true,
+            "excludeClickbait": true,
+            "excludeDuplicate": true
+        }
+    },
+    "autoRefresh": {
+        "viral": 30000,
+        "trending": 300000,
+        "hot": 900000,
+        "rising": 1800000
+    },
+    "displaySettings": {
+        "homepageCount": 10,
+        "sidebarCount": 5,
+        "trendingPageCount": 50,
+        "showBadges": true,
+        "showStats": true,
+        "showVelocity": true,
+        "animateBadges": true
+    },
+    "notifications": {
+        "enabled": true,
+        "triggers": {
+            "favoriteTeamTrending": true,
+            "viralContent": true,
+            "breakingNews": true
+        }
+    }
+}

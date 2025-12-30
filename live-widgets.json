@@ -1,0 +1,183 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Widget configuration for live sports displays in SPORTIQ",
+    "widgets": {
+        "liveTicker": {
+            "id": "live-ticker",
+            "name": "Live Score Ticker",
+            "enabled": true,
+            "position": "top",
+            "height": 50,
+            "refreshInterval": 30000,
+            "maxItems": 10,
+            "scrollSpeed": 30,
+            "showLogos": true,
+            "showTime": true,
+            "animation": "scroll",
+            "responsive": {
+                "mobile": {
+                    "height": 40,
+                    "showLogos": false
+                }
+            }
+        },
+        "matchCard": {
+            "id": "match-card",
+            "name": "Live Match Card",
+            "enabled": true,
+            "refreshInterval": 30000,
+            "showStats": true,
+            "showEvents": true,
+            "showLineups": false,
+            "maxEvents": 5,
+            "animation": "fade",
+            "layout": "card",
+            "responsive": {
+                "mobile": {
+                    "showStats": false,
+                    "maxEvents": 3
+                }
+            }
+        },
+        "leagueTable": {
+            "id": "league-table",
+            "name": "League Standings",
+            "enabled": true,
+            "refreshInterval": 3600000,
+            "maxTeams": 20,
+            "showForm": true,
+            "showGoalDiff": true,
+            "highlightTeams": [],
+            "animation": "none",
+            "responsive": {
+                "mobile": {
+                    "maxTeams": 10,
+                    "showForm": false
+                }
+            }
+        },
+        "upcomingFixtures": {
+            "id": "upcoming-fixtures",
+            "name": "Upcoming Matches",
+            "enabled": true,
+            "refreshInterval": 300000,
+            "maxFixtures": 5,
+            "daysAhead": 7,
+            "showTime": true,
+            "showVenue": false,
+            "groupByDate": true,
+            "animation": "slide"
+        },
+        "liveMatchWidget": {
+            "id": "live-match",
+            "name": "Detailed Live Match",
+            "enabled": true,
+            "refreshInterval": 15000,
+            "showCommentary": true,
+            "showStatistics": true,
+            "showLineups": true,
+            "showTimeline": true,
+            "fullScreen": false,
+            "animation": "fade"
+        },
+        "miniScoreboard": {
+            "id": "mini-scoreboard",
+            "name": "Mini Scoreboard",
+            "enabled": true,
+            "refreshInterval": 45000,
+            "maxMatches": 3,
+            "compact": true,
+            "position": "sidebar"
+        }
+    },
+    "liveIndicators": {
+        "enabled": true,
+        "styles": {
+            "LIVE": {
+                "color": "#ff0000",
+                "pulse": true,
+                "text": "LIVE"
+            },
+            "HT": {
+                "color": "#ffa500",
+                "pulse": false,
+                "text": "HT"
+            },
+            "FT": {
+                "color": "#808080",
+                "pulse": false,
+                "text": "FT"
+            }
+        }
+    },
+    "animations": {
+        "scoreUpdate": {
+            "type": "bounce",
+            "duration": 600,
+            "easing": "ease-out"
+        },
+        "goalNotification": {
+            "type": "flash",
+            "duration": 1000,
+            "color": "#ff0000"
+        },
+        "cardNotification": {
+            "type": "shake",
+            "duration": 500
+        }
+    },
+    "themes": {
+        "light": {
+            "background": "#ffffff",
+            "text": "#1a1a2e",
+            "border": "#e0e0e0",
+            "accent": "#6366f1"
+        },
+        "dark": {
+            "background": "#1a1a2e",
+            "text": "#ffffff",
+            "border": "#2d3748",
+            "accent": "#6366f1"
+        }
+    },
+    "placement": {
+        "homepage": {
+            "liveTicker": {
+                "enabled": true,
+                "order": 1
+            },
+            "matchCard": {
+                "enabled": true,
+                "order": 2
+            },
+            "leagueTable": {
+                "enabled": true,
+                "order": 3
+            }
+        },
+        "categoryPage": {
+            "liveTicker": {
+                "enabled": true,
+                "order": 1
+            },
+            "miniScoreboard": {
+                "enabled": true,
+                "order": 2
+            },
+            "upcomingFixtures": {
+                "enabled": true,
+                "order": 3
+            }
+        },
+        "articlePage": {
+            "matchCard": {
+                "enabled": true,
+                "order": 1
+            },
+            "miniScoreboard": {
+                "enabled": false
+            }
+        }
+    }
+}

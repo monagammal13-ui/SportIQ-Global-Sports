@@ -1,0 +1,408 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Complete real-time data synchronization engine for SPORTIQ - Unified updates across all layers",
+    "realTimeSync": {
+        "enabled": true,
+        "primaryMethod": "websocket",
+        "fallbackMethod": "polling",
+        "adaptiveStrategy": true
+    },
+    "websocket": {
+        "enabled": true,
+        "url": "wss://api.sportiq.com/realtime",
+        "protocols": [
+            "sportiq-v1"
+        ],
+        "reconnect": {
+            "enabled": true,
+            "maxAttempts": 10,
+            "initialDelay": 1000,
+            "maxDelay": 30000,
+            "backoff": "exponential"
+        },
+        "heartbeat": {
+            "enabled": true,
+            "interval": 30000,
+            "timeout": 5000
+        },
+        "compression": {
+            "enabled": true,
+            "algorithm": "deflate"
+        },
+        "authentication": {
+            "required": false,
+            "tokenBased": true,
+            "refreshBeforeExpiry": 300000
+        }
+    },
+    "polling": {
+        "enabled": true,
+        "fallbackOnly": true,
+        "strategies": {
+            "standard": {
+                "interval": 30000,
+                "jitter": 5000
+            },
+            "adaptive": {
+                "enabled": true,
+                "minInterval": 10000,
+                "maxInterval": 300000,
+                "adjustOnActivity": true
+            },
+            "longPolling": {
+                "enabled": true,
+                "timeout": 55000,
+                "immediateRetry": false
+            }
+        },
+        "batchRequests": {
+            "enabled": true,
+            "maxBatchSize": 10,
+            "batchWindow": 1000
+        }
+    },
+    "updatePriorities": {
+        "critical": {
+            "priority": 1,
+            "interval": 5000,
+            "method": "websocket",
+            "feeds": [
+                "live-scores",
+                "breaking-news",
+                "live-events"
+            ]
+        },
+        "high": {
+            "priority": 2,
+            "interval": 30000,
+            "method": "websocket",
+            "feeds": [
+                "trending-searches",
+                "trending-articles",
+                "social-signals"
+            ]
+        },
+        "medium": {
+            "priority": 3,
+            "interval": 300000,
+            "method": "polling",
+            "feeds": [
+                "news-articles",
+                "video-feed",
+                "image-gallery"
+            ]
+        },
+        "low": {
+            "priority": 4,
+            "interval": 900000,
+            "method": "polling",
+            "feeds": [
+                "recommendations",
+                "analytics",
+                "user-profiles"
+            ]
+        }
+    },
+    "dataChannels": {
+        "liveScores": {
+            "enabled": true,
+            "channel": "scores",
+            "updateInterval": 30000,
+            "priority": "critical",
+            "filters": {
+                "sports": [
+                    "football",
+                    "basketball",
+                    "tennis",
+                    "cricket"
+                ],
+                "status": [
+                    "live",
+                    "pre-match",
+                    "finished"
+                ]
+            }
+        },
+        "breakingNews": {
+            "enabled": true,
+            "channel": "news:breaking",
+            "updateInterval": 300000,
+            "priority": "critical",
+            "pushNotification": true
+        },
+        "liveEvents": {
+            "enabled": true,
+            "channel": "events:live",
+            "updateInterval": 60000,
+            "priority": "critical",
+            "includes": [
+                "world-cup",
+                "olympics",
+                "championships"
+            ]
+        },
+        "trendingContent": {
+            "enabled": true,
+            "channel": "trending",
+            "updateInterval": 300000,
+            "priority": "high",
+            "types": [
+                "articles",
+                "searches",
+                "topics"
+            ]
+        },
+        "newsArticles": {
+            "enabled": true,
+            "channel": "news:articles",
+            "updateInterval": 300000,
+            "priority": "medium",
+            "batchSize": 20
+        },
+        "videoFeed": {
+            "enabled": true,
+            "channel": "media:videos",
+            "updateInterval": 900000,
+            "priority": "medium",
+            "maxItems": 10
+        },
+        "imageGallery": {
+            "enabled": true,
+            "channel": "media:images",
+            "updateInterval": 1800000,
+            "priority": "medium",
+            "maxItems": 20
+        },
+        "socialSignals": {
+            "enabled": true,
+            "channel": "social",
+            "updateInterval": 60000,
+            "priority": "high",
+            "metrics": [
+                "likes",
+                "shares",
+                "comments"
+            ]
+        },
+        "searchTrends": {
+            "enabled": true,
+            "channel": "search:trends",
+            "updateInterval": 300000,
+            "priority": "high"
+        },
+        "recommendations": {
+            "enabled": true,
+            "channel": "recommendations",
+            "updateInterval": 600000,
+            "priority": "low",
+            "personalized": true
+        }
+    },
+    "cacheInvalidation": {
+        "enabled": true,
+        "strategies": {
+            "immediate": {
+                "triggers": [
+                    "live-score-update",
+                    "breaking-news",
+                    "goal-scored"
+                ],
+                "clearAll": false,
+                "clearSpecific": true
+            },
+            "delayed": {
+                "triggers": [
+                    "article-published",
+                    "video-uploaded"
+                ],
+                "delay": 5000
+            },
+            "scheduled": {
+                "interval": 3600000,
+                "clearStale": true,
+                "maxAge": 86400000
+            }
+        },
+        "selective": {
+            "enabled": true,
+            "preserveUserData": true,
+            "preservePersonalization": true
+        }
+    },
+    "conflictResolution": {
+        "enabled": true,
+        "strategy": "last-write-wins",
+        "timestampBased": true,
+        "versionControl": {
+            "enabled": true,
+            "conflictCallback": true
+        },
+        "mergingRules": {
+            "arrays": "append",
+            "objects": "deep-merge",
+            "primitives": "overwrite"
+        }
+    },
+    "dataTransformation": {
+        "enabled": true,
+        "normalize": true,
+        "sanitize": true,
+        "validation": {
+            "enabled": true,
+            "schema": "json-schema",
+            "strictMode": false
+        },
+        "enrichment": {
+            "enabled": true,
+            "addTimestamps": true,
+            "addMetadata": true
+        }
+    },
+    "errorHandling": {
+        "retry": {
+            "enabled": true,
+            "maxAttempts": 3,
+            "backoff": "exponential",
+            "retriableErrors": [
+                408,
+                429,
+                500,
+                502,
+                503,
+                504
+            ]
+        },
+        "fallback": {
+            "useCache": true,
+            "usePreviousData": true,
+            "showStaleIndicator": true,
+            "maxStaleTime": 600000
+        },
+        "logging": {
+            "enabled": true,
+            "level": "error",
+            "destination": "/logs/realtime-sync.log"
+        },
+        "monitoring": {
+            "enabled": true,
+            "trackFailures": true,
+            "alertThreshold": 0.1
+        }
+    },
+    "performanceOptimization": {
+        "debouncing": {
+            "enabled": true,
+            "delay": 300,
+            "maxWait": 1000
+        },
+        "throttling": {
+            "enabled": true,
+            "limit": 10,
+            "window": 1000
+        },
+        "batching": {
+            "enabled": true,
+            "maxSize": 50,
+            "flushInterval": 2000
+        },
+        "compression": {
+            "enabled": true,
+            "minSize": 1024,
+            "algorithm": "gzip"
+        }
+    },
+    "networkAdaptation": {
+        "enabled": true,
+        "detectConnectionType": true,
+        "strategies": {
+            "wifi": {
+                "updateInterval": 30000,
+                "prefetch": true,
+                "highQuality": true
+            },
+            "4g": {
+                "updateInterval": 60000,
+                "prefetch": false,
+                "mediumQuality": true
+            },
+            "3g": {
+                "updateInterval": 120000,
+                "prefetch": false,
+                "lowQuality": true
+            },
+            "offline": {
+                "useCache": true,
+                "queueUpdates": true
+            }
+        }
+    },
+    "batteryOptimization": {
+        "enabled": true,
+        "detectBatteryLevel": true,
+        "strategies": {
+            "high": {
+                "threshold": 50,
+                "normalOperation": true
+            },
+            "medium": {
+                "threshold": 20,
+                "reducedUpdates": true,
+                "intervalMultiplier": 2
+            },
+            "low": {
+                "threshold": 10,
+                "minimalUpdates": true,
+                "intervalMultiplier": 5
+            },
+            "charging": {
+                "aggressiveUpdates": true,
+                "prefetch": true
+            }
+        }
+    },
+    "visibilityOptimization": {
+        "enabled": true,
+        "pageVisibility": {
+            "pauseWhenHidden": true,
+            "resumeDelay": 1000,
+            "catchUpOnVisible": true
+        },
+        "tabFocus": {
+            "reduceWhenBlurred": true,
+            "fullSpeedOnFocus": true
+        }
+    },
+    "updateQueue": {
+        "enabled": true,
+        "maxSize": 1000,
+        "processing": {
+            "concurrency": 5,
+            "priorityBased": true,
+            "fifo": false
+        },
+        "persistence": {
+            "enabled": true,
+            "storage": "indexedDB",
+            "clearOnSuccess": true
+        }
+    },
+    "analytics": {
+        "enabled": true,
+        "track": {
+            "updateLatency": true,
+            "failureRate": true,
+            "dataVolume": true,
+            "connectionQuality": true
+        },
+        "reporting": {
+            "enabled": true,
+            "interval": 3600000,
+            "metrics": [
+                "latency_p95",
+                "success_rate",
+                "data_transferred"
+            ]
+        }
+    }
+}

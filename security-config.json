@@ -1,0 +1,70 @@
+{
+    "layerInfo": {
+        "id": "layer-071",
+        "name": "Core Security & Anti-Hacking Engine",
+        "version": "1.0.0",
+        "type": "security-monitoring",
+        "status": "active"
+    },
+    "monitoringInterval": 10000,
+    "maxLoginAttempts": 3,
+    "enableFirewall": true,
+    "enableIntrusionDetection": true,
+    "enableBruteForceProtection": true,
+    "threatLevels": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+    ],
+    "blockedIPs": [],
+    "securityRules": {
+        "xss": {
+            "enabled": true,
+            "action": "block",
+            "logLevel": "high"
+        },
+        "clickjacking": {
+            "enabled": true,
+            "action": "warn",
+            "logLevel": "critical"
+        },
+        "csrf": {
+            "enabled": true,
+            "action": "validate",
+            "logLevel": "high"
+        },
+        "sqlInjection": {
+            "enabled": true,
+            "action": "block",
+            "logLevel": "critical"
+        },
+        "bruteForce": {
+            "enabled": true,
+            "maxAttempts": 3,
+            "lockoutDuration": 3600000,
+            "action": "block"
+        }
+    },
+    "rateLimiting": {
+        "enabled": true,
+        "requestsPerMinute": 60,
+        "burstSize": 100
+    },
+    "contentSecurityPolicy": {
+        "enabled": false,
+        "directives": {
+            "default-src": [
+                "'self'"
+            ],
+            "script-src": [
+                "'self'",
+                "'unsafe-inline'"
+            ],
+            "style-src": [
+                "'self'",
+                "'unsafe-inline'"
+            ]
+        }
+    }
+}

@@ -1,0 +1,299 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Performance optimization configuration for SPORTIQ platform",
+    "coreWebVitals": {
+        "targets": {
+            "LCP": {
+                "good": 2500,
+                "needsImprovement": 4000,
+                "target": 2000
+            },
+            "FID": {
+                "good": 100,
+                "needsImprovement": 300,
+                "target": 50
+            },
+            "CLS": {
+                "good": 0.1,
+                "needsImprovement": 0.25,
+                "target": 0.05
+            },
+            "TTFB": {
+                "good": 800,
+                "needsImprovement": 1800,
+                "target": 600
+            },
+            "FCP": {
+                "good": 1800,
+                "needsImprovement": 3000,
+                "target": 1500
+            }
+        }
+    },
+    "performanceBudgets": {
+        "totalPageSize": 1572864,
+        "totalRequests": 50,
+        "resources": {
+            "javascript": 307200,
+            "css": 102400,
+            "images": 819200,
+            "fonts": 102400,
+            "other": 204800
+        }
+    },
+    "caching": {
+        "strategies": {
+            "static": {
+                "strategy": "CacheFirst",
+                "cacheName": "static-v1",
+                "maxAge": 86400,
+                "maxEntries": 50
+            },
+            "dynamic": {
+                "strategy": "NetworkFirst",
+                "cacheName": "dynamic-v1",
+                "maxAge": 3600,
+                "maxEntries": 30,
+                "networkTimeout": 3000
+            },
+            "images": {
+                "strategy": "CacheFirst",
+                "cacheName": "images-v1",
+                "maxAge": 604800,
+                "maxEntries": 100
+            },
+            "api": {
+                "strategy": "NetworkFirst",
+                "cacheName": "api-v1",
+                "maxAge": 300,
+                "maxEntries": 20
+            }
+        },
+        "precache": [
+            "/",
+            "/html/index.html",
+            "/css/style.css",
+            "/js/main.js",
+            "/js/ad-engine.js"
+        ]
+    },
+    "compression": {
+        "enabled": true,
+        "gzip": {
+            "enabled": true,
+            "level": 6,
+            "types": [
+                "text/html",
+                "text/css",
+                "text/javascript",
+                "application/javascript",
+                "application/json",
+                "image/svg+xml"
+            ]
+        },
+        "brotli": {
+            "enabled": true,
+            "quality": 11,
+            "types": [
+                "text/html",
+                "text/css",
+                "text/javascript",
+                "application/javascript",
+                "application/json"
+            ]
+        }
+    },
+    "resourceHints": {
+        "preconnect": [
+            "https://fonts.googleapis.com",
+            "https://fonts.gstatic.com",
+            "https://www.google-analytics.com"
+        ],
+        "dnsPrefetch": [
+            "https://www.googletagmanager.com",
+            "https://connect.facebook.net"
+        ],
+        "preload": [
+            {
+                "href": "/css/style.css",
+                "as": "style"
+            },
+            {
+                "href": "/js/main.js",
+                "as": "script"
+            },
+            {
+                "href": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap",
+                "as": "style"
+            }
+        ],
+        "prefetch": [
+            "/html/category.html",
+            "/html/about.html"
+        ]
+    },
+    "imageOptimization": {
+        "formats": {
+            "webp": {
+                "enabled": true,
+                "quality": 85,
+                "fallback": "jpeg"
+            },
+            "avif": {
+                "enabled": false,
+                "quality": 80
+            }
+        },
+        "responsive": {
+            "enabled": true,
+            "breakpoints": [
+                320,
+                640,
+                768,
+                1024,
+                1280,
+                1920
+            ],
+            "formats": [
+                "webp",
+                "jpeg"
+            ]
+        },
+        "lazyLoading": {
+            "enabled": true,
+            "threshold": "200px",
+            "placeholder": "blur"
+        },
+        "compression": {
+            "jpeg": {
+                "quality": 85,
+                "progressive": true
+            },
+            "png": {
+                "quality": 90,
+                "compressionLevel": 9
+            }
+        }
+    },
+    "codeOptimization": {
+        "minification": {
+            "html": {
+                "enabled": true,
+                "removeComments": true,
+                "collapseWhitespace": true
+            },
+            "css": {
+                "enabled": true,
+                "removeComments": true,
+                "mergeRules": true
+            },
+            "javascript": {
+                "enabled": true,
+                "removeComments": true,
+                "compress": true,
+                "mangle": true
+            }
+        },
+        "bundling": {
+            "enabled": false,
+            "splitChunks": true,
+            "vendorChunk": true
+        },
+        "treeShaking": {
+            "enabled": false,
+            "sideEffects": false
+        }
+    },
+    "criticalCSS": {
+        "enabled": false,
+        "inline": true,
+        "dimensions": {
+            "width": 1300,
+            "height": 900
+        }
+    },
+    "fonts": {
+        "optimization": {
+            "display": "swap",
+            "preload": true,
+            "subsetting": false
+        },
+        "formats": [
+            "woff2",
+            "woff"
+        ]
+    },
+    "javascript": {
+        "defer": true,
+        "async": true,
+        "modulePreload": false,
+        "splitting": false
+    },
+    "cdn": {
+        "enabled": false,
+        "provider": "cloudflare",
+        "baseUrl": "https://cdn.sportiq.com",
+        "assets": [
+            "images",
+            "videos",
+            "fonts"
+        ]
+    },
+    "http2": {
+        "enabled": true,
+        "serverPush": false
+    },
+    "monitoring": {
+        "realUserMonitoring": {
+            "enabled": true,
+            "sampleRate": 100
+        },
+        "performanceObserver": {
+            "enabled": true,
+            "types": [
+                "largest-contentful-paint",
+                "first-input",
+                "layout-shift"
+            ]
+        },
+        "navigationTiming": {
+            "enabled": true,
+            "sendToAnalytics": true
+        }
+    },
+    "offline": {
+        "enabled": true,
+        "strategy": "CacheFirst",
+        "fallbackPage": "/offline.html"
+    },
+    "backgroundSync": {
+        "enabled": true,
+        "maxRetries": 3,
+        "retryDelay": 300000
+    },
+    "adaptiveLoading": {
+        "enabled": true,
+        "strategies": {
+            "slow2g": {
+                "imageQuality": 60,
+                "lazyLoadingDistance": "100px",
+                "disableAnimations": true
+            },
+            "3g": {
+                "imageQuality": 75,
+                "lazyLoadingDistance": "150px"
+            },
+            "4g": {
+                "imageQuality": 85,
+                "lazyLoadingDistance": "200px"
+            }
+        }
+    },
+    "prefetching": {
+        "enabled": true,
+        "idle": true,
+        "viewport": true,
+        "networkIdle": 2000
+    }
+}

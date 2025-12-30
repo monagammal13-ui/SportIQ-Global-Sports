@@ -1,0 +1,416 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Complete live sports results engine for SPORTIQ",
+    "engine": {
+        "enabled": true,
+        "realTime": true,
+        "autoUpdate": true,
+        "cacheResults": true
+    },
+    "updateIntervals": {
+        "live": {
+            "enabled": true,
+            "interval": 30000,
+            "matchStatus": [
+                "live",
+                "half-time",
+                "break"
+            ],
+            "priority": "high"
+        },
+        "preMatch": {
+            "enabled": true,
+            "interval": 300000,
+            "matchStatus": [
+                "scheduled",
+                "pre-match"
+            ],
+            "priority": "medium"
+        },
+        "finished": {
+            "enabled": true,
+            "interval": 3600000,
+            "matchStatus": [
+                "finished",
+                "ft",
+                "aet",
+                "pen"
+            ],
+            "priority": "low"
+        },
+        "standings": {
+            "enabled": true,
+            "interval": 900000,
+            "priority": "medium"
+        }
+    },
+    "connections": {
+        "websocket": {
+            "enabled": true,
+            "url": "wss://api.sportiq.com/live",
+            "reconnect": true,
+            "reconnectInterval": 5000,
+            "maxReconnectAttempts": 10
+        },
+        "polling": {
+            "enabled": true,
+            "fallback": true,
+            "interval": 30000
+        },
+        "serverSentEvents": {
+            "enabled": false,
+            "url": "/api/live/events"
+        }
+    },
+    "sports": {
+        "football": {
+            "enabled": true,
+            "updateInterval": 30000,
+            "events": {
+                "goal": {
+                    "enabled": true,
+                    "icon": "⚽",
+                    "notification": true,
+                    "autoUpdate": true
+                },
+                "yellowCard": {
+                    "enabled": true,
+                    "icon": "🟨",
+                    "notification": false
+                },
+                "redCard": {
+                    "enabled": true,
+                    "icon": "🟥",
+                    "notification": true
+                },
+                "substitution": {
+                    "enabled": true,
+                    "icon": "🔄",
+                    "notification": false
+                },
+                "penalty": {
+                    "enabled": true,
+                    "icon": "🎯",
+                    "notification": true
+                },
+                "var": {
+                    "enabled": true,
+                    "icon": "📺",
+                    "notification": true
+                },
+                "ownGoal": {
+                    "enabled": true,
+                    "icon": "⚽🔴",
+                    "notification": true
+                }
+            },
+            "matchPhases": [
+                "1H",
+                "HT",
+                "2H",
+                "FT",
+                "ET1",
+                "ET2",
+                "PEN"
+            ],
+            "statFields": [
+                "possession",
+                "shots",
+                "shotsOnTarget",
+                "corners",
+                "fouls",
+                "offsides",
+                "passes",
+                "passAccuracy"
+            ]
+        },
+        "basketball": {
+            "enabled": true,
+            "updateInterval": 30000,
+            "events": {
+                "basket": {
+                    "enabled": true,
+                    "icon": "🏀",
+                    "points": [
+                        1,
+                        2,
+                        3
+                    ],
+                    "notification": false
+                },
+                "threePointer": {
+                    "enabled": true,
+                    "icon": "🎯",
+                    "notification": false
+                },
+                "foul": {
+                    "enabled": true,
+                    "icon": "🖐️",
+                    "notification": false
+                },
+                "timeout": {
+                    "enabled": true,
+                    "icon": "⏸️",
+                    "notification": false
+                }
+            },
+            "quarters": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "overtime": true,
+            "statFields": [
+                "fieldGoals",
+                "threePointers",
+                "freeThrows",
+                "rebounds",
+                "assists",
+                "steals",
+                "blocks",
+                "turnovers"
+            ]
+        },
+        "tennis": {
+            "enabled": true,
+            "updateInterval": 60000,
+            "events": {
+                "point": {
+                    "enabled": true,
+                    "notification": false
+                },
+                "game": {
+                    "enabled": true,
+                    "notification": false
+                },
+                "set": {
+                    "enabled": true,
+                    "notification": true
+                },
+                "break": {
+                    "enabled": true,
+                    "icon": "💔",
+                    "notification": true
+                },
+                "tiebreak": {
+                    "enabled": true,
+                    "icon": "🎾",
+                    "notification": true
+                }
+            },
+            "scoring": [
+                "sets",
+                "games",
+                "points"
+            ],
+            "maxSets": 5,
+            "statFields": [
+                "aces",
+                "doubleFaults",
+                "firstServePercentage",
+                "breakPointsWon"
+            ]
+        },
+        "cricket": {
+            "enabled": true,
+            "updateInterval": 60000,
+            "events": {
+                "wicket": {
+                    "enabled": true,
+                    "icon": "🏏",
+                    "notification": true
+                },
+                "boundary": {
+                    "enabled": true,
+                    "icon": "4️⃣",
+                    "notification": false
+                },
+                "six": {
+                    "enabled": true,
+                    "icon": "6️⃣",
+                    "notification": true
+                },
+                "fifty": {
+                    "enabled": true,
+                    "icon": "5️⃣0️⃣",
+                    "notification": true
+                },
+                "century": {
+                    "enabled": true,
+                    "icon": "💯",
+                    "notification": true
+                }
+            },
+            "formats": [
+                "test",
+                "odi",
+                "t20"
+            ],
+            "statFields": [
+                "runs",
+                "wickets",
+                "overs",
+                "runRate",
+                "extras"
+            ]
+        }
+    },
+    "scoreCalculation": {
+        "football": {
+            "homeScore": "sum(homeGoals)",
+            "awayScore": "sum(awayGoals)",
+            "aggregate": "homeScore + awayScore"
+        },
+        "basketball": {
+            "homeScore": "sum(homePoints)",
+            "awayScore": "sum(awayPoints)",
+            "quarterScores": true
+        },
+        "tennis": {
+            "sets": "array(setSc ores)",
+            "games": "current_set_games",
+            "points": "current_game_points"
+        },
+        "cricket": {
+            "runs": "sum(batting_runs)",
+            "wickets": "count(wickets_fallen)",
+            "overs": "balls_bowled / 6"
+        }
+    },
+    "notifications": {
+        "enabled": true,
+        "triggers": {
+            "matchStart": {
+                "enabled": true,
+                "condition": "status == 'live'",
+                "favoriteTeamsOnly": true
+            },
+            "goal": {
+                "enabled": true,
+                "condition": "event.type == 'goal'",
+                "favoriteTeamsOnly": true,
+                "sound": true
+            },
+            "redCard": {
+                "enabled": true,
+                "condition": "event.type == 'redCard'",
+                "favoriteTeamsOnly": false
+            },
+            "halfTime": {
+                "enabled": false,
+                "condition": "status == 'half-time'"
+            },
+            "fullTime": {
+                "enabled": true,
+                "condition": "status == 'finished'",
+                "favoriteTeamsOnly": true
+            },
+            "closeMatch": {
+                "enabled": true,
+                "condition": "abs(homeScore - awayScore) <= 1 && elapsed > 80",
+                "description": "Notify when match is close in final minutes"
+            }
+        },
+        "preferences": {
+            "userControlled": true,
+            "requirePermission": true,
+            "sound": true,
+            "vibrate": true
+        }
+    },
+    "caching": {
+        "strategy": "multi-tier",
+        "live": {
+            "enabled": true,
+            "ttl": 30000,
+            "storage": "memory",
+            "maxSize": 100
+        },
+        "finished": {
+            "enabled": true,
+            "ttl": 86400000,
+            "storage": "localStorage",
+            "maxSize": 500
+        },
+        "standings": {
+            "enabled": true,
+            "ttl": 900000,
+            "storage": "localStorage",
+            "maxSize": 100
+        },
+        "invalidation": {
+            "onUpdate": true,
+            "onError": false,
+            "manual": true
+        }
+    },
+    "errorHandling": {
+        "retry": {
+            "enabled": true,
+            "maxAttempts": 3,
+            "backoff": "exponential",
+            "initialDelay": 1000,
+            "maxDelay": 30000
+        },
+        "fallback": {
+            "useCachedData": true,
+            "maxStaleTime": 300000,
+            "showStaleIndicator": true
+        },
+        "logging": {
+            "enabled": true,
+            "level": "error",
+            "destination": "/logs/live-results-errors.log"
+        }
+    },
+    "display": {
+        "scoreboard": {
+            "compact": {
+                "height": 60,
+                "showTeamLogos": true,
+                "showScore": true,
+                "showTime": true,
+                "showEvents": false
+            },
+            "standard": {
+                "height": 100,
+                "showTeamLogos": true,
+                "showScore": true,
+                "showTime": true,
+                "showEvents": true,
+                "showStats": false
+            },
+            "detailed": {
+                "height": 200,
+                "showTeamLogos": true,
+                "showScore": true,
+                "showTime": true,
+                "showEvents": true,
+                "showStats": true,
+                "showLineups": false
+            },
+            "full": {
+                "showTeamLogos": true,
+                "showScore": true,
+                "showTime": true,
+                "showEvents": true,
+                "showStats": true,
+                "showLineups": true,
+                "showCommentary": true
+            }
+        },
+        "liveIndicator": {
+            "enabled": true,
+            "style": "pulse",
+            "color": "#ef4444",
+            "text": "LIVE"
+        },
+        "autoRefresh": {
+            "enabled": true,
+            "showCountdown": false,
+            "smoothUpdate": true
+        }
+    }
+}

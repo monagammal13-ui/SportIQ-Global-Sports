@@ -1,0 +1,52 @@
+{
+    "layerInfo": {
+        "id": "layer-070",
+        "name": "Unified Global Demand Engine",
+        "version": "1.0.0",
+        "type": "aggregation-dashboard",
+        "status": "active"
+    },
+    "syncInterval": 30000,
+    "widgets": {
+        "trending": {
+            "enabled": true,
+            "priority": 1,
+            "maxItems": 5
+        },
+        "highlights": {
+            "enabled": true,
+            "priority": 2,
+            "maxItems": 3
+        },
+        "polls": {
+            "enabled": true,
+            "priority": 3,
+            "maxItems": 3
+        },
+        "news": {
+            "enabled": true,
+            "priority": 4,
+            "maxItems": 4
+        },
+        "alerts": {
+            "enabled": true,
+            "priority": 5,
+            "maxItems": 3
+        }
+    },
+    "dashboardPosition": "floating",
+    "autoOpen": false,
+    "dependencies": [
+        "layer-065",
+        "layer-066",
+        "layer-067",
+        "layer-068",
+        "layer-069"
+    ],
+    "display": {
+        "fabPosition": "bottom-right",
+        "dashboardWidth": "600px",
+        "showStats": true,
+        "compactMode": false
+    }
+}

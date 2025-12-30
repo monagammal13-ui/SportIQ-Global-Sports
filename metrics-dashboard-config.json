@@ -1,0 +1,359 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Metrics dashboard and visualization configuration for SPORTIQ",
+    "dashboard": {
+        "enabled": true,
+        "requireAuth": true,
+        "roles": [
+            "admin",
+            "editor",
+            "moderator"
+        ],
+        "refreshInterval": 30000,
+        "theme": "dark"
+    },
+    "kpis": {
+        "overview": [
+            {
+                "id": "total_users",
+                "name": "Total Users",
+                "icon": "👥",
+                "dataSource": "users",
+                "aggregation": "count",
+                "comparison": "yesterday",
+                "format": "number",
+                "goal": 100000
+            },
+            {
+                "id": "daily_active_users",
+                "name": "Daily Active Users",
+                "icon": "📊",
+                "dataSource": "sessions",
+                "aggregation": "unique_users",
+                "timeframe": "today",
+                "comparison": "yesterday",
+                "format": "number",
+                "goal": 10000
+            },
+            {
+                "id": "pageviews",
+                "name": "Page Views",
+                "icon": "👁️",
+                "dataSource": "pageviews",
+                "aggregation": "count",
+                "timeframe": "today",
+                "comparison": "yesterday",
+                "format": "number"
+            },
+            {
+                "id": "avg_session_duration",
+                "name": "Avg. Session Duration",
+                "icon": "⏱️",
+                "dataSource": "sessions",
+                "aggregation": "average",
+                "field": "duration",
+                "format": "duration",
+                "comparison": "yesterday"
+            },
+            {
+                "id": "bounce_rate",
+                "name": "Bounce Rate",
+                "icon": "📉",
+                "dataSource": "sessions",
+                "aggregation": "percentage",
+                "field": "bounced",
+                "format": "percentage",
+                "comparison": "yesterday",
+                "inverse": true
+            },
+            {
+                "id": "revenue",
+                "name": "Revenue (Today)",
+                "icon": "💰",
+                "dataSource": "revenue",
+                "aggregation": "sum",
+                "timeframe": "today",
+                "format": "currency",
+                "comparison": "yesterday"
+            }
+        ]
+    },
+    "charts": {
+        "trafficOverTime": {
+            "type": "line",
+            "title": "Traffic Over Time",
+            "dataSource": "pageviews",
+            "groupBy": "hour",
+            "metrics": [
+                "pageviews",
+                "unique_visitors"
+            ],
+            "timeframe": "7d",
+            "colors": [
+                "#4f46e5",
+                "#10b981"
+            ]
+        },
+        "topArticles": {
+            "type": "table",
+            "title": "Top Articles",
+            "dataSource": "articles",
+            "columns": [
+                {
+                    "field": "title",
+                    "label": "Title",
+                    "width": "50%"
+                },
+                {
+                    "field": "views",
+                    "label": "Views",
+                    "format": "number"
+                },
+                {
+                    "field": "engagement",
+                    "label": "Engagement",
+                    "format": "percentage"
+                },
+                {
+                    "field": "revenue",
+                    "label": "Revenue",
+                    "format": "currency"
+                }
+            ],
+            "sortBy": "views",
+            "limit": 10,
+            "timeframe": "7d"
+        },
+        "userAcquisition": {
+            "type": "pie",
+            "title": "User Acquisition Sources",
+            "dataSource": "sessions",
+            "groupBy": "source",
+            "metric": "count",
+            "colors": [
+                "#3b82f6",
+                "#10b981",
+                "#f59e0b",
+                "#ef4444",
+                "#8b5cf6"
+            ],
+            "showLegend": true,
+            "showPercentages": true
+        },
+        "deviceBreakdown": {
+            "type": "donut",
+            "title": "Device Breakdown",
+            "dataSource": "sessions",
+            "groupBy": "device_type",
+            "metric": "count",
+            "colors": [
+                "#6366f1",
+                "#ec4899",
+                "#14b8a6"
+            ]
+        },
+        "revenueBySource": {
+            "type": "bar",
+            "title": "Revenue by Source",
+            "dataSource": "revenue",
+            "groupBy": "source",
+            "metric": "sum",
+            "horizontal": true,
+            "showValues": true,
+            "currency": true
+        },
+        "conversionFunnel": {
+            "type": "funnel",
+            "title": "User Signup Funnel",
+            "dataSource": "funnels",
+            "funnelId": "user_signup_funnel",
+            "showPercentages": true,
+            "showDropoff": true
+        }
+    },
+    "widgets": {
+        "layout": "grid",
+        "columns": 12,
+        "gap": 16,
+        "items": [
+            {
+                "id": "kpis",
+                "type": "kpi-grid",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "w": 12,
+                    "h": 2
+                },
+                "data": "kpis.overview"
+            },
+            {
+                "id": "traffic",
+                "type": "chart",
+                "position": {
+                    "x": 0,
+                    "y": 2,
+                    "w": 8,
+                    "h": 4
+                },
+                "data": "charts.trafficOverTime"
+            },
+            {
+                "id": "acquisition",
+                "type": "chart",
+                "position": {
+                    "x": 8,
+                    "y": 2,
+                    "w": 4,
+                    "h": 4
+                },
+                "data": "charts.userAcquisition"
+            },
+            {
+                "id": "top_articles",
+                "type": "chart",
+                "position": {
+                    "x": 0,
+                    "y": 6,
+                    "w": 6,
+                    "h": 5
+                },
+                "data": "charts.topArticles"
+            },
+            {
+                "id": "revenue",
+                "type": "chart",
+                "position": {
+                    "x": 6,
+                    "y": 6,
+                    "w": 6,
+                    "h": 5
+                },
+                "data": "charts.revenueBySource"
+            }
+        ]
+    },
+    "realTimeMetrics": {
+        "enabled": true,
+        "updateInterval": 5000,
+        "metrics": [
+            {
+                "id": "active_users",
+                "name": "Active Users Right Now",
+                "icon": "🟢",
+                "dataSource": "realtime_sessions",
+                "threshold": {
+                    "low": 100,
+                    "medium": 500,
+                    "high": 1000
+                }
+            },
+            {
+                "id": "active_pages",
+                "name": "Active Pages",
+                "icon": "📄",
+                "dataSource": "realtime_pageviews",
+                "groupBy": "page_url",
+                "limit": 10
+            },
+            {
+                "id": "live_events",
+                "name": "Events (Last Minute)",
+                "icon": "⚡",
+                "dataSource": "realtime_events",
+                "timeframe": "1m",
+                "groupBy": "event_name"
+            }
+        ]
+    },
+    "reports": {
+        "enabled": true,
+        "scheduled": [
+            {
+                "id": "daily_summary",
+                "name": "Daily Summary Report",
+                "frequency": "daily",
+                "time": "09:00",
+                "format": "email",
+                "recipients": [
+                    "admin@sportiq.com"
+                ],
+                "sections": [
+                    "kpis",
+                    "top_articles",
+                    "revenue"
+                ]
+            },
+            {
+                "id": "weekly_analytics",
+                "name": "Weekly Analytics Report",
+                "frequency": "weekly",
+                "day": "monday",
+                "time": "08:00",
+                "format": "pdf",
+                "recipients": [
+                    "admin@sportiq.com"
+                ],
+                "sections": [
+                    "overview",
+                    "traffic",
+                    "engagement",
+                    "conversions",
+                    "revenue"
+                ]
+            }
+        ],
+        "export": {
+            "enabled": true,
+            "formats": [
+                "csv",
+                "excel",
+                "pdf"
+            ],
+            "maxRange": "90d"
+        }
+    },
+    "alerts": {
+        "enabled": true,
+        "rules": [
+            {
+                "id": "traffic_spike",
+                "name": "Traffic Spike Alert",
+                "metric": "pageviews",
+                "condition": "increase",
+                "threshold": 200,
+                "unit": "percent",
+                "timeframe": "1h",
+                "notification": [
+                    "email",
+                    "slack"
+                ]
+            },
+            {
+                "id": "error_rate",
+                "name": "High Error Rate",
+                "metric": "errors",
+                "condition": "greater_than",
+                "threshold": 100,
+                "timeframe": "5m",
+                "notification": [
+                    "email",
+                    "slack"
+                ]
+            },
+            {
+                "id": "revenue_drop",
+                "name": "Revenue Drop",
+                "metric": "revenue",
+                "condition": "decrease",
+                "threshold": 30,
+                "unit": "percent",
+                "timeframe": "1d",
+                "notification": [
+                    "email"
+                ]
+            }
+        ]
+    }
+}

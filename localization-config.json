@@ -1,0 +1,251 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Complete localization and internationalization system for SPORTIQ",
+    "supportedLanguages": [
+        {
+            "code": "en",
+            "name": "English",
+            "nativeName": "English",
+            "flag": "🇬🇧",
+            "direction": "ltr",
+            "default": true,
+            "enabled": true
+        },
+        {
+            "code": "es",
+            "name": "Spanish",
+            "nativeName": "Español",
+            "flag": "🇪🇸",
+            "direction": "ltr",
+            "default": false,
+            "enabled": true
+        },
+        {
+            "code": "ar",
+            "name": "Arabic",
+            "nativeName": "العربية",
+            "flag": "🇸🇦",
+            "direction": "rtl",
+            "default": false,
+            "enabled": true
+        },
+        {
+            "code": "fr",
+            "name": "French",
+            "nativeName": "Français",
+            "flag": "🇫🇷",
+            "direction": "ltr",
+            "default": false,
+            "enabled": true
+        }
+    ],
+    "detection": {
+        "order": [
+            "urlParameter",
+            "localStorage",
+            "browserLanguage",
+            "geoLocation"
+        ],
+        "urlParameter": {
+            "enabled": true,
+            "paramName": "lang",
+            "updateUrl": true
+        },
+        "localStorage": {
+            "enabled": true,
+            "key": "sportiq_language"
+        },
+        "browserLanguage": {
+            "enabled": true,
+            "fallback": "en"
+        },
+        "geoLocation": {
+            "enabled": false,
+            "provider": "cloudflare",
+            "mapping": {
+                "US": "en",
+                "GB": "en",
+                "ES": "es",
+                "MX": "es",
+                "AR": "es",
+                "SA": "ar",
+                "AE": "ar",
+                "EG": "ar",
+                "FR": "fr",
+                "CA": "fr"
+            }
+        }
+    },
+    "fallback": {
+        "enabled": true,
+        "language": "en",
+        "showMissingKeys": false,
+        "logMissingKeys": true
+    },
+    "rtl": {
+        "enabled": true,
+        "languages": [
+            "ar"
+        ],
+        "htmlAttribute": "dir",
+        "bodyClass": "rtl",
+        "mirrorIcons": true,
+        "flipLayout": true
+    },
+    "formats": {
+        "date": {
+            "en": {
+                "short": "MM/DD/YYYY",
+                "medium": "MMM DD, YYYY",
+                "long": "MMMM DD, YYYY",
+                "full": "dddd, MMMM DD, YYYY"
+            },
+            "es": {
+                "short": "DD/MM/YYYY",
+                "medium": "DD MMM YYYY",
+                "long": "DD [de] MMMM [de] YYYY",
+                "full": "dddd, DD [de] MMMM [de] YYYY"
+            },
+            "ar": {
+                "short": "DD/MM/YYYY",
+                "medium": "DD MMM YYYY",
+                "long": "DD MMMM YYYY",
+                "full": "dddd، DD MMMM YYYY"
+            },
+            "fr": {
+                "short": "DD/MM/YYYY",
+                "medium": "DD MMM YYYY",
+                "long": "DD MMMM YYYY",
+                "full": "dddd DD MMMM YYYY"
+            }
+        },
+        "time": {
+            "en": "hh:mm A",
+            "es": "HH:mm",
+            "ar": "hh:mm A",
+            "fr": "HH:mm"
+        },
+        "number": {
+            "en": {
+                "decimal": ".",
+                "thousands": ",",
+                "grouping": 3
+            },
+            "es": {
+                "decimal": ",",
+                "thousands": ".",
+                "grouping": 3
+            },
+            "ar": {
+                "decimal": "٫",
+                "thousands": "٬",
+                "grouping": 3,
+                "numerals": "arabic-indic"
+            },
+            "fr": {
+                "decimal": ",",
+                "thousands": " ",
+                "grouping": 3
+            }
+        },
+        "currency": {
+            "en": {
+                "symbol": "$",
+                "position": "before",
+                "format": "$#,##0.00"
+            },
+            "es": {
+                "symbol": "€",
+                "position": "after",
+                "format": "#.##0,00 €"
+            },
+            "ar": {
+                "symbol": "﷼",
+                "position": "before",
+                "format": "﷼ #٬##0٫00"
+            },
+            "fr": {
+                "symbol": "€",
+                "position": "after",
+                "format": "#\u00a0##0,00 €"
+            }
+        }
+    },
+    "translation": {
+        "loadStrategy": "lazy",
+        "cacheTranslations": true,
+        "cacheDuration": 86400000,
+        "namespaces": [
+            "common",
+            "navigation",
+            "article",
+            "search",
+            "auth",
+            "errors"
+        ],
+        "interpolation": {
+            "enabled": true,
+            "prefix": "{{",
+            "suffix": "}}",
+            "escapeValue": true
+        },
+        "pluralization": {
+            "enabled": true,
+            "rules": {
+                "en": [
+                    "one",
+                    "other"
+                ],
+                "es": [
+                    "one",
+                    "other"
+                ],
+                "ar": [
+                    "zero",
+                    "one",
+                    "two",
+                    "few",
+                    "many",
+                    "other"
+                ],
+                "fr": [
+                    "one",
+                    "other"
+                ]
+            }
+        },
+        "contextSeparator": "_",
+        "keySeparator": "."
+    },
+    "languageSwitcher": {
+        "enabled": true,
+        "type": "dropdown",
+        "showFlags": true,
+        "showNativeNames": true,
+        "position": "header",
+        "persistSelection": true,
+        "reloadOnChange": false
+    },
+    "seo": {
+        "hreflang": {
+            "enabled": true,
+            "includeDefault": true,
+            "xDefault": "en"
+        },
+        "alternateUrls": {
+            "enabled": true,
+            "pattern": "/{lang}/{slug}"
+        },
+        "sitemap": {
+            "multiLanguage": true,
+            "separateFiles": false
+        }
+    },
+    "content": {
+        "fallbackToDefault": true,
+        "showLanguageSwitcher": true,
+        "translateUrls": true,
+        "urlPattern": "/{lang}/{slug}"
+    }
+}

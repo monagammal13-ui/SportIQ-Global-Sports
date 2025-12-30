@@ -1,0 +1,112 @@
+{
+    "layerInfo": {
+        "id": "layer-065",
+        "name": "Global Trending Hashtags & Social Feed",
+        "version": "1.0.0",
+        "type": "social-integration",
+        "status": "active"
+    },
+    "sources": [
+        {
+            "name": "Twitter Sports",
+            "platform": "twitter",
+            "endpoint": "https://api.twitter.com/2/trends/place.json",
+            "enabled": true,
+            "priority": 1,
+            "rateLimit": 15,
+            "categories": [
+                "football",
+                "basketball",
+                "tennis",
+                "cricket",
+                "baseball"
+            ]
+        },
+        {
+            "name": "Instagram Sports",
+            "platform": "instagram",
+            "endpoint": "https://graph.instagram.com/me/media",
+            "enabled": true,
+            "priority": 2,
+            "rateLimit": 20,
+            "categories": [
+                "sports",
+                "fitness",
+                "athletes"
+            ]
+        },
+        {
+            "name": "Reddit Sports",
+            "platform": "reddit",
+            "endpoint": "https://www.reddit.com/r/sports/hot.json",
+            "enabled": true,
+            "priority": 3,
+            "rateLimit": 60,
+            "categories": [
+                "sports",
+                "nfl",
+                "nba",
+                "soccer",
+                "baseball"
+            ]
+        },
+        {
+            "name": "TikTok Sports",
+            "platform": "tiktok",
+            "endpoint": "https://api.tiktok.com/trending",
+            "enabled": false,
+            "priority": 4,
+            "rateLimit": 10,
+            "categories": [
+                "sports",
+                "fitness"
+            ]
+        }
+    ],
+    "sports": [
+        "football",
+        "basketball",
+        "tennis",
+        "cricket",
+        "baseball",
+        "hockey",
+        "rugby",
+        "golf",
+        "boxing",
+        "mma",
+        "racing",
+        "volleyball",
+        "handball"
+    ],
+    "refreshRate": 60000,
+    "maxTrending": 20,
+    "displayMode": "carousel",
+    "autoUpdate": true,
+    "fallbackData": {
+        "enabled": true,
+        "cacheTime": 300000
+    },
+    "filters": {
+        "minEngagement": 1000,
+        "excludePatterns": [
+            "spam",
+            "bot",
+            "fake"
+        ],
+        "languages": [
+            "en",
+            "es",
+            "fr",
+            "de",
+            "ar"
+        ]
+    },
+    "ui": {
+        "position": "after-hero",
+        "theme": "dark",
+        "animation": "fade",
+        "showRefreshButton": true,
+        "showTimestamp": true,
+        "itemsPerPage": 10
+    }
+}

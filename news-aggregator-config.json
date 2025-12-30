@@ -1,0 +1,322 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Complete global news aggregator system for SPORTIQ",
+    "aggregator": {
+        "enabled": true,
+        "autoPublish": true,
+        "moderationRequired": false,
+        "targetArticlesPerDay": 500,
+        "maxArticlesPerSource": 50
+    },
+    "updateSchedule": {
+        "breaking": {
+            "enabled": true,
+            "interval": 300000,
+            "sources": [
+                "priority",
+                "breaking"
+            ],
+            "autoPublish": true
+        },
+        "hot": {
+            "enabled": true,
+            "interval": 900000,
+            "sources": [
+                "hot"
+            ],
+            "autoPublish": true
+        },
+        "standard": {
+            "enabled": true,
+            "interval": 1800000,
+            "sources": [
+                "standard"
+            ],
+            "autoPublish": true
+        },
+        "archive": {
+            "enabled": true,
+            "interval": 21600000,
+            "sources": [
+                "archive"
+            ],
+            "autoPublish": false
+        }
+    },
+    "contentProcessing": {
+        "extraction": {
+            "title": {
+                "enabled": true,
+                "maxLength": 200,
+                "cleanHTML": true,
+                "removeSpecialChars": false
+            },
+            "content": {
+                "enabled": true,
+                "minLength": 200,
+                "maxLength": 10000,
+                "cleanHTML": true,
+                "preserveFormatting": true
+            },
+            "excerpt": {
+                "enabled": true,
+                "autoGenerate": true,
+                "maxLength": 300,
+                "source": "description || content"
+            },
+            "images": {
+                "enabled": true,
+                "extractFromContent": true,
+                "minWidth": 640,
+                "minHeight": 360,
+                "preferredRatio": "16:9",
+                "downloadAndHost": true,
+                "fallbackImage": "/assets/images/default-article.jpg"
+            },
+            "metadata": {
+                "author": true,
+                "publishDate": true,
+                "source": true,
+                "originalUrl": true,
+                "language": true
+            }
+        },
+        "enrichment": {
+            "autoTags": {
+                "enabled": true,
+                "maxTags": 10,
+                "minConfidence": 0.7,
+                "sources": [
+                    "title",
+                    "content",
+                    "categories"
+                ]
+            },
+            "autoCategory": {
+                "enabled": true,
+                "algorithm": "keyword-ml",
+                "confidence": 0.8,
+                "fallback": "general"
+            },
+            "entityExtraction": {
+                "enabled": true,
+                "entities": [
+                    "teams",
+                    "players",
+                    "leagues",
+                    "competitions"
+                ],
+                "linkToPages": true
+            },
+            "readingTime": {
+                "enabled": true,
+                "wordsPerMinute": 200
+            },
+            "seoOptimization": {
+                "enabled": true,
+                "generateMetaDescription": true,
+                "generateKeywords": true,
+                "optimizeTitle": true
+            }
+        },
+        "quality": {
+            "scoring": {
+                "enabled": true,
+                "minScore": 60,
+                "factors": {
+                    "sourceCredibility": 0.30,
+                    "contentLength": 0.20,
+                    "imageQuality": 0.15,
+                    "freshness": 0.15,
+                    "engagement": 0.10,
+                    "completeness": 0.10
+                }
+            },
+            "filters": {
+                "minContentLength": 200,
+                "requireImage": false,
+                "requireAuthor": false,
+                "blockDuplicates": true,
+                "blockPaywall": true,
+                "blockAds": true
+            }
+        },
+        "deduplication": {
+            "enabled": true,
+            "algorithm": "fuzzy-hash",
+            "similarity": 0.85,
+            "compareFields": [
+                "title",
+                "content"
+            ],
+            "timeWindow": 86400000,
+            "action": "skip"
+        }
+    },
+    "categorization": {
+        "enabled": true,
+        "method": "hybrid",
+        "categories": {
+            "football": {
+                "keywords": [
+                    "football",
+                    "soccer",
+                    "fifa",
+                    "uefa",
+                    "premier league",
+                    "champions league",
+                    "la liga",
+                    "bundesliga",
+                    "serie a"
+                ],
+                "weight": 1.0
+            },
+            "basketball": {
+                "keywords": [
+                    "basketball",
+                    "nba",
+                    "euroleague",
+                    "ncaa",
+                    "fiba",
+                    "nba playoffs"
+                ],
+                "weight": 1.0
+            },
+            "tennis": {
+                "keywords": [
+                    "tennis",
+                    "wimbledon",
+                    "us open",
+                    "french open",
+                    "australian open",
+                    "atp",
+                    "wta"
+                ],
+                "weight": 1.0
+            },
+            "cricket": {
+                "keywords": [
+                    "cricket",
+                    "ipl",
+                    "test cricket",
+                    "t20",
+                    "world cup cricket"
+                ],
+                "weight": 1.0
+            },
+            "formula1": {
+                "keywords": [
+                    "formula 1",
+                    "f1",
+                    "grand prix",
+                    "ferrari",
+                    "mercedes",
+                    "red bull racing"
+                ],
+                "weight": 0.8
+            },
+            "olympics": {
+                "keywords": [
+                    "olympics",
+                    "olympic games",
+                    "winter olympics",
+                    "summer olympics"
+                ],
+                "weight": 0.9
+            },
+            "transfers": {
+                "keywords": [
+                    "transfer",
+                    "signing",
+                    "contract",
+                    "deal",
+                    "move"
+                ],
+                "weight": 0.7
+            },
+            "injuries": {
+                "keywords": [
+                    "injury",
+                    "injured",
+                    "sidelined",
+                    "recovery",
+                    "ruled out"
+                ],
+                "weight": 0.6
+            }
+        }
+    },
+    "publishing": {
+        "autoPublish": {
+            "enabled": true,
+            "minQualityScore": 70,
+            "requireManualReview": false,
+            "publishDelay": 0
+        },
+        "status": {
+            "default": "published",
+            "lowQuality": "draft",
+            "duplicate": "trash"
+        },
+        "attribution": {
+            "enabled": true,
+            "showSource": true,
+            "showAuthor": true,
+            "linkToOriginal": true,
+            "creditFormat": "Originally published on {{source}}"
+        },
+        "scheduling": {
+            "enabled": false,
+            "distributeEvenly": true,
+            "avoidPeakHours": false
+        }
+    },
+    "breaking": {
+        "enabled": true,
+        "detection": {
+            "keywords": [
+                "breaking",
+                "urgent",
+                "just in",
+                "live",
+                "developing"
+            ],
+            "sourceFlags": true,
+            "rapidPublication": true
+        },
+        "priority": {
+            "publishImmediately": true,
+            "featureOnHomepage": true,
+            "sendNotification": true,
+            "socialShare": true
+        }
+    },
+    "monitoring": {
+        "enabled": true,
+        "metrics": {
+            "articlesProcessed": true,
+            "articlesPublished": true,
+            "duplicatesSkipped": true,
+            "errors": true,
+            "processingTime": true
+        },
+        "alerts": {
+            "noNewArticles": {
+                "enabled": true,
+                "threshold": 3600000,
+                "notification": "email"
+            },
+            "highErrorRate": {
+                "enabled": true,
+                "threshold": 0.2,
+                "notification": "email"
+            },
+            "sourceDown": {
+                "enabled": true,
+                "consecutive": 3,
+                "notification": "email"
+            }
+        }
+    }
+}

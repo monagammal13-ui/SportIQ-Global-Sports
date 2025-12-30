@@ -1,0 +1,72 @@
+{
+    "layerInfo": {
+        "id": "layer-068",
+        "name": "Automated News Summarizer",
+        "version": "1.0.0",
+        "type": "content-ai",
+        "status": "active"
+    },
+    "sources": [
+        {
+            "name": "ESPN",
+            "url": "https://www.espn.com/apis/rss",
+            "enabled": true,
+            "priority": 1
+        },
+        {
+            "name": "BBC Sport",
+            "url": "https://feeds.bbci.co.uk/sport/rss.xml",
+            "enabled": true,
+            "priority": 2
+        },
+        {
+            "name": "Sky Sports",
+            "url": "https://www.skysports.com/rss",
+            "enabled": true,
+            "priority": 3
+        },
+        {
+            "name": "Goal.com",
+            "url": "https://www.goal.com/feeds/en/news",
+            "enabled": true,
+            "priority": 4
+        },
+        {
+            "name": "The Athletic",
+            "url": "https://theathletic.com/feeds",
+            "enabled": false,
+            "priority": 5
+        }
+    ],
+    "refreshRate": 180000,
+    "maxSummaries": 8,
+    "summaryLength": "medium",
+    "displayMode": "timeline",
+    "autoUpdate": true,
+    "categories": [
+        "all",
+        "football",
+        "basketball",
+        "tennis",
+        "cricket",
+        "racing",
+        "hockey",
+        "mma"
+    ],
+    "summarization": {
+        "method": "extractive",
+        "targetLength": 50,
+        "extractKeyPoints": true,
+        "maxKeyPoints": 4,
+        "preserveQuotes": true
+    },
+    "ui": {
+        "position": "after-polls",
+        "theme": "card",
+        "layout": "timeline",
+        "showImages": true,
+        "showSource": true,
+        "showTimestamp": true,
+        "showCompression": true
+    }
+}

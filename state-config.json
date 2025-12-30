@@ -1,0 +1,106 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-29",
+    "description": "State management configuration for SPORTIQ platform",
+    "persistence": {
+        "enabled": true,
+        "storage": "localStorage",
+        "key": "sportiq_state",
+        "whitelist": [],
+        "blacklist": [
+            "temp",
+            "cache",
+            "ui.modals"
+        ]
+    },
+    "maxHistorySize": 50,
+    "initialState": {
+        "user": {
+            "authenticated": false,
+            "profile": null,
+            "preferences": {
+                "theme": "light",
+                "language": "en",
+                "notifications": true
+            }
+        },
+        "data": {
+            "news": [],
+            "liveScores": [],
+            "trending": [],
+            "favorites": []
+        },
+        "ui": {
+            "loading": false,
+            "error": null,
+            "modals": {},
+            "sidebar": {
+                "open": false
+            },
+            "notifications": []
+        },
+        "sports": {
+            "selected": "football",
+            "filters": {
+                "league": null,
+                "team": null,
+                "dateRange": null
+            }
+        },
+        "search": {
+            "query": "",
+            "results": [],
+            "filters": {},
+            "history": []
+        },
+        "cache": {
+            "timestamp": null,
+            "data": {}
+        }
+    },
+    "apiSyncMapping": {
+        "/api/news": "data.news",
+        "/api/live-scores": "data.liveScores",
+        "/api/trending": "data.trending",
+        "/api/user/profile": "user.profile",
+        "/api/user/preferences": "user.preferences",
+        "/api/favorites": "data.favorites"
+    },
+    "computed": {
+        "userFullName": {
+            "dependencies": [
+                "user.profile.firstName",
+                "user.profile.lastName"
+            ],
+            "description": "Computed full name from user profile"
+        },
+        "hasNewNotifications": {
+            "dependencies": [
+                "ui.notifications"
+            ],
+            "description": "Check if there are unread notifications"
+        },
+        "activeFiltersCount": {
+            "dependencies": [
+                "sports.filters"
+            ],
+            "description": "Count of active sport filters"
+        }
+    },
+    "middleware": {
+        "logging": {
+            "enabled": true,
+            "logUpdates": true,
+            "logReads": false
+        },
+        "validation": {
+            "enabled": true,
+            "schemas": {}
+        }
+    },
+    "performance": {
+        "batchUpdates": true,
+        "batchDelay": 10,
+        "maxSubscribers": 1000
+    }
+}

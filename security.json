@@ -1,0 +1,327 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Security configuration and best practices for SPORTIQ platform",
+    "contentSecurityPolicy": {
+        "enabled": true,
+        "directives": {
+            "default-src": [
+                "'self'"
+            ],
+            "script-src": [
+                "'self'",
+                "'unsafe-inline'",
+                "*.googletagmanager.com",
+                "*.google-analytics.com",
+                "*.facebook.net",
+                "*.adsterra.com",
+                "*.propellerads.com"
+            ],
+            "style-src": [
+                "'self'",
+                "'unsafe-inline'",
+                "fonts.googleapis.com"
+            ],
+            "img-src": [
+                "'self'",
+                "data:",
+                "blob:",
+                "*.google-analytics.com",
+                "*.facebook.com",
+                "*.googleusercontent.com"
+            ],
+            "font-src": [
+                "'self'",
+                "fonts.gstatic.com"
+            ],
+            "connect-src": [
+                "'self'",
+                "*.google-analytics.com",
+                "*.analytics.google.com",
+                "*.facebook.com"
+            ],
+            "frame-src": [
+                "'self'",
+                "*.youtube.com",
+                "*.facebook.com",
+                "*.twitter.com"
+            ],
+            "media-src": [
+                "'self'",
+                "blob:"
+            ],
+            "object-src": [
+                "'none'"
+            ],
+            "base-uri": [
+                "'self'"
+            ],
+            "form-action": [
+                "'self'"
+            ],
+            "frame-ancestors": [
+                "'none'"
+            ],
+            "upgrade-insecure-requests": []
+        },
+        "reportOnly": false,
+        "reportUri": "/api/csp-report"
+    },
+    "securityHeaders": {
+        "strictTransportSecurity": {
+            "enabled": true,
+            "maxAge": 31536000,
+            "includeSubDomains": true,
+            "preload": true
+        },
+        "xFrameOptions": {
+            "enabled": true,
+            "value": "DENY"
+        },
+        "xContentTypeOptions": {
+            "enabled": true,
+            "value": "nosniff"
+        },
+        "xXSSProtection": {
+            "enabled": true,
+            "mode": "block"
+        },
+        "referrerPolicy": {
+            "enabled": true,
+            "value": "strict-origin-when-cross-origin"
+        },
+        "permissionsPolicy": {
+            "enabled": true,
+            "directives": {
+                "camera": [],
+                "microphone": [],
+                "geolocation": [
+                    "'self'"
+                ],
+                "payment": [],
+                "usb": [],
+                "accelerometer": [],
+                "gyroscope": [],
+                "magnetometer": []
+            }
+        },
+        "expectCT": {
+            "enabled": true,
+            "maxAge": 86400,
+            "enforce": true
+        }
+    },
+    "cors": {
+        "enabled": true,
+        "allowedOrigins": [
+            "https://sportiq.com"
+        ],
+        "allowedMethods": [
+            "GET",
+            "POST",
+            "OPTIONS"
+        ],
+        "allowedHeaders": [
+            "Content-Type",
+            "Authorization"
+        ],
+        "exposedHeaders": [],
+        "credentials": true,
+        "maxAge": 3600
+    },
+    "csrf": {
+        "enabled": true,
+        "tokenLength": 32,
+        "headerName": "X-CSRF-Token",
+        "cookieName": "csrf_token",
+        "sameSite": "Strict",
+        "secure": true,
+        "httpOnly": true,
+        "excludePaths": [
+            "/api/public"
+        ]
+    },
+    "rateLimiting": {
+        "enabled": true,
+        "global": {
+            "windowMs": 900000,
+            "maxRequests": 100
+        },
+        "endpoints": {
+            "newsletter": {
+                "windowMs": 3600000,
+                "maxRequests": 5
+            },
+            "contact": {
+                "windowMs": 3600000,
+                "maxRequests": 3
+            },
+            "comments": {
+                "windowMs": 600000,
+                "maxRequests": 10
+            },
+            "login": {
+                "windowMs": 900000,
+                "maxRequests": 5
+            }
+        }
+    },
+    "inputValidation": {
+        "sanitization": {
+            "stripTags": true,
+            "escapeHtml": true,
+            "trimWhitespace": true,
+            "removeNullBytes": true
+        },
+        "rules": {
+            "email": {
+                "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+                "maxLength": 254
+            },
+            "name": {
+                "minLength": 2,
+                "maxLength": 100,
+                "pattern": "^[a-zA-Z\\s'-]+$"
+            },
+            "comment": {
+                "minLength": 10,
+                "maxLength": 1000,
+                "allowHtml": false
+            },
+            "url": {
+                "protocols": [
+                    "http",
+                    "https"
+                ],
+                "requireProtocol": true
+            }
+        },
+        "blacklist": [
+            "<script",
+            "javascript:",
+            "onerror=",
+            "onload=",
+            "eval(",
+            "expression(",
+            "vbscript:",
+            "data:text/html"
+        ]
+    },
+    "authentication": {
+        "passwordPolicy": {
+            "minLength": 8,
+            "requireUppercase": true,
+            "requireLowercase": true,
+            "requireNumbers": true,
+            "requireSpecialChars": true,
+            "preventCommon": true,
+            "maxAge": 7776000
+        },
+        "session": {
+            "cookieName": "session_id",
+            "secure": true,
+            "httpOnly": true,
+            "sameSite": "Strict",
+            "maxAge": 86400,
+            "regenerateOnLogin": true
+        },
+        "twoFactor": {
+            "enabled": false,
+            "methods": [
+                "totp",
+                "sms"
+            ]
+        }
+    },
+    "dataProtection": {
+        "encryption": {
+            "algorithm": "AES-256-GCM",
+            "saltRounds": 12
+        },
+        "storage": {
+            "encryptLocalStorage": false,
+            "sessionStorageOnly": true,
+            "noSensitiveData": true
+        },
+        "transmission": {
+            "forceHttps": true,
+            "tlsVersion": "1.2"
+        }
+    },
+    "auditLogging": {
+        "enabled": true,
+        "events": [
+            "login",
+            "logout",
+            "failed_login",
+            "password_change",
+            "email_change",
+            "account_delete",
+            "admin_action"
+        ],
+        "retention": 90,
+        "sensitiveFields": [
+            "password",
+            "token"
+        ]
+    },
+    "vulnerabilityProtection": {
+        "xss": {
+            "enabled": true,
+            "sanitizeInput": true,
+            "escapeOutput": true,
+            "contentSecurityPolicy": true
+        },
+        "sqlInjection": {
+            "enabled": true,
+            "useParameterized": true,
+            "validateInput": true
+        },
+        "clickjacking": {
+            "enabled": true,
+            "xFrameOptions": "DENY"
+        },
+        "fileUpload": {
+            "enabled": false,
+            "maxSize": 5242880,
+            "allowedTypes": [
+                "image/jpeg",
+                "image/png",
+                "image/webp"
+            ],
+            "scanVirusReady": true
+        }
+    },
+    "monitoring": {
+        "errorTracking": {
+            "enabled": true,
+            "service": "custom",
+            "sampleRate": 100
+        },
+        "securityAlerts": {
+            "enabled": true,
+            "threshold": {
+                "failedLogins": 5,
+                "suspiciousActivity": 10
+            }
+        }
+    },
+    "compliance": {
+        "gdpr": true,
+        "ccpa": true,
+        "coppa": false,
+        "hipaa": false,
+        "pciDss": false
+    },
+    "thirdPartyServices": {
+        "googleAnalytics": {
+            "anonymizeIp": true,
+            "cookieExpires": 63072000,
+            "respectDoNotTrack": true
+        },
+        "facebookPixel": {
+            "limitedDataUse": false,
+            "customData": true
+        }
+    }
+}

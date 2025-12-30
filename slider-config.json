@@ -1,0 +1,451 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Cinematic 4K slider configuration with 50 high-impact sports images",
+    "slider": {
+        "enabled": true,
+        "autoplay": true,
+        "interval": 5000,
+        "transitionDuration": 1000,
+        "pauseOnHover": true,
+        "loop": true,
+        "parallax": true,
+        "kenBurns": true
+    },
+    "slides": [
+        {
+            "id": 1,
+            "image": "/assets/images/slider/football-stadium-night-4k.jpg",
+            "title": "Premier League Action",
+            "subtitle": "Experience the thrill of world-class football",
+            "category": "football",
+            "featured": true
+        },
+        {
+            "id": 2,
+            "image": "/assets/images/slider/basketball-dunk-arena-4k.jpg",
+            "title": "NBA Highlights",
+            "subtitle": "Witness breathtaking basketball moments",
+            "category": "basketball",
+            "featured": true
+        },
+        {
+            "id": 3,
+            "image": "/assets/images/slider/tennis-grand-slam-4k.jpg",
+            "title": "Grand Slam Glory",
+            "subtitle": "Tennis excellence at its finest",
+            "category": "tennis",
+            "featured": true
+        },
+        {
+            "id": 4,
+            "image": "/assets/images/slider/world-cup-celebration-4k.jpg",
+            "title": "World Cup 2026",
+            "subtitle": "The biggest tournament on earth",
+            "category": "football",
+            "featured": true
+        },
+        {
+            "id": 5,
+            "image": "/assets/images/slider/cricket-stadium-sunset-4k.jpg",
+            "title": "IPL Cricket",
+            "subtitle": "India's premier cricket league",
+            "category": "cricket",
+            "featured": true
+        },
+        {
+            "id": 6,
+            "image": "/assets/images/slider/champions-league-final-4k.jpg",
+            "title": "Champions League",
+            "subtitle": "Europe's elite competition",
+            "category": "football",
+            "featured": false
+        },
+        {
+            "id": 7,
+            "image": "/assets/images/slider/olympics-opening-ceremony-4k.jpg",
+            "title": "Paris 2024 Olympics",
+            "subtitle": "The greatest show on earth",
+            "category": "multi-sport",
+            "featured": true
+        },
+        {
+            "id": 8,
+            "image": "/assets/images/slider/formula1-race-start-4k.jpg",
+            "title": "Formula 1",
+            "subtitle": "Speed, precision, excellence",
+            "category": "motorsport",
+            "featured": false
+        },
+        {
+            "id": 9,
+            "image": "/assets/images/slider/wimbledon-centre-court-4k.jpg",
+            "title": "Wimbledon",
+            "subtitle": "Tennis tradition since 1877",
+            "category": "tennis",
+            "featured": false
+        },
+        {
+            "id": 10,
+            "image": "/assets/images/slider/super-bowl-touchdown-4k.jpg",
+            "title": "Super Bowl",
+            "subtitle": "America's biggest game",
+            "category": "american-football",
+            "featured": true
+        },
+        {
+            "id": 11,
+            "image": "/assets/images/slider/ronaldo-celebration-4k.jpg",
+            "title": "CR7 Magic",
+            "subtitle": "Cristiano Ronaldo in action",
+            "category": "football",
+            "featured": false
+        },
+        {
+            "id": 12,
+            "image": "/assets/images/slider/messi-trophy-4k.jpg",
+            "title": "Messi Glory",
+            "subtitle": "The GOAT with silverware",
+            "category": "football",
+            "featured": false
+        },
+        {
+            "id": 13,
+            "image": "/assets/images/slider/lebron-james-dunk-4k.jpg",
+            "title": "King James",
+            "subtitle": "LeBron's legendary career",
+            "category": "basketball",
+            "featured": false
+        },
+        {
+            "id": 14,
+            "image": "/assets/images/slider/euro-cup-trophy-4k.jpg",
+            "title": "Euro Championship",
+            "subtitle": "Europe's national team glory",
+            "category": "football",
+            "featured": false
+        },
+        {
+            "id": 15,
+            "image": "/assets/images/slider/nba-finals-crowd-4k.jpg",
+            "title": "NBA Finals",
+            "subtitle": "Championship basketball",
+            "category": "basketball",
+            "featured": false
+        },
+        {
+            "id": 16,
+            "image": "/assets/images/slider/el-clasico-4k.jpg",
+            "title": "El Clásico",
+            "subtitle": "Barcelona vs Real Madrid",
+            "category": "football",
+            "featured": true
+        },
+        {
+            "id": 17,
+            "image": "/assets/images/slider/usain-bolt-sprint-4k.jpg",
+            "title": "Lightning Bolt",
+            "subtitle": "Fastest man alive",
+            "category": "athletics",
+            "featured": false
+        },
+        {
+            "id": 18,
+            "image": "/assets/images/slider/rugby-world-cup-4k.jpg",
+            "title": "Rugby World Cup",
+            "subtitle": "Power and grace combined",
+            "category": "rugby",
+            "featured": false
+        },
+        {
+            "id": 19,
+            "image": "/assets/images/slider/manchester-derby-4k.jpg",
+            "title": "Manchester Derby",
+            "subtitle": "City rivalry at its peak",
+            "category": "football",
+            "featured": false
+        },
+        {
+            "id": 20,
+            "image": "/assets/images/slider/australian-open-4k.jpg",
+            "title": "Australian Open",
+            "subtitle": "First Grand Slam of the year",
+            "category": "tennis",
+            "featured": false
+        },
+        {
+            "id": 21,
+            "image": "/assets/images/slider/neymar-skills-4k.jpg",
+            "title": "Neymar Jr",
+            "subtitle": "Brazilian flair on display",
+            "category": "football",
+            "featured": false
+        },
+        {
+            "id": 22,
+            "image": "/assets/images/slider/kobe-bryant-tribute-4k.jpg",
+            "title": "Mamba Mentality",
+            "subtitle": "Remembering Kobe Bryant",
+            "category": "basketball",
+            "featured": false
+        },
+        {
+            "id": 23,
+            "image": "/assets/images/slider/tour-de-france-4k.jpg",
+            "title": "Tour de France",
+            "subtitle": "Cycling's greatest race",
+            "category": "cycling",
+            "featured": false
+        },
+        {
+            "id": 24,
+            "image": "/assets/images/slider/boxing-championship-4k.jpg",
+            "title": "World Boxing",
+            "subtitle": "Championship fights",
+            "category": "boxing",
+            "featured": false
+        },
+        {
+            "id": 25,
+            "image": "/assets/images/slider/ice-hockey-stanley-cup-4k.jpg",
+            "title": "Stanley Cup",
+            "subtitle": "NHL's ultimate prize",
+            "category": "ice-hockey",
+            "featured": false
+        },
+        {
+            "id": 26,
+            "image": "/assets/images/slider/volleyball-spike-4k.jpg",
+            "title": "Volleyball",
+            "subtitle": "Beach and indoor excellence",
+            "category": "volleyball",
+            "featured": false
+        },
+        {
+            "id": 27,
+            "image": "/assets/images/slider/golf-masters-4k.jpg",
+            "title": "The Masters",
+            "subtitle": "Golf's most prestigious tournament",
+            "category": "golf",
+            "featured": false
+        },
+        {
+            "id": 28,
+            "image": "/assets/images/slider/ski-jumping-4k.jpg",
+            "title": "Winter Sports",
+            "subtitle": "Ski jumping and alpine racing",
+            "category": "winter-sports",
+            "featured": false
+        },
+        {
+            "id": 29,
+            "image": "/assets/images/slider/swimming-olympics-4k.jpg",
+            "title": "Olympic Swimming",
+            "subtitle": "Records in the pool",
+            "category": "swimming",
+            "featured": false
+        },
+        {
+            "id": 30,
+            "image": "/assets/images/slider/arsenal-emirates-stadium-4k.jpg",
+            "title": "Emirates Stadium",
+            "subtitle": "Arsenal's fortress",
+            "category": "football",
+            "featured": false
+        },
+        {
+            "id": 31,
+            "image": "/assets/images/slider/copa-america-4k.jpg",
+            "title": "Copa América",
+            "subtitle": "South American glory",
+            "category": "football",
+            "featured": false
+        },
+        {
+            "id": 32,
+            "image": "/assets/images/slider/trophy-celebration-4k.jpg",
+            "title": "Victory Moments",
+            "subtitle": "Champions crowned",
+            "category": "multi-sport",
+            "featured": false
+        },
+        {
+            "id": 33,
+            "image": "/assets/images/slider/stadium-atmosphere-4k.jpg",
+            "title": "Stadium Atmosphere",
+            "subtitle": "Where passion meets sport",
+            "category": "multi-sport",
+            "featured": false
+        },
+        {
+            "id": 34,
+            "image": "/assets/images/slider/golden-state-warriors-4k.jpg",
+            "title": "Warriors Dynasty",
+            "subtitle": "NBA champions",
+            "category": "basketball",
+            "featured": false
+        },
+        {
+            "id": 35,
+            "image": "/assets/images/slider/la-liga-action-4k.jpg",
+            "title": "La Liga",
+            "subtitle": "Spanish football excellence",
+            "category": "football",
+            "featured": false
+        },
+        {
+            "id": 36,
+            "image": "/assets/images/slider/serie-a-derby-4k.jpg",
+            "title": "Serie A",
+            "subtitle": "Italian football passion",
+            "category": "football",
+            "featured": false
+        },
+        {
+            "id": 37,
+            "image": "/assets/images/slider/bundesliga-goal-4k.jpg",
+            "title": "Bundesliga",
+            "subtitle": "German football power",
+            "category": "football",
+            "featured": false
+        },
+        {
+            "id": 38,
+            "image": "/assets/images/slider/women-football-world-cup-4k.jpg",
+            "title": "Women's World Cup",
+            "subtitle": "Growing the beautiful game",
+            "category": "football",
+            "featured": true
+        },
+        {
+            "id": 39,
+            "image": "/assets/images/slider/athletic-sprint-finish-4k.jpg",
+            "title": "Track & Field",
+            "subtitle": "Olympic glory on the track",
+            "category": "athletics",
+            "featured": false
+        },
+        {
+            "id": 40,
+            "image": "/assets/images/slider/martial-arts-championship-4k.jpg",
+            "title": "MMA",
+            "subtitle": "Mixed martial arts combat",
+            "category": "mma",
+            "featured": false
+        },
+        {
+            "id": 41,
+            "image": "/assets/images/slider/skateboarding-olympics-4k.jpg",
+            "title": "Skateboarding",
+            "subtitle": "New Olympic sport",
+            "category": "extreme-sports",
+            "featured": false
+        },
+        {
+            "id": 42,
+            "image": "/assets/images/slider/surfing-championship-4k.jpg",
+            "title": "Surfing",
+            "subtitle": "Riding the waves",
+            "category": "extreme-sports",
+            "featured": false
+        },
+        {
+            "id": 43,
+            "image": "/assets/images/slider/esports-tournament-4k.jpg",
+            "title": "eSports",
+            "subtitle": "Competitive gaming",
+            "category": "esports",
+            "featured": false
+        },
+        {
+            "id": 44,
+            "image": "/assets/images/slider/baseball-world-series-4k.jpg",
+            "title": "World Series",
+            "subtitle": "Baseball's championship",
+            "category": "baseball",
+            "featured": false
+        },
+        {
+            "id": 45,
+            "image": "/assets/images/slider/badminton-olympics-4k.jpg",
+            "title": "Badminton",
+            "subtitle": "Olympic shuttlecock sport",
+            "category": "badminton",
+            "featured": false
+        },
+        {
+            "id": 46,
+            "image": "/assets/images/slider/table-tennis-4k.jpg",
+            "title": "Table Tennis",
+            "subtitle": "Fast-paced ping pong",
+            "category": "table-tennis",
+            "featured": false
+        },
+        {
+            "id": 47,
+            "image": "/assets/images/slider/horse-racing-derby-4k.jpg",
+            "title": "Horse Racing",
+            "subtitle": "The sport of kings",
+            "category": "horse-racing",
+            "featured": false
+        },
+        {
+            "id": 48,
+            "image": "/assets/images/slider/paralympics-triumph-4k.jpg",
+            "title": "Paralympics",
+            "subtitle": "Inspiring athletic achievement",
+            "category": "paralympics",
+            "featured": true
+        },
+        {
+            "id": 49,
+            "image": "/assets/images/slider/youth-olympics-4k.jpg",
+            "title": "Youth Olympics",
+            "subtitle": "Future stars shine",
+            "category": "multi-sport",
+            "featured": false
+        },
+        {
+            "id": 50,
+            "image": "/assets/images/slider/stadium-lights-night-4k.jpg",
+            "title": "Night Games",
+            "subtitle": "Under the lights magic",
+            "category": "multi-sport",
+            "featured": false
+        }
+    ],
+    "transitions": {
+        "fade": {
+            "duration": 1000,
+            "easing": "ease-in-out"
+        },
+        "slide": {
+            "duration": 800,
+            "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+        },
+        "zoom": {
+            "duration": 1200,
+            "easing": "ease-out"
+        }
+    },
+    "effects": {
+        "parallax": true,
+        "kenBurns": true,
+        "overlay": true,
+        "textAnimation": true
+    },
+    "responsive": {
+        "mobile": {
+            "imageQuality": "medium",
+            "autoplay": true
+        },
+        "tablet": {
+            "imageQuality": "high",
+            "autoplay": true
+        },
+        "desktop": {
+            "imageQuality": "4k",
+            "autoplay": true
+        }
+    }
+}

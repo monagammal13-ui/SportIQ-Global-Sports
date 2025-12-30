@@ -1,0 +1,335 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Global top charts and rankings configuration for SPORTIQ platform",
+    "rankingTypes": {
+        "teamRankings": {
+            "enabled": true,
+            "sports": [
+                "football",
+                "basketball",
+                "cricket"
+            ],
+            "updateInterval": 3600000
+        },
+        "playerRankings": {
+            "enabled": true,
+            "categories": [
+                "goals",
+                "assists",
+                "saves",
+                "points"
+            ],
+            "updateInterval": 3600000
+        },
+        "leagueStandings": {
+            "enabled": true,
+            "leagues": [
+                "Premier League",
+                "La Liga",
+                "Serie A",
+                "NBA"
+            ],
+            "updateInterval": 1800000
+        },
+        "trendingContent": {
+            "enabled": true,
+            "timeframes": [
+                "today",
+                "week",
+                "month",
+                "allTime"
+            ],
+            "updateInterval": 300000
+        }
+    },
+    "footballRankings": {
+        "fifaWorldRankings": [
+            {
+                "rank": 1,
+                "team": "Argentina",
+                "points": 1844.84,
+                "change": 0
+            },
+            {
+                "rank": 2,
+                "team": "France",
+                "points": 1843.54,
+                "change": 0
+            },
+            {
+                "rank": 3,
+                "team": "Brazil",
+                "points": 1830.19,
+                "change": 1
+            },
+            {
+                "rank": 4,
+                "team": "England",
+                "points": 1794.21,
+                "change": -1
+            },
+            {
+                "rank": 5,
+                "team": "Belgium",
+                "points": 1788.55,
+                "change": 0
+            },
+            {
+                "rank": 6,
+                "team": "Netherlands",
+                "points": 1746.71,
+                "change": 0
+            },
+            {
+                "rank": 7,
+                "team": "Portugal",
+                "points": 1742.02,
+                "change": 2
+            },
+            {
+                "rank": 8,
+                "team": "Spain",
+                "points": 1727.13,
+                "change": -1
+            },
+            {
+                "rank": 9,
+                "team": "Italy",
+                "points": 1723.31,
+                "change": -1
+            },
+            {
+                "rank": 10,
+                "team": "Croatia",
+                "points": 1711.02,
+                "change": 0
+            }
+        ],
+        "topScorers": [
+            {
+                "rank": 1,
+                "player": "Erling Haaland",
+                "team": "Manchester City",
+                "goals": 28,
+                "league": "Premier League"
+            },
+            {
+                "rank": 2,
+                "player": "Harry Kane",
+                "team": "Bayern Munich",
+                "goals": 26,
+                "league": "Bundesliga"
+            },
+            {
+                "rank": 3,
+                "player": "Kylian Mbappé",
+                "team": "Paris SG",
+                "goals": 24,
+                "league": "Ligue 1"
+            },
+            {
+                "rank": 4,
+                "player": "Robert Lewandowski",
+                "team": "Barcelona",
+                "goals": 23,
+                "league": "La Liga"
+            },
+            {
+                "rank": 5,
+                "player": "Victor Osimhen",
+                "team": "Napoli",
+                "goals": 21,
+                "league": "Serie A"
+            }
+        ]
+    },
+    "basketballRankings": {
+        "nbaStandings": {
+            "eastern": [
+                {
+                    "rank": 1,
+                    "team": "Boston Celtics",
+                    "wins": 24,
+                    "losses": 6,
+                    "pct": 0.800
+                },
+                {
+                    "rank": 2,
+                    "team": "Milwaukee Bucks",
+                    "wins": 22,
+                    "losses": 8,
+                    "pct": 0.733
+                },
+                {
+                    "rank": 3,
+                    "team": "Philadelphia 76ers",
+                    "wins": 20,
+                    "losses": 10,
+                    "pct": 0.667
+                }
+            ],
+            "western": [
+                {
+                    "rank": 1,
+                    "team": "Denver Nuggets",
+                    "wins": 25,
+                    "losses": 5,
+                    "pct": 0.833
+                },
+                {
+                    "rank": 2,
+                    "team": "Los Angeles Lakers",
+                    "wins": 21,
+                    "losses": 9,
+                    "pct": 0.700
+                },
+                {
+                    "rank": 3,
+                    "team": "Phoenix Suns",
+                    "wins": 19,
+                    "losses": 11,
+                    "pct": 0.633
+                }
+            ]
+        },
+        "topScorers": [
+            {
+                "rank": 1,
+                "player": "Luka Dončić",
+                "team": "Dallas Mavericks",
+                "ppg": 33.8
+            },
+            {
+                "rank": 2,
+                "player": "Joel Embiid",
+                "team": "Philadelphia 76ers",
+                "ppg": 32.5
+            },
+            {
+                "rank": 3,
+                "player": "Giannis Antetokounmpo",
+                "team": "Milwaukee Bucks",
+                "ppg": 31.7
+            },
+            {
+                "rank": 4,
+                "player": "Damian Lillard",
+                "team": "Portland Trail Blazers",
+                "ppg": 30.2
+            },
+            {
+                "rank": 5,
+                "player": "Stephen Curry",
+                "team": "Golden State Warriors",
+                "ppg": 29.8
+            }
+        ]
+    },
+    "trendingCharts": {
+        "mostViewed": [
+            {
+                "rank": 1,
+                "title": "Messi's Historic Hat-Trick",
+                "views": 2456789,
+                "category": "football"
+            },
+            {
+                "rank": 2,
+                "title": "LeBron's Career Milestone",
+                "views": 1987654,
+                "category": "basketball"
+            },
+            {
+                "rank": 3,
+                "title": "Djokovic Wins Australian Open",
+                "views": 1654321,
+                "category": "tennis"
+            },
+            {
+                "rank": 4,
+                "title": "India Wins World Cup",
+                "views": 1432198,
+                "category": "cricket"
+            },
+            {
+                "rank": 5,
+                "title": "Ronaldo Transfer News",
+                "views": 1298765,
+                "category": "football"
+            }
+        ],
+        "mostShared": [
+            {
+                "rank": 1,
+                "title": "Unprecedented Comeback Victory",
+                "shares": 45678,
+                "category": "football"
+            },
+            {
+                "rank": 2,
+                "title": "Record-Breaking Triple Double",
+                "shares": 38765,
+                "category": "basketball"
+            },
+            {
+                "rank": 3,
+                "title": "Epic Tennis Final",
+                "shares": 32145,
+                "category": "tennis"
+            }
+        ],
+        "trending": [
+            {
+                "rank": 1,
+                "keyword": "Messi",
+                "searches": 987654,
+                "change": 234
+            },
+            {
+                "rank": 2,
+                "keyword": "World Cup",
+                "searches": 876543,
+                "change": 156
+            },
+            {
+                "rank": 3,
+                "keyword": "Ronaldo",
+                "searches": 765432,
+                "change": -23
+            },
+            {
+                "rank": 4,
+                "keyword": "NBA Finals",
+                "searches": 654321,
+                "change": 89
+            },
+            {
+                "rank": 5,
+                "keyword": "Champions League",
+                "searches": 543210,
+                "change": 45
+            }
+        ]
+    },
+    "autoUpdate": {
+        "enabled": true,
+        "intervals": {
+            "liveRankings": 60000,
+            "standings": 1800000,
+            "trending": 300000,
+            "historical": 86400000
+        }
+    },
+    "display": {
+        "itemsPerPage": 10,
+        "showChange": true,
+        "highlightMovement": true,
+        "animateChanges": true,
+        "colorCoding": {
+            "up": "#10b981",
+            "down": "#ef4444",
+            "same": "#6b7280"
+        }
+    }
+}

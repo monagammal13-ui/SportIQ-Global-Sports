@@ -1,0 +1,65 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-29T08:50:23Z",
+    "description": "Notification & Alerts Configuration",
+    "types": [
+        "info",
+        "success",
+        "warning",
+        "error",
+        "live",
+        "goal",
+        "news",
+        "transfer"
+    ],
+    "priorities": [
+        "low",
+        "normal",
+        "high",
+        "critical"
+    ],
+    "categories": [
+        "general",
+        "match",
+        "news",
+        "transfer",
+        "social",
+        "system"
+    ],
+    "channels": {
+        "browser": {
+            "enabled": true,
+            "requirePermission": true
+        },
+        "inApp": {
+            "enabled": true,
+            "maxVisible": 3,
+            "defaultDuration": 5000
+        },
+        "sound": {
+            "enabled": false
+        }
+    },
+    "templates": {
+        "matchStart": {
+            "title": "Match Starting",
+            "type": "live",
+            "priority": "high"
+        },
+        "goal": {
+            "title": "GOAL!",
+            "type": "goal",
+            "priority": "critical"
+        },
+        "breakingNews": {
+            "title": "Breaking News",
+            "type": "news",
+            "priority": "high"
+        },
+        "transfer": {
+            "title": "Transfer Alert",
+            "type": "transfer",
+            "priority": "normal"
+        }
+    }
+}

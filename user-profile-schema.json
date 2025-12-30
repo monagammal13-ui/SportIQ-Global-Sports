@@ -1,0 +1,495 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "User profile schema and data structure for SPORTIQ personalization",
+    "profileSchema": {
+        "userId": {
+            "type": "string",
+            "required": true,
+            "unique": true,
+            "generated": "auto"
+        },
+        "accountInfo": {
+            "username": {
+                "type": "string",
+                "required": false,
+                "minLength": 3,
+                "maxLength": 30
+            },
+            "email": {
+                "type": "string",
+                "required": false,
+                "validation": "email"
+            },
+            "displayName": {
+                "type": "string",
+                "required": false,
+                "maxLength": 50
+            },
+            "avatar": {
+                "type": "string",
+                "default": "/assets/images/default-avatar.png"
+            },
+            "bio": {
+                "type": "string",
+                "maxLength": 200
+            },
+            "joinDate": {
+                "type": "timestamp",
+                "auto": true
+            },
+            "lastActive": {
+                "type": "timestamp",
+                "auto": true
+            },
+            "accountType": {
+                "type": "enum",
+                "values": [
+                    "free",
+                    "premium",
+                    "admin"
+                ],
+                "default": "free"
+            }
+        },
+        "favorites": {
+            "teams": {
+                "type": "array",
+                "maxItems": 10,
+                "itemSchema": {
+                    "teamId": "string",
+                    "name": "string",
+                    "sport": "string",
+                    "league": "string",
+                    "logo": "string",
+                    "addedAt": "timestamp",
+                    "priority": "number",
+                    "notifications": "boolean"
+                }
+            },
+            "leagues": {
+                "type": "array",
+                "maxItems": 10,
+                "itemSchema": {
+                    "leagueId": "string",
+                    "name": "string",
+                    "sport": "string",
+                    "country": "string",
+                    "addedAt": "timestamp",
+                    "priority": "number"
+                }
+            },
+            "players": {
+                "type": "array",
+                "maxItems": 20,
+                "itemSchema": {
+                    "playerId": "string",
+                    "name": "string",
+                    "team": "string",
+                    "sport": "string",
+                    "addedAt": "timestamp"
+                }
+            },
+            "sports": {
+                "type": "array",
+                "items": [
+                    "football",
+                    "basketball",
+                    "tennis",
+                    "cricket",
+                    "americanFootball"
+                ],
+                "maxItems": 5
+            }
+        },
+        "rivalries": {
+            "blockedTeams": {
+                "type": "array",
+                "maxItems": 5,
+                "description": "Teams user doesn't want to see"
+            },
+            "hiddenCategories": {
+                "type": "array",
+                "description": "Categories to filter out"
+            }
+        },
+        "preferences": {
+            "content": {
+                "preferredTypes": {
+                    "type": "array",
+                    "items": [
+                        "news",
+                        "analysis",
+                        "opinion",
+                        "videos",
+                        "interviews"
+                    ],
+                    "default": [
+                        "news",
+                        "analysis"
+                    ]
+                },
+                "articleLength": {
+                    "type": "enum",
+                    "values": [
+                        "short",
+                        "medium",
+                        "long",
+                        "any"
+                    ],
+                    "default": "any"
+                },
+                "showSpoilers": {
+                    "type": "boolean",
+                    "default": true
+                },
+                "autoplayVideos": {
+                    "type": "boolean",
+                    "default": false
+                }
+            },
+            "display": {
+                "theme": {
+                    "type": "enum",
+                    "values": [
+                        "light",
+                        "dark",
+                        "auto"
+                    ],
+                    "default": "auto"
+                },
+                "fontSize": {
+                    "type": "enum",
+                    "values": [
+                        "small",
+                        "medium",
+                        "large"
+                    ],
+                    "default": "medium"
+                },
+                "layoutDensity": {
+                    "type": "enum",
+                    "values": [
+                        "compact",
+                        "comfortable",
+                        "spacious"
+                    ],
+                    "default": "comfortable"
+                },
+                "cardStyle": {
+                    "type": "enum",
+                    "values": [
+                        "grid",
+                        "list",
+                        "magazine"
+                    ],
+                    "default": "grid"
+                }
+            },
+            "language": {
+                "primary": {
+                    "type": "string",
+                    "default": "en"
+                },
+                "region": {
+                    "type": "string",
+                    "default": "US"
+                }
+            },
+            "notifications": {
+                "email": {
+                    "enabled": false,
+                    "breakingNews": false,
+                    "favoriteTeams": false,
+                    "weeklyDigest": false,
+                    "newsletters": false
+                },
+                "push": {
+                    "enabled": false,
+                    "breakingNews": false,
+                    "favoriteTeamMatchStart": false,
+                    "favoriteTeamGoals": false,
+                    "favoriteTeamResults": false,
+                    "transfers": false,
+                    "trending": false
+                },
+                "inApp": {
+                    "enabled": true,
+                    "sound": true,
+                    "vibration": true
+                },
+                "frequency": {
+                    "maxPerDay": 20,
+                    "quietHours": {
+                        "enabled": false,
+                        "start": "22:00",
+                        "end": "08:00"
+                    }
+                }
+            },
+            "privacy": {
+                "profileVisibility": {
+                    "type": "enum",
+                    "values": [
+                        "public",
+                        "private"
+                    ],
+                    "default": "private"
+                },
+                "showReadingHistory": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "shareStatistics": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "allowTracking": {
+                    "type": "boolean",
+                    "default": true
+                },
+                "allowPersonalization": {
+                    "type": "boolean",
+                    "default": true
+                },
+                "allowCookies": {
+                    "type": "boolean",
+                    "default": true
+                }
+            }
+        },
+        "readingHistory": {
+            "articles": {
+                "type": "array",
+                "maxItems": 1000,
+                "itemSchema": {
+                    "articleId": "string",
+                    "title": "string",
+                    "category": "string",
+                    "tags": "array",
+                    "readAt": "timestamp",
+                    "timeSpent": "number",
+                    "scrollDepth": "number",
+                    "completed": "boolean",
+                    "deviceType": "string"
+                }
+            },
+            "sessionsStats": {
+                "totalSessions": "number",
+                "averageSessionDuration": "number",
+                "totalArticlesRead": "number",
+                "averageArticlesPerSession": "number",
+                "peakReadingHours": "array"
+            }
+        },
+        "engagement": {
+            "likes": {
+                "type": "array",
+                "articleIds": "array"
+            },
+            "shares": {
+                "type": "array",
+                "articleIds": "array"
+            },
+            "comments": {
+                "count": "number",
+                "articleIds": "array"
+            },
+            "bookmarks": {
+                "type": "array",
+                "maxItems": 500,
+                "itemSchema": {
+                    "articleId": "string",
+                    "addedAt": "timestamp",
+                    "list": "string",
+                    "notes": "string"
+                }
+            },
+            "readingLists": {
+                "type": "array",
+                "maxItems": 20,
+                "itemSchema": {
+                    "listId": "string",
+                    "name": "string",
+                    "description": "string",
+                    "articles": "array",
+                    "createdAt": "timestamp",
+                    "public": "boolean"
+                }
+            }
+        },
+        "gamification": {
+            "points": {
+                "total": 0,
+                "level": 1,
+                "nextLevelPoints": 100
+            },
+            "achievements": {
+                "type": "array",
+                "itemSchema": {
+                    "achievementId": "string",
+                    "name": "string",
+                    "unlockedAt": "timestamp"
+                }
+            },
+            "badges": {
+                "type": "array",
+                "items": []
+            },
+            "streaks": {
+                "current": 0,
+                "longest": 0,
+                "lastVisit": "timestamp"
+            }
+        },
+        "subscription": {
+            "status": {
+                "type": "enum",
+                "values": [
+                    "free",
+                    "trial",
+                    "active",
+                    "cancelled",
+                    "expired"
+                ],
+                "default": "free"
+            },
+            "plan": {
+                "type": "enum",
+                "values": [
+                    "free",
+                    "monthly",
+                    "yearly"
+                ],
+                "default": "free"
+            },
+            "startDate": "timestamp",
+            "endDate": "timestamp",
+            "autoRenew": "boolean"
+        }
+    },
+    "defaultProfile": {
+        "userId": null,
+        "accountInfo": {
+            "username": null,
+            "email": null,
+            "displayName": "Guest User",
+            "avatar": "/assets/images/default-avatar.png",
+            "bio": "",
+            "joinDate": null,
+            "lastActive": null,
+            "accountType": "free"
+        },
+        "favorites": {
+            "teams": [],
+            "leagues": [],
+            "players": [],
+            "sports": []
+        },
+        "rivalries": {
+            "blockedTeams": [],
+            "hiddenCategories": []
+        },
+        "preferences": {
+            "content": {
+                "preferredTypes": [
+                    "news",
+                    "analysis"
+                ],
+                "articleLength": "any",
+                "showSpoilers": true,
+                "autoplayVideos": false
+            },
+            "display": {
+                "theme": "auto",
+                "fontSize": "medium",
+                "layoutDensity": "comfortable",
+                "cardStyle": "grid"
+            },
+            "language": {
+                "primary": "en",
+                "region": "US"
+            },
+            "notifications": {
+                "email": {
+                    "enabled": false,
+                    "breakingNews": false,
+                    "favoriteTeams": false,
+                    "weeklyDigest": false,
+                    "newsletters": false
+                },
+                "push": {
+                    "enabled": false,
+                    "breakingNews": false,
+                    "favoriteTeamMatchStart": false,
+                    "favoriteTeamGoals": false,
+                    "favoriteTeamResults": false,
+                    "transfers": false,
+                    "trending": false
+                },
+                "inApp": {
+                    "enabled": true,
+                    "sound": true,
+                    "vibration": true
+                },
+                "frequency": {
+                    "maxPerDay": 20,
+                    "quietHours": {
+                        "enabled": false,
+                        "start": "22:00",
+                        "end": "08:00"
+                    }
+                }
+            },
+            "privacy": {
+                "profileVisibility": "private",
+                "showReadingHistory": false,
+                "shareStatistics": false,
+                "allowTracking": true,
+                "allowPersonalization": true,
+                "allowCookies": true
+            }
+        },
+        "readingHistory": {
+            "articles": [],
+            "sessionsStats": {
+                "totalSessions": 0,
+                "averageSessionDuration": 0,
+                "totalArticlesRead": 0,
+                "averageArticlesPerSession": 0,
+                "peakReadingHours": []
+            }
+        },
+        "engagement": {
+            "likes": [],
+            "shares": [],
+            "comments": {
+                "count": 0,
+                "articleIds": []
+            },
+            "bookmarks": [],
+            "readingLists": []
+        },
+        "gamification": {
+            "points": {
+                "total": 0,
+                "level": 1,
+                "nextLevelPoints": 100
+            },
+            "achievements": [],
+            "badges": [],
+            "streaks": {
+                "current": 0,
+                "longest": 0,
+                "lastVisit": null
+            }
+        },
+        "subscription": {
+            "status": "free",
+            "plan": "free",
+            "startDate": null,
+            "endDate": null,
+            "autoRenew": false
+        }
+    }
+}

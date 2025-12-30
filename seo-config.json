@@ -1,0 +1,296 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Complete SEO configuration and meta tag system for SPORTIQ",
+    "siteName": "SPORTIQ",
+    "siteUrl": "https://sportiq.com",
+    "defaultLanguage": "en",
+    "defaultRegion": "US",
+    "titleTemplates": {
+        "homepage": "{siteName} - Live Sports News, Scores & Highlights",
+        "category": "{categoryName} News & Updates | {siteName}",
+        "article": "{articleTitle} | {siteName}",
+        "team": "{teamName} - Latest News, Fixtures & Results | {siteName}",
+        "player": "{playerName} News, Stats & Transfer Updates | {siteName}",
+        "league": "{leagueName} - Standings, Fixtures & News | {siteName}",
+        "video": "{videoTitle} - Watch Highlights | {siteName}",
+        "live": "LIVE: {matchTitle} - Live Score & Updates | {siteName}",
+        "search": "Search Results for '{query}' | {siteName}",
+        "tag": "#{tag} - Latest Articles & Videos | {siteName}"
+    },
+    "titleRules": {
+        "maxLength": 60,
+        "minLength": 30,
+        "separator": " | ",
+        "capitalization": "title-case",
+        "includeBrand": true,
+        "brandPosition": "end"
+    },
+    "descriptionTemplates": {
+        "homepage": "Your ultimate sports destination. Get live scores, breaking news, match highlights, and expert analysis for football, basketball, tennis and more. Updated 24/7.",
+        "category": "Latest {categoryName} news, live scores, match highlights and expert analysis. Stay updated with {siteName} - your sports authority.",
+        "article": "{excerpt}... Read the full story on {siteName}",
+        "team": "Get the latest {teamName} news, fixtures, results, transfer updates and match highlights. Follow your team with {siteName}",
+        "video": "{videoDescription} Watch full highlights and analysis on {siteName}",
+        "live": "Follow {matchTitle} live with real-time scores, updates and commentary. {siteName} brings you live sports action.",
+        "default": "Read more on {siteName} - your source for sports news, live scores, and match highlights."
+    },
+    "descriptionRules": {
+        "maxLength": 160,
+        "minLength": 120,
+        "includeKeywords": true,
+        "includeCallToAction": true
+    },
+    "keywords": {
+        "primary": [
+            "sports news",
+            "live scores",
+            "match highlights",
+            "sports updates",
+            "football news",
+            "basketball news",
+            "sports analysis"
+        ],
+        "secondary": [
+            "transfer news",
+            "match results",
+            "league standings",
+            "player stats",
+            "sports videos",
+            "live sports"
+        ],
+        "brandTerms": [
+            "SPORTIQ",
+            "sportiq sports",
+            "sportiq news"
+        ]
+    },
+    "openGraph": {
+        "enabled": true,
+        "siteName": "SPORTIQ",
+        "locale": "en_US",
+        "type": {
+            "homepage": "website",
+            "article": "article",
+            "video": "video.other",
+            "default": "website"
+        },
+        "images": {
+            "defaultImage": "/assets/images/og-default.jpg",
+            "width": 1200,
+            "height": 630,
+            "alt": "SPORTIQ Sports News",
+            "format": "jpg"
+        },
+        "article": {
+            "publishedTime": true,
+            "modifiedTime": true,
+            "author": true,
+            "section": true,
+            "tags": true
+        },
+        "video": {
+            "url": true,
+            "secureUrl": true,
+            "type": "video/mp4",
+            "width": 1920,
+            "height": 1080,
+            "duration": true
+        }
+    },
+    "twitterCard": {
+        "enabled": true,
+        "site": "@SPORTIQ",
+        "creator": "@SPORTIQ",
+        "card": {
+            "article": "summary_large_image",
+            "video": "player",
+            "default": "summary_large_image"
+        },
+        "images": {
+            "width": 1200,
+            "height": 628,
+            "alt": "SPORTIQ"
+        },
+        "player": {
+            "width": 1280,
+            "height": 720,
+            "stream": true
+        }
+    },
+    "canonicalUrls": {
+        "enabled": true,
+        "protocol": "https",
+        "www": false,
+        "trailingSlash": false,
+        "lowercase": true,
+        "removeParameters": true,
+        "exceptParameters": [
+            "page",
+            "sort",
+            "filter"
+        ]
+    },
+    "hreflang": {
+        "enabled": true,
+        "languages": {
+            "en": {
+                "code": "en",
+                "region": "US",
+                "url": "https://sportiq.com/en"
+            },
+            "es": {
+                "code": "es",
+                "region": "ES",
+                "url": "https://sportiq.com/es"
+            },
+            "ar": {
+                "code": "ar",
+                "region": "SA",
+                "url": "https://sportiq.com/ar"
+            },
+            "fr": {
+                "code": "fr",
+                "region": "FR",
+                "url": "https://sportiq.com/fr"
+            },
+            "x-default": {
+                "code": "x-default",
+                "url": "https://sportiq.com/en"
+            }
+        }
+    },
+    "metaTags": {
+        "viewport": "width=device-width, initial-scale=1.0, maximum-scale=5.0",
+        "charset": "UTF-8",
+        "themeColor": "#6366f1",
+        "robots": {
+            "index": true,
+            "follow": true,
+            "maxSnippet": -1,
+            "maxImagePreview": "large",
+            "maxVideoPreview": -1
+        },
+        "googlebot": {
+            "index": true,
+            "follow": true,
+            "noimageindex": false,
+            "notranslate": false
+        },
+        "verification": {
+            "google": "YOUR_GOOGLE_VERIFICATION_CODE",
+            "bing": "YOUR_BING_VERIFICATION_CODE",
+            "yandex": "YOUR_YANDEX_VERIFICATION_CODE"
+        }
+    },
+    "structuredData": {
+        "enabled": true,
+        "types": [
+            "Organization",
+            "WebSite",
+            "NewsArticle",
+            "VideoObject",
+            "SportsEvent",
+            "BreadcrumbList",
+            "Person",
+            "FAQPage"
+        ],
+        "defaults": {
+            "publisher": {
+                "name": "SPORTIQ",
+                "logo": "https://sportiq.com/logo.png",
+                "url": "https://sportiq.com"
+            },
+            "author": {
+                "type": "Organization",
+                "name": "SPORTIQ Editorial Team"
+            }
+        }
+    },
+    "richSnippets": {
+        "enabled": true,
+        "types": {
+            "article": true,
+            "video": true,
+            "event": true,
+            "breadcrumb": true,
+            "faq": true,
+            "rating": true,
+            "review": false
+        }
+    },
+    "jsonLd": {
+        "enabled": true,
+        "minify": false,
+        "prettyPrint": true,
+        "validate": true
+    },
+    "seo": {
+        "crawlability": {
+            "robotsTxt": true,
+            "sitemapXml": true,
+            "noindex": [
+                "/admin",
+                "/api",
+                "/private"
+            ],
+            "nofollow": [
+                "/login",
+                "/register"
+            ]
+        },
+        "performance": {
+            "lazyLoadImages": true,
+            "preconnect": [
+                "https://fonts.googleapis.com",
+                "https://www.google-analytics.com"
+            ],
+            "dnsPrefetch": [
+                "//cdn.sportiq.com",
+                "//images.sportiq.com"
+            ]
+        },
+        "mobile": {
+            "responsive": true,
+            "amp": false,
+            "mobileFirst": true
+        }
+    },
+    "socialMedia": {
+        "facebook": {
+            "appId": "YOUR_FB_APP_ID",
+            "pages": "YOUR_FB_PAGE_ID",
+            "admins": ""
+        },
+        "twitter": {
+            "site": "@SPORTIQ",
+            "creator": "@SPORTIQ"
+        },
+        "instagram": {
+            "username": "sportiq"
+        }
+    },
+    "alternateFormats": {
+        "rss": {
+            "enabled": true,
+            "url": "/feed.xml",
+            "title": "SPORTIQ RSS Feed"
+        },
+        "amp": {
+            "enabled": false,
+            "url": "/amp/{slug}"
+        },
+        "app": {
+            "ios": {
+                "enabled": false,
+                "appId": "",
+                "url": ""
+            },
+            "android": {
+                "enabled": false,
+                "package": "",
+                "url": ""
+            }
+        }
+    }
+}

@@ -1,0 +1,185 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Global video highlights feed configuration for SPORTIQ platform",
+    "videoSources": {
+        "youtube": {
+            "enabled": true,
+            "channels": [
+                "UCpcTrCXblq78GZrTUTLWeBw",
+                "UCKlcfNE9kj5tR8lXIwC06NA",
+                "UCpcTskAM0Xq-xvdNTdN2ERQ"
+            ],
+            "apiKey": "YOUR_YOUTUBE_API_KEY",
+            "maxResults": 50,
+            "updateInterval": 600000
+        },
+        "internal": {
+            "enabled": true,
+            "uploadPath": "/uploads/videos",
+            "processing": true,
+            "transcoding": true
+        },
+        "thirdParty": {
+            "enabled": true,
+            "providers": [
+                "espn",
+                "sky sports",
+                "beinsports"
+            ],
+            "apiIntegration": true
+        }
+    },
+    "highlightCategories": {
+        "goals": {
+            "enabled": true,
+            "priority": 1,
+            "icon": "⚽",
+            "autoTag": true,
+            "minDuration": 10,
+            "maxDuration": 60
+        },
+        "saves": {
+            "enabled": true,
+            "priority": 2,
+            "icon": "🧤",
+            "autoTag": true,
+            "minDuration": 5,
+            "maxDuration": 30
+        },
+        "skills": {
+            "enabled": true,
+            "priority": 3,
+            "icon": "✨",
+            "autoTag": true,
+            "minDuration": 15,
+            "maxDuration": 90
+        },
+        "matchHighlights": {
+            "enabled": true,
+            "priority": 4,
+            "icon": "🎬",
+            "autoTag": false,
+            "minDuration": 120,
+            "maxDuration": 600
+        },
+        "pressConferences": {
+            "enabled": true,
+            "priority": 5,
+            "icon": "🎤",
+            "autoTag": false,
+            "minDuration": 60,
+            "maxDuration": 1800
+        }
+    },
+    "trendingVideos": [
+        {
+            "id": "vid001",
+            "title": "Messi's Incredible Solo Goal vs Real Madrid",
+            "category": "goals",
+            "sport": "football",
+            "duration": 45,
+            "views": 2456789,
+            "likes": 145678,
+            "thumbnail": "/assets/videos/thumbnails/vid001.jpg",
+            "videoUrl": "https://youtube.com/watch?v=xxxxx",
+            "uploadDate": "2025-12-27T10:00:00Z",
+            "trending": true,
+            "featured": true
+        },
+        {
+            "id": "vid002",
+            "title": "LeBron James 360 Dunk - NBA Finals",
+            "category": "skills",
+            "sport": "basketball",
+            "duration": 30,
+            "views": 1987654,
+            "likes": 98765,
+            "thumbnail": "/assets/videos/thumbnails/vid002.jpg",
+            "videoUrl": "https://youtube.com/watch?v=yyyyy",
+            "uploadDate": "2025-12-27T08:30:00Z",
+            "trending": true,
+            "featured": false
+        },
+        {
+            "id": "vid003",
+            "title": "Man City vs Arsenal - Extended Highlights",
+            "category": "matchHighlights",
+            "sport": "football",
+            "duration": 300,
+            "views": 1654321,
+            "likes": 87654,
+            "thumbnail": "/assets/videos/thumbnails/vid003.jpg",
+            "videoUrl": "https://youtube.com/watch?v=zzzzz",
+            "uploadDate": "2025-12-26T20:00:00Z",
+            "trending": true,
+            "featured": true
+        }
+    ],
+    "feedConfig": {
+        "layout": "grid",
+        "itemsPerPage": 12,
+        "lazyLoad": true,
+        "autoPlay": false,
+        "showViews": true,
+        "showDuration": true,
+        "sortOptions": [
+            "trending",
+            "latest",
+            "mostViewed",
+            "mostLiked"
+        ]
+    },
+    "videoPlayer": {
+        "controls": true,
+        "autoPlay": false,
+        "loop": false,
+        "muted": false,
+        "quality": [
+            "1080p",
+            "720p",
+            "480p",
+            "360p"
+        ],
+        "speed": [
+            0.5,
+            0.75,
+            1,
+            1.25,
+            1.5,
+            2
+        ],
+        "captions": true,
+        "pictureInPicture": true,
+        "fullscreen": true
+    },
+    "recommendation": {
+        "enabled": true,
+        "algorithm": "collaborative",
+        "relatedVideos": 6,
+        "basedOn": [
+            "category",
+            "sport",
+            "views",
+            "userHistory"
+        ]
+    },
+    "autoUpdate": {
+        "enabled": true,
+        "intervals": {
+            "trending": 300000,
+            "new": 600000,
+            "popular": 1800000
+        },
+        "notifications": {
+            "newHighlights": true,
+            "trendingNow": true
+        }
+    },
+    "analytics": {
+        "trackViews": true,
+        "trackWatchTime": true,
+        "trackEngagement": true,
+        "trackShares": true
+    }
+}

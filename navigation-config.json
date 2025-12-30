@@ -1,0 +1,649 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Complete navigation system configuration for SPORTIQ",
+    "header": {
+        "enabled": true,
+        "sticky": true,
+        "stickyOffset": 0,
+        "transparent": false,
+        "height": {
+            "desktop": 80,
+            "mobile": 60
+        },
+        "logo": {
+            "src": "/assets/images/logo.svg",
+            "alt": "SPORTIQ",
+            "url": "/",
+            "width": 150,
+            "height": 40
+        },
+        "search": {
+            "enabled": true,
+            "placeholder": "Search sports news...",
+            "position": "center",
+            "autoSuggest": true,
+            "recentSearches": true,
+            "trendingSearches": true
+        },
+        "actions": {
+            "search": true,
+            "notifications": true,
+            "userMenu": true,
+            "darkMode": true,
+            "language": true
+        }
+    },
+    "mainNavigation": {
+        "enabled": true,
+        "position": "center",
+        "items": [
+            {
+                "id": "home",
+                "label": "Home",
+                "url": "/",
+                "icon": "home",
+                "order": 1,
+                "megaMenu": false,
+                "active": true
+            },
+            {
+                "id": "football",
+                "label": "Football",
+                "url": "/football",
+                "icon": "⚽",
+                "order": 2,
+                "megaMenu": true,
+                "active": true,
+                "dropdown": {
+                    "type": "mega",
+                    "columns": 3,
+                    "sections": [
+                        {
+                            "title": "Top Leagues",
+                            "items": [
+                                {
+                                    "label": "Premier League",
+                                    "url": "/football/premier-league",
+                                    "icon": "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
+                                },
+                                {
+                                    "label": "Champions League",
+                                    "url": "/football/champions-league",
+                                    "icon": "🏆"
+                                },
+                                {
+                                    "label": "La Liga",
+                                    "url": "/football/la-liga",
+                                    "icon": "🇪🇸"
+                                },
+                                {
+                                    "label": "Serie A",
+                                    "url": "/football/serie-a",
+                                    "icon": "🇮🇹"
+                                },
+                                {
+                                    "label": "Bundesliga",
+                                    "url": "/football/bundesliga",
+                                    "icon": "🇩🇪"
+                                },
+                                {
+                                    "label": "Ligue 1",
+                                    "url": "/football/ligue-1",
+                                    "icon": "🇫🇷"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Top Teams",
+                            "items": [
+                                {
+                                    "label": "Manchester United",
+                                    "url": "/team/manchester-united"
+                                },
+                                {
+                                    "label": "Liverpool",
+                                    "url": "/team/liverpool"
+                                },
+                                {
+                                    "label": "Real Madrid",
+                                    "url": "/team/real-madrid"
+                                },
+                                {
+                                    "label": "Barcelona",
+                                    "url": "/team/barcelona"
+                                },
+                                {
+                                    "label": "Bayern Munich",
+                                    "url": "/team/bayern-munich"
+                                },
+                                {
+                                    "label": "All Teams →",
+                                    "url": "/football/teams"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "More",
+                            "items": [
+                                {
+                                    "label": "Transfers",
+                                    "url": "/football/transfers",
+                                    "icon": "🔄"
+                                },
+                                {
+                                    "label": "Fixtures",
+                                    "url": "/football/fixtures",
+                                    "icon": "📅"
+                                },
+                                {
+                                    "label": "Standings",
+                                    "url": "/football/standings",
+                                    "icon": "📊"
+                                },
+                                {
+                                    "label": "News & Opinion",
+                                    "url": "/football/news",
+                                    "icon": "📰"
+                                },
+                                {
+                                    "label": "Videos",
+                                    "url": "/football/videos",
+                                    "icon": "🎥"
+                                },
+                                {
+                                    "label": "World Cup",
+                                    "url": "/football/world-cup",
+                                    "icon": "🌍"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "basketball",
+                "label": "Basketball",
+                "url": "/basketball",
+                "icon": "🏀",
+                "order": 3,
+                "megaMenu": true,
+                "active": true,
+                "dropdown": {
+                    "type": "mega",
+                    "columns": 3,
+                    "sections": [
+                        {
+                            "title": "Leagues",
+                            "items": [
+                                {
+                                    "label": "NBA",
+                                    "url": "/basketball/nba",
+                                    "icon": "🇺🇸"
+                                },
+                                {
+                                    "label": "EuroLeague",
+                                    "url": "/basketball/euroleague",
+                                    "icon": "🇪🇺"
+                                },
+                                {
+                                    "label": "NCAA",
+                                    "url": "/basketball/ncaa",
+                                    "icon": "🎓"
+                                },
+                                {
+                                    "label": "FIBA",
+                                    "url": "/basketball/fiba",
+                                    "icon": "🌍"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Top Teams",
+                            "items": [
+                                {
+                                    "label": "Lakers",
+                                    "url": "/team/lakers"
+                                },
+                                {
+                                    "label": "Warriors",
+                                    "url": "/team/warriors"
+                                },
+                                {
+                                    "label": "Celtics",
+                                    "url": "/team/celtics"
+                                },
+                                {
+                                    "label": "Heat",
+                                    "url": "/team/heat"
+                                },
+                                {
+                                    "label": "All Teams →",
+                                    "url": "/basketball/teams"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "More",
+                            "items": [
+                                {
+                                    "label": "Scores & Fixtures",
+                                    "url": "/basketball/scores",
+                                    "icon": "📊"
+                                },
+                                {
+                                    "label": "Standings",
+                                    "url": "/basketball/standings",
+                                    "icon": "📈"
+                                },
+                                {
+                                    "label": "News",
+                                    "url": "/basketball/news",
+                                    "icon": "📰"
+                                },
+                                {
+                                    "label": "Videos",
+                                    "url": "/basketball/videos",
+                                    "icon": "🎥"
+                                },
+                                {
+                                    "label": "Draft",
+                                    "url": "/basketball/draft",
+                                    "icon": "🎯"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "tennis",
+                "label": "Tennis",
+                "url": "/tennis",
+                "icon": "🎾",
+                "order": 4,
+                "megaMenu": true,
+                "active": true,
+                "dropdown": {
+                    "type": "mega",
+                    "columns": 2,
+                    "sections": [
+                        {
+                            "title": "Tournaments",
+                            "items": [
+                                {
+                                    "label": "Grand Slams",
+                                    "url": "/tennis/grand-slam",
+                                    "icon": "🏆"
+                                },
+                                {
+                                    "label": "ATP Tour",
+                                    "url": "/tennis/atp",
+                                    "icon": "👨"
+                                },
+                                {
+                                    "label": "WTA Tour",
+                                    "url": "/tennis/wta",
+                                    "icon": "👩"
+                                },
+                                {
+                                    "label": "Davis Cup",
+                                    "url": "/tennis/davis-cup",
+                                    "icon": "🏅"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "More",
+                            "items": [
+                                {
+                                    "label": "Rankings",
+                                    "url": "/tennis/rankings",
+                                    "icon": "📊"
+                                },
+                                {
+                                    "label": "Schedule",
+                                    "url": "/tennis/schedule",
+                                    "icon": "📅"
+                                },
+                                {
+                                    "label": "News",
+                                    "url": "/tennis/news",
+                                    "icon": "📰"
+                                },
+                                {
+                                    "label": "Videos",
+                                    "url": "/tennis/videos",
+                                    "icon": "🎥"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "cricket",
+                "label": "Cricket",
+                "url": "/cricket",
+                "icon": "🏏",
+                "order": 5,
+                "megaMenu": true,
+                "active": true,
+                "dropdown": {
+                    "type": "mega",
+                    "columns": 2,
+                    "sections": [
+                        {
+                            "title": "Formats",
+                            "items": [
+                                {
+                                    "label": "IPL",
+                                    "url": "/cricket/ipl",
+                                    "icon": "🇮🇳"
+                                },
+                                {
+                                    "label": "Test Cricket",
+                                    "url": "/cricket/test",
+                                    "icon": "⏱️"
+                                },
+                                {
+                                    "label": "T20",
+                                    "url": "/cricket/t20",
+                                    "icon": "⚡"
+                                },
+                                {
+                                    "label": "ODI",
+                                    "url": "/cricket/odi",
+                                    "icon": "🏏"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "More",
+                            "items": [
+                                {
+                                    "label": "Scores & Fixtures",
+                                    "url": "/cricket/scores",
+                                    "icon": "📊"
+                                },
+                                {
+                                    "label": "Rankings",
+                                    "url": "/cricket/rankings",
+                                    "icon": "📈"
+                                },
+                                {
+                                    "label": "News",
+                                    "url": "/cricket/news",
+                                    "icon": "📰"
+                                },
+                                {
+                                    "label": "Videos",
+                                    "url": "/cricket/videos",
+                                    "icon": "🎥"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "videos",
+                "label": "Videos",
+                "url": "/videos",
+                "icon": "🎥",
+                "order": 6,
+                "megaMenu": false,
+                "active": true
+            },
+            {
+                "id": "live-scores",
+                "label": "Live Scores",
+                "url": "/live-scores",
+                "icon": "🔴",
+                "order": 7,
+                "megaMenu": false,
+                "active": true,
+                "badge": "LIVE"
+            },
+            {
+                "id": "more",
+                "label": "More",
+                "url": "#",
+                "icon": "⋮",
+                "order": 8,
+                "megaMenu": false,
+                "active": true,
+                "dropdown": {
+                    "type": "simple",
+                    "items": [
+                        {
+                            "label": "Fantasy Sports",
+                            "url": "/fantasy",
+                            "icon": "🎮"
+                        },
+                        {
+                            "label": "Olympics",
+                            "url": "/olympics",
+                            "icon": "🏅"
+                        },
+                        {
+                            "label": "Formula 1",
+                            "url": "/formula1",
+                            "icon": "🏎️"
+                        },
+                        {
+                            "label": "Golf",
+                            "url": "/golf",
+                            "icon": "⛳"
+                        },
+                        {
+                            "label": "Boxing",
+                            "url": "/boxing",
+                            "icon": "🥊"
+                        },
+                        {
+                            "label": "MMA",
+                            "url": "/mma",
+                            "icon": "🥋"
+                        },
+                        {
+                            "label": "All Sports →",
+                            "url": "/sports"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "mobileNavigation": {
+        "enabled": true,
+        "type": "drawer",
+        "position": "left",
+        "width": 300,
+        "overlay": true,
+        "hamburgerIcon": true,
+        "closeButton": true,
+        "search": {
+            "enabled": true,
+            "position": "top"
+        },
+        "userProfile": {
+            "enabled": true,
+            "position": "top"
+        },
+        "collapsibleSections": true,
+        "darkModeToggle": true,
+        "languageSelector": true
+    },
+    "breadcrumbs": {
+        "enabled": true,
+        "homepage": {
+            "label": "Home",
+            "icon": "🏠"
+        },
+        "separator": "›",
+        "maxItems": 5,
+        "showOnHomepage": false,
+        "schema": true
+    },
+    "userMenu": {
+        "enabled": true,
+        "position": "right",
+        "items": [
+            {
+                "label": "Profile",
+                "url": "/profile",
+                "icon": "👤",
+                "requireAuth": true
+            },
+            {
+                "label": "Favorites",
+                "url": "/favorites",
+                "icon": "⭐",
+                "requireAuth": true
+            },
+            {
+                "label": "Saved Articles",
+                "url": "/saved",
+                "icon": "📑",
+                "requireAuth": true
+            },
+            {
+                "label": "Settings",
+                "url": "/settings",
+                "icon": "⚙️",
+                "requireAuth": true
+            },
+            {
+                "label": "Logout",
+                "url": "/logout",
+                "icon": "🚪",
+                "requireAuth": true
+            }
+        ],
+        "loginButton": {
+            "label": "Sign In",
+            "url": "/login"
+        },
+        "registerButton": {
+            "label": "Sign Up",
+            "url": "/register"
+        }
+    },
+    "footer": {
+        "enabled": true,
+        "sections": [
+            {
+                "title": "Sports",
+                "items": [
+                    {
+                        "label": "Football",
+                        "url": "/football"
+                    },
+                    {
+                        "label": "Basketball",
+                        "url": "/basketball"
+                    },
+                    {
+                        "label": "Tennis",
+                        "url": "/tennis"
+                    },
+                    {
+                        "label": "Cricket",
+                        "url": "/cricket"
+                    },
+                    {
+                        "label": "All Sports",
+                        "url": "/sports"
+                    }
+                ]
+            },
+            {
+                "title": "Company",
+                "items": [
+                    {
+                        "label": "About Us",
+                        "url": "/about"
+                    },
+                    {
+                        "label": "Contact",
+                        "url": "/contact"
+                    },
+                    {
+                        "label": "Careers",
+                        "url": "/careers"
+                    },
+                    {
+                        "label": "Advertise",
+                        "url": "/advertise"
+                    }
+                ]
+            },
+            {
+                "title": "Legal",
+                "items": [
+                    {
+                        "label": "Privacy Policy",
+                        "url": "/privacy"
+                    },
+                    {
+                        "label": "Terms of Service",
+                        "url": "/terms"
+                    },
+                    {
+                        "label": "Cookie Policy",
+                        "url": "/cookies"
+                    },
+                    {
+                        "label": "DMCA",
+                        "url": "/dmca"
+                    }
+                ]
+            },
+            {
+                "title": "Follow Us",
+                "items": [
+                    {
+                        "label": "Facebook",
+                        "url": "https://facebook.com/sportiq",
+                        "icon": "📘"
+                    },
+                    {
+                        "label": "Twitter",
+                        "url": "https://twitter.com/sportiq",
+                        "icon": "🐦"
+                    },
+                    {
+                        "label": "Instagram",
+                        "url": "https://instagram.com/sportiq",
+                        "icon": "📷"
+                    },
+                    {
+                        "label": "YouTube",
+                        "url": "https://youtube.com/sportiq",
+                        "icon": "📺"
+                    }
+                ]
+            }
+        ],
+        "copyright": "© 2025 SPORTIQ. All rights reserved.",
+        "newsletter": {
+            "enabled": true,
+            "title": "Subscribe to Newsletter",
+            "placeholder": "Enter your email",
+            "button": "Subscribe"
+        }
+    },
+    "stickyBehavior": {
+        "enabled": true,
+        "showOnScroll": true,
+        "hideOnScrollDown": false,
+        "showOnScrollUp": true,
+        "offset": 100
+    },
+    "animations": {
+        "menuTransition": "300ms ease-in-out",
+        "dropdownDelay": 200,
+        "mobileDrawer": "250ms cubic-bezier(0.4, 0, 0.2, 1)"
+    }
+}

@@ -1,0 +1,194 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Live scores data provider configuration for SPORTIQ",
+    "providers": {
+        "primary": {
+            "name": "SportsData.io",
+            "enabled": true,
+            "priority": 1,
+            "apiKey": "YOUR_SPORTSDATA_API_KEY",
+            "baseUrl": "https://api.sportsdata.io/v3",
+            "rateLimit": {
+                "requestsPerMinute": 60,
+                "requestsPerDay": 10000
+            },
+            "endpoints": {
+                "football": {
+                    "liveScores": "/soccer/scores/json/GamesByDate/{date}",
+                    "fixtures": "/soccer/scores/json/Schedule/{season}",
+                    "standings": "/soccer/scores/json/Standings/{season}",
+                    "teams": "/soccer/scores/json/Teams",
+                    "players": "/soccer/scores/json/Players/{team}"
+                },
+                "basketball": {
+                    "liveScores": "/nba/scores/json/GamesByDate/{date}",
+                    "fixtures": "/nba/scores/json/Games/{season}",
+                    "standings": "/nba/scores/json/Standings/{season}",
+                    "teams": "/nba/scores/json/AllTeams"
+                }
+            },
+            "sports": [
+                "football",
+                "basketball"
+            ],
+            "coverage": {
+                "football": [
+                    "premier-league",
+                    "champions-league",
+                    "la-liga",
+                    "serie-a",
+                    "bundesliga"
+                ],
+                "basketball": [
+                    "nba"
+                ]
+            }
+        },
+        "secondary": {
+            "name": "API-Football",
+            "enabled": true,
+            "priority": 2,
+            "apiKey": "YOUR_API_FOOTBALL_KEY",
+            "baseUrl": "https://api-football-v1.p.rapidapi.com/v3",
+            "rateLimit": {
+                "requestsPerMinute": 30,
+                "requestsPerDay": 1000
+            },
+            "endpoints": {
+                "liveScores": "/fixtures",
+                "fixtures": "/fixtures",
+                "standings": "/standings",
+                "teams": "/teams",
+                "players": "/players"
+            },
+            "sports": [
+                "football"
+            ],
+            "coverage": {
+                "football": [
+                    "premier-league",
+                    "champions-league",
+                    "la-liga",
+                    "serie-a",
+                    "bundesliga",
+                    "ligue-1",
+                    "world-cup"
+                ]
+            },
+            "headers": {
+                "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
+                "x-rapidapi-key": "YOUR_RAPID_API_KEY"
+            }
+        },
+        "tertiary": {
+            "name": "The Odds API",
+            "enabled": false,
+            "priority": 3,
+            "apiKey": "YOUR_ODDS_API_KEY",
+            "baseUrl": "https://api.the-odds-api.com/v4",
+            "rateLimit": {
+                "requestsPerMinute": 10,
+                "requestsPerMonth": 500
+            },
+            "endpoints": {
+                "liveScores": "/sports/{sport}/scores",
+                "odds": "/sports/{sport}/odds"
+            },
+            "sports": [
+                "football",
+                "basketball",
+                "tennis"
+            ],
+            "coverage": {
+                "football": "all",
+                "basketball": "all",
+                "tennis": "all"
+            }
+        },
+        "fallback": {
+            "name": "RSS Feeds",
+            "enabled": true,
+            "priority": 99,
+            "type": "rss",
+            "feeds": {
+                "football": [
+                    "https://www.espn.com/espn/rss/soccer/news",
+                    "https://feeds.bbci.co.uk/sport/football/rss.xml"
+                ],
+                "basketball": [
+                    "https://www.espn.com/espn/rss/nba/news"
+                ]
+            },
+            "updateInterval": 300000
+        }
+    },
+    "dataTransformation": {
+        "football": {
+            "matchMapping": {
+                "matchId": "fixture.id",
+                "homeTeam": "teams.home.name",
+                "awayTeam": "teams.away.name",
+                "homeScore": "goals.home",
+                "awayScore": "goals.away",
+                "status": "fixture.status.long",
+                "minute": "fixture.status.elapsed",
+                "league": "league.name",
+                "date": "fixture.date"
+            },
+            "statusMapping": {
+                "NS": "scheduled",
+                "TBD": "scheduled",
+                "1H": "live",
+                "HT": "halftime",
+                "2H": "live",
+                "ET": "live",
+                "P": "live",
+                "FT": "finished",
+                "AET": "finished",
+                "PEN": "finished",
+                "PST": "postponed",
+                "CANC": "cancelled"
+            }
+        },
+        "basketball": {
+            "matchMapping": {
+                "matchId": "game.id",
+                "homeTeam": "home_team.full_name",
+                "awayTeam": "away_team.full_name",
+                "homeScore": "home_team_score",
+                "awayScore": "away_team_score",
+                "quarter": "period",
+                "status": "status"
+            },
+            "statusMapping": {
+                "Scheduled": "scheduled",
+                "InProgress": "live",
+                "Halftime": "halftime",
+                "Final": "finished",
+                "F/OT": "finished"
+            }
+        }
+    },
+    "errorHandling": {
+        "retryAttempts": 3,
+        "retryDelay": 1000,
+        "backoffMultiplier": 2,
+        "fallbackToSecondary": true,
+        "cacheOnError": true,
+        "showStaleData": true,
+        "maxStaleTime": 300000
+    },
+    "rateLimiting": {
+        "enabled": true,
+        "strategy": "token-bucket",
+        "queueRequests": true,
+        "maxQueueSize": 100,
+        "prioritize": {
+            "liveMatches": 1,
+            "upcomingMatches": 2,
+            "standings": 3,
+            "historicalData": 4
+        }
+    }
+}

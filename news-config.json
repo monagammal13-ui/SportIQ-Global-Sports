@@ -1,0 +1,72 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-29T08:37:25Z",
+    "description": "Global News Aggregator Configuration",
+    "sources": [
+        {
+            "id": "bbc-sport",
+            "name": "BBC Sport",
+            "url": "http://feeds.bbci.co.uk/sport/rss.xml",
+            "category": "breaking",
+            "sport": "all",
+            "enabled": true,
+            "icon": "📺"
+        },
+        {
+            "id": "espn",
+            "name": "ESPN",
+            "url": "https://www.espn.com/espn/rss/news",
+            "category": "breaking",
+            "sport": "all",
+            "enabled": true,
+            "icon": "🏆"
+        },
+        {
+            "id": "sky-sports",
+            "name": "Sky Sports",
+            "url": "http://www.skysports.com/rss/12040",
+            "category": "breaking",
+            "sport": "football",
+            "enabled": true,
+            "icon": "⚽"
+        },
+        {
+            "id": "goal",
+            "name": "Goal.com",
+            "url": "https://www.goal.com/feeds/en/news",
+            "category": "transfer",
+            "sport": "football",
+            "enabled": true,
+            "icon": "🎯"
+        }
+    ],
+    "categories": [
+        {
+            "id": "breaking",
+            "name": "Breaking News",
+            "color": "#ef4444",
+            "icon": "🚨"
+        },
+        {
+            "id": "transfer",
+            "name": "Transfer News",
+            "color": "#3b82f6",
+            "icon": "🔄"
+        },
+        {
+            "id": "match",
+            "name": "Match Reports",
+            "color": "#10b981",
+            "icon": "⚽"
+        },
+        {
+            "id": "analysis",
+            "name": "Analysis",
+            "color": "#8b5cf6",
+            "icon": "📊"
+        }
+    ],
+    "updateInterval": 300000,
+    "cacheExpiry": 600000,
+    "maxArticles": 50
+}

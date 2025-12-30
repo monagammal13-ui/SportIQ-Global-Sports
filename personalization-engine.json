@@ -1,0 +1,319 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Personalization engine configuration for SPORTIQ user experience",
+    "contentFiltering": {
+        "boostFactors": {
+            "favoriteTeam": 3.0,
+            "favoriteLeague": 2.5,
+            "favoriteSport": 1.8,
+            "favoritePlayer": 2.0,
+            "recentlyViewedCategory": 1.5,
+            "highEngagement": 1.3,
+            "preferredContentType": 1.4
+        },
+        "penaltyFactors": {
+            "blockedTeam": 0.1,
+            "hiddenCategory": 0.2,
+            "dislikedSport": 0.4,
+            "lowEngagementTopic": 0.6
+        },
+        "neverShow": {
+            "blockedTeams": true,
+            "hiddenCategories": true,
+            "blacklistedKeywords": true
+        }
+    },
+    "personalizedHomepage": {
+        "sections": [
+            {
+                "id": "your_teams",
+                "title": "Your Teams",
+                "enabled": true,
+                "requiresFavorites": true,
+                "count": 10,
+                "refreshInterval": 300000,
+                "order": 1
+            },
+            {
+                "id": "your_leagues",
+                "title": "Your Leagues",
+                "enabled": true,
+                "requiresFavorites": true,
+                "count": 8,
+                "refreshInterval": 300000,
+                "order": 2
+            },
+            {
+                "id": "for_you",
+                "title": "Recommended For You",
+                "enabled": true,
+                "algorithm": "hybrid",
+                "count": 12,
+                "refreshInterval": 600000,
+                "order": 3
+            },
+            {
+                "id": "trending_your_sports",
+                "title": "Trending in Your Sports",
+                "enabled": true,
+                "count": 6,
+                "refreshInterval": 300000,
+                "order": 4
+            },
+            {
+                "id": "continue_reading",
+                "title": "Continue Reading",
+                "enabled": true,
+                "showUnfinished": true,
+                "count": 3,
+                "order": 5
+            },
+            {
+                "id": "saved_articles",
+                "title": "Your Saved Articles",
+                "enabled": true,
+                "count": 5,
+                "order": 6
+            }
+        ],
+        "fallbackBehavior": {
+            "noFavorites": "show_trending",
+            "noHistory": "show_popular",
+            "newUser": "onboarding_flow"
+        }
+    },
+    "feedPrioritization": {
+        "algorithm": "weighted_scoring",
+        "scoreCalculation": {
+            "favoriteTeamMatch": 100,
+            "favoriteLeagueContent": 50,
+            "favoriteSportContent": 30,
+            "recommendationScore": 20,
+            "trendingScore": 10,
+            "recencyScore": 10
+        },
+        "diversitySettings": {
+            "enabled": true,
+            "maxSameTeam": 3,
+            "maxSameSport": 5,
+            "minSportVariety": 2
+        }
+    },
+    "notificationPersonalization": {
+        "teamNotifications": {
+            "matchStart": {
+                "enabled": true,
+                "advanceNotice": 3600000
+            },
+            "matchEnd": {
+                "enabled": true,
+                "sendFinalScore": true
+            },
+            "goal": {
+                "enabled": true,
+                "instant": true
+            },
+            "redCard": {
+                "enabled": true
+            },
+            "transfer": {
+                "enabled": true,
+                "rumors": false,
+                "confirmed": true
+            }
+        },
+        "playerNotifications": {
+            "transfer": true,
+            "injury": true,
+            "milestone": true,
+            "retirement": true
+        },
+        "smartTiming": {
+            "enabled": true,
+            "respectQuietHours": true,
+            "batchNonUrgent": true,
+            "maxPerHour": 5
+        }
+    },
+    "savedArticles": {
+        "defaultList": "Saved",
+        "autoLists": {
+            "unread": {
+                "enabled": true,
+                "name": "Unread"
+            },
+            "thisWeek": {
+                "enabled": true,
+                "name": "This Week"
+            },
+            "favorites": {
+                "enabled": true,
+                "name": "Favorites"
+            }
+        },
+        "customLists": {
+            "enabled": true,
+            "maxLists": 20,
+            "maxArticlesPerList": 100
+        },
+        "offlineAccess": {
+            "enabled": true,
+            "maxArticles": 50,
+            "downloadImages": true
+        }
+    },
+    "readingExperience": {
+        "continueReading": {
+            "enabled": true,
+            "trackProgress": true,
+            "resumeThreshold": 0.3,
+            "showOnHomepage": true
+        },
+        "relatedContent": {
+            "enabled": true,
+            "basedOnCurrentArticle": true,
+            "basedOnProfile": true,
+            "count": 5
+        },
+        "readingHistory": {
+            "enabled": true,
+            "maxItems": 1000,
+            "retentionDays": 365,
+            "exportable": true
+        }
+    },
+    "themePersonalization": {
+        "autoTheme": {
+            "enabled": true,
+            "followSystem": true,
+            "schedule": {
+                "darkModeStart": "20:00",
+                "lightModeStart": "07:00"
+            }
+        },
+        "teamColors": {
+            "enabled": false,
+            "applyToInterface": false,
+            "applyToAccents": false
+        },
+        "accessibility": {
+            "highContrast": false,
+            "largeText": false,
+            "reducedMotion": false,
+            "screenReaderOptimized": false
+        }
+    },
+    "searchPersonalization": {
+        "enabled": true,
+        "boostFavoriteTeams": true,
+        "boostFavoriteSports": true,
+        "filterByPreferences": false,
+        "saveSearchHistory": true,
+        "suggestBasedOnHistory": true
+    },
+    "onboardingFlow": {
+        "enabled": true,
+        "steps": [
+            {
+                "step": 1,
+                "title": "Welcome to SPORTIQ",
+                "action": "introduction"
+            },
+            {
+                "step": 2,
+                "title": "Choose Your Sports",
+                "action": "select_sports",
+                "required": true
+            },
+            {
+                "step": 3,
+                "title": "Pick Your Teams",
+                "action": "select_teams",
+                "required": false
+            },
+            {
+                "step": 4,
+                "title": "Follow Leagues",
+                "action": "select_leagues",
+                "required": false
+            },
+            {
+                "step": 5,
+                "title": "Customize Your Feed",
+                "action": "personalization_preview"
+            },
+            {
+                "step": 6,
+                "title": "Enable Notifications",
+                "action": "notification_setup",
+                "required": false
+            }
+        ],
+        "skipable": true,
+        "showOnFirstVisit": true
+    },
+    "privacySettings": {
+        "dataCollection": {
+            "readingHistory": true,
+            "searchHistory": true,
+            "clickTracking": true,
+            "locationTracking": false
+        },
+        "dataUsage": {
+            "personalization": true,
+            "analytics": true,
+            "advertising": false,
+            "sharing": false
+        },
+        "dataRetention": {
+            "readingHistory": 365,
+            "searchHistory": 90,
+            "clickData": 30
+        },
+        "userRights": {
+            "exportData": true,
+            "deleteData": true,
+            "optOut": true,
+            "anonymousMode": true
+        }
+    },
+    "performanceOptimization": {
+        "caching": {
+            "userProfile": 86400000,
+            "personalizedFeed": 300000,
+            "favorites": 3600000
+        },
+        "lazyLoading": {
+            "sections": true,
+            "images": true,
+            "recommendations": true
+        },
+        "preloading": {
+            "favoriteTeamArticles": true,
+            "trendingContent": true
+        }
+    },
+    "abTesting": {
+        "enabled": true,
+        "experiments": [
+            {
+                "id": "personalized_homepage_layout",
+                "variants": [
+                    "layout_a",
+                    "layout_b"
+                ],
+                "split": 0.5
+            },
+            {
+                "id": "notification_frequency",
+                "variants": [
+                    "high",
+                    "medium",
+                    "low"
+                ],
+                "split": 0.33
+            }
+        ]
+    }
+}

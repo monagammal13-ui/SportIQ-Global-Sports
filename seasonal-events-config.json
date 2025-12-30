@@ -1,0 +1,323 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Complete seasonal events and major tournaments system for SPORTIQ",
+    "seasonalEvents": {
+        "enabled": true,
+        "autoUpdate": true,
+        "specialCoverage": true,
+        "archiveEvents": true
+    },
+    "majorEvents": [
+        {
+            "id": "fifa-world-cup-2026",
+            "name": "FIFA World Cup 2026",
+            "sport": "football",
+            "type": "tournament",
+            "startDate": "2026-06-11",
+            "endDate": "2026-07-19",
+            "location": "USA, Canada, Mexico",
+            "teams": 48,
+            "priority": "highest",
+            "coverage": {
+                "dedicatedPage": true,
+                "liveBlog": true,
+                "countdownTimer": true,
+                "specialBanner": true,
+                "photoGallery": true,
+                "videoHighlights": true
+            }
+        },
+        {
+            "id": "olympics-2024",
+            "name": "Paris 2024 Olympics",
+            "sport": "multi-sport",
+            "type": "olympics",
+            "startDate": "2024-07-26",
+            "endDate": "2024-08-11",
+            "location": "Paris, France",
+            "sports": 32,
+            "priority": "highest",
+            "coverage": {
+                "dedicatedPage": true,
+                "liveBlog": true,
+                "countdownTimer": true,
+                "specialBanner": true,
+                "photoGallery": true,
+                "videoHighlights": true
+            }
+        },
+        {
+            "id": "uefa-champions-league",
+            "name": "UEFA Champions League",
+            "sport": "football",
+            "type": "tournament",
+            "season": "2024-2025",
+            "startDate": "2024-09-17",
+            "endDate": "2025-05-31",
+            "location": "Europe",
+            "teams": 32,
+            "priority": "high",
+            "coverage": {
+                "dedicatedPage": true,
+                "liveBlog": false,
+                "countdownTimer": false,
+                "specialBanner": true,
+                "photoGallery": true,
+                "videoHighlights": true
+            }
+        },
+        {
+            "id": "nba-finals-2025",
+            "name": "NBA Finals 2025",
+            "sport": "basketball",
+            "type": "championship",
+            "startDate": "2025-06-05",
+            "endDate": "2025-06-22",
+            "location": "USA",
+            "teams": 2,
+            "priority": "high",
+            "coverage": {
+                "dedicatedPage": true,
+                "liveBlog": true,
+                "countdownTimer": true,
+                "specialBanner": true,
+                "photoGallery": true,
+                "videoHighlights": true
+            }
+        },
+        {
+            "id": "wimbledon-2025",
+            "name": "Wimbledon 2025",
+            "sport": "tennis",
+            "type": "grand-slam",
+            "startDate": "2025-06-23",
+            "endDate": "2025-07-06",
+            "location": "London, UK",
+            "surface": "grass",
+            "priority": "high",
+            "coverage": {
+                "dedicatedPage": true,
+                "liveBlog": true,
+                "countdownTimer": true,
+                "specialBanner": true,
+                "photoGallery": true,
+                "videoHighlights": true
+            }
+        },
+        {
+            "id": "ipl-2025",
+            "name": "Indian Premier League 2025",
+            "sport": "cricket",
+            "type": "tournament",
+            "startDate": "2025-03-23",
+            "endDate": "2025-05-26",
+            "location": "India",
+            "teams": 10,
+            "priority": "high",
+            "coverage": {
+                "dedicatedPage": true,
+                "liveBlog": true,
+                "countdownTimer": false,
+                "specialBanner": true,
+                "photoGallery": true,
+                "videoHighlights": true
+            }
+        }
+    ],
+    "countdownTimers": {
+        "enabled": true,
+        "display": {
+            "days": true,
+            "hours": true,
+            "minutes": true,
+            "seconds": false
+        },
+        "updateInterval": 60000,
+        "showWhenStarted": false,
+        "positions": [
+            "homepage",
+            "event-page",
+            "sidebar"
+        ]
+    },
+    "eventPages": {
+        "enabled": true,
+        "template": {
+            "header": {
+                "banner": true,
+                "countdown": true,
+                "eventInfo": true
+            },
+            "sections": {
+                "overview": true,
+                "schedule": true,
+                "standings": true,
+                "highlights": true,
+                "photos": true,
+                "videos": true,
+                "news": true,
+                "liveBlog": true
+            },
+            "sidebar": {
+                "countdown": true,
+                "upcomingMatches": true,
+                "topPlayers": true,
+                "latestNews": true
+            }
+        },
+        "urlPattern": "/events/{event-id}"
+    },
+    "liveBlog": {
+        "enabled": true,
+        "realTime": true,
+        "updateInterval": 30000,
+        "features": {
+            "textUpdates": true,
+            "images": true,
+            "videos": true,
+            "polls": true,
+            "reactions": true,
+            "comments": true
+        },
+        "autoRefresh": true,
+        "notifications": true
+    },
+    "specialBanners": {
+        "enabled": true,
+        "types": {
+            "homepage": {
+                "enabled": true,
+                "size": "1920x400",
+                "format": "webp",
+                "position": "top"
+            },
+            "sticky": {
+                "enabled": true,
+                "height": 60,
+                "dismissible": true,
+                "showOnScroll": false
+            },
+            "popup": {
+                "enabled": false,
+                "delay": 5000,
+                "showOnce": true
+            }
+        },
+        "cta": {
+            "enabled": true,
+            "text": "View Full Coverage",
+            "link": "/events/{event-id}"
+        }
+    },
+    "schedule": {
+        "enabled": true,
+        "display": {
+            "calendar": true,
+            "list": true,
+            "timeline": true
+        },
+        "filters": {
+            "byDate": true,
+            "byTeam": true,
+            "byVenue": true,
+            "byRound": true
+        },
+        "sync": {
+            "googleCalendar": true,
+            "ical": true,
+            "outlook": true
+        },
+        "reminders": {
+            "enabled": true,
+            "methods": [
+                "push",
+                "email"
+            ],
+            "timing": [
+                "1day",
+                "1hour",
+                "15min"
+            ]
+        }
+    },
+    "standings": {
+        "enabled": true,
+        "updateInterval": 900000,
+        "display": {
+            "table": true,
+            "chart": true,
+            "progression": true
+        },
+        "stats": {
+            "points": true,
+            "played": true,
+            "won": true,
+            "drawn": true,
+            "lost": true,
+            "goalsFor": true,
+            "goalsAgainst": true,
+            "goalDifference": true
+        }
+    },
+    "brackets": {
+        "enabled": true,
+        "interactive": true,
+        "predictable": {
+            "enabled": true,
+            "requireAuth": true,
+            "rewards": true
+        },
+        "realTime": true
+    },
+    "eventArchives": {
+        "enabled": true,
+        "retention": "permanent",
+        "sections": {
+            "results": true,
+            "highlights": true,
+            "photos": true,
+            "videos": true,
+            "articles": true,
+            "statistics": true
+        },
+        "searchable": true,
+        "downloadable": false
+    },
+    "notifications": {
+        "enabled": true,
+        "types": {
+            "eventStart": {
+                "enabled": true,
+                "timing": "1hour"
+            },
+            "matchStart": {
+                "enabled": true,
+                "timing": "15min"
+            },
+            "majorUpdate": {
+                "enabled": true,
+                "description": "Goals, red cards, records"
+            },
+            "eventEnd": {
+                "enabled": true,
+                "includeSummary": true
+            }
+        },
+        "channels": [
+            "push",
+            "email",
+            "in-app"
+        ]
+    },
+    "sponsorship": {
+        "enabled": true,
+        "placements": {
+            "banners": true,
+            "liveBlog": true,
+            "highlights": true,
+            "countdownTimer": true
+        },
+        "disclosure": true
+    }
+}

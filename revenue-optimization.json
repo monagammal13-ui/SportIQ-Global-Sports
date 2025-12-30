@@ -1,0 +1,214 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Revenue optimization strategies and rules for SPORTIQ ad system",
+    "cpmOptimization": {
+        "dynamicAdjustment": {
+            "tier1Traffic": 1.2,
+            "tier2Traffic": 1.0,
+            "tier3Traffic": 0.8,
+            "mobileDevice": 0.9,
+            "tabletDevice": 1.0,
+            "desktopDevice": 1.1,
+            "weekendBoost": 1.15,
+            "peakHoursBoost": 1.1,
+            "offPeakDiscount": 0.95
+        },
+        "floorPrices": {
+            "tier1": {
+                "desktop": 5,
+                "tablet": 3,
+                "mobile": 2
+            },
+            "tier2": {
+                "desktop": 2.5,
+                "tablet": 1.5,
+                "mobile": 1
+            },
+            "tier3": {
+                "desktop": 1,
+                "tablet": 0.7,
+                "mobile": 0.5
+            }
+        }
+    },
+    "fillRateStrategy": {
+        "targetFillRate": 0.9,
+        "priorityWaterfall": [
+            {
+                "level": 1,
+                "type": "direct",
+                "expectedFillRate": 0.3,
+                "timeout": 2000
+            },
+            {
+                "level": 2,
+                "type": "premium",
+                "expectedFillRate": 0.6,
+                "timeout": 1500
+            },
+            {
+                "level": 3,
+                "type": "standard",
+                "expectedFillRate": 0.9,
+                "timeout": 1200
+            },
+            {
+                "level": 4,
+                "type": "fallback",
+                "expectedFillRate": 0.95,
+                "timeout": 1000
+            },
+            {
+                "level": 5,
+                "type": "house",
+                "expectedFillRate": 1.0,
+                "timeout": 0
+            }
+        ]
+    },
+    "revenueTargets": {
+        "daily": {
+            "tier1": 500,
+            "tier2": 200,
+            "tier3": 100
+        },
+        "monthly": {
+            "tier1": 15000,
+            "tier2": 6000,
+            "tier3": 3000
+        },
+        "revenuePerUser": {
+            "tier1": 0.15,
+            "tier2": 0.08,
+            "tier3": 0.03
+        }
+    },
+    "frequencyCapping": {
+        "global": {
+            "perSession": 10,
+            "perHour": 20,
+            "perDay": 50,
+            "perWeek": 200
+        },
+        "byAdType": {
+            "video": {
+                "perSession": 2,
+                "perHour": 4,
+                "perDay": 8
+            },
+            "interstitial": {
+                "perSession": 1,
+                "perHour": 2,
+                "perDay": 3
+            },
+            "native": {
+                "perSession": 5,
+                "perHour": 10,
+                "perDay": 30
+            },
+            "display": {
+                "perSession": 8,
+                "perHour": 15,
+                "perDay": 40
+            }
+        },
+        "bySegment": {
+            "newVisitor": {
+                "perSession": 5,
+                "perDay": 15
+            },
+            "returningVisitor": {
+                "perSession": 8,
+                "perDay": 30
+            },
+            "loyalVisitor": {
+                "perSession": 12,
+                "perDay": 50
+            },
+            "vipVisitor": {
+                "perSession": 10,
+                "perDay": 40
+            }
+        },
+        "respectUserPreferences": true,
+        "honorDoNotTrack": true
+    },
+    "bidOptimization": {
+        "headerBidding": {
+            "enabled": false,
+            "timeout": 1500,
+            "partners": [],
+            "priceGranularity": "medium"
+        },
+        "prebid": {
+            "enabled": false,
+            "version": "7.0",
+            "timeout": 1500
+        },
+        "realTimeBidding": {
+            "enabled": false,
+            "floorPrice": 1.0,
+            "maxBidPrice": 20.0
+        }
+    },
+    "performanceOptimization": {
+        "lazyLoading": {
+            "enabled": true,
+            "threshold": "200px",
+            "onlyBelowFold": true
+        },
+        "refreshStrategy": {
+            "enabled": true,
+            "interval": 30000,
+            "viewabilityRequired": 0.7,
+            "userActiveRequired": true,
+            "maxRefreshes": 5
+        },
+        "adBlocking": {
+            "detectionEnabled": true,
+            "recoveryStrategy": "direct-links",
+            "messageEnabled": false
+        }
+    },
+    "qualityControl": {
+        "minViewability": 0.5,
+        "minCTR": 0.003,
+        "maxLoadTime": 2000,
+        "blockLowQuality": true,
+        "advertiserBlacklist": [],
+        "categoryBlacklist": [
+            "adult",
+            "gambling",
+            "tobacco"
+        ]
+    },
+    "revenueSplit": {
+        "platformShare": 0.3,
+        "publisherShare": 0.7,
+        "referralBonus": 0.05
+    },
+    "payments": {
+        "minimumPayout": 100,
+        "paymentSchedule": "monthly",
+        "paymentMethods": [
+            "bank",
+            "paypal",
+            "wise"
+        ],
+        "currency": "USD"
+    },
+    "reporting": {
+        "realTimeMetrics": true,
+        "updateInterval": 300000,
+        "metricsToTrack": [
+            "impressions",
+            "clicks",
+            "ctr",
+            "cpm",
+            "revenue",
+            "fillRate",
+            "viewability"
+        ]
+    }
+}

@@ -1,0 +1,316 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Centralized media assets database for SPORTIQ",
+    "categories": {
+        "images": {
+            "heroes": [
+                {
+                    "id": "hero_main",
+                    "filename": "hero-sportiq.jpg",
+                    "path": "/assets/images/heroes/hero-sportiq.jpg",
+                    "alt": "SPORTIQ - Global Sports Platform",
+                    "width": 1920,
+                    "height": 1080,
+                    "format": "jpg",
+                    "size": "350KB",
+                    "lazy": true,
+                    "priority": "high"
+                },
+                {
+                    "id": "hero_football",
+                    "filename": "hero-football.jpg",
+                    "path": "/assets/images/heroes/hero-football.jpg",
+                    "alt": "Football - Latest News and Scores",
+                    "width": 1920,
+                    "height": 1080,
+                    "format": "jpg",
+                    "size": "380KB",
+                    "lazy": true,
+                    "priority": "high"
+                }
+            ],
+            "articles": [
+                {
+                    "id": "art_001_img",
+                    "filename": "man-utd-transfer.jpg",
+                    "path": "/assets/images/articles/man-utd-transfer.jpg",
+                    "alt": "Manchester United Record Transfer",
+                    "width": 800,
+                    "height": 450,
+                    "format": "jpg",
+                    "size": "150KB",
+                    "lazy": true,
+                    "category": "football",
+                    "articleId": "art_001"
+                },
+                {
+                    "id": "art_002_img",
+                    "filename": "lakers-finals.jpg",
+                    "path": "/assets/images/articles/lakers-finals.jpg",
+                    "alt": "Lakers NBA Finals Game 3",
+                    "width": 800,
+                    "height": 450,
+                    "format": "jpg",
+                    "size": "160KB",
+                    "lazy": true,
+                    "category": "basketball",
+                    "articleId": "art_002"
+                },
+                {
+                    "id": "art_003_img",
+                    "filename": "djokovic-wimbledon.jpg",
+                    "path": "/assets/images/articles/djokovic-wimbledon.jpg",
+                    "alt": "Djokovic Wimbledon Semifinals",
+                    "width": 800,
+                    "height": 450,
+                    "format": "jpg",
+                    "size": "145KB",
+                    "lazy": true,
+                    "category": "tennis",
+                    "articleId": "art_003"
+                }
+            ],
+            "features": [
+                {
+                    "id": "feature_livescores",
+                    "filename": "feature-livescores.jpg",
+                    "path": "/assets/images/features/feature-livescores.jpg",
+                    "alt": "Real-time Live Scores",
+                    "width": 600,
+                    "height": 400,
+                    "format": "jpg",
+                    "size": "120KB",
+                    "lazy": true
+                },
+                {
+                    "id": "feature_news",
+                    "filename": "feature-news.jpg",
+                    "path": "/assets/images/features/feature-news.jpg",
+                    "alt": "Breaking Sports News",
+                    "width": 600,
+                    "height": 400,
+                    "format": "jpg",
+                    "size": "115KB",
+                    "lazy": true
+                },
+                {
+                    "id": "feature_stats",
+                    "filename": "feature-stats.jpg",
+                    "path": "/assets/images/features/feature-stats.jpg",
+                    "alt": "Comprehensive Statistics",
+                    "width": 600,
+                    "height": 400,
+                    "format": "jpg",
+                    "size": "110KB",
+                    "lazy": true
+                }
+            ],
+            "authors": [
+                {
+                    "id": "author_johnsmith",
+                    "filename": "john-smith.jpg",
+                    "path": "/assets/images/authors/john-smith.jpg",
+                    "alt": "John Smith - Sports Writer",
+                    "width": 200,
+                    "height": 200,
+                    "format": "jpg",
+                    "size": "45KB",
+                    "lazy": true
+                }
+            ],
+            "placeholders": [
+                {
+                    "id": "placeholder_article",
+                    "filename": "placeholder-article.svg",
+                    "path": "/assets/images/placeholders/article.svg",
+                    "alt": "Article Placeholder",
+                    "width": 800,
+                    "height": 450,
+                    "format": "svg",
+                    "size": "5KB",
+                    "lazy": false
+                },
+                {
+                    "id": "placeholder_avatar",
+                    "filename": "placeholder-avatar.svg",
+                    "path": "/assets/images/placeholders/avatar.svg",
+                    "alt": "Avatar Placeholder",
+                    "width": 200,
+                    "height": 200,
+                    "format": "svg",
+                    "size": "3KB",
+                    "lazy": false
+                }
+            ]
+        },
+        "videos": {
+            "highlights": [
+                {
+                    "id": "vid_lakers_highlights",
+                    "filename": "lakers-highlights.mp4",
+                    "path": "/assets/videos/highlights/lakers-highlights.mp4",
+                    "thumbnail": "/assets/images/thumbnails/lakers-thumb.jpg",
+                    "alt": "Lakers Game 3 Highlights",
+                    "duration": "5:32",
+                    "width": 1920,
+                    "height": 1080,
+                    "format": "mp4",
+                    "size": "45MB",
+                    "lazy": true,
+                    "category": "basketball",
+                    "articleId": "art_002"
+                },
+                {
+                    "id": "vid_olympics_highlights",
+                    "filename": "olympics-highlights.mp4",
+                    "path": "/assets/videos/highlights/olympics-highlights.mp4",
+                    "thumbnail": "/assets/images/thumbnails/olympics-thumb.jpg",
+                    "alt": "Olympics Day 5 Highlights",
+                    "duration": "7:15",
+                    "width": 1920,
+                    "height": 1080,
+                    "format": "mp4",
+                    "size": "62MB",
+                    "lazy": true,
+                    "category": "olympics",
+                    "articleId": "art_007"
+                }
+            ],
+            "interviews": [
+                {
+                    "id": "vid_interview_001",
+                    "filename": "player-interview.mp4",
+                    "path": "/assets/videos/interviews/player-interview.mp4",
+                    "thumbnail": "/assets/images/thumbnails/interview-thumb.jpg",
+                    "alt": "Exclusive Player Interview",
+                    "duration": "12:45",
+                    "width": 1920,
+                    "height": 1080,
+                    "format": "mp4",
+                    "size": "85MB",
+                    "lazy": true
+                }
+            ]
+        },
+        "icons": {
+            "sports": [
+                {
+                    "id": "icon_football",
+                    "filename": "football.svg",
+                    "path": "/assets/icons/sports/football.svg",
+                    "alt": "Football Icon",
+                    "width": 64,
+                    "height": 64,
+                    "format": "svg",
+                    "size": "2KB",
+                    "lazy": false
+                },
+                {
+                    "id": "icon_basketball",
+                    "filename": "basketball.svg",
+                    "path": "/assets/icons/sports/basketball.svg",
+                    "alt": "Basketball Icon",
+                    "width": 64,
+                    "height": 64,
+                    "format": "svg",
+                    "size": "2KB",
+                    "lazy": false
+                },
+                {
+                    "id": "icon_tennis",
+                    "filename": "tennis.svg",
+                    "path": "/assets/icons/sports/tennis.svg",
+                    "alt": "Tennis Icon",
+                    "width": 64,
+                    "height": 64,
+                    "format": "svg",
+                    "size": "2KB",
+                    "lazy": false
+                }
+            ],
+            "ui": [
+                {
+                    "id": "icon_search",
+                    "filename": "search.svg",
+                    "path": "/assets/icons/ui/search.svg",
+                    "alt": "Search Icon",
+                    "width": 24,
+                    "height": 24,
+                    "format": "svg",
+                    "size": "1KB",
+                    "lazy": false
+                },
+                {
+                    "id": "icon_menu",
+                    "filename": "menu.svg",
+                    "path": "/assets/icons/ui/menu.svg",
+                    "alt": "Menu Icon",
+                    "width": 24,
+                    "height": 24,
+                    "format": "svg",
+                    "size": "1KB",
+                    "lazy": false
+                }
+            ],
+            "social": [
+                {
+                    "id": "icon_facebook",
+                    "filename": "facebook.svg",
+                    "path": "/assets/icons/social/facebook.svg",
+                    "alt": "Facebook Icon",
+                    "width": 32,
+                    "height": 32,
+                    "format": "svg",
+                    "size": "1.5KB",
+                    "lazy": false
+                },
+                {
+                    "id": "icon_twitter",
+                    "filename": "twitter.svg",
+                    "path": "/assets/icons/social/twitter.svg",
+                    "alt": "Twitter Icon",
+                    "width": 32,
+                    "height": 32,
+                    "format": "svg",
+                    "size": "1.5KB",
+                    "lazy": false
+                }
+            ]
+        }
+    },
+    "settings": {
+        "lazyLoading": {
+            "enabled": true,
+            "threshold": "200px",
+            "placeholderColor": "#f3f4f6",
+            "fadeInDuration": "0.3s"
+        },
+        "responsive": {
+            "breakpoints": {
+                "mobile": 768,
+                "tablet": 1024,
+                "desktop": 1920
+            },
+            "srcset": true,
+            "sizes": true
+        },
+        "optimization": {
+            "format": "webp",
+            "quality": 85,
+            "maxWidth": 1920,
+            "compression": true
+        },
+        "cdn": {
+            "enabled": false,
+            "baseUrl": "https://cdn.sportiq.com"
+        }
+    },
+    "meta": {
+        "totalImages": 12,
+        "totalVideos": 3,
+        "totalIcons": 7,
+        "totalSize": "350MB",
+        "lastSync": "2025-12-27T12:00:00Z"
+    }
+}

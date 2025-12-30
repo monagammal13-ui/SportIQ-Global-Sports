@@ -1,0 +1,90 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-29T09:04:11Z",
+    "description": "Advanced Search Configuration",
+    "indexableContent": [
+        {
+            "id": "n1",
+            "title": "Transfer News: Mbappe to Madrid",
+            "description": "Breaking transfer news confirmed today regarding global superstar.",
+            "category": "news",
+            "type": "news",
+            "tags": [
+                "transfer",
+                "football",
+                "real-madrid"
+            ],
+            "popularity": 95
+        },
+        {
+            "id": "n2",
+            "title": "Champions League Final Preview",
+            "description": "Detailed tactical analysis of the upcoming final.",
+            "category": "news",
+            "type": "news",
+            "tags": [
+                "ucl",
+                "preview",
+                "analysis"
+            ],
+            "popularity": 88
+        },
+        {
+            "id": "p1",
+            "title": "Lionel Messi",
+            "description": "Forward, Inter Miami. Legend of the game.",
+            "category": "player",
+            "type": "player",
+            "tags": [
+                "goat",
+                "argentina",
+                "miami"
+            ],
+            "popularity": 99
+        },
+        {
+            "id": "p2",
+            "title": "Cristiano Ronaldo",
+            "description": "Forward, Al Nassr. Top goalscorer.",
+            "category": "player",
+            "type": "player",
+            "tags": [
+                "goat",
+                "portugal",
+                "saudi"
+            ],
+            "popularity": 98
+        },
+        {
+            "id": "t1",
+            "title": "Manchester City",
+            "description": "Premier League Champions. Treble winners.",
+            "category": "team",
+            "type": "team",
+            "tags": [
+                "pl",
+                "england",
+                "champions"
+            ],
+            "popularity": 92
+        },
+        {
+            "id": "v1",
+            "title": "Top 10 Goals of the Season",
+            "description": "Watch the most spectacular goals from across Europe.",
+            "category": "video",
+            "type": "video",
+            "tags": [
+                "goals",
+                "highlights",
+                "best-of"
+            ],
+            "popularity": 90
+        }
+    ],
+    "settings": {
+        "minChars": 2,
+        "debounceMs": 300,
+        "maxResults": 20
+    }
+}

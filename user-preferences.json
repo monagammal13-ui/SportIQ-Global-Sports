@@ -1,0 +1,156 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "User preference and profile model for personalized recommendations",
+    "userProfileSchema": {
+        "userId": "string",
+        "createdAt": "timestamp",
+        "lastActive": "timestamp",
+        "totalSessions": "number",
+        "totalArticlesRead": "number",
+        "averageSessionDuration": "number",
+        "engagementScore": "number (0-100)",
+        "interests": "object",
+        "readingHistory": "array",
+        "preferences": "object",
+        "behavior": "object"
+    },
+    "interestsModel": {
+        "sports": {
+            "football": "number (0-1)",
+            "basketball": "number (0-1)",
+            "tennis": "number (0-1)",
+            "cricket": "number (0-1)",
+            "americanFootball": "number (0-1)",
+            "baseball": "number (0-1)",
+            "hockey": "number (0-1)",
+            "motorsport": "number (0-1)",
+            "golf": "number (0-1)",
+            "olympics": "number (0-1)"
+        },
+        "teams": {
+            "teamId": "number (0-1)"
+        },
+        "leagues": {
+            "leagueId": "number (0-1)"
+        },
+        "players": {
+            "playerId": "number (0-1)"
+        },
+        "contentTypes": {
+            "news": "number (0-1)",
+            "analysis": "number (0-1)",
+            "opinion": "number (0-1)",
+            "interviews": "number (0-1)",
+            "videos": "number (0-1)",
+            "liveScores": "number (0-1)"
+        }
+    },
+    "readingHistoryItem": {
+        "articleId": "string",
+        "title": "string",
+        "category": "string",
+        "tags": "array",
+        "readAt": "timestamp",
+        "timeSpent": "number (seconds)",
+        "scrollDepth": "number (0-1)",
+        "completed": "boolean",
+        "liked": "boolean",
+        "shared": "boolean",
+        "commented": "boolean"
+    },
+    "behaviorPatterns": {
+        "peakReadingHours": "array of hours",
+        "preferredDevice": "string (desktop|mobile|tablet)",
+        "averageReadTime": "number (seconds)",
+        "completionRate": "number (0-1)",
+        "engagementLikelihood": "number (0-1)",
+        "returnFrequency": "string (daily|weekly|monthly)",
+        "sessionPattern": "string (binge|casual|quick)"
+    },
+    "preferencesSettings": {
+        "notifications": {
+            "email": "boolean",
+            "push": "boolean",
+            "favoriteTeams": "boolean",
+            "breakingNews": "boolean",
+            "liveScores": "boolean"
+        },
+        "contentPreferences": {
+            "showSpoilers": "boolean",
+            "filterSports": "array",
+            "hideTeams": "array",
+            "preferredLanguage": "string"
+        },
+        "privacySettings": {
+            "trackBehavior": "boolean",
+            "personalizeContent": "boolean",
+            "shareData": "boolean"
+        }
+    },
+    "engagementScoring": {
+        "weights": {
+            "read": 1,
+            "completedRead": 3,
+            "like": 5,
+            "share": 7,
+            "comment": 10,
+            "search": 2,
+            "return": 4
+        },
+        "decay": {
+            "enabled": true,
+            "halfLife": 2592000000
+        }
+    },
+    "defaultProfile": {
+        "userId": "anonymous",
+        "createdAt": null,
+        "lastActive": null,
+        "totalSessions": 0,
+        "totalArticlesRead": 0,
+        "averageSessionDuration": 0,
+        "engagementScore": 0,
+        "interests": {
+            "sports": {},
+            "teams": {},
+            "leagues": {},
+            "players": {},
+            "contentTypes": {
+                "news": 0.5,
+                "analysis": 0.3,
+                "opinion": 0.2
+            }
+        },
+        "readingHistory": [],
+        "preferences": {
+            "notifications": {
+                "email": false,
+                "push": false,
+                "favoriteTeams": false,
+                "breakingNews": true,
+                "liveScores": true
+            },
+            "contentPreferences": {
+                "showSpoilers": true,
+                "filterSports": [],
+                "hideTeams": [],
+                "preferredLanguage": "en"
+            },
+            "privacySettings": {
+                "trackBehavior": true,
+                "personalizeContent": true,
+                "shareData": false
+            }
+        },
+        "behavior": {
+            "peakReadingHours": [],
+            "preferredDevice": "desktop",
+            "averageReadTime": 0,
+            "completionRate": 0,
+            "engagementLikelihood": 0.5,
+            "returnFrequency": "unknown",
+            "sessionPattern": "unknown"
+        }
+    }
+}

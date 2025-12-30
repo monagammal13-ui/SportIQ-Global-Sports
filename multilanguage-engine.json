@@ -1,0 +1,249 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Multi-language content engine configuration for SPORTIQ platform",
+    "supportedLanguages": [
+        {
+            "code": "en",
+            "name": "English",
+            "nativeName": "English",
+            "rtl": false,
+            "regions": [
+                "US",
+                "GB",
+                "CA",
+                "AU",
+                "NZ"
+            ],
+            "priority": 1,
+            "completeness": 100
+        },
+        {
+            "code": "es",
+            "name": "Spanish",
+            "nativeName": "Español",
+            "rtl": false,
+            "regions": [
+                "ES",
+                "MX",
+                "AR",
+                "CO",
+                "CL"
+            ],
+            "priority": 1,
+            "completeness": 100
+        },
+        {
+            "code": "fr",
+            "name": "French",
+            "nativeName": "Français",
+            "rtl": false,
+            "regions": [
+                "FR",
+                "BE",
+                "CH",
+                "CA"
+            ],
+            "priority": 1,
+            "completeness": 100
+        },
+        {
+            "code": "ar",
+            "name": "Arabic",
+            "nativeName": "العربية",
+            "rtl": true,
+            "regions": [
+                "SA",
+                "AE",
+                "EG",
+                "MA",
+                "DZ"
+            ],
+            "priority": 1,
+            "completeness": 100
+        },
+        {
+            "code": "pt",
+            "name": "Portuguese",
+            "nativeName": "Português",
+            "rtl": false,
+            "regions": [
+                "BR",
+                "PT"
+            ],
+            "priority": 2,
+            "completeness": 95
+        },
+        {
+            "code": "de",
+            "name": "German",
+            "nativeName": "Deutsch",
+            "rtl": false,
+            "regions": [
+                "DE",
+                "AT",
+                "CH"
+            ],
+            "priority": 2,
+            "completeness": 95
+        },
+        {
+            "code": "it",
+            "name": "Italian",
+            "nativeName": "Italiano",
+            "rtl": false,
+            "regions": [
+                "IT"
+            ],
+            "priority": 2,
+            "completeness": 90
+        },
+        {
+            "code": "ja",
+            "name": "Japanese",
+            "nativeName": "日本語",
+            "rtl": false,
+            "regions": [
+                "JP"
+            ],
+            "priority": 2,
+            "completeness": 85
+        },
+        {
+            "code": "zh",
+            "name": "Chinese",
+            "nativeName": "中文",
+            "rtl": false,
+            "regions": [
+                "CN",
+                "TW",
+                "HK"
+            ],
+            "priority": 2,
+            "completeness": 85
+        },
+        {
+            "code": "ko",
+            "name": "Korean",
+            "nativeName": "한국어",
+            "rtl": false,
+            "regions": [
+                "KR"
+            ],
+            "priority": 3,
+            "completeness": 80
+        },
+        {
+            "code": "hi",
+            "name": "Hindi",
+            "nativeName": "हिन्दी",
+            "rtl": false,
+            "regions": [
+                "IN"
+            ],
+            "priority": 3,
+            "completeness": 80
+        },
+        {
+            "code": "ru",
+            "name": "Russian",
+            "nativeName": "Русский",
+            "rtl": false,
+            "regions": [
+                "RU"
+            ],
+            "priority": 3,
+            "completeness": 75
+        }
+    ],
+    "translationEngine": {
+        "provider": "neural-mt",
+        "models": {
+            "primary": "gpt-4-turbo",
+            "fallback": "google-translate"
+        },
+        "caching": {
+            "enabled": true,
+            "duration": 2592000000
+        },
+        "quality": {
+            "threshold": 0.85,
+            "humanReview": true
+        }
+    },
+    "contentTypes": {
+        "articles": {
+            "translatable": true,
+            "autoTranslate": true,
+            "humanReview": true
+        },
+        "headlines": {
+            "translatable": true,
+            "autoTranslate": true,
+            "humanReview": false
+        },
+        "commentary": {
+            "translatable": true,
+            "autoTranslate": true,
+            "humanReview": false
+        },
+        "captions": {
+            "translatable": true,
+            "autoTranslate": true,
+            "humanReview": false
+        },
+        "metadata": {
+            "translatable": true,
+            "autoTranslate": true,
+            "humanReview": false
+        }
+    },
+    "localization": {
+        "dateFormat": {
+            "en": "MM/DD/YYYY",
+            "es": "DD/MM/YYYY",
+            "fr": "DD/MM/YYYY",
+            "ar": "DD/MM/YYYY",
+            "de": "DD.MM.YYYY",
+            "ja": "YYYY/MM/DD"
+        },
+        "timeFormat": {
+            "en": "12h",
+            "es": "24h",
+            "fr": "24h",
+            "ar": "12h",
+            "de": "24h",
+            "ja": "24h"
+        },
+        "numberFormat": {
+            "en": "1,234.56",
+            "es": "1.234,56",
+            "fr": "1 234,56",
+            "ar": "١٬٢٣٤٫٥٦",
+            "de": "1.234,56",
+            "ja": "1,234.56"
+        }
+    },
+    "userInterface": {
+        "languageSwitcher": {
+            "enabled": true,
+            "position": "top-right",
+            "showFlags": true,
+            "rememberChoice": true
+        },
+        "rtlSupport": {
+            "enabled": true,
+            "languages": [
+                "ar"
+            ],
+            "flipLayout": true,
+            "mirrorIcons": true
+        }
+    },
+    "autoSync": {
+        "enabled": true,
+        "interval": 300000,
+        "strategy": "incremental",
+        "conflicts": "latest-wins"
+    }
+}

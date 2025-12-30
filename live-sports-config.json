@@ -1,0 +1,254 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Live sports data configuration for SPORTIQ - API integrations and data sources",
+    "apiSources": {
+        "football": {
+            "primary": {
+                "id": "api_football",
+                "name": "API-Football",
+                "baseUrl": "https://v3.football.api-sports.io",
+                "apiKey": "YOUR_API_FOOTBALL_KEY",
+                "endpoints": {
+                    "liveScores": "/fixtures?live=all",
+                    "fixtures": "/fixtures?date={date}",
+                    "standings": "/standings?league={leagueId}&season={season}",
+                    "teams": "/teams?id={teamId}",
+                    "h2h": "/fixtures/headtohead?h2h={team1}-{team2}",
+                    "statistics": "/fixtures/statistics?fixture={fixtureId}"
+                },
+                "rateLimit": 100,
+                "ratePer": "day",
+                "updateInterval": 30000,
+                "priority": 1
+            },
+            "fallback": {
+                "id": "football_data",
+                "name": "Football-Data.org",
+                "baseUrl": "https://api.football-data.org/v4",
+                "apiKey": "YOUR_FOOTBALL_DATA_KEY",
+                "updateInterval": 60000,
+                "priority": 2
+            }
+        },
+        "basketball": {
+            "primary": {
+                "id": "api_basketball",
+                "name": "API-Basketball",
+                "baseUrl": "https://v1.basketball.api-sports.io",
+                "apiKey": "YOUR_API_BASKETBALL_KEY",
+                "endpoints": {
+                    "liveScores": "/games?live=all",
+                    "games": "/games?date={date}",
+                    "standings": "/standings?league={leagueId}&season={season}"
+                },
+                "rateLimit": 100,
+                "updateInterval": 30000,
+                "priority": 1
+            }
+        },
+        "tennis": {
+            "primary": {
+                "id": "api_tennis",
+                "name": "API-Tennis",
+                "baseUrl": "https://v1.tennis.api-sports.io",
+                "apiKey": "YOUR_API_TENNIS_KEY",
+                "updateInterval": 45000,
+                "priority": 1
+            }
+        },
+        "cricket": {
+            "primary": {
+                "id": "cricapi",
+                "name": "CricAPI",
+                "baseUrl": "https://api.cricapi.com/v1",
+                "apiKey": "YOUR_CRICAPI_KEY",
+                "endpoints": {
+                    "liveScores": "/currentMatches",
+                    "matchInfo": "/match_info?id={matchId}",
+                    "score": "/cricScore?unique_id={uniqueId}"
+                },
+                "updateInterval": 45000,
+                "priority": 1
+            }
+        },
+        "americanFootball": {
+            "primary": {
+                "id": "espn_nfl",
+                "name": "ESPN NFL API",
+                "baseUrl": "https://site.api.espn.com/apis/site/v2/sports/football/nfl",
+                "endpoints": {
+                    "scoreboard": "/scoreboard",
+                    "teams": "/teams"
+                },
+                "updateInterval": 60000,
+                "priority": 1,
+                "requiresAuth": false
+            }
+        },
+        "multiSport": {
+            "theSportsDB": {
+                "id": "thesportsdb",
+                "name": "TheSportsDB",
+                "baseUrl": "https://www.thesportsdb.com/api/v1/json/{apiKey}",
+                "apiKey": "YOUR_SPORTSDB_KEY",
+                "endpoints": {
+                    "liveScores": "/livescore.php?s={sport}",
+                    "nextEvents": "/eventsnextleague.php?id={leagueId}",
+                    "standings": "/lookuptable.php?l={leagueId}&s={season}"
+                },
+                "sports": [
+                    "football",
+                    "basketball",
+                    "baseball",
+                    "hockey"
+                ],
+                "updateInterval": 60000,
+                "priority": 3
+            }
+        }
+    },
+    "leagues": {
+        "football": {
+            "premierLeague": {
+                "id": 39,
+                "name": "Premier League",
+                "country": "England",
+                "logo": "/assets/icons/leagues/premier-league.png",
+                "priority": 1,
+                "apiSource": "api_football"
+            },
+            "laLiga": {
+                "id": 140,
+                "name": "La Liga",
+                "country": "Spain",
+                "priority": 2,
+                "apiSource": "api_football"
+            },
+            "serieA": {
+                "id": 135,
+                "name": "Serie A",
+                "country": "Italy",
+                "priority": 3,
+                "apiSource": "api_football"
+            },
+            "bundesliga": {
+                "id": 78,
+                "name": "Bundesliga",
+                "country": "Germany",
+                "priority": 4,
+                "apiSource": "api_football"
+            },
+            "championsLeague": {
+                "id": 2,
+                "name": "Champions League",
+                "country": "Europe",
+                "priority": 1,
+                "apiSource": "api_football"
+            }
+        },
+        "basketball": {
+            "nba": {
+                "id": 12,
+                "name": "NBA",
+                "country": "USA",
+                "priority": 1,
+                "apiSource": "api_basketball"
+            },
+            "euroleague": {
+                "id": 120,
+                "name": "Euroleague",
+                "country": "Europe",
+                "priority": 2,
+                "apiSource": "api_basketball"
+            }
+        }
+    },
+    "updateStrategy": {
+        "liveMatches": {
+            "interval": 30000,
+            "strategy": "real-time",
+            "priority": 1,
+            "cacheEnabled": false
+        },
+        "upcomingMatches": {
+            "interval": 300000,
+            "strategy": "scheduled",
+            "priority": 2,
+            "cacheTTL": 300000
+        },
+        "finishedMatches": {
+            "interval": null,
+            "strategy": "static",
+            "priority": 3,
+            "cacheTTL": 86400000
+        },
+        "standings": {
+            "interval": 3600000,
+            "strategy": "periodic",
+            "priority": 3,
+            "cacheTTL": 3600000
+        }
+    },
+    "dataMapping": {
+        "matchStatus": {
+            "NS": "Scheduled",
+            "LIVE": "Live",
+            "1H": "First Half",
+            "HT": "Half Time",
+            "2H": "Second Half",
+            "ET": "Extra Time",
+            "P": "Penalties",
+            "FT": "Full Time",
+            "AET": "After Extra Time",
+            "PEN": "After Penalties",
+            "SUSP": "Suspended",
+            "INT": "Interrupted",
+            "PST": "Postponed",
+            "CANC": "Cancelled",
+            "ABD": "Abandoned"
+        },
+        "eventTypes": {
+            "GOAL": "Goal",
+            "CARD_YELLOW": "Yellow Card",
+            "CARD_RED": "Red Card",
+            "SUBST": "Substitution",
+            "VAR": "VAR Decision",
+            "PENALTY": "Penalty",
+            "OWN_GOAL": "Own Goal"
+        }
+    },
+    "caching": {
+        "enabled": true,
+        "storage": "localStorage",
+        "keys": {
+            "liveScores": "sportiq_live_scores",
+            "fixtures": "sportiq_fixtures",
+            "standings": "sportiq_standings"
+        },
+        "ttl": {
+            "live": 30000,
+            "upcoming": 300000,
+            "finished": 86400000,
+            "standings": 3600000
+        }
+    },
+    "notifications": {
+        "enabled": true,
+        "events": {
+            "matchStart": true,
+            "goal": true,
+            "redCard": true,
+            "matchEnd": true,
+            "finalScore": true
+        },
+        "sound": true,
+        "vibration": true
+    },
+    "webSocketConfig": {
+        "enabled": false,
+        "url": "wss://live.sportiq.com/scores",
+        "reconnectInterval": 5000,
+        "maxRetries": 5
+    }
+}

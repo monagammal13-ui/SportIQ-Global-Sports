@@ -1,0 +1,423 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Complete performance optimization configuration for SPORTIQ",
+    "javascript": {
+        "optimization": {
+            "minify": true,
+            "uglify": true,
+            "treeshaking": true,
+            "deadCodeElimination": true,
+            "removeComments": true,
+            "removeConsole": true,
+            "removeDebugger": true,
+            "compressOptions": {
+                "passes": 2,
+                "warnings": false,
+                "comparisons": true,
+                "conditionals": true,
+                "dead_code": true,
+                "evaluate": true,
+                "loops": true,
+                "unused": true
+            }
+        },
+        "codeSplitting": {
+            "enabled": true,
+            "strategy": "route-based",
+            "chunks": {
+                "main": {
+                    "name": "main",
+                    "files": [
+                        "main.js"
+                    ],
+                    "priority": "high",
+                    "preload": true
+                },
+                "vendor": {
+                    "name": "vendor",
+                    "files": [
+                        "react",
+                        "vue",
+                        "lodash"
+                    ],
+                    "priority": "high",
+                    "cache": "immutable"
+                },
+                "analytics": {
+                    "name": "analytics",
+                    "files": [
+                        "analytics.js",
+                        "tracking.js"
+                    ],
+                    "priority": "low",
+                    "async": true
+                },
+                "ads": {
+                    "name": "ads",
+                    "files": [
+                        "ad-engine.js"
+                    ],
+                    "priority": "medium",
+                    "defer": true
+                }
+            }
+        },
+        "bundleOptimization": {
+            "maxSize": 250000,
+            "targetSize": 200000,
+            "warnings": true,
+            "gzip": true,
+            "brotli": true
+        },
+        "dynamicImports": {
+            "enabled": true,
+            "prefetch": true,
+            "preload": false,
+            "chunkNames": "lazy-[name]"
+        },
+        "moduleFormats": {
+            "esm": true,
+            "commonjs": false,
+            "umd": false
+        }
+    },
+    "css": {
+        "optimization": {
+            "minify": true,
+            "removeUnused": true,
+            "combineSelectors": true,
+            "removeComments": true,
+            "shortenValues": true,
+            "compressColors": true
+        },
+        "criticalCSS": {
+            "enabled": true,
+            "inline": true,
+            "extract": true,
+            "above-the-fold": true,
+            "dimensions": {
+                "width": 1920,
+                "height": 1080
+            },
+            "paths": [
+                "/",
+                "/football",
+                "/basketball",
+                "/article/*"
+            ],
+            "maxSize": 15000
+        },
+        "purgeCSS": {
+            "enabled": true,
+            "content": [
+                "./html/**/*.html",
+                "./js/**/*.js"
+            ],
+            "safelist": [
+                "active",
+                "show",
+                "hide",
+                "visible"
+            ],
+            "keyframes": true,
+            "fontFace": true
+        },
+        "delivery": {
+            "inline": "critical",
+            "async": "non-critical",
+            "preload": "fonts",
+            "defer": "animations"
+        },
+        "autoprefixer": {
+            "enabled": true,
+            "browsers": "> 0.5%, last 2 versions, not dead"
+        }
+    },
+    "images": {
+        "optimization": {
+            "enabled": true,
+            "formats": {
+                "webp": {
+                    "enabled": true,
+                    "quality": 85,
+                    "lossless": false
+                },
+                "avif": {
+                    "enabled": false,
+                    "quality": 80
+                },
+                "jpeg": {
+                    "enabled": true,
+                    "quality": 85,
+                    "progressive": true
+                },
+                "png": {
+                    "enabled": true,
+                    "compressionLevel": 8,
+                    "optimizationLevel": 3
+                }
+            },
+            "resize": {
+                "enabled": true,
+                "widths": [
+                    320,
+                    640,
+                    1024,
+                    1920,
+                    2560
+                ],
+                "formats": [
+                    "webp",
+                    "jpeg"
+                ]
+            }
+        },
+        "lazyLoading": {
+            "enabled": true,
+            "strategy": "native-with-fallback",
+            "threshold": "200px",
+            "rootMargin": "50px",
+            "loadAhead": 3,
+            "placeholder": "lqip",
+            "fadeIn": true,
+            "blurUp": true
+        },
+        "responsive": {
+            "enabled": true,
+            "srcset": true,
+            "sizes": true,
+            "pictureElement": true,
+            "artDirection": false
+        },
+        "compression": {
+            "mozjpeg": true,
+            "pngquant": true,
+            "optipng": true,
+            "svgo": true
+        },
+        "cdn": {
+            "enabled": true,
+            "domain": "https://images.sportiq.com",
+            "transformations": true
+        }
+    },
+    "videos": {
+        "lazyLoading": {
+            "enabled": true,
+            "threshold": "200px",
+            "preload": "metadata",
+            "poster": true,
+            "thumbnailSprite": true
+        },
+        "optimization": {
+            "formats": [
+                "mp4",
+                "webm"
+            ],
+            "codec": "h264",
+            "bitrate": "adaptive",
+            "compression": "medium"
+        },
+        "streaming": {
+            "hls": true,
+            "dash": false,
+            "adaptiveBitrate": true
+        }
+    },
+    "fonts": {
+        "optimization": {
+            "subset": true,
+            "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153",
+            "display": "swap",
+            "preload": true,
+            "formats": [
+                "woff2"
+            ],
+            "selfHost": true
+        },
+        "loading": {
+            "strategy": "async",
+            "fallback": "system-ui"
+        }
+    },
+    "caching": {
+        "strategy": {
+            "static": {
+                "css": {
+                    "maxAge": 31536000,
+                    "immutable": true,
+                    "sMaxAge": 2592000,
+                    "staleWhileRevalidate": 86400
+                },
+                "js": {
+                    "maxAge": 31536000,
+                    "immutable": true,
+                    "sMaxAge": 2592000,
+                    "staleWhileRevalidate": 86400
+                },
+                "fonts": {
+                    "maxAge": 31536000,
+                    "immutable": true,
+                    "crossorigin": true
+                },
+                "images": {
+                    "maxAge": 2592000,
+                    "staleWhileRevalidate": 86400,
+                    "sMaxAge": 604800
+                },
+                "videos": {
+                    "maxAge": 2592000,
+                    "immutable": true
+                }
+            },
+            "dynamic": {
+                "html": {
+                    "maxAge": 0,
+                    "mustRevalidate": true,
+                    "sMaxAge": 7200
+                },
+                "api": {
+                    "maxAge": 300,
+                    "staleWhileRevalidate": 60,
+                    "sMaxAge": 300
+                },
+                "json": {
+                    "maxAge": 300,
+                    "staleWhileRevalidate": 60
+                }
+            }
+        },
+        "serviceWorker": {
+            "enabled": true,
+            "strategies": {
+                "static": "CacheFirst",
+                "dynamic": "NetworkFirst",
+                "images": "CacheFirst",
+                "api": "NetworkFirst"
+            },
+            "cacheName": "sportiq-v1",
+            "maxAge": 2592000,
+            "maxEntries": 200
+        }
+    },
+    "resourceHints": {
+        "preconnect": {
+            "enabled": true,
+            "domains": [
+                "https://fonts.googleapis.com",
+                "https://www.google-analytics.com",
+                "https://cdn.sportiq.com"
+            ]
+        },
+        "dnsPrefetch": {
+            "enabled": true,
+            "domains": [
+                "//images.sportiq.com",
+                "//videos.sportiq.com",
+                "//api.sportiq.com"
+            ]
+        },
+        "preload": {
+            "enabled": true,
+            "resources": [
+                {
+                    "href": "/fonts/inter.woff2",
+                    "as": "font",
+                    "type": "font/woff2",
+                    "crossorigin": true
+                },
+                {
+                    "href": "/css/critical.css",
+                    "as": "style"
+                },
+                {
+                    "href": "/js/main.js",
+                    "as": "script"
+                }
+            ]
+        },
+        "prefetch": {
+            "enabled": true,
+            "strategy": "predictive",
+            "resources": [
+                "next-page",
+                "popular-articles"
+            ]
+        }
+    },
+    "compression": {
+        "brotli": {
+            "enabled": true,
+            "level": 6,
+            "threshold": 1024,
+            "types": [
+                "text/html",
+                "text/css",
+                "application/javascript",
+                "application/json",
+                "image/svg+xml"
+            ]
+        },
+        "gzip": {
+            "enabled": true,
+            "level": 6,
+            "threshold": 1024,
+            "fallback": true
+        }
+    },
+    "networkOptimization": {
+        "http2": {
+            "enabled": true,
+            "serverPush": false
+        },
+        "http3": {
+            "enabled": true,
+            "quic": true,
+            "zeroRTT": true
+        },
+        "keepAlive": {
+            "enabled": true,
+            "timeout": 65,
+            "maxRequests": 100
+        }
+    },
+    "monitoring": {
+        "performanceMetrics": {
+            "enabled": true,
+            "metrics": [
+                "TTFB",
+                "FCP",
+                "LCP",
+                "FID",
+                "CLS",
+                "TTI",
+                "TBT"
+            ],
+            "reporting": true,
+            "apiEndpoint": "/api/performance"
+        },
+        "realUserMonitoring": {
+            "enabled": true,
+            "sampleRate": 0.1,
+            "reportErrors": true
+        }
+    },
+    "targets": {
+        "coreWebVitals": {
+            "LCP": 2500,
+            "FID": 100,
+            "CLS": 0.1
+        },
+        "pageSpeed": {
+            "mobile": 90,
+            "desktop": 95
+        },
+        "loadTimes": {
+            "TTFB": 200,
+            "FCP": 1500,
+            "LCP": 2500,
+            "TTI": 3500
+        }
+    }
+}

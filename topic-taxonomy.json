@@ -1,0 +1,139 @@
+[
+    {
+        "id": "sports",
+        "name": "Sports",
+        "keywords": [
+            "sport",
+            "game",
+            "match",
+            "play"
+        ],
+        "children": [
+            {
+                "id": "football",
+                "name": "Football",
+                "keywords": [
+                    "football",
+                    "soccer",
+                    "goal",
+                    "fifa"
+                ],
+                "children": [
+                    {
+                        "id": "epl",
+                        "name": "Premier League",
+                        "keywords": [
+                            "premier league",
+                            "epl",
+                            "england",
+                            "mancity",
+                            "liverpool"
+                        ]
+                    },
+                    {
+                        "id": "ucl",
+                        "name": "Champions League",
+                        "keywords": [
+                            "champions league",
+                            "ucl",
+                            "europe"
+                        ]
+                    },
+                    {
+                        "id": "transfers",
+                        "name": "Transfer Market",
+                        "keywords": [
+                            "transfer",
+                            "signing",
+                            "bid",
+                            "contract"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "basketball",
+                "name": "Basketball",
+                "keywords": [
+                    "basketball",
+                    "nba",
+                    "fiba",
+                    "hoop"
+                ],
+                "children": [
+                    {
+                        "id": "nba_west",
+                        "name": "Western Conf",
+                        "keywords": [
+                            "lakers",
+                            "warriors",
+                            "suns"
+                        ]
+                    },
+                    {
+                        "id": "nba_east",
+                        "name": "Eastern Conf",
+                        "keywords": [
+                            "celtics",
+                            "heat",
+                            "bulls"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "motorsport",
+                "name": "Motorsport",
+                "keywords": [
+                    "racing",
+                    "car",
+                    "driver",
+                    "lap"
+                ],
+                "children": [
+                    {
+                        "id": "f1",
+                        "name": "Formula 1",
+                        "keywords": [
+                            "f1",
+                            "formula 1",
+                            "grand prix",
+                            "hamilton",
+                            "verstappen"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "business",
+        "name": "Business of Sport",
+        "keywords": [
+            "business",
+            "money",
+            "finance",
+            "sponsor"
+        ],
+        "children": [
+            {
+                "id": "merch",
+                "name": "Merchandise",
+                "keywords": [
+                    "kit",
+                    "shirt",
+                    "sales"
+                ]
+            },
+            {
+                "id": "rights",
+                "name": "TV Rights",
+                "keywords": [
+                    "broadcast",
+                    "deal",
+                    "tv"
+                ]
+            }
+        ]
+    }
+]

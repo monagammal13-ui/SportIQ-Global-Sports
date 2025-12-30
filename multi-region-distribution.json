@@ -1,0 +1,434 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Multi-region content distribution configuration for SPORTIQ platform",
+    "regions": {
+        "northAmerica": {
+            "id": "na",
+            "name": "North America",
+            "countries": [
+                "US",
+                "CA",
+                "MX"
+            ],
+            "languages": [
+                "en",
+                "es",
+                "fr"
+            ],
+            "defaultLanguage": "en",
+            "timezone": "America/New_York",
+            "currency": "USD",
+            "cdnEndpoint": "https://na-cdn.sportiq.com",
+            "priority": 1
+        },
+        "europe": {
+            "id": "eu",
+            "name": "Europe",
+            "countries": [
+                "GB",
+                "FR",
+                "DE",
+                "ES",
+                "IT",
+                "NL",
+                "BE",
+                "PT"
+            ],
+            "languages": [
+                "en",
+                "fr",
+                "de",
+                "es",
+                "it",
+                "nl",
+                "pt"
+            ],
+            "defaultLanguage": "en",
+            "timezone": "Europe/London",
+            "currency": "EUR",
+            "cdnEndpoint": "https://eu-cdn.sportiq.com",
+            "priority": 1
+        },
+        "asia": {
+            "id": "as",
+            "name": "Asia",
+            "countries": [
+                "JP",
+                "CN",
+                "KR",
+                "IN",
+                "SG",
+                "TH",
+                "VN"
+            ],
+            "languages": [
+                "en",
+                "ja",
+                "zh",
+                "ko",
+                "hi",
+                "th",
+                "vi"
+            ],
+            "defaultLanguage": "en",
+            "timezone": "Asia/Tokyo",
+            "currency": "USD",
+            "cdnEndpoint": "https://as-cdn.sportiq.com",
+            "priority": 2
+        },
+        "middleEast": {
+            "id": "me",
+            "name": "Middle East",
+            "countries": [
+                "AE",
+                "SA",
+                "QA",
+                "KW",
+                "OM",
+                "BH"
+            ],
+            "languages": [
+                "ar",
+                "en"
+            ],
+            "defaultLanguage": "ar",
+            "timezone": "Asia/Dubai",
+            "currency": "USD",
+            "cdnEndpoint": "https://me-cdn.sportiq.com",
+            "priority": 2
+        },
+        "southAmerica": {
+            "id": "sa",
+            "name": "South America",
+            "countries": [
+                "BR",
+                "AR",
+                "CL",
+                "CO",
+                "PE"
+            ],
+            "languages": [
+                "pt",
+                "es",
+                "en"
+            ],
+            "defaultLanguage": "pt",
+            "timezone": "America/Sao_Paulo",
+            "currency": "USD",
+            "cdnEndpoint": "https://sa-cdn.sportiq.com",
+            "priority": 2
+        },
+        "africa": {
+            "id": "af",
+            "name": "Africa",
+            "countries": [
+                "ZA",
+                "NG",
+                "EG",
+                "KE",
+                "GH"
+            ],
+            "languages": [
+                "en",
+                "fr",
+                "ar"
+            ],
+            "defaultLanguage": "en",
+            "timezone": "Africa/Johannesburg",
+            "currency": "USD",
+            "cdnEndpoint": "https://af-cdn.sportiq.com",
+            "priority": 3
+        }
+    },
+    "contentPersonalization": {
+        "northAmerica": {
+            "featuredSports": [
+                "american-football",
+                "basketball",
+                "baseball",
+                "ice-hockey"
+            ],
+            "featuredLeagues": [
+                "NFL",
+                "NBA",
+                "MLB",
+                "NHL"
+            ],
+            "dateFormat": "MM/DD/YYYY",
+            "timeFormat": "12h",
+            "measurementSystem": "imperial"
+        },
+        "europe": {
+            "featuredSports": [
+                "football",
+                "tennis",
+                "rugby",
+                "cricket"
+            ],
+            "featuredLeagues": [
+                "Premier League",
+                "La Liga",
+                "Champions League",
+                "ATP"
+            ],
+            "dateFormat": "DD/MM/YYYY",
+            "timeFormat": "24h",
+            "measurementSystem": "metric"
+        },
+        "asia": {
+            "featuredSports": [
+                "football",
+                "cricket",
+                "badminton",
+                "table-tennis"
+            ],
+            "featuredLeagues": [
+                "J-League",
+                "IPL",
+                "K-League",
+                "CSL"
+            ],
+            "dateFormat": "YYYY/MM/DD",
+            "timeFormat": "24h",
+            "measurementSystem": "metric"
+        },
+        "middleEast": {
+            "featuredSports": [
+                "football",
+                "cricket",
+                "camel-racing",
+                "tennis"
+            ],
+            "featuredLeagues": [
+                "Saudi Pro League",
+                "IPL",
+                "Champions League",
+                "ATP"
+            ],
+            "dateFormat": "DD/MM/YYYY",
+            "timeFormat": "12h",
+            "measurementSystem": "metric"
+        },
+        "southAmerica": {
+            "featuredSports": [
+                "football",
+                "volleyball",
+                "futsal",
+                "basketball"
+            ],
+            "featuredLeagues": [
+                "Copa Libertadores",
+                "Brasileirão",
+                "Copa América",
+                "NBA"
+            ],
+            "dateFormat": "DD/MM/YYYY",
+            "timeFormat": "24h",
+            "measurementSystem": "metric"
+        },
+        "africa": {
+            "featuredSports": [
+                "football",
+                "cricket",
+                "rugby",
+                "athletics"
+            ],
+            "featuredLeagues": [
+                "African Cup of Nations",
+                "PSL",
+                "Rugby Championship",
+                "Athletics"
+            ],
+            "dateFormat": "DD/MM/YYYY",
+            "timeFormat": "24h",
+            "measurementSystem": "metric"
+        }
+    },
+    "cdnConfiguration": {
+        "provider": "cloudflare",
+        "edgeLocations": 300,
+        "caching": {
+            "html": 3600,
+            "css": 2592000,
+            "js": 2592000,
+            "images": 2592000,
+            "videos": 604800
+        },
+        "compression": {
+            "gzip": true,
+            "brotli": true
+        },
+        "ssl": {
+            "enabled": true,
+            "minTLS": "1.2"
+        }
+    },
+    "distributionRules": {
+        "autoDetect": {
+            "enabled": true,
+            "methods": [
+                "geoIP",
+                "acceptLanguage",
+                "userPreference"
+            ],
+            "fallback": "northAmerica"
+        },
+        "routing": {
+            "strategy": "nearest",
+            "failover": true,
+            "loadBalancing": "round-robin"
+        },
+        "sync": {
+            "enabled": true,
+            "interval": 300000,
+            "incremental": true,
+            "conflictResolution": "timestamp"
+        }
+    },
+    "languageSupport": {
+        "total": 15,
+        "languages": [
+            {
+                "code": "en",
+                "name": "English",
+                "rtl": false,
+                "regions": [
+                    "na",
+                    "eu",
+                    "as",
+                    "me",
+                    "af"
+                ]
+            },
+            {
+                "code": "es",
+                "name": "Spanish",
+                "rtl": false,
+                "regions": [
+                    "na",
+                    "eu",
+                    "sa"
+                ]
+            },
+            {
+                "code": "fr",
+                "name": "French",
+                "rtl": false,
+                "regions": [
+                    "na",
+                    "eu",
+                    "af"
+                ]
+            },
+            {
+                "code": "ar",
+                "name": "Arabic",
+                "rtl": true,
+                "regions": [
+                    "me",
+                    "af"
+                ]
+            },
+            {
+                "code": "pt",
+                "name": "Portuguese",
+                "rtl": false,
+                "regions": [
+                    "sa",
+                    "eu"
+                ]
+            },
+            {
+                "code": "de",
+                "name": "German",
+                "rtl": false,
+                "regions": [
+                    "eu"
+                ]
+            },
+            {
+                "code": "it",
+                "name": "Italian",
+                "rtl": false,
+                "regions": [
+                    "eu"
+                ]
+            },
+            {
+                "code": "ja",
+                "name": "Japanese",
+                "rtl": false,
+                "regions": [
+                    "as"
+                ]
+            },
+            {
+                "code": "zh",
+                "name": "Chinese",
+                "rtl": false,
+                "regions": [
+                    "as"
+                ]
+            },
+            {
+                "code": "ko",
+                "name": "Korean",
+                "rtl": false,
+                "regions": [
+                    "as"
+                ]
+            },
+            {
+                "code": "hi",
+                "name": "Hindi",
+                "rtl": false,
+                "regions": [
+                    "as"
+                ]
+            },
+            {
+                "code": "nl",
+                "name": "Dutch",
+                "rtl": false,
+                "regions": [
+                    "eu"
+                ]
+            },
+            {
+                "code": "th",
+                "name": "Thai",
+                "rtl": false,
+                "regions": [
+                    "as"
+                ]
+            },
+            {
+                "code": "vi",
+                "name": "Vietnamese",
+                "rtl": false,
+                "regions": [
+                    "as"
+                ]
+            },
+            {
+                "code": "ru",
+                "name": "Russian",
+                "rtl": false,
+                "regions": [
+                    "eu",
+                    "as"
+                ]
+            }
+        ]
+    },
+    "performanceMetrics": {
+        "targetLatency": 100,
+        "targetTTFB": 200,
+        "monitoring": {
+            "enabled": true,
+            "checkInterval": 60000,
+            "alertThreshold": 500
+        }
+    }
+}

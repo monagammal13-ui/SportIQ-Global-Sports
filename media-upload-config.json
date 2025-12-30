@@ -1,0 +1,299 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Complete media upload and processing system for SPORTIQ",
+    "upload": {
+        "enabled": true,
+        "requireAuthentication": true,
+        "requireVerifiedEmail": true,
+        "roles": [
+            "user",
+            "premium",
+            "editor",
+            "moderator",
+            "admin"
+        ],
+        "methods": {
+            "dragDrop": true,
+            "clickBrowse": true,
+            "pasteClipboard": true,
+            "urlImport": false
+        }
+    },
+    "fileTypes": {
+        "images": {
+            "enabled": true,
+            "allowedFormats": [
+                "jpeg",
+                "jpg",
+                "png",
+                "webp",
+                "gif",
+                "svg"
+            ],
+            "maxSize": 10485760,
+            "maxDimensions": {
+                "width": 4096,
+                "height": 4096
+            },
+            "minDimensions": {
+                "width": 100,
+                "height": 100
+            }
+        },
+        "videos": {
+            "enabled": true,
+            "allowedFormats": [
+                "mp4",
+                "webm",
+                "mov"
+            ],
+            "maxSize": 104857600,
+            "maxDuration": 600,
+            "maxDimensions": {
+                "width": 3840,
+                "height": 2160
+            }
+        },
+        "documents": {
+            "enabled": false,
+            "allowedFormats": [
+                "pdf"
+            ],
+            "maxSize": 5242880
+        }
+    },
+    "validation": {
+        "mimeTypeCheck": true,
+        "fileExtensionCheck": true,
+        "virusScan": {
+            "enabled": false,
+            "provider": "clamav"
+        },
+        "contentModeration": {
+            "enabled": false,
+            "provider": "aws-rekognition",
+            "detectNudity": true,
+            "detectViolence": true,
+            "confidenceThreshold": 0.75
+        },
+        "duplicateCheck": {
+            "enabled": true,
+            "algorithm": "perceptual-hash",
+            "threshold": 0.95
+        }
+    },
+    "processing": {
+        "images": {
+            "autoOptimize": true,
+            "quality": 85,
+            "formats": {
+                "webp": {
+                    "enabled": true,
+                    "quality": 85,
+                    "lossless": false
+                },
+                "jpeg": {
+                    "enabled": true,
+                    "quality": 85,
+                    "progressive": true
+                },
+                "png": {
+                    "enabled": true,
+                    "compressionLevel": 8
+                }
+            },
+            "thumbnails": {
+                "enabled": true,
+                "sizes": [
+                    {
+                        "name": "thumbnail",
+                        "width": 150,
+                        "height": 150,
+                        "crop": true
+                    },
+                    {
+                        "name": "small",
+                        "width": 320,
+                        "height": 240,
+                        "crop": false
+                    },
+                    {
+                        "name": "medium",
+                        "width": 640,
+                        "height": 480,
+                        "crop": false
+                    },
+                    {
+                        "name": "large",
+                        "width": 1024,
+                        "height": 768,
+                        "crop": false
+                    },
+                    {
+                        "name": "xlarge",
+                        "width": 1920,
+                        "height": 1080,
+                        "crop": false
+                    }
+                ]
+            },
+            "exifData": {
+                "preserve": false,
+                "stripSensitive": true,
+                "extractMetadata": true
+            },
+            "watermark": {
+                "enabled": false,
+                "image": "/assets/images/watermark.png",
+                "position": "bottom-right",
+                "opacity": 0.5,
+                "excludePremium": true
+            }
+        },
+        "videos": {
+            "transcode": {
+                "enabled": true,
+                "formats": [
+                    "mp4",
+                    "webm"
+                ],
+                "qualities": [
+                    {
+                        "name": "360p",
+                        "width": 640,
+                        "height": 360,
+                        "bitrate": "500k"
+                    },
+                    {
+                        "name": "480p",
+                        "width": 854,
+                        "height": 480,
+                        "bitrate": "1000k"
+                    },
+                    {
+                        "name": "720p",
+                        "width": 1280,
+                        "height": 720,
+                        "bitrate": "2500k"
+                    },
+                    {
+                        "name": "1080p",
+                        "width": 1920,
+                        "height": 1080,
+                        "bitrate": "5000k"
+                    }
+                ]
+            },
+            "thumbnail": {
+                "enabled": true,
+                "extractAt": 2,
+                "count": 5,
+                "format": "jpg"
+            },
+            "compression": {
+                "enabled": true,
+                "codec": "h264",
+                "audioCodec": "aac",
+                "preset": "medium"
+            }
+        }
+    },
+    "storage": {
+        "provider": "local",
+        "local": {
+            "basePath": "/uploads",
+            "publicPath": "/media",
+            "organizationPattern": "/{year}/{month}/{type}/{filename}"
+        },
+        "s3": {
+            "enabled": false,
+            "bucket": "sportiq-media",
+            "region": "us-east-1",
+            "accessKeyId": "YOUR_AWS_ACCESS_KEY",
+            "secretAccessKey": "YOUR_AWS_SECRET_KEY",
+            "acl": "public-read"
+        },
+        "cloudinary": {
+            "enabled": false,
+            "cloudName": "YOUR_CLOUD_NAME",
+            "apiKey": "YOUR_API_KEY",
+            "apiSecret": "YOUR_API_SECRET"
+        }
+    },
+    "cdn": {
+        "enabled": true,
+        "provider": "cloudflare",
+        "baseUrl": "https://images.sportiq.com",
+        "cacheControl": "public, max-age=31536000, immutable"
+    },
+    "rateLimiting": {
+        "enabled": true,
+        "maxUploadsPerMinute": 5,
+        "maxUploadsPerHour": 50,
+        "maxUploadsPerDay": 200,
+        "quotas": {
+            "user": {
+                "dailyLimit": 100,
+                "storageLimit": 1073741824
+            },
+            "premium": {
+                "dailyLimit": 500,
+                "storageLimit": 10737418240
+            },
+            "editor": {
+                "dailyLimit": 1000,
+                "storageLimit": 107374182400
+            }
+        }
+    },
+    "metadata": {
+        "required": [
+            "title"
+        ],
+        "optional": [
+            "description",
+            "alt",
+            "caption",
+            "tags",
+            "category"
+        ],
+        "schema": {
+            "id": "string",
+            "filename": "string",
+            "originalFilename": "string",
+            "title": "string",
+            "description": "string",
+            "alt": "string",
+            "caption": "string",
+            "tags": "array",
+            "category": "string",
+            "type": "string",
+            "mimeType": "string",
+            "size": "number",
+            "width": "number",
+            "height": "number",
+            "duration": "number",
+            "uploadedBy": "string",
+            "uploadedAt": "datetime",
+            "url": "string",
+            "thumbnailUrl": "string",
+            "cdnUrl": "string"
+        }
+    },
+    "security": {
+        "sanitizeFilenames": true,
+        "preventDirectAccess": false,
+        "requireSignedUrls": false,
+        "allowHotlinking": true,
+        "referrerWhitelist": [
+            "sportiq.com"
+        ]
+    },
+    "optimization": {
+        "lazyProcessing": true,
+        "queueProcessing": true,
+        "parallelProcessing": true,
+        "maxConcurrentJobs": 5
+    }
+}
