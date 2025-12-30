@@ -9,6 +9,16 @@ It does not execute business logic but provides design tokens, UI patterns, and 
 consumed by runtime UI and personalization engines.
 
 ---
+## 🔗 Runtime Architecture Integration
+
+This Design System is tightly integrated with the SPORTIQ Runtime Architecture.
+UI components, layout rules, and design tokens defined here are dynamically consumed
+by runtime layers such as Personalization, Recommendation, and Monetization engines.
+
+This separation ensures:
+- Clean separation between logic and presentation
+- Runtime-driven UI personalization
+- Long-term scalability and maintainability
 
 ## 📁 هيكل المشروع | Project Structure
 
@@ -394,5 +404,6 @@ This system was built using modern web development best practices:
 **صُمّم بـ ❤️ بواسطة AntiGravity**
 
 **Designed with ❤️ by AntiGravity**
+
 
 
