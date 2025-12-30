@@ -1,0 +1,157 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Cache configuration for all asset types in SPORTIQ",
+    "browserCache": {
+        "html": {
+            "maxAge": 0,
+            "directive": "public, max-age=0, must-revalidate",
+            "description": "Always revalidate HTML for fresh content"
+        },
+        "css": {
+            "maxAge": 31536000,
+            "directive": "public, max-age=31536000, immutable",
+            "description": "1 year cache, use versioned filenames"
+        },
+        "javascript": {
+            "maxAge": 31536000,
+            "directive": "public, max-age=31536000, immutable",
+            "description": "1 year cache, use versioned filenames"
+        },
+        "fonts": {
+            "maxAge": 31536000,
+            "directive": "public, max-age=31536000, immutable, crossorigin",
+            "description": "1 year cache, fonts rarely change"
+        },
+        "images": {
+            "maxAge": 2592000,
+            "staleWhileRevalidate": 86400,
+            "directive": "public, max-age=2592000, stale-while-revalidate=86400",
+            "description": "30 days cache, 1 day stale period"
+        },
+        "videos": {
+            "maxAge": 2592000,
+            "directive": "public, max-age=2592000, immutable",
+            "description": "30 days cache for large video files"
+        },
+        "json": {
+            "maxAge": 300,
+            "staleWhileRevalidate": 60,
+            "directive": "public, max-age=300, stale-while-revalidate=60",
+            "description": "5 minutes cache, 1 minute stale"
+        },
+        "manifest": {
+            "maxAge": 0,
+            "directive": "public, max-age=0, must-revalidate",
+            "description": "Always fresh for PWA updates"
+        }
+    },
+    "cdnCache": {
+        "static": {
+            "edgeTTL": 2592000,
+            "browserTTL": 31536000,
+            "cacheLevel": "cache-everything",
+            "description": "CDN: 30 days, Browser: 1 year"
+        },
+        "html": {
+            "edgeTTL": 7200,
+            "browserTTL": 0,
+            "cacheLevel": "standard",
+            "description": "CDN: 2 hours, Browser: revalidate"
+        },
+        "images": {
+            "edgeTTL": 604800,
+            "browserTTL": 2592000,
+            "cacheLevel": "cache-everything",
+            "description": "CDN: 7 days, Browser: 30 days"
+        },
+        "api": {
+            "edgeTTL": 300,
+            "browserTTL": 300,
+            "cacheLevel": "standard",
+            "description": "CDN: 5 min, Browser: 5 min"
+        }
+    },
+    "serviceWorkerCache": {
+        "appShell": {
+            "strategy": "CacheFirst",
+            "cacheName": "app-shell-v1",
+            "maxAge": 86400,
+            "maxEntries": 50
+        },
+        "static": {
+            "strategy": "CacheFirst",
+            "cacheName": "static-v1",
+            "maxAge": 604800,
+            "maxEntries": 100
+        },
+        "images": {
+            "strategy": "CacheFirst",
+            "cacheName": "images-v1",
+            "maxAge": 2592000,
+            "maxEntries": 200
+        },
+        "api": {
+            "strategy": "NetworkFirst",
+            "cacheName": "api-v1",
+            "maxAge": 300,
+            "maxEntries": 50,
+            "networkTimeout": 3000
+        },
+        "dynamic": {
+            "strategy": "NetworkFirst",
+            "cacheName": "dynamic-v1",
+            "maxAge": 3600,
+            "maxEntries": 100
+        }
+    },
+    "cacheByRoute": {
+        "/": {
+            "browser": "public, max-age=0, must-revalidate",
+            "cdn": "public, s-maxage=7200"
+        },
+        "/html/*.html": {
+            "browser": "public, max-age=0, must-revalidate",
+            "cdn": "public, s-maxage=7200"
+        },
+        "/css/*.css": {
+            "browser": "public, max-age=31536000, immutable",
+            "cdn": "public, s-maxage=2592000"
+        },
+        "/js/*.js": {
+            "browser": "public, max-age=31536000, immutable",
+            "cdn": "public, s-maxage=2592000"
+        },
+        "/assets/images/*": {
+            "browser": "public, max-age=2592000, stale-while-revalidate=86400",
+            "cdn": "public, s-maxage=604800"
+        },
+        "/api-json/*.json": {
+            "browser": "public, max-age=300, stale-while-revalidate=60",
+            "cdn": "public, s-maxage=300"
+        }
+    },
+    "optimization": {
+        "compressionLevel": 6,
+        "brotliEnabled": true,
+        "minifyHTML": true,
+        "minifyCSS": true,
+        "minifyJS": true,
+        "imageOptimization": {
+            "enabled": true,
+            "quality": 85,
+            "format": "webp",
+            "fallback": "jpeg"
+        }
+    },
+    "performance": {
+        "http2Push": false,
+        "http3": true,
+        "earlyHints": true,
+        "prefetch": true,
+        "preconnect": [
+            "https://fonts.googleapis.com",
+            "https://www.google-analytics.com"
+        ]
+    }
+}

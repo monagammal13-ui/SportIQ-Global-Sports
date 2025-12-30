@@ -1,0 +1,126 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-29T09:07:20Z",
+    "description": "Historical Data Archive Configuration",
+    "defaultSeason": "2023-2024",
+    "seasons": [
+        {
+            "id": "2023-2024",
+            "name": "Season 2023/24",
+            "active": true,
+            "data": {
+                "matches": [
+                    {
+                        "id": "m1",
+                        "date": 1704067200000,
+                        "homeTeam": "Manchester City",
+                        "awayTeam": "Arsenal",
+                        "homeScore": 4,
+                        "awayScore": 1
+                    },
+                    {
+                        "id": "m2",
+                        "date": 1704153600000,
+                        "homeTeam": "Real Madrid",
+                        "awayTeam": "Barcelona",
+                        "homeScore": 3,
+                        "awayScore": 2
+                    },
+                    {
+                        "id": "m3",
+                        "date": 1704240000000,
+                        "homeTeam": "Bayern Munich",
+                        "awayTeam": "Dortmund",
+                        "homeScore": 2,
+                        "awayScore": 2
+                    },
+                    {
+                        "id": "m4",
+                        "date": 1704326400000,
+                        "homeTeam": "PSG",
+                        "awayTeam": "Marseille",
+                        "homeScore": 1,
+                        "awayScore": 0
+                    },
+                    {
+                        "id": "m5",
+                        "date": 1704412800000,
+                        "homeTeam": "Liverpool",
+                        "awayTeam": "Chelsea",
+                        "homeScore": 5,
+                        "awayScore": 3
+                    }
+                ],
+                "players": [
+                    {
+                        "id": "p1",
+                        "name": "Erling Haaland",
+                        "team": "Manchester City",
+                        "goals": 36,
+                        "assists": 8,
+                        "matches": 35
+                    },
+                    {
+                        "id": "p2",
+                        "name": "Harry Kane",
+                        "team": "Bayern Munich",
+                        "goals": 41,
+                        "assists": 10,
+                        "matches": 34
+                    },
+                    {
+                        "id": "p3",
+                        "name": "Kylian Mbappé",
+                        "team": "PSG",
+                        "goals": 29,
+                        "assists": 7,
+                        "matches": 30
+                    },
+                    {
+                        "id": "p4",
+                        "name": "Jude Bellingham",
+                        "team": "Real Madrid",
+                        "goals": 23,
+                        "assists": 12,
+                        "matches": 33
+                    },
+                    {
+                        "id": "p5",
+                        "name": "Mohamed Salah",
+                        "team": "Liverpool",
+                        "goals": 25,
+                        "assists": 13,
+                        "matches": 32
+                    }
+                ]
+            }
+        },
+        {
+            "id": "2022-2023",
+            "name": "Season 2022/23",
+            "active": false,
+            "data": {
+                "matches": [
+                    {
+                        "id": "old_m1",
+                        "date": 1672531200000,
+                        "homeTeam": "Manchester City",
+                        "awayTeam": "Inter Milan",
+                        "homeScore": 1,
+                        "awayScore": 0
+                    }
+                ],
+                "players": [
+                    {
+                        "id": "old_p1",
+                        "name": "Erling Haaland",
+                        "team": "Manchester City",
+                        "goals": 52,
+                        "assists": 9,
+                        "matches": 53
+                    }
+                ]
+            }
+        }
+    ]
+}

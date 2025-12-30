@@ -1,0 +1,95 @@
+{
+    "layerInfo": {
+        "id": "layer-066",
+        "name": "Event Highlights & Replay Engine",
+        "version": "1.0.0",
+        "type": "video-content",
+        "status": "active"
+    },
+    "sources": [
+        {
+            "name": "YouTube Sports",
+            "platform": "youtube",
+            "endpoint": "https://www.googleapis.com/youtube/v3/search",
+            "enabled": true,
+            "priority": 1,
+            "apiKey": "YOUR_YOUTUBE_API_KEY",
+            "channels": [
+                "UCmikegOfdC-GqHMYoWiuY5A",
+                "UCtqJOnO5DjnUBj2ueOKb2tA"
+            ]
+        },
+        {
+            "name": "ESPN Highlights",
+            "platform": "espn",
+            "endpoint": "https://api.espn.com/v1/video",
+            "enabled": true,
+            "priority": 2,
+            "categories": [
+                "highlights",
+                "replays",
+                "best-of"
+            ]
+        },
+        {
+            "name": "Sky Sports",
+            "platform": "sky",
+            "endpoint": "https://api.skysports.com/v2/videos",
+            "enabled": true,
+            "priority": 3
+        },
+        {
+            "name": "DAZN Highlights",
+            "platform": "dazn",
+            "endpoint": "https://api.dazn.com/highlights",
+            "enabled": false,
+            "priority": 4
+        }
+    ],
+    "categories": [
+        "all",
+        "football",
+        "basketball",
+        "tennis",
+        "cricket",
+        "baseball",
+        "hockey",
+        "racing",
+        "mma"
+    ],
+    "refreshRate": 120000,
+    "maxHighlights": 12,
+    "displayMode": "grid",
+    "autoUpdate": true,
+    "videoQuality": "720p",
+    "thumbnailSize": "640x360",
+    "fallbackData": {
+        "enabled": true,
+        "cacheTime": 600000
+    },
+    "filters": {
+        "minDuration": 60,
+        "maxDuration": 900,
+        "minViews": 1000,
+        "excludePatterns": [
+            "live",
+            "full match",
+            "stream"
+        ]
+    },
+    "ui": {
+        "position": "after-trending",
+        "theme": "dark",
+        "cardsPerRow": 3,
+        "showViewCount": true,
+        "showDuration": true,
+        "enableAutoplay": false
+    },
+    "player": {
+        "controls": true,
+        "autoplay": false,
+        "loop": false,
+        "muted": false,
+        "quality": "auto"
+    }
+}

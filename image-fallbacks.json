@@ -1,0 +1,51 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Image fallback and backup configuration for perfect image display",
+    "fallbackStrategy": {
+        "enabled": true,
+        "retryAttempts": 3,
+        "retryDelay": 2000,
+        "usePlaceholder": true
+    },
+    "fallbackImages": {
+        "football": "/assets/images/fallbacks/football-stadium.jpg",
+        "basketball": "/assets/images/fallbacks/basketball-court.jpg",
+        "tennis": "/assets/images/fallbacks/tennis-court.jpg",
+        "cricket": "/assets/images/fallbacks/cricket-field.jpg",
+        "multi-sport": "/assets/images/fallbacks/stadium-generic.jpg",
+        "motorsport": "/assets/images/fallbacks/racing-track.jpg",
+        "american-football": "/assets/images/fallbacks/american-football-field.jpg",
+        "athletics": "/assets/images/fallbacks/running-track.jpg",
+        "rugby": "/assets/images/fallbacks/rugby-field.jpg",
+        "winter-sports": "/assets/images/fallbacks/snow-mountain.jpg",
+        "swimming": "/assets/images/fallbacks/swimming-pool.jpg",
+        "extreme-sports": "/assets/images/fallbacks/extreme-action.jpg",
+        "esports": "/assets/images/fallbacks/gaming-arena.jpg",
+        "default": "/assets/images/fallbacks/sports-generic.jpg"
+    },
+    "placeholderConfig": {
+        "service": "https://via.placeholder.com",
+        "defaultSize": "1920x1080",
+        "backgroundColor": "0066cc",
+        "textColor": "ffffff",
+        "format": "webp"
+    },
+    "imageOptimization": {
+        "lazyLoad": true,
+        "progressive": true,
+        "responsiveImages": true,
+        "formats": [
+            "webp",
+            "jpg",
+            "png"
+        ],
+        "compressionQuality": 85
+    },
+    "cdnFallbacks": [
+        "https://cdn1.sportiq.com",
+        "https://cdn2.sportiq.com",
+        "https://images.sportiq.com",
+        "https://backup-cdn.sportiq.com"
+    ]
+}

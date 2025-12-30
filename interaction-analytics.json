@@ -1,0 +1,335 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "User interaction analytics configuration for SPORTIQ platform",
+    "eventTracking": {
+        "pageViews": {
+            "enabled": true,
+            "trackMetadata": true,
+            "captureReferrer": true,
+            "captureDevice": true
+        },
+        "clicks": {
+            "enabled": true,
+            "elements": [
+                "buttons",
+                "links",
+                "cards",
+                "videos",
+                "images"
+            ],
+            "heatmap": true,
+            "aggregateData": true
+        },
+        "scrollDepth": {
+            "enabled": true,
+            "milestones": [
+                25,
+                50,
+                75,
+                100
+            ],
+            "trackTime": true
+        },
+        "timeOnPage": {
+            "enabled": true,
+            "intervals": [
+                10,
+                30,
+                60,
+                120,
+                300
+            ],
+            "idleDetection": true,
+            "idleThreshold": 60000
+        },
+        "formInteractions": {
+            "enabled": true,
+            "trackFocus": true,
+            "trackChanges": true,
+            "trackSubmissions": true,
+            "trackAbandonment": true
+        },
+        "videoEngagement": {
+            "enabled": true,
+            "trackPlay": true,
+            "trackPause": true,
+            "trackProgress": [
+                25,
+                50,
+                75,
+                100
+            ],
+            "trackCompletion": true,
+            "trackQuality": true
+        },
+        "socialInteractions": {
+            "enabled": true,
+            "trackShares": true,
+            "trackLikes": true,
+            "trackComments": true,
+            "trackFollows": true
+        }
+    },
+    "userBehaviorMetrics": {
+        "engagement": {
+            "bounceRate": {
+                "threshold": 10,
+                "tracked": true
+            },
+            "returnVisitor": {
+                "cookieDuration": 2592000000,
+                "tracked": true
+            },
+            "sessionDuration": {
+                "average": true,
+                "median": true,
+                "tracked": true
+            },
+            "pagesPerSession": {
+                "average": true,
+                "tracked": true
+            }
+        },
+        "conversion": {
+            "signup": {
+                "tracked": true,
+                "goal": 5
+            },
+            "newsletter": {
+                "tracked": true,
+                "goal": 10
+            },
+            "share": {
+                "tracked": true,
+                "goal": 15
+            },
+            "videoView": {
+                "tracked": true,
+                "goal": 50
+            }
+        }
+    },
+    "dashboardConfig": {
+        "panels": [
+            {
+                "id": "overview",
+                "title": "Overview",
+                "metrics": [
+                    "totalVisitors",
+                    "pageViews",
+                    "bounceRate",
+                    "avgSessionDuration"
+                ],
+                "charts": [
+                    "trendLine",
+                    "comparison"
+                ],
+                "refreshInterval": 60000
+            },
+            {
+                "id": "realTime",
+                "title": "Real-Time",
+                "metrics": [
+                    "activeUsers",
+                    "pagesViewedNow",
+                    "topPages",
+                    "topCountries"
+                ],
+                "charts": [
+                    "liveCounter",
+                    "geo"
+                ],
+                "refreshInterval": 5000
+            },
+            {
+                "id": "engagement",
+                "title": "Engagement",
+                "metrics": [
+                    "scrollDepth",
+                    "timeOnPage",
+                    "interactions",
+                    "videoPlays"
+                ],
+                "charts": [
+                    "bar",
+                    "pie"
+                ],
+                "refreshInterval": 300000
+            },
+            {
+                "id": "conversion",
+                "title": "Conversions",
+                "metrics": [
+                    "signups",
+                    "newsletters",
+                    "shares",
+                    "goals"
+                ],
+                "charts": [
+                    "funnel",
+                    "timeline"
+                ],
+                "refreshInterval": 300000
+            },
+            {
+                "id": "content",
+                "title": "Content Performance",
+                "metrics": [
+                    "topArticles",
+                    "topVideos",
+                    "topCategories",
+                    "trending"
+                ],
+                "charts": [
+                    "table",
+                    "bar"
+                ],
+                "refreshInterval": 600000
+            }
+        ],
+        "quickStats": [
+            {
+                "label": "Visitors Today",
+                "value": "dynamicMetric",
+                "icon": "👥"
+            },
+            {
+                "label": "Page Views",
+                "value": "dynamicMetric",
+                "icon": "👁️"
+            },
+            {
+                "label": "Avg. Session",
+                "value": "dynamicMetric",
+                "icon": "⏱️"
+            },
+            {
+                "label": "Bounce Rate",
+                "value": "dynamicMetric",
+                "icon": "📊"
+            }
+        ]
+    },
+    "heatmapConfig": {
+        "enabled": true,
+        "types": {
+            "click": {
+                "enabled": true,
+                "color": "red",
+                "threshold": 10
+            },
+            "move": {
+                "enabled": true,
+                "color": "blue",
+                "recordingRate": 100
+            },
+            "scroll": {
+                "enabled": true,
+                "color": "green",
+                "snapshots": true
+            }
+        },
+        "pages": [
+            "homepage",
+            "articles",
+            "videos",
+            "categories"
+        ],
+        "deviceSpecific": true
+    },
+    "sessionRecording": {
+        "enabled": true,
+        "sampleRate": 10,
+        "privacyMode": true,
+        "maskSensitive": true,
+        "maxDuration": 600000,
+        "storageLimit": 1000
+    },
+    "funnelAnalysis": {
+        "signupFunnel": {
+            "steps": [
+                {
+                    "name": "Landing",
+                    "page": "/"
+                },
+                {
+                    "name": "Signup Form",
+                    "page": "/signup"
+                },
+                {
+                    "name": "Verification",
+                    "page": "/verify"
+                },
+                {
+                    "name": "Complete",
+                    "page": "/welcome"
+                }
+            ],
+            "tracked": true
+        },
+        "contentFunnel": {
+            "steps": [
+                {
+                    "name": "Homepage",
+                    "page": "/"
+                },
+                {
+                    "name": "Article View",
+                    "action": "article_view"
+                },
+                {
+                    "name": "Video Play",
+                    "action": "video_play"
+                },
+                {
+                    "name": "Share",
+                    "action": "share"
+                }
+            ],
+            "tracked": true
+        }
+    },
+    "cohortAnalysis": {
+        "enabled": true,
+        "groupBy": [
+            "signupDate",
+            "country",
+            "device",
+            "referrer"
+        ],
+        "metrics": [
+            "retention",
+            "engagement",
+            "conversion"
+        ],
+        "periods": [
+            "daily",
+            "weekly",
+            "monthly"
+        ]
+    },
+    "exportOptions": {
+        "formats": [
+            "csv",
+            "json",
+            "pdf"
+        ],
+        "schedules": [
+            "daily",
+            "weekly",
+            "monthly"
+        ],
+        "recipients": [
+            "admin@sportiq.com"
+        ],
+        "automated": true
+    },
+    "privacy": {
+        "anonymizeIP": true,
+        "respectDoNotTrack": true,
+        "gdprCompliant": true,
+        "cookieConsent": true,
+        "dataRetention": 26
+    }
+}

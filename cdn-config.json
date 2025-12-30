@@ -1,0 +1,431 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-29T08:10:46Z",
+    "description": "CDN Integration Layer - Node and Region Configuration",
+    "regions": [
+        {
+            "id": "us-east",
+            "name": "US East",
+            "code": "USE1",
+            "continent": "North America",
+            "coordinates": {
+                "lat": 40.7128,
+                "lon": -74.0060
+            }
+        },
+        {
+            "id": "us-west",
+            "name": "US West",
+            "code": "USW1",
+            "continent": "North America",
+            "coordinates": {
+                "lat": 37.7749,
+                "lon": -122.4194
+            }
+        },
+        {
+            "id": "eu-west",
+            "name": "EU West",
+            "code": "EUW1",
+            "continent": "Europe",
+            "coordinates": {
+                "lat": 51.5074,
+                "lon": -0.1278
+            }
+        },
+        {
+            "id": "eu-central",
+            "name": "EU Central",
+            "code": "EUC1",
+            "continent": "Europe",
+            "coordinates": {
+                "lat": 50.1109,
+                "lon": 8.6821
+            }
+        },
+        {
+            "id": "asia-east",
+            "name": "Asia East",
+            "code": "ASE1",
+            "continent": "Asia",
+            "coordinates": {
+                "lat": 35.6762,
+                "lon": 139.6503
+            }
+        },
+        {
+            "id": "asia-pacific",
+            "name": "Asia Pacific",
+            "code": "ASP1",
+            "continent": "Asia",
+            "coordinates": {
+                "lat": 1.3521,
+                "lon": 103.8198
+            }
+        }
+    ],
+    "nodes": [
+        {
+            "id": "cdn-us-east-1",
+            "name": "US East Node 1",
+            "url": "https://cdn-use1.sportiq.com",
+            "region": "us-east",
+            "type": "edge",
+            "priority": 100,
+            "enabled": true,
+            "capabilities": [
+                "cache",
+                "streaming",
+                "ssl"
+            ]
+        },
+        {
+            "id": "cdn-us-east-2",
+            "name": "US East Node 2",
+            "url": "https://cdn-use2.sportiq.com",
+            "region": "us-east",
+            "type": "edge",
+            "priority": 90,
+            "enabled": true,
+            "capabilities": [
+                "cache",
+                "streaming",
+                "ssl"
+            ]
+        },
+        {
+            "id": "cdn-us-west-1",
+            "name": "US West Node 1",
+            "url": "https://cdn-usw1.sportiq.com",
+            "region": "us-west",
+            "type": "edge",
+            "priority": 100,
+            "enabled": true,
+            "capabilities": [
+                "cache",
+                "streaming",
+                "ssl",
+                "video-optimization"
+            ]
+        },
+        {
+            "id": "cdn-eu-west-1",
+            "name": "EU West Node 1",
+            "url": "https://cdn-euw1.sportiq.com",
+            "region": "eu-west",
+            "type": "edge",
+            "priority": 100,
+            "enabled": true,
+            "capabilities": [
+                "cache",
+                "streaming",
+                "ssl"
+            ]
+        },
+        {
+            "id": "cdn-eu-west-2",
+            "name": "EU West Node 2",
+            "url": "https://cdn-euw2.sportiq.com",
+            "region": "eu-west",
+            "type": "edge",
+            "priority": 95,
+            "enabled": true,
+            "capabilities": [
+                "cache",
+                "streaming",
+                "ssl"
+            ]
+        },
+        {
+            "id": "cdn-eu-central-1",
+            "name": "EU Central Node 1",
+            "url": "https://cdn-euc1.sportiq.com",
+            "region": "eu-central",
+            "type": "edge",
+            "priority": 100,
+            "enabled": true,
+            "capabilities": [
+                "cache",
+                "streaming",
+                "ssl"
+            ]
+        },
+        {
+            "id": "cdn-asia-east-1",
+            "name": "Asia East Node 1",
+            "url": "https://cdn-ase1.sportiq.com",
+            "region": "asia-east",
+            "type": "edge",
+            "priority": 100,
+            "enabled": true,
+            "capabilities": [
+                "cache",
+                "streaming",
+                "ssl",
+                "image-optimization"
+            ]
+        },
+        {
+            "id": "cdn-asia-pacific-1",
+            "name": "Asia Pacific Node 1",
+            "url": "https://cdn-asp1.sportiq.com",
+            "region": "asia-pacific",
+            "type": "edge",
+            "priority": 100,
+            "enabled": true,
+            "capabilities": [
+                "cache",
+                "streaming",
+                "ssl"
+            ]
+        },
+        {
+            "id": "cdn-origin-1",
+            "name": "Origin Server 1",
+            "url": "https://origin.sportiq.com",
+            "region": "us-east",
+            "type": "origin",
+            "priority": 50,
+            "enabled": true,
+            "capabilities": [
+                "origin",
+                "ssl"
+            ]
+        },
+        {
+            "id": "cdn-shield-1",
+            "name": "Shield Node 1",
+            "url": "https://shield.sportiq.com",
+            "region": "us-east",
+            "type": "shield",
+            "priority": 75,
+            "enabled": true,
+            "capabilities": [
+                "cache",
+                "shield",
+                "ssl"
+            ]
+        }
+    ],
+    "cacheRules": [
+        {
+            "id": "static-assets",
+            "pattern": "\\.(css|js|jpg|jpeg|png|gif|svg|woff|woff2|ttf|eot)$",
+            "ttl": 86400,
+            "description": "Cache static assets for 24 hours"
+        },
+        {
+            "id": "api-responses",
+            "pattern": "^/api/",
+            "ttl": 300,
+            "description": "Cache API responses for 5 minutes"
+        },
+        {
+            "id": "images",
+            "pattern": "^/images/",
+            "ttl": 604800,
+            "description": "Cache images for 7 days"
+        },
+        {
+            "id": "videos",
+            "pattern": "^/videos/",
+            "ttl": 604800,
+            "description": "Cache videos for 7 days"
+        },
+        {
+            "id": "html-pages",
+            "pattern": "\\.html$",
+            "ttl": 3600,
+            "description": "Cache HTML pages for 1 hour"
+        }
+    ],
+    "purgeRules": {
+        "automatic": [
+            {
+                "event": "content-update",
+                "pattern": "/api/*",
+                "delay": 0
+            },
+            {
+                "event": "deployment",
+                "pattern": "/*",
+                "delay": 60000
+            }
+        ],
+        "manual": {
+            "enabled": true,
+            "requireAuth": true,
+            "allowPatterns": true,
+            "allowRecursive": true
+        }
+    },
+    "replication": {
+        "enabled": true,
+        "strategy": "push",
+        "regions": [
+            "us-east",
+            "us-west",
+            "eu-west",
+            "asia-east"
+        ],
+        "priority": {
+            "critical": [
+                "us-east",
+                "eu-west"
+            ],
+            "high": [
+                "us-west",
+                "asia-east"
+            ],
+            "normal": [
+                "eu-central",
+                "asia-pacific"
+            ]
+        },
+        "rules": [
+            {
+                "pattern": "^/critical/",
+                "priority": "critical",
+                "immediate": true
+            },
+            {
+                "pattern": "^/api/",
+                "priority": "high",
+                "immediate": false
+            },
+            {
+                "pattern": ".*",
+                "priority": "normal",
+                "immediate": false
+            }
+        ]
+    },
+    "loadBalancing": {
+        "algorithm": "geographic",
+        "fallback": "least-connections",
+        "healthCheckRequired": true,
+        "failover": {
+            "enabled": true,
+            "maxRetries": 3,
+            "retryDelay": 1000
+        },
+        "stickySession": {
+            "enabled": false,
+            "duration": 3600
+        }
+    },
+    "ssl": {
+        "enabled": true,
+        "protocols": [
+            "TLSv1.2",
+            "TLSv1.3"
+        ],
+        "cipherSuites": [
+            "TLS_AES_128_GCM_SHA256",
+            "TLS_AES_256_GCM_SHA384",
+            "TLS_CHACHA20_POLY1305_SHA256"
+        ],
+        "hsts": {
+            "enabled": true,
+            "maxAge": 31536000,
+            "includeSubdomains": true,
+            "preload": true
+        }
+    },
+    "compression": {
+        "enabled": true,
+        "algorithms": [
+            "gzip",
+            "brotli"
+        ],
+        "minSize": 1024,
+        "types": [
+            "text/html",
+            "text/css",
+            "text/javascript",
+            "application/javascript",
+            "application/json",
+            "image/svg+xml"
+        ]
+    },
+    "security": {
+        "ddosProtection": {
+            "enabled": true,
+            "threshold": 10000,
+            "action": "challenge"
+        },
+        "waf": {
+            "enabled": true,
+            "rulesets": [
+                "owasp",
+                "cloudflare"
+            ]
+        },
+        "rateLimiting": {
+            "enabled": true,
+            "requests": 1000,
+            "window": 60000
+        },
+        "hotlinkProtection": {
+            "enabled": true,
+            "allowedDomains": [
+                "sportiq.com",
+                "*.sportiq.com"
+            ]
+        }
+    },
+    "monitoring": {
+        "enabled": true,
+        "metrics": [
+            "requests",
+            "bandwidth",
+            "cacheHitRate",
+            "responseTime",
+            "errorRate",
+            "availability"
+        ],
+        "alerts": {
+            "enabled": true,
+            "channels": [
+                "email",
+                "webhook"
+            ],
+            "thresholds": {
+                "errorRate": 5,
+                "responseTime": 1000,
+                "availability": 99.9
+            }
+        },
+        "logs": {
+            "enabled": true,
+            "format": "json",
+            "retention": 30,
+            "sampling": 100
+        }
+    },
+    "optimization": {
+        "imageOptimization": {
+            "enabled": true,
+            "formats": [
+                "webp",
+                "avif"
+            ],
+            "quality": 85,
+            "resize": true
+        },
+        "videoOptimization": {
+            "enabled": true,
+            "adaptiveBitrate": true,
+            "formats": [
+                "mp4",
+                "webm"
+            ]
+        },
+        "minification": {
+            "enabled": true,
+            "html": true,
+            "css": true,
+            "js": true
+        }
+    }
+}

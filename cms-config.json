@@ -1,0 +1,248 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Content Management System configuration for SPORTIQ",
+    "general": {
+        "siteName": "SPORTIQ",
+        "siteUrl": "https://sportiq.com",
+        "adminPath": "/admin",
+        "apiEndpoint": "/api",
+        "timezone": "UTC",
+        "dateFormat": "YYYY-MM-DD",
+        "timeFormat": "HH:mm:ss"
+    },
+    "editor": {
+        "type": "richtext",
+        "toolbar": [
+            "bold",
+            "italic",
+            "underline",
+            "strikethrough",
+            "heading",
+            "quote",
+            "link",
+            "image",
+            "video",
+            "code",
+            "list",
+            "align",
+            "undo",
+            "redo"
+        ],
+        "autosave": true,
+        "autosaveInterval": 30000,
+        "maxLength": 50000,
+        "allowHtml": false,
+        "sanitize": true
+    },
+    "media": {
+        "uploadPath": "/assets/uploads",
+        "maxFileSize": {
+            "image": 10485760,
+            "video": 52428800,
+            "document": 5242880
+        },
+        "allowedFormats": {
+            "images": [
+                "jpg",
+                "jpeg",
+                "png",
+                "webp",
+                "gif",
+                "svg"
+            ],
+            "videos": [
+                "mp4",
+                "webm",
+                "mov"
+            ],
+            "documents": [
+                "pdf",
+                "doc",
+                "docx"
+            ]
+        },
+        "imageOptimization": {
+            "enabled": true,
+            "quality": 85,
+            "maxWidth": 1920,
+            "maxHeight": 1080,
+            "thumbnail": {
+                "width": 300,
+                "height": 200
+            }
+        },
+        "videoProcessing": {
+            "enabled": false,
+            "thumbnail": true,
+            "compress": false
+        }
+    },
+    "articles": {
+        "defaultStatus": "draft",
+        "statuses": [
+            "draft",
+            "published",
+            "scheduled",
+            "archived"
+        ],
+        "slugGeneration": "auto",
+        "slugPattern": "{category}/{title}",
+        "requireFeaturedImage": false,
+        "requireExcerpt": true,
+        "excerptLength": 160,
+        "autoExcerpt": true,
+        "versioning": {
+            "enabled": false,
+            "maxVersions": 10
+        },
+        "seo": {
+            "autoGenerateMeta": true,
+            "metaTitleSuffix": " - SPORTIQ",
+            "metaDescriptionLength": 160
+        }
+    },
+    "categories": {
+        "maxDepth": 2,
+        "allowEmpty": false,
+        "requireIcon": false,
+        "requireColor": true,
+        "slugGeneration": "auto"
+    },
+    "tags": {
+        "maxPerArticle": 10,
+        "autoCreateTags": true,
+        "caseSensitive": false
+    },
+    "users": {
+        "roles": [
+            {
+                "name": "admin",
+                "permissions": [
+                    "all"
+                ]
+            },
+            {
+                "name": "editor",
+                "permissions": [
+                    "create_article",
+                    "edit_article",
+                    "delete_own_article",
+                    "manage_media",
+                    "manage_categories",
+                    "manage_tags"
+                ]
+            },
+            {
+                "name": "author",
+                "permissions": [
+                    "create_article",
+                    "edit_own_article",
+                    "delete_own_article",
+                    "upload_media"
+                ]
+            },
+            {
+                "name": "viewer",
+                "permissions": [
+                    "view"
+                ]
+            }
+        ],
+        "session": {
+            "duration": 86400,
+            "rememberMeDuration": 2592000,
+            "maxConcurrentSessions": 3
+        },
+        "password": {
+            "minLength": 8,
+            "requireUppercase": true,
+            "requireLowercase": true,
+            "requireNumbers": true,
+            "requireSpecialChars": true,
+            "expirationDays": 90
+        }
+    },
+    "storage": {
+        "type": "localStorage",
+        "keys": {
+            "articles": "sportiq_articles",
+            "categories": "sportiq_categories",
+            "tags": "sportiq_tags",
+            "media": "sportiq_media",
+            "users": "sportiq_users",
+            "settings": "sportiq_settings",
+            "session": "sportiq_session"
+        },
+        "compression": false,
+        "encryption": false
+    },
+    "api": {
+        "enabled": false,
+        "baseUrl": "/api/v1",
+        "endpoints": {
+            "articles": "/articles",
+            "categories": "/categories",
+            "tags": "/tags",
+            "media": "/media",
+            "users": "/users",
+            "auth": "/auth"
+        },
+        "authentication": "jwt",
+        "rateLimit": {
+            "enabled": true,
+            "maxRequests": 100,
+            "windowMs": 900000
+        }
+    },
+    "notifications": {
+        "enabled": true,
+        "types": {
+            "success": {
+                "duration": 3000,
+                "position": "top-right"
+            },
+            "error": {
+                "duration": 5000,
+                "position": "top-right"
+            },
+            "warning": {
+                "duration": 4000,
+                "position": "top-right"
+            },
+            "info": {
+                "duration": 3000,
+                "position": "top-right"
+            }
+        }
+    },
+    "backup": {
+        "enabled": true,
+        "autoBackup": true,
+        "frequency": "daily",
+        "maxBackups": 30,
+        "includeMedia": false
+    },
+    "features": {
+        "comments": true,
+        "likes": true,
+        "shares": true,
+        "ratings": true,
+        "newsletter": true,
+        "analytics": true,
+        "seo": true,
+        "multiLanguage": true
+    },
+    "ui": {
+        "theme": "light",
+        "accentColor": "#6366f1",
+        "sidebarCollapsed": false,
+        "itemsPerPage": {
+            "articles": 20,
+            "media": 30,
+            "users": 15
+        },
+        "dateTimeFormat": "relative",
+        "showAdvancedOptions": false
+    }
+}

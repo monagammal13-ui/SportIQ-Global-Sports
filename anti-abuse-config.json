@@ -1,0 +1,417 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Anti-abuse, bot detection, and rate limiting configuration for SPORTIQ",
+    "botDetection": {
+        "enabled": true,
+        "methods": {
+            "userAgent": true,
+            "browserFingerprinting": true,
+            "behaviorAnalysis": true,
+            "javascriptChallenge": true,
+            "honeypot": true
+        },
+        "suspiciousBots": [
+            "headless",
+            "phantomjs",
+            "selenium",
+            "webdriver",
+            "scrapy",
+            "curl",
+            "wget",
+            "python-requests",
+            "bot",
+            "crawler",
+            "spider"
+        ],
+        "allowedBots": [
+            "Googlebot",
+            "Bingbot",
+            "Slackbot",
+            "facebookexternalhit",
+            "Twitterbot",
+            "LinkedInBot",
+            "WhatsApp"
+        ],
+        "blockHeadless": true,
+        "blockAutomation": true,
+        "challengeSuspicious": true
+    },
+    "captcha": {
+        "enabled": true,
+        "provider": "recaptcha",
+        "version": "v3",
+        "siteKey": "YOUR_RECAPTCHA_SITE_KEY",
+        "secretKey": "YOUR_RECAPTCHA_SECRET_KEY",
+        "threshold": 0.5,
+        "triggers": {
+            "failedLoginAttempts": 3,
+            "rapidFormSubmissions": true,
+            "suspiciousBehavior": true,
+            "newAccountCreation": true,
+            "commentPosting": false
+        },
+        "fallback": {
+            "enabled": true,
+            "type": "checkbox",
+            "provider": "hcaptcha"
+        }
+    },
+    "honeypot": {
+        "enabled": true,
+        "fieldName": "website",
+        "hidden": true,
+        "tabIndex": -1,
+        "autocomplete": "off",
+        "mustBeEmpty": true,
+        "instantReject": true
+    },
+    "rateLimiting": {
+        "enabled": true,
+        "global": {
+            "perMinute": 100,
+            "perHour": 1000,
+            "perDay": 10000
+        },
+        "endpoints": {
+            "/api/*": {
+                "perMinute": 60,
+                "perHour": 600,
+                "perDay": 6000
+            },
+            "/login": {
+                "perMinute": 5,
+                "perHour": 20,
+                "perDay": 100
+            },
+            "/register": {
+                "perMinute": 3,
+                "perHour": 10,
+                "perDay": 50
+            },
+            "/contact": {
+                "perMinute": 3,
+                "perHour": 10,
+                "perDay": 30
+            },
+            "/comment": {
+                "perMinute": 5,
+                "perHour": 30,
+                "perDay": 100
+            },
+            "/search": {
+                "perMinute": 30,
+                "perHour": 300,
+                "perDay": 3000
+            },
+            "/upload": {
+                "perMinute": 2,
+                "perHour": 10,
+                "perDay": 50
+            }
+        },
+        "strategy": "sliding-window",
+        "storage": "redis",
+        "keyPrefix": "ratelimit:",
+        "headers": {
+            "includeHeaders": true,
+            "limit": "X-RateLimit-Limit",
+            "remaining": "X-RateLimit-Remaining",
+            "reset": "X-RateLimit-Reset"
+        },
+        "response": {
+            "statusCode": 429,
+            "message": "Too many requests, please try again later",
+            "retryAfter": true
+        }
+    },
+    "ipBlocking": {
+        "enabled": true,
+        "autoBlock": {
+            "enabled": true,
+            "triggers": {
+                "rateLimitExceeded": {
+                    "threshold": 10,
+                    "duration": 3600000
+                },
+                "failedLogins": {
+                    "threshold": 5,
+                    "duration": 86400000
+                },
+                "spamDetection": {
+                    "threshold": 3,
+                    "duration": 604800000
+                },
+                "maliciousPatterns": {
+                    "threshold": 1,
+                    "duration": 2592000000
+                }
+            }
+        },
+        "blockDuration": {
+            "firstOffense": 3600000,
+            "secondOffense": 86400000,
+            "thirdOffense": 604800000,
+            "persistent": "permanent"
+        },
+        "whitelist": [
+            "127.0.0.1",
+            "::1"
+        ],
+        "blacklist": [],
+        "cloudflareIPs": {
+            "trust": true,
+            "useRealIP": true
+        }
+    },
+    "spamDetection": {
+        "enabled": true,
+        "scoring": {
+            "baseScore": 0,
+            "maxLinks": {
+                "threshold": 3,
+                "penalty": 20
+            },
+            "spamKeywords": {
+                "penalty": 15,
+                "keywords": [
+                    "viagra",
+                    "cialis",
+                    "casino",
+                    "lottery",
+                    "cheap",
+                    "free money",
+                    "click here",
+                    "buy now"
+                ]
+            },
+            "allCaps": {
+                "threshold": 0.5,
+                "penalty": 10
+            },
+            "repeatedContent": {
+                "penalty": 25
+            },
+            "suspiciousDomain": {
+                "penalty": 30,
+                "domains": [
+                    ".ru",
+                    ".cn",
+                    "bit.ly",
+                    "tinyurl.com"
+                ]
+            },
+            "rapidSubmission": {
+                "threshold": 3,
+                "penalty": 20
+            }
+        },
+        "threshold": {
+            "allow": 30,
+            "flag": 50,
+            "block": 70
+        },
+        "actions": {
+            "allow": "post",
+            "flag": "moderate",
+            "block": "reject_with_captcha"
+        }
+    },
+    "commentProtection": {
+        "enabled": true,
+        "preModeration": {
+            "enabled": true,
+            "rules": {
+                "firstTimeCommenter": true,
+                "lowReputationUser": true,
+                "containsLinks": true,
+                "flaggedKeywords": true
+            }
+        },
+        "autoModeration": {
+            "enabled": true,
+            "profanityFilter": true,
+            "spamDetection": true,
+            "linkLimit": 2,
+            "lengthLimit": {
+                "min": 10,
+                "max": 5000
+            }
+        },
+        "userTrustScore": {
+            "enabled": true,
+            "scoring": {
+                "newUser": 0,
+                "verifiedEmail": 10,
+                "active30Days": 20,
+                "noFlags": 30,
+                "highEngagement": 40,
+                "trustedUser": 80
+            },
+            "autoApprove": 50
+        },
+        "throttling": {
+            "enabled": true,
+            "minTimeBetween": 30000,
+            "maxPerHour": 10
+        }
+    },
+    "formProtection": {
+        "enabled": true,
+        "submissionLimits": {
+            "maxPer10Minutes": 3,
+            "maxPerHour": 10,
+            "maxPerDay": 50
+        },
+        "validation": {
+            "serverSide": true,
+            "clientSide": true,
+            "tokenVerification": true,
+            "timestampCheck": true,
+            "refererCheck": true
+        },
+        "honeypot": true,
+        "captchaAfter": 2,
+        "blockAfter": 5,
+        "minSubmissionTime": 3000,
+        "maxSubmissionTime": 3600000
+    },
+    "apiProtection": {
+        "authentication": {
+            "required": true,
+            "methods": [
+                "apiKey",
+                "jwt",
+                "oauth2"
+            ],
+            "apiKey": {
+                "headerName": "X-API-Key",
+                "queryParam": "api_key",
+                "length": 32,
+                "rotation": "monthly"
+            },
+            "jwt": {
+                "headerName": "Authorization",
+                "scheme": "Bearer",
+                "algorithm": "HS256",
+                "expiresIn": 3600
+            }
+        },
+        "requestValidation": {
+            "headers": {
+                "required": [
+                    "Content-Type",
+                    "User-Agent"
+                ],
+                "validate": true
+            },
+            "payload": {
+                "maxSize": 1048576,
+                "validateSchema": true,
+                "sanitizeInput": true
+            }
+        },
+        "rateLimiting": {
+            "perKey": true,
+            "tiered": {
+                "free": {
+                    "perMinute": 10,
+                    "perDay": 1000
+                },
+                "basic": {
+                    "perMinute": 60,
+                    "perDay": 10000
+                },
+                "pro": {
+                    "perMinute": 300,
+                    "perDay": 100000
+                }
+            }
+        },
+        "responseHeaders": {
+            "removeServerSignature": true,
+            "noStackTraces": true,
+            "genericErrors": true,
+            "corsHeaders": true
+        }
+    },
+    "ddosProtection": {
+        "enabled": true,
+        "cloudflare": {
+            "enabled": true,
+            "underAttackMode": "auto",
+            "challengePassage": 300
+        },
+        "connectionLimits": {
+            "maxConcurrent": 1000,
+            "perIP": 10
+        },
+        "requestLimits": {
+            "burstSize": 100,
+            "sustainedRate": 50
+        }
+    },
+    "monitoring": {
+        "enabled": true,
+        "trackEvents": {
+            "failedLogins": true,
+            "rateLimitViolations": true,
+            "blockedIPs": true,
+            "captchaFailures": true,
+            "xssAttempts": true,
+            "sqlInjectionAttempts": true,
+            "csrfFailures": true,
+            "suspiciousBehavior": true
+        },
+        "alerts": {
+            "immediate": {
+                "enabled": true,
+                "triggers": [
+                    "ddosAttack",
+                    "multipleSecurityViolations",
+                    "criticalVulnerability",
+                    "dataBreachAttempt"
+                ],
+                "channels": [
+                    "email",
+                    "sms",
+                    "slack"
+                ]
+            },
+            "daily": {
+                "enabled": true,
+                "summary": true,
+                "metrics": true,
+                "recommendations": true
+            }
+        },
+        "reporting": {
+            "enabled": true,
+            "frequency": "daily",
+            "metrics": [
+                "blockedRequests",
+                "blockedIPs",
+                "captchaChallenges",
+                "spamDetected",
+                "attackPatterns"
+            ]
+        }
+    },
+    "securityIncidentResponse": {
+        "enabled": true,
+        "autoResponse": {
+            "enabled": true,
+            "actions": {
+                "blockIP": true,
+                "requireCaptcha": true,
+                "logEvent": true,
+                "alertAdmin": true
+            }
+        },
+        "manualReview": {
+            "enabled": true,
+            "queue": true,
+            "priority": "high"
+        }
+    }
+}

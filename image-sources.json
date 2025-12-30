@@ -1,0 +1,259 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Image sources and collections database for SPORTIQ",
+    "sources": {
+        "gettyImages": {
+            "enabled": false,
+            "apiKey": "YOUR_GETTY_API_KEY",
+            "category": "sports",
+            "updateInterval": 3600000,
+            "priority": "high",
+            "cost": "paid"
+        },
+        "unsplash": {
+            "enabled": true,
+            "apiKey": "YOUR_UNSPLASH_API_KEY",
+            "collections": [
+                "sports",
+                "football",
+                "basketball",
+                "stadium"
+            ],
+            "updateInterval": 3600000,
+            "priority": "medium",
+            "cost": "free"
+        },
+        "pexels": {
+            "enabled": true,
+            "apiKey": "YOUR_PEXELS_API_KEY",
+            "category": "sports",
+            "updateInterval": 3600000,
+            "priority": "medium",
+            "cost": "free"
+        },
+        "officialTeams": {
+            "enabled": true,
+            "description": "Official team photography",
+            "sources": 50,
+            "updateInterval": 1800000,
+            "priority": "high",
+            "cost": "partnership"
+        },
+        "userUploaded": {
+            "enabled": true,
+            "moderation": "auto",
+            "requireAuth": true,
+            "maxFileSize": 10485760
+        }
+    },
+    "collections": {
+        "matchDay": {
+            "id": "match-day",
+            "name": "Match Day Photos",
+            "description": "Action shots from live matches",
+            "targetPhotos": 50,
+            "updateInterval": 3600000,
+            "categories": [
+                "goals",
+                "celebrations",
+                "action",
+                "fans"
+            ],
+            "priority": 1
+        },
+        "playerPortraits": {
+            "id": "player-portraits",
+            "name": "Player Portraits",
+            "description": "Professional player headshots",
+            "targetPhotos": 200,
+            "updateInterval": 86400000,
+            "categories": [
+                "portraits",
+                "profile"
+            ],
+            "priority": 2
+        },
+        "training": {
+            "id": "training",
+            "name": "Training Ground",
+            "description": "Behind the scenes training photos",
+            "targetPhotos": 30,
+            "updateInterval": 86400000,
+            "categories": [
+                "training",
+                "practice",
+                "bts"
+            ],
+            "priority": 3
+        },
+        "stadiums": {
+            "id": "stadiums",
+            "name": "Stadiums & Venues",
+            "description": "Stadium architecture and atmosphere",
+            "targetPhotos": 100,
+            "updateInterval": 604800000,
+            "categories": [
+                "stadium",
+                "venue",
+                "architecture"
+            ],
+            "priority": 4
+        },
+        "celebrations": {
+            "id": "celebrations",
+            "name": "Celebrations",
+            "description": "Goal celebrations and victory moments",
+            "targetPhotos": 40,
+            "updateInterval": 3600000,
+            "categories": [
+                "celebrations",
+                "goals",
+                "victory"
+            ],
+            "priority": 1
+        },
+        "historicMoments": {
+            "id": "historic-moments",
+            "name": "Historic Moments",
+            "description": "Iconic moments in sports history",
+            "targetPhotos": 50,
+            "updateInterval": 604800000,
+            "categories": [
+                "historic",
+                "iconic",
+                "legendary"
+            ],
+            "priority": 5
+        }
+    },
+    "updateSchedule": {
+        "realTime": {
+            "enabled": true,
+            "interval": 1800000,
+            "collections": [
+                "matchDay",
+                "celebrations"
+            ],
+            "description": "Live match photos every 30 minutes"
+        },
+        "daily": {
+            "enabled": true,
+            "interval": 86400000,
+            "collections": [
+                "playerPortraits",
+                "training"
+            ],
+            "description": "Daily updates for player and training photos"
+        },
+        "weekly": {
+            "enabled": true,
+            "interval": 604800000,
+            "collections": [
+                "stadiums",
+                "historicMoments"
+            ],
+            "description": "Weekly updates for static content"
+        }
+    },
+    "trending": {
+        "enabled": true,
+        "algorithm": "engagement-based",
+        "factors": {
+            "views": 0.35,
+            "likes": 0.25,
+            "shares": 0.25,
+            "comments": 0.10,
+            "recency": 0.05
+        },
+        "timeWindow": 86400000,
+        "maxTrending": 20,
+        "updateInterval": 900000
+    },
+    "categorization": {
+        "auto": true,
+        "aiRecognition": {
+            "enabled": false,
+            "provider": "google-vision",
+            "confidence": 0.8
+        },
+        "keywordBased": {
+            "enabled": true,
+            "keywords": {
+                "goals": [
+                    "goal",
+                    "score",
+                    "net",
+                    "celebration"
+                ],
+                "action": [
+                    "tackle",
+                    "dribble",
+                    "pass",
+                    "shot"
+                ],
+                "portraits": [
+                    "headshot",
+                    "portrait",
+                    "player"
+                ],
+                "fans": [
+                    "crowd",
+                    "supporters",
+                    "ultras",
+                    "atmosphere"
+                ],
+                "celebrations": [
+                    "celebrate",
+                    "victory",
+                    "trophy",
+                    "win"
+                ]
+            }
+        }
+    },
+    "photoCategories": [
+        {
+            "id": "match-day",
+            "name": "Match Day",
+            "icon": "⚽",
+            "priority": 1
+        },
+        {
+            "id": "training",
+            "name": "Training",
+            "icon": "🏃",
+            "priority": 3
+        },
+        {
+            "id": "players",
+            "name": "Players",
+            "icon": "👤",
+            "priority": 2
+        },
+        {
+            "id": "stadium",
+            "name": "Stadiums",
+            "icon": "🏟️",
+            "priority": 4
+        },
+        {
+            "id": "fans",
+            "name": "Fans",
+            "icon": "👥",
+            "priority": 5
+        },
+        {
+            "id": "celebrations",
+            "name": "Celebrations",
+            "icon": "🎉",
+            "priority": 1
+        },
+        {
+            "id": "historic",
+            "name": "Historic",
+            "icon": "📜",
+            "priority": 6
+        }
+    ]
+}

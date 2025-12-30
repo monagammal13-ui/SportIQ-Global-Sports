@@ -1,0 +1,340 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "International rankings and leaderboards configuration for SPORTIQ platform",
+    "officialRankings": {
+        "fifa": {
+            "enabled": true,
+            "name": "FIFA World Rankings",
+            "sport": "football",
+            "updateFrequency": "monthly",
+            "source": "https://www.fifa.com/fifa-world-ranking",
+            "top10": [
+                {
+                    "rank": 1,
+                    "country": "Argentina",
+                    "points": 1844.84,
+                    "change": 0,
+                    "flag": "🇦🇷"
+                },
+                {
+                    "rank": 2,
+                    "country": "France",
+                    "points": 1843.54,
+                    "change": 0,
+                    "flag": "🇫🇷"
+                },
+                {
+                    "rank": 3,
+                    "country": "Brazil",
+                    "points": 1830.19,
+                    "change": 1,
+                    "flag": "🇧🇷"
+                },
+                {
+                    "rank": 4,
+                    "country": "England",
+                    "points": 1794.21,
+                    "change": -1,
+                    "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
+                },
+                {
+                    "rank": 5,
+                    "country": "Belgium",
+                    "points": 1788.55,
+                    "change": 0,
+                    "flag": "🇧🇪"
+                },
+                {
+                    "rank": 6,
+                    "country": "Netherlands",
+                    "points": 1746.71,
+                    "change": 0,
+                    "flag": "🇳🇱"
+                },
+                {
+                    "rank": 7,
+                    "country": "Portugal",
+                    "points": 1742.02,
+                    "change": 2,
+                    "flag": "🇵🇹"
+                },
+                {
+                    "rank": 8,
+                    "country": "Spain",
+                    "points": 1727.13,
+                    "change": -1,
+                    "flag": "🇪🇸"
+                },
+                {
+                    "rank": 9,
+                    "country": "Italy",
+                    "points": 1723.31,
+                    "change": -1,
+                    "flag": "🇮🇹"
+                },
+                {
+                    "rank": 10,
+                    "country": "Croatia",
+                    "points": 1711.02,
+                    "change": 0,
+                    "flag": "🇭🇷"
+                }
+            ]
+        },
+        "atp": {
+            "enabled": true,
+            "name": "ATP Rankings",
+            "sport": "tennis",
+            "gender": "men",
+            "updateFrequency": "weekly",
+            "source": "https://www.atptour.com/en/rankings",
+            "top10": [
+                {
+                    "rank": 1,
+                    "player": "Novak Djokovic",
+                    "country": "Serbia",
+                    "points": 9855,
+                    "change": 0
+                },
+                {
+                    "rank": 2,
+                    "player": "Carlos Alcaraz",
+                    "country": "Spain",
+                    "points": 8805,
+                    "change": 0
+                },
+                {
+                    "rank": 3,
+                    "player": "Daniil Medvedev",
+                    "country": "Russia",
+                    "points": 7555,
+                    "change": 1
+                },
+                {
+                    "rank": 4,
+                    "player": "Jannik Sinner",
+                    "country": "Italy",
+                    "points": 6490,
+                    "change": -1
+                },
+                {
+                    "rank": 5,
+                    "player": "Andrey Rublev",
+                    "country": "Russia",
+                    "points": 4805,
+                    "change": 0
+                }
+            ]
+        },
+        "wta": {
+            "enabled": true,
+            "name": "WTA Rankings",
+            "sport": "tennis",
+            "gender": "women",
+            "updateFrequency": "weekly",
+            "source": "https://www.wtatennis.com/rankings",
+            "top10": [
+                {
+                    "rank": 1,
+                    "player": "Iga Świątek",
+                    "country": "Poland",
+                    "points": 9940,
+                    "change": 0
+                },
+                {
+                    "rank": 2,
+                    "player": "Aryna Sabalenka",
+                    "country": "Belarus",
+                    "points": 8771,
+                    "change": 0
+                },
+                {
+                    "rank": 3,
+                    "player": "Coco Gauff",
+                    "country": "USA",
+                    "points": 6365,
+                    "change": 1
+                },
+                {
+                    "rank": 4,
+                    "player": "Elena Rybakina",
+                    "country": "Kazakhstan",
+                    "points": 5973,
+                    "change": -1
+                },
+                {
+                    "rank": 5,
+                    "player": "Jessica Pegula",
+                    "country": "USA",
+                    "points": 5175,
+                    "change": 0
+                }
+            ]
+        },
+        "iccTest": {
+            "enabled": true,
+            "name": "ICC Test Rankings",
+            "sport": "cricket",
+            "format": "test",
+            "updateFrequency": "weekly",
+            "source": "https://www.icc-cricket.com/rankings",
+            "top10": [
+                {
+                    "rank": 1,
+                    "country": "India",
+                    "rating": 121,
+                    "change": 0
+                },
+                {
+                    "rank": 2,
+                    "country": "Australia",
+                    "rating": 116,
+                    "change": 0
+                },
+                {
+                    "rank": 3,
+                    "country": "England",
+                    "rating": 108,
+                    "change": 1
+                },
+                {
+                    "rank": 4,
+                    "country": "South Africa",
+                    "rating": 102,
+                    "change": -1
+                },
+                {
+                    "rank": 5,
+                    "country": "New Zealand",
+                    "rating": 99,
+                    "change": 0
+                }
+            ]
+        }
+    },
+    "customLeaderboards": {
+        "globalGoalScorers": {
+            "enabled": true,
+            "name": "Global Goal Scorers",
+            "sport": "football",
+            "metric": "goals",
+            "timeframe": "2024-25 season",
+            "top10": [
+                {
+                    "rank": 1,
+                    "player": "Erling Haaland",
+                    "team": "Manchester City",
+                    "league": "Premier League",
+                    "goals": 28
+                },
+                {
+                    "rank": 2,
+                    "player": "Harry Kane",
+                    "team": "Bayern Munich",
+                    "league": "Bundesliga",
+                    "goals": 26
+                },
+                {
+                    "rank": 3,
+                    "player": "Kylian Mbappé",
+                    "team": "Paris SG",
+                    "league": "Ligue 1",
+                    "goals": 24
+                },
+                {
+                    "rank": 4,
+                    "player": "Robert Lewandowski",
+                    "team": "Barcelona",
+                    "league": "La Liga",
+                    "goals": 23
+                },
+                {
+                    "rank": 5,
+                    "player": "Victor Osimhen",
+                    "team": "Napoli",
+                    "league": "Serie A",
+                    "goals": 21
+                }
+            ]
+        },
+        "nbaPointsLeaders": {
+            "enabled": true,
+            "name": "NBA Points Leaders",
+            "sport": "basketball",
+            "metric": "ppg",
+            "timeframe": "2024-25 season",
+            "top10": [
+                {
+                    "rank": 1,
+                    "player": "Luka Dončić",
+                    "team": "Dallas Mavericks",
+                    "ppg": 33.8
+                },
+                {
+                    "rank": 2,
+                    "player": "Joel Embiid",
+                    "team": "Philadelphia 76ers",
+                    "ppg": 32.5
+                },
+                {
+                    "rank": 3,
+                    "player": "Giannis Antetokounmpo",
+                    "team": "Milwaukee Bucks",
+                    "ppg": 31.7
+                },
+                {
+                    "rank": 4,
+                    "player": "Shai Gilgeous-Alexander",
+                    "team": "Oklahoma City Thunder",
+                    "ppg": 30.8
+                },
+                {
+                    "rank": 5,
+                    "player": "Damian Lillard",
+                    "team": "Portland Trail Blazers",
+                    "ppg": 30.2
+                }
+            ]
+        }
+    },
+    "updateSchedule": {
+        "fifa": {
+            "day": "monthly",
+            "time": "12:00",
+            "timezone": "UTC"
+        },
+        "atp": {
+            "day": "monday",
+            "time": "10:00",
+            "timezone": "UTC"
+        },
+        "wta": {
+            "day": "monday",
+            "time": "10:00",
+            "timezone": "UTC"
+        },
+        "icc": {
+            "day": "wednesday",
+            "time": "12:00",
+            "timezone": "UTC"
+        },
+        "custom": {
+            "interval": 3600000
+        }
+    },
+    "displayConfig": {
+        "itemsPerPage": 50,
+        "showMovement": true,
+        "highlightChanges": true,
+        "colorCoding": {
+            "up": "#10b981",
+            "down": "#ef4444",
+            "same": "#6b7280"
+        },
+        "animations": {
+            "enabled": true,
+            "duration": 300
+        }
+    }
+}

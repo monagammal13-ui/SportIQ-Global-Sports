@@ -1,0 +1,141 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Complete analytics and tracking configuration for SPORTIQ platform",
+    "providers": {
+        "googleAnalytics": {
+            "enabled": true,
+            "trackingId": "G-XXXXXXXXXX",
+            "anonymizeIP": true,
+            "cookieExpires": 63072000
+        },
+        "googleTagManager": {
+            "enabled": true,
+            "containerId": "GTM-XXXXXXX"
+        },
+        "heatmaps": {
+            "provider": "hotjar",
+            "enabled": true,
+            "siteId": "XXXXXXX"
+        }
+    },
+    "tracking": {
+        "pageViews": {
+            "enabled": true,
+            "trackHash": false,
+            "trackQuery": false
+        },
+        "events": {
+            "enabled": true,
+            "categories": [
+                "engagement",
+                "navigation",
+                "video",
+                "slider",
+                "search",
+                "social",
+                "conversion"
+            ]
+        },
+        "customDimensions": {
+            "userType": "dimension1",
+            "contentCategory": "dimension2",
+            "deviceType": "dimension3",
+            "language": "dimension4"
+        }
+    },
+    "eventTracking": {
+        "slider": {
+            "slideView": true,
+            "slideClick": true,
+            "autoplayStart": true,
+            "autoplayStop": true
+        },
+        "video": {
+            "play": true,
+            "pause": true,
+            "complete": true,
+            "progress": [
+                25,
+                50,
+                75
+            ]
+        },
+        "engagement": {
+            "scrollDepth": [
+                25,
+                50,
+                75,
+                100
+            ],
+            "timeOnPage": [
+                30,
+                60,
+                120,
+                300
+            ],
+            "reactions": true,
+            "shares": true,
+            "comments": true
+        },
+        "navigation": {
+            "menuClick": true,
+            "searchUsed": true,
+            "filterApplied": true,
+            "categoryView": true
+        },
+        "conversion": {
+            "signup": true,
+            "newsletter": true,
+            "download": true,
+            "share": true
+        }
+    },
+    "goals": {
+        "engagement": {
+            "avgTimeOnPage": 120,
+            "avgScrollDepth": 60,
+            "bounceRate": 40
+        },
+        "conversion": {
+            "signupRate": 5,
+            "newsletterRate": 10,
+            "shareRate": 15
+        }
+    },
+    "privacy": {
+        "gdprCompliant": true,
+        "cookieConsent": {
+            "required": true,
+            "categories": [
+                "necessary",
+                "analytics",
+                "marketing"
+            ],
+            "optIn": true
+        },
+        "dataRetention": 26,
+        "anonymization": {
+            "ipAddress": true,
+            "userId": false
+        },
+        "userRights": {
+            "dataExport": true,
+            "dataDelete": true,
+            "optOut": true
+        }
+    },
+    "reporting": {
+        "realTime": {
+            "enabled": true,
+            "interval": 5000
+        },
+        "dashboards": [
+            "overview",
+            "traffic",
+            "engagement",
+            "content",
+            "conversions"
+        ]
+    }
+}

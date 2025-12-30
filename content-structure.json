@@ -1,0 +1,617 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Complete content structure and architecture for SPORTIQ",
+    "articleSchema": {
+        "required": [
+            "id",
+            "type",
+            "title",
+            "slug",
+            "content",
+            "author",
+            "category",
+            "publishDate",
+            "status"
+        ],
+        "fields": {
+            "id": {
+                "type": "string",
+                "pattern": "article_[0-9]+",
+                "description": "Unique article identifier"
+            },
+            "type": {
+                "type": "string",
+                "enum": [
+                    "article",
+                    "video",
+                    "gallery",
+                    "live",
+                    "analysis",
+                    "interview",
+                    "opinion",
+                    "match_report"
+                ],
+                "default": "article"
+            },
+            "title": {
+                "type": "string",
+                "minLength": 10,
+                "maxLength": 200,
+                "required": true
+            },
+            "slug": {
+                "type": "string",
+                "pattern": "^[a-z0-9-]+$",
+                "maxLength": 250,
+                "unique": true
+            },
+            "excerpt": {
+                "type": "string",
+                "maxLength": 300,
+                "description": "Short summary for previews"
+            },
+            "content": {
+                "type": "text",
+                "format": "html",
+                "required": true
+            },
+            "author": {
+                "type": "object",
+                "properties": {
+                    "id": "string",
+                    "name": "string",
+                    "avatar": "string",
+                    "bio": "string"
+                }
+            },
+            "category": {
+                "type": "string",
+                "required": true,
+                "ref": "categories"
+            },
+            "subcategory": {
+                "type": "string",
+                "ref": "categories"
+            },
+            "tags": {
+                "type": "array",
+                "items": "string",
+                "maxItems": 10
+            },
+            "teams": {
+                "type": "array",
+                "items": "string",
+                "description": "Team IDs mentioned in article"
+            },
+            "players": {
+                "type": "array",
+                "items": "string",
+                "description": "Player IDs mentioned in article"
+            },
+            "league": {
+                "type": "string",
+                "description": "League ID if applicable"
+            },
+            "publishDate": {
+                "type": "datetime",
+                "required": true
+            },
+            "modifiedDate": {
+                "type": "datetime"
+            },
+            "featured": {
+                "type": "boolean",
+                "default": false
+            },
+            "trending": {
+                "type": "boolean",
+                "default": false
+            },
+            "breaking": {
+                "type": "boolean",
+                "default": false
+            },
+            "status": {
+                "type": "string",
+                "enum": [
+                    "draft",
+                    "scheduled",
+                    "published",
+                    "archived"
+                ],
+                "default": "draft"
+            }
+        }
+    },
+    "categories": {
+        "football": {
+            "id": "football",
+            "name": "Football",
+            "slug": "football",
+            "description": "Latest football news, match reports, and analysis",
+            "icon": "/assets/icons/football.svg",
+            "color": "#00a651",
+            "parent": null,
+            "children": [
+                "premier-league",
+                "champions-league",
+                "world-cup",
+                "la-liga",
+                "serie-a",
+                "bundesliga"
+            ],
+            "featured": true,
+            "order": 1,
+            "seo": {
+                "metaTitle": "Football News & Updates | SPORTIQ",
+                "metaDescription": "Get the latest football news, match reports, and analysis from top leagues worldwide."
+            }
+        },
+        "basketball": {
+            "id": "basketball",
+            "name": "Basketball",
+            "slug": "basketball",
+            "description": "NBA, EuroLeague and basketball news",
+            "icon": "/assets/icons/basketball.svg",
+            "color": "#ff6b00",
+            "parent": null,
+            "children": [
+                "nba",
+                "euroleague",
+                "ncaa"
+            ],
+            "featured": true,
+            "order": 2,
+            "seo": {
+                "metaTitle": "Basketball News & NBA Updates | SPORTIQ",
+                "metaDescription": "Latest NBA news, scores, and basketball coverage from around the world."
+            }
+        },
+        "tennis": {
+            "id": "tennis",
+            "name": "Tennis",
+            "slug": "tennis",
+            "description": "Grand Slam tournaments and tennis updates",
+            "icon": "/assets/icons/tennis.svg",
+            "color": "#ffd700",
+            "parent": null,
+            "children": [
+                "atp",
+                "wta",
+                "grand-slam"
+            ],
+            "featured": true,
+            "order": 3,
+            "seo": {
+                "metaTitle": "Tennis News & Grand Slam Updates | SPORTIQ",
+                "metaDescription": "Follow the latest tennis news, Grand Slam tournaments, and ATP/WTA rankings."
+            }
+        },
+        "cricket": {
+            "id": "cricket",
+            "name": "Cricket",
+            "slug": "cricket",
+            "description": "International cricket and IPL coverage",
+            "icon": "/assets/icons/cricket.svg",
+            "color": "#0066cc",
+            "parent": null,
+            "children": [
+                "ipl",
+                "test-cricket",
+                "t20"
+            ],
+            "featured": true,
+            "order": 4,
+            "seo": {
+                "metaTitle": "Cricket News & IPL Updates | SPORTIQ",
+                "metaDescription": "Latest cricket news, IPL coverage, and international cricket updates."
+            }
+        },
+        "premier-league": {
+            "id": "premier-league",
+            "name": "Premier League",
+            "slug": "premier-league",
+            "description": "English Premier League news and fixtures",
+            "icon": "/assets/icons/premier-league.svg",
+            "color": "#3d195b",
+            "parent": "football",
+            "children": null,
+            "featured": true,
+            "order": 1
+        },
+        "champions-league": {
+            "id": "champions-league",
+            "name": "Champions League",
+            "slug": "champions-league",
+            "description": "UEFA Champions League coverage",
+            "icon": "/assets/icons/ucl.svg",
+            "color": "#003b7f",
+            "parent": "football",
+            "children": null,
+            "featured": true,
+            "order": 2
+        },
+        "nba": {
+            "id": "nba",
+            "name": "NBA",
+            "slug": "nba",
+            "description": "NBA news, scores, and highlights",
+            "icon": "/assets/icons/nba.svg",
+            "color": "#c8102e",
+            "parent": "basketball",
+            "children": null,
+            "featured": true,
+            "order": 1
+        }
+    },
+    "contentTypes": {
+        "article": {
+            "id": "article",
+            "name": "News Article",
+            "description": "Standard news article",
+            "icon": "📰",
+            "template": "article.html",
+            "fields": [
+                "title",
+                "excerpt",
+                "content",
+                "author",
+                "category",
+                "tags",
+                "media"
+            ]
+        },
+        "video": {
+            "id": "video",
+            "name": "Video Content",
+            "description": "Video article with embedded player",
+            "icon": "🎥",
+            "template": "video.html",
+            "fields": [
+                "title",
+                "excerpt",
+                "videoUrl",
+                "thumbnail",
+                "duration",
+                "category"
+            ]
+        },
+        "gallery": {
+            "id": "gallery",
+            "name": "Image Gallery",
+            "description": "Photo gallery article",
+            "icon": "📸",
+            "template": "gallery.html",
+            "fields": [
+                "title",
+                "excerpt",
+                "images",
+                "category"
+            ]
+        },
+        "live": {
+            "id": "live",
+            "name": "Live Coverage",
+            "description": "Live blog/coverage",
+            "icon": "🔴",
+            "template": "live.html",
+            "fields": [
+                "title",
+                "liveUpdates",
+                "matchData",
+                "category"
+            ]
+        },
+        "analysis": {
+            "id": "analysis",
+            "name": "In-Depth Analysis",
+            "description": "Detailed tactical analysis",
+            "icon": "📊",
+            "template": "analysis.html",
+            "fields": [
+                "title",
+                "excerpt",
+                "content",
+                "stats",
+                "charts",
+                "author"
+            ]
+        },
+        "interview": {
+            "id": "interview",
+            "name": "Interview",
+            "description": "Player/manager interview",
+            "icon": "🎤",
+            "template": "interview.html",
+            "fields": [
+                "title",
+                "interviewee",
+                "content",
+                "video",
+                "category"
+            ]
+        },
+        "opinion": {
+            "id": "opinion",
+            "name": "Opinion Piece",
+            "description": "Editorial or opinion article",
+            "icon": "💭",
+            "template": "opinion.html",
+            "fields": [
+                "title",
+                "excerpt",
+                "content",
+                "author",
+                "category"
+            ]
+        },
+        "match_report": {
+            "id": "match_report",
+            "name": "Match Report",
+            "description": "Post-match analysis and report",
+            "icon": "⚽",
+            "template": "match-report.html",
+            "fields": [
+                "title",
+                "teams",
+                "score",
+                "content",
+                "highlights",
+                "stats"
+            ]
+        }
+    },
+    "sectionTemplates": {
+        "homepage": {
+            "sections": [
+                {
+                    "id": "hero",
+                    "type": "featured",
+                    "title": "Top Story",
+                    "layout": "full-width",
+                    "count": 1,
+                    "source": "featured_articles",
+                    "order": 1
+                },
+                {
+                    "id": "breaking",
+                    "type": "breaking-news",
+                    "title": "Breaking News",
+                    "layout": "ticker",
+                    "count": 5,
+                    "source": "breaking_articles",
+                    "order": 2
+                },
+                {
+                    "id": "latest",
+                    "type": "grid",
+                    "title": "Latest News",
+                    "layout": "3-column",
+                    "count": 12,
+                    "source": "latest_articles",
+                    "order": 3
+                },
+                {
+                    "id": "trending",
+                    "type": "grid",
+                    "title": "Trending Stories",
+                    "layout": "2-column",
+                    "count": 6,
+                    "source": "trending_articles",
+                    "order": 4
+                },
+                {
+                    "id": "videos",
+                    "type": "carousel",
+                    "title": "Video Highlights",
+                    "layout": "4-items",
+                    "count": 8,
+                    "source": "latest_videos",
+                    "order": 5
+                },
+                {
+                    "id": "live-scores",
+                    "type": "widget",
+                    "title": "Live Scores",
+                    "layout": "compact",
+                    "source": "live_matches",
+                    "order": 6
+                }
+            ]
+        },
+        "category": {
+            "sections": [
+                {
+                    "id": "header",
+                    "type": "category-header",
+                    "layout": "banner",
+                    "order": 1
+                },
+                {
+                    "id": "featured",
+                    "type": "featured",
+                    "title": "Featured",
+                    "layout": "large-card",
+                    "count": 1,
+                    "order": 2
+                },
+                {
+                    "id": "articles",
+                    "type": "grid",
+                    "title": null,
+                    "layout": "3-column",
+                    "count": 24,
+                    "pagination": true,
+                    "order": 3
+                },
+                {
+                    "id": "sidebar",
+                    "type": "sidebar",
+                    "widgets": [
+                        "trending",
+                        "tags",
+                        "newsletter"
+                    ],
+                    "order": 4
+                }
+            ]
+        },
+        "article": {
+            "sections": [
+                {
+                    "id": "header",
+                    "type": "article-header",
+                    "fields": [
+                        "title",
+                        "excerpt",
+                        "meta",
+                        "share"
+                    ],
+                    "order": 1
+                },
+                {
+                    "id": "featured-image",
+                    "type": "media",
+                    "layout": "full-width",
+                    "order": 2
+                },
+                {
+                    "id": "content",
+                    "type": "article-content",
+                    "layout": "centered",
+                    "maxWidth": 800,
+                    "order": 3
+                },
+                {
+                    "id": "tags",
+                    "type": "tags",
+                    "layout": "inline",
+                    "order": 4
+                },
+                {
+                    "id": "author-bio",
+                    "type": "author",
+                    "layout": "card",
+                    "order": 5
+                },
+                {
+                    "id": "related",
+                    "type": "grid",
+                    "title": "Related Articles",
+                    "layout": "3-column",
+                    "count": 6,
+                    "order": 6
+                },
+                {
+                    "id": "comments",
+                    "type": "comments",
+                    "layout": "threaded",
+                    "order": 7
+                }
+            ]
+        }
+    },
+    "mediaConfig": {
+        "images": {
+            "sizes": {
+                "thumbnail": {
+                    "width": 320,
+                    "height": 180,
+                    "crop": true
+                },
+                "small": {
+                    "width": 640,
+                    "height": 360,
+                    "crop": false
+                },
+                "medium": {
+                    "width": 1024,
+                    "height": 576,
+                    "crop": false
+                },
+                "large": {
+                    "width": 1920,
+                    "height": 1080,
+                    "crop": false
+                },
+                "original": {
+                    "width": null,
+                    "height": null,
+                    "crop": false
+                }
+            },
+            "formats": [
+                "webp",
+                "jpeg"
+            ],
+            "quality": 85,
+            "lazyLoad": true
+        },
+        "videos": {
+            "qualities": [
+                "360p",
+                "480p",
+                "720p",
+                "1080p",
+                "4k"
+            ],
+            "defaultQuality": "720p",
+            "poster": true,
+            "lazyLoad": true
+        }
+    },
+    "taxonomy": {
+        "hierarchical": {
+            "sport": {
+                "levels": [
+                    "sport",
+                    "league",
+                    "team",
+                    "player"
+                ],
+                "example": "Football > Premier League > Manchester United > Rashford"
+            },
+            "content": {
+                "levels": [
+                    "category",
+                    "subcategory",
+                    "topic"
+                ],
+                "example": "Football > Premier League > Transfers"
+            }
+        },
+        "flat": {
+            "tags": {
+                "type": "free-form",
+                "suggestions": true,
+                "trending": true,
+                "maxPerArticle": 10
+            }
+        }
+    },
+    "relationships": {
+        "relatedContent": {
+            "bySameCategoryAndTags": {
+                "weight": 0.40,
+                "limit": 10
+            },
+            "bySameTeams": {
+                "weight": 0.30,
+                "limit": 10
+            },
+            "bySamePlayers": {
+                "weight": 0.15,
+                "limit": 10
+            },
+            "byTrending": {
+                "weight": 0.10,
+                "limit": 10
+            },
+            "byUserPreferences": {
+                "weight": 0.05,
+                "limit": 10
+            }
+        }
+    }
+}

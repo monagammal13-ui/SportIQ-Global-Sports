@@ -1,0 +1,440 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Data foundation and API configuration for SPORTIQ content delivery",
+    "apiEndpoints": {
+        "articles": {
+            "list": {
+                "method": "GET",
+                "path": "/api/articles",
+                "params": {
+                    "page": "number",
+                    "limit": "number",
+                    "category": "string",
+                    "tag": "string",
+                    "sort": "string",
+                    "order": "asc|desc"
+                },
+                "response": {
+                    "articles": "array",
+                    "total": "number",
+                    "page": "number",
+                    "pages": "number"
+                }
+            },
+            "single": {
+                "method": "GET",
+                "path": "/api/articles/{id}",
+                "response": "article_object"
+            },
+            "byCategory": {
+                "method": "GET",
+                "path": "/api/articles/category/{category}",
+                "params": {
+                    "page": "number",
+                    "limit": "number"
+                }
+            },
+            "byTag": {
+                "method": "GET",
+                "path": "/api/articles/tag/{tag}",
+                "params": {
+                    "page": "number",
+                    "limit": "number"
+                }
+            },
+            "search": {
+                "method": "GET",
+                "path": "/api/articles/search",
+                "params": {
+                    "q": "string",
+                    "category": "string",
+                    "page": "number",
+                    "limit": "number"
+                }
+            },
+            "trending": {
+                "method": "GET",
+                "path": "/api/articles/trending",
+                "params": {
+                    "limit": "number",
+                    "period": "1h|6h|24h|7d"
+                }
+            },
+            "featured": {
+                "method": "GET",
+                "path": "/api/articles/featured",
+                "params": {
+                    "limit": "number"
+                }
+            },
+            "related": {
+                "method": "GET",
+                "path": "/api/articles/{id}/related",
+                "params": {
+                    "limit": "number"
+                }
+            }
+        },
+        "categories": {
+            "list": {
+                "method": "GET",
+                "path": "/api/categories",
+                "response": "categories_array"
+            },
+            "single": {
+                "method": "GET",
+                "path": "/api/categories/{id}",
+                "response": "category_object"
+            },
+            "tree": {
+                "method": "GET",
+                "path": "/api/categories/tree",
+                "response": "hierarchical_categories"
+            }
+        },
+        "tags": {
+            "list": {
+                "method": "GET",
+                "path": "/api/tags",
+                "response": "tags_array"
+            },
+            "trending": {
+                "method": "GET",
+                "path": "/api/tags/trending",
+                "params": {
+                    "limit": "number"
+                }
+            }
+        },
+        "search": {
+            "global": {
+                "method": "GET",
+                "path": "/api/search",
+                "params": {
+                    "q": "string",
+                    "type": "all|articles|videos|teams|players",
+                    "limit": "number"
+                }
+            }
+        }
+    },
+    "dataSources": {
+        "primary": {
+            "type": "cms",
+            "provider": "custom",
+            "database": "mongodb",
+            "collections": {
+                "articles": "articles",
+                "categories": "categories",
+                "tags": "tags",
+                "media": "media",
+                "users": "users"
+            }
+        },
+        "rssFeeds": {
+            "enabled": true,
+            "feeds": [
+                {
+                    "id": "espn_football",
+                    "url": "https://www.espn.com/espn/rss/football/news",
+                    "category": "football",
+                    "frequency": "hourly",
+                    "active": true
+                },
+                {
+                    "id": "bbc_sport",
+                    "url": "https://feeds.bbci.co.uk/sport/rss.xml",
+                    "category": "general",
+                    "frequency": "hourly",
+                    "active": true
+                }
+            ],
+            "transform": {
+                "title": "item.title",
+                "content": "item.description",
+                "link": "item.link",
+                "publishDate": "item.pubDate",
+                "author": "item.author || 'External Source'"
+            }
+        },
+        "externalAPIs": {
+            "sportsData": {
+                "provider": "sportsdata.io",
+                "apiKey": "YOUR_API_KEY",
+                "endpoints": {
+                    "scores": "/scores",
+                    "fixtures": "/fixtures",
+                    "standings": "/standings",
+                    "statistics": "/statistics"
+                },
+                "cache": {
+                    "scores": 30,
+                    "fixtures": 3600,
+                    "standings": 1800
+                }
+            },
+            "newsAPI": {
+                "provider": "newsapi.org",
+                "apiKey": "YOUR_API_KEY",
+                "endpoints": {
+                    "topHeadlines": "/top-headlines",
+                    "everything": "/everything"
+                },
+                "category": "sports"
+            }
+        },
+        "userGenerated": {
+            "comments": true,
+            "ratings": true,
+            "shares": true,
+            "moderation": "pre-moderation"
+        }
+    },
+    "contentHydration": {
+        "initialLoad": {
+            "homepage": {
+                "articles": 12,
+                "videos": 8,
+                "trending": 6,
+                "featured": 1
+            },
+            "category": {
+                "articles": 24,
+                "featured": 1
+            },
+            "search": {
+                "results": 20
+            }
+        },
+        "lazyLoad": {
+            "enabled": true,
+            "threshold": "200px",
+            "batchSize": 12,
+            "maxBatches": 10
+        },
+        "infiniteScroll": {
+            "enabled": true,
+            "threshold": 300,
+            "loadMore": 12
+        },
+        "placeholders": {
+            "skeleton": true,
+            "loadingText": "Loading...",
+            "errorText": "Failed to load content",
+            "emptyText": "No content available"
+        }
+    },
+    "cacheStrategies": {
+        "content": {
+            "articles": {
+                "ttl": 3600,
+                "strategy": "stale-while-revalidate",
+                "storage": "redis"
+            },
+            "categories": {
+                "ttl": 21600,
+                "strategy": "cache-first",
+                "storage": "memory"
+            },
+            "trending": {
+                "ttl": 300,
+                "strategy": "network-first",
+                "storage": "redis"
+            },
+            "liveScores": {
+                "ttl": 30,
+                "strategy": "network-only",
+                "storage": "none"
+            }
+        },
+        "invalidation": {
+            "onPublish": true,
+            "onUpdate": true,
+            "onDelete": true,
+            "manual": true,
+            "scheduled": {
+                "enabled": true,
+                "frequency": "daily",
+                "time": "03:00"
+            }
+        },
+        "cdnCaching": {
+            "enabled": true,
+            "provider": "cloudflare",
+            "rules": {
+                "html": {
+                    "edgeTTL": 7200,
+                    "browserTTL": 0
+                },
+                "api": {
+                    "edgeTTL": 300,
+                    "browserTTL": 300
+                },
+                "media": {
+                    "edgeTTL": 2592000,
+                    "browserTTL": 2592000
+                }
+            }
+        }
+    },
+    "realTimeUpdates": {
+        "webSocket": {
+            "enabled": true,
+            "url": "wss://api.sportiq.com/ws",
+            "channels": {
+                "liveScores": true,
+                "breakingNews": true,
+                "comments": true,
+                "viewCounts": true
+            },
+            "reconnect": {
+                "enabled": true,
+                "maxAttempts": 5,
+                "delay": 1000
+            }
+        },
+        "polling": {
+            "enabled": true,
+            "endpoints": {
+                "trending": {
+                    "interval": 300000,
+                    "endpoint": "/api/articles/trending"
+                },
+                "latest": {
+                    "interval": 60000,
+                    "endpoint": "/api/articles/latest"
+                },
+                "notifications": {
+                    "interval": 30000,
+                    "endpoint": "/api/user/notifications"
+                }
+            }
+        },
+        "serverSentEvents": {
+            "enabled": false,
+            "endpoint": "/api/stream"
+        }
+    },
+    "contentDelivery": {
+        "cdn": {
+            "provider": "cloudflare",
+            "domains": {
+                "static": "cdn.sportiq.com",
+                "images": "images.sportiq.com",
+                "videos": "videos.sportiq.com"
+            },
+            "features": {
+                "autoMinify": true,
+                "brotli": true,
+                "http3": true,
+                "imageOptimization": true
+            }
+        },
+        "edgeCaching": {
+            "enabled": true,
+            "locations": 300,
+            "smartRouting": true
+        },
+        "prerendering": {
+            "enabled": false,
+            "pages": [
+                "/",
+                "/football",
+                "/basketball",
+                "/tennis"
+            ]
+        }
+    },
+    "dataTransformation": {
+        "normalization": {
+            "enabled": true,
+            "lowercase": {
+                "slugs": true,
+                "tags": true
+            },
+            "trimWhitespace": true,
+            "removeHTML": {
+                "excerpts": true
+            }
+        },
+        "enrichment": {
+            "autoTags": true,
+            "autoExcerpt": true,
+            "autoSlug": true,
+            "readingTime": true,
+            "wordCount": true
+        },
+        "sanitization": {
+            "enabled": true,
+            "stripDangerousHTML": true,
+            "allowedTags": [
+                "p",
+                "br",
+                "strong",
+                "em",
+                "a",
+                "img",
+                "h2",
+                "h3",
+                "ul",
+                "ol",
+                "li",
+                "blockquote"
+            ],
+            "allowedAttributes": {
+                "a": [
+                    "href",
+                    "title"
+                ],
+                "img": [
+                    "src",
+                    "alt",
+                    "width",
+                    "height"
+                ]
+            }
+        }
+    },
+    "dataValidation": {
+        "enabled": true,
+        "rules": {
+            "title": {
+                "required": true,
+                "minLength": 10,
+                "maxLength": 200
+            },
+            "slug": {
+                "required": true,
+                "pattern": "^[a-z0-9-]+$",
+                "unique": true
+            },
+            "category": {
+                "required": true,
+                "exists": true
+            },
+            "publishDate": {
+                "required": true,
+                "format": "ISO8601"
+            }
+        }
+    },
+    "errorHandling": {
+        "retry": {
+            "enabled": true,
+            "maxAttempts": 3,
+            "delay": 1000,
+            "backoff": "exponential"
+        },
+        "fallback": {
+            "enabled": true,
+            "cachedContent": true,
+            "defaultContent": true
+        },
+        "logging": {
+            "enabled": true,
+            "level": "error",
+            "destination": "/logs/api-errors.log"
+        }
+    }
+}

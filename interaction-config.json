@@ -1,0 +1,298 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Comment moderation and interaction management for SPORTIQ",
+    "moderation": {
+        "enabled": true,
+        "strategy": "hybrid",
+        "workflows": {
+            "preModeration": {
+                "enabled": false,
+                "applyToNewUsers": true,
+                "applyToLowReputation": true,
+                "reputationThreshold": 10
+            },
+            "postModeration": {
+                "enabled": true,
+                "reviewQueue": true,
+                "autoApprove": true
+            }
+        }
+    },
+    "autoModeration": {
+        "enabled": true,
+        "rules": {
+            "profanityFilter": {
+                "enabled": true,
+                "action": "flag",
+                "blockedWords": [
+                    "badword1",
+                    "badword2"
+                ],
+                "severity": {
+                    "mild": "flag",
+                    "moderate": "hold",
+                    "severe": "reject"
+                },
+                "allowPartialMatches": true,
+                "leetSpeakDetection": true
+            },
+            "spamDetection": {
+                "enabled": true,
+                "action": "hold",
+                "checks": {
+                    "repeatedContent": {
+                        "enabled": true,
+                        "threshold": 0.9,
+                        "timeWindow": 3600000
+                    },
+                    "excessiveLinks": {
+                        "enabled": true,
+                        "maxLinks": 2,
+                        "action": "hold"
+                    },
+                    "suspiciousDomains": {
+                        "enabled": true,
+                        "blockedDomains": [
+                            "spam-site.com",
+                            "malicious-link.net"
+                        ]
+                    },
+                    "allCaps": {
+                        "enabled": true,
+                        "threshold": 0.7,
+                        "action": "flag"
+                    },
+                    "rapidPosting": {
+                        "enabled": true,
+                        "maxCommentsInMinute": 5,
+                        "action": "hold"
+                    }
+                }
+            },
+            "toxicityDetection": {
+                "enabled": false,
+                "provider": "perspective-api",
+                "apiKey": "YOUR_PERSPECTIVE_API_KEY",
+                "threshold": 0.75,
+                "attributes": [
+                    "TOXICITY",
+                    "SEVERE_TOXICITY",
+                    "IDENTITY_ATTACK"
+                ],
+                "action": "hold"
+            },
+            "linkValidation": {
+                "enabled": true,
+                "requireHttps": false,
+                "blockShorteners": true,
+                "whitelist": [
+                    "sportiq.com",
+                    "youtube.com",
+                    "twitter.com"
+                ],
+                "blacklist": []
+            }
+        }
+    },
+    "reporting": {
+        "enabled": true,
+        "categories": [
+            {
+                "id": "spam",
+                "label": "Spam",
+                "description": "Unwanted commercial content or repetitive messages"
+            },
+            {
+                "id": "abuse",
+                "label": "Abusive or Offensive",
+                "description": "Harassment, hate speech, or threatening content"
+            },
+            {
+                "id": "misinformation",
+                "label": "Misinformation",
+                "description": "False or misleading information"
+            },
+            {
+                "id": "inappropriate",
+                "label": "Inappropriate Content",
+                "description": "Content that violates community guidelines"
+            },
+            {
+                "id": "other",
+                "label": "Other",
+                "description": "Other issues",
+                "requireDescription": true
+            }
+        ],
+        "rateLimiting": {
+            "enabled": true,
+            "maxReportsPerHour": 10,
+            "maxReportsPerDay": 50
+        },
+        "autoAction": {
+            "enabled": true,
+            "reportsToHide": 5,
+            "reportsToRemove": 10
+        },
+        "notifyModerators": {
+            "enabled": true,
+            "threshold": 3
+        }
+    },
+    "moderatorTools": {
+        "actions": {
+            "approve": {
+                "enabled": true,
+                "notifyUser": false
+            },
+            "reject": {
+                "enabled": true,
+                "requireReason": true,
+                "notifyUser": true
+            },
+            "edit": {
+                "enabled": true,
+                "trackChanges": true,
+                "notifyUser": true
+            },
+            "delete": {
+                "enabled": true,
+                "softDelete": true,
+                "requireReason": true,
+                "notifyUser": true
+            },
+            "hide": {
+                "enabled": true,
+                "keepForModerators": true
+            },
+            "pin": {
+                "enabled": true,
+                "maxPinnedComments": 3
+            },
+            "lock": {
+                "enabled": true,
+                "preventReplies": true,
+                "preventEditing": true
+            },
+            "ban": {
+                "enabled": true,
+                "options": [
+                    "temporary",
+                    "permanent"
+                ],
+                "requireReason": true,
+                "notifyUser": true
+            }
+        },
+        "queue": {
+            "enabled": true,
+            "filters": {
+                "flagged": true,
+                "reported": true,
+                "pending": true,
+                "spam": true
+            },
+            "sorting": [
+                "newest",
+                "oldest",
+                "most_reported"
+            ],
+            "batchActions": true
+        }
+    },
+    "userReputation": {
+        "enabled": true,
+        "scoring": {
+            "commentPosted": 1,
+            "commentApproved": 2,
+            "commentUpvoted": 1,
+            "commentDownvoted": -1,
+            "commentFlagged": -5,
+            "commentRemoved": -10,
+            "replyReceived": 0.5,
+            "mentionUsed": 0
+        },
+        "levels": [
+            {
+                "level": 1,
+                "name": "Rookie",
+                "minPoints": 0,
+                "maxPoints": 50,
+                "canComment": true,
+                "canVote": true,
+                "preModeration": true
+            },
+            {
+                "level": 2,
+                "name": "Fan",
+                "minPoints": 51,
+                "maxPoints": 200,
+                "canComment": true,
+                "canVote": true,
+                "preModeration": false
+            },
+            {
+                "level": 3,
+                "name": "Superfan",
+                "minPoints": 201,
+                "maxPoints": 500,
+                "canComment": true,
+                "canVote": true,
+                "canEditOthers": false
+            },
+            {
+                "level": 4,
+                "name": "Expert",
+                "minPoints": 501,
+                "maxPoints": 1000,
+                "canComment": true,
+                "canVote": true,
+                "canFlagComments": true
+            },
+            {
+                "level": 5,
+                "name": "Legend",
+                "minPoints": 1001,
+                "maxPoints": null,
+                "canComment": true,
+                "canVote": true,
+                "canFlagComments": true,
+                "badge": "⭐"
+            }
+        ],
+        "penalties": {
+            "commentRemoved": -50,
+            "temporaryBan": -100,
+            "permanentBan": -1000
+        }
+    },
+    "communityGuidelines": {
+        "enabled": true,
+        "rules": [
+            "Be respectful and courteous to others",
+            "No hate speech, harassment, or bullying",
+            "Stay on topic and contribute to the discussion",
+            "No spam, advertisements, or self-promotion",
+            "Respect others' privacy - no doxxing",
+            "No misinformation or fake news",
+            "Use appropriate language - no excessive profanity"
+        ],
+        "displayOnSubmit": true,
+        "requireAcceptance": false
+    },
+    "analytics": {
+        "enabled": true,
+        "track": {
+            "totalComments": true,
+            "commentsPerArticle": true,
+            "commentsPerUser": true,
+            "averageLength": true,
+            "moderationActions": true,
+            "reportedComments": true,
+            "deletedComments": true,
+            "topCommenters": true,
+            "engagementRate": true
+        }
+    }
+}

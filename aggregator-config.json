@@ -1,0 +1,52 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-29T09:12:16Z",
+    "description": "API Aggregator Configuration",
+    "sources": [
+        {
+            "id": "live_sports",
+            "name": "SportRadar Live",
+            "baseUrl": "https://api.sportradar.com",
+            "prefix": "/live",
+            "mockResponse": {
+                "status": "ok",
+                "matches": []
+            }
+        },
+        {
+            "id": "news_feed",
+            "name": "Global News API",
+            "baseUrl": "https://newsapi.org",
+            "prefix": "/news",
+            "mockResponse": {
+                "status": "ok",
+                "articles": []
+            }
+        },
+        {
+            "id": "betting_odds",
+            "name": "Odds Portal",
+            "baseUrl": "https://odds-api.com",
+            "prefix": "/odds",
+            "mockResponse": {
+                "status": "ok",
+                "markets": []
+            }
+        },
+        {
+            "id": "social_media",
+            "name": "Social Aggregator",
+            "baseUrl": "https://social-hub.com",
+            "prefix": "/social",
+            "mockResponse": {
+                "status": "ok",
+                "posts": []
+            }
+        }
+    ],
+    "settings": {
+        "cacheDuration": 60000,
+        "timeout": 5000,
+        "retries": 3
+    }
+}

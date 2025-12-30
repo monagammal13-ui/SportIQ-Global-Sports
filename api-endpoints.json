@@ -1,0 +1,305 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-29T08:03:57Z",
+    "description": "API Integration Layer - Endpoint Configuration",
+    "endpoints": [
+        {
+            "id": "live-scores",
+            "name": "Live Scores",
+            "category": "sports",
+            "url": "https://api.sportiq.com/v1/scores/live",
+            "method": "GET",
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "params": {
+                "limit": 20
+            },
+            "updateInterval": 30000,
+            "enabled": true,
+            "description": "Real-time live scores for ongoing matches"
+        },
+        {
+            "id": "football-news",
+            "name": "Football News",
+            "category": "news",
+            "url": "https://newsapi.org/v2/everything",
+            "method": "GET",
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "params": {
+                "q": "football OR soccer",
+                "language": "en",
+                "sortBy": "publishedAt",
+                "pageSize": 10
+            },
+            "updateInterval": 300000,
+            "enabled": true,
+            "description": "Latest football/soccer news articles"
+        },
+        {
+            "id": "basketball-scores",
+            "name": "Basketball Scores",
+            "category": "sports",
+            "url": "https://api.sportiq.com/v1/basketball/scores",
+            "method": "GET",
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "params": {},
+            "updateInterval": 60000,
+            "enabled": true,
+            "description": "Live and recent basketball scores"
+        },
+        {
+            "id": "tennis-rankings",
+            "name": "Tennis Rankings",
+            "category": "stats",
+            "url": "https://api.sportiq.com/v1/tennis/rankings",
+            "method": "GET",
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "params": {
+                "type": "singles",
+                "gender": "both",
+                "limit": 50
+            },
+            "updateInterval": 3600000,
+            "enabled": true,
+            "description": "ATP and WTA tennis rankings"
+        },
+        {
+            "id": "match-highlights",
+            "name": "Match Highlights",
+            "category": "media",
+            "url": "https://api.sportiq.com/v1/highlights",
+            "method": "GET",
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "params": {
+                "sport": "all",
+                "limit": 15
+            },
+            "updateInterval": 600000,
+            "enabled": true,
+            "description": "Video highlights from recent matches"
+        },
+        {
+            "id": "upcoming-matches",
+            "name": "Upcoming Matches",
+            "category": "schedule",
+            "url": "https://api.sportiq.com/v1/matches/upcoming",
+            "method": "GET",
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "params": {
+                "days": 7,
+                "limit": 30
+            },
+            "updateInterval": 1800000,
+            "enabled": true,
+            "description": "Upcoming matches in the next 7 days"
+        },
+        {
+            "id": "player-stats",
+            "name": "Player Statistics",
+            "category": "stats",
+            "url": "https://api.sportiq.com/v1/players/stats",
+            "method": "GET",
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "params": {
+                "sport": "football",
+                "season": "2024-2025",
+                "limit": 20
+            },
+            "updateInterval": 3600000,
+            "enabled": true,
+            "description": "Top player statistics by sport and season"
+        },
+        {
+            "id": "trending-topics",
+            "name": "Trending Topics",
+            "category": "social",
+            "url": "https://api.sportiq.com/v1/trending",
+            "method": "GET",
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "params": {
+                "limit": 10
+            },
+            "updateInterval": 300000,
+            "enabled": true,
+            "description": "Trending sports topics and hashtags"
+        },
+        {
+            "id": "weather-conditions",
+            "name": "Weather for Matches",
+            "category": "weather",
+            "url": "https://api.openweathermap.org/data/2.5/weather",
+            "method": "GET",
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "params": {
+                "units": "metric"
+            },
+            "updateInterval": 1800000,
+            "enabled": false,
+            "description": "Weather conditions for match locations"
+        },
+        {
+            "id": "league-standings",
+            "name": "League Standings",
+            "category": "stats",
+            "url": "https://api.sportiq.com/v1/leagues/standings",
+            "method": "GET",
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "params": {
+                "league": "premier-league",
+                "season": "2024-2025"
+            },
+            "updateInterval": 3600000,
+            "enabled": true,
+            "description": "Current league tables and standings"
+        }
+    ],
+    "fallbackEndpoints": [
+        {
+            "id": "local-scores",
+            "name": "Local Scores Fallback",
+            "category": "sports",
+            "url": "../api-json/live-scores.json",
+            "method": "GET",
+            "enabled": true,
+            "description": "Local fallback for live scores"
+        },
+        {
+            "id": "local-news",
+            "name": "Local News Fallback",
+            "category": "news",
+            "url": "../api-json/news-feed.json",
+            "method": "GET",
+            "enabled": true,
+            "description": "Local fallback for news feed"
+        }
+    ],
+    "rateLimits": {
+        "global": {
+            "requests": 100,
+            "window": 60000,
+            "enabled": true
+        },
+        "perEndpoint": {
+            "requests": 30,
+            "window": 60000,
+            "enabled": true
+        }
+    },
+    "caching": {
+        "enabled": true,
+        "defaultDuration": 300000,
+        "maxSize": 100,
+        "strategies": {
+            "live-scores": {
+                "duration": 30000,
+                "staleWhileRevalidate": true
+            },
+            "news": {
+                "duration": 600000,
+                "staleWhileRevalidate": true
+            },
+            "stats": {
+                "duration": 3600000,
+                "staleWhileRevalidate": false
+            }
+        }
+    },
+    "errorHandling": {
+        "retryAttempts": 3,
+        "retryDelay": 1000,
+        "exponentialBackoff": true,
+        "fallbackToCache": true,
+        "fallbackToLocal": true,
+        "logErrors": true
+    },
+    "apiKeys": {
+        "newsapi": {
+            "key": "YOUR_NEWSAPI_KEY_HERE",
+            "header": "X-Api-Key",
+            "enabled": false
+        },
+        "sportsapi": {
+            "key": "YOUR_SPORTS_API_KEY_HERE",
+            "header": "Authorization",
+            "prefix": "Bearer ",
+            "enabled": false
+        },
+        "openweather": {
+            "key": "YOUR_OPENWEATHER_KEY_HERE",
+            "paramName": "appid",
+            "enabled": false
+        }
+    },
+    "aggregation": {
+        "enabled": true,
+        "presets": [
+            {
+                "id": "sports-dashboard",
+                "name": "Sports Dashboard",
+                "sources": [
+                    "live-scores",
+                    "upcoming-matches",
+                    "trending-topics"
+                ],
+                "updateInterval": 60000
+            },
+            {
+                "id": "news-feed",
+                "name": "News Feed",
+                "sources": [
+                    "football-news",
+                    "trending-topics"
+                ],
+                "updateInterval": 300000
+            },
+            {
+                "id": "stats-overview",
+                "name": "Statistics Overview",
+                "sources": [
+                    "player-stats",
+                    "league-standings",
+                    "tennis-rankings"
+                ],
+                "updateInterval": 1800000
+            }
+        ]
+    },
+    "webhooks": {
+        "enabled": false,
+        "endpoints": [],
+        "retryPolicy": {
+            "attempts": 3,
+            "delay": 5000
+        }
+    },
+    "monitoring": {
+        "enabled": true,
+        "logLevel": "info",
+        "metrics": {
+            "requests": true,
+            "responses": true,
+            "errors": true,
+            "latency": true,
+            "cacheHits": true
+        }
+    }
+}

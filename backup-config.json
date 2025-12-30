@@ -1,0 +1,275 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-29T08:16:46Z",
+    "description": "Backup & Recovery Engine - Configuration",
+    "sources": [
+        {
+            "id": "user-data",
+            "name": "User Data",
+            "type": "localStorage",
+            "include": [
+                "sportiq_user*",
+                "sportiq_session*",
+                "sportiq_preferences*"
+            ],
+            "exclude": [
+                "sportiq_temp*",
+                "sportiq_cache*"
+            ],
+            "compress": true,
+            "enabled": true,
+            "priority": 100
+        },
+        {
+            "id": "api-cache",
+            "name": "API Cache",
+            "type": "localStorage",
+            "include": [
+                "sportiq_api_cache*"
+            ],
+            "exclude": [],
+            "compress": true,
+            "enabled": true,
+            "priority": 80
+        },
+        {
+            "id": "cdn-cache",
+            "name": "CDN Cache",
+            "type": "localStorage",
+            "include": [
+                "sportiq_cdn*"
+            ],
+            "exclude": [],
+            "compress": true,
+            "enabled": true,
+            "priority": 70
+        },
+        {
+            "id": "analytics-data",
+            "name": "Analytics Data",
+            "type": "localStorage",
+            "include": [
+                "sportiq_analytics*",
+                "sportiq_metrics*"
+            ],
+            "exclude": [],
+            "compress": true,
+            "enabled": true,
+            "priority": 60
+        },
+        {
+            "id": "backup-metadata",
+            "name": "Backup Metadata",
+            "type": "localStorage",
+            "include": [
+                "sportiq_backup*"
+            ],
+            "exclude": [],
+            "compress": false,
+            "enabled": true,
+            "priority": 90
+        }
+    ],
+    "schedules": [
+        {
+            "id": "hourly-backup",
+            "name": "Hourly Backup",
+            "interval": 3600000,
+            "sources": [
+                "user-data",
+                "api-cache"
+            ],
+            "enabled": true,
+            "description": "Backup critical user data every hour"
+        },
+        {
+            "id": "daily-backup",
+            "name": "Daily Backup",
+            "interval": 86400000,
+            "sources": "all",
+            "enabled": true,
+            "description": "Full backup of all sources once per day"
+        }
+    ],
+    "retention": {
+        "maxBackups": 50,
+        "keepDaily": 7,
+        "keepWeekly": 4,
+        "keepMonthly": 6,
+        "autoCleanup": true,
+        "policies": [
+            {
+                "type": "manual",
+                "keep": "forever"
+            },
+            {
+                "type": "scheduled",
+                "keep": "7days"
+            },
+            {
+                "type": "automatic",
+                "keep": "24hours"
+            }
+        ]
+    },
+    "storage": {
+        "primary": "localStorage",
+        "fallback": "indexedDB",
+        "maxSize": 10485760,
+        "compression": {
+            "enabled": true,
+            "algorithm": "base64",
+            "minSize": 1024
+        },
+        "encryption": {
+            "enabled": false,
+            "algorithm": "AES-256",
+            "keyStorage": "secure"
+        }
+    },
+    "recovery": {
+        "verification": {
+            "enabled": true,
+            "checkIntegrity": true,
+            "validateSchema": false
+        },
+        "preview": {
+            "enabled": true,
+            "showDiff": false
+        },
+        "options": {
+            "overwrite": true,
+            "merge": false,
+            "selective": true
+        },
+        "notifications": {
+            "onSuccess": true,
+            "onFailure": true,
+            "onWarning": true
+        }
+    },
+    "automation": {
+        "triggers": [
+            {
+                "event": "beforeunload",
+                "action": "create",
+                "sources": [
+                    "user-data"
+                ],
+                "enabled": true
+            },
+            {
+                "event": "storage-full",
+                "action": "cleanup",
+                "enabled": true
+            },
+            {
+                "event": "error",
+                "action": "create",
+                "sources": "all",
+                "enabled": false
+            }
+        ],
+        "conditions": [
+            {
+                "type": "time-based",
+                "schedule": "0 2 * * *",
+                "action": "cleanup",
+                "enabled": true
+            },
+            {
+                "type": "size-based",
+                "threshold": 5242880,
+                "action": "cleanup",
+                "enabled": true
+            }
+        ]
+    },
+    "export": {
+        "formats": [
+            "json",
+            "zip"
+        ],
+        "includeMetadata": true,
+        "compression": true,
+        "encryption": false
+    },
+    "import": {
+        "validation": {
+            "enabled": true,
+            "strict": false
+        },
+        "mergeStrategy": "replace",
+        "conflictResolution": "newest"
+    },
+    "monitoring": {
+        "enabled": true,
+        "metrics": {
+            "backupCount": true,
+            "storageUsed": true,
+            "successRate": true,
+            "averageSize": true,
+            "lastBackup": true
+        },
+        "alerts": {
+            "enabled": true,
+            "thresholds": {
+                "failureRate": 10,
+                "storageUsage": 80,
+                "backupAge": 86400000
+            }
+        },
+        "logging": {
+            "enabled": true,
+            "level": "info",
+            "retain": 30
+        }
+    },
+    "security": {
+        "authentication": {
+            "required": false,
+            "method": "session"
+        },
+        "authorization": {
+            "roles": [
+                "admin",
+                "user"
+            ],
+            "permissions": {
+                "create": [
+                    "admin",
+                    "user"
+                ],
+                "restore": [
+                    "admin",
+                    "user"
+                ],
+                "delete": [
+                    "admin"
+                ],
+                "export": [
+                    "admin",
+                    "user"
+                ],
+                "import": [
+                    "admin"
+                ]
+            }
+        },
+        "audit": {
+            "enabled": true,
+            "logActions": [
+                "create",
+                "restore",
+                "delete"
+            ],
+            "retention": 90
+        }
+    },
+    "performance": {
+        "batchSize": 100,
+        "throttle": 1000,
+        "maxConcurrentBackups": 1,
+        "asyncOperations": true
+    }
+}

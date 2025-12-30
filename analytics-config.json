@@ -1,0 +1,140 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-29T08:54:18Z",
+    "description": "Advanced Analytics Configuration",
+    "players": [
+        {
+            "id": "p1",
+            "name": "Erling Haaland",
+            "team": "t1",
+            "stats": {
+                "goals": 22,
+                "assists": 5,
+                "appearances": 15,
+                "minutesPlayed": 1350
+            },
+            "passAccuracy": 78,
+            "last5Matches": [
+                {
+                    "rating": 8.5
+                },
+                {
+                    "rating": 9.2
+                },
+                {
+                    "rating": 7.8
+                },
+                {
+                    "rating": 8.1
+                },
+                {
+                    "rating": 9.0
+                }
+            ]
+        },
+        {
+            "id": "p2",
+            "name": "Mohamed Salah",
+            "team": "t3",
+            "stats": {
+                "goals": 15,
+                "assists": 8,
+                "appearances": 14,
+                "minutesPlayed": 1260
+            },
+            "passAccuracy": 82,
+            "last5Matches": [
+                {
+                    "rating": 8.0
+                },
+                {
+                    "rating": 7.5
+                },
+                {
+                    "rating": 8.3
+                },
+                {
+                    "rating": 7.8
+                },
+                {
+                    "rating": 8.5
+                }
+            ]
+        },
+        {
+            "id": "p3",
+            "name": "Kevin De Bruyne",
+            "team": "t1",
+            "stats": {
+                "goals": 6,
+                "assists": 12,
+                "appearances": 13,
+                "minutesPlayed": 1170
+            },
+            "passAccuracy": 91,
+            "last5Matches": [
+                {
+                    "rating": 8.7
+                },
+                {
+                    "rating": 9.0
+                },
+                {
+                    "rating": 8.2
+                },
+                {
+                    "rating": 8.8
+                },
+                {
+                    "rating": 8.5
+                }
+            ]
+        }
+    ],
+    "teams": [
+        {
+            "id": "t1",
+            "name": "Manchester City",
+            "league": "premier-league",
+            "formGuide": "WWWDW",
+            "stats": {
+                "played": 15,
+                "goalsFor": 38,
+                "goalsAgainst": 10
+            },
+            "avgPossession": 65,
+            "avgShots": 18,
+            "cleanSheets": 8
+        },
+        {
+            "id": "t2",
+            "name": "Arsenal",
+            "league": "premier-league",
+            "formGuide": "WDWWL",
+            "stats": {
+                "played": 15,
+                "goalsFor": 32,
+                "goalsAgainst": 14
+            },
+            "avgPossession": 58,
+            "avgShots": 15,
+            "cleanSheets": 5
+        },
+        {
+            "id": "t3",
+            "name": "Liverpool",
+            "league": "premier-league",
+            "formGuide": "DWWDW",
+            "stats": {
+                "played": 15,
+                "goalsFor": 30,
+                "goalsAgainst": 16
+            },
+            "avgPossession": 60,
+            "avgShots": 16,
+            "cleanSheets": 4
+        }
+    ],
+    "updateInterval": 15000,
+    "formLength": 5
+}

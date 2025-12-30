@@ -1,0 +1,460 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Ad intelligence engine for SPORTIQ - Traffic-based routing and revenue optimization",
+    "trafficTiers": {
+        "tier1": {
+            "name": "Premium Traffic",
+            "countries": [
+                "US",
+                "CA",
+                "UK",
+                "AU",
+                "DE",
+                "FR",
+                "NL",
+                "SE",
+                "NO",
+                "DK"
+            ],
+            "targetCPM": {
+                "min": 5,
+                "max": 15,
+                "average": 10
+            },
+            "adNetworks": [
+                "googleAdX",
+                "mediavine",
+                "ezoic",
+                "adSense"
+            ],
+            "priority": 1,
+            "weight": 100
+        },
+        "tier2": {
+            "name": "Standard Traffic",
+            "countries": [
+                "ES",
+                "IT",
+                "JP",
+                "KR",
+                "SG",
+                "AE",
+                "SA",
+                "IL",
+                "NZ",
+                "IE"
+            ],
+            "targetCPM": {
+                "min": 2,
+                "max": 8,
+                "average": 5
+            },
+            "adNetworks": [
+                "adSense",
+                "mediaNet",
+                "propellerAds"
+            ],
+            "priority": 2,
+            "weight": 80
+        },
+        "tier3": {
+            "name": "Emerging Traffic",
+            "countries": [
+                "IN",
+                "BR",
+                "MX",
+                "ID",
+                "PH",
+                "VN",
+                "TH",
+                "MY",
+                "TR",
+                "PL"
+            ],
+            "targetCPM": {
+                "min": 0.5,
+                "max": 3,
+                "average": 1.5
+            },
+            "adNetworks": [
+                "propellerAds",
+                "adsterra",
+                "popAds"
+            ],
+            "priority": 3,
+            "weight": 60
+        }
+    },
+    "userSegmentation": {
+        "newVisitor": {
+            "definition": "First visit",
+            "visits": 1,
+            "strategy": "non-intrusive",
+            "frequencyCap": {
+                "perSession": 5,
+                "perDay": 15
+            },
+            "adTypes": [
+                "native",
+                "display"
+            ],
+            "priorityScore": 70
+        },
+        "returningVisitor": {
+            "definition": "2-10 visits",
+            "visits": [
+                2,
+                10
+            ],
+            "strategy": "balanced",
+            "frequencyCap": {
+                "perSession": 8,
+                "perDay": 30
+            },
+            "adTypes": [
+                "display",
+                "native",
+                "video"
+            ],
+            "priorityScore": 85
+        },
+        "loyalVisitor": {
+            "definition": "10+ visits",
+            "visits": 11,
+            "strategy": "revenue-maximizing",
+            "frequencyCap": {
+                "perSession": 12,
+                "perDay": 50
+            },
+            "adTypes": [
+                "all"
+            ],
+            "priorityScore": 100
+        },
+        "vipVisitor": {
+            "definition": "High engagement (30+ visits or subscriber)",
+            "visits": 30,
+            "strategy": "relationship-building",
+            "frequencyCap": {
+                "perSession": 10,
+                "perDay": 40
+            },
+            "adTypes": [
+                "premium",
+                "targeted"
+            ],
+            "priorityScore": 95,
+            "specialTreatment": true
+        }
+    },
+    "deviceStrategies": {
+        "desktop": {
+            "adFormats": [
+                "display",
+                "sidebar",
+                "in-content",
+                "video"
+            ],
+            "targetCPM": {
+                "min": 4,
+                "max": 12,
+                "average": 8
+            },
+            "viewabilityTarget": 0.6,
+            "maxAdsPerPage": 8,
+            "adSizes": [
+                "728x90",
+                "300x250",
+                "300x600",
+                "970x250"
+            ],
+            "multiplier": 1.1
+        },
+        "tablet": {
+            "adFormats": [
+                "display",
+                "native",
+                "in-content"
+            ],
+            "targetCPM": {
+                "min": 3,
+                "max": 8,
+                "average": 5.5
+            },
+            "viewabilityTarget": 0.55,
+            "maxAdsPerPage": 6,
+            "adSizes": [
+                "728x90",
+                "300x250",
+                "320x100"
+            ],
+            "multiplier": 1.0
+        },
+        "mobile": {
+            "adFormats": [
+                "native",
+                "in-feed",
+                "banner"
+            ],
+            "targetCPM": {
+                "min": 2,
+                "max": 6,
+                "average": 4
+            },
+            "viewabilityTarget": 0.5,
+            "maxAdsPerPage": 5,
+            "adSizes": [
+                "320x50",
+                "300x250",
+                "320x100"
+            ],
+            "multiplier": 0.9
+        }
+    },
+    "timeOptimization": {
+        "peakHours": {
+            "hours": [
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20
+            ],
+            "strategy": "revenue-maximizing",
+            "cpmMultiplier": 1.1,
+            "frequencyIncrease": 1.2,
+            "adNetworkPriority": [
+                "premium"
+            ]
+        },
+        "offPeak": {
+            "hours": [
+                21,
+                22,
+                23,
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+            ],
+            "strategy": "fill-rate-focused",
+            "cpmMultiplier": 0.95,
+            "frequencyIncrease": 1.0,
+            "adNetworkPriority": [
+                "standard",
+                "fallback"
+            ]
+        },
+        "weekend": {
+            "days": [
+                0,
+                6
+            ],
+            "strategy": "engagement-focused",
+            "cpmMultiplier": 1.15,
+            "adTypes": [
+                "sports-focused",
+                "live-events"
+            ],
+            "targetCTR": 0.8
+        }
+    },
+    "adNetworkIntelligence": {
+        "googleAdX": {
+            "priority": 95,
+            "minTrafficTier": "tier1",
+            "averageCPM": 12,
+            "fillRate": 0.75,
+            "ctrBenchmark": 0.012,
+            "viewability": 0.65,
+            "loadTime": 800,
+            "minImpressions": 50000
+        },
+        "mediavine": {
+            "priority": 90,
+            "minTrafficTier": "tier1",
+            "averageCPM": 10,
+            "fillRate": 0.8,
+            "ctrBenchmark": 0.01,
+            "viewability": 0.6,
+            "loadTime": 900,
+            "minImpressions": 25000
+        },
+        "ezoic": {
+            "priority": 85,
+            "minTrafficTier": "tier1",
+            "averageCPM": 8,
+            "fillRate": 0.85,
+            "ctrBenchmark": 0.009,
+            "viewability": 0.58,
+            "loadTime": 1000,
+            "minImpressions": 10000
+        },
+        "adSense": {
+            "priority": 80,
+            "minTrafficTier": "tier2",
+            "averageCPM": 6,
+            "fillRate": 0.9,
+            "ctrBenchmark": 0.008,
+            "viewability": 0.55,
+            "loadTime": 700
+        },
+        "mediaNet": {
+            "priority": 75,
+            "minTrafficTier": "tier2",
+            "averageCPM": 5,
+            "fillRate": 0.85,
+            "ctrBenchmark": 0.007,
+            "viewability": 0.52,
+            "loadTime": 750
+        },
+        "propellerAds": {
+            "priority": 70,
+            "minTrafficTier": "tier3",
+            "averageCPM": 2.5,
+            "fillRate": 0.95,
+            "ctrBenchmark": 0.006,
+            "viewability": 0.5,
+            "loadTime": 600
+        },
+        "adsterra": {
+            "priority": 65,
+            "minTrafficTier": "tier3",
+            "averageCPM": 2,
+            "fillRate": 0.92,
+            "ctrBenchmark": 0.005,
+            "viewability": 0.48,
+            "loadTime": 650
+        }
+    },
+    "decisionLogic": {
+        "scoringWeights": {
+            "cpm": 0.4,
+            "fillRate": 0.2,
+            "ctr": 0.2,
+            "viewability": 0.1,
+            "trafficTier": 0.1
+        },
+        "minScoreThreshold": 50,
+        "penalties": {
+            "highFailureRate": -20,
+            "slowLoadTime": -15,
+            "lowViewability": -10
+        }
+    },
+    "waterfallConfiguration": {
+        "level1": {
+            "name": "Direct Campaigns",
+            "cpmRange": [
+                12,
+                20
+            ],
+            "timeout": 2000,
+            "maxWaitTime": 2000
+        },
+        "level2": {
+            "name": "Premium Networks",
+            "networks": [
+                "googleAdX",
+                "mediavine",
+                "ezoic"
+            ],
+            "cpmRange": [
+                8,
+                15
+            ],
+            "timeout": 1500
+        },
+        "level3": {
+            "name": "Standard Networks",
+            "networks": [
+                "adSense",
+                "mediaNet"
+            ],
+            "cpmRange": [
+                5,
+                10
+            ],
+            "timeout": 1200
+        },
+        "level4": {
+            "name": "Fallback Networks",
+            "networks": [
+                "propellerAds",
+                "adsterra"
+            ],
+            "cpmRange": [
+                1,
+                5
+            ],
+            "timeout": 1000
+        },
+        "level5": {
+            "name": "House Ads",
+            "cpm": 0,
+            "fillRate": 1.0,
+            "description": "Always available backup"
+        }
+    },
+    "abTesting": {
+        "enabled": true,
+        "scenarios": [
+            {
+                "id": "placement_test_1",
+                "name": "Sidebar vs In-Content",
+                "variants": [
+                    "sidebar_300x600",
+                    "in-content_300x250"
+                ],
+                "split": 0.5,
+                "minImpressions": 1000,
+                "duration": 7
+            },
+            {
+                "id": "network_test_1",
+                "name": "AdSense vs Media.net",
+                "variants": [
+                    "adSense",
+                    "mediaNet"
+                ],
+                "split": 0.5,
+                "minImpressions": 2000,
+                "duration": 14
+            }
+        ],
+        "metrics": [
+            "cpm",
+            "ctr",
+            "revenue",
+            "viewability"
+        ]
+    },
+    "realTimeOptimization": {
+        "enabled": true,
+        "checkInterval": 3600000,
+        "metricsToTrack": [
+            "cpm",
+            "fillRate",
+            "ctr",
+            "revenue"
+        ],
+        "autoAdjust": {
+            "enabled": true,
+            "minDataPoints": 100,
+            "confidenceThreshold": 0.95
+        }
+    }
+}

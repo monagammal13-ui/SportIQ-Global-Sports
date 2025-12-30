@@ -1,0 +1,395 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Complete API integration and external data system for SPORTIQ",
+    "apiConnectors": {
+        "sportsData": {
+            "name": "SportsData.io",
+            "enabled": true,
+            "baseUrl": "https://api.sportsdata.io/v3",
+            "authentication": {
+                "type": "apiKey",
+                "keyLocation": "query",
+                "keyName": "key",
+                "apiKey": "YOUR_SPORTSDATA_API_KEY"
+            },
+            "rateLimit": {
+                "requestsPerMinute": 60,
+                "requestsPerDay": 10000,
+                "strategy": "sliding-window"
+            },
+            "endpoints": {
+                "liveScores": {
+                    "path": "/soccer/scores/json/GamesByDate/{date}",
+                    "method": "GET",
+                    "cacheTTL": 30,
+                    "retryAttempts": 3
+                },
+                "fixtures": {
+                    "path": "/soccer/scores/json/Schedule/{season}",
+                    "method": "GET",
+                    "cacheTTL": 3600,
+                    "retryAttempts": 2
+                },
+                "standings": {
+                    "path": "/soccer/scores/json/Standings/{season}",
+                    "method": "GET",
+                    "cacheTTL": 900,
+                    "retryAttempts": 2
+                },
+                "teams": {
+                    "path": "/soccer/scores/json/Teams",
+                    "method": "GET",
+                    "cacheTTL": 86400,
+                    "retryAttempts": 1
+                },
+                "players": {
+                    "path": "/soccer/scores/json/PlayersBasic/{team}",
+                    "method": "GET",
+                    "cacheTTL": 86400,
+                    "retryAttempts": 1
+                }
+            }
+        },
+        "apiFootball": {
+            "name": "API-Football",
+            "enabled": true,
+            "baseUrl": "https://api-football-v1.p.rapidapi.com/v3",
+            "authentication": {
+                "type": "header",
+                "headers": {
+                    "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
+                    "x-rapidapi-key": "YOUR_RAPIDAPI_KEY"
+                }
+            },
+            "rateLimit": {
+                "requestsPerMinute": 30,
+                "requestsPerDay": 1000,
+                "strategy": "token-bucket"
+            },
+            "endpoints": {
+                "fixtures": {
+                    "path": "/fixtures",
+                    "method": "GET",
+                    "params": {
+                        "league": "required",
+                        "season": "required",
+                        "date": "optional"
+                    },
+                    "cacheTTL": 300,
+                    "retryAttempts": 3
+                },
+                "standings": {
+                    "path": "/standings",
+                    "method": "GET",
+                    "params": {
+                        "league": "required",
+                        "season": "required"
+                    },
+                    "cacheTTL": 900,
+                    "retryAttempts": 2
+                },
+                "topScorers": {
+                    "path": "/players/topscorers",
+                    "method": "GET",
+                    "params": {
+                        "league": "required",
+                        "season": "required"
+                    },
+                    "cacheTTL": 3600,
+                    "retryAttempts": 2
+                }
+            }
+        },
+        "newsAPI": {
+            "name": "NewsAPI.org",
+            "enabled": true,
+            "baseUrl": "https://newsapi.org/v2",
+            "authentication": {
+                "type": "apiKey",
+                "keyLocation": "query",
+                "keyName": "apiKey",
+                "apiKey": "YOUR_NEWSAPI_KEY"
+            },
+            "rateLimit": {
+                "requestsPerMinute": 10,
+                "requestsPerDay": 1000,
+                "strategy": "fixed-window"
+            },
+            "endpoints": {
+                "topHeadlines": {
+                    "path": "/top-headlines",
+                    "method": "GET",
+                    "params": {
+                        "category": "sports",
+                        "country": "optional",
+                        "pageSize": 50
+                    },
+                    "cacheTTL": 300,
+                    "retryAttempts": 2
+                },
+                "everything": {
+                    "path": "/everything",
+                    "method": "GET",
+                    "params": {
+                        "q": "required",
+                        "sortBy": "publishedAt",
+                        "pageSize": 50
+                    },
+                    "cacheTTL": 600,
+                    "retryAttempts": 2
+                }
+            }
+        },
+        "twitterAPI": {
+            "name": "Twitter API v2",
+            "enabled": false,
+            "baseUrl": "https://api.twitter.com/2",
+            "authentication": {
+                "type": "bearer",
+                "token": "YOUR_TWITTER_BEARER_TOKEN"
+            },
+            "rateLimit": {
+                "requestsPerMinute": 60,
+                "requestsPerDay": 10000,
+                "strategy": "sliding-window"
+            },
+            "endpoints": {
+                "search": {
+                    "path": "/tweets/search/recent",
+                    "method": "GET",
+                    "params": {
+                        "query": "required",
+                        "max_results": 100
+                    },
+                    "cacheTTL": 300,
+                    "retryAttempts": 2
+                },
+                "userTweets": {
+                    "path": "/users/{id}/tweets",
+                    "method": "GET",
+                    "params": {
+                        "max_results": 100
+                    },
+                    "cacheTTL": 600,
+                    "retryAttempts": 2
+                }
+            }
+        },
+        "youtubeAPI": {
+            "name": "YouTube Data API v3",
+            "enabled": true,
+            "baseUrl": "https://www.googleapis.com/youtube/v3",
+            "authentication": {
+                "type": "apiKey",
+                "keyLocation": "query",
+                "keyName": "key",
+                "apiKey": "YOUR_YOUTUBE_API_KEY"
+            },
+            "rateLimit": {
+                "requestsPerMinute": 100,
+                "requestsPerDay": 10000,
+                "strategy": "quota-based"
+            },
+            "endpoints": {
+                "search": {
+                    "path": "/search",
+                    "method": "GET",
+                    "params": {
+                        "part": "snippet",
+                        "q": "required",
+                        "type": "video",
+                        "maxResults": 50
+                    },
+                    "cacheTTL": 3600,
+                    "retryAttempts": 2
+                },
+                "videos": {
+                    "path": "/videos",
+                    "method": "GET",
+                    "params": {
+                        "part": "snippet,contentDetails,statistics",
+                        "id": "required"
+                    },
+                    "cacheTTL": 7200,
+                    "retryAttempts": 2
+                }
+            }
+        },
+        "weatherAPI": {
+            "name": "OpenWeatherMap",
+            "enabled": true,
+            "baseUrl": "https://api.openweathermap.org/data/2.5",
+            "authentication": {
+                "type": "apiKey",
+                "keyLocation": "query",
+                "keyName": "appid",
+                "apiKey": "YOUR_OPENWEATHER_API_KEY"
+            },
+            "rateLimit": {
+                "requestsPerMinute": 60,
+                "requestsPerDay": 1000,
+                "strategy": "sliding-window"
+            },
+            "endpoints": {
+                "current": {
+                    "path": "/weather",
+                    "method": "GET",
+                    "params": {
+                        "lat": "required",
+                        "lon": "required",
+                        "units": "metric"
+                    },
+                    "cacheTTL": 1800,
+                    "retryAttempts": 2
+                }
+            }
+        }
+    },
+    "dataTransformation": {
+        "football": {
+            "matchData": {
+                "input": "api_response",
+                "output": "normalized_match",
+                "mapping": {
+                    "id": "fixture.id || game_id || match_id",
+                    "homeTeam": "teams.home.name || home_team || homeTeam",
+                    "awayTeam": "teams.away.name || away_team || awayTeam",
+                    "homeScore": "goals.home || score.home || homeScore",
+                    "awayScore": "goals.away || score.away || awayScore",
+                    "status": "fixture.status.long || status || state",
+                    "date": "fixture.date || date || kickoff",
+                    "venue": "fixture.venue.name || venue || stadium"
+                },
+                "transformations": {
+                    "status": "normalizeStatus()",
+                    "date": "parseISO8601()",
+                    "homeTeam": "sanitizeName()",
+                    "awayTeam": "sanitizeName()"
+                }
+            },
+            "playerData": {
+                "input": "api_response",
+                "output": "normalized_player",
+                "mapping": {
+                    "id": "player.id",
+                    "name": "player.name",
+                    "position": "statistics.position || position",
+                    "number": "statistics.number || number",
+                    "team": "statistics.team.name || team"
+                }
+            }
+        },
+        "newsArticle": {
+            "input": "api_response",
+            "output": "normalized_article",
+            "mapping": {
+                "title": "title",
+                "description": "description || content || summary",
+                "url": "url || link",
+                "image": "urlToImage || image || thumbnail",
+                "publishedAt": "publishedAt || pubDate || published",
+                "source": "source.name || source"
+            },
+            "transformations": {
+                "title": "sanitizeHtml()",
+                "description": "truncate(300)",
+                "publishedAt": "parseDate()",
+                "image": "validateImageUrl()"
+            }
+        }
+    },
+    "errorHandling": {
+        "retryStrategy": {
+            "maxAttempts": 3,
+            "initialDelay": 1000,
+            "backoffMultiplier": 2,
+            "maxDelay": 10000,
+            "retryableStatuses": [
+                408,
+                429,
+                500,
+                502,
+                503,
+                504
+            ]
+        },
+        "fallbackBehavior": {
+            "useCachedData": true,
+            "maxStaleTime": 300000,
+            "fallbackToSecondaryAPI": true,
+            "returnPlaceholder": true
+        },
+        "errorLogging": {
+            "enabled": true,
+            "logLevel": "error",
+            "includeStackTrace": false,
+            "includeRequestDetails": true,
+            "destination": "/logs/api-errors.log"
+        }
+    },
+    "caching": {
+        "strategy": "multi-tier",
+        "layers": {
+            "memory": {
+                "enabled": true,
+                "maxSize": 100,
+                "ttl": 300
+            },
+            "localStorage": {
+                "enabled": true,
+                "maxSize": 1000,
+                "ttl": 3600
+            },
+            "sessionStorage": {
+                "enabled": true,
+                "maxSize": 500,
+                "ttl": 1800
+            }
+        },
+        "invalidation": {
+            "onUpdate": true,
+            "onError": false,
+            "manual": true
+        }
+    },
+    "requestOptimization": {
+        "batching": {
+            "enabled": true,
+            "maxBatchSize": 10,
+            "batchDelay": 50
+        },
+        "deduplication": {
+            "enabled": true,
+            "timeWindow": 1000
+        },
+        "compression": {
+            "enabled": true,
+            "acceptEncoding": "gzip, deflate, br"
+        }
+    },
+    "monitoring": {
+        "enabled": true,
+        "metrics": {
+            "requestCount": true,
+            "responseTime": true,
+            "errorRate": true,
+            "cacheHitRate": true,
+            "apiCosts": true
+        },
+        "alerts": {
+            "highErrorRate": {
+                "threshold": 0.1,
+                "action": "notify"
+            },
+            "slowResponse": {
+                "threshold": 5000,
+                "action": "log"
+            },
+            "rateLimitApproaching": {
+                "threshold": 0.9,
+                "action": "throttle"
+            }
+        }
+    }
+}

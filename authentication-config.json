@@ -1,0 +1,382 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Complete authentication and user account system for SPORTIQ",
+    "registration": {
+        "enabled": true,
+        "methods": {
+            "email": {
+                "enabled": true,
+                "requireVerification": true,
+                "verificationExpiry": 86400000,
+                "allowedDomains": "all",
+                "blockedDomains": [
+                    "tempmail.com",
+                    "throwaway.email"
+                ]
+            },
+            "googleOAuth": {
+                "enabled": true,
+                "clientId": "YOUR_GOOGLE_CLIENT_ID",
+                "clientSecret": "YOUR_GOOGLE_CLIENT_SECRET",
+                "scope": [
+                    "profile",
+                    "email"
+                ],
+                "autoCreateAccount": true
+            },
+            "facebookOAuth": {
+                "enabled": true,
+                "appId": "YOUR_FACEBOOK_APP_ID",
+                "appSecret": "YOUR_FACEBOOK_APP_SECRET",
+                "scope": [
+                    "email",
+                    "public_profile"
+                ],
+                "autoCreateAccount": true
+            },
+            "appleSignIn": {
+                "enabled": false,
+                "clientId": "YOUR_APPLE_CLIENT_ID",
+                "teamId": "YOUR_APPLE_TEAM_ID",
+                "keyId": "YOUR_APPLE_KEY_ID",
+                "autoCreateAccount": true
+            },
+            "twitterOAuth": {
+                "enabled": false,
+                "consumerKey": "YOUR_TWITTER_CONSUMER_KEY",
+                "consumerSecret": "YOUR_TWITTER_CONSUMER_SECRET",
+                "autoCreateAccount": true
+            }
+        },
+        "fields": {
+            "email": {
+                "required": true,
+                "unique": true,
+                "validation": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+            },
+            "username": {
+                "required": true,
+                "unique": true,
+                "minLength": 3,
+                "maxLength": 30,
+                "validation": "^[a-zA-Z0-9_-]+$",
+                "reservedNames": [
+                    "admin",
+                    "root",
+                    "sportiq",
+                    "moderator"
+                ]
+            },
+            "password": {
+                "required": true,
+                "minLength": 8,
+                "maxLength": 128,
+                "requireUppercase": true,
+                "requireLowercase": true,
+                "requireNumber": true,
+                "requireSpecial": true,
+                "commonPasswordCheck": true,
+                "breachCheck": false
+            },
+            "fullName": {
+                "required": false,
+                "minLength": 2,
+                "maxLength": 100
+            },
+            "favoriteTeams": {
+                "required": false,
+                "type": "array",
+                "maxItems": 10
+            },
+            "termsAccepted": {
+                "required": true,
+                "value": true
+            }
+        },
+        "postRegistration": {
+            "sendWelcomeEmail": true,
+            "autoLogin": true,
+            "redirectTo": "/profile/setup",
+            "createDefaultPreferences": true
+        }
+    },
+    "login": {
+        "enabled": true,
+        "methods": {
+            "emailPassword": true,
+            "usernamePassword": true,
+            "socialLogin": true
+        },
+        "options": {
+            "rememberMe": {
+                "enabled": true,
+                "duration": 2592000000,
+                "cookieName": "sportiq_remember"
+            },
+            "multiDevice": {
+                "enabled": true,
+                "maxDevices": 5
+            }
+        },
+        "security": {
+            "rateLimiting": {
+                "enabled": true,
+                "maxAttempts": 5,
+                "windowMs": 900000,
+                "lockoutDuration": 1800000
+            },
+            "captcha": {
+                "enabled": true,
+                "provider": "recaptcha",
+                "showAfterAttempts": 3,
+                "siteKey": "YOUR_RECAPTCHA_SITE_KEY"
+            },
+            "ipTracking": {
+                "enabled": true,
+                "blockSuspiciousIPs": true,
+                "whitelist": []
+            },
+            "deviceFingerprinting": {
+                "enabled": true,
+                "trackNewDevices": true,
+                "notifyNewDevice": true
+            }
+        }
+    },
+    "authentication": {
+        "strategy": "jwt",
+        "jwt": {
+            "secret": "CHANGE_THIS_SECRET_KEY_IN_PRODUCTION",
+            "algorithm": "HS256",
+            "accessToken": {
+                "expiresIn": 86400,
+                "issuer": "sportiq.com",
+                "audience": "sportiq-users"
+            },
+            "refreshToken": {
+                "enabled": true,
+                "expiresIn": 604800,
+                "rotateOnUse": true
+            }
+        },
+        "session": {
+            "cookieName": "sportiq_session",
+            "cookieOptions": {
+                "httpOnly": true,
+                "secure": true,
+                "sameSite": "strict",
+                "maxAge": 86400000
+            },
+            "store": "redis",
+            "timeout": 86400000,
+            "rolling": true
+        }
+    },
+    "passwordSecurity": {
+        "hashing": {
+            "algorithm": "bcrypt",
+            "rounds": 12,
+            "pepper": true
+        },
+        "policy": {
+            "minLength": 8,
+            "maxLength": 128,
+            "requireUppercase": true,
+            "requireLowercase": true,
+            "requireNumber": true,
+            "requireSpecial": true,
+            "preventReuse": 5,
+            "expiryDays": 90,
+            "warnBeforeExpiry": 7
+        },
+        "strength": {
+            "enabled": true,
+            "minStrength": "medium",
+            "showMeter": true
+        }
+    },
+    "passwordRecovery": {
+        "enabled": true,
+        "methods": {
+            "email": {
+                "enabled": true,
+                "tokenExpiry": 3600000,
+                "rateLimit": {
+                    "maxRequests": 3,
+                    "windowMs": 3600000
+                }
+            },
+            "securityQuestions": {
+                "enabled": false,
+                "minQuestions": 3,
+                "requireCorrect": 2
+            },
+            "smsVerification": {
+                "enabled": false,
+                "tokenExpiry": 600000
+            }
+        },
+        "postReset": {
+            "logoutAllDevices": true,
+            "sendConfirmationEmail": true,
+            "requireRelogin": true
+        }
+    },
+    "twoFactorAuth": {
+        "enabled": true,
+        "required": false,
+        "methods": {
+            "totp": {
+                "enabled": true,
+                "issuer": "SPORTIQ",
+                "algorithm": "SHA1",
+                "digits": 6,
+                "period": 30
+            },
+            "sms": {
+                "enabled": false,
+                "provider": "twilio"
+            },
+            "email": {
+                "enabled": true,
+                "codeLength": 6,
+                "expiryTime": 600000
+            },
+            "backupCodes": {
+                "enabled": true,
+                "count": 10,
+                "length": 8
+            }
+        }
+    },
+    "socialLogin": {
+        "enabled": true,
+        "providers": [
+            "google",
+            "facebook"
+        ],
+        "linkAccounts": {
+            "enabled": true,
+            "requireVerification": false
+        },
+        "dataSync": {
+            "profilePicture": true,
+            "name": true,
+            "email": true
+        }
+    },
+    "roles": {
+        "guest": {
+            "id": "guest",
+            "name": "Guest",
+            "permissions": [
+                "read:articles",
+                "view:scores"
+            ],
+            "isDefault": true
+        },
+        "user": {
+            "id": "user",
+            "name": "User",
+            "permissions": [
+                "read:articles",
+                "view:scores",
+                "comment:articles",
+                "like:articles",
+                "save:articles",
+                "follow:teams"
+            ],
+            "isDefault": true
+        },
+        "premium": {
+            "id": "premium",
+            "name": "Premium User",
+            "permissions": [
+                "read:articles",
+                "view:scores",
+                "comment:articles",
+                "like:articles",
+                "save:articles",
+                "follow:teams",
+                "access:premium_content",
+                "no_ads",
+                "priority_support"
+            ]
+        },
+        "editor": {
+            "id": "editor",
+            "name": "Editor",
+            "permissions": [
+                "read:articles",
+                "write:articles",
+                "edit:own_articles",
+                "delete:own_articles",
+                "upload:media"
+            ]
+        },
+        "moderator": {
+            "id": "moderator",
+            "name": "Moderator",
+            "permissions": [
+                "read:articles",
+                "moderate:comments",
+                "ban:users",
+                "delete:comments",
+                "view:reports"
+            ]
+        },
+        "admin": {
+            "id": "admin",
+            "name": "Administrator",
+            "permissions": [
+                "*"
+            ]
+        }
+    },
+    "accountManagement": {
+        "emailVerification": {
+            "required": true,
+            "tokenExpiry": 86400000,
+            "resendLimit": {
+                "maxRequests": 3,
+                "windowMs": 3600000
+            }
+        },
+        "profileUpdate": {
+            "enabled": true,
+            "requireReauth": {
+                "email": true,
+                "password": true
+            }
+        },
+        "accountDeletion": {
+            "enabled": true,
+            "requireReauth": true,
+            "gracePeriod": 2592000000,
+            "dataRetention": 7776000000
+        },
+        "dataExport": {
+            "enabled": true,
+            "format": "json",
+            "includeActivity": true
+        }
+    },
+    "privacy": {
+        "gdprCompliant": true,
+        "ccpaCompliant": true,
+        "dataCollection": {
+            "minimal": true,
+            "consentRequired": true,
+            "purposeLimited": true
+        },
+        "userRights": {
+            "accessData": true,
+            "rectifyData": true,
+            "eraseData": true,
+            "restrictProcessing": true,
+            "dataPortability": true,
+            "objectProcessing": true
+        }
+    }
+}

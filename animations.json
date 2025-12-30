@@ -1,0 +1,293 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Advanced UI/UX animations configuration for SPORTIQ",
+    "globalSettings": {
+        "enabled": true,
+        "respectReducedMotion": true,
+        "performanceMode": "auto",
+        "debugMode": false
+    },
+    "timing": {
+        "instant": 0,
+        "fast": 150,
+        "normal": 300,
+        "slow": 600,
+        "slower": 1000,
+        "slowest": 1500
+    },
+    "easing": {
+        "linear": "linear",
+        "easeIn": "cubic-bezier(0.42, 0, 1, 1)",
+        "easeOut": "cubic-bezier(0, 0, 0.58, 1)",
+        "easeInOut": "cubic-bezier(0.42, 0, 0.58, 1)",
+        "bounce": "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+        "smooth": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "spring": "cubic-bezier(0.17, 0.67, 0.83, 0.67)"
+    },
+    "scrollReveal": {
+        "enabled": true,
+        "threshold": 0.2,
+        "rootMargin": "0px 0px -100px 0px",
+        "once": false,
+        "defaultAnimation": "fadeInUp",
+        "defaultDuration": 600,
+        "defaultDelay": 0,
+        "staggerDelay": 100
+    },
+    "parallax": {
+        "enabled": true,
+        "smooth": true,
+        "mobile": false,
+        "defaultSpeed": 0.5,
+        "speeds": {
+            "slow": 0.3,
+            "medium": 0.5,
+            "fast": 0.8,
+            "reverse": -0.5
+        }
+    },
+    "carousel": {
+        "autoplay": true,
+        "interval": 5000,
+        "loop": true,
+        "drag": true,
+        "touch": true,
+        "keyboard": true,
+        "pauseOnHover": true,
+        "transition": "slide",
+        "transitionDuration": 500,
+        "easing": "ease-out"
+    },
+    "hover": {
+        "lift": {
+            "enabled": true,
+            "distance": "10px",
+            "duration": 300,
+            "easing": "ease-out"
+        },
+        "glow": {
+            "enabled": true,
+            "color": "rgba(99, 102, 241, 0.3)",
+            "blur": "20px",
+            "duration": 300
+        },
+        "tilt": {
+            "enabled": true,
+            "maxAngle": 5,
+            "perspective": 1000,
+            "duration": 300
+        },
+        "zoom": {
+            "enabled": true,
+            "scale": 1.05,
+            "duration": 300
+        }
+    },
+    "loading": {
+        "skeleton": {
+            "enabled": true,
+            "baseColor": "#f0f0f0",
+            "highlightColor": "#e0e0e0",
+            "duration": 1500
+        },
+        "spinner": {
+            "enabled": true,
+            "size": 40,
+            "color": "#6366f1",
+            "duration": 800
+        },
+        "progressBar": {
+            "enabled": true,
+            "height": 3,
+            "color": "#6366f1",
+            "duration": 300
+        }
+    },
+    "microInteractions": {
+        "like": {
+            "animation": "heartBeat",
+            "duration": 600,
+            "scale": 1.3
+        },
+        "share": {
+            "animation": "pulse",
+            "duration": 500
+        },
+        "notification": {
+            "animation": "bounce",
+            "duration": 500
+        },
+        "ripple": {
+            "enabled": true,
+            "duration": 600,
+            "color": "rgba(255, 255, 255, 0.3)"
+        }
+    },
+    "smoothScroll": {
+        "enabled": true,
+        "duration": 800,
+        "easing": "smooth",
+        "offset": 80,
+        "updateURL": true
+    },
+    "animations": {
+        "fadeIn": {
+            "from": {
+                "opacity": 0
+            },
+            "to": {
+                "opacity": 1
+            },
+            "duration": 600
+        },
+        "fadeInUp": {
+            "from": {
+                "opacity": 0,
+                "transform": "translateY(40px)"
+            },
+            "to": {
+                "opacity": 1,
+                "transform": "translateY(0)"
+            },
+            "duration": 600
+        },
+        "fadeInDown": {
+            "from": {
+                "opacity": 0,
+                "transform": "translateY(-40px)"
+            },
+            "to": {
+                "opacity": 1,
+                "transform": "translateY(0)"
+            },
+            "duration": 600
+        },
+        "fadeInLeft": {
+            "from": {
+                "opacity": 0,
+                "transform": "translateX(-40px)"
+            },
+            "to": {
+                "opacity": 1,
+                "transform": "translateX(0)"
+            },
+            "duration": 600
+        },
+        "fadeInRight": {
+            "from": {
+                "opacity": 0,
+                "transform": "translateX(40px)"
+            },
+            "to": {
+                "opacity": 1,
+                "transform": "translateX(0)"
+            },
+            "duration": 600
+        },
+        "slideInUp": {
+            "from": {
+                "transform": "translateY(100%)"
+            },
+            "to": {
+                "transform": "translateY(0)"
+            },
+            "duration": 500
+        },
+        "zoomIn": {
+            "from": {
+                "opacity": 0,
+                "transform": "scale(0.3)"
+            },
+            "to": {
+                "opacity": 1,
+                "transform": "scale(1)"
+            },
+            "duration": 600
+        },
+        "bounceIn": {
+            "keyframes": [
+                {
+                    "opacity": 0,
+                    "transform": "scale(0.3)"
+                },
+                {
+                    "opacity": 1,
+                    "transform": "scale(1.05)"
+                },
+                {
+                    "transform": "scale(0.9)"
+                },
+                {
+                    "transform": "scale(1)"
+                }
+            ],
+            "duration": 750
+        },
+        "heartBeat": {
+            "keyframes": [
+                {
+                    "transform": "scale(1)"
+                },
+                {
+                    "transform": "scale(1.3)"
+                },
+                {
+                    "transform": "scale(1.1)"
+                },
+                {
+                    "transform": "scale(1.3)"
+                },
+                {
+                    "transform": "scale(1)"
+                }
+            ],
+            "duration": 600
+        },
+        "pulse": {
+            "keyframes": [
+                {
+                    "transform": "scale(1)"
+                },
+                {
+                    "transform": "scale(1.05)"
+                },
+                {
+                    "transform": "scale(1)"
+                }
+            ],
+            "duration": 500
+        }
+    },
+    "responsiveSettings": {
+        "mobile": {
+            "animations": "simplified",
+            "parallax": false,
+            "carousel": {
+                "autoplay": true,
+                "touch": true
+            }
+        },
+        "tablet": {
+            "animations": "medium",
+            "parallax": true,
+            "carousel": {
+                "autoplay": true
+            }
+        },
+        "desktop": {
+            "animations": "full",
+            "parallax": true,
+            "carousel": {
+                "autoplay": true
+            }
+        }
+    },
+    "performance": {
+        "useGPU": true,
+        "reducedMotion": true,
+        "lazyInit": true,
+        "throttleScroll": 16,
+        "debounceResize": 250
+    }
+}

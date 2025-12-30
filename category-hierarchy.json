@@ -1,0 +1,367 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Category hierarchy and filtering configuration for SPORTIQ",
+    "categoryTree": {
+        "sports": [
+            {
+                "id": "football",
+                "name": "Football",
+                "slug": "football",
+                "icon": "⚽",
+                "color": "#00a651",
+                "order": 1,
+                "leagues": [
+                    {
+                        "id": "premier-league",
+                        "name": "Premier League",
+                        "slug": "premier-league",
+                        "country": "England",
+                        "icon": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+                        "teams": [
+                            "manchester-united",
+                            "liverpool",
+                            "chelsea",
+                            "arsenal",
+                            "manchester-city",
+                            "tottenham"
+                        ]
+                    },
+                    {
+                        "id": "champions-league",
+                        "name": "UEFA Champions League",
+                        "slug": "champions-league",
+                        "country": "Europe",
+                        "icon": "🏆",
+                        "teams": []
+                    },
+                    {
+                        "id": "la-liga",
+                        "name": "La Liga",
+                        "slug": "la-liga",
+                        "country": "Spain",
+                        "icon": "🇪🇸",
+                        "teams": [
+                            "real-madrid",
+                            "barcelona",
+                            "atletico-madrid",
+                            "sevilla"
+                        ]
+                    },
+                    {
+                        "id": "serie-a",
+                        "name": "Serie A",
+                        "slug": "serie-a",
+                        "country": "Italy",
+                        "icon": "🇮🇹",
+                        "teams": [
+                            "juventus",
+                            "ac-milan",
+                            "inter-milan",
+                            "napoli"
+                        ]
+                    },
+                    {
+                        "id": "bundesliga",
+                        "name": "Bundesliga",
+                        "slug": "bundesliga",
+                        "country": "Germany",
+                        "icon": "🇩🇪",
+                        "teams": [
+                            "bayern-munich",
+                            "borussia-dortmund",
+                            "rb-leipzig"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "basketball",
+                "name": "Basketball",
+                "slug": "basketball",
+                "icon": "🏀",
+                "color": "#ff6b00",
+                "order": 2,
+                "leagues": [
+                    {
+                        "id": "nba",
+                        "name": "NBA",
+                        "slug": "nba",
+                        "country": "USA",
+                        "icon": "🇺🇸",
+                        "teams": [
+                            "lakers",
+                            "warriors",
+                            "celtics",
+                            "heat",
+                            "bulls",
+                            "knicks"
+                        ]
+                    },
+                    {
+                        "id": "euroleague",
+                        "name": "EuroLeague",
+                        "slug": "euroleague",
+                        "country": "Europe",
+                        "icon": "🇪🇺",
+                        "teams": []
+                    },
+                    {
+                        "id": "ncaa",
+                        "name": "NCAA Basketball",
+                        "slug": "ncaa",
+                        "country": "USA",
+                        "icon": "🎓",
+                        "teams": []
+                    }
+                ]
+            },
+            {
+                "id": "tennis",
+                "name": "Tennis",
+                "slug": "tennis",
+                "icon": "🎾",
+                "color": "#ffd700",
+                "order": 3,
+                "tournaments": [
+                    {
+                        "id": "grand-slam",
+                        "name": "Grand Slam",
+                        "slug": "grand-slam",
+                        "events": [
+                            "australian-open",
+                            "french-open",
+                            "wimbledon",
+                            "us-open"
+                        ]
+                    },
+                    {
+                        "id": "atp",
+                        "name": "ATP Tour",
+                        "slug": "atp"
+                    },
+                    {
+                        "id": "wta",
+                        "name": "WTA Tour",
+                        "slug": "wta"
+                    }
+                ]
+            },
+            {
+                "id": "cricket",
+                "name": "Cricket",
+                "slug": "cricket",
+                "icon": "🏏",
+                "color": "#0066cc",
+                "order": 4,
+                "formats": [
+                    {
+                        "id": "ipl",
+                        "name": "Indian Premier League",
+                        "slug": "ipl",
+                        "country": "India",
+                        "icon": "🇮🇳"
+                    },
+                    {
+                        "id": "test",
+                        "name": "Test Cricket",
+                        "slug": "test"
+                    },
+                    {
+                        "id": "t20",
+                        "name": "T20",
+                        "slug": "t20"
+                    },
+                    {
+                        "id": "odi",
+                        "name": "One Day International",
+                        "slug": "odi"
+                    }
+                ]
+            }
+        ]
+    },
+    "filters": {
+        "global": {
+            "enabled": true,
+            "position": "top",
+            "sticky": false,
+            "filters": [
+                {
+                    "id": "sport",
+                    "label": "Sport",
+                    "type": "dropdown",
+                    "multiple": false,
+                    "options": [
+                        {
+                            "value": "all",
+                            "label": "All Sports"
+                        },
+                        {
+                            "value": "football",
+                            "label": "Football"
+                        },
+                        {
+                            "value": "basketball",
+                            "label": "Basketball"
+                        },
+                        {
+                            "value": "tennis",
+                            "label": "Tennis"
+                        },
+                        {
+                            "value": "cricket",
+                            "label": "Cricket"
+                        }
+                    ]
+                },
+                {
+                    "id": "league",
+                    "label": "League",
+                    "type": "dropdown",
+                    "multiple": false,
+                    "dependsOn": "sport",
+                    "options": []
+                },
+                {
+                    "id": "team",
+                    "label": "Team",
+                    "type": "dropdown",
+                    "multiple": false,
+                    "dependsOn": "league",
+                    "options": []
+                },
+                {
+                    "id": "date",
+                    "label": "Date",
+                    "type": "dropdown",
+                    "multiple": false,
+                    "options": [
+                        {
+                            "value": "today",
+                            "label": "Today"
+                        },
+                        {
+                            "value": "yesterday",
+                            "label": "Yesterday"
+                        },
+                        {
+                            "value": "week",
+                            "label": "This Week"
+                        },
+                        {
+                            "value": "month",
+                            "label": "This Month"
+                        },
+                        {
+                            "value": "all",
+                            "label": "All Time"
+                        }
+                    ]
+                },
+                {
+                    "id": "type",
+                    "label": "Content Type",
+                    "type": "dropdown",
+                    "multiple": false,
+                    "options": [
+                        {
+                            "value": "all",
+                            "label": "All Types"
+                        },
+                        {
+                            "value": "article",
+                            "label": "Articles"
+                        },
+                        {
+                            "value": "video",
+                            "label": "Videos"
+                        },
+                        {
+                            "value": "gallery",
+                            "label": "Galleries"
+                        },
+                        {
+                            "value": "live",
+                            "label": "Live Coverage"
+                        }
+                    ]
+                }
+            ]
+        },
+        "category": {
+            "enabled": true,
+            "filters": [
+                "league",
+                "team",
+                "date",
+                "type"
+            ]
+        }
+    },
+    "sorting": {
+        "enabled": true,
+        "defaultSort": "latest",
+        "options": [
+            {
+                "id": "latest",
+                "label": "Latest",
+                "field": "publishDate",
+                "order": "desc"
+            },
+            {
+                "id": "popular",
+                "label": "Most Popular",
+                "field": "views",
+                "order": "desc"
+            },
+            {
+                "id": "trending",
+                "label": "Trending",
+                "field": "trendScore",
+                "order": "desc"
+            },
+            {
+                "id": "oldest",
+                "label": "Oldest First",
+                "field": "publishDate",
+                "order": "asc"
+            }
+        ]
+    },
+    "pagination": {
+        "enabled": true,
+        "itemsPerPage": 24,
+        "maxPages": 50,
+        "type": "numeric",
+        "showFirstLast": true,
+        "showPrevNext": true,
+        "maxVisiblePages": 7
+    },
+    "viewModes": {
+        "enabled": true,
+        "default": "grid",
+        "options": [
+            {
+                "id": "grid",
+                "label": "Grid View",
+                "icon": "⊞",
+                "columns": {
+                    "desktop": 3,
+                    "tablet": 2,
+                    "mobile": 1
+                }
+            },
+            {
+                "id": "list",
+                "label": "List View",
+                "icon": "☰",
+                "columns": {
+                    "desktop": 1,
+                    "tablet": 1,
+                    "mobile": 1
+                }
+            }
+        ]
+    }
+}

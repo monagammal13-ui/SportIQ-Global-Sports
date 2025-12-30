@@ -1,0 +1,184 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Global event calendars configuration for SPORTIQ platform",
+    "eventSources": {
+        "football": {
+            "enabled": true,
+            "leagues": [
+                "Premier League",
+                "La Liga",
+                "Serie A",
+                "Bundesliga",
+                "Ligue 1",
+                "Champions League",
+                "Europa League",
+                "World Cup",
+                "Euro Championship"
+            ],
+            "updateInterval": 300000
+        },
+        "basketball": {
+            "enabled": true,
+            "leagues": [
+                "NBA",
+                "EuroLeague",
+                "FIBA"
+            ],
+            "updateInterval": 300000
+        },
+        "tennis": {
+            "enabled": true,
+            "tournaments": [
+                "Grand Slam",
+                "ATP Masters",
+                "WTA Premier"
+            ],
+            "updateInterval": 600000
+        },
+        "cricket": {
+            "enabled": true,
+            "formats": [
+                "Test",
+                "ODI",
+                "T20",
+                "IPL"
+            ],
+            "updateInterval": 300000
+        }
+    },
+    "calendarConfig": {
+        "defaultView": "month",
+        "views": [
+            "day",
+            "week",
+            "month",
+            "list"
+        ],
+        "timeZone": "auto",
+        "firstDayOfWeek": 1,
+        "showWeekNumbers": true
+    },
+    "eventTypes": {
+        "live": {
+            "color": "#ef4444",
+            "icon": "🔴",
+            "priority": 1,
+            "autoUpdate": true
+        },
+        "upcoming": {
+            "color": "#f59e0b",
+            "icon": "📅",
+            "priority": 2,
+            "autoUpdate": false
+        },
+        "finished": {
+            "color": "#6b7280",
+            "icon": "✓",
+            "priority": 3,
+            "autoUpdate": false
+        },
+        "postponed": {
+            "color": "#8b5cf6",
+            "icon": "⏸",
+            "priority": 4,
+            "autoUpdate": false
+        }
+    },
+    "eventData": [
+        {
+            "id": "evt001",
+            "title": "Premier League: Manchester United vs Liverpool",
+            "sport": "football",
+            "league": "Premier League",
+            "startDate": "2025-12-28T15:00:00Z",
+            "endDate": "2025-12-28T16:45:00Z",
+            "venue": "Old Trafford",
+            "status": "upcoming",
+            "teams": {
+                "home": "Manchester United",
+                "away": "Liverpool"
+            }
+        },
+        {
+            "id": "evt002",
+            "title": "NBA: Lakers vs Warriors",
+            "sport": "basketball",
+            "league": "NBA",
+            "startDate": "2025-12-28T20:00:00Z",
+            "endDate": "2025-12-28T22:30:00Z",
+            "venue": "Crypto.com Arena",
+            "status": "upcoming",
+            "teams": {
+                "home": "Los Angeles Lakers",
+                "away": "Golden State Warriors"
+            }
+        },
+        {
+            "id": "evt003",
+            "title": "Champions League: Real Madrid vs Bayern Munich",
+            "sport": "football",
+            "league": "Champions League",
+            "startDate": "2025-12-29T20:00:00Z",
+            "endDate": "2025-12-29T21:45:00Z",
+            "venue": "Santiago Bernabéu",
+            "status": "upcoming",
+            "teams": {
+                "home": "Real Madrid",
+                "away": "Bayern Munich"
+            }
+        }
+    ],
+    "filters": {
+        "sports": [
+            "all",
+            "football",
+            "basketball",
+            "tennis",
+            "cricket"
+        ],
+        "leagues": [
+            "all",
+            "Premier League",
+            "NBA",
+            "Champions League",
+            "Grand Slam"
+        ],
+        "status": [
+            "all",
+            "live",
+            "upcoming",
+            "finished"
+        ]
+    },
+    "autoUpdate": {
+        "enabled": true,
+        "liveEvents": 30000,
+        "upcomingEvents": 300000,
+        "finishedEvents": 3600000
+    },
+    "notifications": {
+        "enabled": true,
+        "eventStart": true,
+        "eventEnd": false,
+        "scoreUpdate": true,
+        "reminderMinutes": [
+            60,
+            15
+        ]
+    },
+    "integration": {
+        "googleCalendar": {
+            "enabled": true,
+            "syncEnabled": true
+        },
+        "iCal": {
+            "enabled": true,
+            "downloadEnabled": true
+        },
+        "outlook": {
+            "enabled": true,
+            "syncEnabled": true
+        }
+    }
+}

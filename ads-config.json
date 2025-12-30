@@ -1,0 +1,73 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-29T09:10:50Z",
+    "description": "Sponsorship & Ads Configuration",
+    "settings": {
+        "rotationInterval": 15000,
+        "impressionThreshold": 1000
+    },
+    "placements": [
+        {
+            "id": "sidebar_top",
+            "type": "banner",
+            "format": "square",
+            "rotate": true,
+            "interval": 12000
+        },
+        {
+            "id": "content_inline",
+            "type": "text",
+            "format": "native",
+            "rotate": true,
+            "interval": 20000
+        },
+        {
+            "id": "footer_banner",
+            "type": "banner",
+            "format": "leaderboard",
+            "rotate": true,
+            "interval": 30000
+        }
+    ],
+    "inventory": [
+        {
+            "id": "ad1",
+            "title": "Official Kit Sponsor",
+            "description": "Get 20% off all official merchandise.",
+            "image": "https://via.placeholder.com/300x250/1e40af/ffffff?text=Official+Sponsor",
+            "url": "#",
+            "type": "banner",
+            "format": "square",
+            "priority": 10
+        },
+        {
+            "id": "ad2",
+            "title": "Betting Partner",
+            "description": "New users get $50 free bet.",
+            "image": "https://via.placeholder.com/300x250/10b981/ffffff?text=Bet+Global",
+            "url": "#",
+            "type": "banner",
+            "format": "square",
+            "priority": 8
+        },
+        {
+            "id": "ad3",
+            "title": "Streaming Service",
+            "description": "Watch every match live in HD.",
+            "image": "https://via.placeholder.com/728x90/ef4444/ffffff?text=Live+Sports+TV",
+            "url": "#",
+            "type": "banner",
+            "format": "leaderboard",
+            "priority": 9
+        },
+        {
+            "id": "ad4",
+            "title": "Fantasy League",
+            "description": "Join millions playing Global Fantasy. Sign up today!",
+            "url": "#",
+            "type": "text",
+            "format": "native",
+            "priority": 7
+        }
+    ]
+}

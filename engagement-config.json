@@ -1,0 +1,57 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-29T08:32:37Z",
+    "description": "User Engagement & Interaction Configuration",
+    "reactions": {
+        "enabled": true,
+        "types": [
+            "👍",
+            "❤️",
+            "😂",
+            "😮",
+            "😢",
+            "😡"
+        ],
+        "allowMultiple": false
+    },
+    "comments": {
+        "enabled": true,
+        "maxLength": 500,
+        "requireAuth": false,
+        "moderation": "auto",
+        "spamDetection": true,
+        "allowReplies": true,
+        "allowEditing": false
+    },
+    "ratings": {
+        "enabled": true,
+        "scale": 5,
+        "allowHalfStars": false,
+        "requireAuth": false
+    },
+    "likes": {
+        "enabled": true,
+        "anonymous": true
+    },
+    "reporting": {
+        "enabled": true,
+        "reasons": [
+            "spam",
+            "abuse",
+            "inappropriate",
+            "misleading",
+            "other"
+        ],
+        "requireAuth": false
+    },
+    "autoSync": {
+        "enabled": true,
+        "interval": 5000
+    },
+    "limits": {
+        "commentsPerHour": 10,
+        "likesPerHour": 50,
+        "ratingsPerDay": 20,
+        "reportsPerDay": 5
+    }
+}

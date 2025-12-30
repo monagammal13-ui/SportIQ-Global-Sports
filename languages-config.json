@@ -1,0 +1,75 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-29T09:03:00Z",
+    "defaultLanguage": "en",
+    "supportedLanguages": [
+        {
+            "code": "en",
+            "name": "English",
+            "flag": "🇬🇧"
+        },
+        {
+            "code": "es",
+            "name": "Español",
+            "flag": "🇪🇸"
+        },
+        {
+            "code": "de",
+            "name": "Deutsch",
+            "flag": "🇩🇪"
+        },
+        {
+            "code": "fr",
+            "name": "Français",
+            "flag": "🇫🇷"
+        },
+        {
+            "code": "ar",
+            "name": "العربية",
+            "flag": "🇸🇦",
+            "dir": "rtl"
+        }
+    ],
+    "translations": {
+        "en": {
+            "menu_home": "Home",
+            "menu_live": "Live Scores",
+            "menu_news": "News",
+            "widgets_trending": "Trending Now",
+            "widgets_polls": "Fan Polls",
+            "footer_rights": "All rights reserved © 2025 Sport IQ"
+        },
+        "es": {
+            "menu_home": "Inicio",
+            "menu_live": "Resultados en vivo",
+            "menu_news": "Noticias",
+            "widgets_trending": "Tendencias",
+            "widgets_polls": "Encuestas",
+            "footer_rights": "Todos los derechos reservados © 2025 Sport IQ"
+        },
+        "de": {
+            "menu_home": "Startseite",
+            "menu_live": "Alle Spiele",
+            "menu_news": "Nachrichten",
+            "widgets_trending": "Im Trend",
+            "widgets_polls": "Umfragen",
+            "footer_rights": "Alle Rechte vorbehalten © 2025 Sport IQ"
+        },
+        "fr": {
+            "menu_home": "Accueil",
+            "menu_live": "Scores en direct",
+            "menu_news": "Actualités",
+            "widgets_trending": "Tendances",
+            "widgets_polls": "Sondages",
+            "footer_rights": "Tous droits réservés © 2025 Sport IQ"
+        },
+        "ar": {
+            "menu_home": "الرئيسية",
+            "menu_live": "النتائج المباشرة",
+            "menu_news": "الأخبار",
+            "widgets_trending": "الأكثر تداولاً",
+            "widgets_polls": "استطلاعات الرأي",
+            "footer_rights": "جميع الحقوق محفوظة © 2025 Sport IQ"
+        }
+    }
+}

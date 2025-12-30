@@ -1,0 +1,324 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Analytics and tracking configuration for SPORTIQ platform",
+    "platforms": {
+        "googleAnalytics": {
+            "enabled": true,
+            "measurementId": "G-XXXXXXXXXX",
+            "trackingId": "UA-XXXXXXXXX-X",
+            "version": "GA4",
+            "features": {
+                "pageViews": true,
+                "events": true,
+                "ecommerce": false,
+                "userProperties": true,
+                "customDimensions": true,
+                "enhancedMeasurement": true,
+                "demographics": true,
+                "interests": true
+            },
+            "config": {
+                "anonymizeIp": true,
+                "cookieExpires": 63072000,
+                "siteSpeedSampleRate": 10,
+                "allowLinker": true,
+                "allowAdFeatures": true
+            }
+        },
+        "facebookPixel": {
+            "enabled": true,
+            "pixelId": "XXXXXXXXXXXXXXX",
+            "features": {
+                "pageView": true,
+                "customEvents": true,
+                "standardEvents": true,
+                "conversionTracking": true,
+                "audienceBuilding": true
+            }
+        },
+        "googleTagManager": {
+            "enabled": false,
+            "containerId": "GTM-XXXXXXX",
+            "dataLayer": "dataLayer"
+        },
+        "customAnalytics": {
+            "enabled": true,
+            "endpoint": "/api/analytics/track",
+            "batchEvents": true,
+            "batchSize": 10,
+            "flushInterval": 30000
+        }
+    },
+    "events": {
+        "pageView": {
+            "enabled": true,
+            "trackTitle": true,
+            "trackUrl": true,
+            "trackReferrer": true,
+            "trackUtmParams": true,
+            "customDimensions": [
+                "category",
+                "tag",
+                "author"
+            ]
+        },
+        "scroll": {
+            "enabled": true,
+            "thresholds": [
+                25,
+                50,
+                75,
+                100
+            ],
+            "event": "scroll_depth"
+        },
+        "timeOnPage": {
+            "enabled": true,
+            "intervals": [
+                30,
+                60,
+                120,
+                300
+            ],
+            "event": "time_on_page"
+        },
+        "clicks": {
+            "enabled": true,
+            "trackAll": false,
+            "selectors": [
+                ".nav-link",
+                ".btn",
+                ".card",
+                ".article-link",
+                ".category-link",
+                ".tag-link",
+                ".social-link"
+            ]
+        },
+        "forms": {
+            "enabled": true,
+            "trackSubmit": true,
+            "trackErrors": true,
+            "forms": [
+                "contactForm",
+                "newsletterForm",
+                "commentForm"
+            ]
+        },
+        "downloads": {
+            "enabled": true,
+            "extensions": [
+                "pdf",
+                "doc",
+                "docx",
+                "xls",
+                "xlsx",
+                "zip"
+            ]
+        },
+        "externalLinks": {
+            "enabled": true,
+            "event": "outbound_click",
+            "trackDomain": true
+        },
+        "errors": {
+            "enabled": true,
+            "trackJavaScript": true,
+            "track404": true,
+            "trackAjaxErrors": true
+        }
+    },
+    "customEvents": {
+        "adImpression": {
+            "event": "ad_impression",
+            "category": "Ads",
+            "params": [
+                "adId",
+                "adPosition",
+                "adNetwork",
+                "adType"
+            ]
+        },
+        "adClick": {
+            "event": "ad_click",
+            "category": "Ads",
+            "params": [
+                "adId",
+                "adPosition",
+                "adNetwork",
+                "revenue"
+            ]
+        },
+        "like": {
+            "event": "content_like",
+            "category": "Engagement",
+            "params": [
+                "contentType",
+                "contentId",
+                "contentTitle"
+            ]
+        },
+        "share": {
+            "event": "content_share",
+            "category": "Engagement",
+            "params": [
+                "contentType",
+                "contentId",
+                "platform",
+                "method"
+            ]
+        },
+        "comment": {
+            "event": "add_comment",
+            "category": "Engagement",
+            "params": [
+                "contentId",
+                "commentLength",
+                "hasReply"
+            ]
+        },
+        "rating": {
+            "event": "content_rating",
+            "category": "Engagement",
+            "params": [
+                "contentId",
+                "rating",
+                "ratingType"
+            ]
+        },
+        "newsletterSignup": {
+            "event": "newsletter_signup",
+            "category": "Conversion",
+            "isConversion": true,
+            "conversionValue": 1.0
+        },
+        "contactFormSubmit": {
+            "event": "contact_form_submit",
+            "category": "Conversion",
+            "isConversion": true,
+            "conversionValue": 2.0
+        },
+        "socialFollow": {
+            "event": "social_follow",
+            "category": "Engagement",
+            "params": [
+                "platform"
+            ]
+        },
+        "videoPlay": {
+            "event": "video_play",
+            "category": "Media",
+            "params": [
+                "videoId",
+                "videoTitle",
+                "videoDuration"
+            ]
+        },
+        "videoComplete": {
+            "event": "video_complete",
+            "category": "Media",
+            "params": [
+                "videoId",
+                "watchDuration"
+            ]
+        },
+        "articleStart": {
+            "event": "article_start",
+            "category": "Content",
+            "params": [
+                "articleId",
+                "category",
+                "tags"
+            ]
+        },
+        "articleProgress": {
+            "event": "article_progress",
+            "category": "Content",
+            "params": [
+                "articleId",
+                "progress"
+            ]
+        },
+        "articleComplete": {
+            "event": "article_complete",
+            "category": "Content",
+            "params": [
+                "articleId",
+                "readTime"
+            ]
+        },
+        "search": {
+            "event": "search",
+            "category": "Engagement",
+            "params": [
+                "searchTerm",
+                "resultsCount"
+            ]
+        },
+        "categoryView": {
+            "event": "category_view",
+            "category": "Content",
+            "params": [
+                "categoryName",
+                "categorySlug"
+            ]
+        },
+        "tagView": {
+            "event": "tag_view",
+            "category": "Content",
+            "params": [
+                "tagName",
+                "tagSlug"
+            ]
+        }
+    },
+    "conversions": {
+        "newsletterSignup": {
+            "id": "newsletter_conversion",
+            "value": 1.0,
+            "currency": "USD"
+        },
+        "contactForm": {
+            "id": "contact_conversion",
+            "value": 2.0,
+            "currency": "USD"
+        },
+        "articleComplete": {
+            "id": "engagement_conversion",
+            "value": 0.5,
+            "currency": "USD"
+        }
+    },
+    "userProperties": {
+        "language": true,
+        "deviceType": true,
+        "returningUser": true,
+        "subscriptionStatus": true,
+        "engagementLevel": true,
+        "adBlocker": true
+    },
+    "privacy": {
+        "gdprCompliant": true,
+        "ccpaCompliant": true,
+        "cookieConsent": true,
+        "anonymousTracking": false,
+        "respectDoNotTrack": true,
+        "ipAnonymization": true,
+        "dataRetentionDays": 26,
+        "allowPersonalization": true
+    },
+    "performance": {
+        "sampleRate": 100,
+        "sessionTimeout": 30,
+        "maxEventsPerSession": 500,
+        "debounceScroll": 250,
+        "debounceResize": 500
+    },
+    "debugging": {
+        "enabled": false,
+        "logToConsole": true,
+        "verboseMode": false,
+        "testMode": false
+    }
+}

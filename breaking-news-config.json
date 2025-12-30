@@ -1,0 +1,353 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Breaking news detection and alert system configuration for SPORTIQ",
+    "detectionCriteria": {
+        "automatic": {
+            "enabled": true,
+            "thresholds": {
+                "views1h": 1000,
+                "engagementRate": 0.15,
+                "socialVelocity": 50,
+                "commentVelocity": 20,
+                "shareVelocity": 30
+            },
+            "conditions": "ANY",
+            "minConditionsMet": 2
+        },
+        "manual": {
+            "enabled": true,
+            "adminFlag": true,
+            "editorFlag": true
+        },
+        "eventBased": {
+            "enabled": true,
+            "triggers": {
+                "liveMatchGoal": true,
+                "majorTransfer": true,
+                "managerSacked": true,
+                "playerInjury": true,
+                "recordBroken": true,
+                "controversialEvent": true
+            }
+        }
+    },
+    "priorityLevels": {
+        "critical": {
+            "level": 1,
+            "label": "🔴 BREAKING",
+            "color": "#ff0000",
+            "backgroundColor": "#ffebee",
+            "animation": "pulse",
+            "duration": 3600000,
+            "autoPromote": true,
+            "notify": "all",
+            "criteria": {
+                "views1h": 5000,
+                "engagement": 0.25,
+                "social": 200
+            }
+        },
+        "high": {
+            "level": 2,
+            "label": "🟠 URGENT",
+            "color": "#ff6b00",
+            "backgroundColor": "#fff3e0",
+            "animation": "fade",
+            "duration": 7200000,
+            "autoPromote": true,
+            "notify": "subscribers",
+            "criteria": {
+                "views1h": 2000,
+                "engagement": 0.18,
+                "social": 100
+            }
+        },
+        "medium": {
+            "level": 3,
+            "label": "🟡 IMPORTANT",
+            "color": "#ffa500",
+            "backgroundColor": "#fffbf0",
+            "animation": "none",
+            "duration": 10800000,
+            "autoPromote": false,
+            "notify": "opted-in",
+            "criteria": {
+                "views1h": 1000,
+                "engagement": 0.12,
+                "social": 50
+            }
+        },
+        "low": {
+            "level": 4,
+            "label": "ℹ️ UPDATE",
+            "color": "#2196f3",
+            "backgroundColor": "#e3f2fd",
+            "animation": "none",
+            "duration": 21600000,
+            "autoPromote": false,
+            "notify": "none"
+        }
+    },
+    "breakingNewsTypes": {
+        "transfer": {
+            "enabled": true,
+            "priority": "high",
+            "keywords": [
+                "transfer",
+                "signs",
+                "joins",
+                "deal",
+                "fee"
+            ],
+            "autoDetect": true
+        },
+        "matchResult": {
+            "enabled": true,
+            "priority": "medium",
+            "keywords": [
+                "wins",
+                "loses",
+                "draws",
+                "final score"
+            ],
+            "autoDetect": true
+        },
+        "injury": {
+            "enabled": true,
+            "priority": "medium",
+            "keywords": [
+                "injured",
+                "injury",
+                "out for",
+                "sidelined"
+            ],
+            "autoDetect": true
+        },
+        "managerChange": {
+            "enabled": true,
+            "priority": "high",
+            "keywords": [
+                "sacked",
+                "fired",
+                "appointed",
+                "manager"
+            ],
+            "autoDetect": true
+        },
+        "recordBreaking": {
+            "enabled": true,
+            "priority": "critical",
+            "keywords": [
+                "record",
+                "historic",
+                "first time",
+                "breaks"
+            ],
+            "autoDetect": true
+        },
+        "controversy": {
+            "enabled": true,
+            "priority": "high",
+            "keywords": [
+                "controversy",
+                "scandal",
+                "investigation",
+                "banned"
+            ],
+            "autoDetect": false
+        }
+    },
+    "alertSystem": {
+        "banner": {
+            "enabled": true,
+            "position": "top",
+            "sticky": true,
+            "autoDismiss": true,
+            "dismissAfter": 300000,
+            "maxConcurrent": 1,
+            "priority": "highest-only"
+        },
+        "ticker": {
+            "enabled": true,
+            "position": "below-header",
+            "scrollSpeed": 30,
+            "autoRotate": true,
+            "rotateInterval": 10000
+        },
+        "popup": {
+            "enabled": false,
+            "delay": 5000,
+            "frequency": "once-per-session"
+        },
+        "badge": {
+            "enabled": true,
+            "showOnCard": true,
+            "showInList": true,
+            "animate": true
+        }
+    },
+    "notificationSystem": {
+        "push": {
+            "enabled": true,
+            "triggers": {
+                "critical": true,
+                "high": true,
+                "medium": false,
+                "low": false
+            },
+            "userPreferences": true,
+            "maxPerDay": 10
+        },
+        "email": {
+            "enabled": true,
+            "triggers": {
+                "critical": true,
+                "high": false,
+                "medium": false,
+                "low": false
+            },
+            "immediate": true,
+            "digest": false
+        },
+        "inApp": {
+            "enabled": true,
+            "toast": true,
+            "sound": true,
+            "vibration": true,
+            "badge": true
+        }
+    },
+    "autoPrioritization": {
+        "enabled": true,
+        "homepage": {
+            "critical": {
+                "position": "banner",
+                "count": 1,
+                "sticky": true
+            },
+            "high": {
+                "position": "hero",
+                "count": 1,
+                "featured": true
+            },
+            "medium": {
+                "position": "grid-top",
+                "count": 3
+            }
+        },
+        "categoryPage": {
+            "relevant": true,
+            "position": "top",
+            "count": 2
+        }
+    },
+    "durationRules": {
+        "critical": {
+            "initialDuration": 3600000,
+            "extendIf": {
+                "highEngagement": true,
+                "stillTrending": true
+            },
+            "maxDuration": 14400000
+        },
+        "high": {
+            "initialDuration": 7200000,
+            "maxDuration": 21600000
+        },
+        "medium": {
+            "initialDuration": 10800000,
+            "maxDuration": 43200000
+        },
+        "downgrade": {
+            "enabled": true,
+            "checkInterval": 1800000,
+            "conditions": {
+                "engagementDrops": 0.5,
+                "velocityDrops": 0.7
+            }
+        }
+    },
+    "contentValidation": {
+        "enabled": true,
+        "checks": {
+            "verifySource": true,
+            "checkDuplicate": true,
+            "validateTimestamp": true,
+            "requireImage": false,
+            "minContentLength": 100
+        },
+        "autoReject": {
+            "duplicate": true,
+            "tooOld": true,
+            "lowQuality": true
+        }
+    },
+    "geographicPriority": {
+        "enabled": true,
+        "regions": {
+            "US": {
+                "boost": 1.2,
+                "keywords": [
+                    "NFL",
+                    "NBA",
+                    "MLB",
+                    "NHL"
+                ]
+            },
+            "UK": {
+                "boost": 1.2,
+                "keywords": [
+                    "Premier League",
+                    "Championship"
+                ]
+            },
+            "EU": {
+                "boost": 1.1,
+                "keywords": [
+                    "Champions League",
+                    "Europa"
+                ]
+            },
+            "Global": {
+                "boost": 1.0
+            }
+        }
+    },
+    "socialMediaIntegration": {
+        "autoPost": {
+            "enabled": false,
+            "platforms": [
+                "twitter",
+                "facebook"
+            ],
+            "priorities": [
+                "critical",
+                "high"
+            ]
+        },
+        "hashtagTracking": {
+            "enabled": true,
+            "platforms": [
+                "twitter"
+            ],
+            "updateInterval": 300000
+        }
+    },
+    "analytics": {
+        "trackMetrics": {
+            "alertViews": true,
+            "clickThroughRate": true,
+            "engagementRate": true,
+            "notificationOpenRate": true,
+            "conversionRate": true
+        },
+        "abTesting": {
+            "enabled": true,
+            "tests": [
+                "banner_style",
+                "notification_timing"
+            ]
+        }
+    }
+}

@@ -1,0 +1,435 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Complete high-demand image gallery system for SPORTIQ",
+    "gallery": {
+        "enabled": true,
+        "autoUpdate": true,
+        "targetImagesPerDay": 300,
+        "quality": "high"
+    },
+    "layouts": {
+        "grid": {
+            "enabled": true,
+            "default": true,
+            "columns": {
+                "desktop": 4,
+                "tablet": 3,
+                "mobile": 2
+            },
+            "gap": 16,
+            "aspectRatio": "16:9",
+            "responsive": true
+        },
+        "masonry": {
+            "enabled": true,
+            "columns": {
+                "desktop": 4,
+                "tablet": 3,
+                "mobile": 2
+            },
+            "gap": 12,
+            "preserveAspectRatio": true
+        },
+        "justified": {
+            "enabled": true,
+            "rowHeight": 300,
+            "maxRowHeight": 400,
+            "gap": 4,
+            "lastRow": "left"
+        },
+        "carousel": {
+            "enabled": true,
+            "itemsToShow": 5,
+            "itemsToScroll": 1,
+            "autoplay": false,
+            "interval": 5000,
+            "loop": true,
+            "showDots": true,
+            "showArrows": true
+        },
+        "slideshow": {
+            "enabled": true,
+            "autoplay": true,
+            "interval": 3000,
+            "transition": "fade",
+            "showControls": true,
+            "showThumbnails": true
+        }
+    },
+    "lazyLoading": {
+        "enabled": true,
+        "threshold": 200,
+        "rootMargin": "50px",
+        "placeholder": {
+            "type": "lqip",
+            "blurRadius": 20,
+            "color": "#f3f4f6"
+        },
+        "progressive": {
+            "enabled": true,
+            "stages": [
+                "placeholder",
+                "lowQuality",
+                "highQuality"
+            ],
+            "fadeIn": true,
+            "duration": 300
+        },
+        "preload": {
+            "enabled": true,
+            "count": 5,
+            "priority": "visible"
+        }
+    },
+    "lightbox": {
+        "enabled": true,
+        "features": {
+            "zoom": {
+                "enabled": true,
+                "maxZoom": 3,
+                "minZoom": 1,
+                "step": 0.5,
+                "doubleClickZoom": true
+            },
+            "navigation": {
+                "enabled": true,
+                "arrows": true,
+                "keyboard": true,
+                "swipe": true,
+                "loop": true
+            },
+            "download": {
+                "enabled": true,
+                "requireAuth": false,
+                "watermark": false,
+                "originalQuality": false
+            },
+            "share": {
+                "enabled": true,
+                "platforms": [
+                    "facebook",
+                    "twitter",
+                    "pinterest",
+                    "whatsapp",
+                    "email",
+                    "copy-link"
+                ]
+            },
+            "info": {
+                "enabled": true,
+                "show": [
+                    "title",
+                    "description",
+                    "date",
+                    "photographer",
+                    "tags"
+                ]
+            },
+            "fullscreen": {
+                "enabled": true,
+                "escapeKey": true
+            }
+        },
+        "animations": {
+            "transition": "fade",
+            "duration": 300,
+            "easing": "ease-in-out"
+        },
+        "ui": {
+            "showCounter": true,
+            "showCaption": true,
+            "showCloseButton": true,
+            "backgroundColor": "rgba(0, 0, 0, 0.9)"
+        }
+    },
+    "imageOptimization": {
+        "responsive": {
+            "enabled": true,
+            "srcset": true,
+            "sizes": true,
+            "breakpoints": [
+                320,
+                640,
+                768,
+                1024,
+                1280,
+                1920
+            ]
+        },
+        "formats": {
+            "webp": {
+                "enabled": true,
+                "quality": 85,
+                "fallback": true
+            },
+            "avif": {
+                "enabled": false,
+                "quality": 80
+            },
+            "jpeg": {
+                "enabled": true,
+                "quality": 85,
+                "progressive": true
+            }
+        },
+        "sizes": {
+            "thumbnail": {
+                "width": 320,
+                "height": 180
+            },
+            "small": {
+                "width": 640,
+                "height": 360
+            },
+            "medium": {
+                "width": 1024,
+                "height": 576
+            },
+            "large": {
+                "width": 1920,
+                "height": 1080
+            },
+            "original": {
+                "preserve": true
+            }
+        },
+        "compression": {
+            "enabled": true,
+            "algorithm": "mozjpeg",
+            "level": 80
+        }
+    },
+    "filtering": {
+        "enabled": true,
+        "filters": {
+            "category": {
+                "enabled": true,
+                "options": [
+                    "all",
+                    "match-day",
+                    "training",
+                    "players",
+                    "stadium",
+                    "fans",
+                    "celebrations"
+                ]
+            },
+            "sport": {
+                "enabled": true,
+                "options": [
+                    "all",
+                    "football",
+                    "basketball",
+                    "tennis",
+                    "cricket"
+                ]
+            },
+            "team": {
+                "enabled": true,
+                "searchable": true
+            },
+            "date": {
+                "enabled": true,
+                "options": [
+                    "today",
+                    "week",
+                    "month",
+                    "year",
+                    "all"
+                ],
+                "customRange": true
+            },
+            "orientation": {
+                "enabled": true,
+                "options": [
+                    "all",
+                    "landscape",
+                    "portrait",
+                    "square"
+                ]
+            }
+        },
+        "multiSelect": false,
+        "showCount": true,
+        "applyOn": "change"
+    },
+    "sorting": {
+        "enabled": true,
+        "default": "newest",
+        "options": [
+            {
+                "id": "newest",
+                "label": "Newest First",
+                "field": "uploadedAt",
+                "order": "desc"
+            },
+            {
+                "id": "oldest",
+                "label": "Oldest First",
+                "field": "uploadedAt",
+                "order": "asc"
+            },
+            {
+                "id": "popular",
+                "label": "Most Popular",
+                "field": "views",
+                "order": "desc"
+            },
+            {
+                "id": "trending",
+                "label": "Trending",
+                "field": "trendingScore",
+                "order": "desc"
+            }
+        ]
+    },
+    "infiniteScroll": {
+        "enabled": true,
+        "itemsPerPage": 24,
+        "loadMoreButton": false,
+        "autoLoad": true,
+        "threshold": 300
+    },
+    "metadata": {
+        "required": [
+            "title"
+        ],
+        "optional": [
+            "description",
+            "alt",
+            "photographer",
+            "location",
+            "tags",
+            "teams",
+            "players"
+        ],
+        "exif": {
+            "extract": true,
+            "display": false,
+            "fields": [
+                "camera",
+                "lens",
+                "aperture",
+                "shutterSpeed",
+                "iso"
+            ]
+        }
+    },
+    "socialFeatures": {
+        "likes": {
+            "enabled": true,
+            "requireAuth": true,
+            "showCount": true
+        },
+        "comments": {
+            "enabled": false,
+            "useGlobalComments": true
+        },
+        "sharing": {
+            "enabled": true,
+            "platforms": [
+                "facebook",
+                "twitter",
+                "pinterest",
+                "whatsapp",
+                "email"
+            ],
+            "trackShares": true
+        },
+        "embedding": {
+            "enabled": true,
+            "generateCode": true,
+            "allowResize": true
+        }
+    },
+    "albums": {
+        "enabled": true,
+        "userCreated": {
+            "enabled": true,
+            "requireAuth": true,
+            "maxAlbums": 50,
+            "maxPhotosPerAlbum": 100
+        },
+        "autoGenerated": {
+            "enabled": true,
+            "types": [
+                "match",
+                "team",
+                "player",
+                "event"
+            ],
+            "updateInterval": 3600000
+        },
+        "privacy": {
+            "public": true,
+            "private": true,
+            "unlisted": true
+        }
+    },
+    "search": {
+        "enabled": true,
+        "searchIn": [
+            "title",
+            "description",
+            "tags",
+            "photographer"
+        ],
+        "liveSearch": true,
+        "minCharacters": 3,
+        "suggestions": true
+    },
+    "analytics": {
+        "enabled": true,
+        "track": {
+            "views": true,
+            "clicks": true,
+            "downloads": true,
+            "shares": true,
+            "timeSpent": true
+        }
+    },
+    "monetization": {
+        "ads": {
+            "enabled": true,
+            "interstitial": {
+                "enabled": true,
+                "frequency": 10,
+                "description": "Every 10 images"
+            },
+            "sponsored": {
+                "enabled": true,
+                "label": "Sponsored",
+                "ratio": 0.1
+            }
+        },
+        "premiumDownloads": {
+            "enabled": true,
+            "requireSubscription": true,
+            "resolutions": [
+                "medium",
+                "large",
+                "original"
+            ],
+            "watermarkFree": true
+        }
+    },
+    "performance": {
+        "cdn": {
+            "enabled": true,
+            "provider": "cloudflare",
+            "caching": true,
+            "compression": true
+        },
+        "caching": {
+            "browser": {
+                "enabled": true,
+                "duration": 86400000
+            },
+            "server": {
+                "enabled": true,
+                "duration": 3600000
+            }
+        }
+    }
+}

@@ -1,0 +1,164 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "User engagement and interaction configuration for SPORTIQ",
+    "features": {
+        "comments": {
+            "enabled": true,
+            "requireModeration": false,
+            "allowReplies": true,
+            "allowEditing": true,
+            "maxLength": 1000,
+            "minLength": 10,
+            "requireEmail": true,
+            "requireName": true,
+            "showAvatars": true,
+            "defaultAvatar": "/assets/images/placeholders/avatar.svg",
+            "sortOrder": "newest",
+            "itemsPerPage": 10
+        },
+        "likes": {
+            "enabled": true,
+            "showCount": true,
+            "allowUnlike": true,
+            "animateCount": true,
+            "persistInLocalStorage": true
+        },
+        "sharing": {
+            "enabled": true,
+            "platforms": [
+                {
+                    "name": "Facebook",
+                    "icon": "📘",
+                    "url": "https://www.facebook.com/sharer/sharer.php?u={URL}",
+                    "enabled": true
+                },
+                {
+                    "name": "Twitter",
+                    "icon": "🐦",
+                    "url": "https://twitter.com/intent/tweet?url={URL}&text={TITLE}",
+                    "enabled": true
+                },
+                {
+                    "name": "LinkedIn",
+                    "icon": "💼",
+                    "url": "https://www.linkedin.com/sharing/share-offsite/?url={URL}",
+                    "enabled": true
+                },
+                {
+                    "name": "WhatsApp",
+                    "icon": "💬",
+                    "url": "https://wa.me/?text={TITLE}%20{URL}",
+                    "enabled": true
+                },
+                {
+                    "name": "Email",
+                    "icon": "📧",
+                    "url": "mailto:?subject={TITLE}&body={URL}",
+                    "enabled": true
+                }
+            ],
+            "showCopyLink": true,
+            "trackShares": true,
+            "nativeShareAPI": true
+        },
+        "ratings": {
+            "enabled": true,
+            "maxStars": 5,
+            "allowHalfStars": false,
+            "showAverage": true,
+            "showCount": true,
+            "showBreakdown": true,
+            "requireComment": false,
+            "oneRatingPerUser": true,
+            "persistInLocalStorage": true
+        },
+        "newsletter": {
+            "enabled": true,
+            "requireConsent": true,
+            "showPrivacyLink": true,
+            "doubleOptIn": false,
+            "successMessage": "Thank you for subscribing! Check your email to confirm.",
+            "errorMessage": "Something went wrong. Please try again.",
+            "alreadySubscribedMessage": "You're already subscribed!",
+            "validateEmail": true,
+            "placeholders": {
+                "email": "Enter your email address",
+                "name": "Your name (optional)"
+            },
+            "buttonText": {
+                "idle": "Subscribe",
+                "loading": "Subscribing...",
+                "success": "Subscribed!",
+                "error": "Try Again"
+            }
+        },
+        "socialFollow": {
+            "enabled": true,
+            "platforms": [
+                {
+                    "name": "Facebook",
+                    "icon": "📘",
+                    "url": "https://facebook.com/sportiq",
+                    "followers": "12.5K"
+                },
+                {
+                    "name": "Twitter",
+                    "icon": "🐦",
+                    "url": "https://twitter.com/sportiq",
+                    "followers": "8.2K"
+                },
+                {
+                    "name": "Instagram",
+                    "icon": "📸",
+                    "url": "https://instagram.com/sportiq",
+                    "followers": "15.3K"
+                },
+                {
+                    "name": "YouTube",
+                    "icon": "📺",
+                    "url": "https://youtube.com/sportiq",
+                    "followers": "25.1K"
+                },
+                {
+                    "name": "LinkedIn",
+                    "icon": "💼",
+                    "url": "https://linkedin.com/company/sportiq",
+                    "followers": "5.8K"
+                }
+            ]
+        }
+    },
+    "analytics": {
+        "trackLikes": true,
+        "trackShares": true,
+        "trackComments": true,
+        "trackRatings": true,
+        "trackNewsletterSignups": true,
+        "trackSocialClicks": true
+    },
+    "moderation": {
+        "autoModerate": false,
+        "spamKeywords": [
+            "viagra",
+            "casino",
+            "lottery",
+            "click here",
+            "buy now"
+        ],
+        "requireApproval": false,
+        "maxLinksPerComment": 2
+    },
+    "notifications": {
+        "commentReply": true,
+        "commentApproved": true,
+        "newsletterConfirmation": true
+    },
+    "ui": {
+        "theme": "light",
+        "accentColor": "#6366f1",
+        "animations": true,
+        "showEmojis": true,
+        "responsiveDesign": true
+    }
+}

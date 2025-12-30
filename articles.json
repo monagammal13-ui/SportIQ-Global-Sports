@@ -1,0 +1,282 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Sample articles for SPORTIQ platform",
+    "articles": [
+        {
+            "id": "art_001",
+            "title": "Manchester United Completes Record-Breaking Transfer Deal",
+            "slug": "manchester-united-record-transfer",
+            "excerpt": "In a stunning move that has sent shockwaves through the football world, Manchester United has secured the signing of the season's most sought-after player...",
+            "content": "Full article content would go here...",
+            "category": "football",
+            "subcategory": "premier-league",
+            "tags": [
+                "breaking-news",
+                "transfer-news",
+                "premier-league",
+                "manchester-united"
+            ],
+            "author": {
+                "name": "John Smith",
+                "avatar": "/assets/images/authors/john-smith.jpg"
+            },
+            "publishedDate": "2025-12-27T10:30:00Z",
+            "updatedDate": "2025-12-27T11:15:00Z",
+            "featured": true,
+            "trending": true,
+            "views": 12458,
+            "likes": 892,
+            "comments": 234,
+            "readTime": "5 min",
+            "featuredImage": "/assets/images/articles/man-utd-transfer.jpg",
+            "gallery": [],
+            "video": null,
+            "relatedArticles": [
+                "art_002",
+                "art_005"
+            ]
+        },
+        {
+            "id": "art_002",
+            "title": "Lakers Dominate in NBA Finals Game 3",
+            "slug": "lakers-nba-finals-game3",
+            "excerpt": "The Los Angeles Lakers put on a spectacular performance in Game 3 of the NBA Finals, taking a commanding lead in the series...",
+            "content": "Full article content would go here...",
+            "category": "basketball",
+            "subcategory": "nba",
+            "tags": [
+                "live-scores",
+                "highlights",
+                "nba-finals",
+                "lakers"
+            ],
+            "author": {
+                "name": "Sarah Johnson",
+                "avatar": "/assets/images/authors/sarah-johnson.jpg"
+            },
+            "publishedDate": "2025-12-27T09:15:00Z",
+            "updatedDate": "2025-12-27T09:45:00Z",
+            "featured": true,
+            "trending": true,
+            "views": 15234,
+            "likes": 1245,
+            "comments": 456,
+            "readTime": "4 min",
+            "featuredImage": "/assets/images/articles/lakers-finals.jpg",
+            "gallery": [],
+            "video": "/assets/videos/lakers-highlights.mp4",
+            "relatedArticles": [
+                "art_003",
+                "art_007"
+            ]
+        },
+        {
+            "id": "art_003",
+            "title": "Djokovic Advances to Wimbledon Semifinals",
+            "slug": "djokovic-wimbledon-semifinals",
+            "excerpt": "Novak Djokovic continues his dominant run at Wimbledon, defeating his opponent in straight sets to reach the semifinals...",
+            "content": "Full article content would go here...",
+            "category": "tennis",
+            "subcategory": "grand-slam",
+            "tags": [
+                "wimbledon",
+                "highlights",
+                "match-review"
+            ],
+            "author": {
+                "name": "Mike Williams",
+                "avatar": "/assets/images/authors/mike-williams.jpg"
+            },
+            "publishedDate": "2025-12-27T08:00:00Z",
+            "updatedDate": "2025-12-27T08:30:00Z",
+            "featured": false,
+            "trending": true,
+            "views": 8934,
+            "likes": 567,
+            "comments": 123,
+            "readTime": "3 min",
+            "featuredImage": "/assets/images/articles/djokovic-wimbledon.jpg",
+            "gallery": [],
+            "video": null,
+            "relatedArticles": [
+                "art_004",
+                "art_006"
+            ]
+        },
+        {
+            "id": "art_004",
+            "title": "NFL Draft: Top Prospects to Watch",
+            "slug": "nfl-draft-top-prospects",
+            "excerpt": "As the NFL Draft approaches, scouts and analysts are closely watching these top prospects who could change the fortunes of their future teams...",
+            "content": "Full article content would go here...",
+            "category": "american-football",
+            "subcategory": "nfl",
+            "tags": [
+                "nfl-draft",
+                "analysis",
+                "predictions"
+            ],
+            "author": {
+                "name": "Tom Brown",
+                "avatar": "/assets/images/authors/tom-brown.jpg"
+            },
+            "publishedDate": "2025-12-27T07:30:00Z",
+            "updatedDate": "2025-12-27T07:30:00Z",
+            "featured": false,
+            "trending": false,
+            "views": 6542,
+            "likes": 423,
+            "comments": 89,
+            "readTime": "6 min",
+            "featuredImage": "/assets/images/articles/nfl-draft.jpg",
+            "gallery": [],
+            "video": null,
+            "relatedArticles": [
+                "art_005"
+            ]
+        },
+        {
+            "id": "art_005",
+            "title": "Champions League Draw: Who Faces Who?",
+            "slug": "champions-league-draw",
+            "excerpt": "The Champions League knockout stage draw has been completed, setting up some mouth-watering matchups between Europe's elite clubs...",
+            "content": "Full article content would go here...",
+            "category": "football",
+            "subcategory": "champions-league",
+            "tags": [
+                "champions-league",
+                "fixtures",
+                "breaking-news"
+            ],
+            "author": {
+                "name": "Emma Davis",
+                "avatar": "/assets/images/authors/emma-davis.jpg"
+            },
+            "publishedDate": "2025-12-27T11:00:00Z",
+            "updatedDate": "2025-12-27T11:30:00Z",
+            "featured": true,
+            "trending": true,
+            "views": 18723,
+            "likes": 1534,
+            "comments": 678,
+            "readTime": "5 min",
+            "featuredImage": "/assets/images/articles/ucl-draw.jpg",
+            "gallery": [],
+            "video": null,
+            "relatedArticles": [
+                "art_001",
+                "art_006"
+            ]
+        },
+        {
+            "id": "art_006",
+            "title": "IPL 2025: Mumbai Indians Eye Fourth Title",
+            "slug": "ipl-mumbai-indians-preview",
+            "excerpt": "Mumbai Indians are looking strong heading into IPL 2025, with a revamped squad and high expectations from fans worldwide...",
+            "content": "Full article content would go here...",
+            "category": "cricket",
+            "subcategory": "ipl",
+            "tags": [
+                "ipl",
+                "match-preview",
+                "team-analysis"
+            ],
+            "author": {
+                "name": "Raj Patel",
+                "avatar": "/assets/images/authors/raj-patel.jpg"
+            },
+            "publishedDate": "2025-12-27T06:45:00Z",
+            "updatedDate": "2025-12-27T06:45:00Z",
+            "featured": false,
+            "trending": false,
+            "views": 5432,
+            "likes": 367,
+            "comments": 92,
+            "readTime": "4 min",
+            "featuredImage": "/assets/images/articles/ipl-mumbai.jpg",
+            "gallery": [],
+            "video": null,
+            "relatedArticles": [
+                "art_007"
+            ]
+        },
+        {
+            "id": "art_007",
+            "title": "Tokyo Olympics: Day 5 Highlights",
+            "slug": "tokyo-olympics-day5-highlights",
+            "excerpt": "Another thrilling day at the Tokyo Olympics saw multiple world records broken and unexpected upsets in various events...",
+            "content": "Full article content would go here...",
+            "category": "olympics",
+            "subcategory": "summer-olympics",
+            "tags": [
+                "olympics",
+                "highlights",
+                "records",
+                "breaking-news"
+            ],
+            "author": {
+                "name": "Lisa Chen",
+                "avatar": "/assets/images/authors/lisa-chen.jpg"
+            },
+            "publishedDate": "2025-12-27T10:00:00Z",
+            "updatedDate": "2025-12-27T10:30:00Z",
+            "featured": true,
+            "trending": true,
+            "views": 22134,
+            "likes": 1876,
+            "comments": 543,
+            "readTime": "7 min",
+            "featuredImage": "/assets/images/articles/olympics-day5.jpg",
+            "gallery": [
+                "/assets/images/olympics/event1.jpg",
+                "/assets/images/olympics/event2.jpg",
+                "/assets/images/olympics/event3.jpg"
+            ],
+            "video": "/assets/videos/olympics-highlights.mp4",
+            "relatedArticles": [
+                "art_002",
+                "art_003"
+            ]
+        },
+        {
+            "id": "art_008",
+            "title": "Formula 1: Hamilton Breaks All-Time Record",
+            "slug": "hamilton-f1-record",
+            "excerpt": "Lewis Hamilton has cemented his place in Formula 1 history by breaking the all-time wins record at the Monaco Grand Prix...",
+            "content": "Full article content would go here...",
+            "category": "formula1",
+            "subcategory": "races",
+            "tags": [
+                "formula1",
+                "records",
+                "highlights",
+                "breaking-news"
+            ],
+            "author": {
+                "name": "Carlos Rodriguez",
+                "avatar": "/assets/images/authors/carlos-rodriguez.jpg"
+            },
+            "publishedDate": "2025-12-27T05:30:00Z",
+            "updatedDate": "2025-12-27T06:00:00Z",
+            "featured": false,
+            "trending": true,
+            "views": 11245,
+            "likes": 934,
+            "comments": 287,
+            "readTime": "5 min",
+            "featuredImage": "/assets/images/articles/hamilton-record.jpg",
+            "gallery": [],
+            "video": null,
+            "relatedArticles": [
+                "art_005"
+            ]
+        }
+    ],
+    "meta": {
+        "totalArticles": 8,
+        "featuredCount": 4,
+        "trendingCount": 6,
+        "lastSync": "2025-12-27T12:00:00Z"
+    }
+}

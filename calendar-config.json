@@ -1,0 +1,79 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-29T08:46:42Z",
+    "description": "Event Calendar Configuration",
+    "leagues": [
+        {
+            "id": "premier-league",
+            "name": "Premier League",
+            "sport": "football",
+            "country": "England",
+            "color": "#38003c"
+        },
+        {
+            "id": "champions-league",
+            "name": "UEFA Champions League",
+            "sport": "football",
+            "country": "Europe",
+            "color": "#00336a"
+        },
+        {
+            "id": "la-liga",
+            "name": "La Liga",
+            "sport": "football",
+            "country": "Spain",
+            "color": "#ee8707"
+        }
+    ],
+    "teams": [
+        {
+            "id": "team1",
+            "name": "Manchester United",
+            "shortName": "MUN",
+            "color": "#da291c"
+        },
+        {
+            "id": "team2",
+            "name": "Liverpool",
+            "shortName": "LIV",
+            "color": "#c8102e"
+        },
+        {
+            "id": "team3",
+            "name": "Real Madrid",
+            "shortName": "RMA",
+            "color": "#febe10"
+        },
+        {
+            "id": "team4",
+            "name": "Barcelona",
+            "shortName": "BAR",
+            "color": "#a50044"
+        }
+    ],
+    "events": [
+        {
+            "id": "e1",
+            "title": "Liverpool vs Manchester United",
+            "type": "match",
+            "league": "premier-league",
+            "homeTeam": "team2",
+            "awayTeam": "team1",
+            "startTime": "2025-12-30T15:00:00Z",
+            "venue": "Anfield",
+            "featured": true
+        },
+        {
+            "id": "e2",
+            "title": "Real Madrid vs Barcelona",
+            "type": "match",
+            "league": "la-liga",
+            "homeTeam": "team3",
+            "awayTeam": "team4",
+            "startTime": "2025-12-31T20:00:00Z",
+            "venue": "Santiago Bernabéu",
+            "featured": true
+        }
+    ],
+    "updateInterval": 60000
+}

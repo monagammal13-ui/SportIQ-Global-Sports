@@ -1,0 +1,282 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Sports categories for SPORTIQ platform",
+    "categories": [
+        {
+            "id": "football",
+            "name": "Football",
+            "slug": "football",
+            "icon": "⚽",
+            "description": "Soccer news, scores, and analysis from leagues worldwide",
+            "color": "#10b981",
+            "count": 156,
+            "featured": true,
+            "subcategories": [
+                {
+                    "id": "premier-league",
+                    "name": "Premier League",
+                    "slug": "premier-league",
+                    "count": 45
+                },
+                {
+                    "id": "la-liga",
+                    "name": "La Liga",
+                    "slug": "la-liga",
+                    "count": 38
+                },
+                {
+                    "id": "champions-league",
+                    "name": "Champions League",
+                    "slug": "champions-league",
+                    "count": 42
+                },
+                {
+                    "id": "world-cup",
+                    "name": "World Cup",
+                    "slug": "world-cup",
+                    "count": 31
+                }
+            ]
+        },
+        {
+            "id": "basketball",
+            "name": "Basketball",
+            "slug": "basketball",
+            "icon": "🏀",
+            "description": "NBA, EuroLeague, and international basketball coverage",
+            "color": "#f59e0b",
+            "count": 124,
+            "featured": true,
+            "subcategories": [
+                {
+                    "id": "nba",
+                    "name": "NBA",
+                    "slug": "nba",
+                    "count": 67
+                },
+                {
+                    "id": "euroleague",
+                    "name": "EuroLeague",
+                    "slug": "euroleague",
+                    "count": 34
+                },
+                {
+                    "id": "ncaa",
+                    "name": "NCAA",
+                    "slug": "ncaa",
+                    "count": 23
+                }
+            ]
+        },
+        {
+            "id": "tennis",
+            "name": "Tennis",
+            "slug": "tennis",
+            "icon": "🎾",
+            "description": "Grand Slams, ATP, WTA tours, and player rankings",
+            "color": "#8b5cf6",
+            "count": 98,
+            "featured": true,
+            "subcategories": [
+                {
+                    "id": "grand-slam",
+                    "name": "Grand Slam",
+                    "slug": "grand-slam",
+                    "count": 42
+                },
+                {
+                    "id": "atp-tour",
+                    "name": "ATP Tour",
+                    "slug": "atp-tour",
+                    "count": 31
+                },
+                {
+                    "id": "wta-tour",
+                    "name": "WTA Tour",
+                    "slug": "wta-tour",
+                    "count": 25
+                }
+            ]
+        },
+        {
+            "id": "american-football",
+            "name": "American Football",
+            "slug": "american-football",
+            "icon": "🏈",
+            "description": "NFL, college football, and Super Bowl coverage",
+            "color": "#ef4444",
+            "count": 87,
+            "featured": false,
+            "subcategories": [
+                {
+                    "id": "nfl",
+                    "name": "NFL",
+                    "slug": "nfl",
+                    "count": 54
+                },
+                {
+                    "id": "college-football",
+                    "name": "College Football",
+                    "slug": "college-football",
+                    "count": 33
+                }
+            ]
+        },
+        {
+            "id": "cricket",
+            "name": "Cricket",
+            "slug": "cricket",
+            "icon": "🏏",
+            "description": "Test cricket, ODI, T20, and IPL coverage",
+            "color": "#06b6d4",
+            "count": 112,
+            "featured": false,
+            "subcategories": [
+                {
+                    "id": "test-cricket",
+                    "name": "Test Cricket",
+                    "slug": "test-cricket",
+                    "count": 38
+                },
+                {
+                    "id": "ipl",
+                    "name": "IPL",
+                    "slug": "ipl",
+                    "count": 45
+                },
+                {
+                    "id": "world-cricket",
+                    "name": "World Cup",
+                    "slug": "world-cricket",
+                    "count": 29
+                }
+            ]
+        },
+        {
+            "id": "baseball",
+            "name": "Baseball",
+            "slug": "baseball",
+            "icon": "⚾",
+            "description": "MLB, World Series, and international baseball",
+            "color": "#3b82f6",
+            "count": 76,
+            "featured": false,
+            "subcategories": [
+                {
+                    "id": "mlb",
+                    "name": "MLB",
+                    "slug": "mlb",
+                    "count": 52
+                },
+                {
+                    "id": "world-series",
+                    "name": "World Series",
+                    "slug": "world-series",
+                    "count": 24
+                }
+            ]
+        },
+        {
+            "id": "hockey",
+            "name": "Hockey",
+            "slug": "hockey",
+            "icon": "🏒",
+            "description": "NHL, international hockey, and Stanley Cup",
+            "color": "#6366f1",
+            "count": 64,
+            "featured": false,
+            "subcategories": [
+                {
+                    "id": "nhl",
+                    "name": "NHL",
+                    "slug": "nhl",
+                    "count": 41
+                },
+                {
+                    "id": "stanley-cup",
+                    "name": "Stanley Cup",
+                    "slug": "stanley-cup",
+                    "count": 23
+                }
+            ]
+        },
+        {
+            "id": "rugby",
+            "name": "Rugby",
+            "slug": "rugby",
+            "icon": "🏉",
+            "description": "Rugby Union, Rugby League, and Six Nations",
+            "color": "#14b8a6",
+            "count": 54,
+            "featured": false,
+            "subcategories": [
+                {
+                    "id": "six-nations",
+                    "name": "Six Nations",
+                    "slug": "six-nations",
+                    "count": 28
+                },
+                {
+                    "id": "rugby-world-cup",
+                    "name": "Rugby World Cup",
+                    "slug": "rugby-world-cup",
+                    "count": 26
+                }
+            ]
+        },
+        {
+            "id": "formula1",
+            "name": "Formula 1",
+            "slug": "formula1",
+            "icon": "🏎️",
+            "description": "F1 races, driver standings, and team news",
+            "color": "#dc2626",
+            "count": 92,
+            "featured": false,
+            "subcategories": [
+                {
+                    "id": "races",
+                    "name": "Races",
+                    "slug": "races",
+                    "count": 48
+                },
+                {
+                    "id": "drivers",
+                    "name": "Drivers",
+                    "slug": "drivers",
+                    "count": 44
+                }
+            ]
+        },
+        {
+            "id": "olympics",
+            "name": "Olympics",
+            "slug": "olympics",
+            "icon": "🏅",
+            "description": "Summer and Winter Olympics coverage",
+            "color": "#f59e0b",
+            "count": 138,
+            "featured": true,
+            "subcategories": [
+                {
+                    "id": "summer-olympics",
+                    "name": "Summer Olympics",
+                    "slug": "summer-olympics",
+                    "count": 78
+                },
+                {
+                    "id": "winter-olympics",
+                    "name": "Winter Olympics",
+                    "slug": "winter-olympics",
+                    "count": 60
+                }
+            ]
+        }
+    ],
+    "meta": {
+        "totalCategories": 10,
+        "totalArticles": 1001,
+        "lastSync": "2025-12-27T12:00:00Z"
+    }
+}

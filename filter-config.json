@@ -1,0 +1,318 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Advanced filtering and faceted search system for SPORTIQ",
+    "filters": {
+        "enabled": true,
+        "layout": "sidebar",
+        "position": "left",
+        "collapsible": true,
+        "openByDefault": true,
+        "showActiveFilters": true,
+        "showFilterCount": true,
+        "persistState": true
+    },
+    "filterCategories": {
+        "sport": {
+            "enabled": true,
+            "label": "Sport",
+            "type": "checkbox",
+            "multiSelect": true,
+            "collapsible": true,
+            "order": 1,
+            "options": [
+                {
+                    "value": "football",
+                    "label": "Football ⚽",
+                    "count": 0
+                },
+                {
+                    "value": "basketball",
+                    "label": "Basketball 🏀",
+                    "count": 0
+                },
+                {
+                    "value": "tennis",
+                    "label": "Tennis 🎾",
+                    "count": 0
+                },
+                {
+                    "value": "cricket",
+                    "label": "Cricket 🏏",
+                    "count": 0
+                },
+                {
+                    "value": "formula1",
+                    "label": "Formula 1 🏎️",
+                    "count": 0
+                },
+                {
+                    "value": "golf",
+                    "label": "Golf ⛳",
+                    "count": 0
+                }
+            ]
+        },
+        "league": {
+            "enabled": true,
+            "label": "League",
+            "type": "checkbox",
+            "multiSelect": true,
+            "collapsible": true,
+            "dependsOn": "sport",
+            "order": 2,
+            "options": {
+                "football": [
+                    {
+                        "value": "premier-league",
+                        "label": "Premier League",
+                        "count": 0
+                    },
+                    {
+                        "value": "champions-league",
+                        "label": "Champions League",
+                        "count": 0
+                    },
+                    {
+                        "value": "la-liga",
+                        "label": "La Liga",
+                        "count": 0
+                    },
+                    {
+                        "value": "serie-a",
+                        "label": "Serie A",
+                        "count": 0
+                    },
+                    {
+                        "value": "bundesliga",
+                        "label": "Bundesliga",
+                        "count": 0
+                    }
+                ],
+                "basketball": [
+                    {
+                        "value": "nba",
+                        "label": "NBA",
+                        "count": 0
+                    },
+                    {
+                        "value": "euroleague",
+                        "label": "EuroLeague",
+                        "count": 0
+                    },
+                    {
+                        "value": "ncaa",
+                        "label": "NCAA",
+                        "count": 0
+                    }
+                ],
+                "tennis": [
+                    {
+                        "value": "grand-slam",
+                        "label": "Grand Slam",
+                        "count": 0
+                    },
+                    {
+                        "value": "atp",
+                        "label": "ATP Tour",
+                        "count": 0
+                    },
+                    {
+                        "value": "wta",
+                        "label": "WTA Tour",
+                        "count": 0
+                    }
+                ],
+                "cricket": [
+                    {
+                        "value": "ipl",
+                        "label": "IPL",
+                        "count": 0
+                    },
+                    {
+                        "value": "test",
+                        "label": "Test Cricket",
+                        "count": 0
+                    },
+                    {
+                        "value": "t20",
+                        "label": "T20",
+                        "count": 0
+                    }
+                ]
+            }
+        },
+        "team": {
+            "enabled": true,
+            "label": "Team",
+            "type": "search-select",
+            "multiSelect": true,
+            "collapsible": true,
+            "searchable": true,
+            "dependsOn": "league",
+            "order": 3,
+            "maxVisible": 10,
+            "showMore": true
+        },
+        "contentType": {
+            "enabled": true,
+            "label": "Content Type",
+            "type": "radio",
+            "multiSelect": false,
+            "collapsible": true,
+            "order": 4,
+            "options": [
+                {
+                    "value": "all",
+                    "label": "All Content",
+                    "count": 0,
+                    "default": true
+                },
+                {
+                    "value": "article",
+                    "label": "Articles 📰",
+                    "count": 0
+                },
+                {
+                    "value": "video",
+                    "label": "Videos 🎥",
+                    "count": 0
+                },
+                {
+                    "value": "gallery",
+                    "label": "Galleries 📸",
+                    "count": 0
+                },
+                {
+                    "value": "live",
+                    "label": "Live Coverage 🔴",
+                    "count": 0
+                }
+            ]
+        },
+        "date": {
+            "enabled": true,
+            "label": "Date Range",
+            "type": "date-range",
+            "collapsible": true,
+            "order": 5,
+            "presets": [
+                {
+                    "value": "today",
+                    "label": "Today"
+                },
+                {
+                    "value": "yesterday",
+                    "label": "Yesterday"
+                },
+                {
+                    "value": "week",
+                    "label": "This Week"
+                },
+                {
+                    "value": "month",
+                    "label": "This Month"
+                },
+                {
+                    "value": "year",
+                    "label": "This Year"
+                },
+                {
+                    "value": "custom",
+                    "label": "Custom Range"
+                }
+            ],
+            "allowCustomRange": true
+        },
+        "author": {
+            "enabled": true,
+            "label": "Author",
+            "type": "checkbox",
+            "multiSelect": true,
+            "collapsible": true,
+            "searchable": true,
+            "order": 6,
+            "maxVisible": 5,
+            "showMore": true
+        },
+        "tags": {
+            "enabled": true,
+            "label": "Tags",
+            "type": "checkbox",
+            "multiSelect": true,
+            "collapsible": true,
+            "searchable": true,
+            "order": 7,
+            "maxVisible": 10,
+            "showMore": true,
+            "showCloud": true
+        }
+    },
+    "activeFilters": {
+        "enabled": true,
+        "position": "top",
+        "showClearAll": true,
+        "showCount": true,
+        "removable": true
+    },
+    "facetedSearch": {
+        "enabled": true,
+        "updateOnChange": true,
+        "showZeroResults": false,
+        "dynamicFilters": true
+    },
+    "urlParameters": {
+        "enabled": true,
+        "updateBrowserHistory": true,
+        "shareable": true,
+        "params": {
+            "query": "q",
+            "sport": "sport",
+            "league": "league",
+            "team": "team",
+            "type": "type",
+            "date": "date",
+            "author": "author",
+            "tags": "tags",
+            "page": "page",
+            "sort": "sort"
+        }
+    },
+    "savedFilters": {
+        "enabled": true,
+        "requireAuth": true,
+        "maxSaved": 10,
+        "defaultFilters": [
+            {
+                "name": "My Favorite Teams",
+                "filters": {
+                    "teams": "user_favorites"
+                }
+            },
+            {
+                "name": "Latest Football",
+                "filters": {
+                    "sport": [
+                        "football"
+                    ],
+                    "date": "week"
+                }
+            }
+        ]
+    },
+    "filterBehavior": {
+        "logicOperator": "AND",
+        "multiSelectLogic": "OR",
+        "applyOn": "change",
+        "animateResults": true,
+        "preserveScroll": false
+    },
+    "mobileFilters": {
+        "enabled": true,
+        "displayAs": "drawer",
+        "position": "bottom",
+        "showButton": true,
+        "buttonText": "Filters",
+        "showActiveCount": true
+    }
+}

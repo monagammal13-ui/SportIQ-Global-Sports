@@ -1,0 +1,244 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Gallery and media display configuration for SPORTIQ",
+    "gallery": {
+        "enabled": true,
+        "layouts": {
+            "grid": {
+                "enabled": true,
+                "columns": {
+                    "desktop": 4,
+                    "tablet": 3,
+                    "mobile": 2
+                },
+                "gap": 16,
+                "aspectRatio": "16:9"
+            },
+            "masonry": {
+                "enabled": true,
+                "columns": {
+                    "desktop": 4,
+                    "tablet": 3,
+                    "mobile": 2
+                },
+                "gap": 16
+            },
+            "carousel": {
+                "enabled": true,
+                "autoplay": false,
+                "interval": 5000,
+                "showDots": true,
+                "showArrows": true,
+                "loop": true
+            },
+            "justified": {
+                "enabled": true,
+                "rowHeight": 300,
+                "maxRowHeight": 400,
+                "gap": 4
+            }
+        },
+        "defaultLayout": "grid"
+    },
+    "lightbox": {
+        "enabled": true,
+        "provider": "custom",
+        "features": {
+            "zoom": true,
+            "download": false,
+            "share": true,
+            "fullscreen": true,
+            "slideshow": true,
+            "captions": true,
+            "thumbnails": true,
+            "keyboard": true
+        },
+        "animations": {
+            "enabled": true,
+            "transition": "fade",
+            "duration": 300
+        },
+        "controls": {
+            "closeButton": true,
+            "navigation": true,
+            "counter": true
+        }
+    },
+    "lazyLoading": {
+        "enabled": true,
+        "threshold": 200,
+        "rootMargin": "50px",
+        "placeholder": "lqip",
+        "fadeIn": true,
+        "blurUp": true
+    },
+    "filtering": {
+        "enabled": true,
+        "filters": {
+            "category": {
+                "enabled": true,
+                "options": [
+                    "all",
+                    "match-photos",
+                    "player-portraits",
+                    "stadium",
+                    "highlights",
+                    "training"
+                ]
+            },
+            "sport": {
+                "enabled": true,
+                "options": [
+                    "all",
+                    "football",
+                    "basketball",
+                    "tennis",
+                    "cricket"
+                ]
+            },
+            "date": {
+                "enabled": true,
+                "options": [
+                    "all",
+                    "today",
+                    "week",
+                    "month",
+                    "year"
+                ]
+            },
+            "type": {
+                "enabled": true,
+                "options": [
+                    "all",
+                    "images",
+                    "videos"
+                ]
+            }
+        },
+        "multiSelect": false,
+        "showCount": true
+    },
+    "sorting": {
+        "enabled": true,
+        "defaultSort": "newest",
+        "options": [
+            {
+                "id": "newest",
+                "label": "Newest First",
+                "field": "uploadedAt",
+                "order": "desc"
+            },
+            {
+                "id": "oldest",
+                "label": "Oldest First",
+                "field": "uploadedAt",
+                "order": "asc"
+            },
+            {
+                "id": "popular",
+                "label": "Most Popular",
+                "field": "views",
+                "order": "desc"
+            },
+            {
+                "id": "title",
+                "label": "Title A-Z",
+                "field": "title",
+                "order": "asc"
+            }
+        ]
+    },
+    "pagination": {
+        "enabled": true,
+        "itemsPerPage": 24,
+        "type": "load-more",
+        "showTotalCount": true
+    },
+    "metadata": {
+        "showTitle": true,
+        "showDescription": false,
+        "showDate": true,
+        "showViews": false,
+        "showAuthor": false,
+        "showTags": false
+    },
+    "interactions": {
+        "likes": {
+            "enabled": true,
+            "requireAuth": true,
+            "showCount": true
+        },
+        "comments": {
+            "enabled": false,
+            "requireAuth": true
+        },
+        "sharing": {
+            "enabled": true,
+            "platforms": [
+                "facebook",
+                "twitter",
+                "whatsapp",
+                "email",
+                "copy-link"
+            ],
+            "includeMetadata": true
+        },
+        "download": {
+            "enabled": false,
+            "requireAuth": true,
+            "premiumOnly": true,
+            "trackDownloads": true
+        }
+    },
+    "imageOptimization": {
+        "responsiveImages": {
+            "enabled": true,
+            "srcset": true,
+            "sizes": true
+        },
+        "format": {
+            "preferWebP": true,
+            "fallbackToJPEG": true
+        },
+        "quality": 85,
+        "compression": true
+    },
+    "videoPlayer": {
+        "enabled": true,
+        "controls": true,
+        "autoplay": false,
+        "muted": false,
+        "loop": false,
+        "preload": "metadata",
+        "poster": true,
+        "qualities": [
+            "360p",
+            "480p",
+            "720p",
+            "1080p"
+        ],
+        "defaultQuality": "720p"
+    },
+    "search": {
+        "enabled": true,
+        "searchFields": [
+            "title",
+            "description",
+            "tags"
+        ],
+        "liveSearch": true,
+        "minCharacters": 3
+    },
+    "albums": {
+        "enabled": true,
+        "createAlbums": true,
+        "requireAuth": true,
+        "maxPhotosPerAlbum": 100,
+        "privacy": {
+            "public": true,
+            "private": true,
+            "unlisted": true
+        }
+    }
+}

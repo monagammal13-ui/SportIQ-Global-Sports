@@ -1,0 +1,118 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-29",
+    "description": "API client configuration for SPORTIQ platform",
+    "baseURL": "",
+    "timeout": 30000,
+    "headers": {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "X-Client-Version": "1.0.0",
+        "X-Platform": "SPORTIQ"
+    },
+    "cache": {
+        "enabled": true,
+        "ttl": 300000,
+        "maxSize": 100,
+        "cacheMethods": [
+            "GET"
+        ]
+    },
+    "retry": {
+        "maxRetries": 3,
+        "retryDelay": 1000,
+        "backoffMultiplier": 2,
+        "retryOn": [
+            408,
+            429,
+            500,
+            502,
+            503,
+            504
+        ]
+    },
+    "endpoints": {
+        "liveScores": "/api/live-scores",
+        "news": "/api/news",
+        "articles": "/api/articles",
+        "teams": "/api/teams",
+        "players": "/api/players",
+        "fixtures": "/api/fixtures",
+        "standings": "/api/standings",
+        "statistics": "/api/statistics",
+        "videos": "/api/videos",
+        "trending": "/api/trending",
+        "search": "/api/search",
+        "user": "/api/user",
+        "auth": "/api/auth",
+        "notifications": "/api/notifications",
+        "preferences": "/api/preferences"
+    },
+    "graphqlEndpoint": "/graphql",
+    "sports": {
+        "football": {
+            "leagues": "/api/football/leagues",
+            "matches": "/api/football/matches",
+            "teams": "/api/football/teams",
+            "players": "/api/football/players",
+            "standings": "/api/football/standings"
+        },
+        "basketball": {
+            "leagues": "/api/basketball/leagues",
+            "games": "/api/basketball/games",
+            "teams": "/api/basketball/teams",
+            "players": "/api/basketball/ players",
+            "standings": "/api/basketball/standings"
+        },
+        "tennis": {
+            "tournaments": "/api/tennis/tournaments",
+            "matches": "/api/tennis/matches",
+            "players": "/api/tennis/players",
+            "rankings": "/api/tennis/rankings"
+        },
+        "cricket": {
+            "matches": "/api/cricket/matches",
+            "teams": "/api/cricket/teams",
+            "players": "/api/cricket/players",
+            "rankings": "/api/cricket/rankings"
+        }
+    },
+    "externalAPIs": {
+        "sportsData": {
+            "baseURL": "https://api.sportsdata.io/v3",
+            "requiresAuth": true,
+            "rateLimit": {
+                "requests": 100,
+                "period": 60000
+            }
+        },
+        "newsAPI": {
+            "baseURL": "https://newsapi.org/v2",
+            "requiresAuth": true,
+            "rateLimit": {
+                "requests": 500,
+                "period": 86400000
+            }
+        },
+        "weatherAPI": {
+            "baseURL": "https://api.openweathermap.org/data/2.5",
+            "requiresAuth": true
+        }
+    },
+    "rateLimiting": {
+        "enabled": true,
+        "maxRequestsPerMinute": 60,
+        "maxConcurrentRequests": 10
+    },
+    "errorHandling": {
+        "logErrors": true,
+        "retryOnNetworkError": true,
+        "retryOnTimeout": true,
+        "fallbackToCache": true
+    },
+    "development": {
+        "mockResponses": false,
+        "logRequests": true,
+        "simulateDelay": 0
+    }
+}

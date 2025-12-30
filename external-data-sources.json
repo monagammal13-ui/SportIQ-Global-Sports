@@ -1,0 +1,295 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "External data sources and aggregation configuration for SPORTIQ",
+    "rssFeeds": {
+        "sports": [
+            {
+                "id": "espn_sports",
+                "name": "ESPN Sports",
+                "url": "https://www.espn.com/espn/rss/news",
+                "category": "general",
+                "language": "en",
+                "updateInterval": 300000,
+                "enabled": true
+            },
+            {
+                "id": "bbc_sport",
+                "name": "BBC Sport",
+                "url": "https://feeds.bbci.co.uk/sport/rss.xml",
+                "category": "general",
+                "language": "en",
+                "updateInterval": 300000,
+                "enabled": true
+            },
+            {
+                "id": "espn_football",
+                "name": "ESPN Football",
+                "url": "https://www.espn.com/espn/rss/soccer/news",
+                "category": "football",
+                "language": "en",
+                "updateInterval": 300000,
+                "enabled": true
+            },
+            {
+                "id": "sky_sports_football",
+                "name": "Sky Sports Football",
+                "url": "https://www.skysports.com/rss/12040",
+                "category": "football",
+                "language": "en",
+                "updateInterval": 300000,
+                "enabled": true
+            },
+            {
+                "id": "goal_com",
+                "name": "Goal.com",
+                "url": "https://www.goal.com/feeds/en/news",
+                "category": "football",
+                "language": "en",
+                "updateInterval": 300000,
+                "enabled": true
+            },
+            {
+                "id": "espn_nba",
+                "name": "ESPN NBA",
+                "url": "https://www.espn.com/espn/rss/nba/news",
+                "category": "basketball",
+                "language": "en",
+                "updateInterval": 300000,
+                "enabled": true
+            },
+            {
+                "id": "bleacher_report",
+                "name": "Bleacher Report",
+                "url": "https://bleacherreport.com/articles/feed",
+                "category": "general",
+                "language": "en",
+                "updateInterval": 300000,
+                "enabled": true
+            }
+        ],
+        "parsing": {
+            "fieldMapping": {
+                "title": "item.title || title",
+                "description": "item.description || description || content",
+                "link": "item.link || link || url",
+                "pubDate": "item.pubDate || pubDate || published",
+                "author": "item.author || dc:creator || author",
+                "category": "item.category || category",
+                "image": "media:thumbnail || enclosure.url || image"
+            },
+            "transforms": {
+                "title": "stripHtml(), truncate(200)",
+                "description": "stripHtml(), truncate(500)",
+                "pubDate": "parseDate()",
+                "image": "extractImageUrl()"
+            }
+        },
+        "filtering": {
+            "removePaywall": true,
+            "removeDuplicates": true,
+            "minContentLength": 100,
+            "blacklistedDomains": [
+                "ads.example.com"
+            ],
+            "requiredKeywords": []
+        }
+    },
+    "webScraping": {
+        "enabled": false,
+        "targets": [],
+        "respectRobotsTxt": true,
+        "userAgent": "SPORTIQ-Bot/1.0",
+        "rateLimit": {
+            "requestsPerMinute": 10,
+            "requestsPerHo ur": 100
+        },
+        "ethics": {
+            "attributeSource": true,
+            "noCommercialContent": true,
+            "respectCopyright": true
+        }
+    },
+    "socialMedia": {
+        "twitter": {
+            "enabled": false,
+            "accounts": [
+                {
+                    "handle": "@espn",
+                    "category": "general",
+                    "fetch": "tweets"
+                },
+                {
+                    "handle": "@ManUtd",
+                    "category": "football",
+                    "fetch": "tweets"
+                },
+                {
+                    "handle": "@NBA",
+                    "category": "basketball",
+                    "fetch": "tweets"
+                }
+            ],
+            "hashtags": [
+                "#football",
+                "#PremierLeague",
+                "#NBA",
+                "#basketball",
+                "#sports"
+            ],
+            "updateInterval": 600000
+        },
+        "youtube": {
+            "enabled": true,
+            "channels": [
+                {
+                    "id": "UCmYMRUPoBpH8YLRuIiMjakQ",
+                    "name": "ESPN",
+                    "category": "general"
+                },
+                {
+                    "id": "UCCBnF2pJC5rMouIhPlJCNWA",
+                    "name": "Sky Sports",
+                    "category": "football"
+                },
+                {
+                    "id": "UCqQo7ewe87aYAe7ub5UqXMw",
+                    "name": "NBA",
+                    "category": "basketball"
+                }
+            ],
+            "searchQueries": [
+                "football highlights",
+                "premier league goals",
+                "nba highlights",
+                "cricket highlights"
+            ],
+            "updateInterval": 3600000
+        }
+    },
+    "contentAggregation": {
+        "enabled": true,
+        "sources": {
+            "rss": {
+                "weight": 0.40,
+                "priority": 1
+            },
+            "apiNews": {
+                "weight": 0.30,
+                "priority": 2
+            },
+            "socialMedia": {
+                "weight": 0.20,
+                "priority": 3
+            },
+            "webScraping": {
+                "weight": 0.10,
+                "priority": 4
+            }
+        },
+        "deduplication": {
+            "enabled": true,
+            "algorithm": "fuzzy-matching",
+            "threshold": 0.85,
+            "compareFields": [
+                "title",
+                "description"
+            ]
+        },
+        "categorization": {
+            "enabled": true,
+            "method": "keyword-based",
+            "keywords": {
+                "football": [
+                    "football",
+                    "soccer",
+                    "premier league",
+                    "champions league",
+                    "goal"
+                ],
+                "basketball": [
+                    "basketball",
+                    "nba",
+                    "euroleague",
+                    "dunk",
+                    "three-pointer"
+                ],
+                "tennis": [
+                    "tennis",
+                    "grand slam",
+                    "atp",
+                    "wta",
+                    "wimbledon"
+                ],
+                "cricket": [
+                    "cricket",
+                    "ipl",
+                    "test",
+                    "t20",
+                    "wicket"
+                ]
+            }
+        },
+        "enrichment": {
+            "enabled": true,
+            "addMetadata": true,
+            "addRelatedContent": true,
+            "addTags": true,
+            "extractEntities": true
+        }
+    },
+    "dataQuality": {
+        "validation": {
+            "enabled": true,
+            "rules": {
+                "titleRequired": true,
+                "titleMinLength": 10,
+                "descriptionMinLength": 50,
+                "validImageUrl": true,
+                "validPublishDate": true
+            }
+        },
+        "sanitization": {
+            "enabled": true,
+            "stripHtml": true,
+            "removeScripts": true,
+            "sanitizeUrls": true,
+            "encodeEntities": true
+        },
+        "moderation": {
+            "enabled": true,
+            "filterProfanity": true,
+            "filterSpam": true,
+            "humanReview": false
+        }
+    },
+    "scheduling": {
+        "enabled": true,
+        "jobs": [
+            {
+                "name": "Fetch RSS Feeds",
+                "schedule": "*/5 * * * *",
+                "action": "fetchRSSFeeds",
+                "enabled": true
+            },
+            {
+                "name": "Aggregate News",
+                "schedule": "*/10 * * * *",
+                "action": "aggregateNews",
+                "enabled": true
+            },
+            {
+                "name": "Update YouTube Videos",
+                "schedule": "0 */1 * * *",
+                "action": "fetchYouTubeVideos",
+                "enabled": true
+            },
+            {
+                "name": "Clean Old Data",
+                "schedule": "0 3 * * *",
+                "action": "cleanOldData",
+                "enabled": true
+            }
+        ]
+    }
+}

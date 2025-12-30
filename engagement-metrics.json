@@ -1,0 +1,387 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Complete engagement metrics and tracking system for SPORTIQ",
+    "engagementScoring": {
+        "enabled": true,
+        "algorithm": "weighted-composite",
+        "factors": {
+            "pageViews": {
+                "weight": 0.15,
+                "threshold": 100
+            },
+            "timeOnPage": {
+                "weight": 0.20,
+                "minSeconds": 30,
+                "idealSeconds": 180
+            },
+            "scrollDepth": {
+                "weight": 0.15,
+                "thresholds": [
+                    25,
+                    50,
+                    75,
+                    100
+                ]
+            },
+            "reactions": {
+                "weight": 0.15,
+                "multiplier": 2.0
+            },
+            "shares": {
+                "weight": 0.20,
+                "multiplier": 3.0
+            },
+            "comments": {
+                "weight": 0.10,
+                "multiplier": 5.0
+            },
+            "bookmarks": {
+                "weight": 0.05,
+                "multiplier": 2.5
+            }
+        },
+        "scoring": {
+            "scale": 100,
+            "levels": {
+                "low": {
+                    "min": 0,
+                    "max": 25,
+                    "label": "Low Engagement"
+                },
+                "medium": {
+                    "min": 25,
+                    "max": 50,
+                    "label": "Medium Engagement"
+                },
+                "high": {
+                    "min": 50,
+                    "max": 75,
+                    "label": "High Engagement"
+                },
+                "viral": {
+                    "min": 75,
+                    "max": 100,
+                    "label": "Viral Content"
+                }
+            }
+        }
+    },
+    "userBehavior": {
+        "tracking": {
+            "enabled": true,
+            "events": [
+                "pageView",
+                "click",
+                "scroll",
+                "hover",
+                "focus",
+                "formSubmit",
+                "videoPlay",
+                "imageView",
+                "linkClick",
+                "searchQuery"
+            ],
+            "sampling": {
+                "enabled": false,
+                "rate": 1.0
+            }
+        },
+        "sessionTracking": {
+            "enabled": true,
+            "timeout": 1800000,
+            "trackDuration": true,
+            "trackPageCount": true,
+            "trackBounceRate": true
+        },
+        "cohortAnalysis": {
+            "enabled": true,
+            "timeframes": [
+                "daily",
+                "weekly",
+                "monthly"
+            ],
+            "metrics": [
+                "retention",
+                "engagement",
+                "conversion"
+            ]
+        }
+    },
+    "interactionAnalytics": {
+        "enabled": true,
+        "metrics": {
+            "clickRate": {
+                "enabled": true,
+                "target": 0.05,
+                "trackByElement": true
+            },
+            "engagementRate": {
+                "enabled": true,
+                "formula": "(reactions + shares + comments) / views",
+                "target": 0.15
+            },
+            "bounceRate": {
+                "enabled": true,
+                "target": 0.4,
+                "inverse": true
+            },
+            "averageSessionDuration": {
+                "enabled": true,
+                "target": 300,
+                "unit": "seconds"
+            },
+            "pagesPerSession": {
+                "enabled": true,
+                "target": 3.5
+            },
+            "returnVisitorRate": {
+                "enabled": true,
+                "target": 0.45
+            }
+        }
+    },
+    "viralCoefficient": {
+        "enabled": true,
+        "calculation": {
+            "formula": "invites_sent / users * conversion_rate",
+            "trackingPeriod": 2592000000,
+            "targetValue": 1.2
+        },
+        "components": {
+            "invitesSent": {
+                "track": true,
+                "platforms": [
+                    "email",
+                    "social",
+                    "referral"
+                ]
+            },
+            "conversionRate": {
+                "track": true,
+                "stages": [
+                    "click",
+                    "signup",
+                    "active"
+                ]
+            },
+            "k_factor": {
+                "calculate": true,
+                "benchmark": 1.0
+            }
+        },
+        "monitoring": {
+            "alertThreshold": 0.8,
+            "notification": "email",
+            "frequency": "weekly"
+        }
+    },
+    "retentionMetrics": {
+        "enabled": true,
+        "cohorts": {
+            "day1": {
+                "enabled": true,
+                "target": 0.5
+            },
+            "day7": {
+                "enabled": true,
+                "target": 0.4
+            },
+            "day30": {
+                "enabled": true,
+                "target": 0.25
+            }
+        },
+        "churnAnalysis": {
+            "enabled": true,
+            "predictive": false,
+            "factors": [
+                "lastVisit",
+                "activityLevel",
+                "engagementScore"
+            ]
+        },
+        "winbackCampaigns": {
+            "enabled": true,
+            "triggers": {
+                "inactiveDays": 14,
+                "lowEngagement": 0.3
+            }
+        }
+    },
+    "conversionTracking": {
+        "enabled": true,
+        "funnels": {
+            "userSignup": {
+                "enabled": true,
+                "steps": [
+                    "landing",
+                    "form",
+                    "verification",
+                    "complete"
+                ],
+                "targets": [
+                    1.0,
+                    0.8,
+                    0.7,
+                    0.6
+                ]
+            },
+            "premiumUpgrade": {
+                "enabled": true,
+                "steps": [
+                    "view_pricing",
+                    "select_plan",
+                    "checkout",
+                    "complete"
+                ],
+                "targets": [
+                    1.0,
+                    0.5,
+                    0.4,
+                    0.35
+                ]
+            },
+            "contentEngagement": {
+                "enabled": true,
+                "steps": [
+                    "view",
+                    "read",
+                    "react",
+                    "share"
+                ],
+                "targets": [
+                    1.0,
+                    0.6,
+                    0.15,
+                    0.05
+                ]
+            }
+        },
+        "goals": [
+            {
+                "id": "newsletter_signup",
+                "name": "Newsletter Signup",
+                "value": 5,
+                "tracking": true
+            },
+            {
+                "id": "account_created",
+                "name": "Account Created",
+                "value": 10,
+                "tracking": true
+            },
+            {
+                "id": "premium_upgrade",
+                "name": "Premium Upgrade",
+                "value": 60,
+                "tracking": true
+            },
+            {
+                "id": "share_action",
+                "name": "Content Shared",
+                "value": 2,
+                "tracking": true
+            }
+        ]
+    },
+    "heatmaps": {
+        "enabled": false,
+        "provider": "hotjar",
+        "types": {
+            "click": true,
+            "scroll": true,
+            "move": false
+        },
+        "sampling": 0.1,
+        "pages": [
+            "homepage",
+            "article",
+            "category"
+        ]
+    },
+    "sessionRecording": {
+        "enabled": false,
+        "provider": "hotjar",
+        "sampling": 0.05,
+        "privacy": {
+            "maskSensitiveData": true,
+            "excludePages": [
+                "/account",
+                "/payment"
+            ]
+        }
+    },
+    "abTesting": {
+        "enabled": true,
+        "platform": "custom",
+        "tests": {
+            "headlineVariations": {
+                "enabled": false,
+                "trafficSplit": 0.5
+            },
+            "ctaButtons": {
+                "enabled": false,
+                "trafficSplit": 0.5
+            },
+            "layoutDesign": {
+                "enabled": false,
+                "trafficSplit": 0.5
+            }
+        }
+    },
+    "realTimeAnalytics": {
+        "enabled": true,
+        "dashboard": {
+            "enabled": true,
+            "updateInterval": 5000,
+            "metrics": [
+                "activeUsers",
+                "pageViews",
+                "topPages",
+                "topSources",
+                "engagementRate"
+            ]
+        },
+        "alerts": {
+            "enabled": true,
+            "rules": [
+                {
+                    "metric": "activeUsers",
+                    "condition": "greater_than",
+                    "threshold": 1000,
+                    "notification": "slack"
+                },
+                {
+                    "metric": "errorRate",
+                    "condition": "greater_than",
+                    "threshold": 0.05,
+                    "notification": "email"
+                }
+            ]
+        }
+    },
+    "reporting": {
+        "enabled": true,
+        "automated": {
+            "enabled": true,
+            "frequency": "weekly",
+            "recipients": [
+                "analytics@sportiq.com"
+            ],
+            "format": "pdf",
+            "sections": [
+                "engagement_overview",
+                "viral_metrics",
+                "retention_analysis",
+                "conversion_funnel",
+                "top_content"
+            ]
+        },
+        "customReports": {
+            "enabled": true,
+            "maxReports": 10,
+            "scheduling": true
+        }
+    }
+}

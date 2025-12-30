@@ -1,0 +1,334 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Cloudflare CDN and edge optimization configuration for SPORTIQ",
+    "cdn": {
+        "enabled": true,
+        "provider": "cloudflare",
+        "zoneName": "sportiq.com",
+        "zoneId": "YOUR_CLOUDFLARE_ZONE_ID",
+        "globalEdge": {
+            "enabled": true,
+            "dataCenters": 300,
+            "anycast": true,
+            "autoRouting": true
+        }
+    },
+    "caching": {
+        "level": "standard",
+        "browserTTL": {
+            "respectExisting": true,
+            "default": 14400,
+            "min": 1800,
+            "max": 31536000
+        },
+        "edgeTTL": {
+            "default": 7200,
+            "min": 120,
+            "max": 2592000
+        },
+        "alwaysOnline": {
+            "enabled": true,
+            "ttl": 604800
+        },
+        "developmentMode": {
+            "enabled": false,
+            "duration": 10800
+        }
+    },
+    "pageRules": {
+        "rules": [
+            {
+                "id": "rule_static_assets",
+                "priority": 1,
+                "status": "active",
+                "targets": [
+                    {
+                        "target": "url",
+                        "constraint": {
+                            "operator": "matches",
+                            "value": "*sportiq.com/*.(css|js|woff2|jpg|jpeg|png|webp|gif|svg|ico)"
+                        }
+                    }
+                ],
+                "actions": [
+                    {
+                        "id": "cache_level",
+                        "value": "cache_everything"
+                    },
+                    {
+                        "id": "edge_cache_ttl",
+                        "value": 2592000
+                    },
+                    {
+                        "id": "browser_cache_ttl",
+                        "value": 31536000
+                    }
+                ]
+            },
+            {
+                "id": "rule_html_pages",
+                "priority": 2,
+                "status": "active",
+                "targets": [
+                    {
+                        "target": "url",
+                        "constraint": {
+                            "operator": "matches",
+                            "value": "*sportiq.com/*.html"
+                        }
+                    }
+                ],
+                "actions": [
+                    {
+                        "id": "cache_level",
+                        "value": "standard"
+                    },
+                    {
+                        "id": "edge_cache_ttl",
+                        "value": 7200
+                    },
+                    {
+                        "id": "browser_cache_ttl",
+                        "value": 0
+                    }
+                ]
+            },
+            {
+                "id": "rule_admin",
+                "priority": 3,
+                "status": "active",
+                "targets": [
+                    {
+                        "target": "url",
+                        "constraint": {
+                            "operator": "matches",
+                            "value": "*sportiq.com/admin/*"
+                        }
+                    }
+                ],
+                "actions": [
+                    {
+                        "id": "cache_level",
+                        "value": "bypass"
+                    },
+                    {
+                        "id": "security_level",
+                        "value": "high"
+                    }
+                ]
+            },
+            {
+                "id": "rule_api",
+                "priority": 4,
+                "status": "active",
+                "targets": [
+                    {
+                        "target": "url",
+                        "constraint": {
+                            "operator": "matches",
+                            "value": "*sportiq.com/api/*"
+                        }
+                    }
+                ],
+                "actions": [
+                    {
+                        "id": "cache_level",
+                        "value": "standard"
+                    },
+                    {
+                        "id": "edge_cache_ttl",
+                        "value": 300
+                    }
+                ]
+            }
+        ]
+    },
+    "speedOptimizations": {
+        "autoMinify": {
+            "enabled": true,
+            "javascript": true,
+            "css": true,
+            "html": true
+        },
+        "brotli": {
+            "enabled": true,
+            "level": 6
+        },
+        "http2": {
+            "enabled": true,
+            "serverPush": false
+        },
+        "http3": {
+            "enabled": true,
+            "quic": true,
+            "zeroRTT": true
+        },
+        "earlyHints": {
+            "enabled": true,
+            "links": [
+                "</css/style.css>; rel=preload; as=style",
+                "</js/main.js>; rel=preload; as=script",
+                "</fonts/inter.woff2>; rel=preload; as=font; crossorigin"
+            ]
+        },
+        "rocketLoader": {
+            "enabled": false,
+            "reason": "Custom optimization in place"
+        },
+        "mirage": {
+            "enabled": false,
+            "reason": "Custom lazy loading implemented"
+        },
+        "polish": {
+            "enabled": true,
+            "level": "lossless",
+            "webp": true,
+            "avif": false
+        },
+        "argo": {
+            "enabled": false,
+            "smartRouting": false,
+            "tieredCaching": false
+        }
+    },
+    "security": {
+        "ssl": {
+            "enabled": true,
+            "mode": "full_strict",
+            "minTLSVersion": "1.2",
+            "certificateType": "universal"
+        },
+        "alwaysUseHTTPS": {
+            "enabled": true
+        },
+        "automaticHTTPSRewrites": {
+            "enabled": true
+        },
+        "opportunisticEncryption": {
+            "enabled": true
+        },
+        "onionRouting": {
+            "enabled": false
+        },
+        "waf": {
+            "enabled": true,
+            "mode": "on",
+            "managedRules": true
+        },
+        "ddosProtection": {
+            "enabled": true,
+            "httpDDoS": true,
+            "l3DDos": true,
+            "rateLimiting": true
+        },
+        "botManagement": {
+            "enabled": true,
+            "mode": "block",
+            "verified": true
+        }
+    },
+    "network": {
+        "ipv6": {
+            "enabled": true
+        },
+        "websockets": {
+            "enabled": true
+        },
+        "pseudoIPv4": {
+            "enabled": false
+        },
+        "ipGeolocation": {
+            "enabled": true
+        },
+        "cnameFlattening": {
+            "enabled": true
+        }
+    },
+    "workers": {
+        "enabled": false,
+        "routes": [],
+        "kvNamespace": null,
+        "durableObjects": false,
+        "scripts": []
+    },
+    "firewall": {
+        "rules": [
+            {
+                "id": "block_bad_bots",
+                "priority": 1,
+                "action": "block",
+                "expression": "(cf.client.bot) and not (cf.verified_bot_category in {\"Search Engine Crawler\" \"Page Preview\"})"
+            },
+            {
+                "id": "challenge_suspicious",
+                "priority": 2,
+                "action": "challenge",
+                "expression": "(cf.threat_score gt 15)"
+            },
+            {
+                "id": "rate_limit_api",
+                "priority": 3,
+                "action": "rate_limit",
+                "expression": "(http.request.uri.path contains \"/api/\")",
+                "rateLimit": {
+                    "threshold": 100,
+                    "period": 60
+                }
+            }
+        ]
+    },
+    "dns": {
+        "proxied": true,
+        "dnssec": {
+            "enabled": true
+        },
+        "records": [
+            {
+                "type": "A",
+                "name": "@",
+                "content": "YOUR_SERVER_IP",
+                "proxied": true,
+                "ttl": 1
+            },
+            {
+                "type": "CNAME",
+                "name": "www",
+                "content": "sportiq.com",
+                "proxied": true,
+                "ttl": 1
+            },
+            {
+                "type": "CNAME",
+                "name": "cdn",
+                "content": "sportiq.com",
+                "proxied": true,
+                "ttl": 1
+            }
+        ]
+    },
+    "analytics": {
+        "webAnalytics": {
+            "enabled": true,
+            "beaconToken": "YOUR_BEACON_TOKEN"
+        },
+        "logpush": {
+            "enabled": false
+        },
+        "edgeAnalytics": {
+            "enabled": true
+        }
+    },
+    "performance": {
+        "prefetch": {
+            "enabled": true,
+            "aggressiveness": "medium"
+        },
+        "railgun": {
+            "enabled": false
+        },
+        "zaraz": {
+            "enabled": false
+        }
+    }
+}

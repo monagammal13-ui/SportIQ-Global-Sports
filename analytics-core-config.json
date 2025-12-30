@@ -1,0 +1,338 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Complete analytics and tracking core for SPORTIQ",
+    "providers": {
+        "googleAnalytics": {
+            "enabled": true,
+            "measurementId": "G-XXXXXXXXXX",
+            "version": "GA4",
+            "features": {
+                "pageviews": true,
+                "events": true,
+                "ecommerce": false,
+                "userProperties": true,
+                "enhancedMeasurement": true
+            }
+        },
+        "customAnalytics": {
+            "enabled": true,
+            "endpoint": "/api/analytics/track",
+            "batchSize": 10,
+            "flushInterval": 5000
+        }
+    },
+    "eventTracking": {
+        "pageView": {
+            "enabled": true,
+            "autoTrack": true,
+            "includeParams": [
+                "referrer",
+                "utm_source",
+                "utm_campaign"
+            ],
+            "trackVirtualPageviews": true
+        },
+        "click": {
+            "enabled": true,
+            "selectors": [
+                "a[href]",
+                "button",
+                ".track-click"
+            ],
+            "captureText": true,
+            "captureHref": true
+        },
+        "scroll": {
+            "enabled": true,
+            "thresholds": [
+                25,
+                50,
+                75,
+                100
+            ],
+            "throttle": 1000
+        },
+        "timeOnPage": {
+            "enabled": true,
+            "intervals": [
+                10,
+                30,
+                60,
+                120,
+                300
+            ],
+            "heartbeatInterval": 30000
+        },
+        "videoPlay": {
+            "enabled": true,
+            "trackMilestones": [
+                25,
+                50,
+                75,
+                100
+            ],
+            "trackQualityChange": true,
+            "trackFullscreen": true
+        },
+        "formSubmit": {
+            "enabled": true,
+            "trackSuccess": true,
+            "trackErrors": true,
+            "captureFormId": true
+        },
+        "search": {
+            "enabled": true,
+            "trackQuery": true,
+            "trackResults": true,
+            "trackZeroResults": true,
+            "trackFilters": true
+        },
+        "share": {
+            "enabled": true,
+            "platforms": [
+                "facebook",
+                "twitter",
+                "whatsapp",
+                "email",
+                "copy-link"
+            ],
+            "trackDestination": true
+        },
+        "download": {
+            "enabled": true,
+            "trackFileType": true,
+            "trackFileSize": true
+        }
+    },
+    "customEvents": {
+        "articleRead": {
+            "enabled": true,
+            "trigger": "scrollDepth",
+            "threshold": 60,
+            "trackCategory": true,
+            "trackAuthor": true,
+            "trackReadTime": true
+        },
+        "commentPost": {
+            "enabled": true,
+            "trackArticleId": true,
+            "trackCommentLength": true,
+            "trackReplyDepth": true
+        },
+        "userSignup": {
+            "enabled": true,
+            "trackMethod": true,
+            "trackReferrer": true,
+            "conversionValue": 10
+        },
+        "premiumUpgrade": {
+            "enabled": true,
+            "trackPlan": true,
+            "trackPrice": true,
+            "conversionValue": 60
+        },
+        "adClick": {
+            "enabled": true,
+            "trackPosition": true,
+            "trackAdType": true,
+            "trackRevenue": true
+        }
+    },
+    "userTracking": {
+        "userId": {
+            "enabled": true,
+            "anonymousId": true,
+            "persistAcrossSessions": true
+        },
+        "sessionTracking": {
+            "enabled": true,
+            "timeout": 1800000,
+            "trackSessionCount": true,
+            "trackReturnVisitor": true
+        },
+        "userProperties": {
+            "enabled": true,
+            "track": {
+                "language": true,
+                "timezone": true,
+                "screenResolution": true,
+                "deviceType": true,
+                "browser": true,
+                "os": true,
+                "favoriteTeams": true,
+                "premiumStatus": true
+            }
+        },
+        "deviceFingerprint": {
+            "enabled": false,
+            "provider": "fingerprintjs"
+        }
+    },
+    "conversionTracking": {
+        "goals": [
+            {
+                "id": "newsletter_signup",
+                "name": "Newsletter Signup",
+                "value": 5,
+                "trigger": "form_submit",
+                "formId": "newsletter-form"
+            },
+            {
+                "id": "account_created",
+                "name": "Account Created",
+                "value": 10,
+                "trigger": "custom_event"
+            },
+            {
+                "id": "article_read",
+                "name": "Article Read (60%+)",
+                "value": 2,
+                "trigger": "scroll_depth",
+                "threshold": 60
+            },
+            {
+                "id": "video_watched",
+                "name": "Video Watched (75%+)",
+                "value": 3,
+                "trigger": "video_milestone",
+                "milestone": 75
+            },
+            {
+                "id": "premium_upgrade",
+                "name": "Premium Upgrade",
+                "value": 60,
+                "trigger": "custom_event"
+            }
+        ],
+        "funnels": [
+            {
+                "id": "user_signup_funnel",
+                "name": "User Signup Funnel",
+                "steps": [
+                    {
+                        "id": "landing",
+                        "name": "Landing Page"
+                    },
+                    {
+                        "id": "signup_view",
+                        "name": "View Signup Form"
+                    },
+                    {
+                        "id": "signup_submit",
+                        "name": "Submit Form"
+                    },
+                    {
+                        "id": "email_verify",
+                        "name": "Verify Email"
+                    },
+                    {
+                        "id": "complete",
+                        "name": "Account Complete"
+                    }
+                ]
+            }
+        ]
+    },
+    "performanceMetrics": {
+        "coreWebVitals": {
+            "enabled": true,
+            "metrics": [
+                "LCP",
+                "FID",
+                "CLS",
+                "TTFB",
+                "FCP",
+                "TTI"
+            ],
+            "trackPerPage": true,
+            "sendToAnalytics": true
+        },
+        "resourceTiming": {
+            "enabled": true,
+            "trackResourceTypes": [
+                "script",
+                "css",
+                "img",
+                "xhr",
+                "fetch"
+            ],
+            "sampleRate": 0.1
+        },
+        "navigationTiming": {
+            "enabled": true,
+            "trackDNS": true,
+            "trackTCP": true,
+            "trackRequest": true,
+            "trackResponse": true,
+            "trackDomLoad": true
+        },
+        "customMetrics": {
+            "enabled": true,
+            "metrics": [
+                {
+                    "name": "api_response_time",
+                    "type": "timing"
+                },
+                {
+                    "name": "search_execution_time",
+                    "type": "timing"
+                },
+                {
+                    "name": "image_load_time",
+                    "type": "timing"
+                }
+            ]
+        }
+    },
+    "errorTracking": {
+        "enabled": true,
+        "javascript": {
+            "enabled": true,
+            "captureStackTrace": true,
+            "captureConsoleErrors": true,
+            "ignoreErrors": [
+                "ResizeObserver loop limit exceeded"
+            ]
+        },
+        "api": {
+            "enabled": true,
+            "track4xx": true,
+            "track5xx": true,
+            "captureRequestDetails": true
+        },
+        "resources": {
+            "enabled": true,
+            "trackFailedImages": true,
+            "trackFailedScripts": true,
+            "trackFailedStyles": true
+        }
+    },
+    "privacy": {
+        "gdprCompliant": true,
+        "anonymizeIP": true,
+        "cookieConsent": {
+            "required": true,
+            "categories": [
+                "necessary",
+                "analytics",
+                "marketing"
+            ],
+            "optOut": true
+        },
+        "dataRetention": {
+            "enabled": true,
+            "period": 26,
+            "unit": "months"
+        },
+        "doNotTrack": {
+            "enabled": true,
+            "respectBrowser": true
+        }
+    },
+    "sampling": {
+        "enabled": false,
+        "rate": 1.0,
+        "sessionBased": true
+    }
+}

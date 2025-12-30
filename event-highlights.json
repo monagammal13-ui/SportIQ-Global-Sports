@@ -1,0 +1,367 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Event highlights and memorable moments system for SPORTIQ",
+    "highlights": {
+        "enabled": true,
+        "autoGenerate": true,
+        "curatedCollections": true,
+        "userSubmissions": false
+    },
+    "categories": [
+        {
+            "id": "best-goals",
+            "name": "Best Goals",
+            "icon": "⚽",
+            "sport": "football",
+            "criteria": {
+                "distance": true,
+                "technique": true,
+                "importance": true,
+                "creativity": true
+            },
+            "updateFrequency": "daily"
+        },
+        {
+            "id": "stunning-saves",
+            "name": "Stunning Saves",
+            "icon": "🧤",
+            "sport": "football",
+            "criteria": {
+                "difficulty": true,
+                "timing": true,
+                "importance": true
+            },
+            "updateFrequency": "daily"
+        },
+        {
+            "id": "record-breakers",
+            "name": "Record Breakers",
+            "icon": "🏆",
+            "sport": "all",
+            "criteria": {
+                "significance": true,
+                "historic": true,
+                "milestone": true
+            },
+            "updateFrequency": "realtime"
+        },
+        {
+            "id": "clutch-moments",
+            "name": "Clutch Moments",
+            "icon": "⏱️",
+            "sport": "all",
+            "criteria": {
+                "pressure": true,
+                "timing": true,
+                "impact": true
+            },
+            "updateFrequency": "daily"
+        },
+        {
+            "id": "upsets",
+            "name": "Biggest Upsets",
+            "icon": "😮",
+            "sport": "all",
+            "criteria": {
+                "unexpectedness": true,
+                "significance": true,
+                "impact": true
+            },
+            "updateFrequency": "weekly"
+        },
+        {
+            "id": "celebrations",
+            "name": "Epic Celebrations",
+            "icon": "🎉",
+            "sport": "all",
+            "criteria": {
+                "creativity": true,
+                "emotion": true,
+                "memorability": true
+            },
+            "updateFrequency": "daily"
+        }
+    ],
+    "collections": {
+        "eventHighlights": {
+            "worldCup2026": {
+                "name": "FIFA World Cup 2026 - Best Moments",
+                "description": "The most memorable moments from the tournament",
+                "itemCount": 100,
+                "includeTypes": [
+                    "videos",
+                    "photos",
+                    "articles"
+                ],
+                "curatedBy": "editorial"
+            },
+            "olympics2024": {
+                "name": "Paris 2024 Olympics - Highlights",
+                "description": "Gold medal moments and record-breaking performances",
+                "itemCount": 150,
+                "includeTypes": [
+                    "videos",
+                    "photos",
+                    "articles"
+                ],
+                "curatedBy": "editorial"
+            }
+        },
+        "seasonalHighlights": {
+            "yearInReview": {
+                "enabled": true,
+                "generateAnnually": true,
+                "includeTypes": [
+                    "videos",
+                    "photos",
+                    "stats",
+                    "articles"
+                ],
+                "sections": [
+                    "topGoals",
+                    "bestPlays",
+                    "records",
+                    "moments"
+                ],
+                "releaseDate": "12-31"
+            },
+            "monthlyBest": {
+                "enabled": true,
+                "generateMonthly": true,
+                "includeTypes": [
+                    "videos",
+                    "photos"
+                ],
+                "autoPublish": true
+            }
+        }
+    },
+    "videoHighlights": {
+        "enabled": true,
+        "lengths": {
+            "quick": {
+                "duration": 30,
+                "description": "30-second quick highlights"
+            },
+            "standard": {
+                "duration": 180,
+                "description": "3-minute match highlights"
+            },
+            "extended": {
+                "duration": 600,
+                "description": "10-minute extended highlights"
+            },
+            "full": {
+                "duration": null,
+                "description": "Full match replay"
+            }
+        },
+        "autoGenerate": false,
+        "sources": [
+            "youtube",
+            "official"
+        ],
+        "qualityPreference": "1080p"
+    },
+    "photoGalleries": {
+        "enabled": true,
+        "types": {
+            "matchDay": {
+                "enabled": true,
+                "minPhotos": 20,
+                "maxPhotos": 50,
+                "autoGenerate": true
+            },
+            "bestMoments": {
+                "enabled": true,
+                "curated": true,
+                "minPhotos": 10,
+                "maxPhotos": 30
+            },
+            "fanReactions": {
+                "enabled": true,
+                "userSubmitted": false,
+                "minPhotos": 15
+            }
+        },
+        "layout": "masonry",
+        "downloadable": false
+    },
+    "playerSpotlights": {
+        "enabled": true,
+        "criteria": {
+            "performance": {
+                "weight": 0.40,
+                "metrics": [
+                    "goals",
+                    "assists",
+                    "rating"
+                ]
+            },
+            "impact": {
+                "weight": 0.30,
+                "metrics": [
+                    "matchWinner",
+                    "gameChanger"
+                ]
+            },
+            "milestones": {
+                "weight": 0.20,
+                "types": [
+                    "record",
+                    "achievement",
+                    "debut"
+                ]
+            },
+            "trending": {
+                "weight": 0.10,
+                "socialMentions": true
+            }
+        },
+        "frequency": "daily",
+        "format": [
+            "article",
+            "video",
+            "stats"
+        ]
+    },
+    "teamAchievements": {
+        "enabled": true,
+        "milestones": [
+            {
+                "type": "championship",
+                "priority": "highest",
+                "coverage": [
+                    "article",
+                    "photos",
+                    "video",
+                    "stats"
+                ]
+            },
+            {
+                "type": "record_streak",
+                "priority": "high",
+                "coverage": [
+                    "article",
+                    "stats"
+                ]
+            },
+            {
+                "type": "comeback",
+                "priority": "medium",
+                "coverage": [
+                    "article",
+                    "video"
+                ]
+            },
+            {
+                "type": "milestone_win",
+                "priority": "medium",
+                "coverage": [
+                    "article",
+                    "stats"
+                ]
+            }
+        ]
+    },
+    "historicMoments": {
+        "enabled": true,
+        "onThisDay": {
+            "enabled": true,
+            "lookback": 50,
+            "updateDaily": true,
+            "format": [
+                "article",
+                "photo",
+                "video"
+            ]
+        },
+        "anniversaries": {
+            "enabled": true,
+            "notify": [
+                1,
+                5,
+                10,
+                25,
+                50
+            ],
+            "format": [
+                "special_article",
+                "photo_gallery",
+                "video_retrospective"
+            ]
+        },
+        "legends": {
+            "enabled": true,
+            "profiles": true,
+            "careerHighlights": true,
+            "interviews": false
+        }
+    },
+    "rankings": {
+        "enabled": true,
+        "types": {
+            "topGoals": {
+                "period": "season",
+                "count": 10,
+                "criteria": [
+                    "quality",
+                    "importance",
+                    "technique"
+                ]
+            },
+            "topPlays": {
+                "period": "week",
+                "count": 5,
+                "criteria": [
+                    "skill",
+                    "impact",
+                    "creativity"
+                ]
+            },
+            "topPerformers": {
+                "period": "month",
+                "count": 10,
+                "criteria": [
+                    "stats",
+                    "consistency",
+                    "impact"
+                ]
+            }
+        },
+        "userVoting": {
+            "enabled": true,
+            "weight": 0.3,
+            "requireAuth": false
+        }
+    },
+    "awards": {
+        "enabled": true,
+        "categories": [
+            {
+                "id": "goal_of_month",
+                "name": "Goal of the Month",
+                "frequency": "monthly",
+                "nominees": 5,
+                "voting": true
+            },
+            {
+                "id": "play_of_week",
+                "name": "Play of the Week",
+                "frequency": "weekly",
+                "nominees": 5,
+                "voting": true
+            },
+            {
+                "id": "player_of_month",
+                "name": "Player of the Month",
+                "frequency": "monthly",
+                "nominees": 5,
+                "voting": false
+            }
+        ],
+        "votingPeriod": 7,
+        "resultsAnnouncement": "automated"
+    }
+}

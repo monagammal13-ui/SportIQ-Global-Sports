@@ -1,0 +1,328 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Global keywords tracking and trending topics for SPORTIQ",
+    "keywordExtraction": {
+        "enabled": true,
+        "methods": {
+            "nlp": {
+                "enabled": true,
+                "provider": "custom",
+                "algorithms": [
+                    "tf-idf",
+                    "rake",
+                    "textrank"
+                ],
+                "minConfidence": 0.6
+            },
+            "entityRecognition": {
+                "enabled": true,
+                "entities": [
+                    "teams",
+                    "players",
+                    "leagues",
+                    "competitions",
+                    "managers"
+                ],
+                "linkToPages": true
+            },
+            "hashtagExtraction": {
+                "enabled": true,
+                "sources": [
+                    "twitter",
+                    "instagram",
+                    "content"
+                ],
+                "minFrequency": 5
+            }
+        },
+        "filters": {
+            "minLength": 3,
+            "maxLength": 50,
+            "stopWords": true,
+            "customBlacklist": [
+                "click",
+                "here",
+                "read",
+                "more",
+                "watch"
+            ]
+        }
+    },
+    "trendingKeywords": {
+        "enabled": true,
+        "timeWindows": {
+            "realTime": {
+                "duration": 3600000,
+                "label": "Trending Now",
+                "maxKeywords": 20,
+                "minMentions": 10
+            },
+            "hourly": {
+                "duration": 3600000,
+                "label": "Last Hour",
+                "maxKeywords": 50,
+                "minMentions": 5
+            },
+            "daily": {
+                "duration": 86400000,
+                "label": "Today",
+                "maxKeywords": 100,
+                "minMentions": 20
+            },
+            "weekly": {
+                "duration": 604800000,
+                "label": "This Week",
+                "maxKeywords": 200,
+                "minMentions": 50
+            }
+        },
+        "scoring": {
+            "frequency": 0.35,
+            "velocity": 0.30,
+            "recency": 0.20,
+            "engagement": 0.15
+        }
+    },
+    "searchTrends": {
+        "enabled": true,
+        "trackQueries": true,
+        "aggregation": {
+            "interval": 3600000,
+            "minSearches": 5,
+            "deduplication": true
+        },
+        "relatedQueries": {
+            "enabled": true,
+            "maxRelated": 10,
+            "similarityThreshold": 0.7
+        },
+        "suggestedSearches": {
+            "enabled": true,
+            "basedOn": [
+                "trending",
+                "related",
+                "popular"
+            ],
+            "maxSuggestions": 8
+        }
+    },
+    "topicClustering": {
+        "enabled": true,
+        "algorithm": "lda",
+        "numTopics": 20,
+        "minDocuments": 10,
+        "topics": [
+            {
+                "id": "transfers",
+                "keywords": [
+                    "transfer",
+                    "signing",
+                    "deal",
+                    "move",
+                    "contract"
+                ],
+                "weight": 1.2
+            },
+            {
+                "id": "injuries",
+                "keywords": [
+                    "injury",
+                    "injured",
+                    "recovery",
+                    "sidelined",
+                    "fitness"
+                ],
+                "weight": 1.0
+            },
+            {
+                "id": "match_results",
+                "keywords": [
+                    "win",
+                    "loss",
+                    "draw",
+                    "score",
+                    "result",
+                    "victory"
+                ],
+                "weight": 1.0
+            },
+            {
+                "id": "controversies",
+                "keywords": [
+                    "controversy",
+                    "scandal",
+                    "ban",
+                    "suspension",
+                    "investigation"
+                ],
+                "weight": 1.3
+            },
+            {
+                "id": "records",
+                "keywords": [
+                    "record",
+                    "milestone",
+                    "achievement",
+                    "history",
+                    "first"
+                ],
+                "weight": 1.1
+            }
+        ]
+    },
+    "sentimentAnalysis": {
+        "enabled": true,
+        "keywords": true,
+        "topics": true,
+        "categories": {
+            "positive": {
+                "threshold": 0.6,
+                "label": "Positive",
+                "color": "#10b981",
+                "icon": "😊"
+            },
+            "neutral": {
+                "threshold": 0.4,
+                "label": "Neutral",
+                "color": "#6b7280",
+                "icon": "😐"
+            },
+            "negative": {
+                "threshold": 0,
+                "label": "Negative",
+                "color": "#ef4444",
+                "icon": "😠"
+            }
+        }
+    },
+    "geoTrending": {
+        "enabled": true,
+        "regions": {
+            "global": {
+                "enabled": true,
+                "label": "Global",
+                "maxKeywords": 50
+            },
+            "north_america": {
+                "enabled": true,
+                "label": "North America",
+                "countries": [
+                    "US",
+                    "CA",
+                    "MX"
+                ],
+                "maxKeywords": 30
+            },
+            "europe": {
+                "enabled": true,
+                "label": "Europe",
+                "countries": [
+                    "GB",
+                    "FR",
+                    "DE",
+                    "IT",
+                    "ES"
+                ],
+                "maxKeywords": 30
+            },
+            "asia": {
+                "enabled": true,
+                "label": "Asia",
+                "countries": [
+                    "IN",
+                    "CN",
+                    "JP",
+                    "KR"
+                ],
+                "maxKeywords": 30
+            },
+            "middle_east": {
+                "enabled": true,
+                "label": "Middle East",
+                "countries": [
+                    "SA",
+                    "AE",
+                    "QA"
+                ],
+                "maxKeywords": 20
+            }
+        },
+        "ipDetection": true,
+        "userPreference": true
+    },
+    "autoTagging": {
+        "enabled": true,
+        "minConfidence": 0.7,
+        "maxTagsPerArticle": 15,
+        "categories": {
+            "sports": true,
+            "teams": true,
+            "players": true,
+            "leagues": true,
+            "topics": true
+        },
+        "validation": {
+            "requireMinimum": 3,
+            "allowCustom": true,
+            "moderationQueue": false
+        }
+    },
+    "relatedKeywords": {
+        "enabled": true,
+        "algorithm": "word2vec",
+        "maxRelated": 10,
+        "similarityThreshold": 0.6,
+        "useCases": {
+            "searchSuggestions": true,
+            "articleRecommendations": true,
+            "contentDiscovery": true
+        }
+    },
+    "keywordWidgets": {
+        "trendingKeywords": {
+            "enabled": true,
+            "title": "Trending Keywords",
+            "maxKeywords": 15,
+            "timeWindow": "hourly",
+            "showCount": true,
+            "showTrend": true,
+            "updateInterval": 300000
+        },
+        "topicCloud": {
+            "enabled": true,
+            "title": "Hot Topics",
+            "maxTopics": 20,
+            "sizeByFrequency": true,
+            "colorByCategory": true
+        },
+        "relatedSearches": {
+            "enabled": true,
+            "title": "People Also Search For",
+            "maxSearches": 8,
+            "contextual": true
+        }
+    },
+    "monitoring": {
+        "enabled": true,
+        "alerts": {
+            "newTrendingKeyword": {
+                "enabled": true,
+                "threshold": 100,
+                "unit": "mentions_per_hour",
+                "notification": "email"
+            },
+            "viralTopic": {
+                "enabled": true,
+                "threshold": 500,
+                "unit": "mentions_per_hour",
+                "notification": "slack"
+            }
+        },
+        "analytics": {
+            "trackKeywordPerformance": true,
+            "trackSearchQueries": true,
+            "trackTopicEvolution": true
+        }
+    }
+}

@@ -1,0 +1,116 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-29T08:56:31Z",
+    "description": "AI Content Suggestions Configuration",
+    "models": [
+        "recommendation-engine",
+        "behavior-analyzer",
+        "content-classifier"
+    ],
+    "algorithms": {
+        "contentBased": {
+            "enabled": true,
+            "weight": 3
+        },
+        "collaborative": {
+            "enabled": true,
+            "weight": 2
+        },
+        "trending": {
+            "enabled": true,
+            "weight": 1
+        },
+        "personalized": {
+            "enabled": true,
+            "weight": 4
+        }
+    },
+    "content": [
+        {
+            "id": "c1",
+            "title": "Champions League Final Highlights",
+            "category": "highlights",
+            "tags": [
+                "football",
+                "champions-league",
+                "final"
+            ],
+            "type": "video",
+            "popularity": 95,
+            "featured": true
+        },
+        {
+            "id": "c2",
+            "title": "Transfer Window Analysis",
+            "category": "analysis",
+            "tags": [
+                "transfer",
+                "analysis",
+                "football"
+            ],
+            "type": "article",
+            "popularity": 85
+        },
+        {
+            "id": "c3",
+            "title": "Player Performance Stats 2024",
+            "category": "stats",
+            "tags": [
+                "statistics",
+                "players",
+                "performance"
+            ],
+            "type": "article",
+            "popularity": 75
+        },
+        {
+            "id": "c4",
+            "title": "Tactical Breakdown: 4-3-3 Formation",
+            "category": "tactics",
+            "tags": [
+                "tactics",
+                "formation",
+                "coaching"
+            ],
+            "type": "article",
+            "popularity": 70,
+            "featured": true
+        },
+        {
+            "id": "c5",
+            "title": "Top 10 Goals of the Season",
+            "category": "highlights",
+            "tags": [
+                "goals",
+                "compilation",
+                "highlights"
+            ],
+            "type": "video",
+            "popularity": 90
+        },
+        {
+            "id": "c6",
+            "title": "Interview: Manager Press Conference",
+            "category": "interview",
+            "tags": [
+                "interview",
+                "manager",
+                "press-conference"
+            ],
+            "type": "video",
+            "popularity": 60
+        }
+    ],
+    "preferences": {
+        "minConfidence": 0.3,
+        "maxSuggestions": 8,
+        "updateInterval": 20000
+    },
+    "behaviorWeights": {
+        "view": 1,
+        "like": 3,
+        "share": 5,
+        "comment": 4,
+        "complete": 2
+    }
+}

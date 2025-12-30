@@ -1,0 +1,162 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Multi-language and localization configuration for SPORTIQ",
+    "defaultLanguage": "en",
+    "fallbackLanguage": "en",
+    "supportedLanguages": [
+        {
+            "code": "en",
+            "name": "English",
+            "nativeName": "English",
+            "flag": "🇺🇸",
+            "direction": "ltr",
+            "enabled": true,
+            "default": true
+        },
+        {
+            "code": "ar",
+            "name": "Arabic",
+            "nativeName": "العربية",
+            "flag": "🇸🇦",
+            "direction": "rtl",
+            "enabled": true,
+            "default": false
+        },
+        {
+            "code": "es",
+            "name": "Spanish",
+            "nativeName": "Español",
+            "flag": "🇪🇸",
+            "direction": "ltr",
+            "enabled": true,
+            "default": false
+        },
+        {
+            "code": "fr",
+            "name": "French",
+            "nativeName": "Français",
+            "flag": "🇫🇷",
+            "direction": "ltr",
+            "enabled": true,
+            "default": false
+        }
+    ],
+    "languageDetection": {
+        "order": [
+            "querystring",
+            "localStorage",
+            "navigator",
+            "default"
+        ],
+        "caches": [
+            "localStorage"
+        ],
+        "lookupQuerystring": "lang",
+        "lookupLocalStorage": "sportiq_language",
+        "excludeCacheFor": []
+    },
+    "formatting": {
+        "en": {
+            "numberFormat": {
+                "decimal": ".",
+                "thousands": ",",
+                "currency": "$",
+                "currencyPosition": "before"
+            },
+            "dateFormat": {
+                "short": "MM/DD/YYYY",
+                "long": "MMMM DD, YYYY",
+                "time": "hh:mm A"
+            }
+        },
+        "ar": {
+            "numberFormat": {
+                "decimal": "٫",
+                "thousands": "٬",
+                "currency": "ر.س",
+                "currencyPosition": "after",
+                "useArabicNumerals": true
+            },
+            "dateFormat": {
+                "short": "DD/MM/YYYY",
+                "long": "DD MMMM، YYYY",
+                "time": "hh:mm"
+            }
+        },
+        "es": {
+            "numberFormat": {
+                "decimal": ",",
+                "thousands": ".",
+                "currency": "€",
+                "currencyPosition": "after"
+            },
+            "dateFormat": {
+                "short": "DD/MM/YYYY",
+                "long": "DD de MMMM de YYYY",
+                "time": "HH:mm"
+            }
+        },
+        "fr": {
+            "numberFormat": {
+                "decimal": ",",
+                "thousands": " ",
+                "currency": "€",
+                "currencyPosition": "after"
+            },
+            "dateFormat": {
+                "short": "DD/MM/YYYY",
+                "long": "DD MMMM YYYY",
+                "time": "HH:mm"
+            }
+        }
+    },
+    "pluralization": {
+        "en": {
+            "one": 1,
+            "other": 0
+        },
+        "ar": {
+            "zero": 0,
+            "one": 1,
+            "two": 2,
+            "few": [
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+            ],
+            "many": [
+                11,
+                99
+            ],
+            "other": 0
+        },
+        "es": {
+            "one": 1,
+            "other": 0
+        },
+        "fr": {
+            "one": 1,
+            "other": 0
+        }
+    },
+    "rtl": {
+        "languages": [
+            "ar"
+        ],
+        "autoSwitch": true,
+        "htmlAttribute": "dir",
+        "cssClass": "rtl"
+    },
+    "seo": {
+        "urlStrategy": "path",
+        "hreflang": true,
+        "localizedSitemaps": true,
+        "defaultInPath": false
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-29T09:09:18Z",
+    "description": "Alerts Pro Configuration",
+    "settings": {
+        "maxVisible": 5,
+        "displayDuration": 5000,
+        "soundEnabled": true
+    },
+    "defaultSubscriptions": [
+        "live_match_events",
+        "breaking_news",
+        "transfer_alerts"
+    ],
+    "categories": [
+        {
+            "id": "live_match",
+            "name": "Live Match Events",
+            "priority": "high",
+            "sound": "whistle"
+        },
+        {
+            "id": "breaking_news",
+            "name": "Breaking News",
+            "priority": "normal",
+            "sound": "news"
+        },
+        {
+            "id": "transfers",
+            "name": "Transfers",
+            "priority": "low",
+            "sound": "pop"
+        }
+    ]
+}

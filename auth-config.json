@@ -1,0 +1,352 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-29T07:54:38Z",
+    "roles": [
+        {
+            "name": "admin",
+            "displayName": "Administrator",
+            "description": "Full system access with all permissions",
+            "permissions": [
+                "*"
+            ],
+            "level": 100
+        },
+        {
+            "name": "editor",
+            "displayName": "Content Editor",
+            "description": "Can create, edit, and manage content",
+            "permissions": [
+                "content.create",
+                "content.edit",
+                "content.delete",
+                "content.view",
+                "content.publish",
+                "media.upload",
+                "media.edit",
+                "media.delete",
+                "comments.moderate",
+                "profile.edit"
+            ],
+            "level": 50
+        },
+        {
+            "name": "moderator",
+            "displayName": "Moderator",
+            "description": "Can moderate content and manage users",
+            "permissions": [
+                "content.view",
+                "content.edit",
+                "comments.moderate",
+                "comments.delete",
+                "users.view",
+                "users.suspend",
+                "profile.edit"
+            ],
+            "level": 40
+        },
+        {
+            "name": "contributor",
+            "displayName": "Contributor",
+            "description": "Can create and edit own content",
+            "permissions": [
+                "content.create",
+                "content.edit.own",
+                "content.view",
+                "media.upload",
+                "comments.create",
+                "profile.edit"
+            ],
+            "level": 30
+        },
+        {
+            "name": "user",
+            "displayName": "Registered User",
+            "description": "Standard user with basic permissions",
+            "permissions": [
+                "content.view",
+                "comments.create",
+                "comments.edit.own",
+                "comments.delete.own",
+                "profile.edit",
+                "profile.view"
+            ],
+            "level": 10
+        },
+        {
+            "name": "guest",
+            "displayName": "Guest",
+            "description": "Anonymous user with view-only access",
+            "permissions": [
+                "content.view"
+            ],
+            "level": 0
+        }
+    ],
+    "permissions": [
+        {
+            "name": "*",
+            "displayName": "All Permissions",
+            "description": "Wildcard permission granting full access",
+            "category": "system"
+        },
+        {
+            "name": "content.create",
+            "displayName": "Create Content",
+            "description": "Create new articles, posts, and content",
+            "category": "content"
+        },
+        {
+            "name": "content.edit",
+            "displayName": "Edit All Content",
+            "description": "Edit any content in the system",
+            "category": "content"
+        },
+        {
+            "name": "content.edit.own",
+            "displayName": "Edit Own Content",
+            "description": "Edit only own created content",
+            "category": "content"
+        },
+        {
+            "name": "content.delete",
+            "displayName": "Delete Content",
+            "description": "Delete any content",
+            "category": "content"
+        },
+        {
+            "name": "content.view",
+            "displayName": "View Content",
+            "description": "View published content",
+            "category": "content"
+        },
+        {
+            "name": "content.publish",
+            "displayName": "Publish Content",
+            "description": "Publish and unpublish content",
+            "category": "content"
+        },
+        {
+            "name": "media.upload",
+            "displayName": "Upload Media",
+            "description": "Upload images and videos",
+            "category": "media"
+        },
+        {
+            "name": "media.edit",
+            "displayName": "Edit Media",
+            "description": "Edit media metadata and files",
+            "category": "media"
+        },
+        {
+            "name": "media.delete",
+            "displayName": "Delete Media",
+            "description": "Delete media files",
+            "category": "media"
+        },
+        {
+            "name": "comments.create",
+            "displayName": "Create Comments",
+            "description": "Post comments on content",
+            "category": "comments"
+        },
+        {
+            "name": "comments.edit.own",
+            "displayName": "Edit Own Comments",
+            "description": "Edit own comments",
+            "category": "comments"
+        },
+        {
+            "name": "comments.delete.own",
+            "displayName": "Delete Own Comments",
+            "description": "Delete own comments",
+            "category": "comments"
+        },
+        {
+            "name": "comments.moderate",
+            "displayName": "Moderate Comments",
+            "description": "Moderate all comments",
+            "category": "comments"
+        },
+        {
+            "name": "comments.delete",
+            "displayName": "Delete Any Comment",
+            "description": "Delete any comment",
+            "category": "comments"
+        },
+        {
+            "name": "users.view",
+            "displayName": "View Users",
+            "description": "View user profiles and information",
+            "category": "users"
+        },
+        {
+            "name": "users.manage",
+            "displayName": "Manage Users",
+            "description": "Create, edit, and delete users",
+            "category": "users"
+        },
+        {
+            "name": "users.suspend",
+            "displayName": "Suspend Users",
+            "description": "Suspend and unsuspend users",
+            "category": "users"
+        },
+        {
+            "name": "profile.edit",
+            "displayName": "Edit Profile",
+            "description": "Edit own profile",
+            "category": "profile"
+        },
+        {
+            "name": "profile.view",
+            "displayName": "View Profiles",
+            "description": "View user profiles",
+            "category": "profile"
+        }
+    ],
+    "passwordPolicy": {
+        "minLength": 8,
+        "maxLength": 128,
+        "requireUpperCase": true,
+        "requireLowerCase": true,
+        "requireNumber": true,
+        "requireSpecialChar": true,
+        "specialChars": "!@#$%^&*(),.?\":{}|<>",
+        "preventCommonPasswords": true,
+        "preventUserInfoInPassword": true,
+        "maxAge": 90,
+        "minAge": 1,
+        "historyCount": 5,
+        "strengthLevels": {
+            "weak": {
+                "minScore": 0,
+                "maxScore": 2,
+                "label": "Weak",
+                "color": "#ef4444"
+            },
+            "fair": {
+                "minScore": 3,
+                "maxScore": 4,
+                "label": "Fair",
+                "color": "#f59e0b"
+            },
+            "good": {
+                "minScore": 5,
+                "maxScore": 6,
+                "label": "Good",
+                "color": "#10b981"
+            },
+            "strong": {
+                "minScore": 7,
+                "maxScore": 10,
+                "label": "Strong",
+                "color": "#059669"
+            }
+        }
+    },
+    "sessionPolicy": {
+        "timeout": 1800000,
+        "rememberMeDuration": 2592000000,
+        "maxConcurrentSessions": 3,
+        "refreshThreshold": 300000,
+        "absoluteTimeout": 86400000
+    },
+    "securitySettings": {
+        "maxLoginAttempts": 5,
+        "lockoutDuration": 900000,
+        "passwordResetExpiry": 3600000,
+        "twoFactorAuth": {
+            "enabled": false,
+            "mandatory": false,
+            "allowedMethods": [
+                "email",
+                "sms",
+                "app"
+            ]
+        },
+        "ipWhitelist": {
+            "enabled": false,
+            "ips": []
+        },
+        "ipBlacklist": {
+            "enabled": false,
+            "ips": []
+        },
+        "csrfProtection": true,
+        "xssProtection": true,
+        "secureHeaders": true
+    },
+    "registrationSettings": {
+        "enabled": true,
+        "requireEmailVerification": false,
+        "requireAdminApproval": false,
+        "defaultRole": "user",
+        "allowedDomains": [],
+        "blockedDomains": [],
+        "captchaEnabled": false,
+        "termsRequired": true,
+        "minAge": 13
+    },
+    "socialAuth": {
+        "enabled": false,
+        "providers": [
+            {
+                "name": "google",
+                "displayName": "Google",
+                "enabled": false,
+                "clientId": "",
+                "scopes": [
+                    "email",
+                    "profile"
+                ]
+            },
+            {
+                "name": "facebook",
+                "displayName": "Facebook",
+                "enabled": false,
+                "appId": "",
+                "scopes": [
+                    "email",
+                    "public_profile"
+                ]
+            },
+            {
+                "name": "twitter",
+                "displayName": "Twitter",
+                "enabled": false,
+                "apiKey": ""
+            },
+            {
+                "name": "github",
+                "displayName": "GitHub",
+                "enabled": false,
+                "clientId": "",
+                "scopes": [
+                    "user:email"
+                ]
+            }
+        ]
+    },
+    "notificationSettings": {
+        "welcomeEmail": true,
+        "passwordChangeEmail": true,
+        "loginNotification": false,
+        "suspiciousActivityAlert": true
+    },
+    "auditLog": {
+        "enabled": true,
+        "events": [
+            "login",
+            "logout",
+            "failed_login",
+            "password_change",
+            "profile_update",
+            "permission_change",
+            "role_change",
+            "account_created",
+            "account_deleted",
+            "account_suspended"
+        ],
+        "retention": 90
+    }
+}

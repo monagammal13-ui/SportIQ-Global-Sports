@@ -1,0 +1,75 @@
+{
+    "layerInfo": {
+        "id": "layer-069",
+        "name": "Global Alerts & Critical Updates",
+        "version": "1.0.0",
+        "type": "notification-system",
+        "status": "active"
+    },
+    "checkInterval": 60000,
+    "maxAlertsDisplayed": 3,
+    "autoHideDelay": 10000,
+    "enableSound": false,
+    "position": "top-right",
+    "types": [
+        {
+            "id": "breaking",
+            "name": "Breaking News",
+            "icon": "🔴",
+            "priority": "critical",
+            "sound": true
+        },
+        {
+            "id": "match-update",
+            "name": "Match Update",
+            "icon": "⚽",
+            "priority": "high",
+            "sound": false
+        },
+        {
+            "id": "injury",
+            "name": "Injury Report",
+            "icon": "🏥",
+            "priority": "medium",
+            "sound": false
+        },
+        {
+            "id": "transfer",
+            "name": "Transfer News",
+            "icon": "✈️",
+            "priority": "medium",
+            "sound": false
+        },
+        {
+            "id": "general",
+            "name": "General Update",
+            "icon": "ℹ️",
+            "priority": "low",
+            "sound": false
+        }
+    ],
+    "sources": [
+        {
+            "name": "Official Feeds",
+            "url": "https://api.sportiq.com/alerts",
+            "enabled": true
+        },
+        {
+            "name": "Breaking News API",
+            "url": "https://api.espn.com/breaking",
+            "enabled": true
+        }
+    ],
+    "display": {
+        "position": "top-right",
+        "maxWidth": "400px",
+        "animation": "slide-in",
+        "showTimestamp": true,
+        "showSource": true
+    },
+    "persistence": {
+        "storeDismissed": true,
+        "maxHistory": 50,
+        "clearAfterDays": 7
+    }
+}

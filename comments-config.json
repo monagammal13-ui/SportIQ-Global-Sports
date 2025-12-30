@@ -1,0 +1,241 @@
+{
+    "version": "1.0",
+    "lastUpdated": "2025-12-27",
+    "description": "Complete comments and user interaction system for SPORTIQ",
+    "general": {
+        "enabled": true,
+        "requireLogin": true,
+        "requireVerifiedEmail": true,
+        "guestCommenting": false,
+        "maxCommentLength": 5000,
+        "minCommentLength": 10
+    },
+    "posting": {
+        "editor": {
+            "type": "rich-text",
+            "features": {
+                "bold": true,
+                "italic": true,
+                "underline": false,
+                "strikethrough": false,
+                "links": true,
+                "mentions": true,
+                "emojis": true,
+                "markdown": true,
+                "codeBlock": false
+            },
+            "allowedTags": [
+                "p",
+                "br",
+                "strong",
+                "em",
+                "a"
+            ],
+            "allowedAttributes": {
+                "a": [
+                    "href",
+                    "title"
+                ]
+            }
+        },
+        "media": {
+            "images": {
+                "enabled": false,
+                "maxSize": 5242880,
+                "allowedFormats": [
+                    "jpg",
+                    "jpeg",
+                    "png",
+                    "webp",
+                    "gif"
+                ]
+            },
+            "gifs": {
+                "enabled": true,
+                "provider": "giphy",
+                "apiKey": "YOUR_GIPHY_API_KEY"
+            },
+            "linkPreviews": {
+                "enabled": true,
+                "autoGenerate": true,
+                "maxPreviewsPerComment": 1
+            }
+        },
+        "mentions": {
+            "enabled": true,
+            "trigger": "@",
+            "autoComplete": true,
+            "notify": true,
+            "maxMentionsPerComment": 5
+        },
+        "rateLimiting": {
+            "enabled": true,
+            "maxCommentsPerMinute": 3,
+            "maxCommentsPerHour": 30,
+            "maxCommentsPerDay": 100
+        }
+    },
+    "threading": {
+        "enabled": true,
+        "maxNestingLevel": 5,
+        "defaultView": "chronological",
+        "collapseAfterLevel": 3,
+        "loadMoreThreshold": 10,
+        "visualIndent": 20
+    },
+    "replies": {
+        "enabled": true,
+        "inlineReplies": true,
+        "quotePrevious": false,
+        "notifyOriginalPoster": true,
+        "showReplyCount": true
+    },
+    "voting": {
+        "enabled": true,
+        "system": "updown",
+        "options": {
+            "upvote": {
+                "enabled": true,
+                "icon": "👍",
+                "label": "Upvote",
+                "points": 1
+            },
+            "downvote": {
+                "enabled": true,
+                "icon": "👎",
+                "label": "Downvote",
+                "points": -1
+            }
+        },
+        "displayScore": true,
+        "allowVoteChange": true,
+        "preventSelfVoting": true,
+        "minScoreToDisplay": -5
+    },
+    "reactions": {
+        "enabled": true,
+        "type": "emoji",
+        "options": [
+            {
+                "emoji": "👍",
+                "name": "like",
+                "label": "Like"
+            },
+            {
+                "emoji": "❤️",
+                "name": "love",
+                "label": "Love"
+            },
+            {
+                "emoji": "😂",
+                "name": "laugh",
+                "label": "Laugh"
+            },
+            {
+                "emoji": "😮",
+                "name": "wow",
+                "label": "Wow"
+            },
+            {
+                "emoji": "😢",
+                "name": "sad",
+                "label": "Sad"
+            },
+            {
+                "emoji": "😡",
+                "name": "angry",
+                "label": "Angry"
+            },
+            {
+                "emoji": "⚽",
+                "name": "goal",
+                "label": "Goal!"
+            }
+        ],
+        "maxReactionsPerComment": 1,
+        "showReactionCount": true
+    },
+    "sorting": {
+        "enabled": true,
+        "defaultSort": "best",
+        "options": [
+            {
+                "id": "best",
+                "label": "Best",
+                "algorithm": "wilson-score",
+                "description": "Highest rated comments"
+            },
+            {
+                "id": "top",
+                "label": "Top",
+                "sortBy": "votes",
+                "order": "desc"
+            },
+            {
+                "id": "newest",
+                "label": "Newest",
+                "sortBy": "createdAt",
+                "order": "desc"
+            },
+            {
+                "id": "oldest",
+                "label": "Oldest",
+                "sortBy": "createdAt",
+                "order": "asc"
+            }
+        ]
+    },
+    "pagination": {
+        "enabled": true,
+        "commentsPerPage": 20,
+        "loadMoreButton": true,
+        "infiniteScroll": false,
+        "showTopComments": 5
+    },
+    "realTime": {
+        "enabled": true,
+        "technology": "websocket",
+        "updateInterval": 5000,
+        "showNewCommentsBanner": true,
+        "autoLoadNewComments": false
+    },
+    "editing": {
+        "enabled": true,
+        "editWindow": 900000,
+        "showEditHistory": false,
+        "requireModeratorApproval": false,
+        "markAsEdited": true
+    },
+    "deletion": {
+        "enabled": true,
+        "softDelete": true,
+        "showDeletedPlaceholder": true,
+        "deleteWindow": 300000,
+        "allowModeratorDelete": true
+    },
+    "notifications": {
+        "enabled": true,
+        "notifyOn": {
+            "reply": true,
+            "mention": true,
+            "vote": false,
+            "reaction": false
+        },
+        "channels": {
+            "inApp": true,
+            "email": true,
+            "push": false
+        }
+    },
+    "display": {
+        "showAvatar": true,
+        "showUsername": true,
+        "showTimestamp": true,
+        "showEditedBadge": true,
+        "showVoteCount": true,
+        "showReplyCount": true,
+        "highlightOwnComments": true,
+        "highlightModerators": true,
+        "highlightVerified": true
+    }
+}

@@ -1,0 +1,60 @@
+{
+    "tracking": {
+        "pageViews": true,
+        "clicks": true,
+        "scrollDepth": true,
+        "timeOnPage": true,
+        "customEvents": true,
+        "performance": true
+    },
+    "aggregation": {
+        "interval": 5000,
+        "batchSize": 10,
+        "realTime": true
+    },
+    "storage": {
+        "enabled": true,
+        "maxEntries": 1000,
+        "retentionDays": 30,
+        "autoSave": true,
+        "saveInterval": 60000
+    },
+    "sources": [
+        "organic",
+        "direct",
+        "referral",
+        "social",
+        "email",
+        "paid"
+    ],
+    "excludeSelectors": [
+        ".ad-slot",
+        ".cookie-banner",
+        ".analytics-dashboard",
+        "[data-no-track]"
+    ],
+    "events": {
+        "trackForms": true,
+        "trackVideos": true,
+        "trackDownloads": true,
+        "trackExternalLinks": true,
+        "scrollMilestones": [
+            25,
+            50,
+            75,
+            100
+        ]
+    },
+    "performance": {
+        "trackLoadTime": true,
+        "trackFirstPaint": true,
+        "trackDOMContentLoaded": true,
+        "trackResourceTiming": true
+    },
+    "dashboard": {
+        "enabled": true,
+        "refreshInterval": 10000,
+        "showRealTimeMetrics": true,
+        "showCharts": true
+    }
+}

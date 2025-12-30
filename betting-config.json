@@ -1,0 +1,60 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2025-12-29T09:05:54Z",
+    "description": "Betting Odds Configuration",
+    "settings": {
+        "updateInterval": 5000,
+        "defaultFormat": "decimal",
+        "currency": "USD"
+    },
+    "markets": [
+        {
+            "id": "m_bet_1",
+            "eventName": "Manchester City vs Liverpool",
+            "homeTeam": "Manchester City",
+            "awayTeam": "Liverpool",
+            "odds": {
+                "home": 2.10,
+                "draw": 3.50,
+                "away": 3.20
+            },
+            "bookmaker": "BetGlobal"
+        },
+        {
+            "id": "m_bet_2",
+            "eventName": "Real Madrid vs Barcelona",
+            "homeTeam": "Real Madrid",
+            "awayTeam": "Barcelona",
+            "odds": {
+                "home": 2.40,
+                "draw": 3.40,
+                "away": 2.80
+            },
+            "bookmaker": "BetGlobal"
+        },
+        {
+            "id": "m_bet_3",
+            "eventName": "Bayern Munich vs Dortmund",
+            "homeTeam": "Bayern Munich",
+            "awayTeam": "Dortmund",
+            "odds": {
+                "home": 1.65,
+                "draw": 4.20,
+                "away": 5.00
+            },
+            "bookmaker": "BetGlobal"
+        }
+    ],
+    "bookmakers": [
+        {
+            "id": "betglobal",
+            "name": "BetGlobal",
+            "url": "https://example.com/betglobal"
+        },
+        {
+            "id": "sportodds",
+            "name": "SportOdds",
+            "url": "https://example.com/sportodds"
+        }
+    ]
+}
